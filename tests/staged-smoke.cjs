@@ -1,5 +1,7 @@
 /* Exercise exactly the artifact that Pages publishes, including deployment.json. */
 const {spawn,spawnSync}=require('node:child_process');
+const http = require('node:http');
+function reachable(url) { return new Promise(resolve => { const request = http.get(url, response => {response.resume();resolve(response.statusCode === 200)}); request.on('error', () => resolve(false)); request.setTimeout(500, () => request.destroy()); }); }
 const assert=require('node:assert/strict');
 const base='http://127.0.0.1:8767/';
 let server;
@@ -8,7 +10,7 @@ let server;
   server=spawn('python',['-m','http.server','8767','--bind','127.0.0.1','--directory','_site'],{stdio:'ignore'});
   let ready=false;
   for(let i=0;i<40;i++){
-    try{if((await fetch(base)).ok){ready=true;break}}catch{}
+    if(await reachable(base)){ready=true;break}
     await new Promise(resolve=>setTimeout(resolve,100));
   }
   assert.equal(ready,true,'Staged site must start');
