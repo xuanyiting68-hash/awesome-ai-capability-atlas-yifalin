@@ -80,6 +80,13 @@ class Top30ContractTests(unittest.TestCase):
         self.assertIn("business_use_cases.json",self.detail)
         self.assertIn('id="caseFlow"',self.detail)
 
+    def test_visual_blueprint_gallery(self):
+        blueprint=(ROOT/"blueprints.html").read_text(encoding="utf-8")
+        self.assertIn("./blueprints.html",self.page)
+        for marker in ("business_use_cases.json", 'id="cards"', 'id="domain"', "encodeURIComponent(name)", "illustrative-blueprints-not-tested"):
+            with self.subTest(marker=marker):
+                self.assertIn(marker,blueprint)
+
     def test_home_links_to_research_lab(self):
         self.assertIn('href="./top30.html"', self.home)
 
