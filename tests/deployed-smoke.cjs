@@ -34,6 +34,8 @@ const errors=[];
       await page.goto(new URL('project.html?repo=microsoft%2Fqlib',base).href);
       await page.waitForSelector('#body:not([hidden])');
       assert.match(await page.locator('#title').innerText(),/microsoft\/qlib/i);
+      assert.equal(await page.locator('.quality-step').count(),5,'All five evidence tiers must be visible');
+      assert.match(await page.locator('.quality-note').innerText(),/不等于|≠/);
       assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,'Project detail horizontal overflow at '+width);
       await page.screenshot({path:'test-results/project-'+width+'.png'});
       await page.goto(new URL('blueprints.html',base).href);
