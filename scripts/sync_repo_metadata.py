@@ -13,7 +13,7 @@ import sys
 import time
 
 ROOT=Path(__file__).resolve().parents[1]
-VALID_REPO=re.compile(r"^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$")
+VALID_REPO=re.compile(r"^(?!\\.{1,2}/)(?![^/]+/\\.{1,2}$)[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$")
 DEST=ROOT/"data"/"repo_metadata.json"
 
 def normalise(full, data):
