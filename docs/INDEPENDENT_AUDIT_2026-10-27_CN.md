@@ -29,7 +29,7 @@
 - **Incomplete:** cards predominantly use text, initial-letter logo tiles and metadata; there are no traced official project demos or reproducible worked examples. Add authorized media with attribution and dated references only.
 - **Incomplete:** `index.html` is a ~110 KB single-document implementation with deeply coupled inline JS, embedded curated seed data and duplicated source information. Progressive modularization is advised, with snapshot/URL/bookmark backward compatibility tests.
 - **Incomplete:** homepage, project-detail and blueprint copy are primarily Chinese; Top 30 supports an English workspace. A sitewide locale model is needed instead of cosmetic labels.
-- **Incomplete:** there are static proposals for video production, consent-based leads, CRM, and finance research, but no verified end-to-end integrations. They must retain their illustrative status.
+- **Incomplete:** video production, CRM, finance research, and the wider lead-to-CRM pipeline remain static proposals. They must retain their illustrative status. A narrower **first-party synthetic consent gate / rule-based triage / human-review output** demonstration is implemented under `examples/consent_lead_triage` with standard-library CLI and CI tests; it is not an external integration.
 - **Fixed in PR #6:** homepage formerly pointed to `github.com/new` rather than this project, hid the recovered blueprint page, and displayed an initial hardcoded 30-source count before data load.
 
 ### P2 — Catalog and long-term architecture
@@ -56,8 +56,8 @@ Promotions must be justified by **separately stored, immutable and traceable evi
 1. Keep Draft PR #6 isolated until its exact-head tests and screenshot artifacts are checked and Owner merges/reviews for publication.
 2. Split site data and UI into testable modules. Preserve `atlas_favorites_v1`, URL filters, CSV formula neutralization, page URLs and stable catalog IDs.
 3. Introduce a typed evidence schema with links, last-checked timestamps, reviewers, test fixtures and explicit UNKNOWN states; migrate selected records incrementally.
-4. Build one locally reproducible first-party workflow with synthetic/authorized inputs (video subtitle pipeline or opt-in lead-to-CRM demonstration), and record raw outcomes including failure modes.
+4. Expand the tested synthetic consent-gate pilot toward a fully offline, synthetic opt-in form → lead-to-CRM adapter with realistic revocation propagation and security controls; keep production service integration disabled. Separately implement a first-party video subtitle pipeline with authorized inputs.
 5. Build one finance research workflow from redistributable public data with provenance, time-split baseline, traceable citations and no live trading connection.
 
 ## 5. Boundaries
-No production credentials used, no upstream skills executed, no financial services integrations, no external customer messaging. Only preexisting static illustrative content was restored; licensing or safety conclusions are not implied. A passing staged smoke test is not evidence of a successful **new production deployment**.
+No production credentials used, no upstream skills executed, no financial services integrations, no external customer messaging. Historical illustrative site content was restored and one new synthetic first-party CLI example was added; no third-party software execution, licensing or security conclusions are implied. A passing staged smoke test is not evidence of a successful **new production deployment**.
