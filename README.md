@@ -2,7 +2,7 @@
 
 > Find → Evaluate → Bookmark → Fork → Build.  **发现、评估、收藏、Fork、二次开发。**
 
-一个可以直接打开的静态网页 + 可审计的 CSV/JSON 数据目录 + 标准库 Python 采集脚本 + GitHub Actions 自动更新。本仓库首次初始化阶段首先发布网页及精选数据；其余脚本和工作流将随后补充并核验。
+一个可以直接打开的静态网页 + 可审计的 CSV/JSON 数据目录 + 标准库 Python 采集脚本 + GitHub Actions 自动更新。目前已发布网页、精选数据、采集快照、脚本、校验和工作流。
 
 ## 目前交付（2026-10-26）
 
@@ -13,6 +13,13 @@
 | 网站与同步脚本 | **上限 5,000 条总索引** | 保留 133 个编辑精选，剩余名额按来源分类轮询去重收录 | 需要联网同步。若来源失败，只显示实际可用条目，绝不捏造记录 |
 
 **务必区分：**“已被目录索引 / repository-exists / security-audited / battle-tested / licensed-for-commercial-use” 是不同的状态。本项目目前只对 133 个精选 GitHub 项目完成了存在性与未归档状态的核验。目录候选不经过人工实测。
+
+## 首次线上采集核验（2026-10-26）
+
+- **5,000 条实际落库**：133 个编辑精选 + 4,867 条外部候选索引；30/30 个分类文件采集成功。
+- 生成 `data/catalog.json`、`data/catalog.csv`、`data/provenance.json`、`data/excluded.json`，详情以 `data/provenance.json` 为准。
+- 本次只读取公开目录文本，未安装或运行第三方 Skills；外部候选 **未经安全与许可证审查**。
+- 资源索引已经提交到主分支。**GitHub Pages 尚需仓库所有者在 Settings → Pages 启用 GitHub Actions 部署**，之后可在 Actions 手动运行发布工作流。
 
 ## 快速使用
 
