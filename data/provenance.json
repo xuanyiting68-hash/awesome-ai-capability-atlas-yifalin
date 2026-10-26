@@ -1,10 +1,37 @@
 {
-  "generated_at_utc": "2026-10-26T05:37:26.745029+00:00",
+  "generated_at_utc": "2026-10-26T06:46:03.277864+00:00",
+  "total": 5000,
   "curated": 133,
   "public_candidates": 4867,
-  "total": 5000,
-  "categories_ok": 30,
-  "source": "VoltAgent/awesome-openclaw-skills",
-  "security_audited": false,
-  "third_party_skills_executed": false
+  "source_counts": {
+    "curated": 133,
+    "anthropics-skills": 19,
+    "openai-skills": 44,
+    "github-agents": 358,
+    "microsoft-skills": 194,
+    "github-skills": 348,
+    "wshobson-skills": 160,
+    "n8n-workflows": 950,
+    "sickn33-skills": 1100,
+    "official-mcp-registry": 195,
+    "github-mcp": 213,
+    "openclaw": 1286
+  },
+  "source_failures": {},
+  "sources_successful": [
+    "anthropics/skills",
+    "openai/skills",
+    "microsoft/skills",
+    "github/awesome-copilot",
+    "wshobson/agents",
+    "Zie619/n8n-workflows",
+    "openclaw",
+    "official-mcp-registry",
+    "sickn33/agentic-awesome-skills",
+    "github-mcp"
+  ],
+  "reviewed_for_safety": 0,
+  "license_clearance_done": 0,
+  "third_party_code_executed": false,
+  "methodology": "GitHub repository tree + MCP registry + GitHub MCP-topic discovery + OpenClaw public directory; source filenames / metadata only; URLs deduped"
 }
