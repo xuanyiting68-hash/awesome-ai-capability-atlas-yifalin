@@ -18,7 +18,7 @@ const errors=[];
     assert.match(manifest.source_commit,/^[a-f0-9]{40}$/);
     if(process.env.EXPECTED_COMMIT)assert.equal(manifest.source_commit,process.env.EXPECTED_COMMIT,'Published commit must match the Pages run');
     assert.ok(manifest.catalog_count>=manifest.curated_count&&manifest.catalog_count<=5000);
-    assert.equal(manifest.research_briefs_count,4,'Pilot briefs must be shipped');
+    assert.equal(manifest.research_briefs_count,10,'Ten source-linked research briefs must be shipped');
     assert.equal(manifest.research_reviewed_count,0,'No third-party project is reviewed');
     await page.goto(new URL('top30.html?lang=en',base).href);
     await page.waitForFunction(n=>document.querySelectorAll('.item').length===n&&document.querySelector('#count').textContent.includes('Showing'),manifest.research_project_count);
@@ -73,7 +73,9 @@ const errors=[];
       await page.screenshot({path:'test-results/blueprints-'+width+'.png'});
     }
     // Each editorial pilot resolves; entries outside the first wave fail to an honest empty state.
-    for(const name of ['langchain-ai/langgraph','remotion-dev/remotion','TwentyHQ/twenty']){
+    for(const name of ['langchain-ai/langgraph','remotion-dev/remotion','TwentyHQ/twenty',
+      'microsoft/RD-Agent','docling-project/docling','langgenius/dify','SYSTRAN/faster-whisper',
+      'formbricks/formbricks','promptfoo/promptfoo']){
       await page.goto(new URL('project.html?repo='+encodeURIComponent(name),base).href);
       await page.waitForSelector('#body:not([hidden])');
       assert.equal(await page.locator('#briefCard').isVisible(),true,'Missing pilot brief for '+name);
@@ -88,7 +90,7 @@ const errors=[];
     await page.locator('#domain').selectOption('视频工厂');
     assert.equal(await page.locator('#cards .card').count(),1);
     assert.equal(new URL(page.url()).searchParams.get('domain'),'视频工厂');
-    console.log('PASS 4 evidence-linked bilingual briefs, 26 explicit gaps, three screen sizes and 10 blueprint domains');
+    console.log('PASS 10 evidence-linked bilingual briefs, 20 explicit gaps, three screen sizes and 10 blueprint domains');
     assert.deepEqual(errors,[],'No browser runtime errors');
     console.log('PASS deployed manifest, revision, bilingual data, comparison, bookmarks, filters, mobile width, homepage, zero runtime errors');
     console.log(JSON.stringify(manifest,null,2));
