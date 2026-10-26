@@ -22,7 +22,7 @@ class BriefQualityTests(unittest.TestCase):
         return validate_briefs(records,self.csv,self.snapshot,self.metadata,AS_OF)
     def test_four_grounded_editorial_briefs(self):
         summary=self.verify(self.briefs)
-        self.assertEqual(summary,{"count":4,"curated":4,"reviewed":0,
+        self.assertEqual(summary,{"count":10,"curated":10,"reviewed":0,
                                   "reproduced":0,"production_candidates":0})
     def test_promotions_require_new_evidence_not_stars(self):
         for tier in ("Reviewed","Reproduced","Production Candidate"):
@@ -52,6 +52,26 @@ class BriefQualityTests(unittest.TestCase):
             d=copy.deepcopy(self.briefs)
             d["entries"][2]["sources"][0]["git_blob_sha"]=invalid
             with self.assertRaisesRegex(ValueError,"README blob"):self.verify(d)
+    def test_master_branch_identity_for_faster_whisper(self):
+        candidates=self.briefs["entries"]
+        faster=next(e for e in candidates if e["repo"]=="SYSTRAN/faster-whisper")
+        self.assertEqual(faster["sources"][0]["readme_ref"],"master")
+        self.assertIn("/blob/master/README.md",faster["sources"][0]["url"])
+        changed=copy.deepcopy(self.briefs)
+        record=next(e for e in changed["entries"] if e["repo"]=="SYSTRAN/faster-whisper")
+        record["sources"][0]["readme_ref"]="main"
+        with self.assertRaisesRegex(ValueError,"README identity mismatch"):
+            self.verify(changed)
+
+    def test_ten_categories_and_verified_official_sources(self):
+        self.assertEqual(len(self.briefs["entries"]),10)
+        self.assertEqual({x["repo"].lower() for x in self.briefs["entries"]},
+            {"microsoft/qlib","langchain-ai/langgraph","remotion-dev/remotion",
+             "twentyhq/twenty","microsoft/rd-agent","docling-project/docling",
+             "langgenius/dify","systran/faster-whisper","formbricks/formbricks",
+             "promptfoo/promptfoo"})
+        self.verify(self.briefs)
+
     def test_source_blob_mismatch_rejected(self):
         d=copy.deepcopy(self.briefs)
         d["entries"][0]["sources"][0]["snapshot_url"]="https://api.github.com/repos/microsoft/qlib/git/blobs/"+"0"*40
