@@ -1,9 +1,12 @@
 name: Monitor published atlas
 on:
-  workflow_run:
-    workflows: ['Publish atlas to GitHub Pages']
-    types: [completed]
-    branches: [main]
+  workflow_call:
+    inputs:
+      expected_commit:
+        description: Source commit expected in the published deployment manifest
+        required: false
+        default: ''
+        type: string
   workflow_dispatch:
   schedule:
     - cron: '17 22 * * *'
@@ -14,7 +17,6 @@ concurrency:
   cancel-in-progress: false
 jobs:
   smoke:
-    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-24.04
     env:
       ATLAS_BROWSER_CHANNEL: chrome
@@ -32,7 +34,7 @@ jobs:
       - name: Verify published website
         env:
           ATLAS_BASE_URL: https://xuanyiting68-hash.github.io/awesome-ai-capability-atlas-yifalin/
-          EXPECTED_COMMIT: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_sha || '' }}
+          EXPECTED_COMMIT: ${{ inputs.expected_commit || '' }}
         run: |
           for attempt in 1 2 3; do
             if npm run test:smoke; then exit 0; fi
