@@ -7,7 +7,7 @@ import subprocess
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-FILES = ('index.html', 'top30.html', 'README.md', 'LICENSE')
+FILES = ('index.html', 'top30.html', 'project.html', 'blueprints.html', 'README.md', 'LICENSE')
 DIRECTORIES = ('data', 'docs')
 
 def build(destination, source=ROOT, commit=None):
@@ -33,6 +33,24 @@ def build(destination, source=ROOT, commit=None):
         raise ValueError('Stale research evidence')
     if len(evidence['projects']) != len(projects):
         raise ValueError('Incomplete research evidence')
+    # A published project-detail URL must resolve against all three source datasets.
+    cases = json.loads((source / 'data/business_use_cases.json').read_text())
+    if cases.get('status') != 'illustrative-blueprints-not-tested' or not isinstance(cases.get('domains'), dict):
+        raise ValueError('Invalid or overstated blueprint evidence')
+    domains = cases['domains']
+    if len(domains) < 4 or any(
+        not isinstance(c, dict) or not isinstance(c.get('flow'), list)
+        or len(c['flow']) < 3 or not all(c.get(k) for k in ('goal', 'metric', 'risk'))
+        for c in domains.values()
+    ):
+        raise ValueError('Incomplete blueprint data')
+    slugs = [r['github_repository'].lower() for r in projects]
+    if len(set(slugs)) != len(slugs) or any(r['domain'] not in domains for r in projects):
+        raise ValueError('Project details refer to missing blueprints')
+    if set(slugs) != {p['repo'].lower() for p in evidence['projects']}:
+        raise ValueError('Project evidence repositories do not match the CSV')
+    if not set(slugs).issubset(metadata['repositories']):
+        raise ValueError('Project detail metadata is incomplete')
     if commit is None:
         commit = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=source, text=True).strip()
     manifest = {
@@ -42,6 +60,7 @@ def build(destination, source=ROOT, commit=None):
         'catalog_count': len(catalog),
         'curated_count': len(curated),
         'research_project_count': len(projects),
+        'blueprint_count': len(domains),
         'metadata_snapshot_utc': metadata['generated_at_utc'],
         'catalog_snapshot_utc': provenance['generated_at_utc'],
     }

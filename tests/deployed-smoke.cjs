@@ -27,7 +27,34 @@ const errors=[];
     await page.click('#reset');await page.selectOption('#domain','金融AI');assert.equal(await page.locator('.item').count(),8);
     await page.setViewportSize({width:390,height:844});assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
     await page.evaluate(()=>scrollTo(0,0));await fs.mkdir('test-results',{recursive:true});await page.screenshot({path:'test-results/deployed-mobile.png'});
-    await page.goto(base);await page.waitForSelector('.resource');assert.ok(await page.locator('.resource').count()>0);
+    for(const width of [1440,768,390]){
+      await page.setViewportSize({width,height:844});
+      await page.goto(base);
+      await page.waitForSelector('.resource');
+      assert.ok(await page.locator('.resource').count()>0,'Homepage must show actual resource cards');
+      assert.ok(await page.locator('a[href="./blueprints.html"]').count()>0,'Homepage must link to blueprint hub');
+      assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,'Homepage horizontal overflow at '+width);
+      await page.screenshot({path:'test-results/home-'+width+'.png'});
+    }
+    // Recovered project detail and workflow blueprints must be live, not orphaned source files.
+    for(const width of [1440,768,390]){
+      await page.setViewportSize({width,height:844});
+      await page.goto(new URL('project.html?repo=microsoft%2Fqlib',base).href);
+      await page.waitForSelector('#body:not([hidden])');
+      assert.match(await page.locator('#title').innerText(),/microsoft\/qlib/i);
+      assert.equal(await page.locator('.quality-step').count(),5,'All five evidence tiers must be visible');
+      assert.match(await page.locator('.quality-note').innerText(),/不等于|≠/);
+      assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,'Project detail horizontal overflow at '+width);
+      await page.screenshot({path:'test-results/project-'+width+'.png'});
+      await page.goto(new URL('blueprints.html',base).href);
+      await page.waitForFunction(()=>document.querySelectorAll('#cards .card').length===10);
+      assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,'Blueprint horizontal overflow at '+width);
+      await page.screenshot({path:'test-results/blueprints-'+width+'.png'});
+    }
+    await page.locator('#domain').selectOption('视频工厂');
+    assert.equal(await page.locator('#cards .card').count(),1);
+    assert.equal(new URL(page.url()).searchParams.get('domain'),'视频工厂');
+    console.log('PASS project detail and 10 blueprint domains at 1440, 768, 390; domain filter and URL restoration');
     assert.deepEqual(errors,[],'No browser runtime errors');
     console.log('PASS deployed manifest, revision, bilingual data, comparison, bookmarks, filters, mobile width, homepage, zero runtime errors');
     console.log(JSON.stringify(manifest,null,2));

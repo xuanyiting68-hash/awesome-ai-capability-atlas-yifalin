@@ -18,6 +18,11 @@
 
 发布产物包含源提交清单 `deployment.json`，发布前验证数据，发布后及每日通过 Chromium 巡检站点。仅打包公共页面和数据，不发布开发依赖。详见 [发布验证记录](docs/V1_4_4_RELEASE_MONITORING_CN.md)。
 
+## 独立审计与可复现的第一方工作流样例
+
+- [2026-10-27 独立质量审计与修复记录](docs/INDEPENDENT_AUDIT_2026-10-27_CN.md)：说明数据可信边界、缺失页面及版本与 CI 核验，任何测试通过均不替代第三方许可证审查。
+- [合规留资 → 匿名分流 → 人工复核（合成数据）](examples/consent_lead_triage/README.md)：使用 Python 标准库运行，无账号连接、无自动外发；仅用于验证权限/撤回门禁，并不代表生产获客/CRM 集成成功。
+
 ## V1.4.3 · 双语项目研究工作台
 
 [进入 Top 30 研究室](top30.html) · [验证与交付记录](docs/V1_4_3_WORKSPACE_CN.md)
