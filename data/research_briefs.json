@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "researched_at_utc": "2026-10-26T16:00:00Z",
+  "researched_at_utc": "2026-10-26T22:00:00Z",
   "policy": "Official documentation review and proposed pilots only. No software was installed, no benchmark was run, and no license/security assessment is complete.",
   "entries": [
     {
@@ -351,6 +351,547 @@
       "alternatives": [
         "chatwoot/chatwoot",
         "mautic/mautic"
+      ],
+      "review": {
+        "license_text": "not-reviewed",
+        "dependency_licenses": "not-reviewed",
+        "security": "not-audited",
+        "reproducibility": "not-tested",
+        "sandbox_sha": null,
+        "fork_decision": "HOLD"
+      }
+    },
+    {
+      "repo": "microsoft/RD-Agent",
+      "tier": "Curated",
+      "research_status": "editorial-desk-study",
+      "sources": [
+        {
+          "id": "readme",
+          "kind": "official-github-readme",
+          "url": "https://github.com/microsoft/RD-Agent/blob/main/README.md",
+          "snapshot_url": "https://api.github.com/repos/microsoft/RD-Agent/git/blobs/2b766a76a9adeaa1080c4dce058d0a84e782202d",
+          "git_blob_sha": "2b766a76a9adeaa1080c4dce058d0a84e782202d"
+        },
+        {
+          "id": "docs",
+          "kind": "official-documentation",
+          "url": "https://rdagent.readthedocs.io/en/latest/index.html"
+        }
+      ],
+      "headline": {
+        "zh": "研究智能体自动提出并实现数据驱动模型与量化因子",
+        "en": "Research agents proposing and implementing data-driven models and factors"
+      },
+      "best_for": {
+        "zh": "具备实验设计、数据治理能力的量化或数据科学研究团队",
+        "en": "Quant/data science teams able to control experimental design and data quality"
+      },
+      "not_for": {
+        "zh": "把智能体输出的因子直接上实盘，或不审核代码与训练集泄漏的团队",
+        "en": "Teams deploying autonomous factors live without code and leakage audits"
+      },
+      "capabilities": [
+        {
+          "zh": "官方 README 提供自动化因子研究与模型改进的示例及演示入口",
+          "en": "Official README presents factor-research and model-improvement workflows and demonstrations",
+          "source_ids": [
+            "readme"
+          ]
+        },
+        {
+          "zh": "项目介绍用智能体读取研究论文、报告并实现候选模型和数据集",
+          "en": "The documentation outlines agents reading papers and implementing candidate models and datasets",
+          "source_ids": [
+            "readme",
+            "docs"
+          ]
+        }
+      ],
+      "pilot": {
+        "zh": "在合成因子库上观察提案→实现→审稿流程，不以拟合分数冒充预测能力",
+        "en": "Test propose–implement–review on synthetic factors, without treating fitting scores as forecast skill",
+        "steps": [
+          {
+            "zh": "锁定 Agent 配置、模型提供方、训练数据边界及预算",
+            "en": "Pin agent configuration, model provider, training boundaries and budget"
+          },
+          {
+            "zh": "生成候选因子，在隔离沙箱中记录所有代码与运行差异",
+            "en": "Generate candidate factors in a sandbox; log code and execution changes"
+          },
+          {
+            "zh": "使用严格时序样本外与成本对照、人工审稿后判断是否保留",
+            "en": "Run temporal holdouts and cost-sensitive baselines, then submit for human review"
+          }
+        ],
+        "metrics": {
+          "zh": "泄漏拦截率、候选重复率、OOS 稳定性、每有效因子成本",
+          "en": "Leakage rejections, redundant proposals, out-of-sample stability, cost per viable candidate"
+        }
+      },
+      "limitations": {
+        "zh": "智能体生成的研究假设仍可能过拟合、产生危险代码并消耗模型额度；不允许自动实盘调用",
+        "en": "Agent hypotheses can overfit, generate unsafe code and incur model costs; no direct live-trading permissions",
+        "source_ids": [
+          "readme",
+          "docs"
+        ]
+      },
+      "alternatives": [
+        "microsoft/qlib",
+        "AI4Finance-Foundation/FinRobot"
+      ],
+      "review": {
+        "license_text": "not-reviewed",
+        "dependency_licenses": "not-reviewed",
+        "security": "not-audited",
+        "reproducibility": "not-tested",
+        "sandbox_sha": null,
+        "fork_decision": "HOLD"
+      }
+    },
+    {
+      "repo": "docling-project/docling",
+      "tier": "Curated",
+      "research_status": "editorial-desk-study",
+      "sources": [
+        {
+          "id": "readme",
+          "kind": "official-github-readme",
+          "url": "https://github.com/docling-project/docling/blob/main/README.md",
+          "snapshot_url": "https://api.github.com/repos/docling-project/docling/git/blobs/3297b7881575dc853facc5add4cc4c8dccc12f14",
+          "git_blob_sha": "3297b7881575dc853facc5add4cc4c8dccc12f14"
+        },
+        {
+          "id": "docs",
+          "kind": "official-documentation",
+          "url": "https://docling-project.github.io/docling/"
+        }
+      ],
+      "headline": {
+        "zh": "结构化解析复杂 PDF、版面、表格与文档",
+        "en": "Structured parsing for complex PDFs, layouts, tables and documents"
+      },
+      "best_for": {
+        "zh": "处理授权教材、论文、财报或报告文档的 RAG 与知识管理团队",
+        "en": "RAG and knowledge-management teams processing licensed papers and reports"
+      },
+      "not_for": {
+        "zh": "需要自动保证所有公式、表格与扫描文本毫无损失的人",
+        "en": "Users expecting perfect OCR, equations and tables without verification"
+      },
+      "capabilities": [
+        {
+          "zh": "官方 README 列出 PDF 版面分析、表格提取和多种文件格式支持",
+          "en": "Official README documents page-layout analysis, table extraction and multiple formats",
+          "source_ids": [
+            "readme"
+          ]
+        },
+        {
+          "zh": "支持将解析后的结构化文档用于后续检索或工作流",
+          "en": "Structured output is described as an input to retrieval and downstream workflows",
+          "source_ids": [
+            "readme",
+            "docs"
+          ]
+        }
+      ],
+      "pilot": {
+        "zh": "构建一组授权 PDF 的页码、表格、公式人工金标准并检验提取错误",
+        "en": "Evaluate parsed licensed PDFs against page, table and formula ground truth",
+        "steps": [
+          {
+            "zh": "固定样本文档、语言分布和人工标注参考答案",
+            "en": "Pin document samples, languages and human reference labels"
+          },
+          {
+            "zh": "运行隔离离线转换并记录表格、图片、脚注位置信息",
+            "en": "Convert offline in isolation; record table, figure and footnote placement"
+          },
+          {
+            "zh": "逐页比对完整性、结构保持率和错误引用数量",
+            "en": "Compare page coverage, structural integrity and incorrect citations"
+          }
+        ],
+        "metrics": {
+          "zh": "表格单元格精确率、遗漏页数、引用偏移、每页处理时间",
+          "en": "Table-cell precision, missing pages, citation offset and per-page latency"
+        }
+      },
+      "limitations": {
+        "zh": "复杂图表、扫描质量、语言与内存约束会影响质量；解析的训练材料必须具备使用授权",
+        "en": "Complex layouts, scans, languages and compute affect output; source documents require usage rights",
+        "source_ids": [
+          "readme",
+          "docs"
+        ]
+      },
+      "alternatives": [
+        "microsoft/markitdown",
+        "infiniflow/ragflow"
+      ],
+      "review": {
+        "license_text": "not-reviewed",
+        "dependency_licenses": "not-reviewed",
+        "security": "not-audited",
+        "reproducibility": "not-tested",
+        "sandbox_sha": null,
+        "fork_decision": "HOLD"
+      }
+    },
+    {
+      "repo": "langgenius/dify",
+      "tier": "Curated",
+      "research_status": "editorial-desk-study",
+      "sources": [
+        {
+          "id": "readme",
+          "kind": "official-github-readme",
+          "url": "https://github.com/langgenius/dify/blob/main/README.md",
+          "snapshot_url": "https://api.github.com/repos/langgenius/dify/git/blobs/e8572f93797ee113302a7c2e29be02ea31153119",
+          "git_blob_sha": "e8572f93797ee113302a7c2e29be02ea31153119"
+        },
+        {
+          "id": "docs",
+          "kind": "official-documentation",
+          "url": "https://docs.dify.ai"
+        }
+      ],
+      "headline": {
+        "zh": "可视化 AI 工作流、Agent、知识库与模型集成平台",
+        "en": "Visual AI workflow, agents, knowledge bases and model integrations"
+      },
+      "best_for": {
+        "zh": "希望快速搭建带审核流程的企业知识助手及业务应用的产品团队",
+        "en": "Product teams building governed internal knowledge assistants and business apps"
+      },
+      "not_for": {
+        "zh": "希望免除数据访问控制、工具权限和长期维护工作的非技术运营者",
+        "en": "Teams unwilling to own access control, tool permissions and maintenance"
+      },
+      "capabilities": [
+        {
+          "zh": "项目 README 描述工作流应用、Agent 和多模型集成能力",
+          "en": "README describes workflow apps, agents and integrations with multiple model providers",
+          "source_ids": [
+            "readme"
+          ]
+        },
+        {
+          "zh": "官方指南提供 Docker Compose 自托管及配置入门路径",
+          "en": "Official docs explain Docker Compose self-hosting and initial configuration",
+          "source_ids": [
+            "readme",
+            "docs"
+          ]
+        }
+      ],
+      "pilot": {
+        "zh": "仅用合成客服问题在隔离环境搭建含人工审批的知识回答工作流",
+        "en": "Test a human-approved knowledge-answering workflow with synthetic requests",
+        "steps": [
+          {
+            "zh": "定义无隐私内容的知识库和不含写权限的模拟工具",
+            "en": "Set up a synthetic knowledge base and read-only mock tools"
+          },
+          {
+            "zh": "验证检索出处、模型失败降级和人工审批回退路径",
+            "en": "Test citations, model-failure fallback and approval workflow"
+          },
+          {
+            "zh": "测量幻觉、成本、跨租户数据隔离与拒绝测试表现",
+            "en": "Measure hallucinations, cost, tenant isolation and refusal behavior"
+          }
+        ],
+        "metrics": {
+          "zh": "引用可追溯率、审批绕过率、每次回答成本、错误恢复率",
+          "en": "Citation traceability, approval bypass rate, cost per answer and recovery"
+        }
+      },
+      "limitations": {
+        "zh": "自托管仍需审核依赖、许可证文本和模型供应商数据处理条款；Agent 工具需最小权限",
+        "en": "Self-hosting still needs license, dependency and model-provider review; agent tools require least privilege",
+        "source_ids": [
+          "readme",
+          "docs"
+        ]
+      },
+      "alternatives": [
+        "n8n-io/n8n",
+        "activepieces/activepieces"
+      ],
+      "review": {
+        "license_text": "not-reviewed",
+        "dependency_licenses": "not-reviewed",
+        "security": "not-audited",
+        "reproducibility": "not-tested",
+        "sandbox_sha": null,
+        "fork_decision": "HOLD"
+      }
+    },
+    {
+      "repo": "SYSTRAN/faster-whisper",
+      "tier": "Curated",
+      "research_status": "editorial-desk-study",
+      "sources": [
+        {
+          "id": "readme",
+          "kind": "official-github-readme",
+          "url": "https://github.com/SYSTRAN/faster-whisper/blob/master/README.md",
+          "snapshot_url": "https://api.github.com/repos/SYSTRAN/faster-whisper/git/blobs/6fd13e62415d84828784b5e887304631190c2137",
+          "git_blob_sha": "6fd13e62415d84828784b5e887304631190c2137",
+          "readme_ref": "master"
+        },
+        {
+          "id": "docs",
+          "kind": "official-documentation",
+          "url": "https://pypi.org/project/faster-whisper/"
+        }
+      ],
+      "headline": {
+        "zh": "CTranslate2 支撑的 Whisper 语音识别与字幕工作流",
+        "en": "CTranslate2-based Whisper transcription for speech and subtitles"
+      },
+      "best_for": {
+        "zh": "需要为自有视频制作英语或多语字幕，并能评估 GPU/CPU 资源的团队",
+        "en": "Teams captioning owned audio/video with a measurable CPU/GPU environment"
+      },
+      "not_for": {
+        "zh": "把 README 的速度基准直接当作本机成绩、或要求零字幕错误的场景",
+        "en": "Users assuming published benchmarks reproduce on their hardware or needing error-free captions"
+      },
+      "capabilities": [
+        {
+          "zh": "README 说明该实现基于 CTranslate2，并给出特定版本/设备的速度对照",
+          "en": "README describes a CTranslate2 implementation with version- and hardware-specific benchmarks",
+          "source_ids": [
+            "readme"
+          ]
+        },
+        {
+          "zh": "安装说明明确 CUDA、cuDNN 和模型配置会影响 GPU 运行",
+          "en": "Installation notes detail CUDA, cuDNN and model configuration dependencies",
+          "source_ids": [
+            "readme",
+            "docs"
+          ]
+        }
+      ],
+      "pilot": {
+        "zh": "使用原创双语录音对照基准转写，测量字幕错误与计算成本",
+        "en": "Transcribe owned bilingual audio against ground truth and measure error and cost",
+        "steps": [
+          {
+            "zh": "固定原创音频、口音、采样率及可复现转写参数",
+            "en": "Pin owned audio, accents, sample rates and transcription settings"
+          },
+          {
+            "zh": "对照 CPU/GPU 配置运行并保存逐句时间戳和失败样例",
+            "en": "Run CPU/GPU comparisons, logging timestamps and failure samples"
+          },
+          {
+            "zh": "人工核查术语、人名、数字与敏感信息字幕",
+            "en": "Human-review terminology, names, numbers and sensitive captions"
+          }
+        ],
+        "metrics": {
+          "zh": "WER、数字专名错误率、实时系数、显存峰值",
+          "en": "Word error rate, proper-noun/number errors, real-time factor and peak memory"
+        }
+      },
+      "limitations": {
+        "zh": "音频质量与方言影响识别；官方速度数字是其特定配置基准，实际环境需复测",
+        "en": "Audio quality and dialects affect accuracy; official speeds are benchmark-specific, not guaranteed",
+        "source_ids": [
+          "readme",
+          "docs"
+        ]
+      },
+      "alternatives": [
+        "openai/whisper",
+        "ggml-org/whisper.cpp"
+      ],
+      "review": {
+        "license_text": "not-reviewed",
+        "dependency_licenses": "not-reviewed",
+        "security": "not-audited",
+        "reproducibility": "not-tested",
+        "sandbox_sha": null,
+        "fork_decision": "HOLD"
+      }
+    },
+    {
+      "repo": "formbricks/formbricks",
+      "tier": "Curated",
+      "research_status": "editorial-desk-study",
+      "sources": [
+        {
+          "id": "readme",
+          "kind": "official-github-readme",
+          "url": "https://github.com/formbricks/formbricks/blob/main/README.md",
+          "snapshot_url": "https://api.github.com/repos/formbricks/formbricks/git/blobs/251685c7bff8f3325e9056b8ffdd7f824034ea7c",
+          "git_blob_sha": "251685c7bff8f3325e9056b8ffdd7f824034ea7c"
+        },
+        {
+          "id": "docs",
+          "kind": "official-documentation",
+          "url": "https://formbricks.com/docs/self-hosting/deployment"
+        }
+      ],
+      "headline": {
+        "zh": "隐私优先的用户调研、体验反馈与可控自托管问卷",
+        "en": "Privacy-focused surveys and experience feedback with self-hosting options"
+      },
+      "best_for": {
+        "zh": "希望进行基于知情同意的产品反馈与用户需求调研的团队",
+        "en": "Teams collecting informed-consent product feedback and user interviews"
+      },
+      "not_for": {
+        "zh": "打算未经授权收集个人数据或自动营销外呼的系统",
+        "en": "Systems collecting personal data or sending promotional outreach without consent"
+      },
+      "capabilities": [
+        {
+          "zh": "官方 README 介绍开源调查问卷与自托管部署方式",
+          "en": "Official README describes survey collection and self-hosting",
+          "source_ids": [
+            "readme"
+          ]
+        },
+        {
+          "zh": "官方资料指向 Docker 自托管及数据控制配置说明",
+          "en": "Official material links to Docker hosting and data-control setup",
+          "source_ids": [
+            "readme",
+            "docs"
+          ]
+        }
+      ],
+      "pilot": {
+        "zh": "设计五题以内的匿名产品需求问卷，验证退出/删除流程",
+        "en": "Prototype a five-question anonymous survey with opt-out and deletion tests",
+        "steps": [
+          {
+            "zh": "仅使用合成回答模拟调查问卷，并明确目的与可选字段",
+            "en": "Use synthetic responses with a stated purpose and optional fields"
+          },
+          {
+            "zh": "检查重复提交、撤回、缺少同意与最小化收集的处理",
+            "en": "Test duplicates, withdrawals, missing consent and data minimization"
+          },
+          {
+            "zh": "比较完成时间、问题理解偏差及删除记录完整性",
+            "en": "Measure completion time, question ambiguity and deletion completeness"
+          }
+        ],
+        "metrics": {
+          "zh": "完成率、平均时长、缺失同意拦截、撤回/删除覆盖率",
+          "en": "Completion rate, median time, consent rejections and opt-out/deletion coverage"
+        }
+      },
+      "limitations": {
+        "zh": "AGPL 等具体授权义务、数据保留期限和个人信息合规需另做法律审核",
+        "en": "AGPL-related obligations, retention and privacy compliance require separate legal review",
+        "source_ids": [
+          "readme",
+          "docs"
+        ]
+      },
+      "alternatives": [
+        "typeform/typeform",
+        "TwentyHQ/twenty"
+      ],
+      "review": {
+        "license_text": "not-reviewed",
+        "dependency_licenses": "not-reviewed",
+        "security": "not-audited",
+        "reproducibility": "not-tested",
+        "sandbox_sha": null,
+        "fork_decision": "HOLD"
+      }
+    },
+    {
+      "repo": "promptfoo/promptfoo",
+      "tier": "Curated",
+      "research_status": "editorial-desk-study",
+      "sources": [
+        {
+          "id": "readme",
+          "kind": "official-github-readme",
+          "url": "https://github.com/promptfoo/promptfoo/blob/main/README.md",
+          "snapshot_url": "https://api.github.com/repos/promptfoo/promptfoo/git/blobs/2a56017c2609e3a92d7d5539147c9c7e620a3420",
+          "git_blob_sha": "2a56017c2609e3a92d7d5539147c9c7e620a3420"
+        },
+        {
+          "id": "docs",
+          "kind": "official-documentation",
+          "url": "https://www.promptfoo.dev/docs/getting-started/"
+        }
+      ],
+      "headline": {
+        "zh": "面向大语言模型应用的批量评估、红队和 CI 回归",
+        "en": "Batch LLM evaluations, red-teaming and CI regressions"
+      },
+      "best_for": {
+        "zh": "需要追踪 Agent 提示词回归、越权和输出质量的研发与安全团队",
+        "en": "Engineering and security teams tracking prompt regressions and privilege risks"
+      },
+      "not_for": {
+        "zh": "把单次红队通过视作绝对安全证明、或希望未审密钥进入 CI 的团队",
+        "en": "Teams treating one red-team pass as a safety guarantee or leaking API secrets in CI"
+      },
+      "capabilities": [
+        {
+          "zh": "README 明确提供 CLI/库以评估提示词、模型和安全测试",
+          "en": "README describes CLI/library evaluation of prompts, models and safety scenarios",
+          "source_ids": [
+            "readme"
+          ]
+        },
+        {
+          "zh": "官方文档覆盖多模型比较、自动评测和 CI/CD 集成",
+          "en": "Docs cover model comparisons, eval automation and CI/CD integrations",
+          "source_ids": [
+            "readme",
+            "docs"
+          ]
+        }
+      ],
+      "pilot": {
+        "zh": "用无敏感内容的 Agent 工具权限样例构建负面测试集",
+        "en": "Build a negative-test suite for mock agent tool permissions with synthetic input",
+        "steps": [
+          {
+            "zh": "写明每条测试的威胁模型、预期拒绝行为和评分准则",
+            "en": "Define each threat model, expected rejection and grading rubric"
+          },
+          {
+            "zh": "在模拟 Agent API 上测试工具越权、提示注入和输出格式破坏",
+            "en": "Test permission escalation, prompt injection and schema breaking against mocks"
+          },
+          {
+            "zh": "把回归结果接入不含生产密钥的 CI 并人工复核误报",
+            "en": "Run CI without production secrets and manually review false positives"
+          }
+        ],
+        "metrics": {
+          "zh": "拒绝率、严重绕过数、误报率、每轮测试成本",
+          "en": "Refusal rate, severe bypass count, false-positive rate and run cost"
+        }
+      },
+      "limitations": {
+        "zh": "有限测试集不能证明对未知攻击免疫；远程模型调用可能产生费用和数据传输",
+        "en": "A finite test suite cannot guarantee safety; remote model calls can cost money and transmit data",
+        "source_ids": [
+          "readme",
+          "docs"
+        ]
+      },
+      "alternatives": [
+        "garak/garak",
+        "microsoft/pyrit"
       ],
       "review": {
         "license_text": "not-reviewed",
