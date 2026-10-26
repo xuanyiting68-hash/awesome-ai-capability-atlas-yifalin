@@ -27,7 +27,15 @@ const errors=[];
     await page.click('#reset');await page.selectOption('#domain','金融AI');assert.equal(await page.locator('.item').count(),8);
     await page.setViewportSize({width:390,height:844});assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
     await page.evaluate(()=>scrollTo(0,0));await fs.mkdir('test-results',{recursive:true});await page.screenshot({path:'test-results/deployed-mobile.png'});
-    await page.goto(base);await page.waitForSelector('.resource');assert.ok(await page.locator('.resource').count()>0);
+    for(const width of [1440,768,390]){
+      await page.setViewportSize({width,height:844});
+      await page.goto(base);
+      await page.waitForSelector('.resource');
+      assert.ok(await page.locator('.resource').count()>0,'Homepage must show actual resource cards');
+      assert.ok(await page.locator('a[href="./blueprints.html"]').count()>0,'Homepage must link to blueprint hub');
+      assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,'Homepage horizontal overflow at '+width);
+      await page.screenshot({path:'test-results/home-'+width+'.png'});
+    }
     // Recovered project detail and workflow blueprints must be live, not orphaned source files.
     for(const width of [1440,768,390]){
       await page.setViewportSize({width,height:844});
