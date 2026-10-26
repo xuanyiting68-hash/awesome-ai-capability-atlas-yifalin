@@ -1,0 +1,48 @@
+name: Monitor published atlas
+on:
+  workflow_run:
+    workflows: ['Publish atlas to GitHub Pages']
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    - cron: '17 22 * * *'
+permissions:
+  contents: read
+concurrency:
+  group: atlas-online-monitor
+  cancel-in-progress: false
+jobs:
+  smoke:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-24.04
+    env:
+      ATLAS_BROWSER_CHANNEL: chrome
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Install locked browser test tools
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Verify runner-provided Chrome
+        run: google-chrome --version
+      - name: Verify published website
+        env:
+          ATLAS_BASE_URL: https://xuanyiting68-hash.github.io/awesome-ai-capability-atlas-yifalin/
+          EXPECTED_COMMIT: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_sha || '' }}
+        run: |
+          for attempt in 1 2 3; do
+            if npm run test:smoke; then exit 0; fi
+            if [ "$attempt" -lt 3 ]; then sleep 20; fi
+          done
+          exit 1
+      - name: Save online smoke screenshot
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: atlas-online-smoke
+          path: test-results/
+          if-no-files-found: ignore

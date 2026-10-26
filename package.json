@@ -1,7 +1,13 @@
 {
   "name": "yifalin-ai-capability-atlas",
   "private": true,
-  "version": "1.4.3",
-  "scripts": {"test:e2e": "node tests/top30.e2e.cjs"},
-  "devDependencies": {"playwright": "1.56.1"}
+  "version": "1.4.4",
+  "scripts": {
+    "test:e2e": "node tests/top30.e2e.cjs",
+    "test:smoke": "node tests/deployed-smoke.cjs",
+    "test:staged": "node tests/staged-smoke.cjs"
+  },
+  "devDependencies": {
+    "playwright": "1.56.1"
+  }
 }

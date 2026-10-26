@@ -1,6 +1,8 @@
 /* Real Chromium checks. Start a local server, or set ATLAS_BASE_URL for deployed smoke tests. */
 const { chromium } = require('playwright');
 const assert = require('node:assert/strict');
+const http = require('node:http');
+function reachable(url) { return new Promise(resolve => { const request = http.get(url, response => {response.resume();resolve(response.statusCode === 200)}); request.on('error', () => resolve(false)); request.setTimeout(500, () => request.destroy()); }); }
 const fs = require('node:fs/promises');
 const path = require('node:path');
 const { spawn } = require('node:child_process');
@@ -23,11 +25,11 @@ async function loaded(page) { await page.waitForFunction(() => document.querySel
   if (!process.env.ATLAS_BASE_URL) {
     server = spawn('python', ['-m', 'http.server', '8766', '--bind', '127.0.0.1'], { stdio: 'ignore' });
     for (let i = 0; i < 40; i++) {
-      try { if ((await fetch(base)).ok) break; } catch {}
+      if (await reachable(base)) break;
       await new Promise(resolve => setTimeout(resolve, 100));
     }
   }
-  browser = await chromium.launch({ headless: true });
+  browser = await chromium.launch({ headless: true, channel: process.env.ATLAS_BROWSER_CHANNEL || undefined });
   await fs.mkdir('test-results', { recursive: true });
   let {context, page} = await open();
   await check('30 cards and metadata/evidence', async () => {
@@ -155,7 +157,9 @@ async function loaded(page) { await page.waitForFunction(() => document.querySel
     const csv=await fs.readFile('data/top30_evaluation.csv','utf8');
     const o=await open('?lang=en',async c=>c.route('**/data/top30_evaluation.csv',r=>r.fulfill({body:csv.replace('https://github.com/microsoft/qlib','javascript:alert(1)')})));
     await o.page.waitForSelector('#retry');assert.equal(await o.page.locator('.item').count(),0);
-    assert.equal(await o.page.locator('#export').isDisabled(),true);await o.context.close();
+    assert.equal(await o.page.locator('#export').isDisabled(),true);
+    await o.page.click('#language');assert.equal(await o.page.locator('#retry').isVisible(),true);
+    assert.match(await o.page.locator('#count').innerText(),/加载失败/);await o.context.close();
   });
   await check('metadata strings render as text', async () => {
     const metadata=JSON.parse(await fs.readFile('data/repo_metadata.json','utf8'));metadata.repositories['microsoft/qlib'].license_spdx='<img src=x onerror=alert(1)>';
