@@ -2,7 +2,6 @@
 """Compile a traceable Top 30 evidence snapshot from committed metadata; no code execution."""
 import csv
 import json
-from datetime import datetime, timezone
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 def build(rows, metadata):
@@ -38,7 +37,7 @@ def main():
     metadata=json.loads((ROOT/"data/repo_metadata.json").read_text("utf-8"))
     if len(rows)!=30: raise ValueError("Expected 30 entries")
     output={"schema_version":"1.0","generated_from_snapshot_utc":metadata["generated_at_utc"],
-            "generated_at_utc":datetime.now(timezone.utc).isoformat(),
+            "generated_at_utc":metadata["generated_at_utc"],
             "metadata_source":"data/repo_metadata.json",
             "disclaimer":"Github metadata is not evidence of safety, commercial clearance, or reproducible performance.",
             "reviewed_license_count":0,"approved_fork_count":0,
