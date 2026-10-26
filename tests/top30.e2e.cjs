@@ -42,11 +42,11 @@ async function loaded(page) { await page.waitForFunction(() => document.querySel
   });
   await check('source-linked editorial filter and restorable URL', async () => {
     await page.check('#briefOnly');
-    assert.equal(await page.locator('.item').count(),4);
+    assert.equal(await page.locator('.item').count(),10);
     assert.equal(new URL(page.url()).searchParams.get('brief'),'1');
     assert.match(await page.locator('.item').first().innerText(),/官方资料研究/);
     await page.reload();
-    await page.waitForFunction(()=>document.querySelectorAll('.item').length===4);
+    await page.waitForFunction(()=>document.querySelectorAll('.item').length===10);
     assert.equal(await page.locator('#briefOnly').isChecked(),true);
     await page.click('#reset');
     assert.equal(await page.locator('.item').count(),30);

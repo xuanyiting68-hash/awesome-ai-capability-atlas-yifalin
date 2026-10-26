@@ -17,8 +17,8 @@ function briefLinkValid(item,repo){
   try{
     const url=new URL(item.url);
     if(url.protocol!=='https:'||url.username||url.password||url.port||url.hash)return false;
-    if(item.id==='readme')return url.hostname==='github.com'&&url.pathname==='/'+repo+'/blob/main/README.md';
-    const domains={'microsoft/qlib':'qlib.readthedocs.io','langchain-ai/langgraph':'docs.langchain.com','remotion-dev/remotion':'www.remotion.dev','twentyhq/twenty':'docs.twenty.com'};
+    if(item.id==='readme')return url.hostname==='github.com'&&url.pathname==='/'+repo+'/blob/'+(item.readme_ref||'main')+'/README.md'&&['main','master'].includes(item.readme_ref||'main');
+    const domains={'microsoft/qlib':'qlib.readthedocs.io','langchain-ai/langgraph':'docs.langchain.com','remotion-dev/remotion':'www.remotion.dev','twentyhq/twenty':'docs.twenty.com','microsoft/rd-agent':'rdagent.readthedocs.io','docling-project/docling':'docling-project.github.io','langgenius/dify':'docs.dify.ai','systran/faster-whisper':'pypi.org','formbricks/formbricks':'formbricks.com','promptfoo/promptfoo':'www.promptfoo.dev'};
     return item.id==='docs'&&url.hostname===domains[repo.toLowerCase()];
   }catch{return false}
 }

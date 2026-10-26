@@ -19,6 +19,12 @@ ALLOWED_DOCS = {
     "langchain-ai/langgraph": "docs.langchain.com",
     "remotion-dev/remotion": "www.remotion.dev",
     "twentyhq/twenty": "docs.twenty.com",
+    "microsoft/rd-agent": "rdagent.readthedocs.io",
+    "docling-project/docling": "docling-project.github.io",
+    "langgenius/dify": "docs.dify.ai",
+    "systran/faster-whisper": "pypi.org",
+    "formbricks/formbricks": "formbricks.com",
+    "promptfoo/promptfoo": "www.promptfoo.dev",
 }
 TIERS = ("Discovery", "Curated", "Reviewed", "Reproduced", "Production Candidate")
 STATUS = {"license_text":"not-reviewed", "dependency_licenses":"not-reviewed",
@@ -94,7 +100,9 @@ def validate_briefs(payload, top30, snapshot, metadata, as_of=None):
         sha = readme.get("git_blob_sha")
         require(readme.get("kind") == "official-github-readme" and isinstance(sha,str)
                 and SHA40.fullmatch(sha), "README blob missing pin " + key)
-        require(readme.get("url") == "https://github.com/" + slug + "/blob/main/README.md",
+        branch = readme.get("readme_ref", "main")
+        require(branch in ("main","master"), "README ref must be the exact repository default branch " + key)
+        require(readme.get("url") == "https://github.com/" + slug + "/blob/" + branch + "/README.md",
                 "README identity mismatch " + key)
         require(readme.get("snapshot_url") == "https://api.github.com/repos/" + slug + "/git/blobs/" + sha,
                 "immutable blob URL mismatch " + key)
