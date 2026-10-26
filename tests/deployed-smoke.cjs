@@ -18,6 +18,8 @@ const errors=[];
     assert.match(manifest.source_commit,/^[a-f0-9]{40}$/);
     if(process.env.EXPECTED_COMMIT)assert.equal(manifest.source_commit,process.env.EXPECTED_COMMIT,'Published commit must match the Pages run');
     assert.ok(manifest.catalog_count>=manifest.curated_count&&manifest.catalog_count<=5000);
+    assert.equal(manifest.research_briefs_count,4,'Pilot briefs must be shipped');
+    assert.equal(manifest.research_reviewed_count,0,'No third-party project is reviewed');
     await page.goto(new URL('top30.html?lang=en',base).href);
     await page.waitForFunction(n=>document.querySelectorAll('.item').length===n&&document.querySelector('#count').textContent.includes('Showing'),manifest.research_project_count);
     assert.equal(await page.locator('html').getAttribute('lang'),'en');
@@ -44,6 +46,18 @@ const errors=[];
       assert.match(await page.locator('#title').innerText(),/microsoft\/qlib/i);
       assert.equal(await page.locator('.quality-step').count(),5,'All five evidence tiers must be visible');
       assert.match(await page.locator('.quality-note').innerText(),/不等于|≠/);
+      assert.equal(await page.locator('#briefCard').isVisible(),true,'Source-linked brief visible');
+      assert.equal(await page.locator('#briefCapabilities li').count(),2,'Grounded claims rendered');
+      assert.equal(await page.locator('#briefSteps li').count(),3,'Three proposed test steps rendered');
+      assert.equal(await page.locator('#briefSources a').count(),3,'Official README, immutable blob and docs visible');
+      assert.match(await page.locator('#briefDisclaimer').innerText(),/Fork HOLD/);
+      await page.click('#briefLang');
+      assert.equal(new URL(page.url()).searchParams.get('lang'),'en');
+      assert.match(await page.locator('#briefAudience').innerText(),/Best for:/);
+      assert.match(await page.locator('#briefPilotHeading').innerText(),/NOT executed/);
+      await page.click('#briefLang');
+      assert.equal(new URL(page.url()).searchParams.has('lang'),false);
+
       assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,'Project detail horizontal overflow at '+width);
       await page.screenshot({path:'test-results/project-'+width+'.png'});
       await page.goto(new URL('blueprints.html',base).href);
@@ -51,10 +65,23 @@ const errors=[];
       assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,'Blueprint horizontal overflow at '+width);
       await page.screenshot({path:'test-results/blueprints-'+width+'.png'});
     }
+    // Each editorial pilot resolves; entries outside the first wave fail to an honest empty state.
+    for(const name of ['langchain-ai/langgraph','remotion-dev/remotion','TwentyHQ/twenty']){
+      await page.goto(new URL('project.html?repo='+encodeURIComponent(name),base).href);
+      await page.waitForSelector('#body:not([hidden])');
+      assert.equal(await page.locator('#briefCard').isVisible(),true,'Missing pilot brief for '+name);
+      assert.equal(await page.locator('#briefSources a').count(),3);
+    }
+    await page.goto(new URL('project.html?repo=AI4Finance-Foundation%2FFinRL',base).href);
+    await page.waitForSelector('#body:not([hidden])');
+    assert.equal(await page.locator('#briefCard').isVisible(),false);
+    assert.equal(await page.locator('#briefEmpty').isVisible(),true,'Do not fabricate research for other projects');
+    await page.goto(new URL('blueprints.html',base).href);
+    await page.waitForFunction(()=>document.querySelectorAll('#cards .card').length===10);
     await page.locator('#domain').selectOption('视频工厂');
     assert.equal(await page.locator('#cards .card').count(),1);
     assert.equal(new URL(page.url()).searchParams.get('domain'),'视频工厂');
-    console.log('PASS project detail and 10 blueprint domains at 1440, 768, 390; domain filter and URL restoration');
+    console.log('PASS 4 evidence-linked bilingual briefs, 26 explicit gaps, three screen sizes and 10 blueprint domains');
     assert.deepEqual(errors,[],'No browser runtime errors');
     console.log('PASS deployed manifest, revision, bilingual data, comparison, bookmarks, filters, mobile width, homepage, zero runtime errors');
     console.log(JSON.stringify(manifest,null,2));
