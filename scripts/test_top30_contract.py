@@ -55,6 +55,11 @@ class Top30ContractTests(unittest.TestCase):
             with self.subTest(term=term):
                 self.assertIn(term, self.page)
 
+    def test_comparison_controls(self):
+        for term in ('id="comparePanel"', 'id="compareContent"', 'id="clearCompare"', "function toggleCompare(", "function renderComparison(", "data-repo=", "aria-pressed", "最多比较 4 个项目"):
+            with self.subTest(term=term):
+                self.assertIn(term, self.page)
+
     def test_home_links_to_research_lab(self):
         self.assertIn('href="./top30.html"', self.home)
 
