@@ -107,9 +107,20 @@ def evenly_select(rows,limit):
     return [rows[i*len(rows)//limit] for i in range(limit)]
 
 def load_repo(repo,quota,level):
-    obj=get_json("https://api.github.com/repos/"+repo+"/git/trees/main?recursive=1")
+    if repo=="sickn33/agentic-awesome-skills":
+        # Avoid the >9MB monorepo: traverse the canonical skills plugin only.
+        base="https://api.github.com/repos/"+repo+"/git/trees/"
+        root=get_json(base+"main")
+        plugins=next(item["sha"] for item in root["tree"] if item["path"]=="plugins" and item["type"]=="tree")
+        p_tree=get_json(base+plugins)
+        canonical=next(item["sha"] for item in p_tree["tree"] if item["path"]=="agentic-awesome-skills" and item["type"]=="tree")
+        obj=get_json(base+canonical+"?recursive=1")
+        prefix="plugins/agentic-awesome-skills/"
+    else:
+        obj=get_json("https://api.github.com/repos/"+repo+"/git/trees/main?recursive=1")
+        prefix=""
     if obj.get("truncated"):raise RuntimeError("Git tree truncated, refusing misleading partial data: "+repo)
-    paths=sorted(x["path"] for x in obj.get("tree",[]) if x.get("type")=="blob")
+    paths=sorted(prefix+x["path"] for x in obj.get("tree",[]) if x.get("type")=="blob")
     matches=[row for p in paths if (row:=tree_candidate(repo,p,level))]
     if not matches:raise RuntimeError("No eligible paths found: "+repo)
     return evenly_select(matches,quota)
