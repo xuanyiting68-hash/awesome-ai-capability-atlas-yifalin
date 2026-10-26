@@ -46,6 +46,11 @@ jobs:
           python-version: '3.12'
       - name: Install locked browser test dependency
         run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Install Chinese/Japanese/Korean test fonts
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends fonts-noto-cjk
+          fc-list :lang=zh family | grep -qi 'Noto Sans CJK'
       - name: Verify runner-provided Chrome
         run: google-chrome --version
       - name: Verify research workspace in a real browser
