@@ -1,0 +1,1206 @@
+{
+  "generated_at_utc": "2026-10-26T06:22:04.642620+00:00",
+  "source": "Public GitHub REST API",
+  "disclaimer": "Stars do not prove quality; GitHub SPDX is an indicator, not a commercial license clearance.",
+  "coverage_count": 133,
+  "expected_count": 133,
+  "repositories": {
+    "activepieces/activepieces": {
+      "name": "activepieces/activepieces",
+      "stars": 25226,
+      "forks": 4391,
+      "last_push": "2026-10-26T05:25:49Z",
+      "archived": false,
+      "license_spdx": "unknown",
+      "github_url": "https://github.com/activepieces/activepieces"
+    },
+    "agentskills/agentskills": {
+      "name": "agentskills/agentskills",
+      "stars": 26630,
+      "forks": 1961,
+      "last_push": "2026-08-09T20:36:04Z",
+      "archived": false,
+      "license_spdx": "Apache-2.0",
+      "github_url": "https://github.com/agentskills/agentskills"
+    },
+    "agno-agi/agno": {
+      "name": "agno-agi/agno",
+      "stars": 42891,
+      "forks": 6182,
+      "last_push": "2026-10-26T04:56:58Z",
+      "archived": false,
+      "license_spdx": "Apache-2.0",
+      "github_url": "https://github.com/agno-agi/agno"
+    },
+    "ai4finance-foundation/fingpt": {
+      "name": "AI4Finance-Foundation/FinGPT",
+      "stars": 21470,
+      "forks": 3038,
+      "last_push": "2026-10-25T13:49:15Z",
+      "archived": false,
+      "license_spdx": "MIT",
+      "github_url": "https://github.com/AI4Finance-Foundation/FinGPT"
+    },
+    "ai4finance-foundation/finrl": {
+      "name": "AI4Finance-Foundation/FinRL",
+      "stars": 16821,
+      "forks": 3586,
+      "last_push": "2026-10-25T13:49:47Z",
+      "archived": false,
+      "license_spdx": "MIT",
+      "github_url": "https://github.com/AI4Finance-Foundation/FinRL"
+    },
+    "ai4finance-foundation/finrobot": {
+      "name": "AI4Finance-Foundation/FinRobot",
+      "stars": 8310,
+      "forks": 1400,
+      "last_push": "2026-10-24T13:58:26Z",
+      "archived": false,
+      "license_spdx": "Apache-2.0",
+      "github_url": "https://github.com/AI4Finance-Foundation/FinRobot"
+    },
+    "alirezarezvani/claude-skills": {
+      "name": "alirezarezvani/claude-skills",
+      "stars": 28727,
+      "forks": 3988,
+      "last_push": "2026-10-23T11:30:28Z",
+      "archived": false,
+      "license_spdx": "MIT",
+      "github_url": "https://github.com/alirezarezvani/claude-skills"
+    },
+    "all-hands-ai/openhands": {
+      "name": "All-Hands-AI/OpenHands",
+      "stars": 91861,
+      "forks": 12201,
+      "last_push": "2026-10-26T05:53:31Z",
+      "archived": false,
+      "license_spdx": "MIT",
+      "github_url": "https://github.com/OpenHands/OpenHands"
+    },
+    "anomalyco/opencode": {
+      "name": "anomalyco/opencode",
+      "stars": 221633,
+      "forks": 29634,
+      "last_push": "2026-10-26T06:19:05Z",
+      "archived": false,
+      "license_spdx": "MIT",
+      "github_url": "https://github.com/anomalyco/opencode"
+    },
+    "anthropics/claude-code": {
+      "name": "anthropics/claude-code",
+      "stars": 153387,
+      "forks": 26034,
+      "last_push": "2026-10-25T20:11:26Z",
+      "archived": false,
+      "license_spdx": "unknown",
+      "github_url": "https://github.com/anthropics/claude-code"
+    },
+    "anthropics/skills": {
+      "name": "anthropics/skills",
+      "stars": 183823,
+      "forks": 21751,
+      "last_push": "2026-10-09T18:45:52Z",
+      "archived": false,
+      "license_spdx": "unknown",
+      "github_url": "https://github.com/anthropics/skills"
+    },
+    "apify/crawlee": {
+      "name": "apify/crawlee",
+      "stars": 26264,
+      "forks": 1731,
+      "last_push": "2026-10-25T20:37:43Z",
+      "archived": false,
+      "license_spdx": "Apache-2.0",
+      "github_url": "https://github.com/apify/crawlee"
+    },
+    "appsmithorg/appsmith": {
+      "name": "appsmithorg/appsmith",
+      "stars": 41120,
+      "forks": 4822,
+      "last_push": "2026-10-25T15:17:21Z",
+      "archived": false,
+      "license_spdx": "Apache-2.0",
+      "github_url": "https://github.com/appsmithorg/appsmith"
+    },
+    "arize-ai/phoenix": {
+      "name": "Arize-ai/phoenix",
+      "stars": 12005,
+      "forks": 1243,
+      "last_push": "2026-10-25T21:03:41Z",
+      "archived": false,
+      "license_spdx": "unknown",
+      "github_url": "https://github.com/Arize-ai/phoenix"
+    },
+    "assafelovic/gpt-researcher": {
+      "name": "assafelovic/gpt-researcher",
+      "stars": 30294,
+      "forks": 4133,
+      "last_push": "2026-10-10T22:03:53Z",
+      "archived": false,
+      "license_spdx": "Apache-2.0",
+      "github_url": "https://github.com/assafelovic/gpt-researcher"
+    },
+    "baptistearno/typebot.io": {
+      "name": "baptisteArno/typebot.io",
+      "stars": 10578,
+      "forks": 3245,
+      "last_push": "2026-10-23T17:01:15Z",
+      "archived": false,
+      "license_spdx": "unknown",
+      "github_url": "https://github.com/baptisteArno/typebot.io"
+    },
+    "berriai/litellm": {
+      "name": "BerriAI/litellm",
+      "stars": 62042,
+      "forks": 12674,
+      "last_push": "2026-10-26T06:11:55Z",
+      "archived": false,
+      "license_spdx": "unknown",
+      "github_url": "https://github.com/BerriAI/litellm"
+    },
+    "better-auth/better-auth": {
+      "name": "better-auth/better-auth",
+      "stars": 30463,
+      "forks": 3009,
+      "last_push": "2026-10-25T23:14:53Z",
+      "archived": false,
+      "license_spdx": "MIT",
+      "github_url": "https://github.com/better-auth/better-auth"
+    },
+    "browser-use/browser-use": {
+      "name": "browser-use/browser-use",
+      "stars": 119142,
+      "forks": 13241,
+      "last_push": "2026-10-24T07:23:03Z",
+      "archived": false,
+      "license_spdx": "MIT",
+      "github_url": "https://github.com/browser-use/browser-use"
+    },
+    "calcom/cal.com": {
+      "name": "calcom/cal.com",
+      "stars": 49375,
+      "forks": 15439,
+      "last_push": "2026-10-26T06:15:27Z",
+      "archived": false,
+      "license_spdx": "MIT",
+      "github_url": "https://github.com/calcom/cal.diy"
+    },
+    "chatwoot/chatwoot": {
+      "name": "chatwoot/chatwoot",
+      "stars": 38300,
+      "forks": 9342,
+      "last_push": "2026-10-25T03:55:32Z",
+      "archived": false,
+      "license_spdx": "unknown",
+      "github_url": "https://github.com/chatwoot/chatwoot"
+    },
+    "cloudflare/agents": {
+      "name": "cloudflare/agents",
+      "stars": 5887,
+      "forks": 808,
+      "last_push": "2026-10-25T12:15:08Z",
+      "archived": false,
+      "license_spdx": "MIT",
+      "github_url": "https://github.com/cloudflare/agents"
+    },
+    "comfyanonymous/comfyui": {
+      "name": "comfyanonymous/ComfyUI",
+      "stars": 143023,
+      "forks": 16880,
+      "last_push": "2026-10-25T23:41:43Z",
+      "archived": false,
+      "license_spdx": "GPL-3.0",
+      "github_url": "https://github.com/Comfy-Org/ComfyUI"
+    },
+    "composiohq/awesome-claude-skills": {
+      "name": "ComposioHQ/awesome-claude-skills",
+      "stars": 77956,
+      "forks": 9337,
+      "last_push": "2026-09-18T07:16:11Z",
+      "archived": false,
+      "license_spdx": "unknown",
+      "github_url": "https://github.com/ComposioHQ/awesome-claude-skills"
+    },
+    "confident-ai/deepeval": {
+      "name": "confident-ai/deepeval",
+      "stars": 19105,
+      "forks": 2132,
+      "last_push": "2026-10-23T11:41:01Z",
+      "archived": false,
+      "license_spdx": "Apache-2.0",
+      "github_url": "https://github.com/confident-ai/deepeval"
+    },
+    "crewaiinc/crewai": {
+      "name": "crewAIInc/crewAI",
+      "stars": 60109,
+      "forks": 8885,
+      "last_push": "2026-10-26T06:20:02Z",
+      "archived": false,
+      "license_spdx": "MIT",
+      "github_url": "https://github.com/crewAIInc/crewAI"
+    },
+    "datatalksclub/llm-zoomcamp": {
+      "name": "DataTalksClub/llm-zoomcamp",
+      "stars": 7526,
+      "forks": 1395,
+      "last_push": "2026-10-26T06:00:20Z",
+      "archived": false,
+      "license_spdx": "unknown",
+      "github_url": "https://github.com/DataTalksClub/llm-zoomcamp"
+    },
+    "davepoon/buildwithclaude": {
+      "name": "davepoon/buildwithclaude",
+      "stars": 3678,
+      "forks": 652,
+      "last_push": "2026-10-26T00:07:50Z",
+      "archived": false,
+      "license_spdx": "MIT",
+      "github_url": "https://github.com/davepoon/buildwithclaude"
+    },
+    "deepset-ai/haystack": {
+      "name": "deepset-ai/haystack",
+      "stars": 26843,
+      "forks": 3342,
+      "last_push": "2026-10-24T10:46:55Z",
+      "archived": false,
+      "license_spdx": "Apache-2.0",
+      "github_url": "https://github.com/deepset-ai/haystack"
+    },
+    "dittofeed/dittofeed": {
+      "name": "dittofeed/dittofeed",
+      "stars": 3023,
+      "forks": 422,
+      "last_push": "2026-10-12T20:18:37Z",
+      "archived": false,
+      "license_spdx": "MIT",
+      "github_url": "https://github.com/dittofeed/dittofeed"
+    },
+    "docling-project/docling": {
+      "name": "docling-project/docling",
+      "stars": 69592,
+      "forks": 5182,
+      "last_push": "2026-10-25T10:47:00Z",
+      "archived": false,
+      "license_spdx": "MIT",
+      "github_url": "https://github.com/docling-project/docling"
+    },
+    "dubinc/dub": {
+      "name": "dubinc/dub",
+      "stars": 24946,
+      "forks": 3341,
+      "last_push": "2026-10-26T05:07:27Z",
+      "archived": false,
+      "license_spdx": "unknown",
+      "github_url": "https://github.com/dubinc/dub"
+    },
+    "e2b-dev/e2b": {
+      "name": "e2b-dev/E2B",
+      "stars": 14555,
+      "forks": 1135,
+      "last_push": "2026-10-24T20:14:17Z",
+      "archived": false,
+      "license_spdx": "Apache-2.0",
+      "github_url": "https://github.com/e2b-dev/E2B"
+    },
+    "ffmpeg/ffmpeg": {
+      "name": "FFmpeg/FFmpeg",
+      "stars": 65762,
+      "forks": 14415,
+      "last_push": "2026-10-25T13:20:11Z",
+      "archived": false,
+      "license_spdx": "unknown",
+      "github_url": "https://github.com/FFmpeg/FFmpeg"
+    },
+    "firecrawl/firecrawl": {
+      "name": "firecrawl/firecrawl",
+      "stars": 195401,
+      "forks": 10307,
+      "last_push": "2026-10-26T04:20:44Z",
+      "archived": false,
+      "license_spdx": "AGPL-3.0",
+      "github_url": "https://github.com/firecrawl/firecrawl"
+    },
+    "firecrawl/firecrawl-mcp-server": {
+      "name": "firecrawl/firecrawl-mcp-server",
+      "stars": 7686,
+      "forks": 919,
+      "last_push": "2026-10-25T20:53:04Z",
+      "archived": false,
+      "license_spdx": "MIT",
+      "github_url": "https://github.com/firecrawl/firecrawl-mcp-server"
+    },
+    "fishaudio/fish-speech": {
+      "name": "fishaudio/fish-speech",
+      "stars": 33403,
+      "forks": 2902,
+      "last_push": "2026-10-14T06:14:59Z",
+      "archived": false,
+      "license_spdx": "unknown",
+      "github_url": "https://github.com/fishaudio/fish-speech"
+    },
+    "formbricks/formbricks": {
+      "name": "formbricks/formbricks",
+      "stars": 13152,
+      "forks": 2595,
+      "last_push": "2026-10-26T06:15:17Z",
+      "archived": false,
+      "license_spdx": "unknown",
+      "github_url": "https://github.com/formbricks/formbricks"
+    },
+    "freqtrade/freqtrade": {
+      "name": "freqtrade/freqtrade",
+      "stars": 55959,
+      "forks": 11567,
+      "last_push": "2026-10-26T06:05:10Z",
+      "archived": false,
+      "license_spdx": "GPL-3.0",
+      "github_url": "https://github.com/freqtrade/freqtrade"
+    },
+    "funaudiollm/cosyvoice": {
+      "name": "FunAudioLLM/CosyVoice",
+      "stars": 24134,
+      "forks": 2756,
+      "last_push": "2026-05-25T18:15:40Z",
+      "archived": false,
+      "license_spdx": "Apache-2.0",
+      "github_url": "https://github.com/QwenAudio/CosyVoice"
+    },
+    "getzep/graphiti": {
+      "name": "getzep/graphiti",
+      "stars": 32223,
+      "forks": 3313,
+      "last_push": "2026-10-26T03:49:52Z",
+      "archived": false,
+      "license_spdx": "Apache-2.0",
+      "github_url": "https://github.com/getzep/graphiti"
+    },
+    "ggml-org/whisper.cpp": {
+      "name": "ggml-org/whisper.cpp",
+      "stars": 54674,
+      "forks": 6240,
+      "last_push": "2026-10-19T14:14:00Z",
+      "archived": false,
+      "license_spdx": "MIT",
+      "github_url": "https://github.com/ggml-org/whisper.cpp"
+    },
+    "github/awesome-copilot": {
+      "name": "github/awesome-copilot",
+      "stars": 40414,
+      "forks": 5220,
+      "last_push": "2026-10-26T05:43:42Z",
+      "archived": false,
+      "license_spdx": "MIT",
+      "github_url": "https://github.com/github/awesome-copilot"
+    },
+    "github/gh-aw": {
+      "name": "github/gh-aw",
+      "stars": 5470,
+      "forks": 603,
+      "last_push": "2026-10-26T06:01:33Z",
+      "archived": false,
+      "license_spdx": "MIT",
+      "github_url": "https://github.com/github/gh-aw"
+    },
+    "gitroomhq/postiz-app": {
+      "name": "gitroomhq/postiz-app",
+      "stars": 37835,
+      "forks": 7394,
+      "last_push": "2026-10-24T18:27:21Z",
+      "archived": false,
+      "license_spdx": "AGPL-3.0",
+      "github_url": "https://github.com/gitroomhq/postiz-app"
+    },
+    "google-gemini/gemini-cli": {
+      "name": "google-gemini/gemini-cli",
+      "stars": 108389,
+      "forks": 14838,
+      "last_push": "2026-10-26T00:37:50Z",
+      "archived": false,
+      "license_spdx": "Apache-2.0",
+      "github_url": "https://github.com/google-gemini/gemini-cli"
+    },
+    "google/adk-java": {
+      "name": "google/adk-java",
+      "stars": 1754,
+      "forks": 439,
+      "last_push": "2026-10-23T14:52:28Z",
+      "archived": false,
+      "license_spdx": "Apache-2.0",
+      "github_url": "https://github.com/google/adk-java"
+    },
+    "google/adk-python": {
+      "name": "google/adk-python",
+      "stars": 22008,
+      "forks": 4248,
+      "last_push": "2026-10-25T17:53:45Z",
+      "archived": false,
+      "license_spdx": "Apache-2.0",
+      "github_url": "https://github.com/google/adk-python"
+    },
+    "growthbook/growthbook": {
+      "name": "GrowthBook/growthbook",
+      "stars": 8531,
+      "forks": 885,
+      "last_push": "2026-10-26T03:38:55Z",
+      "archived": false,
+      "license_spdx": "unknown",
+      "github_url": "https://github.com/growthbook/growthbook"
+    },
+    "harry0703/moneyprinterturbo": {
+      "name": "harry0703/MoneyPrinterTurbo",
+      "stars": 135192,
+      "forks": 21429,
+      "last_push": "2026-10-25T11:11:41Z",
+      "archived": false,
+      "license_spdx": "MIT",
+      "github_url": "https://github.com/harry0703/MoneyPrinterTurbo"
+    },
+    "hesreallyhim/awesome-claude-code": {
+      "name": "hesreallyhim/awesome-claude-code",
+      "stars": 56560,
+      "forks": 4872,
+      "last_push": "2026-10-26T03:14:43Z",
+      "archived": false,
+      "license_spdx": "unknown",
+      "github_url": "https://github.com/hesreallyhim/awesome-claude-code"
+    },
+    "huggingface/diffusers": {
+      "name": "huggingface/diffusers",
+      "stars": 34813,
+      "forks": 7428,
+      "last_push": "2026-10-26T06:07:18Z",
+      "archived": false,
+      "license_spdx": "Apache-2.0",
+      "github_url": "https://github.com/huggingface/diffusers"
+    },
+    "huggingface/smolagents": {
+      "name": "huggingface/smolagents",
+      "stars": 30056,
+      "forks": 3148,
+      "last_push": "2026-10-22T13:55:07Z",
+      "archived": false,
+      "license_spdx": "Apache-2.0",
+      "github_url": "https://github.com/huggingface/smolagents"
+    },
+    "infiniflow/ragflow": {
+      "name": "infiniflow/ragflow",
+      "stars": 92872,
+      "forks": 11114,
+      "last_push": "2026-10-26T06:16:33Z",
+      "archived": false,
+      "license_spdx": "Apache-2.0",
+      "github_url": "https://github.com/infiniflow/ragflow"
+    },
+    "inovector/mixpost": {
+      "name": "inovector/mixpost",
+      "stars": 3866,
+      "forks": 583,
+      "last_push": "2026-03-16T10:06:38Z",
+      "archived": false,
+      "license_spdx": "MIT",
+      "github_url": "https://github.com/inovector/mixpost"
+    },
+    "jina-ai/reader": {
+      "name": "jina-ai/reader",
+      "stars": 12194,
+      "forks": 895,
+      "last_push": "2026-05-22T02:56:46Z",
+      "archived": false,
+      "license_spdx": "Apache-2.0",
+      "github_url": "https://github.com/jina-ai/reader"
+    },
+    "kedreamix/linly-dubbing": {
+      "name": "Kedreamix/Linly-Dubbing",
+      "stars": 3356,
+      "forks": 388,
+      "last_push": "2025-03-05T03:06:35Z",
+      "archived": false,
+      "license_spdx": "Apache-2.0",
+      "github_url": "https://github.com/Kedreamix/Linly-Dubbing"
+    },
+    "knadh/listmonk": {
+      "name": "knadh/listmonk",
+      "stars": 23972,
+      "forks": 2718,
+      "last_push": "2026-10-24T02:18:43Z",
+      "archived": false,
+      "license_spdx": "AGPL-3.0",
+      "github_url": "https://github.com/knadh/listmonk"
+    },
+    "langchain-ai/deepagents": {
+      "name": "langchain-ai/deepagents",
+      "stars": 30589,
+      "forks": 4309,
+      "last_push": "2026-10-26T05:20:05Z",
+      "archived": false,
+      "license_spdx": "MIT",
+      "github_url": "https://github.com/langchain-ai/deepagents"
+    },
+    "langchain-ai/langchain": {
+      "name": "langchain-ai/langchain",
+      "stars": 148470,
+      "forks": 24920,
+      "last_push": "2026-10-26T05:20:05Z",
+      "archived": false,
+      "license_spdx": "MIT",
+      "github_url": "https://github.com/langchain-ai/langchain"
+    },
+    "langchain-ai/langgraph": {
+      "name": "langchain-ai/langgraph",
+      "stars": 43903,
+      "forks": 7541,
+      "last_push": "2026-10-26T05:20:08Z",
+      "archived": false,
+      "license_spdx": "MIT",
+      "github_url": "https://github.com/langchain-ai/langgraph"
+    },
+    "langflow-ai/langflow": {
+      "name": "langflow-ai/langflow",
+      "stars": 156023,
+      "forks": 10247,
+      "last_push": "2026-10-26T00:52:35Z",
+      "archived": false,
+      "license_spdx": "MIT",
+      "github_url": "https://github.com/langflow-ai/langflow"
+    },
+    "langfuse/langfuse": {
+      "name": "langfuse/langfuse",
+      "stars": 36491,
+      "forks": 4079,
+      "last_push": "2026-10-26T06:12:37Z",
+      "archived": false,
+      "license_spdx": "unknown",
+      "github_url": "https://github.com/langfuse/langfuse"
+    },
+    "langgenius/dify": {
+      "name": "langgenius/dify",
+      "stars": 159551,
+      "forks": 25214,
+      "last_push": "2026-10-26T06:17:14Z",
+      "archived": false,
+      "license_spdx": "unknown",
+      "github_url": "https://github.com/langgenius/dify"
+    },
+    "m-bain/whisperx": {
+      "name": "m-bain/whisperX",
+      "stars": 24846,
+      "forks": 2504,
+      "last_push": "2026-10-22T14:53:44Z",
+      "archived": false,
+      "license_spdx": "BSD-2-Clause",
+      "github_url": "https://github.com/m-bain/whisperX"
+    },
+    "mastra-ai/mastra": {
+      "name": "mastra-ai/mastra",
+      "stars": 29076,
+      "forks": 3047,
+      "last_push": "2026-10-26T04:14:57Z",
+      "archived": false,
+      "license_spdx": "unknown",
+      "github_url": "https://github.com/mastra-ai/mastra"
+    },
+    "mautic/mautic": {
+      "name": "mautic/mautic",
+      "stars": 10849,
+      "forks": 3510,
+      "last_push": "2026-10-25T18:36:43Z",
+      "archived": false,
+      "license_spdx": "unknown",
+      "github_url": "https://github.com/mautic/mautic"
+    },
+    "mcp-use/mcp-use": {
+      "name": "mcp-use/mcp-use",
+      "stars": 10814,
+      "forks": 1522,
+      "last_push": "2026-10-22T00:22:30Z",
+      "archived": false,
+      "license_spdx": "MIT",
+      "github_url": "https://github.com/mcp-use/mcp-use"
+    },
+    "mem0ai/mem0": {
+      "name": "mem0ai/mem0",
+      "stars": 67817,
+      "forks": 8019,
+      "last_push": "2026-10-23T18:38:28Z",
+      "archived": false,
+      "license_spdx": "Apache-2.0",
+      "github_url": "https://github.com/mem0ai/mem0"
+    },
+    "mementum/backtrader": {
+      "name": "mementum/backtrader",
+      "stars": 23577,
+      "forks": 5309,
+      "last_push": "2024-08-19T17:47:36Z",
+      "archived": false,
+      "license_spdx": "GPL-3.0",
+      "github_url": "https://github.com/mementum/backtrader"
+    },
+    "microsoft/agent-framework": {
+      "name": "microsoft/agent-framework",
+      "stars": 14314,
+      "forks": 2512,
+      "last_push": "2026-10-25T14:38:45Z",
+      "archived": false,
+      "license_spdx": "MIT",
+      "github_url": "https://github.com/microsoft/agent-framework"
+    },
+    "microsoft/ai-agents-for-beginners": {
+      "name": "microsoft/ai-agents-for-beginners",
+      "stars": 77883,
+      "forks": 25545,
+      "last_push": "2026-10-24T03:39:47Z",
+      "archived": false,
+      "license_spdx": "MIT",
+      "github_url": "https://github.com/microsoft/ai-agents-for-beginners"
+    },
+    "microsoft/generative-ai-for-beginners": {
+      "name": "microsoft/generative-ai-for-beginners",
+      "stars": 122174,
+      "forks": 64878,
+      "last_push": "2026-10-24T04:53:49Z",
+      "archived": false,
+      "license_spdx": "MIT",
+      "github_url": "https://github.com/microsoft/generative-ai-for-beginners"
+    },
+    "microsoft/graphrag": {
+      "name": "microsoft/graphrag",
+      "stars": 36448,
+      "forks": 3866,
+      "last_push": "2026-10-26T00:37:31Z",
+      "archived": false,
+      "license_spdx": "MIT",
+      "github_url": "https://github.com/microsoft/graphrag"
+    },
+    "microsoft/markitdown": {
+      "name": "microsoft/markitdown",
+      "stars": 192226,
+      "forks": 14359,
+      "last_push": "2026-10-23T17:04:06Z",
+      "archived": false,
+      "license_spdx": "MIT",
+      "github_url": "https://github.com/microsoft/markitdown"
+    },
+    "microsoft/playwright-mcp": {
+      "name": "microsoft/playwright-mcp",
+      "stars": 38636,
+      "forks": 3316,
+      "last_push": "2026-10-22T17:43:26Z",
+      "archived": false,
+      "license_spdx": "Apache-2.0",
+      "github_url": "https://github.com/microsoft/playwright-mcp"
+    },
+    "microsoft/qlib": {
+      "name": "microsoft/qlib",
+      "stars": 49712,
+      "forks": 7855,
+      "last_push": "2026-10-22T06:22:15Z",
+      "archived": false,
+      "license_spdx": "MIT",
+      "github_url": "https://github.com/microsoft/qlib"
+    },
+    "microsoft/rd-agent": {
+      "name": "microsoft/RD-Agent",
+      "stars": 15061,
+      "forks": 1997,
+      "last_push": "2026-10-21T16:01:22Z",
+      "archived": false,
+      "license_spdx": "MIT",
+      "github_url": "https://github.com/microsoft/RD-Agent"
+    },
+    "microsoft/skills": {
+      "name": "microsoft/skills",
+      "stars": 3148,
+      "forks": 356,
+      "last_push": "2026-10-25T04:48:05Z",
+      "archived": false,
+      "license_spdx": "MIT",
+      "github_url": "https://github.com/microsoft/skills"
+    },
+    "modelcontextprotocol/inspector": {
+      "name": "modelcontextprotocol/inspector",
+      "stars": 11151,
+      "forks": 1551,
+      "last_push": "2026-10-25T05:56:31Z",
+      "archived": false,
+      "license_spdx": "unknown",
+      "github_url": "https://github.com/modelcontextprotocol/inspector"
+    },
+    "modelcontextprotocol/registry": {
+      "name": "modelcontextprotocol/registry",
+      "stars": 7409,
+      "forks": 1037,
+      "last_push": "2026-10-25T23:24:35Z",
+      "archived": false,
+      "license_spdx": "unknown",
+      "github_url": "https://github.com/modelcontextprotocol/registry"
+    },
+    "modelcontextprotocol/servers": {
+      "name": "modelcontextprotocol/servers",
+      "stars": 91564,
+      "forks": 11868,
+      "last_push": "2026-10-25T05:26:36Z",
+      "archived": false,
+      "license_spdx": "unknown",
+      "github_url": "https://github.com/modelcontextprotocol/servers"
+    },
+    "myshell-ai/openvoice": {
+      "name": "myshell-ai/OpenVoice",
+      "stars": 38074,
+      "forks": 4279,
+      "last_push": "2025-04-19T16:00:00Z",
+      "archived": false,
+      "license_spdx": "MIT",
+      "github_url": "https://github.com/myshell-ai/OpenVoice"
+    },
+    "n8n-io/n8n": {
+      "name": "n8n-io/n8n",
+      "stars": 208613,
+      "forks": 61255,
+      "last_push": "2026-10-26T06:22:00Z",
+      "archived": false,
+      "license_spdx": "unknown",
+      "github_url": "https://github.com/n8n-io/n8n"
+    },
+    "n8n-io/self-hosted-ai-starter-kit": {
+      "name": "n8n-io/self-hosted-ai-starter-kit",
+      "stars": 15304,
+      "forks": 3811,
+      "last_push": "2026-10-12T08:50:13Z",
+      "archived": false,
+      "license_spdx": "Apache-2.0",
+      "github_url": "https://github.com/n8n-io/self-hosted-ai-starter-kit"
+    },
+    "nautechsystems/nautilus_trader": {
+      "name": "nautechsystems/nautilus_trader",
+      "stars": 30857,
+      "forks": 4150,
+      "last_push": "2026-10-26T06:15:02Z",
+      "archived": false,
+      "license_spdx": "LGPL-3.0",
+      "github_url": "https://github.com/nautechsystems/nautilus_trader"
+    },
+    "novuhq/novu": {
+      "name": "novuhq/novu",
+      "stars": 40202,
+      "forks": 4519,
+      "last_push": "2026-10-26T06:10:46Z",
+      "archived": false,
+      "license_spdx": "unknown",
+      "github_url": "https://github.com/novuhq/novu"
+    },
+    "obra/superpowers": {
+      "name": "obra/superpowers",
+      "stars": 305181,
+      "forks": 27183,
+      "last_push": "2026-10-23T03:48:57Z",
+      "archived": false,
+      "license_spdx": "MIT",
+      "github_url": "https://github.com/obra/superpowers"
+    },
+    "obsproject/obs-studio": {
+      "name": "obsproject/obs-studio",
+      "stars": 78230,
+      "forks": 10866,
+      "last_push": "2026-10-23T20:48:25Z",
+      "archived": false,
+      "license_spdx": "GPL-2.0",
+      "github_url": "https://github.com/obsproject/obs-studio"
+    },
+    "ollama/ollama": {
+      "name": "ollama/ollama",
+      "stars": 184788,
+      "forks": 18585,
+      "last_push": "2026-10-26T04:25:58Z",
+      "archived": false,
+      "license_spdx": "MIT",
+      "github_url": "https://github.com/ollama/ollama"
+    },
+    "openai/codex": {
+      "name": "openai/codex",
+      "stars": 130930,
+      "forks": 20669,
+      "last_push": "2026-10-23T18:51:12Z",
+      "archived": false,
+      "license_spdx": "Apache-2.0",
+      "github_url": "https://github.com/openai/codex"
+    },
+    "openai/openai-agents-js": {
+      "name": "openai/openai-agents-js",
+      "stars": 3943,
+      "forks": 988,
+      "last_push": "2026-10-23T23:33:57Z",
+      "archived": false,
+      "license_spdx": "MIT",
+      "github_url": "https://github.com/openai/openai-agents-js"
+    },
+    "openai/openai-agents-python": {
+      "name": "openai/openai-agents-python",
+      "stars": 30288,
+      "forks": 4934,
+      "last_push": "2026-10-22T22:05:38Z",
+      "archived": false,
+      "license_spdx": "MIT",
+      "github_url": "https://github.com/openai/openai-agents-python"
+    },
+    "openai/skills": {
+      "name": "openai/skills",
+      "stars": 28310,
+      "forks": 1958,
+      "last_push": "2026-09-08T20:35:26Z",
+      "archived": false,
+      "license_spdx": "unknown",
+      "github_url": "https://github.com/openai/skills"
+    },
+    "openai/whisper": {
+      "name": "openai/whisper",
+      "stars": 111272,
+      "forks": 13476,
+      "last_push": "2026-08-31T17:19:19Z",
+      "archived": false,
+      "license_spdx": "MIT",
+      "github_url": "https://github.com/openai/whisper"
+    },
+    "openbb-finance/openbb": {
+      "name": "OpenBB-finance/OpenBB",
+      "stars": 74719,
+      "forks": 7769,
+      "last_push": "2026-10-24T09:08:28Z",
+      "archived": false,
+      "license_spdx": "unknown",
+      "github_url": "https://github.com/openbq-org/OpenBB"
+    },
+    "openedx/edx-platform": {
+      "name": "openedx/edx-platform",
+      "stars": 8209,
+      "forks": 4373,
+      "last_push": "2026-10-24T04:52:41Z",
+      "archived": false,
+      "license_spdx": "AGPL-3.0",
+      "github_url": "https://github.com/openedx/openedx-platform"
+    },
+    "pgvector/pgvector": {
+      "name": "pgvector/pgvector",
+      "stars": 23481,
+      "forks": 1365,
+      "last_push": "2026-10-25T20:20:18Z",
+      "archived": false,
+      "license_spdx": "unknown",
+      "github_url": "https://github.com/pgvector/pgvector"
+    },
+    "plausible/analytics": {
+      "name": "plausible/analytics",
+      "stars": 29663,
+      "forks": 1921,
+      "last_push": "2026-10-26T04:52:48Z",
+      "archived": false,
+      "license_spdx": "AGPL-3.0",
+      "github_url": "https://github.com/plausible/analytics"
+    },
+    "polakowo/vectorbt": {
+      "name": "polakowo/vectorbt",
+      "stars": 9541,
+      "forks": 1229,
+      "last_push": "2026-10-23T12:07:43Z",
+      "archived": false,
+      "license_spdx": "unknown",
+      "github_url": "https://github.com/polakowo/vectorbt"
+    },
+    "posthog/posthog": {
+      "name": "posthog/posthog",
+      "stars": 40444,
+      "forks": 3554,
+      "last_push": "2026-10-26T06:01:40Z",
+      "archived": false,
+      "license_spdx": "unknown",
+      "github_url": "https://github.com/PostHog/posthog"
+    },
+    "promptfoo/promptfoo": {
+      "name": "promptfoo/promptfoo",
+      "stars": 26432,
+      "forks": 2580,
+      "last_push": "2026-10-26T04:44:12Z",
+      "archived": false,
+      "license_spdx": "MIT",
+      "github_url": "https://github.com/promptfoo/promptfoo"
+    },
+    "pydantic/pydantic-ai": {
+      "name": "pydantic/pydantic-ai",
+      "stars": 20875,
+      "forks": 3028,
+      "last_push": "2026-10-26T03:50:14Z",
+      "archived": false,
+      "license_spdx": "MIT",
+      "github_url": "https://github.com/pydantic/pydantic-ai"
+    },
+    "quantconnect/lean": {
+      "name": "QuantConnect/Lean",
+      "stars": 22238,
+      "forks": 5345,
+      "last_push": "2026-10-23T20:11:59Z",
+      "archived": false,
+      "license_spdx": "Apache-2.0",
+      "github_url": "https://github.com/QuantConnect/Lean"
+    },
+    "quivrhq/quivr": {
+      "name": "QuivrHQ/quivr",
+      "stars": 39603,
+      "forks": 3734,
+      "last_push": "2026-10-21T18:00:15Z",
+      "archived": false,
+      "license_spdx": "MIT",
+      "github_url": "https://github.com/The-Vibe-Company/quivr"
+    },
+    "rasahq/rasa": {
+      "name": "RasaHQ/rasa",
+      "stars": 21358,
+      "forks": 4914,
+      "last_push": "2026-07-24T07:39:04Z",
+      "archived": false,
+      "license_spdx": "Apache-2.0",
+      "github_url": "https://github.com/RasaHQ/rasa"
+    },
+    "rayventura/shortgpt": {
+      "name": "RayVentura/ShortGPT",
+      "stars": 8071,
+      "forks": 1169,
+      "last_push": "2025-02-10T19:33:18Z",
+      "archived": false,
+      "license_spdx": "MIT",
+      "github_url": "https://github.com/RayVentura/ShortGPT"
+    },
+    "remotion-dev/remotion": {
+      "name": "remotion-dev/remotion",
+      "stars": 67539,
+      "forks": 5452,
+      "last_push": "2026-10-25T17:03:50Z",
+      "archived": false,
+      "license_spdx": "unknown",
+      "github_url": "https://github.com/remotion-dev/remotion"
+    },
+    "run-llama/llama_index": {
+      "name": "run-llama/llama_index",
+      "stars": 52668,
+      "forks": 8432,
+      "last_push": "2026-10-23T13:51:39Z",
+      "archived": false,
+      "license_spdx": "MIT",
+      "github_url": "https://github.com/run-llama/llama_index"
+    },
+    "scrapy/scrapy": {
+      "name": "scrapy/scrapy",
+      "stars": 65030,
+      "forks": 12050,
+      "last_push": "2026-10-22T21:57:27Z",
+      "archived": false,
+      "license_spdx": "BSD-3-Clause",
+      "github_url": "https://github.com/scrapy/scrapy"
+    },
+    "sickn33/agentic-awesome-skills": {
+      "name": "sickn33/agentic-awesome-skills",
+      "stars": 48507,
+      "forks": 7052,
+      "last_push": "2026-10-24T21:31:58Z",
+      "archived": false,
+      "license_spdx": "MIT",
+      "github_url": "https://github.com/sickn33/agentic-awesome-skills"
+    },
+    "stanfordnlp/dspy": {
+      "name": "stanfordnlp/dspy",
+      "stars": 38791,
+      "forks": 3455,
+      "last_push": "2026-10-25T12:18:26Z",
+      "archived": false,
+      "license_spdx": "MIT",
+      "github_url": "https://github.com/stanfordnlp/dspy"
+    },
+    "supabase-community/supabase-mcp": {
+      "name": "supabase-community/supabase-mcp",
+      "stars": 2970,
+      "forks": 424,
+      "last_push": "2026-10-25T06:20:52Z",
+      "archived": false,
+      "license_spdx": "Apache-2.0",
+      "github_url": "https://github.com/supabase/mcp"
+    },
+    "supabase/supabase": {
+      "name": "supabase/supabase",
+      "stars": 113938,
+      "forks": 16305,
+      "last_push": "2026-10-26T05:15:43Z",
+      "archived": false,
+      "license_spdx": "Apache-2.0",
+      "github_url": "https://github.com/supabase/supabase"
+    },
+    "systran/faster-whisper": {
+      "name": "SYSTRAN/faster-whisper",
+      "stars": 26145,
+      "forks": 2168,
+      "last_push": "2026-10-25T07:17:13Z",
+      "archived": false,
+      "license_spdx": "MIT",
+      "github_url": "https://github.com/SYSTRAN/faster-whisper"
+    },
+    "tauricresearch/tradingagents": {
+      "name": "TauricResearch/TradingAgents",
+      "stars": 114913,
+      "forks": 22158,
+      "last_push": "2026-10-16T21:38:46Z",
+      "archived": false,
+      "license_spdx": "Apache-2.0",
+      "github_url": "https://github.com/TauricResearch/TradingAgents"
+    },
+    "the-pocket/pocketflow": {
+      "name": "The-Pocket/PocketFlow",
+      "stars": 11279,
+      "forks": 1209,
+      "last_push": "2026-07-26T16:13:20Z",
+      "archived": false,
+      "license_spdx": "MIT",
+      "github_url": "https://github.com/The-Pocket/PocketFlow"
+    },
+    "tolgee/tolgee-platform": {
+      "name": "tolgee/tolgee-platform",
+      "stars": 4139,
+      "forks": 377,
+      "last_push": "2026-10-25T21:03:35Z",
+      "archived": false,
+      "license_spdx": "unknown",
+      "github_url": "https://github.com/tolgee/tolgee-platform"
+    },
+    "travisvn/awesome-claude-skills": {
+      "name": "travisvn/awesome-claude-skills",
+      "stars": 15568,
+      "forks": 2071,
+      "last_push": "2026-04-28T19:30:24Z",
+      "archived": false,
+      "license_spdx": "unknown",
+      "github_url": "https://github.com/travisvn/awesome-claude-skills"
+    },
+    "truera/trulens": {
+      "name": "truera/trulens",
+      "stars": 3611,
+      "forks": 377,
+      "last_push": "2026-10-25T14:26:21Z",
+      "archived": false,
+      "license_spdx": "MIT",
+      "github_url": "https://github.com/truera/trulens"
+    },
+    "twentyhq/twenty": {
+      "name": "TwentyHQ/twenty",
+      "stars": 59754,
+      "forks": 9758,
+      "last_push": "2026-10-26T06:03:48Z",
+      "archived": false,
+      "license_spdx": "unknown",
+      "github_url": "https://github.com/twentyhq/twenty"
+    },
+    "umami-software/umami": {
+      "name": "umami-software/umami",
+      "stars": 39688,
+      "forks": 8412,
+      "last_push": "2026-10-23T21:58:32Z",
+      "archived": false,
+      "license_spdx": "MIT",
+      "github_url": "https://github.com/umami-software/umami"
+    },
+    "unclecode/crawl4ai": {
+      "name": "unclecode/crawl4ai",
+      "stars": 86275,
+      "forks": 8977,
+      "last_push": "2026-10-22T19:03:10Z",
+      "archived": false,
+      "license_spdx": "Apache-2.0",
+      "github_url": "https://github.com/unclecode/crawl4ai"
+    },
+    "usememos/memos": {
+      "name": "usememos/memos",
+      "stars": 64079,
+      "forks": 4898,
+      "last_push": "2026-10-26T00:40:28Z",
+      "archived": false,
+      "license_spdx": "MIT",
+      "github_url": "https://github.com/usememos/memos"
+    },
+    "vercel-labs/agent-browser": {
+      "name": "vercel-labs/agent-browser",
+      "stars": 44597,
+      "forks": 3060,
+      "last_push": "2026-10-26T05:50:52Z",
+      "archived": false,
+      "license_spdx": "Apache-2.0",
+      "github_url": "https://github.com/vercel-labs/agent-browser"
+    },
+    "virattt/ai-hedge-fund": {
+      "name": "virattt/ai-hedge-fund",
+      "stars": 64260,
+      "forks": 11280,
+      "last_push": "2026-10-24T10:43:31Z",
+      "archived": false,
+      "license_spdx": "MIT",
+      "github_url": "https://github.com/virattt/ai-hedge-fund"
+    },
+    "vllm-project/vllm": {
+      "name": "vllm-project/vllm",
+      "stars": 95532,
+      "forks": 23959,
+      "last_push": "2026-10-26T05:45:49Z",
+      "archived": false,
+      "license_spdx": "Apache-2.0",
+      "github_url": "https://github.com/vllm-project/vllm"
+    },
+    "voltagent/awesome-agent-skills": {
+      "name": "VoltAgent/awesome-agent-skills",
+      "stars": 36367,
+      "forks": 3965,
+      "last_push": "2026-10-25T13:18:51Z",
+      "archived": false,
+      "license_spdx": "MIT",
+      "github_url": "https://github.com/VoltAgent/awesome-agent-skills"
+    },
+    "voltagent/awesome-openclaw-skills": {
+      "name": "VoltAgent/awesome-openclaw-skills",
+      "stars": 53352,
+      "forks": 5058,
+      "last_push": "2026-10-19T05:54:13Z",
+      "archived": false,
+      "license_spdx": "MIT",
+      "github_url": "https://github.com/VoltAgent/awesome-openclaw-skills"
+    },
+    "wshobson/agents": {
+      "name": "wshobson/agents",
+      "stars": 41720,
+      "forks": 4426,
+      "last_push": "2026-10-26T01:08:14Z",
+      "archived": false,
+      "license_spdx": "MIT",
+      "github_url": "https://github.com/wshobson/agents"
+    },
+    "wyattblue/auto-editor": {
+      "name": "WyattBlue/auto-editor",
+      "stars": 5633,
+      "forks": 700,
+      "last_push": "2026-10-26T03:55:31Z",
+      "archived": false,
+      "license_spdx": "Unlicense",
+      "github_url": "https://github.com/WyattBlue/auto-editor"
+    },
+    "yt-dlp/yt-dlp": {
+      "name": "yt-dlp/yt-dlp",
+      "stars": 202222,
+      "forks": 17701,
+      "last_push": "2026-10-23T15:18:53Z",
+      "archived": false,
+      "license_spdx": "Unlicense",
+      "github_url": "https://github.com/yt-dlp/yt-dlp"
+    },
+    "zulko/moviepy": {
+      "name": "Zulko/moviepy",
+      "stars": 15038,
+      "forks": 2127,
+      "last_push": "2026-08-26T06:17:08Z",
+      "archived": false,
+      "license_spdx": "MIT",
+      "github_url": "https://github.com/Zulko/moviepy"
+    }
+  }
+}
