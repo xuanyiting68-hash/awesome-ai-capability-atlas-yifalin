@@ -14,6 +14,13 @@
 
 **务必区分：**“已被目录索引 / repository-exists / security-audited / battle-tested / licensed-for-commercial-use” 是不同的状态。本项目目前只对 133 个精选 GitHub 项目完成了存在性与未归档状态的核验。目录候选不经过人工实测。
 
+## V1.2 · 项目情报与来源透明度
+
+- 资源网站已通过 GitHub Pages 部署工作流；静态快照从 `data/catalog.json` 加载。
+- 每周更新 `data/repo_metadata.json`，查看编辑精选仓库的 GitHub Stars、Forks、最近 Push、是否归档和 GitHub 检出的许可证标识；网页支持按 Stars 排序。
+- **来源提醒**：截至首次落库，4,867 条批量候选均来自 VoltAgent 的 OpenClaw 社区目录，而 133 条编辑精选来自多个项目和框架；本站尚未达到各生态均衡覆盖。
+- GitHub Stars、许可证识别与仓库存在性都不能替代真实质量测试、安全审计或商业使用许可核验。
+
 ## 首次线上采集核验（2026-10-26）
 
 - **5,000 条实际落库**：133 个编辑精选 + 4,867 条外部候选索引；30/30 个分类文件采集成功。
