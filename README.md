@@ -14,6 +14,14 @@
 
 **务必区分：**“已被目录索引 / repository-exists / security-audited / battle-tested / licensed-for-commercial-use” 是不同的状态。本项目目前只对 133 个精选 GitHub 项目完成了存在性与未归档状态的核验。目录候选不经过人工实测。
 
+## V1.4.3 · 双语项目研究工作台
+
+[进入 Top 30 研究室](top30.html) · [验证与交付记录](docs/V1_4_3_WORKSPACE_CN.md)
+
+研究室支持中英界面与双语检索、共享本地收藏、四项对比、可分享筛选、CSV 导出和逐项证据。GitHub 元数据与证据快照日期不一致时停用证据展示。项目仍待许可、安全和复现实测审查，Fork 决策均为 HOLD。
+
+开发验证：Python 数据检查 + 固定版本 Playwright 的 17 个浏览器场景，CI 保留桌面与移动截图。完整目录翻译、300–500 项深度审查及业务工作流集成仍待后续完成。
+
 ## V1.3 · 跨生态发现与技术蓝图
 
 - 来源扩大到 Anthropic / OpenAI / Microsoft / GitHub Copilot / 社区 Agent Skills / n8n 工作流 / MCP 目录，按 URL 去重，并保留 133 条编辑精选。
@@ -33,7 +41,7 @@
 - **5,000 条实际落库**：133 个编辑精选 + 4,867 条外部候选索引；30/30 个分类文件采集成功。
 - 生成 `data/catalog.json`、`data/catalog.csv`、`data/provenance.json`、`data/excluded.json`，详情以 `data/provenance.json` 为准。
 - 本次只读取公开目录文本，未安装或运行第三方 Skills；外部候选 **未经安全与许可证审查**。
-- 资源索引已经提交到主分支。**GitHub Pages 尚需仓库所有者在 Settings → Pages 启用 GitHub Actions 部署**，之后可在 Actions 手动运行发布工作流。
+- 资源索引已经提交到主分支。实际 Pages 发布状态以仓库 Actions 的部署结果为准；分支内的开发成果不自动代表线上版本。
 
 ## 快速使用
 

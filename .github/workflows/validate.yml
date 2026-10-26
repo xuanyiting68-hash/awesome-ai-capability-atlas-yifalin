@@ -29,3 +29,29 @@ jobs:
           assert sum(r.get('topic') in growth for r in rows)==40
           print('PASS: 133 unique curated records / 40 growth records')
           PY
+
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install locked browser test dependency
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Install Chromium for UI verification
+        run: npx playwright install --with-deps chromium
+      - name: Verify research workspace in a real browser
+        run: npm run test:e2e
+      - name: Preserve screenshots on success or failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: atlas-browser-screenshots
+          path: test-results/
+          if-no-files-found: ignore

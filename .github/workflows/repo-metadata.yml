@@ -7,6 +7,8 @@ on:
     branches: [main]
     paths:
       - 'scripts/sync_repo_metadata.py'
+      - 'scripts/build_top30_evidence.py'
+      - 'data/top30_evaluation.csv'
       - '.github/workflows/repo-metadata.yml'
 permissions:
   contents: write
@@ -28,13 +30,17 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python scripts/sync_repo_metadata.py
+      - name: Refresh Top 30 evidence from latest repository metadata
+        run: python scripts/build_top30_evidence.py
+      - name: Verify generated evidence invariants
+        run: python -m unittest discover -s scripts -p 'test_top30_evidence.py' -v
       - name: Commit verified metadata snapshot and request website refresh
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/repo_metadata.json
+          git add data/repo_metadata.json data/top30_evidence.json
           if ! git diff --cached --quiet; then
             git commit -m 'data: refresh curated repository metadata'
             git push

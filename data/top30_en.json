@@ -1,0 +1,122 @@
+{
+  "microsoft/qlib": {
+    "capability": "Quantitative research data and modeling",
+    "yifalin_pilot": "Test feature experiments and out-of-sample backtests"
+  },
+  "ai4finance-foundation/finrl": {
+    "capability": "Reinforcement learning for financial research",
+    "yifalin_pilot": "Compare RL strategies against simple baselines"
+  },
+  "ai4finance-foundation/finrobot": {
+    "capability": "Financial agent research",
+    "yifalin_pilot": "Validate financial document answers and citations"
+  },
+  "tauricresearch/tradingagents": {
+    "capability": "Multi-agent trading research",
+    "yifalin_pilot": "Measure reasoning gains, cost and hallucination"
+  },
+  "openbb-finance/openbb": {
+    "capability": "Financial data workspace",
+    "yifalin_pilot": "Check data interfaces and permitted use"
+  },
+  "quantconnect/lean": {
+    "capability": "Strategy backtesting and simulated execution",
+    "yifalin_pilot": "Reproduce cost assumptions and matching constraints"
+  },
+  "polakowo/vectorbt": {
+    "capability": "Vectorized strategy research",
+    "yifalin_pilot": "Explore efficiently while controlling overfitting"
+  },
+  "microsoft/rd-agent": {
+    "capability": "Research and development agents",
+    "yifalin_pilot": "Propose hypotheses and reproduce experiments"
+  },
+  "openai/codex": {
+    "capability": "Coding agent",
+    "yifalin_pilot": "Isolate repository changes and retain review records"
+  },
+  "anthropics/claude-code": {
+    "capability": "Terminal coding agent",
+    "yifalin_pilot": "Evaluate task delivery and permission boundaries"
+  },
+  "all-hands-ai/openhands": {
+    "capability": "Software engineering agent platform",
+    "yifalin_pilot": "Test runtime isolation and real task success"
+  },
+  "langchain-ai/langgraph": {
+    "capability": "Stateful agent orchestration",
+    "yifalin_pilot": "Test failure recovery and approval flows"
+  },
+  "browser-use/browser-use": {
+    "capability": "Browser task automation",
+    "yifalin_pilot": "Check authorized login and action traceability"
+  },
+  "github/gh-aw": {
+    "capability": "GitHub Agentic Workflows",
+    "yifalin_pilot": "Evaluate PR automation, permissions and CI cost"
+  },
+  "run-llama/llama_index": {
+    "capability": "Knowledge base and retrieval orchestration",
+    "yifalin_pilot": "Test bilingual course retrieval and citations"
+  },
+  "docling-project/docling": {
+    "capability": "Structured document parsing",
+    "yifalin_pilot": "Measure PDF table and formula extraction quality"
+  },
+  "microsoft/markitdown": {
+    "capability": "Document conversion to Markdown",
+    "yifalin_pilot": "Check fidelity of batch course preprocessing"
+  },
+  "infiniflow/ragflow": {
+    "capability": "Retrieval-augmented knowledge base",
+    "yifalin_pilot": "Evaluate citation reliability and deployment cost"
+  },
+  "microsoft/ai-agents-for-beginners": {
+    "capability": "AI agent teaching curriculum",
+    "yifalin_pilot": "Review course freshness and adaptation"
+  },
+  "langgenius/dify": {
+    "capability": "AI application workflows",
+    "yifalin_pilot": "Prototype tenant isolation and operations workflows"
+  },
+  "n8n-io/n8n": {
+    "capability": "Business workflow automation",
+    "yifalin_pilot": "Test trigger retries and license boundaries"
+  },
+  "activepieces/activepieces": {
+    "capability": "Business process automation",
+    "yifalin_pilot": "Route forms into a CRM"
+  },
+  "remotion-dev/remotion": {
+    "capability": "Programmatic video generation",
+    "yifalin_pilot": "Turn research data into vertical videos"
+  },
+  "systran/faster-whisper": {
+    "capability": "Speech recognition and subtitles",
+    "yifalin_pilot": "Measure subtitle accuracy for original narration"
+  },
+  "gitroomhq/postiz-app": {
+    "capability": "Social media content scheduling",
+    "yifalin_pilot": "Validate authorized channels and human approval"
+  },
+  "formbricks/formbricks": {
+    "capability": "Surveys and opt-in lead capture",
+    "yifalin_pilot": "Measure informed consent and opt-in conversion"
+  },
+  "twentyhq/twenty": {
+    "capability": "Open-source CRM",
+    "yifalin_pilot": "Deduplicate leads and manage customer lifecycles"
+  },
+  "chatwoot/chatwoot": {
+    "capability": "Customer support and messaging tickets",
+    "yifalin_pilot": "Measure response SLA and AI-assisted approval"
+  },
+  "posthog/posthog": {
+    "capability": "Product events and growth analytics",
+    "yifalin_pilot": "Test activation and retention funnels with privacy controls"
+  },
+  "promptfoo/promptfoo": {
+    "capability": "LLM safety and quality evaluation",
+    "yifalin_pilot": "Test prompt injection and quality regressions"
+  }
+}
