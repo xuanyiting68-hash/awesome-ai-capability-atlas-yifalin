@@ -14,6 +14,13 @@
 
 **务必区分：**“已被目录索引 / repository-exists / security-audited / battle-tested / licensed-for-commercial-use” 是不同的状态。本项目目前只对 133 个精选 GitHub 项目完成了存在性与未归档状态的核验。目录候选不经过人工实测。
 
+## V1.3 · 跨生态发现与技术蓝图
+
+- 来源扩大到 Anthropic / OpenAI / Microsoft / GitHub Copilot / 社区 Agent Skills / n8n 工作流 / MCP 目录，按 URL 去重，并保留 133 条编辑精选。
+- **实际记录数、各来源份额及失败来源，请看 data/provenance.json，而非宣传数字**。本项目的上游候选资源均未完成安全及商业授权审查。
+- 新版网页可按来源生态筛选，查看六套 [业务技术蓝图](docs/BLUEPRINTS_CN.md)；另见 [风险与来源说明](docs/SOURCE_AND_REVIEW_CN.md)。
+- 采集只读取公开路径/元数据，不安装第三方 Skill；第三方内容归原项目作者所有。
+
 ## V1.2 · 项目情报与来源透明度
 
 - 资源网站已通过 GitHub Pages 部署工作流；静态快照从 `data/catalog.json` 加载。
