@@ -4,6 +4,7 @@ on:
     paths:
       - 'top30.html'
       - 'project.html'
+      - 'data/business_use_cases.json'
       - 'index.html'
       - 'data/top30_evaluation.csv'
       - 'data/top30_en.json'
