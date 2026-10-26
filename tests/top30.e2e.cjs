@@ -181,7 +181,12 @@ async function loaded(page) { await page.waitForFunction(() => document.querySel
       await visual.setViewportSize({width,height:844});
       await visual.evaluate(()=>scrollTo(0,0));
       assert.equal(await visual.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,'Network overflow '+width);
-      if(width===390){assert.equal(await visual.locator('#mobileCards .mobile-card').first().isVisible(),true);assert.equal(await visual.locator('#graph').isVisible(),false)}
+      if(width===390){
+        assert.equal(await visual.locator('#mobileCards .mobile-card').first().isVisible(),true);
+        assert.equal(await visual.locator('#graph').isVisible(),false);
+        const card=await visual.locator('#mobileCards .mobile-card').first().boundingBox();
+        assert.ok(card&&card.y<844,'First mobile network card must appear in the first screen');
+      }
       await visual.screenshot({path:'test-results/network-'+width+'.png'});
     }
     await visual.close();
