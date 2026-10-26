@@ -146,6 +146,42 @@ async function loaded(page) { await page.waitForFunction(() => document.querySel
       'Mobile search must be accessible in the first viewport, not buried below metrics');
     await page.screenshot({path:'test-results/top30-mobile.png'});
   });
+  await check('interactive capability network, source filter, keyboard and three viewports', async()=>{
+    const visual=await context.newPage();visual.on('pageerror',e=>errors.push(e.message));
+    await visual.goto(new URL('network.html',base).href);
+    await visual.waitForFunction(()=>document.querySelectorAll('#graph [data-repo]').length===30 && document.querySelector('#briefCount').textContent==='10');
+    assert.equal(await visual.locator('#graph .hub').count(),10);
+    assert.equal(await visual.locator('#directory button').count(),30);
+    assert.equal(await visual.locator('#catalogCount').innerText(),'5,000');
+    await visual.fill('#search','Qlib');
+    assert.equal(await visual.locator('#directory button').count(),1);
+    assert.match(await visual.locator('#detail').innerText(),/Qlib|qlib/i);
+    await visual.fill('#search','');
+    await visual.check('#linked');
+    assert.equal(await visual.locator('#directory button').count(),10);
+    assert.equal(new URL(visual.url()).searchParams.get('sourced'),'1');
+    await visual.reload();
+    await visual.waitForFunction(()=>document.querySelectorAll('#directory button').length===10);
+    await visual.uncheck('#linked');
+    await visual.selectOption('#domain','安全评测');
+    assert.equal(await visual.locator('#directory button').count(),1);
+    assert.match(await visual.locator('#detail').innerText(),/promptfoo/);
+    await visual.selectOption('#domain','');
+    await visual.locator('#graph [data-repo="microsoft/qlib"]').focus();
+    await visual.keyboard.press('Enter');
+    assert.equal(new URL(visual.url()).searchParams.get('repo'),'microsoft/qlib');
+    await visual.click('#language');
+    assert.equal(await visual.locator('html').getAttribute('lang'),'en');
+    assert.match(await visual.locator('#detail').innerText(),/Best for/);
+    for(const width of [1440,768,390]){
+      await visual.setViewportSize({width,height:844});
+      await visual.evaluate(()=>scrollTo(0,0));
+      assert.equal(await visual.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,'Network overflow '+width);
+      if(width===390){assert.equal(await visual.locator('#mobileCards .mobile-card').first().isVisible(),true);assert.equal(await visual.locator('#graph').isVisible(),false)}
+      await visual.screenshot({path:'test-results/network-'+width+'.png'});
+    }
+    await visual.close();
+  });
   await context.close();
   await check('missing metadata and evidence degrade without losing projects', async () => {
     const o=await open('?lang=en',async c=>{await c.route('**/data/repo_metadata.json',r=>r.fulfill({status:503,body:'unavailable'}));await c.route('**/data/top30_evidence.json',r=>r.fulfill({status:503,body:'unavailable'}))});
