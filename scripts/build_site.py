@@ -11,7 +11,7 @@ else:
     from validate_research_briefs import validate_from_files
 
 ROOT = Path(__file__).resolve().parents[1]
-FILES = ('index.html', 'top30.html', 'project.html', 'blueprints.html', 'README.md', 'LICENSE')
+FILES = ('index.html', 'top30.html', 'project.html', 'blueprints.html', 'network.html', 'README.md', 'LICENSE')
 DIRECTORIES = ('data', 'docs')
 
 def build(destination, source=ROOT, commit=None):
