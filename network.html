@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#081428">
+<meta name="description" content="YIFALIN AI Capability Network · 基于真实 Top 30 研究队列数据的交互式能力关系图。">
+<title>AI Capability Network · YIFALIN Atlas</title>
+<style>
+:root{font-family:Inter,"Noto Sans CJK SC","Microsoft YaHei","PingFang SC",system-ui,sans-serif;color:#e8f1ff;background:#081327;--aqua:#5de2ee;--blue:#95aaff;--muted:#a6b7d0;--border:#294263}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% 15%,#152d56 0%,#09162c 45%,#071021 100%);min-height:100vh}button,input,select{font:inherit}a{color:#a0eaff;text-decoration:none}a:hover{text-decoration:underline}button{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,[tabindex]:focus-visible{outline:3px solid #76eefa;outline-offset:3px}header{border-bottom:1px solid #263957;background:rgba(5,16,35,.75);backdrop-filter:blur(18px)}.nav{max-width:1500px;margin:auto;padding:18px 24px;display:flex;align-items:center;gap:24px;flex-wrap:wrap}.mark{font-size:13px;letter-spacing:1.2px;font-weight:850;color:#fff;margin-right:auto}.mark i{color:#6bf1ef;font-style:normal}.nav a:not(.mark){font-size:12px;color:#b8c8e4}.nav button{border:1px solid #415879;border-radius:9px;padding:8px 12px;background:transparent;color:#fff;font-size:12px}.wrap{max-width:1530px;margin:auto;padding:34px 24px 65px}.topline{display:flex;align-items:center;gap:9px;font-size:11px;color:#69cdd5;letter-spacing:2px;font-weight:750}.topline:before{content:"";width:7px;height:7px;border-radius:100%;background:#56f3ed;box-shadow:0 0 15px #36f7e5}.hero{display:flex;justify-content:space-between;gap:30px;align-items:center;margin:20px 0 30px}.hero h1{font-size:clamp(28px,4.3vw,59px);letter-spacing:-1.9px;line-height:1.13;margin:0;max-width:790px}.hero h1 span{color:#79dceb}.hero p{max-width:680px;color:#aabed9;font-size:14px;line-height:1.85}.stats{display:grid;grid-template-columns:repeat(2,minmax(105px,1fr));gap:12px;min-width:285px}.stat{background:#102340;border:1px solid #263c5b;border-radius:12px;padding:18px}.stat strong{font-size:30px;color:#fff;font-variant-numeric:tabular-nums}.stat small{display:block;font-size:11px;color:#a4b8d4;margin-top:5px}.layout{display:grid;grid-template-columns:252px minmax(0,1fr) 284px;align-items:stretch;gap:12px}.panel{background:rgba(12,29,54,.94);border:1px solid #284260;border-radius:17px;padding:17px;min-width:0}.panel h2{margin:0 0 15px;font-size:14px;letter-spacing:.3px}.filters{display:grid;gap:12px}label{display:grid;gap:6px;color:#c5d8ec;font-size:12px}input[type=search],select{min-width:0;width:100%;color:#e7f4ff;background:#08182f;border:1px solid #3e5574;border-radius:10px;padding:12px 10px}input[type=search]::placeholder{color:#91a2bd}.toggle{display:flex;gap:9px;align-items:flex-start;line-height:1.5}.toggle input{accent-color:#62dce5;margin-top:4px}.minor{font-size:11px;line-height:1.65;color:#90a6c4}.count{font-size:12px;color:#84e6ec;font-weight:700}.list{display:grid;gap:5px;max-height:500px;overflow-y:auto;padding-right:2px}.list button{width:100%;display:flex;align-items:center;gap:9px;border:1px solid transparent;border-radius:9px;background:transparent;color:#c0d1e5;text-align:left;padding:9px 8px;font-size:11px;min-width:0}.list button:hover,.list button.active{border-color:#4d6a90;background:#192d4a}.dot{flex:none;width:7px;height:7px;border-radius:50%;background:#6388c4}.dot.linked{background:#64f0d7;box-shadow:0 0 10px #36dfbb}.list button span:last-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.network{position:relative;overflow:hidden;padding:0;min-height:655px;background:radial-gradient(ellipse at center,#183259 0%,#091c34 43%,#09172a 85%)}.network:before{content:"";position:absolute;inset:0;opacity:.26;pointer-events:none;background-image:radial-gradient(#78a4ca .75px,transparent .75px);background-size:30px 30px}.network svg{width:100%;display:block;min-height:645px;position:relative}.orbit{fill:none;stroke:#325783;stroke-dasharray:3 9;stroke-width:1}.conn{fill:none;stroke:#33658d;stroke-width:1.2;opacity:.5}.conn.active{stroke:#7ff9e8;opacity:.93;stroke-width:1.8}.hub-ring{fill:#142d50;stroke:#527eb8;stroke-width:1.5}.hub-text{fill:#d0e8ff;font-size:12px;font-weight:750;text-anchor:middle;pointer-events:none}.leaf{fill:#7596cc;stroke:#0d264a;stroke-width:2}.leaf.linked{fill:#67ebcf;stroke:#0e495c}.leaf.active{fill:#fff4c1;stroke:#f3cf74;stroke-width:3;filter:drop-shadow(0 0 9px #ffcb72)}.leaf-label{font-size:12px;fill:#f4faff;text-anchor:middle;stroke:#0c2442;stroke-width:4;paint-order:stroke;pointer-events:none;font-weight:700}.node{cursor:pointer}.node.dim{opacity:.09}.hub.dim{opacity:.17}.hub{cursor:pointer}.center-ring{fill:#0b1f39;stroke:#6fb6ea;stroke-width:2}.center-title{fill:#effaff;font-size:19px;font-weight:850;text-anchor:middle}.center-sub{fill:#a1cae7;font-size:11px;text-anchor:middle}.view-tag{position:absolute;top:20px;left:20px;border:1px solid #33587d;border-radius:18px;background:#10294a;padding:7px 12px;font-size:10px;color:#a9cadf;letter-spacing:.5px}.legend{position:absolute;left:22px;bottom:14px;display:flex;gap:20px;flex-wrap:wrap;font-size:10px;color:#adc1d6}.legend span{display:flex;align-items:center;gap:5px}.detail h3{font-size:19px;overflow-wrap:anywhere;margin:10px 0}.detail p{color:#b7c9df;line-height:1.7;font-size:12px}.detail .domain{font-size:10px;letter-spacing:1px;font-weight:850;color:#7fcee3;text-transform:uppercase}.detail .phase{display:inline-block;padding:7px 10px;border-radius:15px;background:#273b59;font-size:10px;color:#bdd3ef}.detail .source{color:#5ff1d7}.detail .warning{font-size:11px;color:#f7cb89;border-top:1px solid #2d4563;padding-top:12px}.detail a.action{display:block;text-align:center;background:linear-gradient(110deg,#78e7e7,#91adff);color:#10223f;font-size:12px;font-weight:800;padding:13px 14px;margin-top:10px;border-radius:10px}.detail a.secondary{background:#1b304e;color:#c6deef;border:1px solid #3b6187}.detail .capability{border-left:2px solid #70d6e8;padding-left:11px}.empty{font-size:12px;color:#b3c4df}.mobile-grid{display:none}.disclaimer{margin-top:20px;color:#92a7bf;font-size:11px;line-height:1.8;border-top:1px solid #234064;padding-top:16px}.hint{display:block;text-align:center;color:#8ca9c9;font-size:11px}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+@media(max-width:1220px){.layout{grid-template-columns:220px minmax(0,1fr) 260px}.network{min-height:570px}.network svg{min-height:540px}.wrap{padding:25px 14px 50px}.hero h1{font-size:clamp(28px,4vw,44px)}}
+@media(max-width:940px){.hero{align-items:stretch;flex-direction:column}.stats{min-width:0;grid-template-columns:repeat(4,1fr)}.layout{grid-template-columns:235px minmax(0,1fr)}.detail{grid-column:1/-1}.network{min-height:510px}.network svg{min-height:500px}.detail{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 18px}.detail h2,.detail .domain,.detail h3{grid-column:1/-1}}
+@media(max-width:760px){.nav{gap:13px;padding:15px 16px}.mark{width:100%}.hero{margin:16px 0}.hero h1{font-size:32px}.hero p{font-size:12px}.stats{grid-template-columns:repeat(2,1fr);gap:7px}.stat{padding:11px}.stat strong{font-size:22px}.wrap{padding:19px 14px}.layout{display:flex;flex-direction:column}.panel{padding:14px}.filters{grid-template-columns:1fr 1fr}.filters label:first-child{grid-column:1/-1}.filters .toggle{grid-column:1/-1}.list{display:none}.network{display:none}.detail{display:block}.mobile-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.mobile-card{background:#122946;border:1px solid #325277;border-radius:12px;padding:13px 11px;display:grid;gap:8px;color:#eaf2fc;text-align:left;font-size:12px}.mobile-card strong{overflow-wrap:anywhere}.mobile-card small{color:#a4bcdb}.mobile-card.linked{border-color:#579c96}.view-tag,.legend{display:none}}
+@media(max-width:420px){.mobile-grid{grid-template-columns:1fr}.filters{grid-template-columns:1fr}.filters label:first-child{grid-column:auto}}
+@media(prefers-reduced-motion:no-preference){.leaf.active{animation:pulse 2.5s ease-in-out infinite alternate}@keyframes pulse{from{filter:drop-shadow(0 0 3px #ffe1a1)}to{filter:drop-shadow(0 0 12px #ffe1a1)}}}
+</style>
+</head>
+<body>
+<header><nav class="nav" aria-label="Main navigation"><a class="mark" href="./index.html">◈ YIFALIN <i>CAPABILITY NETWORK</i></a><a href="./index.html" data-i="catalog">5,000 资源目录</a><a href="./top30.html" data-i="lab">Top 30 研究室</a><a href="./blueprints.html" data-i="blueprints">业务蓝图</a><button type="button" id="language" aria-label="Switch language">English</button></nav></header>
+<main class="wrap">
+<div class="topline">INTERACTIVE RESEARCH MAP · SOURCE-BASED</div>
+<div class="hero"><div><h1><span data-i="headline1">看见 AI 能力之间的</span><br><span data-i="headline2">真实连接关系</span></h1><p data-i="description">以 10 个业务领域连接 Top 30 研究项目。每条连接仅代表已有业务分类，不代表项目之间存在技术依赖、兼容性或认证。点击节点深入研究。</p></div>
+<div class="stats"><div class="stat"><strong id="catalogCount">—</strong><small data-i="discovery">资源发现目录</small></div><div class="stat"><strong id="curatedCount">—</strong><small data-i="curated">编辑精选</small></div><div class="stat"><strong id="projectCount">—</strong><small data-i="queue">Top 30 候选</small></div><div class="stat"><strong id="briefCount">—</strong><small data-i="briefs">有官方出处的研究档案</small></div></div></div>
+<div class="layout">
+<aside class="panel"><h2 data-i="explore">探索能力领域</h2><div class="filters">
+<label><span data-i="search">搜索仓库 / 能力</span><input id="search" type="search" placeholder="Qlib, CRM, Agent..." autocomplete="off" aria-label="Search capabilities"></label>
+<label><span data-i="domain">业务领域</span><select id="domain" aria-label="Filter domain"><option value="">全部领域</option></select></label>
+<label class="toggle"><input type="checkbox" id="linked"><span data-i="filter">仅看已发布来源档案</span></label>
+</div>
+<p id="resultCount" class="count" role="status">正在读取真实数据…</p>
+<div id="directory" class="list" aria-label="Project research queue"></div>
+<p class="minor" data-i="guide">青绿色节点：已有来源研究；蓝色节点：仅处于研究队列。项目还未进行隔离实测。</p>
+</aside>
+<section class="panel network" aria-label="Interactive domain-to-repository map">
+<div class="view-tag" data-i="relation">领域归类关系 · 并非调用或依赖图</div>
+<svg id="graph" viewBox="0 0 1040 660" role="img" aria-label="Interactive network of ten domains and thirty AI projects">
+<title>AI capability network from sourced Top 30 data</title></svg>
+<div class="legend"><span><i class="dot linked"></i><span data-i="sourced">官方来源档案</span></span><span><i class="dot"></i><span data-i="pending">待深入研究</span></span></div>
+</section>
+<div class="mobile-grid" id="mobileCards" aria-label="Mobile project cards"></div>
+<aside class="panel detail" id="detail" aria-live="polite"><h2 data-i="inspect">项目研究快照</h2><p class="empty" data-i="waiting">选择任何项目节点，查看已记录用途与研究状态。</p></aside>
+</div>
+<p class="disclaimer" data-i="disclaimer">数据：仓库冻结的 Top 30 编辑队列及官方资料摘要。5,000 为上限内的发现目录，并非 5,000 个已评测工具；10 项来源档案仅为编辑研究，0 项完成独立复现，全部 Fork HOLD。节点连线仅为业务领域归属，不代表 API 对接、依赖或安全保证。</p>
+</main>
+<script>
+'use strict';
+const $=id=>document.getElementById(id);
+const svgns='http://www.w3.org/2000/svg';
+const domainEN={'金融AI':'Finance AI','研发Agent':'Engineering agents','教育AI':'Education AI','业务自动化':'Automation','视频工厂':'Video factory','自媒体运营':'Creator operations','智能获客':'Lead generation','客户维护':'CRM & retention','增长分析':'Growth analytics','安全评测':'Safety evaluation'};
+const T={zh:{catalog:'5,000 资源目录',lab:'Top 30 研究室',blueprints:'业务蓝图',headline1:'看见 AI 能力之间的',headline2:'真实连接关系',description:'以 10 个业务领域连接 Top 30 研究项目。每条连接仅代表已有业务分类，不代表项目之间存在技术依赖、兼容性或认证。点击节点深入研究。',discovery:'资源发现目录',curated:'编辑精选',queue:'Top 30 候选',briefs:'官方来源研究档案',explore:'探索能力领域',search:'搜索仓库 / 能力',domain:'业务领域',filter:'只看有官方来源档案的项目',guide:'青绿色：来源研究；蓝色：等待深入研究。所有项目均未隔离实测。',relation:'领域归类关系 · 并非调用或依赖图',sourced:'官方来源档案',pending:'待深入研究',inspect:'项目研究快照',waiting:'选择节点查看用途与状态。',disclaimer:'数据：仓库 Top 30 研究队列与官方资料摘要。5,000 是发现目录，并非 5,000 个已评测工具。来源档案仅为编辑研究，0 项独立复现，全部 Fork HOLD。连线代表业务归类，而非依赖、兼容或安全保证。',all:'全部领域',count:'个项目符合筛选',none:'没有匹配项目',curatedStage:'官方来源编辑研究 · 未实测',queueStage:'Top 30 研究队列 · 未实测',best:'适合',goal:'业务能力',go:'查看完整研究档案 ↗',code:'GitHub 源仓库 ↗',blue:'查看业务领域蓝图 ↗',hold:'Fork HOLD：未完成许可证原文、安全审核或沙箱复现。',lack:'此项目暂未完成来源研究档案，只有原始候选描述。'},en:{catalog:'5,000 directory',lab:'Top 30 research',blueprints:'Workflow blueprints',headline1:'Explore the real structure',headline2:'of AI capabilities',description:'Explore 30 shortlisted repositories through 10 business domains. Connections reflect editorial categorization, not API integration, compatibility or technical dependencies.',discovery:'Discovery records',curated:'Editorial selections',queue:'Research candidates',briefs:'Source-linked briefs',explore:'Explore capability domains',search:'Search repositories and skills',domain:'Business domain',filter:'Source-linked briefs only',guide:'Aqua: sourced editorial study. Blue: awaiting research. None has an independent reproduction.',relation:'Editorial domain links · not dependencies',sourced:'Source-linked briefs',pending:'Research queue',inspect:'Research snapshot',waiting:'Select a repository node to inspect its recorded capability and stage.',disclaimer:'Based on the repository Top 30 editorial queue and sourced briefs. 5,000 entries are discovery records, not audited tools. Editorial source reviews are not sandbox reproductions. All Fork HOLD. Lines indicate business categories only, not dependencies, integrations or endorsements.',all:'All domains',count:'matching projects',none:'No matching projects',curatedStage:'Official-source desk study · untested',queueStage:'Top 30 research queue · untested',best:'Best for',goal:'Capability',go:'Open complete project dossier ↗',code:'Original GitHub repository ↗',blue:'Related domain blueprint ↗',hold:'Fork HOLD: license text, security audit and sandbox reproduction are incomplete.',lack:'This candidate has not yet received a source-linked research brief.'}};
+let rows=[],briefs=new Map(),domains=[],manifest=null,selected='',lang='zh',filtered=[],hasLoaded=false;
+const url=new URLSearchParams(location.search);
+lang=url.get('lang')==='en'?'en':'zh';
+function text(key){return T[lang][key]||key}
+function dname(d){return lang==='en'?domainEN[d]||d:d}
+function addText(parent,tag,content,cls){const el=document.createElement(tag);if(cls)el.className=cls;el.textContent=content;parent.append(el);return el}
+function addLink(parent,label,href,klass){const a=document.createElement('a');a.textContent=label;a.href=href;if(klass)a.className=klass;parent.append(a);return a}
+function linkRepo(repo){return './project.html?repo='+encodeURIComponent(repo)}
+function parseCSV(s){const out=[];let r=[],v='',q=false;for(let i=0;i<s.length;i++){const c=s[i];if(q){if(c==='"'&&s[i+1]==='"'){v+='"';i++}else if(c==='"')q=false;else v+=c}else if(c==='"')q=true;else if(c===','){r.push(v);v=''}else if(c==='\n'){r.push(v.replace(/\r$/,''));out.push(r);r=[];v=''}else v+=c}if(r.length||v){r.push(v);out.push(r)}return out}
+function svg(tag,attrs,parent,value){const el=document.createElementNS(svgns,tag);for(const [k,v] of Object.entries(attrs||{}))el.setAttribute(k,String(v));if(value!==undefined)el.textContent=String(value);if(parent)parent.append(el);return el}
+function encodeState(){const p=new URLSearchParams();if(lang==='en')p.set('lang','en');if($('search').value.trim())p.set('q',$('search').value.trim());if($('domain').value)p.set('domain',$('domain').value);if($('linked').checked)p.set('sourced','1');if(selected)p.set('repo',selected);history.replaceState(null,'',location.pathname+(p.size?'?'+p.toString():'')+location.hash)}
+function localize(){document.documentElement.lang=lang==='zh'?'zh-CN':'en';document.querySelectorAll('[data-i]').forEach(el=>{el.textContent=text(el.dataset.i)});$('language').textContent=lang==='zh'?'English':'中文';$('search').placeholder=lang==='zh'?'Qlib / 视频 / CRM...':'Qlib / video / CRM...';const v=$('domain').value;$('domain').replaceChildren();const all=document.createElement('option');all.value='';all.textContent=text('all');$('domain').append(all);for(const name of domains){const o=document.createElement('option');o.value=name;o.textContent=dname(name);$('domain').append(o)}$('domain').value=v}
+function within(row){const q=$('search').value.trim().toLowerCase();const b=briefs.get(row.github_repository.toLowerCase());const values=[row.github_repository,row.domain,domainEN[row.domain],row.capability,row.yifalin_pilot,b?.headline?.zh,b?.headline?.en].join(' ').toLowerCase();return(!q||values.includes(q))&&(!$('domain').value||row.domain===$('domain').value)&&(!$('linked').checked||Boolean(b))}
+function selectRepo(repo){if(!filtered.some(r=>r.github_repository.toLowerCase()===repo.toLowerCase()))return;selected=filtered.find(r=>r.github_repository.toLowerCase()===repo.toLowerCase()).github_repository;render();encodeState()}
+function renderDetail(){const container=$('detail');container.replaceChildren();addText(container,'h2',text('inspect'));const r=rows.find(r=>r.github_repository===selected);if(!r){addText(container,'p',text('waiting'),'empty');return}const b=briefs.get(selected.toLowerCase());addText(container,'div',dname(r.domain),'domain');addText(container,'h3',r.github_repository);addText(container,'p',b?text('curatedStage'):text('queueStage'),b?'phase source':'phase');
+addText(container,'p',(b?b.headline[lang]:r.capability),'capability');
+if(b){addText(container,'p',text('best')+': '+b.best_for[lang]);addText(container,'p',(lang==='zh'?'待复现实验':'Proposed experiment')+': '+b.pilot[lang])}else{addText(container,'p',text('lack'))}
+addText(container,'p',text('hold'),'warning');addLink(container,text('go'),linkRepo(r.github_repository),'action');addLink(container,text('code'),'https://github.com/'+r.github_repository,'action secondary');addLink(container,text('blue'),'./blueprints.html?domain='+encodeURIComponent(r.domain),'action secondary')}
+function renderDirectory(){const list=$('directory'),mobile=$('mobileCards');list.replaceChildren();mobile.replaceChildren();for(const r of filtered){const marked=briefs.has(r.github_repository.toLowerCase());const btn=document.createElement('button');btn.type='button';btn.dataset.repo=r.github_repository;btn.className=r.github_repository===selected?'active':'';btn.setAttribute('aria-pressed',String(r.github_repository===selected));const dot=addText(btn,'i','',marked?'dot linked':'dot');dot.setAttribute('aria-hidden','true');addText(btn,'span',r.github_repository);btn.addEventListener('click',()=>selectRepo(r.github_repository));list.append(btn);
+const card=document.createElement('button');card.className='mobile-card'+(marked?' linked':'');card.type='button';card.dataset.repo=r.github_repository;addText(card,'strong',r.github_repository);addText(card,'small',dname(r.domain)+' · '+(marked?text('curatedStage'):text('queueStage')));card.addEventListener('click',()=>{selectRepo(r.github_repository);$('detail').scrollIntoView({behavior:'smooth',block:'start'})});mobile.append(card)}}
+function drawGraph(){const g=$('graph');g.replaceChildren();svg('title',{},g,'30 projects grouped by 10 editorial capability domains');const edges=svg('g',{},g),orbits=svg('g',{},g),hubs=svg('g',{},g),leaves=svg('g',{},g);
+for(const rad of [190,290])svg('circle',{cx:520,cy:330,r:rad,class:'orbit'},orbits);
+const choices=new Set(filtered.map(x=>x.github_repository));
+const hubsData=domains.map((domain,i)=>{const a=-Math.PI/2+i*Math.PI*2/domains.length;return{domain,a,x:520+182*Math.cos(a),y:330+182*Math.sin(a),projects:rows.filter(r=>r.domain===domain)}});
+for(const h of hubsData){
+ const visible=h.projects.filter(r=>choices.has(r.github_repository)).length>0;
+ const group=svg('g',{class:'hub'+(visible?'':' dim'),role:'button',tabindex:visible?'0':'-1','aria-label':dname(h.domain)+' domain'},hubs);
+ svg('circle',{cx:h.x,cy:h.y,r:31,class:'hub-ring'},group);
+ svg('text',{x:h.x,y:h.y+4,class:'hub-text'},group,dname(h.domain).slice(0,11));
+ group.addEventListener('click',()=>{$('domain').value=h.domain;$('search').value='';render();encodeState()});
+ group.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();group.dispatchEvent(new Event('click'))}});
+ h.projects.forEach((r,i)=>{
+ const spread=h.projects.length>1?((i/(h.projects.length-1))-.5)*.52:0;
+ const a=h.a+spread;
+ const x=520+292*Math.cos(a),y=330+292*Math.sin(a);
+ const valid=choices.has(r.github_repository),active=selected===r.github_repository,linked=briefs.has(r.github_repository.toLowerCase());
+ svg('path',{d:'M'+h.x.toFixed(1)+' '+h.y.toFixed(1)+' Q'+(520+237*Math.cos(a)).toFixed(1)+' '+(330+237*Math.sin(a)).toFixed(1)+' '+x.toFixed(1)+' '+y.toFixed(1),class:'conn'+(active?' active':''),opacity:valid?'1':'.12'},edges);
+ const node=svg('g',{class:'node'+(valid?'':' dim'),role:'button',tabindex:valid?'0':'-1','data-repo':r.github_repository,'aria-label':r.github_repository+' '+dname(r.domain)},leaves);
+ svg('circle',{cx:x,cy:y,r:active?12:linked?9:7,class:'leaf'+(linked?' linked':'')+(active?' active':'')},node);
+ svg('title',{},node,r.github_repository+' · '+dname(r.domain));
+ if(active)svg('text',{x,y:y-20,class:'leaf-label'},node,r.github_repository.split('/')[1].slice(0,24));
+ node.addEventListener('click',()=>selectRepo(r.github_repository));
+ node.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();selectRepo(r.github_repository)}});
+ })
+}
+svg('circle',{cx:520,cy:330,r:67,class:'center-ring'},g);
+svg('text',{x:520,y:325,class:'center-title'},g,'YIFALIN');
+svg('text',{x:520,y:347,class:'center-sub'},g,'30 SOURCE QUEUE');
+}
+function render(){if(!hasLoaded)return;filtered=rows.filter(within);if(!filtered.some(r=>r.github_repository===selected))selected=filtered[0]?.github_repository||'';$('resultCount').textContent=filtered.length+' / '+rows.length+' '+text('count');renderDirectory();renderDetail();drawGraph()}
+async function start(){try{
+ const files=await Promise.all(['./data/top30_evaluation.csv','./data/research_briefs.json','./deployment.json'].map(u=>fetch(u,{cache:'no-cache'})));
+ if(files.some(r=>!r.ok))throw Error('A required published data source is unavailable');
+ const [csv,brief,dep]=await Promise.all([files[0].text(),files[1].json(),files[2].json()]);
+ const t=parseCSV(csv.replace(/^\uFEFF/,''));const header=t.shift();rows=t.filter(a=>a.length===header.length).map(a=>Object.fromEntries(header.map((k,i)=>[k,a[i]])));
+ if(rows.length!==30||brief.schema_version!==1||brief.entries.length!==dep.research_briefs_count||dep.research_project_count!==30)throw Error('Published research data does not match its release manifest');
+ if(new Set(rows.map(r=>r.github_repository.toLowerCase())).size!==30)throw Error('Duplicate research repositories');
+ domains=[...new Set(rows.map(r=>r.domain))];if(domains.length!==10)throw Error('Unexpected taxonomy domain count');
+ briefs=new Map(brief.entries.filter(x=>x.tier==='Curated'&&x.research_status==='editorial-desk-study'&&x.review?.fork_decision==='HOLD'&&x.review?.reproducibility==='not-tested').map(x=>[x.repo.toLowerCase(),x]));
+ if(briefs.size!==dep.research_briefs_count)throw Error('Unapproved research evidence state');
+ manifest=dep;$('catalogCount').textContent=Number(dep.catalog_count).toLocaleString('en-US');$('curatedCount').textContent=dep.curated_count;$('projectCount').textContent=rows.length;$('briefCount').textContent=briefs.size;
+ $('search').value=url.get('q')||'';$('linked').checked=url.get('sourced')==='1';localize();if(domains.includes(url.get('domain')))$('domain').value=url.get('domain');selected=rows.find(r=>r.github_repository.toLowerCase()===(url.get('repo')||'').toLowerCase())?.github_repository||'';
+ hasLoaded=true;render();encodeState();
+ }catch(error){$('resultCount').textContent='Research network unavailable / 研究数据暂不可用';addText($('directory'),'p',error.message,'empty');$('graph').replaceChildren();}}
+$('search').addEventListener('input',()=>{render();encodeState()});
+$('domain').addEventListener('change',()=>{render();encodeState()});
+$('linked').addEventListener('change',()=>{render();encodeState()});
+$('language').addEventListener('click',()=>{lang=lang==='zh'?'en':'zh';localize();render();encodeState()});
+localize();start();
+</script>
+</body>
+</html>
