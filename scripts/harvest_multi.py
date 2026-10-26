@@ -179,7 +179,9 @@ def load_registry():
             if not name:continue
             repo=entry.get("repository") or {}
             ref=repo.get("url") if isinstance(repo,dict) else None
-            url=ref if isinstance(ref,str) and ref.startswith("https://") else "https://registry.modelcontextprotocol.io"
+            # Preserve a unique, authoritative detail link for every registry entry.
+            detail="https://registry.modelcontextprotocol.io/v0.1/servers/"+quote(name,safe="")+"/versions/latest"
+            url=ref if isinstance(ref,str) and ref.startswith("https://") else detail
             items.append(mkrow(name=name,url=url,repo=name,kind="mcp",ecosystem="official-mcp-registry",
               source_kind="published-registry-record",source_path=name,
               description=entry.get("description") or "MCP Registry published server",
