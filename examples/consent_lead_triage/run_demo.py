@@ -58,8 +58,9 @@ def triage_records(records, as_of):
         if lead_id in repeated:
             blocked["duplicate_or_conflicting_record"] += 1
             continue
-        if r.get("opt_out") is True:
-            blocked["opted_out"] += 1
+        # Ambiguous strings/null/missing opt-out fields fail closed like explicit withdrawal.
+        if r.get("opt_out") is not False:
+            blocked["opted_out_or_unverified"] += 1
             continue
         if r.get("consent") is not True or r.get("consent_purpose") != "contact_requested":
             blocked["no_explicit_purpose_bound_consent"] += 1
