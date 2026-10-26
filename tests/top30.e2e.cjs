@@ -5,7 +5,7 @@ const http = require('node:http');
 function reachable(url) { return new Promise(resolve => { const request = http.get(url, response => {response.resume();resolve(response.statusCode === 200)}); request.on('error', () => resolve(false)); request.setTimeout(500, () => request.destroy()); }); }
 const fs = require('node:fs/promises');
 const path = require('node:path');
-const { spawn } = require('node:child_process');
+const { spawn, spawnSync } = require('node:child_process');
 const base = process.env.ATLAS_BASE_URL || 'http://127.0.0.1:8766/';
 let server, browser, passed = 0;
 const errors = [];
@@ -23,7 +23,11 @@ async function open(query = '', setup) {
 async function loaded(page) { await page.waitForFunction(() => document.querySelector('#count').textContent.includes('30') && document.querySelectorAll('.item').length === 30); }
 (async () => {
   if (!process.env.ATLAS_BASE_URL) {
-    server = spawn('python', ['-m', 'http.server', '8766', '--bind', '127.0.0.1'], { stdio: 'ignore' });
+    // Test the same packaged assets that Pages publishes, not raw repository files.
+    // This catches missing allowlisted pages and required deployment manifests locally.
+    const staged = spawnSync('python', ['scripts/build_site.py'], {encoding:'utf-8'});
+    if(staged.status !== 0)throw Error('Unable to stage public site before browser checks: '+staged.stderr);
+    server = spawn('python', ['-m', 'http.server', '8766', '--bind', '127.0.0.1', '--directory', '_site'], { stdio: 'ignore' });
     for (let i = 0; i < 40; i++) {
       if (await reachable(base)) break;
       await new Promise(resolve => setTimeout(resolve, 100));
