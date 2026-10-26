@@ -1,0 +1,199 @@
+{
+  "version": "1.3.0",
+  "generated_date": "2026-10-26",
+  "purpose": "Reference capability blueprints, not deployed or verified integrated applications",
+  "blueprints": [
+    {
+      "id": "video",
+      "name": "AI 视频工厂",
+      "goal": "原创知识研究到合规短视频发布",
+      "tools": [
+        "remotion-dev/remotion",
+        "FFmpeg/FFmpeg",
+        "SYSTRAN/faster-whisper",
+        "gitroomhq/postiz-app"
+      ],
+      "stages": [
+        "选题与来源授权",
+        "独立研究脚本与事实复核",
+        "视频/字幕/配音制作",
+        "人工内容审批",
+        "官方支持渠道发布及复盘"
+      ],
+      "guardrails": [
+        "版权授权",
+        "真人出镜与独立推导",
+        "财经内容不提供直接买卖建议",
+        "禁止未获授权的声纹克隆"
+      ],
+      "kpis": [
+        "人工制作与复核耗时",
+        "视频完播率",
+        "有效咨询率"
+      ],
+      "status": "not-implemented",
+      "security_review": "not-audited",
+      "commercial_license_review": "not-checked"
+    },
+    {
+      "id": "social",
+      "name": "自媒体智能运营",
+      "goal": "多渠道原创内容排期、授权发布和效果归因",
+      "tools": [
+        "gitroomhq/postiz-app",
+        "n8n-io/n8n",
+        "posthog/posthog"
+      ],
+      "stages": [
+        "按各平台撰写原创版本",
+        "审批内容日历",
+        "平台 API 授权验证",
+        "排期发布与评论分流",
+        "平台指标与转化复盘"
+      ],
+      "guardrails": [
+        "遵守每个平台 API 和用户协议",
+        "不得自动刷评论/粉丝",
+        "原创表达与人工最终审核"
+      ],
+      "kpis": [
+        "每周原创内容数",
+        "各渠道有效互动率",
+        "真实线索转化率"
+      ],
+      "status": "not-implemented",
+      "security_review": "not-audited",
+      "commercial_license_review": "not-checked"
+    },
+    {
+      "id": "leads",
+      "name": "合规智能获客",
+      "goal": "客户主动咨询、同意留资、线索分层和预约",
+      "tools": [
+        "formbricks/formbricks",
+        "baptisteArno/typebot.io",
+        "TwentyHQ/twenty",
+        "calcom/cal.com"
+      ],
+      "stages": [
+        "原创活动/内容吸引咨询",
+        "表单明确告知与同意",
+        "数据校验和 CRM 去重",
+        "按自报需求进行分层",
+        "用户主动预约或人工沟通"
+      ],
+      "guardrails": [
+        "不得抓取私人资料",
+        "禁止未经授权的批量自动私信",
+        "记录营销同意和可撤销机制",
+        "敏感数据最小化"
+      ],
+      "kpis": [
+        "自愿留资率",
+        "有效线索率",
+        "预约转化率"
+      ],
+      "status": "not-implemented",
+      "security_review": "not-audited",
+      "commercial_license_review": "not-checked"
+    },
+    {
+      "id": "crm",
+      "name": "客户维护与服务",
+      "goal": "工单、客户分层、教育内容、订阅与续费服务",
+      "tools": [
+        "TwentyHQ/twenty",
+        "chatwoot/chatwoot",
+        "mautic/mautic",
+        "posthog/posthog"
+      ],
+      "stages": [
+        "权限隔离的 CRM 资料",
+        "客户问题受理与分类",
+        "知识库建议与人工复核",
+        "经同意的提醒与教育",
+        "留存、满意度和退订监控"
+      ],
+      "guardrails": [
+        "最小权限",
+        "退订与频次控制",
+        "不把 AI 回复伪装成人类承诺",
+        "审计与数据删除"
+      ],
+      "kpis": [
+        "工单首响时长",
+        "问题解决率",
+        "续费率",
+        "退订率"
+      ],
+      "status": "not-implemented",
+      "security_review": "not-audited",
+      "commercial_license_review": "not-checked"
+    },
+    {
+      "id": "finance",
+      "name": "金融 AI 研究",
+      "goal": "金融研究、可复现量化实验、样本外和模拟盘验证",
+      "tools": [
+        "microsoft/qlib",
+        "microsoft/RD-Agent",
+        "QuantConnect/Lean",
+        "Arize-ai/phoenix"
+      ],
+      "stages": [
+        "冻结研究假设与可追溯行情",
+        "检验泄漏、偏差和条件预测",
+        "真实交易成本模拟",
+        "样本外和模拟盘前瞻审查",
+        "独立审批风险参数和部署"
+      ],
+      "guardrails": [
+        "禁止直接授予 AI 实盘下单权限",
+        "不得承诺盈利",
+        "实盘前独立合法性与风险审查"
+      ],
+      "kpis": [
+        "样本外校准",
+        "成本后净期望",
+        "最大回撤",
+        "风险门禁通过率"
+      ],
+      "status": "not-implemented",
+      "security_review": "not-audited",
+      "commercial_license_review": "not-checked"
+    },
+    {
+      "id": "education",
+      "name": "AI 互动教育",
+      "goal": "多媒体课程知识管理、个性化练习和学习评估",
+      "tools": [
+        "docling-project/docling",
+        "infiniflow/ragflow",
+        "openedx/edx-platform",
+        "ggml-org/whisper.cpp"
+      ],
+      "stages": [
+        "课程版权和使用授权",
+        "文档结构化并保存引用",
+        "题目、案例、可视化练习",
+        "语音互动及错误诊断",
+        "学习前后测与质量抽检"
+      ],
+      "guardrails": [
+        "课程与图片版权",
+        "学生数据保护",
+        "教学答案要可验证",
+        "避免无依据的成绩承诺"
+      ],
+      "kpis": [
+        "课程完成率",
+        "知识掌握提升",
+        "引用准确率",
+        "学习留存"
+      ],
+      "status": "not-implemented",
+      "security_review": "not-audited",
+      "commercial_license_review": "not-checked"
+    }
+  ]
+}

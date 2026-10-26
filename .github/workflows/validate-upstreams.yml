@@ -1,0 +1,37 @@
+name: Audit real upstream discovery
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'scripts/harvest_multi.py'
+      - 'scripts/test_multi.py'
+      - '.github/workflows/validate-upstreams.yml'
+permissions:
+  contents: read
+jobs:
+  integration:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test real public catalog source ingestion (no code execution)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python scripts/harvest_multi.py
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          rows=json.loads(Path('data/catalog.json').read_text('utf-8'))
+          info=json.loads(Path('data/provenance.json').read_text('utf-8'))
+          assert len(rows)==5000, len(rows)
+          assert len({row['url'].rstrip('/').lower() for row in rows})==5000
+          assert len(info['source_counts'])>=7, info['source_counts']
+          assert info['third_party_code_executed'] is False
+          assert info['reviewed_for_safety']==0
+          assert sum(1 for row in rows if row.get('ecosystem')!='openclaw') >= 2500
+          print(json.dumps(info,ensure_ascii=False,indent=2))
+          PY
