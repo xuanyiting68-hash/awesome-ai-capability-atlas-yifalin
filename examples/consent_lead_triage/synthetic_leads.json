@@ -1,0 +1,66 @@
+[
+  {
+    "lead_id": "demo-001",
+    "consent": true,
+    "consent_purpose": "contact_requested",
+    "consent_at": "2026-10-25T10:00:00Z",
+    "opt_out": false,
+    "question": "Need a video and subtitles workflow"
+  },
+  {
+    "lead_id": "demo-002",
+    "consent": false,
+    "consent_purpose": "contact_requested",
+    "consent_at": "2026-10-26T10:00:00Z",
+    "opt_out": false,
+    "question": "Interested in automation"
+  },
+  {
+    "lead_id": "demo-003",
+    "consent": true,
+    "consent_purpose": "contact_requested",
+    "consent_at": "2026-10-26T10:00:00Z",
+    "opt_out": false,
+    "question": "Need CRM tickets"
+  },
+  {
+    "lead_id": "demo-003",
+    "consent": false,
+    "consent_purpose": "contact_requested",
+    "consent_at": "2026-10-26T10:00:00Z",
+    "opt_out": true,
+    "question": "Revoke"
+  },
+  {
+    "lead_id": "demo-004",
+    "consent": true,
+    "consent_purpose": "contact_requested",
+    "consent_at": "2026-01-01T10:00:00Z",
+    "opt_out": false,
+    "question": "Finance"
+  },
+  {
+    "lead_id": "demo-005",
+    "consent": true,
+    "consent_purpose": "newsletter",
+    "consent_at": "2026-10-26T10:00:00Z",
+    "opt_out": false,
+    "question": "CRM"
+  },
+  {
+    "lead_id": "demo-006",
+    "consent": true,
+    "consent_purpose": "contact_requested",
+    "consent_at": "2026-10-26T10:00:00Z",
+    "opt_out": false,
+    "question": "Financial research and RAG automation"
+  },
+  {
+    "lead_id": "demo-007",
+    "consent": true,
+    "consent_purpose": "contact_requested",
+    "consent_at": "2026-10-26T10:00:00Z",
+    "opt_out": false,
+    "question": "Request a workflow overview"
+  }
+]
