@@ -1,0 +1,29 @@
+name: Validate atlas data and scripts
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate resource data and source
+        run: |
+          python -m py_compile scripts/harvest.py scripts/test_harvest.py
+          python -m unittest discover -s scripts -p 'test_*.py'
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          rows=json.loads(Path('data/curated.json').read_text('utf-8'))
+          assert len(rows)==133, len(rows)
+          assert len({r['url'] for r in rows}) == 133
+          growth={'AI视频制作','自媒体运营','智能获客','客户关系维护','增长分析'}
+          assert sum(r.get('topic') in growth for r in rows)==40
+          print('PASS: 133 unique curated records / 40 growth records')
+          PY
