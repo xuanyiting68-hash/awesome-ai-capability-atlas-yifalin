@@ -4,6 +4,7 @@ on:
     paths:
       - 'top30.html'
       - 'project.html'
+      - 'blueprints.html'
       - 'data/business_use_cases.json'
       - 'index.html'
       - 'data/top30_evaluation.csv'
@@ -41,7 +42,7 @@ jobs:
           python - <<'PY'
           import re
           from pathlib import Path
-          for name in ['top30.html', 'project.html']:
+          for name in ['top30.html', 'project.html', 'blueprints.html']:
               text = Path(name).read_text('utf-8')
               js = re.findall(r'<script(?:\\s[^>]*)?>(.*?)</script>', text, re.S)
               assert len(js) == 1, f'{name}: expected one inline script'
