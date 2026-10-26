@@ -43,7 +43,10 @@ class ConsentTriageTests(unittest.TestCase):
             {**valid, "lead_id":"no3", "opt_out":True},
             {**valid, "lead_id":"no4", "consent_at":"2027-01-01T00:00:00Z"},
             {**valid, "lead_id":"no5", "consent_at":"2026-10-26"},
-            {**valid, "lead_id":"no6", "lead_id":"sensitive@example.com"},
+            {**valid, "lead_id":"sensitive@example.com"},
+            {**valid, "lead_id":"no7", "opt_out":"false"},
+            {**valid, "lead_id":"no8", "opt_out":None},
+            {k:v for k,v in {**valid, "lead_id":"no9"}.items() if k != "opt_out"},
         ]
         result = triage_records([valid]+invalid, AS_OF)
         self.assertEqual(result["eligible_count"],1)
