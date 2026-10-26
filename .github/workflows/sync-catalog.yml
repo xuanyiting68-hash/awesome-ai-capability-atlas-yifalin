@@ -5,12 +5,14 @@ on:
     branches: [main]
     paths:
       - 'scripts/harvest.py'
+      - 'scripts/harvest_multi.py'
       - 'data/curated.json'
       - '.github/workflows/sync-catalog.yml'
   schedule:
     - cron: '21 3 * * 1'
 permissions:
   contents: write
+  actions: write
 jobs:
   catalog:
     runs-on: ubuntu-latest
@@ -21,9 +23,13 @@ jobs:
           python-version: '3.12'
       - name: Validate parser
         run: python -m unittest discover -s scripts -p 'test_*.py'
-      - name: Sync source index without executing third-party code
-        run: python scripts/harvest.py
-      - name: Commit source snapshot when changed
+      - name: Sync multi-ecosystem public source indexes without executing third-party code
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/harvest_multi.py
+      - name: Commit verified public snapshot and publish
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
@@ -31,4 +37,5 @@ jobs:
           if ! git diff --cached --quiet; then
             git commit -m 'data: refresh unreviewed public source index'
             git push
+            gh workflow run pages.yml --ref main
           fi
