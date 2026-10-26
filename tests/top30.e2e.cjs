@@ -167,6 +167,46 @@ async function loaded(page) { await page.waitForFunction(() => document.querySel
     await p.goto(base);await p.waitForSelector('.resource');assert.ok(await p.locator('.resource').count()>0);
     assert.match(await p.evaluate(()=>csvCell('=HYPERLINK("x")')),/^"?'/);await c.close();
   });
+  await check('business blueprints render 10 areas and support filtering', async () => {
+    const c=await browser.newContext({viewport:{width:390,height:844}});
+    await c.route('**/*',route=>route.request().url().startsWith(base)?route.continue():route.abort());
+    const p=await c.newPage();p.on('pageerror',e=>errors.push(e.message));
+    await p.goto(new URL('blueprints.html',base).href);
+    await p.waitForFunction(()=>document.querySelectorAll('#cards .card').length===10);
+    assert.equal(await p.locator('#cards .card').count(),10);
+    await p.selectOption('#domain','视频工厂');
+    assert.equal(await p.locator('#cards .card').count(),1);
+    assert.match(await p.locator('#cards .card').innerText(),/字幕/);
+    assert.equal(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
+    await c.close();
+  });
+  await check('project detail links and evidence snapshots for finance and lead generation', async () => {
+    const c=await browser.newContext();await c.route('**/*',route=>route.request().url().startsWith(base)?route.continue():route.abort());
+    const p=await c.newPage();p.on('pageerror',e=>errors.push(e.message));
+    for(const slug of ['microsoft/qlib','formbricks/formbricks']){
+      await p.goto(new URL('project.html?repo='+encodeURIComponent(slug),base).href);
+      await p.waitForSelector('#body:not([hidden])');
+      assert.equal(await p.locator('#title').innerText(),slug);
+      assert.equal(await p.locator('#caseFlow li').count(),4);
+      assert.match(await p.locator('#review').innerText(),/HOLD/);
+      assert.match(await p.locator('#repo').getAttribute('href'),/^https:\/\/github\.com\//);
+    }
+    await c.close();
+  });
+  await check('project detail rejects unknown repos and stale evidence', async () => {
+    const c=await browser.newContext();await c.route('**/*',route=>route.request().url().startsWith(base)?route.continue():route.abort());
+    const p=await c.newPage();p.on('pageerror',e=>errors.push(e.message));
+    await p.goto(new URL('project.html?repo=unknown%2Fmissing',base).href);
+    await p.waitForFunction(()=>document.querySelector('#error').textContent.length>0);
+    assert.equal(await p.locator('#body').isVisible(),false);
+    const old=JSON.parse(await fs.readFile('data/top30_evidence.json','utf8'));
+    old.generated_from_snapshot_utc='2000-01-01T00:00:00Z';
+    await c.route('**/data/top30_evidence.json',route=>route.fulfill({json:old}));
+    await p.goto(new URL('project.html?repo=microsoft%2Fqlib',base).href);
+    await p.waitForFunction(()=>document.querySelector('#error').textContent.length>0);
+    assert.equal(await p.locator('#body').isVisible(),false);
+    await c.close();
+  });
   assert.deepEqual(errors,[],'No browser runtime errors');
   console.log(`PASS ${passed} browser scenarios; zero runtime errors`);
 })().catch(error => {console.error(error);process.exitCode=1}).finally(async()=>{if(browser)await browser.close();if(server)server.kill()});
