@@ -176,6 +176,12 @@ async function loaded(page) { await page.waitForFunction(() => document.querySel
     assert.equal(await p.locator('#cards .card').count(),10);
     await p.selectOption('#domain','视频工厂');
     assert.equal(await p.locator('#cards .card').count(),1);
+    assert.match(p.url(), /domain=/);
+    await p.reload();
+    assert.equal(await p.locator('#domain').inputValue(),'视频工厂');
+    await p.click('#reset');
+    assert.equal(await p.locator('#cards .card').count(),10);
+    await p.selectOption('#domain','视频工厂');
     assert.match(await p.locator('#cards .card').innerText(),/字幕/);
     assert.equal(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
     await c.close();
@@ -188,6 +194,8 @@ async function loaded(page) { await page.waitForFunction(() => document.querySel
       await p.waitForSelector('#body:not([hidden])');
       assert.equal(await p.locator('#title').innerText(),slug);
       assert.equal(await p.locator('#caseFlow li').count(),4);
+      assert.match(await p.locator('#domainLink').getAttribute('href'),/^\.\/blueprints\.html\?domain=/);
+      assert.match(await p.locator('#relatedLink').getAttribute('href'),/^\.\/top30\.html\?domain=/);
       assert.match(await p.locator('#review').innerText(),/HOLD/);
       assert.match(await p.locator('#repo').getAttribute('href'),/^https:\/\/github\.com\//);
     }
