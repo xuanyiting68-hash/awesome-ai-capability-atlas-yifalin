@@ -10,11 +10,13 @@ class PublishBoundaryTests(unittest.TestCase):
             destination = Path(directory) / 'site'
             manifest = build(destination, commit='a' * 40)
             self.assertEqual(set(p.name for p in destination.iterdir()),
-                             {'index.html', 'top30.html', 'data', 'docs', 'LICENSE', 'README.md', 'deployment.json'})
+                             {'index.html', 'top30.html', 'project.html', 'blueprints.html', 'data', 'docs', 'LICENSE', 'README.md', 'deployment.json'})
             self.assertEqual(json.loads((destination / 'deployment.json').read_text()), manifest)
             self.assertEqual(manifest['source_commit'], 'a' * 40)
             self.assertEqual(manifest['catalog_count'], 5000)
             self.assertEqual(manifest['research_project_count'], 30)
+            self.assertEqual(manifest['blueprint_count'], 10)
+            self.assertTrue((destination / 'data/business_use_cases.json').is_file())
 
     def test_refuses_repository_or_parent_as_destination(self):
         for destination in (ROOT, ROOT.parent):
