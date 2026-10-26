@@ -40,6 +40,18 @@ async function loaded(page) { await page.waitForFunction(() => document.querySel
     assert.match(await page.locator('.item details').first().innerText(), /HOLD/);
     assert.match(await page.locator('.item details').first().innerText(), /未记录/);
   });
+  await check('source-linked editorial filter and restorable URL', async () => {
+    await page.check('#briefOnly');
+    assert.equal(await page.locator('.item').count(),4);
+    assert.equal(new URL(page.url()).searchParams.get('brief'),'1');
+    assert.match(await page.locator('.item').first().innerText(),/官方资料研究/);
+    await page.reload();
+    await page.waitForFunction(()=>document.querySelectorAll('.item').length===4);
+    assert.equal(await page.locator('#briefOnly').isChecked(),true);
+    await page.click('#reset');
+    assert.equal(await page.locator('.item').count(),30);
+    assert.equal(new URL(page.url()).searchParams.has('brief'),false);
+  });
   await check('domain, priority, status and reset', async () => {
     await page.selectOption('#domain', '金融AI');
     assert.equal(await page.locator('.item').count(), 8);
