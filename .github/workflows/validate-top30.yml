@@ -1,0 +1,34 @@
+name: Validate Atlas research lab
+on:
+  pull_request:
+    paths:
+      - 'top30.html'
+      - 'index.html'
+      - 'data/top30_evaluation.csv'
+      - 'data/repo_metadata.json'
+      - 'scripts/test_top30_contract.py'
+      - '.github/workflows/validate-top30.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify Top 30 CSV, page, and metadata consistency
+        run: python -m unittest discover -s scripts -p 'test_top30_contract.py' -v
+      - name: Verify inline JavaScript syntax
+        run: |
+          python - <<'PY'
+          import re
+          from pathlib import Path
+          text = Path('top30.html').read_text('utf-8')
+          js = re.findall(r'<script(?:\\s[^>]*)?>(.*?)</script>', text, re.S)
+          assert len(js) == 1, 'Expected one inline script'
+          Path('/tmp/top30-inline.js').write_text(js[0], encoding='utf-8')
+          PY
+          node --check /tmp/top30-inline.js
