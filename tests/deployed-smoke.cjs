@@ -35,6 +35,27 @@ const errors=[];
     await page.click('#reset');await page.selectOption('#domain','金融AI');assert.equal(await page.locator('.item').count(),8);
     await page.setViewportSize({width:390,height:844});assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true);
     await page.evaluate(()=>scrollTo(0,0));await fs.mkdir('test-results',{recursive:true});await page.screenshot({path:'test-results/deployed-mobile.png'});
+    // The network must be a published, sourced and accessible experience.
+    for(const width of [1440,768,390]){
+      await page.setViewportSize({width,height:844});
+      await page.goto(new URL('network.html',base).href);
+      await page.waitForFunction(n=>document.querySelectorAll('#graph [data-repo]').length===n,manifest.research_project_count);
+      assert.equal(await page.locator('#briefCount').innerText(),String(manifest.research_briefs_count));
+      assert.equal(await page.locator('#graph .hub').count(),10,'Exactly ten documented business domains');
+      assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,'Network horizontal overflow '+width);
+      if(width===390){
+        assert.ok(await page.locator('#mobileCards .mobile-card').first().isVisible());
+        const card=await page.locator('#mobileCards .mobile-card').first().boundingBox();
+        assert.ok(card&&card.y<844,'Mobile capability map first item is buried offscreen');
+      }
+      await page.evaluate(()=>scrollTo(0,0));
+      await page.screenshot({path:'test-results/network-staged-'+width+'.png'});
+    }
+    await page.check('#linked');
+    assert.equal(await page.locator('#directory button').count(),manifest.research_briefs_count);
+    await page.reload();await page.waitForFunction(n=>document.querySelectorAll('#directory button').length===n,manifest.research_briefs_count);
+    assert.equal(await page.locator('#linked').isChecked(),true);
+    await page.uncheck('#linked');
     for(const width of [1440,768,390]){
       await page.setViewportSize({width,height:844});
       await page.goto(base);

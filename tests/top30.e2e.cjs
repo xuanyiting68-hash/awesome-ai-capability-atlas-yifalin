@@ -5,7 +5,7 @@ const http = require('node:http');
 function reachable(url) { return new Promise(resolve => { const request = http.get(url, response => {response.resume();resolve(response.statusCode === 200)}); request.on('error', () => resolve(false)); request.setTimeout(500, () => request.destroy()); }); }
 const fs = require('node:fs/promises');
 const path = require('node:path');
-const { spawn } = require('node:child_process');
+const { spawn, spawnSync } = require('node:child_process');
 const base = process.env.ATLAS_BASE_URL || 'http://127.0.0.1:8766/';
 let server, browser, passed = 0;
 const errors = [];
@@ -23,7 +23,11 @@ async function open(query = '', setup) {
 async function loaded(page) { await page.waitForFunction(() => document.querySelector('#count').textContent.includes('30') && document.querySelectorAll('.item').length === 30); }
 (async () => {
   if (!process.env.ATLAS_BASE_URL) {
-    server = spawn('python', ['-m', 'http.server', '8766', '--bind', '127.0.0.1'], { stdio: 'ignore' });
+    // Test the same packaged assets that Pages publishes, not raw repository files.
+    // This catches missing allowlisted pages and required deployment manifests locally.
+    const staged = spawnSync('python', ['scripts/build_site.py'], {encoding:'utf-8'});
+    if(staged.status !== 0)throw Error('Unable to stage public site before browser checks: '+staged.stderr);
+    server = spawn('python', ['-m', 'http.server', '8766', '--bind', '127.0.0.1', '--directory', '_site'], { stdio: 'ignore' });
     for (let i = 0; i < 40; i++) {
       if (await reachable(base)) break;
       await new Promise(resolve => setTimeout(resolve, 100));
@@ -145,6 +149,47 @@ async function loaded(page) { await page.waitForFunction(() => document.querySel
     assert.ok(searchBox && searchBox.y + searchBox.height < 844,
       'Mobile search must be accessible in the first viewport, not buried below metrics');
     await page.screenshot({path:'test-results/top30-mobile.png'});
+  });
+  await check('interactive capability network, source filter, keyboard and three viewports', async()=>{
+    const visual=await context.newPage();visual.on('pageerror',e=>errors.push(e.message));
+    await visual.goto(new URL('network.html',base).href);
+    await visual.waitForFunction(()=>document.querySelectorAll('#graph [data-repo]').length===30 && document.querySelector('#briefCount').textContent==='10');
+    assert.equal(await visual.locator('#graph .hub').count(),10);
+    assert.equal(await visual.locator('#directory button').count(),30);
+    assert.equal(await visual.locator('#catalogCount').innerText(),'5,000');
+    await visual.fill('#search','Qlib');
+    assert.equal(await visual.locator('#directory button').count(),1);
+    assert.match(await visual.locator('#detail').innerText(),/Qlib|qlib/i);
+    await visual.fill('#search','');
+    await visual.check('#linked');
+    assert.equal(await visual.locator('#directory button').count(),10);
+    assert.equal(new URL(visual.url()).searchParams.get('sourced'),'1');
+    await visual.reload();
+    await visual.waitForFunction(()=>document.querySelectorAll('#directory button').length===10);
+    await visual.uncheck('#linked');
+    await visual.selectOption('#domain','安全评测');
+    assert.equal(await visual.locator('#directory button').count(),1);
+    assert.match(await visual.locator('#detail').innerText(),/promptfoo/);
+    await visual.selectOption('#domain','');
+    await visual.locator('#graph [data-repo="microsoft/qlib"]').focus();
+    await visual.keyboard.press('Enter');
+    assert.equal(new URL(visual.url()).searchParams.get('repo'),'microsoft/qlib');
+    await visual.click('#language');
+    assert.equal(await visual.locator('html').getAttribute('lang'),'en');
+    assert.match(await visual.locator('#detail').innerText(),/Best for/);
+    for(const width of [1440,768,390]){
+      await visual.setViewportSize({width,height:844});
+      await visual.evaluate(()=>scrollTo(0,0));
+      assert.equal(await visual.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,'Network overflow '+width);
+      if(width===390){
+        assert.equal(await visual.locator('#mobileCards .mobile-card').first().isVisible(),true);
+        assert.equal(await visual.locator('#graph').isVisible(),false);
+        const card=await visual.locator('#mobileCards .mobile-card').first().boundingBox();
+        assert.ok(card&&card.y<844,'First mobile network card must appear in the first screen');
+      }
+      await visual.screenshot({path:'test-results/network-'+width+'.png'});
+    }
+    await visual.close();
   });
   await context.close();
   await check('missing metadata and evidence degrade without losing projects', async () => {

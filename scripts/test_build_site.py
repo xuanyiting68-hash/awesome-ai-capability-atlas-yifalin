@@ -10,7 +10,7 @@ class PublishBoundaryTests(unittest.TestCase):
             destination = Path(directory) / 'site'
             manifest = build(destination, commit='a' * 40)
             self.assertEqual(set(p.name for p in destination.iterdir()),
-                             {'index.html', 'top30.html', 'project.html', 'blueprints.html', 'data', 'docs', 'LICENSE', 'README.md', 'deployment.json'})
+                             {'index.html', 'top30.html', 'project.html', 'blueprints.html', 'network.html', 'data', 'docs', 'LICENSE', 'README.md', 'deployment.json'})
             self.assertEqual(json.loads((destination / 'deployment.json').read_text()), manifest)
             self.assertEqual(manifest['source_commit'], 'a' * 40)
             self.assertEqual(manifest['catalog_count'], 5000)
@@ -22,6 +22,8 @@ class PublishBoundaryTests(unittest.TestCase):
             self.assertTrue((destination / 'data/business_use_cases.json').is_file())
             self.assertIn('project.html', (destination / 'top30.html').read_text())
             self.assertIn('blueprints.html', (destination / 'index.html').read_text())
+            self.assertIn('network.html', (destination / 'index.html').read_text())
+            self.assertIn('data/top30_evaluation.csv', (destination / 'network.html').read_text())
 
     def test_forged_research_tier_preserves_previous_site(self):
         with tempfile.TemporaryDirectory() as directory:

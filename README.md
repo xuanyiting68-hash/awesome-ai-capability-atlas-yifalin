@@ -23,6 +23,12 @@
 - [2026-10-27 独立质量审计与修复记录](docs/INDEPENDENT_AUDIT_2026-10-27_CN.md)：说明数据可信边界、缺失页面及版本与 CI 核验，任何测试通过均不替代第三方许可证审查。
 - [合规留资 → 匿名分流 → 人工复核（合成数据）](examples/consent_lead_triage/README.md)：使用 Python 标准库运行，无账号连接、无自动外发；仅用于验证权限/撤回门禁，并不代表生产获客/CRM 集成成功。
 
+## 交互式 AI 能力关系图（Top 30）
+
+[打开能力关系图](network.html)——可视化 10 个已有业务领域与 Top 30 候选项目的分类关系，基于 `data/top30_evaluation.csv`、`data/research_briefs.json` 和实际发布清单渲染。支持关键词、领域、来源档案筛选、URL 分享及鼠标/键盘导航。手机端呈现可操作项目卡片，主图不引入重型可视化依赖。
+
+**关系边只表示编辑业务分类，不表示技术依赖、API 连接、商业许可或安全认证。** 有官方资料档案不代表有实际复现。全体 Fork HOLD。
+
 ## 十个来源可追溯研究档案（编辑研究，非实测）
 
 在 [Top 30 研究室](top30.html) 打开 Qlib、LangGraph、Remotion、Twenty、RD-Agent、Docling、Dify、faster-whisper、Formbricks 或 Promptfoo 的[项目详情页](project.html?repo=microsoft%2Fqlib)，可查看官方 README/文档、双语适用判断、关键能力、待执行实验步骤、指标和适用限制。研究内容位于 `data/research_briefs.json`，其证据门禁由 `scripts/validate_research_briefs.py` 和 CI 强制检查。官方 README 的 Git Blob SHA 用于不可变的来源文本快照追踪。
