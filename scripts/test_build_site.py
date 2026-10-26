@@ -17,6 +17,8 @@ class PublishBoundaryTests(unittest.TestCase):
             self.assertEqual(manifest['research_project_count'], 30)
             self.assertEqual(manifest['blueprint_count'], 10)
             self.assertTrue((destination / 'data/business_use_cases.json').is_file())
+            self.assertIn('project.html', (destination / 'top30.html').read_text())
+            self.assertIn('blueprints.html', (destination / 'index.html').read_text())
 
     def test_refuses_repository_or_parent_as_destination(self):
         for destination in (ROOT, ROOT.parent):
