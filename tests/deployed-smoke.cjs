@@ -65,6 +65,7 @@ const errors=[];
       assert.equal(new URL(page.url()).searchParams.has('lang'),false);
 
       assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,'Project detail horizontal overflow at '+width);
+      await page.evaluate(()=>scrollTo(0,0));
       await page.screenshot({path:'test-results/project-'+width+'.png'});
       await page.goto(new URL('blueprints.html',base).href);
       await page.waitForFunction(()=>document.querySelectorAll('#cards .card').length===10);
