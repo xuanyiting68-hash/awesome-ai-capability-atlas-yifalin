@@ -1,6 +1,12 @@
 name: Sync public capability catalog
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/harvest.py'
+      - 'data/curated.json'
+      - '.github/workflows/sync-catalog.yml'
   schedule:
     - cron: '21 3 * * 1'
 permissions:
