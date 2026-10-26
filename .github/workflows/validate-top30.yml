@@ -3,6 +3,7 @@ on:
   pull_request:
     paths:
       - 'top30.html'
+      - 'project.html'
       - 'index.html'
       - 'data/top30_evaluation.csv'
       - 'data/top30_en.json'
@@ -39,9 +40,11 @@ jobs:
           python - <<'PY'
           import re
           from pathlib import Path
-          text = Path('top30.html').read_text('utf-8')
-          js = re.findall(r'<script(?:\\s[^>]*)?>(.*?)</script>', text, re.S)
-          assert len(js) == 1, 'Expected one inline script'
-          Path('/tmp/top30-inline.js').write_text(js[0], encoding='utf-8')
+          for name in ['top30.html', 'project.html']:
+              text = Path(name).read_text('utf-8')
+              js = re.findall(r'<script(?:\\s[^>]*)?>(.*?)</script>', text, re.S)
+              assert len(js) == 1, f'{name}: expected one inline script'
+              Path('/tmp/' + name + '.js').write_text(js[0], encoding='utf-8')
           PY
-          node --check /tmp/top30-inline.js
+          node --check /tmp/top30.html.js
+          node --check /tmp/project.html.js
