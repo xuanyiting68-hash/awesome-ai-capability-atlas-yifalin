@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-26T06:22:04.642620+00:00",
+  "generated_at_utc": "2026-10-26T06:23:23.930409+00:00",
   "source": "Public GitHub REST API",
   "disclaimer": "Stars do not prove quality; GitHub SPDX is an indicator, not a commercial license clearance.",
   "coverage_count": 133,
@@ -81,7 +81,7 @@
       "name": "anomalyco/opencode",
       "stars": 221633,
       "forks": 29634,
-      "last_push": "2026-10-26T06:19:05Z",
+      "last_push": "2026-10-26T06:22:36Z",
       "archived": false,
       "license_spdx": "MIT",
       "github_url": "https://github.com/anomalyco/opencode"
@@ -97,7 +97,7 @@
     },
     "anthropics/skills": {
       "name": "anthropics/skills",
-      "stars": 183823,
+      "stars": 183824,
       "forks": 21751,
       "last_push": "2026-10-09T18:45:52Z",
       "archived": false,
@@ -205,7 +205,7 @@
     },
     "comfyanonymous/comfyui": {
       "name": "comfyanonymous/ComfyUI",
-      "stars": 143023,
+      "stars": 143024,
       "forks": 16880,
       "last_push": "2026-10-25T23:41:43Z",
       "archived": false,
@@ -313,7 +313,7 @@
     },
     "firecrawl/firecrawl": {
       "name": "firecrawl/firecrawl",
-      "stars": 195401,
+      "stars": 195402,
       "forks": 10307,
       "last_push": "2026-10-26T04:20:44Z",
       "archived": false,
@@ -342,7 +342,7 @@
       "name": "formbricks/formbricks",
       "stars": 13152,
       "forks": 2595,
-      "last_push": "2026-10-26T06:15:17Z",
+      "last_push": "2026-10-26T06:22:42Z",
       "archived": false,
       "license_spdx": "unknown",
       "github_url": "https://github.com/formbricks/formbricks"
@@ -459,7 +459,7 @@
       "name": "hesreallyhim/awesome-claude-code",
       "stars": 56560,
       "forks": 4872,
-      "last_push": "2026-10-26T03:14:43Z",
+      "last_push": "2026-10-26T06:22:04Z",
       "archived": false,
       "license_spdx": "unknown",
       "github_url": "https://github.com/hesreallyhim/awesome-claude-code"
@@ -576,7 +576,7 @@
       "name": "langgenius/dify",
       "stars": 159551,
       "forks": 25214,
-      "last_push": "2026-10-26T06:17:14Z",
+      "last_push": "2026-10-26T06:23:06Z",
       "archived": false,
       "license_spdx": "unknown",
       "github_url": "https://github.com/langgenius/dify"
@@ -736,7 +736,7 @@
     },
     "modelcontextprotocol/servers": {
       "name": "modelcontextprotocol/servers",
-      "stars": 91564,
+      "stars": 91565,
       "forks": 11868,
       "last_push": "2026-10-25T05:26:36Z",
       "archived": false,
@@ -756,7 +756,7 @@
       "name": "n8n-io/n8n",
       "stars": 208613,
       "forks": 61255,
-      "last_push": "2026-10-26T06:22:00Z",
+      "last_push": "2026-10-26T06:22:57Z",
       "archived": false,
       "license_spdx": "unknown",
       "github_url": "https://github.com/n8n-io/n8n"
@@ -790,7 +790,7 @@
     },
     "obra/superpowers": {
       "name": "obra/superpowers",
-      "stars": 305181,
+      "stars": 305183,
       "forks": 27183,
       "last_push": "2026-10-23T03:48:57Z",
       "archived": false,
@@ -853,7 +853,7 @@
     },
     "openai/whisper": {
       "name": "openai/whisper",
-      "stars": 111272,
+      "stars": 111273,
       "forks": 13476,
       "last_push": "2026-08-31T17:19:19Z",
       "archived": false,
@@ -916,7 +916,7 @@
     },
     "promptfoo/promptfoo": {
       "name": "promptfoo/promptfoo",
-      "stars": 26432,
+      "stars": 26433,
       "forks": 2580,
       "last_push": "2026-10-26T04:44:12Z",
       "archived": false,
@@ -1042,7 +1042,7 @@
     },
     "tauricresearch/tradingagents": {
       "name": "TauricResearch/TradingAgents",
-      "stars": 114913,
+      "stars": 114914,
       "forks": 22158,
       "last_push": "2026-10-16T21:38:46Z",
       "archived": false,
@@ -1150,7 +1150,7 @@
     },
     "voltagent/awesome-agent-skills": {
       "name": "VoltAgent/awesome-agent-skills",
-      "stars": 36367,
+      "stars": 36368,
       "forks": 3965,
       "last_push": "2026-10-25T13:18:51Z",
       "archived": false,
@@ -1186,8 +1186,8 @@
     },
     "yt-dlp/yt-dlp": {
       "name": "yt-dlp/yt-dlp",
-      "stars": 202222,
-      "forks": 17701,
+      "stars": 202224,
+      "forks": 17702,
       "last_push": "2026-10-23T15:18:53Z",
       "archived": false,
       "license_spdx": "Unlicense",
