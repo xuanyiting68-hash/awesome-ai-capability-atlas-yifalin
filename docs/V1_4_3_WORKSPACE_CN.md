@@ -29,7 +29,8 @@ npm run test:e2e
 - 本地 Python：27 项通过；主目录 JavaScript 语法、精选数据校验通过。
 - 新增研究室 JavaScript 与浏览器测试脚本语法校验通过。
 - 本地 Chromium：备用下载地址成功；17 个真实浏览器场景全部通过，页面运行错误为 0。桌面及移动截图已检查。PR CI 仍需独立复核。
-- PR、合并 SHA、GitHub Actions 与实际 Pages 状态在本节后续记录；合并前不称已发布。
+- PR #3 已合并，源提交 `007953a`，squash 合并提交 `16dd313`。对应 PR 的两项 validate 及 browser 均成功。
+- Pages 发布 `16dd313` 成功，随后自动元数据刷新 `8039cb3` 的发布也成功。线上交互以随后的浏览器巡检记录为准。
 
 ## 尚未完成的目标
 

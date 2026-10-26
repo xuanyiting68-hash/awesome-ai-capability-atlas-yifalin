@@ -14,7 +14,7 @@ permissions:
   contents: write
   actions: write
 concurrency:
-  group: atlas-metadata
+  group: atlas-data-refresh
   cancel-in-progress: false
 jobs:
   enrich:

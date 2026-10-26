@@ -1,0 +1,60 @@
+#!/usr/bin/env python3
+"""Stage only public website assets, with a verifiable deployment manifest."""
+import csv
+import json
+import shutil
+import subprocess
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+FILES = ('index.html', 'top30.html', 'README.md', 'LICENSE')
+DIRECTORIES = ('data', 'docs')
+
+def build(destination, source=ROOT, commit=None):
+    destination, source = Path(destination).resolve(), Path(source).resolve()
+    if destination == source or source.is_relative_to(destination):
+        raise ValueError('Destination must not contain the source repository')
+    for name in (*FILES, *DIRECTORIES):
+        item = source / name
+        if not item.exists():
+            raise ValueError('Missing site asset: ' + name)
+        if item.is_symlink() or (item.is_dir() and any(p.is_symlink() for p in item.rglob('*'))):
+            raise ValueError('Symlinks are not published: ' + name)
+    catalog = json.loads((source / 'data/catalog.json').read_text())
+    curated = json.loads((source / 'data/curated.json').read_text())
+    metadata = json.loads((source / 'data/repo_metadata.json').read_text())
+    evidence = json.loads((source / 'data/top30_evidence.json').read_text())
+    provenance = json.loads((source / 'data/provenance.json').read_text())
+    with (source / 'data/top30_evaluation.csv').open(encoding='utf-8-sig') as file:
+        projects = list(csv.DictReader(file))
+    if not len(curated) <= len(catalog) <= 5000 or provenance['total'] != len(catalog):
+        raise ValueError('Catalog count does not match provenance or capacity')
+    if evidence['generated_from_snapshot_utc'] != metadata['generated_at_utc']:
+        raise ValueError('Stale research evidence')
+    if len(evidence['projects']) != len(projects):
+        raise ValueError('Incomplete research evidence')
+    if commit is None:
+        commit = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=source, text=True).strip()
+    manifest = {
+        'schema_version': 1,
+        'version': json.loads((source / 'package.json').read_text())['version'],
+        'source_commit': commit,
+        'catalog_count': len(catalog),
+        'curated_count': len(curated),
+        'research_project_count': len(projects),
+        'metadata_snapshot_utc': metadata['generated_at_utc'],
+        'catalog_snapshot_utc': provenance['generated_at_utc'],
+    }
+    # Rebuild only the selected destination after inputs have passed validation.
+    if destination.exists():
+        shutil.rmtree(destination)
+    destination.mkdir(parents=True)
+    for name in FILES:
+        shutil.copyfile(source / name, destination / name)
+    for name in DIRECTORIES:
+        shutil.copytree(source / name, destination / name)
+    (destination / 'deployment.json').write_text(json.dumps(manifest, indent=2) + '\n')
+    return manifest
+
+if __name__ == '__main__':
+    print(json.dumps(build(ROOT / '_site'), indent=2))

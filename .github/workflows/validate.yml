@@ -48,6 +48,8 @@ jobs:
         run: npx playwright install --with-deps chromium
       - name: Verify research workspace in a real browser
         run: npm run test:e2e
+      - name: Verify staged Pages artifact
+        run: npm run test:staged
       - name: Preserve screenshots on success or failure
         if: always()
         uses: actions/upload-artifact@v4

@@ -14,6 +14,10 @@
 
 **务必区分：**“已被目录索引 / repository-exists / security-audited / battle-tested / licensed-for-commercial-use” 是不同的状态。本项目目前只对 133 个精选 GitHub 项目完成了存在性与未归档状态的核验。目录候选不经过人工实测。
 
+## V1.4.4 · 可核验发布与巡检
+
+发布产物包含源提交清单 `deployment.json`，发布前验证数据，发布后及每日通过 Chromium 巡检站点。仅打包公共页面和数据，不发布开发依赖。详见 [发布验证记录](docs/V1_4_4_RELEASE_MONITORING_CN.md)。
+
 ## V1.4.3 · 双语项目研究工作台
 
 [进入 Top 30 研究室](top30.html) · [验证与交付记录](docs/V1_4_3_WORKSPACE_CN.md)
