@@ -50,3 +50,4 @@ jobs:
           PY
           node --check /tmp/top30.html.js
           node --check /tmp/project.html.js
+          node --check /tmp/blueprints.html.js
