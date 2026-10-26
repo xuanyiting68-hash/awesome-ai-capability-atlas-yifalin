@@ -17,6 +17,7 @@ class Top30ContractTests(unittest.TestCase):
         cls.metadata = json.loads((ROOT / "data/repo_metadata.json").read_text(encoding="utf-8"))
         cls.page = (ROOT / "top30.html").read_text(encoding="utf-8")
         cls.home = (ROOT / "index.html").read_text(encoding="utf-8")
+        cls.detail = (ROOT / "project.html").read_text(encoding="utf-8")
 
     def test_count_unique_repo_and_rank(self):
         self.assertEqual(len(self.rows), 30)
@@ -59,6 +60,13 @@ class Top30ContractTests(unittest.TestCase):
         for term in ('id="comparePanel"', 'id="compareContent"', 'id="clearCompare"', "function toggleCompare(", "function renderComparison(", "data-repo=", "aria-pressed", "最多比较 4 个项目"):
             with self.subTest(term=term):
                 self.assertIn(term, self.page)
+
+    def test_project_detail_sources_and_safety(self):
+        self.assertIn("./project.html?repo=", self.page)
+        for value in ("top30_evaluation.csv", "top30_evidence.json", "repo_metadata.json", "fork_decision", "sandbox_commit_sha", "metadata_source_url", "encodeURIComponent"):
+            with self.subTest(value=value):
+                self.assertIn(value, self.detail if value != "encodeURIComponent" else self.page)
+        self.assertIn("ev.generated_from_snapshot_utc!==meta.generated_at_utc", self.detail)
 
     def test_home_links_to_research_lab(self):
         self.assertIn('href="./top30.html"', self.home)
