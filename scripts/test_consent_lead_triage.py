@@ -1,5 +1,7 @@
 """Deterministic consent gate test; runs in the normal no-network CI test suite."""
 import json
+import subprocess
+import sys
 import unittest
 from datetime import datetime, timezone
 from pathlib import Path
@@ -21,6 +23,16 @@ class ConsentTriageTests(unittest.TestCase):
         self.assertEqual(result["human_review_queue"][1]["category"], "finance_research")
         self.assertNotIn("question", json.dumps(result))
         self.assertNotIn("contact_at", json.dumps(result))
+
+    def test_actual_cli_output_is_deterministic(self):
+        cmd = [sys.executable, str(ROOT / "examples/consent_lead_triage/run_demo.py"),
+               str(ROOT / "examples/consent_lead_triage/synthetic_leads.json"),
+               "--as-of", "2026-10-27T00:00:00Z"]
+        proc = subprocess.run(cmd, check=True, capture_output=True, text=True)
+        result = json.loads(proc.stdout)
+        self.assertEqual(result["eligible_count"], 3)
+        self.assertEqual(result["external_actions"], 0)
+        self.assertEqual(result["blocked_count"], 5)
 
     def test_explicit_bool_purpose_revocation_and_future_consent(self):
         valid = {"lead_id":"id1", "consent":True, "consent_purpose":"contact_requested",
