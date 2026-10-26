@@ -3,6 +3,11 @@ on:
   pull_request:
     paths:
       - 'top30.html'
+      - 'project.html'
+      - 'blueprints.html'
+      - 'data/business_use_cases.json'
+      - 'scripts/build_site.py'
+      - 'scripts/test_build_site.py'
       - 'index.html'
       - 'data/top30_evaluation.csv'
       - 'data/top30_en.json'
@@ -39,9 +44,12 @@ jobs:
           python - <<'PY'
           import re
           from pathlib import Path
-          text = Path('top30.html').read_text('utf-8')
-          js = re.findall(r'<script(?:\\s[^>]*)?>(.*?)</script>', text, re.S)
-          assert len(js) == 1, 'Expected one inline script'
-          Path('/tmp/top30-inline.js').write_text(js[0], encoding='utf-8')
+          for name in ('top30', 'project', 'blueprints'):
+            text = Path(f'{name}.html').read_text('utf-8')
+            js = re.findall(r'<script(?:\\s[^>]*)?>(.*?)</script>', text, re.S)
+            assert len(js) == 1, f'Expected one inline script in {name}'
+            Path(f'/tmp/{name}-inline.js').write_text(js[0], encoding='utf-8')
           PY
           node --check /tmp/top30-inline.js
+          node --check /tmp/project-inline.js
+          node --check /tmp/blueprints-inline.js
