@@ -16,9 +16,27 @@ class PublishBoundaryTests(unittest.TestCase):
             self.assertEqual(manifest['catalog_count'], 5000)
             self.assertEqual(manifest['research_project_count'], 30)
             self.assertEqual(manifest['blueprint_count'], 10)
+            self.assertEqual(manifest['research_briefs_count'],4)
+            self.assertEqual(manifest['research_reviewed_count'],0)
+            self.assertTrue((destination / 'data/research_briefs.json').is_file())
             self.assertTrue((destination / 'data/business_use_cases.json').is_file())
             self.assertIn('project.html', (destination / 'top30.html').read_text())
             self.assertIn('blueprints.html', (destination / 'index.html').read_text())
+
+    def test_forged_research_tier_preserves_previous_site(self):
+        with tempfile.TemporaryDirectory() as directory:
+            source = Path(directory) / 'source'
+            build(source,commit='a'*40)
+            target = Path(directory) / 'previous'
+            target.mkdir()
+            (target / 'marker').write_text('keep last good')
+            evidence = source / 'data/research_briefs.json'
+            doc = json.loads(evidence.read_text())
+            doc['entries'][0]['tier'] = 'Production Candidate'
+            evidence.write_text(json.dumps(doc))
+            with self.assertRaisesRegex(ValueError,'promotion'):
+                build(target,source=source,commit='b'*40)
+            self.assertEqual((target / 'marker').read_text(), 'keep last good')
 
     def test_refuses_repository_or_parent_as_destination(self):
         for destination in (ROOT, ROOT.parent):

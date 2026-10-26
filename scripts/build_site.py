@@ -5,6 +5,10 @@ import json
 import shutil
 import subprocess
 from pathlib import Path
+if __package__:
+    from .validate_research_briefs import validate_from_files
+else:
+    from validate_research_briefs import validate_from_files
 
 ROOT = Path(__file__).resolve().parents[1]
 FILES = ('index.html', 'top30.html', 'project.html', 'blueprints.html', 'README.md', 'LICENSE')
@@ -51,6 +55,8 @@ def build(destination, source=ROOT, commit=None):
         raise ValueError('Project evidence repositories do not match the CSV')
     if not set(slugs).issubset(metadata['repositories']):
         raise ValueError('Project detail metadata is incomplete')
+    # Editorial claims are first-class release data; stale or forged promotions block shipping.
+    research_summary = validate_from_files(source)
     if commit is None:
         commit = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=source, text=True).strip()
     manifest = {
@@ -61,6 +67,8 @@ def build(destination, source=ROOT, commit=None):
         'curated_count': len(curated),
         'research_project_count': len(projects),
         'blueprint_count': len(domains),
+        'research_briefs_count': research_summary['count'],
+        'research_reviewed_count': research_summary['reviewed'],
         'metadata_snapshot_utc': metadata['generated_at_utc'],
         'catalog_snapshot_utc': provenance['generated_at_utc'],
     }
