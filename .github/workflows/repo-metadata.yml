@@ -10,6 +10,7 @@ on:
       - '.github/workflows/repo-metadata.yml'
 permissions:
   contents: write
+  actions: write
 concurrency:
   group: atlas-metadata
   cancel-in-progress: false
@@ -27,7 +28,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python scripts/sync_repo_metadata.py
-      - name: Commit verified metadata snapshot
+      - name: Commit verified metadata snapshot and request website refresh
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
@@ -35,4 +38,5 @@ jobs:
           if ! git diff --cached --quiet; then
             git commit -m 'data: refresh curated repository metadata'
             git push
+            gh workflow run pages.yml --ref main
           fi
