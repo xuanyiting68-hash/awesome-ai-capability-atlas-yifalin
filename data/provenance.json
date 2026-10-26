@@ -1,0 +1,10 @@
+{
+  "generated_at_utc": "2026-10-26T05:37:26.745029+00:00",
+  "curated": 133,
+  "public_candidates": 4867,
+  "total": 5000,
+  "categories_ok": 30,
+  "source": "VoltAgent/awesome-openclaw-skills",
+  "security_audited": false,
+  "third_party_skills_executed": false
+}
