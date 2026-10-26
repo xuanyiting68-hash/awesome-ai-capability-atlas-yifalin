@@ -43,7 +43,11 @@ const errors=[];
       assert.equal(await page.locator('#briefCount').innerText(),String(manifest.research_briefs_count));
       assert.equal(await page.locator('#graph .hub').count(),10,'Exactly ten documented business domains');
       assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,'Network horizontal overflow '+width);
-      if(width===390)assert.ok(await page.locator('#mobileCards .mobile-card').first().isVisible());
+      if(width===390){
+        assert.ok(await page.locator('#mobileCards .mobile-card').first().isVisible());
+        const card=await page.locator('#mobileCards .mobile-card').first().boundingBox();
+        assert.ok(card&&card.y<844,'Mobile capability map first item is buried offscreen');
+      }
       await page.evaluate(()=>scrollTo(0,0));
       await page.screenshot({path:'test-results/network-staged-'+width+'.png'});
     }
