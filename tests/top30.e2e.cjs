@@ -141,6 +141,9 @@ async function loaded(page) { await page.waitForFunction(() => document.querySel
     await page.locator('.compare-button').nth(1).click();
     assert.equal(await page.evaluate(() => document.documentElement.scrollWidth<=innerWidth), true);
     await page.evaluate(()=>window.scrollTo(0,0));
+    const searchBox=await page.locator('#search').boundingBox();
+    assert.ok(searchBox && searchBox.y + searchBox.height < 844,
+      'Mobile search must be accessible in the first viewport, not buried below metrics');
     await page.screenshot({path:'test-results/top30-mobile.png'});
   });
   await context.close();
