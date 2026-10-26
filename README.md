@@ -1,0 +1,86 @@
+# ◈ Global AI Capability Atlas | 全球 AI Skills · Agents · Projects 图谱
+
+> Find → Evaluate → Bookmark → Fork → Build.  **发现、评估、收藏、Fork、二次开发。**
+
+一个可以直接打开的静态网页 + 可审计的 CSV/JSON 数据目录 + 标准库 Python 采集脚本 + GitHub Actions 自动更新。本仓库首次初始化阶段首先发布网页及精选数据；其余脚本和工作流将随后补充并核验。
+
+## 目前交付（2026-10-26）
+
+| 层级 | 规模 | 内容 | 验证边界 |
+|---|---:|---|---|
+| 编辑精选 | **133 个仓库** | Skills、Agents、MCP、框架、AI/量化项目、评测工具 | 已通过 GitHub 连接核实仓库存在且未归档；**不等于完成安全审计/实测** |
+| 上游候选发现层 | **30 个分类文件** | 来源于 `VoltAgent/awesome-openclaw-skills` | 同日按链接格式计约 5,150 条，可能重复或日后发生变动；均为**第三方、未审计记录** |
+| 网站与同步脚本 | **上限 5,000 条总索引** | 保留 133 个编辑精选，剩余名额按来源分类轮询去重收录 | 需要联网同步。若来源失败，只显示实际可用条目，绝不捏造记录 |
+
+**务必区分：**“已被目录索引 / repository-exists / security-audited / battle-tested / licensed-for-commercial-use” 是不同的状态。本项目目前只对 133 个精选 GitHub 项目完成了存在性与未归档状态的核验。目录候选不经过人工实测。
+
+## 快速使用
+
+1. 解压项目，双击 `index.html`，无需安装依赖。离线立即可检索 **133 个精选项目**。
+2. 浏览器联网且允许访问 GitHub Raw 时，页面自动载入 30 个公开分类，最多显示 **5,000 条**（含精选 133 个）。也可点击「重新同步全球目录」。
+3. 支持中文及英文搜索、类型/领域/级别筛选、金融量化专区、收藏、显示更多、导出筛选结果为 CSV/JSON。
+4. `data/curated.csv` 是离线精选表；推荐在正式部署后使用 `data/catalog.csv` 作为有来源记录的完整索引。
+
+## 一次性生成完整数据快照
+
+```bash
+python scripts/harvest.py
+```
+
+生成：`data/catalog.json`、`data/catalog.csv`、`data/provenance.json`、`data/excluded.json`。**运行脚本只下载分类 Markdown，不安装、不执行第三方 Skills。** Python 3.10+ 标准库即可。默认某个分类失败时保持原快照，不覆盖成部分结果。上游链接的有效性、许可证以及安全性需后续独立验证。
+
+## 正式 GitHub 仓库
+
+正式公开仓库：https://github.com/xuanyiting68-hash/awesome-ai-capability-atlas-yifalin 。本资源索引与 YIFALIN 现有产品和交易仓库隔离。
+
+可在根目录打开 `index.html` 浏览离线精选项目。GitHub Pages 部署通过仓库的 Pages 工作流启用；需在仓库 Settings → Pages 中选择 GitHub Actions。
+
+## 新增：视频、自媒体运营、全智能获客及客户维护
+
+新增五个独立筛选分类：**AI视频制作、自媒体运营、智能获客、客户关系维护、增长分析**。重点不是无授权自动群发，而是合法发现用户真实需求、原创内容生产、平台允许的分发、主动咨询收集、可追踪 CRM 服务和第一方转化评估。
+
+- 详细路线：[AI Growth Operating System](docs/GROWTH_OPERATING_SYSTEM_CN.md)
+- 分类与项目入口：[增长业务五大专区项目索引](docs/GROWTH_COLLECTIONS_CN.md)
+- 额外精选条目：`data/expansion_seed.json`，会与首批资源合并，不依赖在线访问即可检索。
+
+## 优先研究方向
+
+**金融 AI：** `microsoft/qlib`、`AI4Finance-Foundation/FinRL`、`AI4Finance-Foundation/FinRobot`、`TauricResearch/TradingAgents`、`OpenBB-finance/OpenBB`、`QuantConnect/Lean`、`polakowo/vectorbt`。
+
+**研发自动化：** `openai/codex`、`anthropics/claude-code`、`All-Hands-AI/OpenHands`、`langchain-ai/langgraph`、`browser-use/browser-use`、`github/gh-aw`。
+
+**教育 AI：** `run-llama/llama_index`、`docling-project/docling`、`microsoft/markitdown`、`infiniflow/ragflow`、`microsoft/ai-agents-for-beginners`。
+
+**产品与运营：** `langgenius/dify`、`n8n-io/n8n`、`activepieces/activepieces`、`firecrawl/firecrawl`。
+
+**视频与增长：** `remotion-dev/remotion`、`harry0703/MoneyPrinterTurbo`、`gitroomhq/postiz-app`、`TwentyHQ/twenty`、`chatwoot/chatwoot`、`mautic/mautic`、`posthog/posthog`。
+
+**安全评测：** `promptfoo/promptfoo`、`confident-ai/deepeval`、`langfuse/langfuse`、`Arize-ai/phoenix`、`modelcontextprotocol/inspector`。
+
+这些属于“值得研究 / 评估 Fork 价值”，不是建议全部安装或直接赋予生产密钥。
+
+## Fork/复用审查门槛
+
+- **许可证：** 是否允许商用、修改、分发及闭源产品集成？项目若无 LICENSE，默认不能直接推断有授权。
+- **维护状态：** 最近更新、Issue 响应、发布频率、依赖漏洞、是否已归档。
+- **真实能力：** 能否在隔离沙箱内复现？是否有端到端测试、基准和失败案例？
+- **运行边界：** 是否要求网络、Shell、写文件、浏览器 Cookie、云端或实盘交易权限？避免默认全权限。
+- **数据合规：** PII、商业数据、金融数据和版权限制；禁止悄悄上传用户材料。
+- **输出质量：** 来源引用、对照实验、审计日志、回滚、人工审批和成本预算。
+- **独立验证：** 在模拟环境评测金融策略；实盘连接必须有风控闸门与法律合规评估，不因 GitHub 热度而获得豁免。
+
+## 设计选择与限制
+
+- 采用静态站点；资源链接可点击，收藏存在浏览器本地存储。更换浏览器不会自动同步收藏。
+- 不引用上游 README 的大段原文，仅使用标题、链接与简短描述作为索引；尊重来源和项目许可。
+- 来源 30 个分类由单一外部汇总者提供，存在收录偏差、过期和重复。需要继续增加独立来源并做交叉核验。
+- 自动发现层以英文元数据为主；编辑精选附中文用途和优先级。推荐分数为本站编辑的主观研究优先度，**不是安全分或投资绩效分**。
+- 本仓库不会自动执行或安装第三方内容，也不提供绕过权限、合规和交易风险边界的功能。
+
+## 后续贡献
+
+可以通过 Issue 或 PR 推荐项目：必须提供 GitHub URL、类别、核心能力、可复现演示、许可证、维护状态、建议使用场景与潜在风险。先进入候选列表，经过审查后才进入编辑精选。
+
+**Sources:** [Agent Skills Standard](https://agentskills.io/) · [Anthropic Skills](https://github.com/anthropics/skills) · [OpenAI Skills](https://github.com/openai/skills) · [MCP Registry](https://github.com/modelcontextprotocol/registry) · [VoltAgent Agent Skills](https://github.com/VoltAgent/awesome-agent-skills) · [VoltAgent OpenClaw Directory](https://github.com/VoltAgent/awesome-openclaw-skills)
+
+> This is an independent curated index. Upstream packages and their licenses remain with their respective authors. No affiliation implied. Not investment advice.
