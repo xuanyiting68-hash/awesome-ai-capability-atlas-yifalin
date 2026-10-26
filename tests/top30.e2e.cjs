@@ -157,7 +157,9 @@ async function loaded(page) { await page.waitForFunction(() => document.querySel
     const csv=await fs.readFile('data/top30_evaluation.csv','utf8');
     const o=await open('?lang=en',async c=>c.route('**/data/top30_evaluation.csv',r=>r.fulfill({body:csv.replace('https://github.com/microsoft/qlib','javascript:alert(1)')})));
     await o.page.waitForSelector('#retry');assert.equal(await o.page.locator('.item').count(),0);
-    assert.equal(await o.page.locator('#export').isDisabled(),true);await o.context.close();
+    assert.equal(await o.page.locator('#export').isDisabled(),true);
+    await o.page.click('#language');assert.equal(await o.page.locator('#retry').isVisible(),true);
+    assert.match(await o.page.locator('#count').innerText(),/加载失败/);await o.context.close();
   });
   await check('metadata strings render as text', async () => {
     const metadata=JSON.parse(await fs.readFile('data/repo_metadata.json','utf8'));metadata.repositories['microsoft/qlib'].license_spdx='<img src=x onerror=alert(1)>';
