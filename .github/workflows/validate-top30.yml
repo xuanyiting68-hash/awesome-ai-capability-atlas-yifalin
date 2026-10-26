@@ -10,6 +10,7 @@ on:
       - 'scripts/build_top30_evidence.py'
       - 'scripts/test_top30_evidence.py'
       - 'scripts/test_top30_contract.py'
+      - '.github/workflows/repo-metadata.yml'
       - '.github/workflows/validate-top30.yml'
   workflow_dispatch:
 permissions:
@@ -24,6 +25,10 @@ jobs:
           python-version: '3.12'
       - name: Verify Top 30 CSV, page, and metadata consistency
         run: python -m unittest discover -s scripts -p 'test_top30_contract.py' -v
+      - name: Verify deterministic evidence generation
+        run: |
+          python scripts/build_top30_evidence.py
+          git diff --exit-code -- data/top30_evidence.json
       - name: Verify evidence gate tests
         run: python -m unittest discover -s scripts -p 'test_top30_evidence.py' -v
       - name: Verify inline JavaScript syntax
