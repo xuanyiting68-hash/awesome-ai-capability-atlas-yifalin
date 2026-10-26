@@ -1,0 +1,365 @@
+{
+  "schema_version": 1,
+  "researched_at_utc": "2026-10-27T00:00:00Z",
+  "policy": "Official documentation review and proposed pilots only. No software was installed, no benchmark was run, and no license/security assessment is complete.",
+  "entries": [
+    {
+      "repo": "microsoft/qlib",
+      "tier": "Curated",
+      "research_status": "editorial-desk-study",
+      "sources": [
+        {
+          "id": "readme",
+          "kind": "official-github-readme",
+          "url": "https://github.com/microsoft/qlib/blob/main/README.md",
+          "snapshot_url": "https://api.github.com/repos/microsoft/qlib/git/blobs/a6963f6e40bd9ebee7dd2b5c88df94fe73a67dd4",
+          "git_blob_sha": "a6963f6e40bd9ebee7dd2b5c88df94fe73a67dd4"
+        },
+        {
+          "id": "docs",
+          "kind": "official-documentation",
+          "url": "https://qlib.readthedocs.io/en/latest/"
+        }
+      ],
+      "headline": {
+        "zh": "量化研究实验平台：数据处理、预测模型与研究工作流",
+        "en": "Quant research workflows across data, models and experiments"
+      },
+      "best_for": {
+        "zh": "具备 Python 与量化研究经验、需要可审计实验基线的研究者",
+        "en": "Python-capable quant researchers building auditable experiment baselines"
+      },
+      "not_for": {
+        "zh": "直接连接账户执行真实交易、或希望用回测收益证明稳定盈利的人",
+        "en": "Unattended live trading or inferring future returns from a backtest"
+      },
+      "capabilities": [
+        {
+          "zh": "官方描述支持量化数据处理、机器学习建模与研究实验",
+          "en": "The project documents quantitative data workflows and machine-learning research",
+          "source_ids": [
+            "readme"
+          ]
+        },
+        {
+          "zh": "文档介绍了研究组件与教程，适合设计基线实验",
+          "en": "Documentation and examples provide starting points for baseline experiments",
+          "source_ids": [
+            "readme",
+            "docs"
+          ]
+        }
+      ],
+      "pilot": {
+        "zh": "用获授权的历史数据构建简单基线，再做时间切分和成本敏感性测试",
+        "en": "Build a licensed-data baseline with chronological holdout and cost sensitivity",
+        "steps": [
+          {
+            "zh": "检查数据来源、许可与时间戳，固定样本和环境",
+            "en": "Verify dataset rights and timestamps; pin inputs and environment"
+          },
+          {
+            "zh": "设置朴素基准模型，严格隔离训练与测试区间",
+            "en": "Establish a simple baseline and enforce temporal separation"
+          },
+          {
+            "zh": "记录 OOS 指标、成本后结果、漂移和失败案例",
+            "en": "Log out-of-sample metrics, costs, drift and failures"
+          }
+        ],
+        "metrics": {
+          "zh": "数据泄漏检查、OOS 指标、成本敏感性、复现偏差",
+          "en": "Leakage checks, out-of-sample metrics, cost sensitivity, reproduction drift"
+        }
+      },
+      "limitations": {
+        "zh": "文档中的模型与案例不能证明未来预测力；上线前需审查数据许可、序列化资产加载与执行安全",
+        "en": "Documented models do not establish predictive value; assess data rights, artifact loading and execution permissions",
+        "source_ids": [
+          "readme"
+        ]
+      },
+      "alternatives": [
+        "AI4Finance-Foundation/FinRL",
+        "polakowo/vectorbt"
+      ],
+      "review": {
+        "license_text": "not-reviewed",
+        "dependency_licenses": "not-reviewed",
+        "security": "not-audited",
+        "reproducibility": "not-tested",
+        "sandbox_sha": null,
+        "fork_decision": "HOLD"
+      }
+    },
+    {
+      "repo": "langchain-ai/langgraph",
+      "tier": "Curated",
+      "research_status": "editorial-desk-study",
+      "sources": [
+        {
+          "id": "readme",
+          "kind": "official-github-readme",
+          "url": "https://github.com/langchain-ai/langgraph/blob/main/README.md",
+          "snapshot_url": "https://api.github.com/repos/langchain-ai/langgraph/git/blobs/97c31e9cb4d8fe56be8d768ce3eb5e22400e897e",
+          "git_blob_sha": "97c31e9cb4d8fe56be8d768ce3eb5e22400e897e"
+        },
+        {
+          "id": "docs",
+          "kind": "official-documentation",
+          "url": "https://docs.langchain.com/oss/python/langgraph/overview"
+        }
+      ],
+      "headline": {
+        "zh": "面向长任务的有状态 Agent 编排与人工审批",
+        "en": "Stateful orchestration for long-running agents and approval flows"
+      },
+      "best_for": {
+        "zh": "需要状态恢复、人工审批和多阶段 Agent 执行的开发团队",
+        "en": "Engineering teams building stateful multi-step agents with human oversight"
+      },
+      "not_for": {
+        "zh": "无需状态管理的简单调用，或默认授予 Agent 广泛生产权限",
+        "en": "Trivial one-shot calls or agents given unrestricted production privileges"
+      },
+      "capabilities": [
+        {
+          "zh": "官方文档描述持久化执行和故障恢复机制",
+          "en": "Official docs describe durable execution and resumable workflows",
+          "source_ids": [
+            "readme",
+            "docs"
+          ]
+        },
+        {
+          "zh": "支持人工中断、状态检查以及有状态工作流",
+          "en": "Supports interrupts, state inspection and stateful workflows",
+          "source_ids": [
+            "readme",
+            "docs"
+          ]
+        }
+      ],
+      "pilot": {
+        "zh": "用模拟 API 构建可中断的审批流程与故障恢复试验",
+        "en": "Test interruptible human approval and recovery against a mock API",
+        "steps": [
+          {
+            "zh": "构造无敏感信息的三阶段状态机和模拟工具",
+            "en": "Build a three-stage state machine with synthetic tools"
+          },
+          {
+            "zh": "注入超时、失败和重试，记录每次状态变化",
+            "en": "Inject timeouts, failures and retries; record transitions"
+          },
+          {
+            "zh": "验证未经人工批准不能触发受保护动作",
+            "en": "Confirm protected actions never run before human approval"
+          }
+        ],
+        "metrics": {
+          "zh": "恢复成功率、重复副作用数量、审批绕过次数、调用成本",
+          "en": "Recovery rate, duplicate side effects, bypass count and call cost"
+        }
+      },
+      "limitations": {
+        "zh": "编排框架不能代替模型评估、安全隔离或外部工具授权；持久化可能增加数据治理成本",
+        "en": "Orchestration is not model evaluation, isolation or authorization; persistence needs data governance",
+        "source_ids": [
+          "readme"
+        ]
+      },
+      "alternatives": [
+        "n8n-io/n8n",
+        "langgenius/dify"
+      ],
+      "review": {
+        "license_text": "not-reviewed",
+        "dependency_licenses": "not-reviewed",
+        "security": "not-audited",
+        "reproducibility": "not-tested",
+        "sandbox_sha": null,
+        "fork_decision": "HOLD"
+      }
+    },
+    {
+      "repo": "remotion-dev/remotion",
+      "tier": "Curated",
+      "research_status": "editorial-desk-study",
+      "sources": [
+        {
+          "id": "readme",
+          "kind": "official-github-readme",
+          "url": "https://github.com/remotion-dev/remotion/blob/main/README.md",
+          "snapshot_url": "https://api.github.com/repos/remotion-dev/remotion/git/blobs/30df60cc50df64bc3e01da14d40e22b23f312704",
+          "git_blob_sha": "30df60cc50df64bc3e01da14d40e22b23f312704"
+        },
+        {
+          "id": "docs",
+          "kind": "official-documentation",
+          "url": "https://www.remotion.dev/docs/"
+        }
+      ],
+      "headline": {
+        "zh": "以 React 代码驱动视频模板、动画与批量渲染",
+        "en": "Code-first React video templates, animation and batch rendering"
+      },
+      "best_for": {
+        "zh": "能够维护 React/Node 环境、需要批量制作原创视频模板的团队",
+        "en": "Teams comfortable with React/Node creating reusable original video templates"
+      },
+      "not_for": {
+        "zh": "希望零配置一键自动代替内容事实核查、素材授权和发布审核的人",
+        "en": "One-click replacement for editorial review, licensing and publishing approval"
+      },
+      "capabilities": [
+        {
+          "zh": "官方 README 展示代码驱动、交互编辑及程序化视频制作路径",
+          "en": "The official README documents agentic, interactive and programmatic creation",
+          "source_ids": [
+            "readme"
+          ]
+        },
+        {
+          "zh": "官方文档涵盖渲染、字幕、转场、模板和部署选项",
+          "en": "Docs cover rendering, captions, transitions, templates and deployment options",
+          "source_ids": [
+            "readme",
+            "docs"
+          ]
+        }
+      ],
+      "pilot": {
+        "zh": "使用自有录制素材和合成研究数据生成 9:16 信息型短视频",
+        "en": "Produce a 9:16 explainer using owned assets and synthetic research data",
+        "steps": [
+          {
+            "zh": "准备原创脚本、素材授权清单与可核验引用",
+            "en": "Prepare original script, asset rights checklist and citations"
+          },
+          {
+            "zh": "制作可复用 React 模板并输出静音/字幕对照稿",
+            "en": "Render reusable React template with caption/silent checks"
+          },
+          {
+            "zh": "人工复核画面、字幕、金融内容合规后才发布",
+            "en": "Require human review of visuals, captions and financial claims"
+          }
+        ],
+        "metrics": {
+          "zh": "渲染耗时、字幕错误数、逐帧溢出、人工修改次数",
+          "en": "Render time, caption errors, frame overflow and manual edits"
+        }
+      },
+      "limitations": {
+        "zh": "第三方字体、音乐、素材和渲染服务可能有独立授权/费用；需核对 Remotion 当前许可证条款",
+        "en": "Assets, fonts, audio and rendering may have separate fees or rights; verify current Remotion license terms",
+        "source_ids": [
+          "readme",
+          "docs"
+        ]
+      },
+      "alternatives": [
+        "harry0703/MoneyPrinterTurbo"
+      ],
+      "review": {
+        "license_text": "not-reviewed",
+        "dependency_licenses": "not-reviewed",
+        "security": "not-audited",
+        "reproducibility": "not-tested",
+        "sandbox_sha": null,
+        "fork_decision": "HOLD"
+      }
+    },
+    {
+      "repo": "TwentyHQ/twenty",
+      "tier": "Curated",
+      "research_status": "editorial-desk-study",
+      "sources": [
+        {
+          "id": "readme",
+          "kind": "official-github-readme",
+          "url": "https://github.com/TwentyHQ/twenty/blob/main/README.md",
+          "snapshot_url": "https://api.github.com/repos/TwentyHQ/twenty/git/blobs/4ae7858d549ee44177ca4f23d3a3ce357c2cd541",
+          "git_blob_sha": "4ae7858d549ee44177ca4f23d3a3ce357c2cd541"
+        },
+        {
+          "id": "docs",
+          "kind": "official-documentation",
+          "url": "https://docs.twenty.com/"
+        }
+      ],
+      "headline": {
+        "zh": "可定制客户数据结构、工作流和部署方式的 CRM",
+        "en": "Customizable CRM data models, workflows and deployment choices"
+      },
+      "best_for": {
+        "zh": "需要自定义客户对象、审批和私有部署评估的技术团队",
+        "en": "Technical teams evaluating custom CRM objects, review workflows and self-hosting"
+      },
+      "not_for": {
+        "zh": "不准备管理个人数据治理、权限和客户联系授权的团队",
+        "en": "Teams unable to govern personal data, permissions and contact consent"
+      },
+      "capabilities": [
+        {
+          "zh": "官方 README 描述 CRM 自定义对象、字段与视图的开发方式",
+          "en": "The official README covers custom objects, fields and views",
+          "source_ids": [
+            "readme"
+          ]
+        },
+        {
+          "zh": "官方文档区分云端和自托管部署及应用扩展路径",
+          "en": "Official docs distinguish cloud/self-hosted deployment and app extension",
+          "source_ids": [
+            "readme",
+            "docs"
+          ]
+        }
+      ],
+      "pilot": {
+        "zh": "把本仓库合成授权线索示例导入隔离模拟 CRM，并验证撤回和去重",
+        "en": "Connect synthetic consent-gated leads to a mock CRM and test revocation",
+        "steps": [
+          {
+            "zh": "定义匿名线索 ID、同意用途和撤回字段，不输入真实客户信息",
+            "en": "Define anonymous IDs, purpose and opt-out fields with no real personal data"
+          },
+          {
+            "zh": "先测模拟 API 去重、权限、重试和错误补偿",
+            "en": "Test mock API deduplication, access rules, retries and rollback"
+          },
+          {
+            "zh": "在任何真实客户接入前评估存储、删除、通知和法律要求",
+            "en": "Review storage, deletion, notice and legal requirements before real integration"
+          }
+        ],
+        "metrics": {
+          "zh": "撤回执行正确率、重复记录率、错误恢复及删除覆盖率",
+          "en": "Revocation correctness, duplicate rate, recovery and deletion coverage"
+        }
+      },
+      "limitations": {
+        "zh": "公开功能文档不代表已完成本地部署；真实 CRM 会带来个人数据与授权管理责任",
+        "en": "Documentation is not proof of deployment; real CRM involves privacy and consent obligations",
+        "source_ids": [
+          "readme",
+          "docs"
+        ]
+      },
+      "alternatives": [
+        "chatwoot/chatwoot",
+        "mautic/mautic"
+      ],
+      "review": {
+        "license_text": "not-reviewed",
+        "dependency_licenses": "not-reviewed",
+        "security": "not-audited",
+        "reproducibility": "not-tested",
+        "sandbox_sha": null,
+        "fork_decision": "HOLD"
+      }
+    }
+  ]
+}
