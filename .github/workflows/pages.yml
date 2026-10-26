@@ -35,3 +35,11 @@ jobs:
           path: '_site'
       - id: deployment
         uses: actions/deploy-pages@v4
+
+  verify-online:
+    needs: deploy
+    uses: ./.github/workflows/monitor-site.yml
+    with:
+      expected_commit: ${{ github.sha }}
+    permissions:
+      contents: read
