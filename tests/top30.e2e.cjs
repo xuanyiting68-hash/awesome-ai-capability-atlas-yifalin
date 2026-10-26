@@ -29,7 +29,7 @@ async function loaded(page) { await page.waitForFunction(() => document.querySel
       await new Promise(resolve => setTimeout(resolve, 100));
     }
   }
-  browser = await chromium.launch({ headless: true });
+  browser = await chromium.launch({ headless: true, channel: process.env.ATLAS_BROWSER_CHANNEL || undefined });
   await fs.mkdir('test-results', { recursive: true });
   let {context, page} = await open();
   await check('30 cards and metadata/evidence', async () => {

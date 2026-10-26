@@ -15,7 +15,9 @@ concurrency:
 jobs:
   smoke:
     if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
+    env:
+      ATLAS_BROWSER_CHANNEL: chrome
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
@@ -25,8 +27,8 @@ jobs:
           cache: npm
       - name: Install locked browser test tools
         run: npm ci --ignore-scripts --no-audit --no-fund
-      - name: Install Chromium
-        run: npx playwright install --with-deps chromium
+      - name: Verify runner-provided Chrome
+        run: google-chrome --version
       - name: Verify published website
         env:
           ATLAS_BASE_URL: https://xuanyiting68-hash.github.io/awesome-ai-capability-atlas-yifalin/

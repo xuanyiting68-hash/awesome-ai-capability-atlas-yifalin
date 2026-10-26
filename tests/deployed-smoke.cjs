@@ -6,7 +6,7 @@ const base=process.env.ATLAS_BASE_URL;
 if(!base)throw Error('ATLAS_BASE_URL is required');
 const errors=[];
 (async()=>{
-  const browser=await chromium.launch({headless:true});
+  const browser=await chromium.launch({headless:true,channel:process.env.ATLAS_BROWSER_CHANNEL||undefined});
   try{
     const context=await browser.newContext({viewport:{width:1440,height:1000}});
     // Limit the monitor to the published atlas, including its data files.
