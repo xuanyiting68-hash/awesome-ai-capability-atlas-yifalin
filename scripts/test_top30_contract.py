@@ -68,6 +68,18 @@ class Top30ContractTests(unittest.TestCase):
                 self.assertIn(value, self.detail if value != "encodeURIComponent" else self.page)
         self.assertIn("ev.generated_from_snapshot_utc!==meta.generated_at_utc", self.detail)
 
+    def test_business_use_cases_complete(self):
+        cases=json.loads((ROOT/"data/business_use_cases.json").read_text(encoding="utf-8"))
+        self.assertEqual(cases["status"],"illustrative-blueprints-not-tested")
+        for domain in {r["domain"] for r in self.rows}:
+            with self.subTest(domain=domain):
+                entry=cases["domains"][domain]
+                self.assertGreaterEqual(len(entry["flow"]),3)
+                for field in ("goal","metric","risk"):
+                    self.assertTrue(entry[field])
+        self.assertIn("business_use_cases.json",self.detail)
+        self.assertIn('id="caseFlow"',self.detail)
+
     def test_home_links_to_research_lab(self):
         self.assertIn('href="./top30.html"', self.home)
 
