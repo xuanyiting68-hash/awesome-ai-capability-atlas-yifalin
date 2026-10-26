@@ -5,7 +5,10 @@ import json
 import shutil
 import subprocess
 from pathlib import Path
-from scripts.validate_research_briefs import validate_from_files
+if __package__:
+    from .validate_research_briefs import validate_from_files
+else:
+    from validate_research_briefs import validate_from_files
 
 ROOT = Path(__file__).resolve().parents[1]
 FILES = ('index.html', 'top30.html', 'project.html', 'blueprints.html', 'README.md', 'LICENSE')
