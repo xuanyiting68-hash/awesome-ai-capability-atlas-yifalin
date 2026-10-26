@@ -51,3 +51,26 @@ jobs:
           node --check /tmp/top30.html.js
           node --check /tmp/project.html.js
           node --check /tmp/blueprints.html.js
+  browser:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned dependencies and Chromium
+        run: |
+          npm ci
+          npx playwright install --with-deps chromium
+      - name: Browser scenarios — catalog, Top 30, detail, blueprints
+        run: npm run test:e2e
+      - name: Upload browser screenshots on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: atlas-e2e-failure
+          path: test-results/
+          if-no-files-found: ignore
