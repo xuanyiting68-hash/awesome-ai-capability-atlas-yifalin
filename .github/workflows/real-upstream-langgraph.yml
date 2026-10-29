@@ -1,0 +1,55 @@
+name: Verify real LangGraph upstream (isolated)
+on:
+  pull_request:
+    paths:
+      - 'scripts/real_langgraph_pilot.py'
+      - 'scripts/test_real_langgraph_contract.py'
+      - '.github/workflows/real-upstream-langgraph.yml'
+      - 'docs/REAL_UPSTREAM_PILOT_LANGGRAPH_CN.md'
+      - 'pilot-lab.html'
+      - 'README.md'
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/real_langgraph_pilot.py'
+      - 'scripts/test_real_langgraph_contract.py'
+      - '.github/workflows/real-upstream-langgraph.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  real-langgraph-sandbox:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    env:
+      LANGSMITH_TRACING: 'false'
+      LANGCHAIN_TRACING_V2: 'false'
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONNOUSERSITE: '1'
+      PIP_DISABLE_PIP_VERSION_CHECK: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install one pinned upstream release from PyPI (no source build)
+        run: |
+          python -m pip install --only-binary=:all: --no-cache-dir 'langgraph==1.2.18'
+      - name: Preserve resolved dependency versions
+        run: python -m pip freeze --all > langgraph-resolved-dependencies.txt
+      - name: Exercise actual StateGraph / interrupt / Command / InMemorySaver
+        run: python scripts/real_langgraph_pilot.py --output test-results/real-langgraph-result.json
+      - name: Verify results are authentic and explicitly non-production
+        run: python -m unittest scripts.test_real_langgraph_contract -v
+      - name: Upload public synthetic-only evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: real-langgraph-1_2_18-synthetic-evidence
+          path: |
+            test-results/real-langgraph-result.json
+            langgraph-resolved-dependencies.txt
+          if-no-files-found: warn
+          retention-days: 30
