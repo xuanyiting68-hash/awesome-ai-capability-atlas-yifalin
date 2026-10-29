@@ -183,11 +183,20 @@ def dispatch(sender, recipient, owner, lease_seconds=2.0, tenant=None, fault=Non
 def reconcile(sender, recipient):
     with connect(sender) as db:
         out=db.execute("SELECT tenant,idem,payload,delivered FROM p07_outbox").fetchall()
+        effects=db.execute("SELECT tenant,idem,payload FROM p07_effects").fetchall()
+        audit=db.execute("SELECT tenant,idem FROM p07_audit").fetchall()
         attempts=db.execute("SELECT tenant,idem,attempts FROM p08_leases").fetchall()
     with connect(recipient) as db:
         inbox=db.execute("SELECT tenant,idem,payload FROM p08_inbox").fetchall()
     receiver={(r[0],r[1]):r[2] for r in inbox}
     sent={(r[0],r[1]):(r[2],r[3]) for r in out}
+    effect_map={(t,k):payload for t,k,payload in effects}
+    audit_set=set(audit)
+    source_mismatch=sum(bool(effect_map.get((t,k))!=payload or (t,k) not in audit_set
+                             or not strict_payload(t,k,payload))
+                        for t,k,payload,_ in out)
+    source_orphans=sum((t,k) not in sent for t,k,_ in effects)
+    source_audit_orphans=sum(pair not in sent for pair in audit_set)
     acknowledged_missing=sum(bool(delivered and receiver.get((t,k))!=payload)
                              for t,k,payload,delivered in out)
     pending_ack=sum(bool(not delivered and receiver.get((t,k))==payload)
@@ -199,7 +208,10 @@ def reconcile(sender, recipient):
             "inbox_unique":len(inbox),"attempts_total":sum(row[2] for row in attempts),
             "acknowledged_missing":acknowledged_missing,"pending_ack":pending_ack,
             "payload_mismatch":payload_mismatch,"receiver_orphans":receiver_orphans,
-            "consistent":not (acknowledged_missing or payload_mismatch or receiver_orphans),
+            "source_mismatch":source_mismatch,"source_orphans":source_orphans,
+            "source_audit_orphans":source_audit_orphans,
+            "consistent":not (acknowledged_missing or payload_mismatch or receiver_orphans
+                              or source_mismatch or source_orphans or source_audit_orphans),
             "local_recipient_only":True,"real_external_delivery":False,
             "exactly_once_external_claim":False,"pid":os.getpid()}
 
