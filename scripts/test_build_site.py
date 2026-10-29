@@ -10,7 +10,7 @@ class PublishBoundaryTests(unittest.TestCase):
             destination = Path(directory) / 'site'
             manifest = build(destination, commit='a' * 40)
             self.assertEqual(set(p.name for p in destination.iterdir()),
-                             {'index.html', 'top30.html', 'project.html', 'blueprints.html', 'network.html', 'data', 'docs', 'LICENSE', 'README.md', 'deployment.json'})
+                             {'index.html', 'top30.html', 'project.html', 'blueprints.html', 'network.html', 'adoption.html', 'data', 'docs', 'LICENSE', 'README.md', 'deployment.json'})
             self.assertEqual(json.loads((destination / 'deployment.json').read_text()), manifest)
             self.assertEqual(manifest['source_commit'], 'a' * 40)
             self.assertEqual(manifest['catalog_count'], 5000)
@@ -18,12 +18,33 @@ class PublishBoundaryTests(unittest.TestCase):
             self.assertEqual(manifest['blueprint_count'], 10)
             self.assertEqual(manifest['research_briefs_count'],30)
             self.assertEqual(manifest['research_reviewed_count'],0)
+            self.assertEqual(manifest['star_shortlist_count'],30)
+            self.assertEqual(manifest['priority_integration_candidates'],8)
+            self.assertEqual(manifest['fork_approved_count'],0)
+            self.assertEqual(manifest['star_actions_executed_by_atlas'],0)
+            self.assertTrue((destination / 'data/adoption_plan.json').is_file())
             self.assertTrue((destination / 'data/research_briefs.json').is_file())
             self.assertTrue((destination / 'data/business_use_cases.json').is_file())
             self.assertIn('project.html', (destination / 'top30.html').read_text())
             self.assertIn('blueprints.html', (destination / 'index.html').read_text())
             self.assertIn('network.html', (destination / 'index.html').read_text())
+            self.assertIn('adoption.html', (destination / 'index.html').read_text())
             self.assertIn('data/top30_evaluation.csv', (destination / 'network.html').read_text())
+
+    def test_forged_fork_clearance_preserves_previous_site(self):
+        with tempfile.TemporaryDirectory() as directory:
+            source = Path(directory) / 'source'
+            build(source, commit='a' * 40)
+            target = Path(directory) / 'previous'
+            target.mkdir()
+            (target / 'marker').write_text('keep last good')
+            path = source / 'data/adoption_plan.json'
+            payload = json.loads(path.read_text('utf-8'))
+            payload['items'][0]['fork'] = 'APPROVED'
+            path.write_text(json.dumps(payload))
+            with self.assertRaisesRegex(ValueError,'promotion'):
+                build(target,source=source,commit='b'*40)
+            self.assertEqual((target / 'marker').read_text(), 'keep last good')
 
     def test_forged_research_tier_preserves_previous_site(self):
         with tempfile.TemporaryDirectory() as directory:
