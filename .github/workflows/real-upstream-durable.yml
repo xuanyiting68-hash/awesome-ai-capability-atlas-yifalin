@@ -1,0 +1,63 @@
+name: Verify real LangGraph SQLite durability (isolated)
+on:
+  pull_request:
+    paths:
+      - 'scripts/real_durable_recovery.py'
+      - 'scripts/verify_durable_recovery.py'
+      - 'scripts/test_real_durable_recovery.py'
+      - '.github/workflows/real-upstream-durable.yml'
+      - 'docs/REAL_UPSTREAM_DURABILITY_CN.md'
+      - 'pilot-lab.html'
+      - 'README.md'
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/real_durable_recovery.py'
+      - 'scripts/verify_durable_recovery.py'
+      - 'scripts/test_real_durable_recovery.py'
+      - '.github/workflows/real-upstream-durable.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  durable-restart-sandbox:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONNOUSERSITE: '1'
+      PIP_DISABLE_PIP_VERSION_CHECK: '1'
+      LANGSMITH_TRACING: 'false'
+      LANGCHAIN_TRACING_V2: 'false'
+      LANGGRAPH_STRICT_MSGPACK: 'true'
+      SQLITE_TMPDIR: '/tmp'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install upstream LangGraph and its official SQLite checkpoint backend
+        run: |
+          python -m pip install --only-binary=:all: --no-cache-dir 'langgraph==1.2.18' 'langgraph-checkpoint-sqlite==3.1.2'
+      - name: Preserve version identities and resolved dependency tree
+        run: |
+          python -m pip freeze --all > resolved-durable-dependencies.txt
+      - name: Run real interrupt checkpoint -> process exit -> resume and six concurrent ledger writes
+        run: |
+          python scripts/verify_durable_recovery.py --output-dir test-results/durable
+      - name: Independently validate run evidence and repeat in fresh isolated temp DB
+        run: |
+          python -m unittest scripts.test_real_durable_recovery -v
+      - name: Preserve synthetic-only JSON, omit sqlite databases
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: langgraph-real-sqlite-durability-restart-evidence
+          path: |
+            test-results/durable/durability-result.json
+            test-results/durable/stages/*.json
+            resolved-durable-dependencies.txt
+          if-no-files-found: warn
+          retention-days: 30
