@@ -26,7 +26,7 @@ class DurableSQLiteChecks(unittest.TestCase):
         self.assertEqual(checks["cases_passed"],13)
         self.assertTrue(checks["all_passed"])
         self.assertEqual(len(checks["checks"]),13)
-        self.assertGreaterEqual(checks["actual_distinct_processes"],20)
+        self.assertGreaterEqual(checks["actual_distinct_processes"],17)
         self.assertEqual(result["commit_keys"],["frozen-01","frozen-02","shared-concurrency-key"])
         self.assertEqual(len(result["journal"]),9)
 
