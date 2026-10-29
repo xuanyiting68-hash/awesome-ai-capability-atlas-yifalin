@@ -66,21 +66,27 @@ def claim(sender, owner, lease_seconds=2.0, tenant=None):
     with connect(sender) as db:
         db.execute("BEGIN IMMEDIATE")
         try:
-            row=db.execute("""SELECT o.tenant,o.idem,o.payload
+            row=db.execute("""SELECT o.tenant,o.idem,o.payload,e.payload,a.idem
                FROM p07_outbox o LEFT JOIN p08_leases l
                ON o.tenant=l.tenant AND o.idem=l.idem
+               LEFT JOIN p07_effects e ON o.tenant=e.tenant AND o.idem=e.idem
+               LEFT JOIN p07_audit a ON o.tenant=a.tenant AND o.idem=a.idem
                WHERE o.delivered=0 AND (l.token IS NULL OR l.lease_until <= ?)
                AND (? IS NULL OR o.tenant=?)
                ORDER BY o.tenant,o.idem LIMIT 1""",(now,tenant,tenant)).fetchone()
             if row is None:
                 db.commit()
                 return None
-            t,k,payload=row
+            t,k,payload,effect_payload,audit_key=row
             check_id(t,"tenant");check_id(k,"idempotency key")
-            # Validate before allocating a deliverable lease.
+            # Fail closed if the atomic Pilot 07 source evidence is incomplete.
+            # A crafted but syntactically valid outbox record is not sufficient.
             if not strict_payload(t,k,payload):
                 db.commit()
                 return {"status":"BLOCK: invalid_payload","tenant":t,"key":k}
+            if effect_payload!=payload or audit_key is None:
+                db.commit()
+                return {"status":"BLOCK: missing_source_provenance","tenant":t,"key":k}
             token=uuid.uuid4().hex
             db.execute("""INSERT INTO p08_leases(tenant,idem,owner,token,lease_until,attempts)
                 VALUES (?,?,?,?,?,1) ON CONFLICT(tenant,idem) DO UPDATE SET
