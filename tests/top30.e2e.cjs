@@ -196,6 +196,40 @@ async function loaded(page) { await page.waitForFunction(() => document.querySel
     }
     await visual.close();
   });
+  await check('Star Pack 30/8 shortlist, safe upstream links and mobile usability', async()=>{
+    const c=await browser.newContext({viewport:{width:1440,height:900}});
+    await c.route('**/*',r=>r.request().url().startsWith(base)?r.continue():r.abort());
+    const p=await c.newPage();p.on('pageerror',e=>errors.push(e.message));
+    await p.goto(new URL('adoption.html',base).href);
+    await p.waitForFunction(()=>document.querySelectorAll('#cards .card').length===30);
+    assert.equal(await p.locator('#total').innerText(),'30');
+    assert.equal(await p.locator('#focus').innerText(),'8');
+    assert.equal(await p.locator('#fork').innerText(),'0');
+    assert.equal(await p.locator('#done').innerText(),'0');
+    assert.equal(await p.locator('.flag.hold').count(),30);
+    assert.equal(await p.locator('a.primary').count(),30);
+    const external=await p.locator('#cards a.primary').evaluateAll(a=>a.map(x=>x.href));
+    assert.equal(external.length,30);
+    assert.ok(external.every(x=>/^https:\/\/github\.com\/[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/.test(x)));
+    await p.selectOption('#priority','P0');
+    assert.equal(await p.locator('#cards .card').count(),8);
+    await p.reload();
+    await p.waitForFunction(()=>document.querySelectorAll('#cards .card').length===8);
+    await p.selectOption('#priority','all');
+    await p.fill('#search','OpenBB');
+    assert.equal(await p.locator('#cards .card').count(),1);
+    assert.match(await p.locator('#cards .card .primary').getAttribute('href'),/openbq-org\/OpenBB/);
+    await p.fill('#search','');
+    await p.click('#language');
+    assert.equal(await p.locator('html').getAttribute('lang'),'en');
+    assert.match(await p.locator('.card').first().innerText(),/Fork HOLD/);
+    for(const width of [1440,768,390]){
+      await p.setViewportSize({width,height:844});await p.evaluate(()=>scrollTo(0,0));
+      assert.equal(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,'Adoption overflow '+width);
+      await p.screenshot({path:'test-results/adoption-'+width+'.png'});
+    }
+    await c.close();
+  });
   await context.close();
   await check('missing metadata and evidence degrade without losing projects', async () => {
     const o=await open('?lang=en',async c=>{await c.route('**/data/repo_metadata.json',r=>r.fulfill({status:503,body:'unavailable'}));await c.route('**/data/top30_evidence.json',r=>r.fulfill({status:503,body:'unavailable'}))});
