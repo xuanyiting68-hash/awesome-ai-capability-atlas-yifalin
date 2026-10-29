@@ -30,6 +30,7 @@ class State(TypedDict, total=False):
     idempotency_key: str
     approved: bool
     outcome: str
+    thread_id: str
 
 
 def connect(path:Path):
@@ -108,11 +109,8 @@ def graph_for(checkpointer,db_path):
         # injected at start. This identity is for synthetic tracing, NOT auth.
         return {"outcome":durable_commit(db_path,state["thread_id"],thread)}
 
-    # Add trace ID to persisted graph state, not a runtime-only closure.
-    class PersistentState(State, total=False):
-        thread_id: str
-
-    g=StateGraph(PersistentState)
+    # Node input schemas and graph channels share the same persisted trace fields.
+    g=StateGraph(State)
     for name,fn in (("guard",guard),("review",review),("commit",commit)):
         g.add_node(name,fn)
     g.add_edge(START,"guard")
