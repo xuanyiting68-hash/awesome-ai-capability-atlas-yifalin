@@ -23,6 +23,12 @@
 - [2026-10-27 独立质量审计与修复记录](docs/INDEPENDENT_AUDIT_2026-10-27_CN.md)：说明数据可信边界、缺失页面及版本与 CI 核验，任何测试通过均不替代第三方许可证审查。
 - [合规留资 → 匿名分流 → 人工复核（合成数据）](examples/consent_lead_triage/README.md)：使用 Python 标准库运行，无账号连接、无自动外发；仅用于验证权限/撤回门禁，并不代表生产获客/CRM 集成成功。
 
+## LangGraph 官方 SDK 真实沙盒实验（与原合成基线分开）
+
+新增 [LangGraph 1.2.18 真实上游沙盒研究记录](docs/REAL_UPSTREAM_PILOT_LANGGRAPH_CN.md)，并建立 [独立、只读权限 GitHub Actions 工作流](.github/workflows/real-upstream-langgraph.yml)。工作流在临时 Ubuntu Runner 安装固定版本的 LangGraph，调用真实的 `StateGraph`、`interrupt()`、`Command(resume=...)`、`InMemorySaver`、`get_state()`，验证 10 项模拟审批/幂等/拒绝订单逻辑；逐项输出与传递依赖版本留存为 CI 工件。执行结果仅以该工作流实际的 CI 和 artifacts 为证；本条说明**不代表已通过**。
+
+没有模型/真实订单/API 密钥/真实数据；审批仅为模拟字典，checkpoint 仅进程内。它验证 LangGraph 真实 API 在受控示例上的行为，不等于真实 RBAC、持久化恢复、交易安全认证或生产集成。原项目 Fork HOLD 不变。
+
 ## 三个优先 AI 项目的可运行契约实验室（非上游代码测试）
 
 [打开首批 Pilot Lab](pilot-lab.html)：对 **LangGraph、Docling、Promptfoo 的拟议 YIFALIN 使用场景**建立独立、确定性、标准库合成契约基线（9 个状态/授权场景、7 个文档页码场景、8 个 Agent 工具权限场景），共 24 个测试输入。网页展示的通过数由 `scripts/pilot_lab.py` 在发布阶段**真实执行并生成**，且全部用例与期望由 `data/pilot_lab_cases.json` 保存。CI 回归测试涵盖伪造授权、无来源文档、越权指令、身份伪造及失败时阻止替换已发布网站。
