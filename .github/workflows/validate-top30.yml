@@ -7,6 +7,10 @@ on:
       - 'blueprints.html'
       - 'network.html'
       - 'adoption.html'
+      - 'pilot-lab.html'
+      - 'data/pilot_lab_cases.json'
+      - 'scripts/pilot_lab.py'
+      - 'scripts/test_pilot_lab.py'
       - 'data/adoption_plan.json'
       - 'scripts/validate_adoption.py'
       - 'scripts/test_adoption.py'
@@ -54,7 +58,7 @@ jobs:
           python - <<'PY'
           import re
           from pathlib import Path
-          for name in ('top30', 'project', 'blueprints', 'network', 'adoption'):
+          for name in ('top30', 'project', 'blueprints', 'network', 'adoption', 'pilot-lab'):
             text = Path(f'{name}.html').read_text('utf-8')
             js = re.findall(r'<script(?:\\s[^>]*)?>(.*?)</script>', text, re.S)
             assert len(js) == 1, f'Expected one inline script in {name}'
@@ -65,3 +69,4 @@ jobs:
           node --check /tmp/blueprints-inline.js
           node --check /tmp/network-inline.js
           node --check /tmp/adoption-inline.js
+          node --check /tmp/pilot-lab-inline.js
