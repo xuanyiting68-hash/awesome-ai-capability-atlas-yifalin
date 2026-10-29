@@ -20,7 +20,10 @@ from langgraph.checkpoint.memory import InMemorySaver
 from langgraph.graph import END, START, StateGraph
 from langgraph.types import Command, interrupt
 
-from scripts.real_docling_pilot import write_synthetic_pdf
+if __package__:
+    from .real_docling_pilot import write_synthetic_pdf
+else:
+    from real_docling_pilot import write_synthetic_pdf
 
 VERSIONS = {"docling": "2.144.0", "langgraph": "1.2.18", "promptfoo": "0.125.1"}
 
