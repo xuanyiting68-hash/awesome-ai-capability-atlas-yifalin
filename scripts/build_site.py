@@ -8,12 +8,14 @@ from pathlib import Path
 if __package__:
     from .validate_research_briefs import validate_from_files
     from .validate_adoption import validate_from_files as validate_adoption
+    from .pilot_lab import run_from_files as run_pilot
 else:
     from validate_research_briefs import validate_from_files
     from validate_adoption import validate_from_files as validate_adoption
+    from pilot_lab import run_from_files as run_pilot
 
 ROOT = Path(__file__).resolve().parents[1]
-FILES = ('index.html', 'top30.html', 'project.html', 'blueprints.html', 'network.html', 'adoption.html', 'README.md', 'LICENSE')
+FILES = ('index.html', 'top30.html', 'project.html', 'blueprints.html', 'network.html', 'adoption.html', 'pilot-lab.html', 'README.md', 'LICENSE')
 DIRECTORIES = ('data', 'docs')
 
 def build(destination, source=ROOT, commit=None):
@@ -60,6 +62,9 @@ def build(destination, source=ROOT, commit=None):
     # Editorial claims are first-class release data; stale or forged promotions block shipping.
     research_summary = validate_from_files(source)
     adoption_summary = validate_adoption(source)
+    pilot_summary = run_pilot(source)
+    if not pilot_summary['all_expected_met'] or pilot_summary['total_cases'] != 24:
+        raise ValueError('Pilot contract baseline not reproducible; refuse deployment')
     if commit is None:
         commit = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=source, text=True).strip()
     manifest = {
@@ -73,6 +78,9 @@ def build(destination, source=ROOT, commit=None):
         'research_briefs_count': research_summary['count'],
         'research_reviewed_count': research_summary['reviewed'],
         **adoption_summary,
+        'pilot_contract_cases': pilot_summary['total_cases'],
+        'pilot_contract_passed': pilot_summary['passed_cases'],
+        'pilot_upstream_packages_executed': pilot_summary['upstream_code_executed'],
         'metadata_snapshot_utc': metadata['generated_at_utc'],
         'catalog_snapshot_utc': provenance['generated_at_utc'],
     }
@@ -84,6 +92,8 @@ def build(destination, source=ROOT, commit=None):
         shutil.copyfile(source / name, destination / name)
     for name in DIRECTORIES:
         shutil.copytree(source / name, destination / name)
+    (destination / 'data/pilot_lab_results.json').write_text(
+        json.dumps(pilot_summary, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     (destination / 'deployment.json').write_text(json.dumps(manifest, indent=2) + '\n')
     return manifest
 
