@@ -23,6 +23,12 @@
 - [2026-10-27 独立质量审计与修复记录](docs/INDEPENDENT_AUDIT_2026-10-27_CN.md)：说明数据可信边界、缺失页面及版本与 CI 核验，任何测试通过均不替代第三方许可证审查。
 - [合规留资 → 匿名分流 → 人工复核（合成数据）](examples/consent_lead_triage/README.md)：使用 Python 标准库运行，无账号连接、无自动外发；仅用于验证权限/撤回门禁，并不代表生产获客/CRM 集成成功。
 
+## Docling 2.144.0 官方 SDK 真实 PDF 文本/页码实测
+
+新增 [Docling 真实 PDF 实验方法与证据范围](docs/REAL_UPSTREAM_PILOT_DOCLING_CN.md) 和 [隔离真实 SDK GitHub Actions 工作流](.github/workflows/real-upstream-docling.yml)。使用原创纯标准库生成的三页合成 PDF，调用官方 `DocumentConverter + NativePdfPipeline`，验证文本、溯源页码和 Markdown 导出，共 12 项真实 API 沙盒断言。正式结果仅以该 CI 工作流的实际记录和工件为准。
+
+**NativePdfPipeline 不含 OCR、表格结构识别、视觉公式或复杂版面模型。** 本实验仅测试原生文本和页码，不得据此宣称已能解析真实课程中的扫描 PDF、复杂表格和公式；生产权限、隐私和第三方依赖审查均未完成。原有 24 项第一方合成基线仍独立展示，Fork HOLD 不变。
+
 ## LangGraph 官方 SDK 真实沙盒实验（与原合成基线分开）
 
 新增 [LangGraph 1.2.18 真实上游沙盒研究记录](docs/REAL_UPSTREAM_PILOT_LANGGRAPH_CN.md)，并建立 [独立、只读权限 GitHub Actions 工作流](.github/workflows/real-upstream-langgraph.yml)。工作流在临时 Ubuntu Runner 安装固定版本的 LangGraph，调用真实的 `StateGraph`、`interrupt()`、`Command(resume=...)`、`InMemorySaver`、`get_state()`，验证 10 项模拟审批/幂等/拒绝订单逻辑；逐项输出与传递依赖版本留存为 CI 工件。执行结果仅以该工作流实际的 CI 和 artifacts 为证；本条说明**不代表已通过**。
