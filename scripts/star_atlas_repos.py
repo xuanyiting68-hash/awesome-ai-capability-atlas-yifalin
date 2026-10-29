@@ -9,7 +9,10 @@ Never asks for a token, stores credentials, forks or clones repositories.
 import argparse
 import shutil
 import subprocess
-from scripts.validate_adoption import ROOT, validate_from_files
+if __package__:
+    from .validate_adoption import ROOT, validate_from_files
+else:
+    from validate_adoption import ROOT, validate_from_files
 import json
 
 
