@@ -1,0 +1,13 @@
+# Intentionally FAILS exactly one assertion: proves real evaluator detects a mismatch.
+description: "YIFALIN negative control: must report assertion failure"
+prompts:
+  - '{{mock_response}}'
+providers:
+  - echo
+tests:
+  - description: "PFNEG01 deliberately mismatched synthetic allow rule"
+    vars:
+      mock_response: "BLOCK: trading.send_order"
+    assert:
+      - type: contains
+        value: "ALLOW: trading.send_order"
