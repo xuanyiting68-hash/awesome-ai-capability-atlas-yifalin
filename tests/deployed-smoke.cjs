@@ -20,6 +20,9 @@ const errors=[];
     assert.ok(manifest.catalog_count>=manifest.curated_count&&manifest.catalog_count<=5000);
     assert.equal(manifest.research_briefs_count,30,'All Top 30 need source-linked editorial briefs');
     assert.equal(manifest.research_reviewed_count,0,'No third-party project is reviewed');
+    assert.equal(manifest.pilot_contract_cases,24,'Frozen synthetic cases published');
+    assert.equal(manifest.pilot_contract_passed,24,'First-party contract runner must match expectations');
+    assert.equal(manifest.pilot_upstream_packages_executed,false,'No third-party packages have been run');
     assert.equal(manifest.star_shortlist_count,30,'All 30 source-linked bookmarks required');
     assert.equal(manifest.priority_integration_candidates,8,'Eight research candidates only');
     assert.equal(manifest.fork_approved_count,0,'No forks approved');
@@ -81,6 +84,28 @@ const errors=[];
     assert.equal(await page.locator('#cards .card').count(),1);
     assert.match(await page.locator('.card a.primary').getAttribute('href'),/github.com\/openbq-org\/OpenBB/);
     await page.fill('#search','');
+    const pilotResponse=await context.request.get(new URL('data/pilot_lab_results.json',base).href);
+    assert.equal(pilotResponse.status(),200);
+    const pilot=await pilotResponse.json();
+    assert.equal(pilot.total_cases,24);
+    assert.equal(pilot.passed_cases,24);
+    assert.equal(pilot.evaluates_upstream_packages,false);
+    assert.equal(pilot.upstream_code_executed,false);
+    assert.equal(pilot.trading_orders_sent,false);
+    const fixtureResponse=await context.request.get(new URL('data/pilot_lab_cases.json',base).href);
+    const fixtures=await fixtureResponse.json();
+    assert.equal(fixtures.cases.length,24);
+    assert.deepEqual(new Set(fixtures.cases.map(c=>c.project)),new Set(['graph','document','security']));
+    for(const width of [1440,768,390]){
+      await page.setViewportSize({width,height:844});
+      await page.goto(new URL('pilot-lab.html',base).href);
+      await page.waitForFunction(()=>document.querySelectorAll('#records .case').length===24);
+      assert.equal(await page.locator('.project').count(),3);
+      assert.equal(await page.locator('#upstream').innerText(),'0');
+      assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,'Pilot Lab overflow '+width);
+      await page.evaluate(()=>scrollTo(0,0));
+      await page.screenshot({path:'test-results/pilot-lab-'+width+'.png'});
+    }
     for(const width of [1440,768,390]){
       await page.setViewportSize({width,height:844});
       await page.goto(base);
