@@ -178,7 +178,7 @@ async function loaded(page) { await page.waitForFunction(() => document.querySel
     await visual.selectOption('#domain','');
     await visual.locator('#graph [data-repo="microsoft/qlib"]').focus();
     await visual.keyboard.press('Enter');
-    assert.equal(new URL(visual.url()).searchParams.get('repo'),'microsoft/qlib');
+    await visual.waitForFunction(()=>new URL(location.href).searchParams.get('repo')==='microsoft/qlib');
     await visual.click('#language');
     assert.equal(await visual.locator('html').getAttribute('lang'),'en');
     assert.match(await visual.locator('#detail').innerText(),/Best for/);

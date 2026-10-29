@@ -23,6 +23,12 @@
 - [2026-10-27 独立质量审计与修复记录](docs/INDEPENDENT_AUDIT_2026-10-27_CN.md)：说明数据可信边界、缺失页面及版本与 CI 核验，任何测试通过均不替代第三方许可证审查。
 - [合规留资 → 匿名分流 → 人工复核（合成数据）](examples/consent_lead_triage/README.md)：使用 Python 标准库运行，无账号连接、无自动外发；仅用于验证权限/撤回门禁，并不代表生产获客/CRM 集成成功。
 
+## 三工具真正串联：Docling → LangGraph → Promptfoo（Pilot Lab 05）
+
+新增 [跨工具可复现端到端实验](docs/REAL_UPSTREAM_INTEGRATED_E2E_CN.md) 和 [独立三 SDK GitHub Actions](.github/workflows/real-upstream-integrated.yml)：由 **真实 Docling** 在 **真实 LangGraph** 节点中解析原创三页合成 PDF 的页码来源、经模拟审批生成仅内存草稿，再将 **实际图输出**交给 **真实 Promptfoo Echo 评测**；共 8 个正向预期和 1 个故意失败对照。独立验证器将三方 JSON 与原始图输出绑定，禁止用静态数据伪装通过。
+
+**当前 PR 不代表已通过：** 必须以该新工作流对应 HEAD 的实际日志和工件为准。测试不调用 LLM、交易、真实账户、商业课件或生产数据库；checkpoint 和幂等只在进程内，Owner 身份仅模拟。它不代表生产系统已通过安全、商业许可或隐私审查。
+
 ## Promptfoo 官方评测引擎真实 Echo 沙盒（非实际 LLM 红队）
 
 新增 [Promptfoo 0.125.1 真实评测实验方法](docs/REAL_UPSTREAM_PILOT_PROMPTFOO_CN.md)、[配置与反例](examples/promptfoo_echo/promptfooconfig.yaml) 以及 [隔离真实 CLI 工作流](.github/workflows/real-upstream-promptfoo.yml)。使用官方 `echo` provider 对 8 个原始合成输出进行断言，再用 1 个**故意不满足的断言**检查失败识别，独立解析 Promptfoo 生成的 JSON 结果；实际能否通过以工作流与 artifact 为准。
