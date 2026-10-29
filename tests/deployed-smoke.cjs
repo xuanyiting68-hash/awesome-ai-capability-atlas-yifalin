@@ -20,6 +20,10 @@ const errors=[];
     assert.ok(manifest.catalog_count>=manifest.curated_count&&manifest.catalog_count<=5000);
     assert.equal(manifest.research_briefs_count,30,'All Top 30 need source-linked editorial briefs');
     assert.equal(manifest.research_reviewed_count,0,'No third-party project is reviewed');
+    assert.equal(manifest.star_shortlist_count,30,'All 30 source-linked bookmarks required');
+    assert.equal(manifest.priority_integration_candidates,8,'Eight research candidates only');
+    assert.equal(manifest.fork_approved_count,0,'No forks approved');
+    assert.equal(manifest.star_actions_executed_by_atlas,0,'Never claim account changes');
     await page.goto(new URL('top30.html?lang=en',base).href);
     await page.waitForFunction(n=>document.querySelectorAll('.item').length===n&&document.querySelector('#count').textContent.includes('Showing'),manifest.research_project_count);
     assert.equal(await page.locator('html').getAttribute('lang'),'en');
@@ -56,6 +60,26 @@ const errors=[];
     await page.reload();await page.waitForFunction(n=>document.querySelectorAll('#directory button').length===n,manifest.research_briefs_count);
     assert.equal(await page.locator('#linked').isChecked(),true);
     await page.uncheck('#linked');
+    for(const width of [1440,768,390]){
+      await page.setViewportSize({width,height:844});
+      await page.goto(new URL('adoption.html',base).href);
+      await page.waitForFunction(()=>document.querySelectorAll('#cards .card').length===30);
+      assert.equal(await page.locator('#total').innerText(),'30');
+      assert.equal(await page.locator('#focus').innerText(),'8');
+      assert.equal(await page.locator('#fork').innerText(),'0');
+      assert.equal(await page.locator('#done').innerText(),'0');
+      assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,'Star Pack horizontal overflow '+width);
+      assert.equal(await page.locator('.card .flag.hold').count(),30);
+      await page.evaluate(()=>scrollTo(0,0));
+      await page.screenshot({path:'test-results/adoption-'+width+'.png'});
+    }
+    await page.selectOption('#priority','P0');
+    assert.equal(await page.locator('#cards .card').count(),8);
+    await page.selectOption('#priority','all');
+    await page.fill('#search','OpenBB');
+    assert.equal(await page.locator('#cards .card').count(),1);
+    assert.match(await page.locator('.card a.primary').getAttribute('href'),/github.com\/openbq-org\/OpenBB/);
+    await page.fill('#search','');
     for(const width of [1440,768,390]){
       await page.setViewportSize({width,height:844});
       await page.goto(base);
