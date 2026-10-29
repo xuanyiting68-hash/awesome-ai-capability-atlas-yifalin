@@ -113,10 +113,35 @@ def execute(root):
     run(case,"start",thread="alpha-second")
     run(case,"grant",thread="alpha-second")
     again=run(case,"resume",thread="alpha-second")
-    require("One local effect per tenant and idempotency key",
-            first["counts"]["effects"]==1 and again["counts"]["effects"]==1
+    require("Cross-thread key collision does not confer approval or second effect",
+            first["counts"]["effects"]==1
+            and again["outcome"]=="BLOCK: cross_thread_idempotency_collision"
+            and again["counts"]["effects"]==1
             and again["counts"]["outbox"]==1
+            and again["consumed_approvals"]==1
             and again["reconciliation_ok"] is True)
+
+    case="tenant-isolation"
+    for thread,principal in (("alpha-first","alpha_owner"),
+                              ("beta-first","beta_owner")):
+        run(case,"start",thread=thread)
+        run(case,"grant",thread=thread,principal=principal)
+        last=run(case,"resume",thread=thread)
+    require("Same idempotency string isolated between alpha and beta tenants",
+            last["counts"]["effects"]==2 and last["counts"]["outbox"]==2
+            and last["counts"]["audit"]==2 and last["reconciliation_ok"])
+
+    case="audit-loss"
+    run(case,"start")
+    run(case,"grant")
+    good=run(case,"resume")
+    corrupt=run(case,"tamper_audit")
+    require("Synthetic missing audit row is detected, never reported consistent",
+            good["reconciliation_ok"] is True
+            and corrupt["counts"]["effects"]==1
+            and corrupt["counts"]["outbox"]==1
+            and corrupt["counts"]["audit"]==0
+            and corrupt["reconciliation_ok"] is False)
 
     result={"schema_version":1,"validation":{"all_passed":True,
             "checks":checks,"cases_passed":len(checks),"processes_run":serial},
