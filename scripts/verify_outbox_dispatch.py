@@ -17,9 +17,8 @@ P08=[sys.executable,"-m","scripts.real_outbox_dispatch"]
 
 
 def worker(sender,recipient,ready,go,queue,index):
-    from scripts.real_outbox_dispatch import dispatch, setup
+    from scripts.real_outbox_dispatch import dispatch
     try:
-        setup(Path(sender),Path(recipient))
         ready.put(index)
         if not go.wait(timeout=15):raise TimeoutError("start barrier")
         result=dispatch(Path(sender),Path(recipient),"worker-"+str(index),8.0)
@@ -165,6 +164,8 @@ def execute(root):
     case="storm"
     produce(case)
     sender,receiver=paths(case)
+    from scripts.real_outbox_dispatch import setup
+    setup(sender,receiver)
     ctx=multiprocessing.get_context("spawn")
     ready,queue=ctx.Queue(),ctx.Queue()
     go=ctx.Event()
