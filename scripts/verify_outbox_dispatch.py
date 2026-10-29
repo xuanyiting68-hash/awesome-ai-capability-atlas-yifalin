@@ -12,6 +12,9 @@ import time
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[1]
+# The verifier is invoked as a file by Actions; spawned workers also need
+# the repository package root visible for importing scripts.real_outbox_dispatch.
+if str(ROOT) not in sys.path:sys.path.insert(0,str(ROOT))
 P07=[sys.executable,"-m","scripts.real_crash_consistency"]
 P08=[sys.executable,"-m","scripts.real_outbox_dispatch"]
 
