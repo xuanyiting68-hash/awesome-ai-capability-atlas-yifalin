@@ -1,0 +1,65 @@
+name: Pilot 08 SQLite outbox ACK gap and retry storm (isolated)
+on:
+  pull_request:
+    paths:
+      - 'scripts/real_outbox_dispatch.py'
+      - 'scripts/verify_outbox_dispatch.py'
+      - 'scripts/real_crash_consistency.py'
+      - 'scripts/real_durable_recovery.py'
+      - '.github/workflows/real-upstream-outbox.yml'
+      - 'docs/REAL_UPSTREAM_OUTBOX_CN.md'
+      - 'pilot-lab.html'
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/real_outbox_dispatch.py'
+      - 'scripts/verify_outbox_dispatch.py'
+      - '.github/workflows/real-upstream-outbox.yml'
+      - 'scripts/real_crash_consistency.py'
+      - 'scripts/real_durable_recovery.py'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  outbox-crash-replay:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 18
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONNOUSERSITE: '1'
+      LANGSMITH_TRACING: 'false'
+      LANGCHAIN_TRACING_V2: 'false'
+      LANGGRAPH_STRICT_MSGPACK: 'true'
+      PIP_DISABLE_PIP_VERSION_CHECK: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install actual LangGraph and SQLite Saver
+        run: |
+          python -m pip install --only-binary=:all: --no-cache-dir 'langgraph==1.2.18' 'langgraph-checkpoint-sqlite==3.1.2'
+          python -m pip freeze --all > pilot08-dependencies.txt
+      - name: Parse scripts
+        run: python -m py_compile scripts/real_outbox_dispatch.py scripts/verify_outbox_dispatch.py
+      - name: Run crash windows, dedup, lease and lock tests on separate SQLite files
+        run: python scripts/verify_outbox_dispatch.py --output-dir test-results/p08-a
+      - name: Independent full rerun with clean SQLite producer and consumer
+        run: python scripts/verify_outbox_dispatch.py --output-dir test-results/p08-b
+      - name: Preserve real process output and declared limitations without raw DB files
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pilot08-synthetic-outbox-durable-evidence
+          path: |
+            test-results/p08-a/pilot08-result.json
+            test-results/p08-a/stages/*.json
+            test-results/p08-a/*.p08faults.jsonl
+            test-results/p08-b/pilot08-result.json
+            test-results/p08-b/stages/*.json
+            test-results/p08-b/*.p08faults.jsonl
+            pilot08-dependencies.txt
+          if-no-files-found: warn
+          retention-days: 30
