@@ -59,7 +59,7 @@ class AdoptionContractTests(unittest.TestCase):
             self.verify(broken)
 
     def test_slug_and_canonical_spoofing_rejected(self):
-        for malicious in ("evil.invalid/Other", "../issue", "https://example.com", "microsoft/qlib"):
+        for malicious in ("evil.invalid/Other", "../issue", "https://example.com", "microsoft/not-the-repo"):
             with self.subTest(malicious=malicious):
                 broken = copy.deepcopy(self.plan)
                 broken["items"][0]["canonical_repo"] = malicious
