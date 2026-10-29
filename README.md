@@ -23,6 +23,12 @@
 - [2026-10-27 独立质量审计与修复记录](docs/INDEPENDENT_AUDIT_2026-10-27_CN.md)：说明数据可信边界、缺失页面及版本与 CI 核验，任何测试通过均不替代第三方许可证审查。
 - [合规留资 → 匿名分流 → 人工复核（合成数据）](examples/consent_lead_triage/README.md)：使用 Python 标准库运行，无账号连接、无自动外发；仅用于验证权限/撤回门禁，并不代表生产获客/CRM 集成成功。
 
+## 三个优先 AI 项目的可运行契约实验室（非上游代码测试）
+
+[打开首批 Pilot Lab](pilot-lab.html)：对 **LangGraph、Docling、Promptfoo 的拟议 YIFALIN 使用场景**建立独立、确定性、标准库合成契约基线（9 个状态/授权场景、7 个文档页码场景、8 个 Agent 工具权限场景），共 24 个测试输入。网页展示的通过数由 `scripts/pilot_lab.py` 在发布阶段**真实执行并生成**，且全部用例与期望由 `data/pilot_lab_cases.json` 保存。CI 回归测试涵盖伪造授权、无来源文档、越权指令、身份伪造及失败时阻止替换已发布网站。
+
+**这不是第三方 SDK、文档解析引擎或 LLM 的独立复现**：没有安装 LangGraph/Docling/Promptfoo，没有调用模型/API，没有使用真实用户数据或发送交易订单。三个上游 README 与根 LICENSE 的原始快照 SHA 已明确记录；根 LICENSE 显示 MIT 只是观察结果，依赖和商业部署仍需单独审查。本实验属于系统集成**输入与安全门禁基线**，不提高原始项目的 `not-tested` / `Fork HOLD` 等级。详见 [实验说明](docs/PILOT_LAB_01_CN.md)。
+
 ## Star Pack 与集成路线（30 项收藏清单，0 项执行）
 
 新增 [Star Pack / Integration Hub](adoption.html)：将现有 Top 30 官方来源研究汇总为 **30 项 Star 收藏建议**和 **8 项优先集成研究候选**，含上游仓库链接、项目实际研究状态、业务场景与对比来源。数据见 [收藏及集成计划](data/adoption_plan.json)，完整治理规则见 [Star/Fork/集成规范](docs/STAR_FORK_INTEGRATION_CN.md)。
