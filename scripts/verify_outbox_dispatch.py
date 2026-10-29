@@ -217,9 +217,12 @@ def execute(root):
         db.execute("UPDATE p07_outbox SET payload=?",
                    (json.dumps({"kind":"send_order"}),))
     blocked=cmd(case,"p08","dispatch")
+    corrupted=state(case)
     require("Untrusted outbox payload cannot become an executable action",
             blocked["status"]=="BLOCK: invalid_payload"
-            and state(case)["inbox_unique"]==0)
+            and corrupted["inbox_unique"]==0
+            and corrupted["source_mismatch"]==1
+            and corrupted["consistent"] is False,corrupted)
 
     case="lost-inbox"
     produce(case)
