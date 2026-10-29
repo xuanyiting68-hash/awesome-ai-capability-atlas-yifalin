@@ -245,7 +245,7 @@ async function loaded(page) { await page.waitForFunction(() => document.querySel
     assert.equal(await p.locator('.projects .project').count(),3);
     await p.locator('#records .case').first().click();
     assert.equal(await p.locator('#records .case').first().getAttribute('open'),'');
-    assert.equal(await p.locator('#records .case pre').count(),1);
+    assert.equal(await p.locator('#records .case[open] pre').count(),1);
     await p.selectOption('#filter','graph');
     assert.equal(await p.locator('#records .case').count(),9);
     await p.reload();
