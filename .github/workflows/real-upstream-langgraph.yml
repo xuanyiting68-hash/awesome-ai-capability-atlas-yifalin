@@ -35,7 +35,8 @@ jobs:
         with:
           python-version: '3.12'
       - name: Install one pinned upstream release from PyPI (no source build)
-        run: python -m pip install --only-binary=:all: --no-cache-dir 'langgraph==1.2.18'
+        run: |
+          python -m pip install --only-binary=:all: --no-cache-dir 'langgraph==1.2.18'
       - name: Preserve resolved dependency versions
         run: python -m pip freeze --all > langgraph-resolved-dependencies.txt
       - name: Exercise actual StateGraph / interrupt / Command / InMemorySaver
