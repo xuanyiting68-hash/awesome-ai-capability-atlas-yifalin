@@ -227,6 +227,19 @@ def execute(root):
             and corrupted["source_mismatch"]==1
             and corrupted["consistent"] is False,corrupted)
 
+    case="missing-source-audit"
+    produce(case)
+    sender,_=paths(case)
+    with sqlite3.connect(sender) as db:
+        db.execute("DELETE FROM p07_audit")
+    denied=cmd(case,"p08","dispatch")
+    provenance=state(case)
+    require("Syntactically valid outbox cannot bypass absent source audit",
+            denied["status"]=="BLOCK: missing_source_provenance"
+            and provenance["source_mismatch"]==1
+            and provenance["inbox_unique"]==0
+            and provenance["consistent"] is False,provenance)
+
     case="lost-inbox"
     produce(case)
     cmd(case,"p08","dispatch")
