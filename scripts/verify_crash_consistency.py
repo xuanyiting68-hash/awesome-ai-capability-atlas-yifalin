@@ -19,9 +19,9 @@ def execute(root):
     checks=[]
     serial=0
 
-    def require(name,predicate):
+    def require(name,predicate,details=None):
         if not predicate:
-            raise AssertionError(name)
+            raise AssertionError(name+" | evidence="+json.dumps(details,sort_keys=True))
         checks.append(name)
 
     def run(case,stage,thread=None,key="fixture-01",fault=None,expect_crash=False,
@@ -78,7 +78,8 @@ def execute(root):
                 and restored["counts"]["outbox"]==1
                 and restored["counts"]["audit"]==1
                 and restored["consumed_approvals"]==1
-                and restored["reconciliation_ok"] is True)
+                and restored["reconciliation_ok"] is True,
+                {"fault":fault,"postcrash":snapshot,"recovered":restored})
 
     case="no-ticket"
     run(case,"start")

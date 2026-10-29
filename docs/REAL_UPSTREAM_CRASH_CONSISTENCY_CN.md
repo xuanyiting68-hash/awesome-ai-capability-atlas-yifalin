@@ -7,6 +7,7 @@
 - `scripts/real_crash_consistency.py` 复用 Pilot 06 的 **真实 LangGraph 1.2.18 StateGraph / interrupt / Command / SqliteSaver**（SQLite saver 3.1.2）。
 - `scripts/verify_crash_consistency.py` 在**不同 Python 子进程**创建 checkpoint、发放模拟批准、恢复节点；利用真实 `os._exit(86)` 立即杀死执行中的进程，不以普通异常或正常退出冒充崩溃。
 - 注入位置：事务开始前、SQLite INSERT 完成但 COMMIT 前、COMMIT 之后而图节点返回之前。独立子进程重启后检查未提交的事务回滚，以及已提交的本地效果没有重做。
+- **关键恢复门禁：**LangGraph 默认 `durability='async'` 可能在执行下一步时尚未落盘 checkpoint。合并后 main 的初次真实 CI 在 `before_transaction` 恢复不变量上失败，因此实验已改为 `graph.invoke(..., durability='sync')`，要求每个节点的 checkpoint 在下一节点启动前持久化。失败原始证据保留于 main workflow run 40914076822；这不是降低验收要求。参考 [官方持久化模式说明](https://docs.langchain.com/oss/python/langgraph/persistence#durability-modes)。
 - `p07_effects`、`p07_outbox`、`p07_audit` 和 `p07_approvals.consumed` 在**同一个 SQLite BEGIN IMMEDIATE 事务**里写入；(tenant,idempotency_key) 有唯一约束。恢复后核对 effect/outbox/audit 的数量与 payload 一致性。
 - 服务端**模拟**身份：`alpha_owner` 与 `beta_owner` 仅可批准各自 tenant 的 synthetic_draft；`alpha_viewer` 不可批准；批准有期限、撤销与消费状态。图中的 `source=owner_session` 仍是未经认证的**测试字符串**，单凭它无法触发新效果。
 - 所有数据均由测试本地生成；不联网调用模型、不分发信息、不读取真实资料、不调用交易权限、不触碰生产认证/RBAC。
