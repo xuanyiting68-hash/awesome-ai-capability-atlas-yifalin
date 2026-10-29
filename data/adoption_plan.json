@@ -1,0 +1,379 @@
+{
+  "schema_version": 1,
+  "basis": "Existing Top 30 editorial queue, official-source briefs and independent execution/rights gates. No integration or GitHub star/fork action has been executed by this manifest.",
+  "star_policy": "Recommended bookmarks only; GitHub account star state is unknown until authenticated API execution.",
+  "fork_policy": "HOLD until individual upstream license text, redistribution rules, dependency rights, security and concrete need are reviewed.",
+  "integration_policy": "Interface or synthetic sandbox pilots only; do not vendor third-party code into the Atlas or production YIFALIN.",
+  "items": [
+    {
+      "repo": "microsoft/qlib",
+      "canonical_repo": "microsoft/qlib",
+      "rank": 1,
+      "domain": "金融AI",
+      "star": "recommend",
+      "star_execution": "not-verified",
+      "fork": "HOLD",
+      "integration_state": "not-integrated",
+      "priority": "P0",
+      "workstream": "Financial research",
+      "pilot_fit": {
+        "en": "Research-only data/feature interface; OOS first",
+        "zh": "仅研究数据与特征接口；先做严格样本外验证"
+      }
+    },
+    {
+      "repo": "AI4Finance-Foundation/FinRL",
+      "canonical_repo": "AI4Finance-Foundation/FinRL",
+      "rank": 2,
+      "domain": "金融AI",
+      "star": "recommend",
+      "star_execution": "not-verified",
+      "fork": "HOLD",
+      "integration_state": "not-integrated",
+      "priority": "P1"
+    },
+    {
+      "repo": "AI4Finance-Foundation/FinRobot",
+      "canonical_repo": "AI4Finance-Foundation/FinRobot",
+      "rank": 3,
+      "domain": "金融AI",
+      "star": "recommend",
+      "star_execution": "not-verified",
+      "fork": "HOLD",
+      "integration_state": "not-integrated",
+      "priority": "P1"
+    },
+    {
+      "repo": "TauricResearch/TradingAgents",
+      "canonical_repo": "TauricResearch/TradingAgents",
+      "rank": 4,
+      "domain": "金融AI",
+      "star": "recommend",
+      "star_execution": "not-verified",
+      "fork": "HOLD",
+      "integration_state": "not-integrated",
+      "priority": "P1"
+    },
+    {
+      "repo": "OpenBB-finance/OpenBB",
+      "canonical_repo": "openbq-org/OpenBB",
+      "rank": 5,
+      "domain": "金融AI",
+      "star": "recommend",
+      "star_execution": "not-verified",
+      "fork": "HOLD",
+      "integration_state": "not-integrated",
+      "priority": "P1"
+    },
+    {
+      "repo": "QuantConnect/Lean",
+      "canonical_repo": "QuantConnect/Lean",
+      "rank": 6,
+      "domain": "金融AI",
+      "star": "recommend",
+      "star_execution": "not-verified",
+      "fork": "HOLD",
+      "integration_state": "not-integrated",
+      "priority": "P1"
+    },
+    {
+      "repo": "polakowo/vectorbt",
+      "canonical_repo": "polakowo/vectorbt",
+      "rank": 7,
+      "domain": "金融AI",
+      "star": "recommend",
+      "star_execution": "not-verified",
+      "fork": "HOLD",
+      "integration_state": "not-integrated",
+      "priority": "P1"
+    },
+    {
+      "repo": "microsoft/RD-Agent",
+      "canonical_repo": "microsoft/RD-Agent",
+      "rank": 8,
+      "domain": "金融AI",
+      "star": "recommend",
+      "star_execution": "not-verified",
+      "fork": "HOLD",
+      "integration_state": "not-integrated",
+      "priority": "P0",
+      "workstream": "Research agents",
+      "pilot_fit": {
+        "en": "Sandbox factor ideation; no live orders",
+        "zh": "隔离因子提案和科研审计；禁止实盘权限"
+      }
+    },
+    {
+      "repo": "openai/codex",
+      "canonical_repo": "openai/codex",
+      "rank": 9,
+      "domain": "研发Agent",
+      "star": "recommend",
+      "star_execution": "not-verified",
+      "fork": "HOLD",
+      "integration_state": "not-integrated",
+      "priority": "P1"
+    },
+    {
+      "repo": "anthropics/claude-code",
+      "canonical_repo": "anthropics/claude-code",
+      "rank": 10,
+      "domain": "研发Agent",
+      "star": "recommend",
+      "star_execution": "not-verified",
+      "fork": "HOLD",
+      "integration_state": "not-integrated",
+      "priority": "P1"
+    },
+    {
+      "repo": "All-Hands-AI/OpenHands",
+      "canonical_repo": "OpenHands/OpenHands",
+      "rank": 11,
+      "domain": "研发Agent",
+      "star": "recommend",
+      "star_execution": "not-verified",
+      "fork": "HOLD",
+      "integration_state": "not-integrated",
+      "priority": "P1"
+    },
+    {
+      "repo": "langchain-ai/langgraph",
+      "canonical_repo": "langchain-ai/langgraph",
+      "rank": 12,
+      "domain": "研发Agent",
+      "star": "recommend",
+      "star_execution": "not-verified",
+      "fork": "HOLD",
+      "integration_state": "not-integrated",
+      "priority": "P0",
+      "workstream": "Agent workflow",
+      "pilot_fit": {
+        "en": "Governed state machine with explicit approvals",
+        "zh": "带人工审批的 Agent 状态机与可追踪执行"
+      }
+    },
+    {
+      "repo": "browser-use/browser-use",
+      "canonical_repo": "browser-use/browser-use",
+      "rank": 13,
+      "domain": "研发Agent",
+      "star": "recommend",
+      "star_execution": "not-verified",
+      "fork": "HOLD",
+      "integration_state": "not-integrated",
+      "priority": "P1"
+    },
+    {
+      "repo": "github/gh-aw",
+      "canonical_repo": "github/gh-aw",
+      "rank": 14,
+      "domain": "研发Agent",
+      "star": "recommend",
+      "star_execution": "not-verified",
+      "fork": "HOLD",
+      "integration_state": "not-integrated",
+      "priority": "P1"
+    },
+    {
+      "repo": "run-llama/llama_index",
+      "canonical_repo": "run-llama/llama_index",
+      "rank": 15,
+      "domain": "教育AI",
+      "star": "recommend",
+      "star_execution": "not-verified",
+      "fork": "HOLD",
+      "integration_state": "not-integrated",
+      "priority": "P1"
+    },
+    {
+      "repo": "docling-project/docling",
+      "canonical_repo": "docling-project/docling",
+      "rank": 16,
+      "domain": "教育AI",
+      "star": "recommend",
+      "star_execution": "not-verified",
+      "fork": "HOLD",
+      "integration_state": "not-integrated",
+      "priority": "P0",
+      "workstream": "Document intelligence",
+      "pilot_fit": {
+        "en": "Licensed PDF→structured text ingestion trial",
+        "zh": "授权 PDF 到结构化文本的解析实验"
+      }
+    },
+    {
+      "repo": "microsoft/markitdown",
+      "canonical_repo": "microsoft/markitdown",
+      "rank": 17,
+      "domain": "教育AI",
+      "star": "recommend",
+      "star_execution": "not-verified",
+      "fork": "HOLD",
+      "integration_state": "not-integrated",
+      "priority": "P1"
+    },
+    {
+      "repo": "infiniflow/ragflow",
+      "canonical_repo": "infiniflow/ragflow",
+      "rank": 18,
+      "domain": "教育AI",
+      "star": "recommend",
+      "star_execution": "not-verified",
+      "fork": "HOLD",
+      "integration_state": "not-integrated",
+      "priority": "P1"
+    },
+    {
+      "repo": "microsoft/ai-agents-for-beginners",
+      "canonical_repo": "microsoft/ai-agents-for-beginners",
+      "rank": 19,
+      "domain": "教育AI",
+      "star": "recommend",
+      "star_execution": "not-verified",
+      "fork": "HOLD",
+      "integration_state": "not-integrated",
+      "priority": "P1"
+    },
+    {
+      "repo": "langgenius/dify",
+      "canonical_repo": "langgenius/dify",
+      "rank": 20,
+      "domain": "业务自动化",
+      "star": "recommend",
+      "star_execution": "not-verified",
+      "fork": "HOLD",
+      "integration_state": "not-integrated",
+      "priority": "P1"
+    },
+    {
+      "repo": "n8n-io/n8n",
+      "canonical_repo": "n8n-io/n8n",
+      "rank": 21,
+      "domain": "业务自动化",
+      "star": "recommend",
+      "star_execution": "not-verified",
+      "fork": "HOLD",
+      "integration_state": "not-integrated",
+      "priority": "P1"
+    },
+    {
+      "repo": "activepieces/activepieces",
+      "canonical_repo": "activepieces/activepieces",
+      "rank": 22,
+      "domain": "业务自动化",
+      "star": "recommend",
+      "star_execution": "not-verified",
+      "fork": "HOLD",
+      "integration_state": "not-integrated",
+      "priority": "P1"
+    },
+    {
+      "repo": "remotion-dev/remotion",
+      "canonical_repo": "remotion-dev/remotion",
+      "rank": 23,
+      "domain": "视频工厂",
+      "star": "recommend",
+      "star_execution": "not-verified",
+      "fork": "HOLD",
+      "integration_state": "not-integrated",
+      "priority": "P0",
+      "workstream": "Video production",
+      "pilot_fit": {
+        "en": "Original-media scripted rendering pilot",
+        "zh": "使用原创素材进行脚本化视频生成实验"
+      }
+    },
+    {
+      "repo": "SYSTRAN/faster-whisper",
+      "canonical_repo": "SYSTRAN/faster-whisper",
+      "rank": 24,
+      "domain": "视频工厂",
+      "star": "recommend",
+      "star_execution": "not-verified",
+      "fork": "HOLD",
+      "integration_state": "not-integrated",
+      "priority": "P1"
+    },
+    {
+      "repo": "gitroomhq/postiz-app",
+      "canonical_repo": "gitroomhq/postiz-app",
+      "rank": 25,
+      "domain": "自媒体运营",
+      "star": "recommend",
+      "star_execution": "not-verified",
+      "fork": "HOLD",
+      "integration_state": "not-integrated",
+      "priority": "P1"
+    },
+    {
+      "repo": "formbricks/formbricks",
+      "canonical_repo": "formbricks/formbricks",
+      "rank": 26,
+      "domain": "智能获客",
+      "star": "recommend",
+      "star_execution": "not-verified",
+      "fork": "HOLD",
+      "integration_state": "not-integrated",
+      "priority": "P0",
+      "workstream": "Consent research",
+      "pilot_fit": {
+        "en": "Opt-in customer interviews and feedback, synthetic trial",
+        "zh": "知情同意的用户调研和反馈，先用合成样本"
+      }
+    },
+    {
+      "repo": "TwentyHQ/twenty",
+      "canonical_repo": "TwentyHQ/twenty",
+      "rank": 27,
+      "domain": "客户维护",
+      "star": "recommend",
+      "star_execution": "not-verified",
+      "fork": "HOLD",
+      "integration_state": "not-integrated",
+      "priority": "P1"
+    },
+    {
+      "repo": "chatwoot/chatwoot",
+      "canonical_repo": "chatwoot/chatwoot",
+      "rank": 28,
+      "domain": "客户维护",
+      "star": "recommend",
+      "star_execution": "not-verified",
+      "fork": "HOLD",
+      "integration_state": "not-integrated",
+      "priority": "P1"
+    },
+    {
+      "repo": "posthog/posthog",
+      "canonical_repo": "posthog/posthog",
+      "rank": 29,
+      "domain": "增长分析",
+      "star": "recommend",
+      "star_execution": "not-verified",
+      "fork": "HOLD",
+      "integration_state": "not-integrated",
+      "priority": "P0",
+      "workstream": "Product analytics",
+      "pilot_fit": {
+        "en": "Anonymized activation-retention event contract",
+        "zh": "匿名化激活—留存事件口径与分析"
+      }
+    },
+    {
+      "repo": "promptfoo/promptfoo",
+      "canonical_repo": "promptfoo/promptfoo",
+      "rank": 30,
+      "domain": "安全评测",
+      "star": "recommend",
+      "star_execution": "not-verified",
+      "fork": "HOLD",
+      "integration_state": "not-integrated",
+      "priority": "P0",
+      "workstream": "Agent evaluation",
+      "pilot_fit": {
+        "en": "Mock tool permission and prompt-regression suite",
+        "zh": "模拟工具权限、提示注入与回归测试"
+      }
+    }
+  ]
+}
