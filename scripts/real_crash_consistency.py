@@ -184,7 +184,7 @@ def main():
     p=argparse.ArgumentParser()
     p.add_argument("--db",type=Path,required=True)
     p.add_argument("--stage",required=True,
-                   choices=("start","resume","recover","grant","revoke","inspect"))
+                   choices=("start","resume","recover","grant","revoke","inspect","tamper_audit"))
     p.add_argument("--thread",default="alpha-example")
     p.add_argument("--key",default="fixture-01")
     p.add_argument("--principal",default="alpha_owner")
@@ -201,6 +201,11 @@ def main():
             db.execute("UPDATE p07_approvals SET revoked=1 WHERE thread=?",
                        (args.thread,))
         result={"revoked":True}
+    elif args.stage=="tamper_audit":
+        # Deliberate corruption ONLY in the disposable synthetic test database.
+        with base.connect(args.db) as db:
+            db.execute("DELETE FROM p07_audit")
+        result=snapshot(args.db)
     elif args.stage=="inspect":
         result=snapshot(args.db)
     else:
