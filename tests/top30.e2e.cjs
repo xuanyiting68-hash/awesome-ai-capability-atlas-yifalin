@@ -232,6 +232,43 @@ async function loaded(page) { await page.waitForFunction(() => document.querySel
     }
     await c.close();
   });
+  await check('three-project 24-case contract lab renders only reproducible synthetic evidence', async()=>{
+    const c=await browser.newContext({viewport:{width:1440,height:900}});
+    await c.route('**/*',r=>r.request().url().startsWith(base)?r.continue():r.abort());
+    const p=await c.newPage();p.on('pageerror',e=>errors.push(e.message));
+    await p.goto(new URL('pilot-lab.html',base).href);
+    await p.waitForFunction(()=>document.querySelectorAll('#records .case').length===24);
+    assert.equal(await p.locator('#total').innerText(),'24');
+    assert.equal(await p.locator('#passed').innerText(),'24');
+    assert.equal(await p.locator('#upstream').innerText(),'0');
+    assert.equal(await p.locator('#production').innerText(),'0');
+    assert.equal(await p.locator('.projects .project').count(),3);
+    await p.locator('#records .case').first().click();
+    assert.equal(await p.locator('#records .case').first().getAttribute('open'),'');
+    assert.equal(await p.locator('#records .case[open] pre').count(),1);
+    await p.selectOption('#filter','graph');
+    assert.equal(await p.locator('#records .case').count(),9);
+    await p.reload();
+    await p.waitForFunction(()=>document.querySelectorAll('#records .case').length===9);
+    await p.selectOption('#filter','document');
+    assert.equal(await p.locator('#records .case').count(),7);
+    await p.selectOption('#filter','security');
+    assert.equal(await p.locator('#records .case').count(),8);
+    await p.selectOption('#filter','all');
+    await p.fill('#search','D07');
+    assert.equal(await p.locator('#records .case').count(),1);
+    await p.fill('#search','');
+    await p.click('#lang');
+    assert.equal(await p.locator('html').getAttribute('lang'),'en');
+    assert.match(await p.locator('h1').innerText(),/Verify integration requirements first/);
+    assert.match(await p.locator('.warning').innerText(),/NOT LangGraph/);
+    for(const width of [1440,768,390]){
+      await p.setViewportSize({width,height:844});await p.evaluate(()=>scrollTo(0,0));
+      assert.equal(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,'Pilot Lab overflow '+width);
+      await p.screenshot({path:'test-results/pilot-lab-'+width+'.png'});
+    }
+    await c.close();
+  });
   await context.close();
   await check('missing metadata and evidence degrade without losing projects', async () => {
     const o=await open('?lang=en',async c=>{await c.route('**/data/repo_metadata.json',r=>r.fulfill({status:503,body:'unavailable'}));await c.route('**/data/top30_evidence.json',r=>r.fulfill({status:503,body:'unavailable'}))});

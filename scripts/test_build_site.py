@@ -10,7 +10,7 @@ class PublishBoundaryTests(unittest.TestCase):
             destination = Path(directory) / 'site'
             manifest = build(destination, commit='a' * 40)
             self.assertEqual(set(p.name for p in destination.iterdir()),
-                             {'index.html', 'top30.html', 'project.html', 'blueprints.html', 'network.html', 'adoption.html', 'data', 'docs', 'LICENSE', 'README.md', 'deployment.json'})
+                             {'index.html', 'top30.html', 'project.html', 'blueprints.html', 'network.html', 'adoption.html', 'pilot-lab.html', 'data', 'docs', 'LICENSE', 'README.md', 'deployment.json'})
             self.assertEqual(json.loads((destination / 'deployment.json').read_text()), manifest)
             self.assertEqual(manifest['source_commit'], 'a' * 40)
             self.assertEqual(manifest['catalog_count'], 5000)
@@ -19,6 +19,13 @@ class PublishBoundaryTests(unittest.TestCase):
             self.assertEqual(manifest['research_briefs_count'],30)
             self.assertEqual(manifest['research_reviewed_count'],0)
             self.assertEqual(manifest['star_shortlist_count'],30)
+            self.assertEqual(manifest['pilot_contract_cases'],24)
+            self.assertEqual(manifest['pilot_contract_passed'],24)
+            self.assertIs(manifest['pilot_upstream_packages_executed'],False)
+            result=json.loads((destination/'data/pilot_lab_results.json').read_text('utf-8'))
+            self.assertTrue(result['all_expected_met'])
+            self.assertFalse(result['upstream_code_executed'])
+            self.assertEqual(len(result['cases']),24)
             self.assertEqual(manifest['priority_integration_candidates'],8)
             self.assertEqual(manifest['fork_approved_count'],0)
             self.assertEqual(manifest['star_actions_executed_by_atlas'],0)
@@ -29,7 +36,23 @@ class PublishBoundaryTests(unittest.TestCase):
             self.assertIn('blueprints.html', (destination / 'index.html').read_text())
             self.assertIn('network.html', (destination / 'index.html').read_text())
             self.assertIn('adoption.html', (destination / 'index.html').read_text())
+            self.assertIn('pilot-lab.html', (destination / 'index.html').read_text())
             self.assertIn('data/top30_evaluation.csv', (destination / 'network.html').read_text())
+
+    def test_pilot_failed_expectation_cannot_replace_previous_site(self):
+        with tempfile.TemporaryDirectory() as directory:
+            source=Path(directory)/'source'
+            build(source,commit='a'*40)
+            old=Path(directory)/'old'
+            old.mkdir()
+            (old/'marker').write_text('keep previous')
+            path=source/'data/pilot_lab_cases.json'
+            payload=json.loads(path.read_text('utf-8'))
+            payload['cases'][0]['expected']='BLOCK'
+            path.write_text(json.dumps(payload))
+            with self.assertRaisesRegex(ValueError,'not reproducible'):
+                build(old,source=source,commit='b'*40)
+            self.assertEqual((old/'marker').read_text(),'keep previous')
 
     def test_forged_fork_clearance_preserves_previous_site(self):
         with tempfile.TemporaryDirectory() as directory:
