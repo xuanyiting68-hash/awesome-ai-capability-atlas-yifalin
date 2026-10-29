@@ -7,10 +7,21 @@ import json
 import unittest
 from pathlib import Path
 
-from langgraph.types import Command
-from scripts.real_langgraph_pilot import build_probe, REQUIRED_LANGGRAPH
+# The base Atlas suite has no third-party dependencies. When the actual SDK is
+# unavailable, this class is explicitly skipped; it must run in the separate
+# real-upstream workflow, which pins and installs LangGraph before testing.
+try:
+    from langgraph.types import Command
+    from scripts.real_langgraph_pilot import build_probe, REQUIRED_LANGGRAPH
+except ModuleNotFoundError as exc:
+    if not exc.name.startswith("langgraph"):
+        raise
+    Command = None
+    build_probe = None
+    REQUIRED_LANGGRAPH = "1.2.18"
 
 
+@unittest.skipUnless(Command is not None, "Real LangGraph tests run in separate pinned upstream workflow")
 class RealLangGraphContractTests(unittest.TestCase):
     def test_published_ci_artifact_covers_exact_real_cases(self):
         doc=json.loads(Path("test-results/real-langgraph-result.json").read_text("utf-8"))
