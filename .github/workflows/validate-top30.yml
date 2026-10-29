@@ -6,6 +6,12 @@ on:
       - 'project.html'
       - 'blueprints.html'
       - 'network.html'
+      - 'adoption.html'
+      - 'data/adoption_plan.json'
+      - 'scripts/validate_adoption.py'
+      - 'scripts/test_adoption.py'
+      - 'scripts/star_atlas_repos.py'
+      - 'docs/STAR_FORK_INTEGRATION_CN.md'
       - 'data/business_use_cases.json'
       - 'data/research_briefs.json'
       - 'scripts/validate_research_briefs.py'
@@ -48,7 +54,7 @@ jobs:
           python - <<'PY'
           import re
           from pathlib import Path
-          for name in ('top30', 'project', 'blueprints', 'network'):
+          for name in ('top30', 'project', 'blueprints', 'network', 'adoption'):
             text = Path(f'{name}.html').read_text('utf-8')
             js = re.findall(r'<script(?:\\s[^>]*)?>(.*?)</script>', text, re.S)
             assert len(js) == 1, f'Expected one inline script in {name}'
@@ -58,3 +64,4 @@ jobs:
           node --check /tmp/project-inline.js
           node --check /tmp/blueprints-inline.js
           node --check /tmp/network-inline.js
+          node --check /tmp/adoption-inline.js
