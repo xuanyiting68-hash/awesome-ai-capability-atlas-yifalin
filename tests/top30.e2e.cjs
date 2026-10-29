@@ -223,9 +223,11 @@ async function loaded(page) { await page.waitForFunction(() => document.querySel
     await p.click('#language');
     assert.equal(await p.locator('html').getAttribute('lang'),'en');
     assert.match(await p.locator('.card').first().innerText(),/Fork HOLD/);
+    assert.match(await p.locator('h1').innerText(),/Turn research into real capabilities/);
     for(const width of [1440,768,390]){
       await p.setViewportSize({width,height:844});await p.evaluate(()=>scrollTo(0,0));
       assert.equal(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,'Adoption overflow '+width);
+      if(width===390){const card=await p.locator('#cards .card').first().boundingBox();assert.ok(card && card.y < 844,'Star Pack first mobile card should be reachable in first viewport');}
       await p.screenshot({path:'test-results/adoption-'+width+'.png'});
     }
     await c.close();
