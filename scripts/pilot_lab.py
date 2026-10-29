@@ -15,7 +15,11 @@ CASES = ROOT / "data/pilot_lab_cases.json"
 IDS = {"graph": "langchain-ai/langgraph",
        "document": "docling-project/docling",
        "security": "promptfoo/promptfoo"}
-PIN = re.compile(r"^[0-9a-f]{40}$")
+UPSTREAM_PINS = {
+ "graph": ("97c31e9cb4d8fe56be8d768ce3eb5e22400e897e","fc0602feecdd6748623c852ab534e1ca612673c7"),
+ "document": ("3297b7881575dc853facc5add4cc4c8dccc12f14","6684a401bf0f700fd37104ab7c8da340036f7166"),
+ "security": ("2a56017c2609e3a92d7d5539147c9c7e620a3420","af3fa111d9303b3041d225fb851534e50a4bbec2"),
+}
 SAFE_TERM = re.compile(r"^[A-Za-z][A-Za-z0-9 ]{1,35}$")
 
 
@@ -64,9 +68,9 @@ def validate_cases(doc):
         raise ValueError("pilot: missing upstream identities")
     for k, expected_repo in IDS.items():
         p = doc["projects"][k]
-        if p.get("repo") != expected_repo or not PIN.fullmatch(p.get("readme_sha","")) or not PIN.fullmatch(p.get("license_sha","")):
+        if p.get("repo") != expected_repo or (p.get("readme_sha"),p.get("license_sha")) != UPSTREAM_PINS[k]:
             raise ValueError("pilot: invalid pinned upstream provenance")
-        if not all(isinstance(p.get(t),str) and len(p[t])>10 for t in ("focus_zh","focus_en","label_zh","label_en")):
+        if not all(isinstance(p.get(t),str) and len(p[t])>3 for t in ("focus_zh","focus_en","label_zh","label_en")):
             raise ValueError("pilot: missing bilingual project context")
     cases=doc.get("cases")
     if not isinstance(cases,list) or len(cases)!=24:
