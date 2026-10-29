@@ -1,0 +1,71 @@
+name: Verify real Promptfoo echo evaluations (isolated)
+on:
+  pull_request:
+    paths:
+      - 'examples/promptfoo_echo/**'
+      - 'scripts/verify_real_promptfoo.cjs'
+      - '.github/workflows/real-upstream-promptfoo.yml'
+      - 'docs/REAL_UPSTREAM_PILOT_PROMPTFOO_CN.md'
+      - 'pilot-lab.html'
+      - 'README.md'
+  push:
+    branches: [main]
+    paths:
+      - 'examples/promptfoo_echo/**'
+      - 'scripts/verify_real_promptfoo.cjs'
+      - '.github/workflows/real-upstream-promptfoo.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  real-promptfoo-echo:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      CI: 'true'
+      PROMPTFOO_DISABLE_TELEMETRY: 'true'
+      PROMPTFOO_DISABLE_UPDATE: 'true'
+      PROMPTFOO_CACHE_ENABLED: 'false'
+      DO_NOT_TRACK: '1'
+      NPM_CONFIG_IGNORE_SCRIPTS: 'true'
+      NPM_CONFIG_AUDIT: 'false'
+      NPM_CONFIG_FUND: 'false'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install official pinned CLI without install lifecycle scripts
+        run: |
+          npm install --no-save --ignore-scripts --no-audit --no-fund --prefix "$RUNNER_TEMP/promptfoo" 'promptfoo@0.125.1'
+      - name: Preserve package version
+        run: |
+          node -p "require(process.env.RUNNER_TEMP+'/promptfoo/node_modules/promptfoo/package.json').version" > real-promptfoo-version.txt
+      - name: Run real Promptfoo assertions using only built-in Echo provider
+        run: |
+          mkdir -p test-results
+          "$RUNNER_TEMP/promptfoo/node_modules/.bin/promptfoo" eval -c examples/promptfoo_echo/promptfooconfig.yaml --no-cache --no-share --no-table -o test-results/real-promptfoo-positive.json
+      - name: Deliberate failing negative control (its failure is expected)
+        run: |
+          set +e
+          "$RUNNER_TEMP/promptfoo/node_modules/.bin/promptfoo" eval -c examples/promptfoo_echo/promptfoo-negative.yaml --no-cache --no-share --no-table -o test-results/real-promptfoo-negative.json
+          rc=$?
+          set -e
+          echo "Negative-control CLI exit code was $rc; inspect actual JSON failure regardless of CLI exit behavior"
+          test -f test-results/real-promptfoo-negative.json
+      - name: Independently verify positive and negative evidence without an AI model
+        run: node scripts/verify_real_promptfoo.cjs
+      - name: Archive synthetic-only evidence (no credentials)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: real-promptfoo-0_125_1-echo-evaluation-evidence
+          path: |
+            test-results/real-promptfoo-positive.json
+            test-results/real-promptfoo-negative.json
+            test-results/real-promptfoo-summary.json
+            real-promptfoo-version.txt
+          retention-days: 30
+          if-no-files-found: warn

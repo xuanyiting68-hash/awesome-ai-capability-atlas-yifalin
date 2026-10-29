@@ -23,6 +23,12 @@
 - [2026-10-27 独立质量审计与修复记录](docs/INDEPENDENT_AUDIT_2026-10-27_CN.md)：说明数据可信边界、缺失页面及版本与 CI 核验，任何测试通过均不替代第三方许可证审查。
 - [合规留资 → 匿名分流 → 人工复核（合成数据）](examples/consent_lead_triage/README.md)：使用 Python 标准库运行，无账号连接、无自动外发；仅用于验证权限/撤回门禁，并不代表生产获客/CRM 集成成功。
 
+## Promptfoo 官方评测引擎真实 Echo 沙盒（非实际 LLM 红队）
+
+新增 [Promptfoo 0.125.1 真实评测实验方法](docs/REAL_UPSTREAM_PILOT_PROMPTFOO_CN.md)、[配置与反例](examples/promptfoo_echo/promptfooconfig.yaml) 以及 [隔离真实 CLI 工作流](.github/workflows/real-upstream-promptfoo.yml)。使用官方 `echo` provider 对 8 个原始合成输出进行断言，再用 1 个**故意不满足的断言**检查失败识别，独立解析 Promptfoo 生成的 JSON 结果；实际能否通过以工作流与 artifact 为准。
+
+**Echo 不调用大模型或服务端工具。** 此处的通过率仅证明评测引擎对合成文本的执行和正反例判定，**不能证明金融 Agent 的现实安全防护、攻击阻挡能力或生产可用性**。原 Fork HOLD、许可证完整审查和数据治理门槛不变。
+
 ## Docling 2.144.0 官方 SDK 真实 PDF 文本/页码实测
 
 新增 [Docling 真实 PDF 实验方法与证据范围](docs/REAL_UPSTREAM_PILOT_DOCLING_CN.md) 和 [隔离真实 SDK GitHub Actions 工作流](.github/workflows/real-upstream-docling.yml)。使用原创纯标准库生成的三页合成 PDF，调用官方 `DocumentConverter + NativePdfPipeline`，验证文本、溯源页码和 Markdown 导出，共 12 项真实 API 沙盒断言。正式结果仅以该 CI 工作流的实际记录和工件为准。
