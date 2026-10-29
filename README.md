@@ -23,6 +23,12 @@
 - [2026-10-27 独立质量审计与修复记录](docs/INDEPENDENT_AUDIT_2026-10-27_CN.md)：说明数据可信边界、缺失页面及版本与 CI 核验，任何测试通过均不替代第三方许可证审查。
 - [合规留资 → 匿名分流 → 人工复核（合成数据）](examples/consent_lead_triage/README.md)：使用 Python 标准库运行，无账号连接、无自动外发；仅用于验证权限/撤回门禁，并不代表生产获客/CRM 集成成功。
 
+## Star Pack 与集成路线（30 项收藏清单，0 项执行）
+
+新增 [Star Pack / Integration Hub](adoption.html)：将现有 Top 30 官方来源研究汇总为 **30 项 Star 收藏建议**和 **8 项优先集成研究候选**，含上游仓库链接、项目实际研究状态、业务场景与对比来源。数据见 [收藏及集成计划](data/adoption_plan.json)，完整治理规则见 [Star/Fork/集成规范](docs/STAR_FORK_INTEGRATION_CN.md)。
+
+**非常重要：当前没有通过 Atlas 执行任何 GitHub Star、Fork 或第三方代码集成。** 已登录 GitHub CLI 的 Owner 可以用标准库脚本先预览：python scripts/star_atlas_repos.py；确认后显式添加 --apply 才会批量 Star。现有集成候选均处于研究阶段，全部 Fork HOLD，不等于商业许可或安全认证。
+
 ## 交互式 AI 能力关系图（Top 30）
 
 [打开能力关系图](network.html)——可视化 10 个已有业务领域与 Top 30 候选项目的分类关系，基于 `data/top30_evaluation.csv`、`data/research_briefs.json` 和实际发布清单渲染。支持关键词、领域、来源档案筛选、URL 分享及鼠标/键盘导航。手机端呈现可操作项目卡片，主图不引入重型可视化依赖。
