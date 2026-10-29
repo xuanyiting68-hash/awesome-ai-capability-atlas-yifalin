@@ -22,7 +22,9 @@ def invoke(db,output_dir,stage,thread="a",**options):
     for key,value in options.items():
         command += ["--"+key.replace("_","-")]
         if value is not True:command.append(str(value))
-    completed=subprocess.run(command,check=True,capture_output=True,text=True,timeout=50,cwd=ROOT)
+    completed=subprocess.run(command,check=False,capture_output=True,text=True,timeout=50,cwd=ROOT)
+    if completed.returncode != 0:
+        raise RuntimeError(f"{name} returned {completed.returncode}: {completed.stderr[-5000:]}")
     if not result_file.exists():
         raise AssertionError(f"No actual stage artifact for {name}: {completed.stdout}")
     content=json.loads(result_file.read_text("utf-8"))
