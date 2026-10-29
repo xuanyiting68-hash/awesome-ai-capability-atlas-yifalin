@@ -160,17 +160,21 @@ def run_graph(path, stage, thread, key):
     cfg={"configurable":{"thread_id":"pilot07-"+thread}}
     with SqliteSaver.from_conn_string(str(path)) as saver:
         graph=base.graph_for(saver,path)
+        # LangGraph defaults to async durability: committing a graph step and
+        # running its successor can race the checkpoint disk write under os._exit.
+        # Force synchronous checkpoint persistence BEFORE executing commit node.
+        # This is a reliability gate, not a suppression of the injected crash.
         if stage=="start":
             result=graph.invoke({"action":"write_synthetic_draft",
                  "evidence":base.EVIDENCE,"idempotency_key":key,"thread_id":thread},
-                 config=cfg)
+                 config=cfg,durability="sync")
         elif stage=="resume":
             # THIS MOCK SOURCE IS NOT AN AUTH TOKEN: database ticket is decisive.
             result=graph.invoke(Command(resume={"approved":True,
-                "source":"owner_session"}),config=cfg)
+                "source":"owner_session"}),config=cfg,durability="sync")
         elif stage=="recover":
             # Runnable graph continuation from last persisted checkpoint after os._exit(86).
-            result=graph.invoke(None,config=cfg)
+            result=graph.invoke(None,config=cfg,durability="sync")
         else:
             raise ValueError(stage)
         state=graph.get_state(cfg)
