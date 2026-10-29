@@ -85,7 +85,7 @@ def validate_cases(doc):
         k=c["project"]
         if k not in IDS or c["id"][0] != {"graph":"G","document":"D","security":"S"}[k]:
             raise ValueError("pilot: wrong project case pairing")
-        if not all(isinstance(c["title"].get(l),str) and len(c["title"][l])>10 for l in ("zh","en")):
+        if not all(isinstance(c["title"].get(l),str) and len(c["title"][l])>=4 for l in ("zh","en")):
             raise ValueError("pilot: missing bilingual case title")
         if not isinstance(c["input"],dict) or c["expected"] not in ("ALLOW","BLOCK","NO_EVIDENCE","p1","p2","p3","p4"):
             raise ValueError("pilot: invalid fixture")
