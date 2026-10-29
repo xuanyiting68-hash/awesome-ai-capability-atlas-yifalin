@@ -92,8 +92,13 @@ def consistent_commit(path, thread, key):
                 "SELECT thread FROM p07_effects WHERE tenant=? AND idem=?",
                 (tenant, key)).fetchone()
             if existing:
-                # Exactly the same local effect is already atomically committed.
-                # In particular the approval must NOT be consumed a second time.
+                # Do not report success to another thread merely for guessing a key.
+                # A legitimate crash replay must match the original thread and ticket.
+                ticket=db.execute("""SELECT tenant,resource,idem
+                    FROM p07_approvals WHERE thread=?""",(thread,)).fetchone()
+                if existing[0]!=thread or ticket!=(tenant,"synthetic_draft",key):
+                    db.commit()
+                    return "BLOCK: cross_thread_idempotency_collision"
                 db.commit()
                 return "ALREADY: synthetic_draft_committed"
             approval = db.execute("""SELECT tenant,resource,idem,expires_at,revoked,consumed
