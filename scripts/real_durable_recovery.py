@@ -9,6 +9,7 @@ Never connects real orders, customer information, language models or external AP
 import argparse
 import json
 import multiprocessing
+import os
 import sqlite3
 import sys
 from datetime import datetime, timezone
@@ -244,6 +245,7 @@ def main():
     else:
         result=run_graph(args.db,args.stage,args.thread,args.approval,args.key,args.action,
                          {"NOFI":99,"duration":2} if args.bad_citations else None)
+    result["runner_pid"]=os.getpid()
     if args.output:
         args.output.parent.mkdir(parents=True,exist_ok=True)
         args.output.write_text(json.dumps(result,indent=2,ensure_ascii=False)+"\n",encoding="utf-8")
