@@ -25,6 +25,26 @@ ALLOWED_DOCS = {
     "systran/faster-whisper": "pypi.org",
     "formbricks/formbricks": "formbricks.com",
     "promptfoo/promptfoo": "www.promptfoo.dev",
+    "ai4finance-foundation/finrl": "finrl.readthedocs.io",
+    "ai4finance-foundation/finrobot": "github.com",
+    "tauricresearch/tradingagents": "github.com",
+    "openbb-finance/openbb": "docs.openbb.co",
+    "quantconnect/lean": "www.quantconnect.com",
+    "polakowo/vectorbt": "vectorbt.dev",
+    "openai/codex": "developers.openai.com",
+    "anthropics/claude-code": "code.claude.com",
+    "all-hands-ai/openhands": "docs.openhands.dev",
+    "browser-use/browser-use": "docs.browser-use.com",
+    "github/gh-aw": "github.github.com",
+    "run-llama/llama_index": "developers.llamaindex.ai",
+    "microsoft/markitdown": "github.com",
+    "infiniflow/ragflow": "ragflow.io",
+    "microsoft/ai-agents-for-beginners": "github.com",
+    "n8n-io/n8n": "docs.n8n.io",
+    "activepieces/activepieces": "www.activepieces.com",
+    "gitroomhq/postiz-app": "docs.postiz.com",
+    "chatwoot/chatwoot": "www.chatwoot.com",
+    "posthog/posthog": "posthog.com",
 }
 TIERS = ("Discovery", "Curated", "Reviewed", "Reproduced", "Production Candidate")
 STATUS = {"license_text":"not-reviewed", "dependency_licenses":"not-reviewed",
@@ -100,15 +120,43 @@ def validate_briefs(payload, top30, snapshot, metadata, as_of=None):
         sha = readme.get("git_blob_sha")
         require(readme.get("kind") == "official-github-readme" and isinstance(sha,str)
                 and SHA40.fullmatch(sha), "README blob missing pin " + key)
+        # Upstream ownership and default branches can change. Preserve the Atlas
+        # queue's historical slug, but pin the actual public GitHub owner/name.
+        aliases = {
+            "openbb-finance/openbb": "openbq-org/OpenBB",
+            "all-hands-ai/openhands": "OpenHands/OpenHands",
+        }
+        canonical = readme.get("canonical_repo", slug)
+        require(canonical == aliases.get(key,slug), "unverified upstream repository migration " + key)
         branch = readme.get("readme_ref", "main")
-        require(branch in ("main","master"), "README ref must be the exact repository default branch " + key)
-        require(readme.get("url") == "https://github.com/" + slug + "/blob/" + branch + "/README.md",
+        # Branch exceptions are verified from the actual GitHub repository, not guessed.
+        branches = {
+            "ai4finance-foundation/finrl":"master",
+            "ai4finance-foundation/finrobot":"master",
+            "openbb-finance/openbb":"develop",
+            "quantconnect/lean":"master",
+            "polakowo/vectorbt":"master",
+            "n8n-io/n8n":"master",
+            "chatwoot/chatwoot":"develop",
+            "posthog/posthog":"master",
+            "systran/faster-whisper":"master",
+        }
+        require(branch == branches.get(key,"main"), "README ref does not match verified default branch " + key)
+        filename = readme.get("readme_filename", "README.md")
+        require(filename == ("readme.md" if key == "quantconnect/lean" else "README.md"),
+                "README filename does not match verified path " + key)
+        require(readme.get("url") == "https://github.com/" + canonical + "/blob/" + branch + "/" + filename,
                 "README identity mismatch " + key)
-        require(readme.get("snapshot_url") == "https://api.github.com/repos/" + slug + "/git/blobs/" + sha,
+        require(readme.get("snapshot_url") == "https://api.github.com/repos/" + canonical + "/git/blobs/" + sha,
                 "immutable blob URL mismatch " + key)
         require(docs.get("kind") == "official-documentation", "docs source type invalid " + key)
         host = ALLOWED_DOCS.get(key)
         require(host is not None and source_url(docs.get("url"), host), "documentation not from allowlisted official host " + key)
+        # For projects without a separate documentation domain, link only the
+        # canonical maintainer repository guide rather than a generic github.com URL.
+        if host == "github.com":
+            require(docs["url"] == "https://github.com/" + canonical,
+                    "repository-only documentation guide must match canonical repo " + key)
         claims = entry.get("capabilities")
         require(isinstance(claims, list) and len(claims) >= 2,
                 "not enough grounded capability claims " + key)
