@@ -60,7 +60,7 @@ def execute(root):
                       "--thread",thread or "alpha-"+case,"--key",key]
         else:
             args=P08+["--sender",str(sender),"--recipient",str(recipient),
-                      "--stage",stage,"--owner",owner]
+                      "--stage",stage,"--owner",owner,"--key",key]
         if fault:args+=["--fault",fault]
         for k,v in opts.items():
             args+=["--"+k.replace("_","-"),str(v)]
