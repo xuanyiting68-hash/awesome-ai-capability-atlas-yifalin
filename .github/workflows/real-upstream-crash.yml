@@ -1,0 +1,64 @@
+name: Pilot 07 real hard-crash SQLite consistency (isolated)
+on:
+  pull_request:
+    paths:
+      - 'scripts/real_crash_consistency.py'
+      - 'scripts/verify_crash_consistency.py'
+      - 'scripts/real_durable_recovery.py'
+      - '.github/workflows/real-upstream-crash.yml'
+      - 'docs/REAL_UPSTREAM_CRASH_CONSISTENCY_CN.md'
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/real_crash_consistency.py'
+      - 'scripts/verify_crash_consistency.py'
+      - 'scripts/real_durable_recovery.py'
+      - '.github/workflows/real-upstream-crash.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  actual-hard-crash:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONNOUSERSITE: '1'
+      LANGSMITH_TRACING: 'false'
+      LANGCHAIN_TRACING_V2: 'false'
+      LANGGRAPH_STRICT_MSGPACK: 'true'
+      PIP_DISABLE_PIP_VERSION_CHECK: '1'
+      PYTHONFAULTHANDLER: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install exact real upstream SDK versions
+        run: |
+          python -m pip install --only-binary=:all: --no-cache-dir 'langgraph==1.2.18' 'langgraph-checkpoint-sqlite==3.1.2'
+          python -m pip freeze --all > pilot07-dependencies.txt
+      - name: Validate script syntax
+        run: |
+          python -m py_compile scripts/real_crash_consistency.py scripts/verify_crash_consistency.py
+      - name: Actual abrupt exit faults and recovery across Python processes
+        run: python scripts/verify_crash_consistency.py --output-dir test-results/p07-a
+      - name: Independently reproduce with fresh separate SQLite file
+        run: python scripts/verify_crash_consistency.py --output-dir test-results/p07-b
+      - name: Preserve sanitized logs without SQLite DB or customer data
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pilot07-real-hard-crash-outbox-evidence
+          path: |
+            test-results/p07-a/pilot07-result.json
+            test-results/p07-a/stages/*.json
+            test-results/p07-a/*.faults.jsonl
+            test-results/p07-b/pilot07-result.json
+            test-results/p07-b/stages/*.json
+            test-results/p07-b/*.faults.jsonl
+            pilot07-dependencies.txt
+          if-no-files-found: warn
+          retention-days: 30
