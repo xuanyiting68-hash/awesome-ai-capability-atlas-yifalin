@@ -158,7 +158,7 @@ async function loaded(page) { await page.waitForFunction(() => document.querySel
   await check('interactive capability network, source filter, keyboard and three viewports', async()=>{
     const visual=await context.newPage();visual.on('pageerror',e=>errors.push(e.message));
     await visual.goto(new URL('network.html',base).href);
-    await visual.waitForFunction(()=>document.querySelectorAll('#graph [data-repo]').length===30 && document.querySelector('#briefCount').textContent==='10');
+    await visual.waitForFunction(()=>document.querySelectorAll('#graph [data-repo]').length===30 && document.querySelector('#briefCount').textContent==='30');
     assert.equal(await visual.locator('#graph .hub').count(),10);
     assert.equal(await visual.locator('#directory button').count(),30);
     assert.equal(await visual.locator('#catalogCount').innerText(),'5,000');
@@ -167,10 +167,10 @@ async function loaded(page) { await page.waitForFunction(() => document.querySel
     assert.match(await visual.locator('#detail').innerText(),/Qlib|qlib/i);
     await visual.fill('#search','');
     await visual.check('#linked');
-    assert.equal(await visual.locator('#directory button').count(),10);
+    assert.equal(await visual.locator('#directory button').count(),30);
     assert.equal(new URL(visual.url()).searchParams.get('sourced'),'1');
     await visual.reload();
-    await visual.waitForFunction(()=>document.querySelectorAll('#directory button').length===10);
+    await visual.waitForFunction(()=>document.querySelectorAll('#directory button').length===30);
     await visual.uncheck('#linked');
     await visual.selectOption('#domain','安全评测');
     assert.equal(await visual.locator('#directory button').count(),1);
