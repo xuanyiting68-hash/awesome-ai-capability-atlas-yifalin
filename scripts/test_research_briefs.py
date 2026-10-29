@@ -60,7 +60,7 @@ class BriefQualityTests(unittest.TestCase):
         changed=copy.deepcopy(self.briefs)
         record=next(e for e in changed["entries"] if e["repo"]=="SYSTRAN/faster-whisper")
         record["sources"][0]["readme_ref"]="main"
-        with self.assertRaisesRegex(ValueError,"README identity mismatch"):
+        with self.assertRaisesRegex(ValueError,"README ref does not match verified default branch"):
             self.verify(changed)
 
     def test_all_thirty_have_unique_official_source_briefs(self):
