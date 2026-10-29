@@ -46,15 +46,20 @@ async function loaded(page) { await page.waitForFunction(() => document.querySel
   });
   await check('source-linked editorial filter and restorable URL', async () => {
     await page.check('#briefOnly');
-    assert.equal(await page.locator('.item').count(),10);
+    assert.equal(await page.locator('.item').count(),30);
     assert.equal(new URL(page.url()).searchParams.get('brief'),'1');
     assert.match(await page.locator('.item').first().innerText(),/官方资料研究/);
     await page.reload();
-    await page.waitForFunction(()=>document.querySelectorAll('.item').length===10);
+    await page.waitForFunction(()=>document.querySelectorAll('.item').length===30);
     assert.equal(await page.locator('#briefOnly').isChecked(),true);
     await page.click('#reset');
     assert.equal(await page.locator('.item').count(),30);
     assert.equal(new URL(page.url()).searchParams.has('brief'),false);
+  });
+  await check('all Top 30 now have source-linked editorial badges',async()=>{
+    await page.click('#reset');
+    await page.waitForFunction(()=>document.querySelectorAll('.item').length===30);
+    assert.equal(await page.locator('.item').filter({hasText:/官方资料研究|Official-source desk study/}).count(),30);
   });
   await check('domain, priority, status and reset', async () => {
     await page.selectOption('#domain', '金融AI');
@@ -153,7 +158,7 @@ async function loaded(page) { await page.waitForFunction(() => document.querySel
   await check('interactive capability network, source filter, keyboard and three viewports', async()=>{
     const visual=await context.newPage();visual.on('pageerror',e=>errors.push(e.message));
     await visual.goto(new URL('network.html',base).href);
-    await visual.waitForFunction(()=>document.querySelectorAll('#graph [data-repo]').length===30 && document.querySelector('#briefCount').textContent==='10');
+    await visual.waitForFunction(()=>document.querySelectorAll('#graph [data-repo]').length===30 && document.querySelector('#briefCount').textContent==='30');
     assert.equal(await visual.locator('#graph .hub').count(),10);
     assert.equal(await visual.locator('#directory button').count(),30);
     assert.equal(await visual.locator('#catalogCount').innerText(),'5,000');
@@ -162,10 +167,10 @@ async function loaded(page) { await page.waitForFunction(() => document.querySel
     assert.match(await visual.locator('#detail').innerText(),/Qlib|qlib/i);
     await visual.fill('#search','');
     await visual.check('#linked');
-    assert.equal(await visual.locator('#directory button').count(),10);
+    assert.equal(await visual.locator('#directory button').count(),30);
     assert.equal(new URL(visual.url()).searchParams.get('sourced'),'1');
     await visual.reload();
-    await visual.waitForFunction(()=>document.querySelectorAll('#directory button').length===10);
+    await visual.waitForFunction(()=>document.querySelectorAll('#directory button').length===30);
     await visual.uncheck('#linked');
     await visual.selectOption('#domain','安全评测');
     assert.equal(await visual.locator('#directory button').count(),1);

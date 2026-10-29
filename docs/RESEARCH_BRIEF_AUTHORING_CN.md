@@ -4,10 +4,17 @@
 
 ## 本期范围
 
-- 第二批合计 10 项：Qlib、LangGraph、Remotion、Twenty、RD-Agent、Docling、Dify、faster-whisper、Formbricks、Promptfoo；研究信息保存在 `data/research_briefs.json`。
+- Top 30 已完成 30 份官方来源编辑档案，新增金融 AI、开发 Agent、教育 AI、业务自动化、社媒运营、客户支持与增长分析领域；全部档案保存在 `data/research_briefs.json`。
 - 全部显示为 **Curated（编辑研究）**，不能因读过 README、Stars 较多、有 SPDX、官网写了 Production-ready 就升级成 Reviewed、Reproduced 或 Production Candidate。
 - 原有 30 项仍 `HOLD`，不修改冻结的 `data/top30_evidence.json` 历史审查结论。
 - `scripts/validate_research_briefs.py` 拒绝没有证据的晋级：这是一道硬性安全门禁，不允许绕过。升级更高层次需要重新制定并审查新数据结构和独立证据要求。
+
+## 上游迁移与 README 溯源
+
+- GitHub `AI4Finance-Foundation/FinRL`、`QuantConnect/Lean`、`n8n-io/n8n`、`posthog/posthog` 等项目的 README 位于 `master`；OpenBB 与 Chatwoot 在 `develop`，LEAN 的文件名为小写 `readme.md`。
+- `OpenBB-finance/OpenBB` 当前官方仓库为 `openbq-org/OpenBB`，`All-Hands-AI/OpenHands` 当前官方仓库为 `OpenHands/OpenHands`。保留 Atlas 的原始队列键，在 README 来源结构中固定 `canonical_repo`，严禁用随意填写的外部仓库替代。
+- 多个项目的第二条“官方资料”只指向维护者 GitHub 仓库主页。它不应被包装成独立文档网站；需要进一步单独核验教程、许可证和使用条款。
+- 已读 Git Blob SHA 只保证 README 文本不可变，不保证外部文档、网站视频、依赖代码或 SaaS 价格保持不变。
 
 ## 为候选项目创建研究档案
 
@@ -43,9 +50,9 @@ npm run test:staged
 
 CI 会进行数据与 JavaScript 检查及真实 Chrome 回归测试。任何无证据状态升级、官方来源冒名、来源 SHA 不匹配、缺少双语字段等，应拒绝发布。
 
-## 从 10 份试点扩展到 300–500 份的方法
+## 从 30 份编辑档案扩展到 300–500 份的方法
 
-**阶段 A：10 → 30。** 对 Top 30 完成至少 Curated 的带来源档案，优先补齐真正影响使用的安装前提、替代选择和具体实验评估标准。此阶段可以不运行第三方代码。
+**阶段 A：30 项编辑档案已覆盖。** 后续应逐项做独立来源交叉检查、安装前提、许可风险和可反驳实验设计。当前只完成官方资料桌面研究，没有第三方实测。
 
 **阶段 B：30 → 100。** 增加更多生态与真实业务需求覆盖；抽样人工交叉检查来源质量、过期文档和分类偏差。建立每次复审日志与版本快照，而不只自动刷新 Stars。
 
@@ -59,4 +66,4 @@ CI 会进行数据与 JavaScript 检查及真实 Chrome 回归测试。任何无
 
 - 自动化无法仅靠读取 README 判断商业授权：Remotion 等项目的使用模式可能有额外许可证条款，必须核查原文。
 - 仓库 README Git Blob SHA 不固定外链文档版本，后续需要定期复核外链与文档变化。
-- 首批 10 项仅为初步编辑研究，**没有安装、跑分、第三方安全审计或真实客户/交易连接**。
+- 30 项均仅为初步编辑研究，**没有安装、跑分、第三方安全审计或真实客户/交易连接**。

@@ -18,7 +18,7 @@ const errors=[];
     assert.match(manifest.source_commit,/^[a-f0-9]{40}$/);
     if(process.env.EXPECTED_COMMIT)assert.equal(manifest.source_commit,process.env.EXPECTED_COMMIT,'Published commit must match the Pages run');
     assert.ok(manifest.catalog_count>=manifest.curated_count&&manifest.catalog_count<=5000);
-    assert.equal(manifest.research_briefs_count,10,'Ten source-linked research briefs must be shipped');
+    assert.equal(manifest.research_briefs_count,30,'All Top 30 need source-linked editorial briefs');
     assert.equal(manifest.research_reviewed_count,0,'No third-party project is reviewed');
     await page.goto(new URL('top30.html?lang=en',base).href);
     await page.waitForFunction(n=>document.querySelectorAll('.item').length===n&&document.querySelector('#count').textContent.includes('Showing'),manifest.research_project_count);
@@ -93,25 +93,29 @@ const errors=[];
       assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,'Blueprint horizontal overflow at '+width);
       await page.screenshot({path:'test-results/blueprints-'+width+'.png'});
     }
-    // Each editorial pilot resolves; entries outside the first wave fail to an honest empty state.
-    for(const name of ['langchain-ai/langgraph','remotion-dev/remotion','TwentyHQ/twenty',
-      'microsoft/RD-Agent','docling-project/docling','langgenius/dify','SYSTRAN/faster-whisper',
-      'formbricks/formbricks','promptfoo/promptfoo']){
-      await page.goto(new URL('project.html?repo='+encodeURIComponent(name),base).href);
+    // Validate every official-source project dossier, not a hard-coded previous wave.
+    const sourceResult=await context.request.get(new URL('data/research_briefs.json',base).href);
+    assert.equal(sourceResult.status(),200);
+    const sourceData=await sourceResult.json();
+    assert.equal(sourceData.entries.length,30,'All 30 briefs in published research bundle');
+    for(const item of sourceData.entries){
+      await page.goto(new URL('project.html?repo='+encodeURIComponent(item.repo),base).href);
       await page.waitForSelector('#body:not([hidden])');
-      assert.equal(await page.locator('#briefCard').isVisible(),true,'Missing pilot brief for '+name);
-      assert.equal(await page.locator('#briefSources a').count(),3);
+      assert.equal(await page.locator('#briefCard').isVisible(),true,'Missing dossier for '+item.repo);
+      assert.equal(await page.locator('#briefSources a').count(),3,'Source link or Git blob missing for '+item.repo);
+      assert.equal(await page.locator('#briefEmpty').isVisible(),false);
+      assert.match(await page.locator('#briefDisclaimer').innerText(),/Fork HOLD/);
     }
-    await page.goto(new URL('project.html?repo=AI4Finance-Foundation%2FFinRL',base).href);
-    await page.waitForSelector('#body:not([hidden])');
-    assert.equal(await page.locator('#briefCard').isVisible(),false);
-    assert.equal(await page.locator('#briefEmpty').isVisible(),true,'Do not fabricate research for other projects');
+    // A fabricated repository identifier is rejected instead of receiving an invented profile.
+    await page.goto(new URL('project.html?repo=fake%2Fnonexistent',base).href);
+    await page.waitForFunction(()=>document.querySelector('#title').textContent==='项目暂不可用');
+    assert.equal(await page.locator('#body').isVisible(),false);
     await page.goto(new URL('blueprints.html',base).href);
     await page.waitForFunction(()=>document.querySelectorAll('#cards .card').length===10);
     await page.locator('#domain').selectOption('视频工厂');
     assert.equal(await page.locator('#cards .card').count(),1);
     assert.equal(new URL(page.url()).searchParams.get('domain'),'视频工厂');
-    console.log('PASS 10 evidence-linked bilingual briefs, 20 explicit gaps, three screen sizes and 10 blueprint domains');
+    console.log('PASS all 30 source-linked bilingual dossiers, 30-URL link checks, three viewport widths and 10 blueprint domains');
     assert.deepEqual(errors,[],'No browser runtime errors');
     console.log('PASS deployed manifest, revision, bilingual data, comparison, bookmarks, filters, mobile width, homepage, zero runtime errors');
     console.log(JSON.stringify(manifest,null,2));

@@ -16,7 +16,7 @@ class PublishBoundaryTests(unittest.TestCase):
             self.assertEqual(manifest['catalog_count'], 5000)
             self.assertEqual(manifest['research_project_count'], 30)
             self.assertEqual(manifest['blueprint_count'], 10)
-            self.assertEqual(manifest['research_briefs_count'],10)
+            self.assertEqual(manifest['research_briefs_count'],30)
             self.assertEqual(manifest['research_reviewed_count'],0)
             self.assertTrue((destination / 'data/research_briefs.json').is_file())
             self.assertTrue((destination / 'data/business_use_cases.json').is_file())

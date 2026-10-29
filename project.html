@@ -14,12 +14,23 @@ function setDL(id,pairs){$(id).innerHTML=pairs.map(([label,value])=>'<dt>'+esc(l
 let researchBrief=null,briefLang=new URLSearchParams(location.search).get('lang')==='en'?'en':'zh';
 function briefLinkValid(item,repo){
   if(!item||typeof item.url!=='string')return false;
+  const key=repo.toLowerCase(),alias={'openbb-finance/openbb':'openbq-org/OpenBB','all-hands-ai/openhands':'OpenHands/OpenHands'};
+  const canonical=alias[key]||repo;
+  const defaultRefs={'ai4finance-foundation/finrl':'master','ai4finance-foundation/finrobot':'master','openbb-finance/openbb':'develop','quantconnect/lean':'master','polakowo/vectorbt':'master','n8n-io/n8n':'master','chatwoot/chatwoot':'develop','posthog/posthog':'master','systran/faster-whisper':'master'};
+  const docHosts={'microsoft/qlib':'qlib.readthedocs.io','langchain-ai/langgraph':'docs.langchain.com','remotion-dev/remotion':'www.remotion.dev','twentyhq/twenty':'docs.twenty.com','microsoft/rd-agent':'rdagent.readthedocs.io','docling-project/docling':'docling-project.github.io','langgenius/dify':'docs.dify.ai','systran/faster-whisper':'pypi.org','formbricks/formbricks':'formbricks.com','promptfoo/promptfoo':'www.promptfoo.dev','ai4finance-foundation/finrl':'finrl.readthedocs.io','ai4finance-foundation/finrobot':'github.com','tauricresearch/tradingagents':'github.com','openbb-finance/openbb':'docs.openbb.co','quantconnect/lean':'www.quantconnect.com','polakowo/vectorbt':'vectorbt.dev','openai/codex':'developers.openai.com','anthropics/claude-code':'code.claude.com','all-hands-ai/openhands':'docs.openhands.dev','browser-use/browser-use':'docs.browser-use.com','github/gh-aw':'github.github.com','run-llama/llama_index':'developers.llamaindex.ai','microsoft/markitdown':'github.com','infiniflow/ragflow':'ragflow.io','microsoft/ai-agents-for-beginners':'github.com','n8n-io/n8n':'docs.n8n.io','activepieces/activepieces':'www.activepieces.com','gitroomhq/postiz-app':'docs.postiz.com','chatwoot/chatwoot':'www.chatwoot.com','posthog/posthog':'posthog.com'};
   try{
     const url=new URL(item.url);
     if(url.protocol!=='https:'||url.username||url.password||url.port||url.hash)return false;
-    if(item.id==='readme')return url.hostname==='github.com'&&url.pathname==='/'+repo+'/blob/'+(item.readme_ref||'main')+'/README.md'&&['main','master'].includes(item.readme_ref||'main');
-    const domains={'microsoft/qlib':'qlib.readthedocs.io','langchain-ai/langgraph':'docs.langchain.com','remotion-dev/remotion':'www.remotion.dev','twentyhq/twenty':'docs.twenty.com','microsoft/rd-agent':'rdagent.readthedocs.io','docling-project/docling':'docling-project.github.io','langgenius/dify':'docs.dify.ai','systran/faster-whisper':'pypi.org','formbricks/formbricks':'formbricks.com','promptfoo/promptfoo':'www.promptfoo.dev'};
-    return item.id==='docs'&&url.hostname===domains[repo.toLowerCase()];
+    if(item.id==='readme'){
+      const branch=defaultRefs[key]||'main',filename=key==='quantconnect/lean'?'readme.md':'README.md';
+      return url.hostname==='github.com'&&
+        (item.canonical_repo||repo)===canonical&&
+        url.pathname==='/'+canonical+'/blob/'+branch+'/'+filename&&
+        (item.readme_ref||'main')===branch&&
+        (item.readme_filename||'README.md')===filename;
+    }
+    if(item.id!=='docs'||url.hostname!==docHosts[key])return false;
+    return url.hostname!=='github.com'||url.pathname==='/'+canonical;
   }catch{return false}
 }
 function appendBriefItems(parent,rows,ordered){
@@ -47,7 +58,7 @@ function renderResearchBrief(){
   for(const item of b.sources){
     if(!briefLinkValid(item,b.repo))continue;
     briefLink(nav,item.id==='readme'?'Official README ↗':'Official docs ↗',item.url);
-    if(item.id==='readme'&&/^[a-f0-9]{40}$/.test(item.git_blob_sha)&&item.snapshot_url==='https://api.github.com/repos/'+b.repo+'/git/blobs/'+item.git_blob_sha)
+    if(item.id==='readme'&&/^[a-f0-9]{40}$/.test(item.git_blob_sha)&&item.snapshot_url==='https://api.github.com/repos/'+(item.canonical_repo||b.repo)+'/git/blobs/'+item.git_blob_sha)
       briefLink(nav,'README Git Blob '+item.git_blob_sha.slice(0,9)+' ↗',item.snapshot_url);
   }
 }

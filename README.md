@@ -29,11 +29,13 @@
 
 **关系边只表示编辑业务分类，不表示技术依赖、API 连接、商业许可或安全认证。** 有官方资料档案不代表有实际复现。全体 Fork HOLD。
 
-## 十个来源可追溯研究档案（编辑研究，非实测）
+## Top 30 全覆盖：30 份来源可追溯编辑研究档案（非实测）
 
-在 [Top 30 研究室](top30.html) 打开 Qlib、LangGraph、Remotion、Twenty、RD-Agent、Docling、Dify、faster-whisper、Formbricks 或 Promptfoo 的[项目详情页](project.html?repo=microsoft%2Fqlib)，可查看官方 README/文档、双语适用判断、关键能力、待执行实验步骤、指标和适用限制。研究内容位于 `data/research_briefs.json`，其证据门禁由 `scripts/validate_research_briefs.py` 和 CI 强制检查。官方 README 的 Git Blob SHA 用于不可变的来源文本快照追踪。
+在 [Top 30 研究室](top30.html) 打开任意 Top 30 项目（包括 Qlib、OpenBB、LEAN、Codex、Claude Code、OpenHands、n8n、RAGFlow、Postiz、PostHog 等）的[项目详情页](project.html?repo=microsoft%2Fqlib)，可查看官方 README/文档、双语适用判断、关键能力、待执行实验步骤、指标和适用限制。研究内容位于 `data/research_briefs.json`，其证据门禁由 `scripts/validate_research_briefs.py` 和 CI 强制检查。官方 README 的 Git Blob SHA 用于不可变的来源文本快照追踪。
 
-**十份全部仍是 Curated 编辑研究，不是 Reviewed / Reproduced / Production Candidate。** 现有 30 项依然全部 Fork HOLD，不把 GitHub SPDX 当作法律许可意见。
+2026-10-29 的目录核验发现 OpenBB 和 OpenHands 的 GitHub 上游组织已变更，LEAN 使用小写 `readme.md`，OpenBB/Chatwoot 使用 `develop` 默认分支；这些差异由显式的 canonical repo、分支和文件名门禁检查。原有 Top 30 项目标识仍保留，以防冻结 CSV/元数据出现未经审查的漂移。部分项目的第二个官方链接是仓库自身的维护者指南，而不是独立的文档站。
+
+**30 份全部仍是 Curated 编辑研究，不是 Reviewed / Reproduced / Production Candidate。** 现有 30 项依然全部 Fork HOLD，不把 GitHub SPDX 当作法律许可意见。
 
 ```bash
 python scripts/validate_research_briefs.py
