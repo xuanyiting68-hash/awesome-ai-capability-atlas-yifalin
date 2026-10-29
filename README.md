@@ -23,6 +23,12 @@
 - [2026-10-27 独立质量审计与修复记录](docs/INDEPENDENT_AUDIT_2026-10-27_CN.md)：说明数据可信边界、缺失页面及版本与 CI 核验，任何测试通过均不替代第三方许可证审查。
 - [合规留资 → 匿名分流 → 人工复核（合成数据）](examples/consent_lead_triage/README.md)：使用 Python 标准库运行，无账号连接、无自动外发；仅用于验证权限/撤回门禁，并不代表生产获客/CRM 集成成功。
 
+## SQLite 持久化中断恢复 / 并发去重实验（Pilot Lab 06）
+
+新增 [真实 LangGraph SQLite 恢复实验](docs/REAL_UPSTREAM_DURABILITY_CN.md) 以及 [独立 CI 工作流](.github/workflows/real-upstream-durable.yml)。上游 `langgraph==1.2.18` 与 `langgraph-checkpoint-sqlite==3.1.2`，通过磁盘 SQLite 持久化真正的 `interrupt()`，**使用新的 Python 进程恢复**模拟审批，检验拒绝、伪造来源、缺失引文、重复键以及进程退出后的未完结待审；6 进程同时写同一 SQLite ledger key 必须只有 1 次成功。
+
+测试仅限合成数据，不使用真实 Owner 认证或服务端权限，不接入真实模型、券商或生产数据。进程退出是正常退出，不是 kill -9；SQLite checkpoint 与业务 ledger 不是原子事务；并发测试只涵盖 ledger 层，不是多 Agent 调度。**运行状态以独立工作流对应 HEAD 的实际结果为准，未通过不得宣称生产可用。**
+
 ## 三工具真正串联：Docling → LangGraph → Promptfoo（Pilot Lab 05）
 
 新增 [跨工具可复现端到端实验](docs/REAL_UPSTREAM_INTEGRATED_E2E_CN.md) 和 [独立三 SDK GitHub Actions](.github/workflows/real-upstream-integrated.yml)：由 **真实 Docling** 在 **真实 LangGraph** 节点中解析原创三页合成 PDF 的页码来源、经模拟审批生成仅内存草稿，再将 **实际图输出**交给 **真实 Promptfoo Echo 评测**；共 8 个正向预期和 1 个故意失败对照。独立验证器将三方 JSON 与原始图输出绑定，禁止用静态数据伪装通过。
