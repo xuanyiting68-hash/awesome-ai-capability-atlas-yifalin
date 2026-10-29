@@ -1,0 +1,60 @@
+name: Verify real Docling PDF (isolated)
+on:
+  pull_request:
+    paths:
+      - 'scripts/real_docling_pilot.py'
+      - 'scripts/test_real_docling_contract.py'
+      - '.github/workflows/real-upstream-docling.yml'
+      - 'docs/REAL_UPSTREAM_PILOT_DOCLING_CN.md'
+      - 'pilot-lab.html'
+      - 'README.md'
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/real_docling_pilot.py'
+      - 'scripts/test_real_docling_contract.py'
+      - '.github/workflows/real-upstream-docling.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  real-docling-pdf:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONNOUSERSITE: '1'
+      PIP_DISABLE_PIP_VERSION_CHECK: '1'
+      HF_HUB_OFFLINE: '1'
+      TRANSFORMERS_OFFLINE: '1'
+      DOCLING_SERVE_ENABLE_REMOTE_SERVICES: 'false'
+      OMP_NUM_THREADS: '2'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned upstream Docling release (binary wheels only)
+        run: |
+          python -m pip install --only-binary=:all: --no-cache-dir 'docling==2.144.0'
+      - name: Preserve resolved dependency versions
+        run: |
+          python -m pip freeze --all > docling-resolved-dependencies.txt
+      - name: Exercise real native-PDF pipeline with original synthetic PDF
+        run: |
+          python scripts/real_docling_pilot.py --output test-results/real-docling-result.json
+      - name: Independently verify exact upstream evidence
+        run: |
+          python -m unittest scripts.test_real_docling_contract -v
+      - name: Preserve synthetic-only evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: real-docling-2_144_0-native-pdf-evidence
+          path: |
+            test-results/real-docling-result.json
+            docling-resolved-dependencies.txt
+          retention-days: 30
+          if-no-files-found: warn
