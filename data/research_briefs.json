@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "researched_at_utc": "2026-10-26T22:00:00Z",
+  "researched_at_utc": "2026-10-29T06:00:00Z",
   "policy": "Official documentation review and proposed pilots only. No software was installed, no benchmark was run, and no license/security assessment is complete.",
   "entries": [
     {
@@ -892,6 +892,1816 @@
       "alternatives": [
         "garak/garak",
         "microsoft/pyrit"
+      ],
+      "review": {
+        "license_text": "not-reviewed",
+        "dependency_licenses": "not-reviewed",
+        "security": "not-audited",
+        "reproducibility": "not-tested",
+        "sandbox_sha": null,
+        "fork_decision": "HOLD"
+      }
+    },
+    {
+      "repo": "AI4Finance-Foundation/FinRL",
+      "tier": "Curated",
+      "research_status": "editorial-desk-study",
+      "sources": [
+        {
+          "id": "readme",
+          "kind": "official-github-readme",
+          "url": "https://github.com/AI4Finance-Foundation/FinRL/blob/master/README.md",
+          "snapshot_url": "https://api.github.com/repos/AI4Finance-Foundation/FinRL/git/blobs/50e026b2c8715f4683f548afde0d782da777fc9",
+          "git_blob_sha": "50e026b2c8715f4683f548afde0d782da777fc9",
+          "readme_ref": "master"
+        },
+        {
+          "id": "docs",
+          "kind": "official-documentation",
+          "url": "https://finrl.readthedocs.io/en/latest/"
+        }
+      ],
+      "headline": {
+        "zh": "金融强化学习实验框架与训练—测试—交易流程",
+        "en": "Financial reinforcement learning framework and train-test-trade workflows"
+      },
+      "best_for": {
+        "zh": "研究历史市场状态与序列决策基线的量化研究人员",
+        "en": "Quant researchers examining sequential decisions and baseline experiments"
+      },
+      "not_for": {
+        "zh": "希望凭模拟训练收益就直接推出真实交易盈利的人",
+        "en": "Users treating simulated reward as evidence of live trading profits"
+      },
+      "capabilities": [
+        {
+          "zh": "项目文档描述市场环境、强化学习代理与训练评估流程",
+          "en": "README outlines market environments, reinforcement-learning agents and evaluation",
+          "source_ids": [
+            "readme"
+          ]
+        },
+        {
+          "zh": "官方研究资料提供金融强化学习的分层实验设计",
+          "en": "Official materials describe layered financial RL experiments",
+          "source_ids": [
+            "readme",
+            "docs"
+          ]
+        }
+      ],
+      "pilot": {
+        "zh": "使用获授权样本对比随机策略、规则基线与强化学习策略",
+        "en": "Compare random, simple-rule and reinforcement-learning agents on licensed samples",
+        "steps": [
+          {
+            "zh": "固定行情时段、成本模型和观察空间",
+            "en": "Pin market windows, costs and observation spaces"
+          },
+          {
+            "zh": "隔离训练并禁止测试样本进入奖励或调参过程",
+            "en": "Train in isolation and prevent test-period leakage into rewards and tuning"
+          },
+          {
+            "zh": "用未见时期比较策略收益、回撤、费用与随机种子稳定性",
+            "en": "Compare holdout results, drawdown, fees and seed sensitivity"
+          }
+        ],
+        "metrics": {
+          "zh": "样本外收益、最大回撤、费用敏感度和种子间方差",
+          "en": "OOS return, drawdown, fee sensitivity and cross-seed variance"
+        }
+      },
+      "limitations": {
+        "zh": "回测模拟器与未来真实执行有差异；任何实盘对接都需要独立审批",
+        "en": "Simulators differ from execution reality; live brokerage connectivity requires independent approval",
+        "source_ids": [
+          "readme",
+          "docs"
+        ]
+      },
+      "alternatives": [
+        "microsoft/qlib"
+      ],
+      "review": {
+        "license_text": "not-reviewed",
+        "dependency_licenses": "not-reviewed",
+        "security": "not-audited",
+        "reproducibility": "not-tested",
+        "sandbox_sha": null,
+        "fork_decision": "HOLD"
+      }
+    },
+    {
+      "repo": "AI4Finance-Foundation/FinRobot",
+      "tier": "Curated",
+      "research_status": "editorial-desk-study",
+      "sources": [
+        {
+          "id": "readme",
+          "kind": "official-github-readme",
+          "url": "https://github.com/AI4Finance-Foundation/FinRobot/blob/master/README.md",
+          "snapshot_url": "https://api.github.com/repos/AI4Finance-Foundation/FinRobot/git/blobs/65fa262404162040a4e439f598db8d0f294e4528",
+          "git_blob_sha": "65fa262404162040a4e439f598db8d0f294e4528",
+          "readme_ref": "master"
+        },
+        {
+          "id": "docs",
+          "kind": "official-documentation",
+          "url": "https://github.com/AI4Finance-Foundation/FinRobot"
+        }
+      ],
+      "headline": {
+        "zh": "金融报告与投资研究多 Agent 辅助平台",
+        "en": "Agent-assisted financial reports and investment research"
+      },
+      "best_for": {
+        "zh": "需要将公开财报、基本面分析和引用留痕标准化的金融研究团队",
+        "en": "Research teams standardizing public-report analysis and citation trails"
+      },
+      "not_for": {
+        "zh": "希望智能体自动对真实资产给出未经审稿的投资建议的人",
+        "en": "Users expecting unreviewed automated investment advice on real assets"
+      },
+      "capabilities": [
+        {
+          "zh": "官方 README 说明股权研究代理、报告生成与多个版本的组件",
+          "en": "README describes equity-research agents, report generation and multiple components",
+          "source_ids": [
+            "readme"
+          ]
+        },
+        {
+          "zh": "文档对研究流程和开发配置提供项目维护者说明",
+          "en": "Maintainer documentation describes research workflows and setup variants",
+          "source_ids": [
+            "readme",
+            "docs"
+          ]
+        }
+      ],
+      "pilot": {
+        "zh": "用虚构公司数据生成研究备忘录并检查数字可追溯性",
+        "en": "Create synthetic-company research memos and check numeric provenance",
+        "steps": [
+          {
+            "zh": "限定无敏感公司数据，固定财务项目及模型版本",
+            "en": "Use no confidential company data; pin financial fields and model revision"
+          },
+          {
+            "zh": "生成两份报告并对照证据出处和计算一致性",
+            "en": "Generate two reports and compare source provenance and calculations"
+          },
+          {
+            "zh": "由人工分析师审查虚构数值、错误推导和引用缺失",
+            "en": "Have a human analyst review fabricated numbers, faulty reasoning and missing citations"
+          }
+        ],
+        "metrics": {
+          "zh": "错误数字占比、引用覆盖率、运行成本和人工复核时间",
+          "en": "Numeric error rate, citation coverage, run cost and human review time"
+        }
+      },
+      "limitations": {
+        "zh": "多 Agent 输出可能编造财务事实；GitHub 内项目指南不能替代许可证与合规审查",
+        "en": "Multi-agent output can invent financial facts; repository guidance is not license or compliance approval",
+        "source_ids": [
+          "readme",
+          "docs"
+        ]
+      },
+      "alternatives": [
+        "microsoft/RD-Agent",
+        "microsoft/qlib"
+      ],
+      "review": {
+        "license_text": "not-reviewed",
+        "dependency_licenses": "not-reviewed",
+        "security": "not-audited",
+        "reproducibility": "not-tested",
+        "sandbox_sha": null,
+        "fork_decision": "HOLD"
+      }
+    },
+    {
+      "repo": "TauricResearch/TradingAgents",
+      "tier": "Curated",
+      "research_status": "editorial-desk-study",
+      "sources": [
+        {
+          "id": "readme",
+          "kind": "official-github-readme",
+          "url": "https://github.com/TauricResearch/TradingAgents/blob/main/README.md",
+          "snapshot_url": "https://api.github.com/repos/TauricResearch/TradingAgents/git/blobs/a9ddf10db162f608af4d3387b8a7dd35bc4d1a13",
+          "git_blob_sha": "a9ddf10db162f608af4d3387b8a7dd35bc4d1a13"
+        },
+        {
+          "id": "docs",
+          "kind": "official-documentation",
+          "url": "https://github.com/TauricResearch/TradingAgents"
+        }
+      ],
+      "headline": {
+        "zh": "以多角色代理模拟市场研究与交易决策辩论",
+        "en": "Multi-role agents simulating market research and trading debates"
+      },
+      "best_for": {
+        "zh": "研究多 Agent 决策分歧、论据记录和信息时点控制的团队",
+        "en": "Teams studying multi-agent disagreements, evidence traces and information cutoffs"
+      },
+      "not_for": {
+        "zh": "希望依靠代理讨论直接证明预测准确率和实际交易收益的人",
+        "en": "Users treating agent debates as proof of reliable predictions or trading returns"
+      },
+      "capabilities": [
+        {
+          "zh": "官方 README 描述多角色研究、讨论与风险意见整合机制",
+          "en": "README describes multi-role analysis, deliberation and risk perspectives",
+          "source_ids": [
+            "readme"
+          ]
+        },
+        {
+          "zh": "项目发布说明涉及决策日、财报可见时点和模拟评价修正",
+          "en": "Maintainer notes address decision timing, report availability and simulation scoring",
+          "source_ids": [
+            "readme",
+            "docs"
+          ]
+        }
+      ],
+      "pilot": {
+        "zh": "用冻结时点的合成新闻数据评估角色冲突与前视偏差",
+        "en": "Evaluate role conflicts and look-ahead leakage using frozen synthetic news",
+        "steps": [
+          {
+            "zh": "固定研究日期和每条新闻的可见时间戳",
+            "en": "Freeze decision dates and each news item's availability timestamp"
+          },
+          {
+            "zh": "记录不同代理观点、最终决策和引用依据",
+            "en": "Log independent agent views, final outcomes and supporting references"
+          },
+          {
+            "zh": "人工检查未来信息泄漏并对照朴素基准",
+            "en": "Audit future-information leakage and compare with a simple baseline"
+          }
+        ],
+        "metrics": {
+          "zh": "越时信息比例、分歧可解释性、额外成本和复核时间",
+          "en": "Future-data violations, disagreement interpretability, extra cost and review time"
+        }
+      },
+      "limitations": {
+        "zh": "讨论并不等于具备统计预测优势；真实交易必须保持关闭",
+        "en": "Agent discussion does not establish predictive advantage; real trade execution remains disabled",
+        "source_ids": [
+          "readme",
+          "docs"
+        ]
+      },
+      "alternatives": [
+        "AI4Finance-Foundation/FinRobot",
+        "microsoft/RD-Agent"
+      ],
+      "review": {
+        "license_text": "not-reviewed",
+        "dependency_licenses": "not-reviewed",
+        "security": "not-audited",
+        "reproducibility": "not-tested",
+        "sandbox_sha": null,
+        "fork_decision": "HOLD"
+      }
+    },
+    {
+      "repo": "OpenBB-finance/OpenBB",
+      "tier": "Curated",
+      "research_status": "editorial-desk-study",
+      "sources": [
+        {
+          "id": "readme",
+          "kind": "official-github-readme",
+          "url": "https://github.com/openbq-org/OpenBB/blob/develop/README.md",
+          "snapshot_url": "https://api.github.com/repos/openbq-org/OpenBB/git/blobs/20a11786e8936c866511f18ed17f00e2619a2272",
+          "git_blob_sha": "20a11786e8936c866511f18ed17f00e2619a2272",
+          "readme_ref": "develop",
+          "canonical_repo": "openbq-org/OpenBB"
+        },
+        {
+          "id": "docs",
+          "kind": "official-documentation",
+          "url": "https://docs.openbb.co/python/reference"
+        }
+      ],
+      "headline": {
+        "zh": "统一数据提供商与金融研究 API 的开放数据平台",
+        "en": "Financial data-provider consolidation and research APIs"
+      },
+      "best_for": {
+        "zh": "需要将多来源金融数据标准化供投研平台调用的团队",
+        "en": "Teams standardizing multi-provider financial data for research platforms"
+      },
+      "not_for": {
+        "zh": "缺乏数据许可却计划将收费行情重新分发给客户的组织",
+        "en": "Organizations reselling licensed data without redistribution rights"
+      },
+      "capabilities": [
+        {
+          "zh": "当前维护者 README 描述 Python、REST 与研究工作台的数据连接方式",
+          "en": "Canonical maintainer README describes Python, REST and research workspace feeds",
+          "source_ids": [
+            "readme"
+          ]
+        },
+        {
+          "zh": "官方文档列出数据提供方接口与标准化使用入口",
+          "en": "Official docs list data-provider APIs and normalized access paths",
+          "source_ids": [
+            "readme",
+            "docs"
+          ]
+        }
+      ],
+      "pilot": {
+        "zh": "用公开授权的样本 API 比较多提供商字段一致性与时点",
+        "en": "Compare source schemas and as-of timestamps with authorized sample APIs",
+        "steps": [
+          {
+            "zh": "列出每个字段的原始供应商和使用权限",
+            "en": "Inventory raw data providers, field meanings and permitted rights"
+          },
+          {
+            "zh": "在隔离环境校验币种、时间区和缺失值",
+            "en": "Check currency, time zone and missing-value mappings in isolation"
+          },
+          {
+            "zh": "记录供应商差异与重分发限制后再设计缓存",
+            "en": "Log provider discrepancies and redistribution restrictions before caching"
+          }
+        ],
+        "metrics": {
+          "zh": "字段一致率、数据滞后、调用成本与许可证覆盖率",
+          "en": "Schema consistency, latency, API cost and data-license coverage"
+        }
+      },
+      "limitations": {
+        "zh": "金融数据访问权不等于重分发或商用集成权；上游仓库已迁移组织",
+        "en": "Data access does not authorize resale or commercial integration; upstream repo ownership has moved",
+        "source_ids": [
+          "readme",
+          "docs"
+        ]
+      },
+      "alternatives": [
+        "microsoft/qlib",
+        "QuantConnect/Lean"
+      ],
+      "review": {
+        "license_text": "not-reviewed",
+        "dependency_licenses": "not-reviewed",
+        "security": "not-audited",
+        "reproducibility": "not-tested",
+        "sandbox_sha": null,
+        "fork_decision": "HOLD"
+      }
+    },
+    {
+      "repo": "QuantConnect/Lean",
+      "tier": "Curated",
+      "research_status": "editorial-desk-study",
+      "sources": [
+        {
+          "id": "readme",
+          "kind": "official-github-readme",
+          "url": "https://github.com/QuantConnect/Lean/blob/master/readme.md",
+          "snapshot_url": "https://api.github.com/repos/QuantConnect/Lean/git/blobs/b352780b83e4da76837cdac623d3d36597639852",
+          "git_blob_sha": "b352780b83e4da76837cdac623d3d36597639852",
+          "readme_ref": "master",
+          "readme_filename": "readme.md"
+        },
+        {
+          "id": "docs",
+          "kind": "official-documentation",
+          "url": "https://www.quantconnect.com/docs/v2/"
+        }
+      ],
+      "headline": {
+        "zh": "事件驱动量化回测与算法执行引擎",
+        "en": "Event-driven backtesting and algorithm execution engine"
+      },
+      "best_for": {
+        "zh": "需要可控事件模型、策略回测和隔离模拟交易的开发团队",
+        "en": "Teams needing event-driven strategy research and sandbox paper-trading"
+      },
+      "not_for": {
+        "zh": "计划未经验证直接启用真实下单连接的人",
+        "en": "Users planning to enable live brokerage adapters before independent approval"
+      },
+      "capabilities": [
+        {
+          "zh": "官方 readme.md 描述 LEAN 引擎、替代数据与回测机制",
+          "en": "Official lowercase readme describes engine, alternative data and backtests",
+          "source_ids": [
+            "readme"
+          ]
+        },
+        {
+          "zh": "官方文档介绍本地 CLI、回测和算法开发流程",
+          "en": "Official docs cover local CLI, backtesting and algorithm development",
+          "source_ids": [
+            "readme",
+            "docs"
+          ]
+        }
+      ],
+      "pilot": {
+        "zh": "用人工构造行情验证订单事件、滑点和回测复现性",
+        "en": "Test order events, slippage and reproducibility on synthetic data",
+        "steps": [
+          {
+            "zh": "固定事件序列和每个模拟订单生命周期",
+            "en": "Pin event sequences and simulated order lifecycle"
+          },
+          {
+            "zh": "用本地沙箱运行最小策略并注入延迟及异常数据",
+            "en": "Run a minimal sandbox strategy with delay and malformed-data injections"
+          },
+          {
+            "zh": "对照订单日志、费用、回撤与事件时间顺序",
+            "en": "Compare order logs, costs, drawdowns and event ordering"
+          }
+        ],
+        "metrics": {
+          "zh": "回测一致性、异常处理、费用误差和订单状态准确率",
+          "en": "Backtest consistency, exception handling, fee error and order-state accuracy"
+        }
+      },
+      "limitations": {
+        "zh": "引擎支持实盘连接不代表本项目授权实盘；数据协议、佣金和滑点均需单独复核",
+        "en": "Engine support for live connectors is not permission for live trading; data, fees and slippage need review",
+        "source_ids": [
+          "readme",
+          "docs"
+        ]
+      },
+      "alternatives": [
+        "AI4Finance-Foundation/FinRL",
+        "microsoft/qlib"
+      ],
+      "review": {
+        "license_text": "not-reviewed",
+        "dependency_licenses": "not-reviewed",
+        "security": "not-audited",
+        "reproducibility": "not-tested",
+        "sandbox_sha": null,
+        "fork_decision": "HOLD"
+      }
+    },
+    {
+      "repo": "polakowo/vectorbt",
+      "tier": "Curated",
+      "research_status": "editorial-desk-study",
+      "sources": [
+        {
+          "id": "readme",
+          "kind": "official-github-readme",
+          "url": "https://github.com/polakowo/vectorbt/blob/master/README.md",
+          "snapshot_url": "https://api.github.com/repos/polakowo/vectorbt/git/blobs/dde730f3668dfb6c05e063c0181e8cf26f961c39",
+          "git_blob_sha": "dde730f3668dfb6c05e063c0181e8cf26f961c39",
+          "readme_ref": "master"
+        },
+        {
+          "id": "docs",
+          "kind": "official-documentation",
+          "url": "https://vectorbt.dev/getting-started/features/"
+        }
+      ],
+      "headline": {
+        "zh": "基于向量化计算的多资产策略与参数研究",
+        "en": "Vectorized multi-asset strategy and parameter research"
+      },
+      "best_for": {
+        "zh": "想迅速比较大量候选策略并严格审查过拟合的人",
+        "en": "Researchers comparing many candidates while controlling overfitting"
+      },
+      "not_for": {
+        "zh": "把大规模参数搜索最优结果直接理解为未来盈利的人",
+        "en": "Users mistaking best in-sample parameter searches for future performance"
+      },
+      "capabilities": [
+        {
+          "zh": "维护者 README 介绍 NumPy、Numba 与向量化回测和指标研究",
+          "en": "Maintainer README describes NumPy/Numba and vectorized backtest workflows",
+          "source_ids": [
+            "readme"
+          ]
+        },
+        {
+          "zh": "官方指南介绍大规模广播和组合结果分析能力",
+          "en": "Official guides discuss broadcasting and portfolio result analysis",
+          "source_ids": [
+            "readme",
+            "docs"
+          ]
+        }
+      ],
+      "pilot": {
+        "zh": "用合成 OHLCV 比较不同参数搜索的假阳性比例",
+        "en": "Estimate false discovery under multiple searches using synthetic OHLCV",
+        "steps": [
+          {
+            "zh": "固定随机过程、交易成本和训练/测试时段",
+            "en": "Pin random process, fees and train/test partitions"
+          },
+          {
+            "zh": "在训练期批量筛选后冻结参数并测未见样本",
+            "en": "Screen on training slices, freeze parameters and measure holdout"
+          },
+          {
+            "zh": "记录筛选数量、样本外衰减和 CPU/内存消耗",
+            "en": "Record trial counts, holdout degradation and compute use"
+          }
+        ],
+        "metrics": {
+          "zh": "样本外衰减、假发现率、运行时间与内存峰值",
+          "en": "Out-of-sample decay, false discovery rate, run time and peak memory"
+        }
+      },
+      "limitations": {
+        "zh": "大规模参数广播会扩大选择偏差；需单独审查社区版与专业版许可",
+        "en": "Large sweeps amplify selection bias; community and professional licenses require separate review",
+        "source_ids": [
+          "readme",
+          "docs"
+        ]
+      },
+      "alternatives": [
+        "microsoft/qlib",
+        "QuantConnect/Lean"
+      ],
+      "review": {
+        "license_text": "not-reviewed",
+        "dependency_licenses": "not-reviewed",
+        "security": "not-audited",
+        "reproducibility": "not-tested",
+        "sandbox_sha": null,
+        "fork_decision": "HOLD"
+      }
+    },
+    {
+      "repo": "openai/codex",
+      "tier": "Curated",
+      "research_status": "editorial-desk-study",
+      "sources": [
+        {
+          "id": "readme",
+          "kind": "official-github-readme",
+          "url": "https://github.com/openai/codex/blob/main/README.md",
+          "snapshot_url": "https://api.github.com/repos/openai/codex/git/blobs/06b02fced7db972084bf0188cb03f60375b51c1c",
+          "git_blob_sha": "06b02fced7db972084bf0188cb03f60375b51c1c"
+        },
+        {
+          "id": "docs",
+          "kind": "official-documentation",
+          "url": "https://developers.openai.com/codex"
+        }
+      ],
+      "headline": {
+        "zh": "面向代码库的终端与 IDE 编程代理",
+        "en": "Terminal and IDE coding agent for codebase tasks"
+      },
+      "best_for": {
+        "zh": "希望审查 AI 代码改动并用 CI 自动验证的工程团队",
+        "en": "Engineering teams reviewing AI code changes with automated CI"
+      },
+      "not_for": {
+        "zh": "允许 AI 代理不经审批直接接管生产密钥和部署的人",
+        "en": "Teams giving an agent unchecked production keys or deployment rights"
+      },
+      "capabilities": [
+        {
+          "zh": "README 描述本地 Codex CLI 和多种集成入口",
+          "en": "README documents local Codex CLI and multiple integration surfaces",
+          "source_ids": [
+            "readme"
+          ]
+        },
+        {
+          "zh": "官方开发文档介绍安装、编程代理和交互工作流",
+          "en": "Official developer docs explain setup and coding agent workflows",
+          "source_ids": [
+            "readme",
+            "docs"
+          ]
+        }
+      ],
+      "pilot": {
+        "zh": "在测试仓库中测量修复单元测试的成功率和改动范围",
+        "en": "Measure test-repair success and diff scope in an isolated repository",
+        "steps": [
+          {
+            "zh": "准备不含密钥的待修复测试和预期行为",
+            "en": "Create a secret-free repository with failing tests and expected outcomes"
+          },
+          {
+            "zh": "仅允许提交建议补丁并记录工具与终端操作",
+            "en": "Permit proposed patches only while logging tool and terminal actions"
+          },
+          {
+            "zh": "独立运行测试、检查越权写入和错误修复",
+            "en": "Independently run tests and check unauthorized writes and incorrect fixes"
+          }
+        ],
+        "metrics": {
+          "zh": "测试修复率、误改文件数、审核时间和 token 成本",
+          "en": "Test pass rate, unintended edits, reviewer time and token cost"
+        }
+      },
+      "limitations": {
+        "zh": "代理写代码不等于正确或安全；权限和沙箱是另外的治理问题",
+        "en": "Generated code is not proof of correctness or safety; permissions and isolation remain separate",
+        "source_ids": [
+          "readme",
+          "docs"
+        ]
+      },
+      "alternatives": [
+        "anthropics/claude-code",
+        "All-Hands-AI/OpenHands"
+      ],
+      "review": {
+        "license_text": "not-reviewed",
+        "dependency_licenses": "not-reviewed",
+        "security": "not-audited",
+        "reproducibility": "not-tested",
+        "sandbox_sha": null,
+        "fork_decision": "HOLD"
+      }
+    },
+    {
+      "repo": "anthropics/claude-code",
+      "tier": "Curated",
+      "research_status": "editorial-desk-study",
+      "sources": [
+        {
+          "id": "readme",
+          "kind": "official-github-readme",
+          "url": "https://github.com/anthropics/claude-code/blob/main/README.md",
+          "snapshot_url": "https://api.github.com/repos/anthropics/claude-code/git/blobs/70754c523454ad5fd94e5ef910cc347cf69e6f6b",
+          "git_blob_sha": "70754c523454ad5fd94e5ef910cc347cf69e6f6b"
+        },
+        {
+          "id": "docs",
+          "kind": "official-documentation",
+          "url": "https://code.claude.com/docs/en/overview"
+        }
+      ],
+      "headline": {
+        "zh": "在终端执行代码分析、修复与 Git 工作流的代理",
+        "en": "Terminal-based code analysis, fixes and Git workflows"
+      },
+      "best_for": {
+        "zh": "需要项目级上下文与工程审查的开发团队",
+        "en": "Development teams using codebase context under engineering review"
+      },
+      "not_for": {
+        "zh": "不愿限制 shell、网络、代码读写权限的生产环境",
+        "en": "Production environments unwilling to restrict shell, network and write access"
+      },
+      "capabilities": [
+        {
+          "zh": "README 描述自然语言执行常规编程任务和 Git 协作",
+          "en": "README documents routine coding assistance and Git collaboration",
+          "source_ids": [
+            "readme"
+          ]
+        },
+        {
+          "zh": "官方指南提供安装、配置和数据使用说明",
+          "en": "Official docs cover installation, configuration and data usage",
+          "source_ids": [
+            "readme",
+            "docs"
+          ]
+        }
+      ],
+      "pilot": {
+        "zh": "隔离重复仓库对比任务完成质量、授权申请与改动溯源",
+        "en": "Compare completion quality, permission requests and traceability in a disposable repository",
+        "steps": [
+          {
+            "zh": "准备可重复的 bug 样本与严格命令白名单",
+            "en": "Prepare reproducible bugs and a strict command allowlist"
+          },
+          {
+            "zh": "允许修改测试分支并记录每次审批与代码 diff",
+            "en": "Allow edits to a test branch while recording approvals and diffs"
+          },
+          {
+            "zh": "对比独立测试结果、工作量与意外副作用",
+            "en": "Compare independent test results, effort and unintended side effects"
+          }
+        ],
+        "metrics": {
+          "zh": "缺陷修复率、授权拦截次数、审查成本与误改率",
+          "en": "Fix success rate, blocked permissions, review cost and unintended edit rate"
+        }
+      },
+      "limitations": {
+        "zh": "命令执行与代码修改可能触及敏感资源；账号、网络与数据条款需另核验",
+        "en": "Command execution and edits can reach sensitive resources; account and data terms need review",
+        "source_ids": [
+          "readme",
+          "docs"
+        ]
+      },
+      "alternatives": [
+        "openai/codex",
+        "All-Hands-AI/OpenHands"
+      ],
+      "review": {
+        "license_text": "not-reviewed",
+        "dependency_licenses": "not-reviewed",
+        "security": "not-audited",
+        "reproducibility": "not-tested",
+        "sandbox_sha": null,
+        "fork_decision": "HOLD"
+      }
+    },
+    {
+      "repo": "All-Hands-AI/OpenHands",
+      "tier": "Curated",
+      "research_status": "editorial-desk-study",
+      "sources": [
+        {
+          "id": "readme",
+          "kind": "official-github-readme",
+          "url": "https://github.com/OpenHands/OpenHands/blob/main/README.md",
+          "snapshot_url": "https://api.github.com/repos/OpenHands/OpenHands/git/blobs/d2c59eb5c77b9afed050b5a2e28b79317f7fab18",
+          "git_blob_sha": "d2c59eb5c77b9afed050b5a2e28b79317f7fab18",
+          "canonical_repo": "OpenHands/OpenHands"
+        },
+        {
+          "id": "docs",
+          "kind": "official-documentation",
+          "url": "https://docs.openhands.dev/openhands/usage/agent-canvas/backends"
+        }
+      ],
+      "headline": {
+        "zh": "多编码代理的自托管工作台与自动化控制中心",
+        "en": "Self-hosted coding-agent control center and automation workspace"
+      },
+      "best_for": {
+        "zh": "管理多个编程代理、运行后端与可审计自动化的团队",
+        "en": "Teams coordinating multiple coding agents, backends and auditable automations"
+      },
+      "not_for": {
+        "zh": "把未经隔离的自动化代理直接放进生产主机的人",
+        "en": "Operators deploying unisolated coding agents onto production machines"
+      },
+      "capabilities": [
+        {
+          "zh": "迁移后官方 README 将 Agent Canvas 定位为多代理控制台",
+          "en": "Canonical README describes Agent Canvas as a multi-agent control center",
+          "source_ids": [
+            "readme"
+          ]
+        },
+        {
+          "zh": "官方文档说明本地、容器、虚拟机后端和自动化入口",
+          "en": "Official docs describe local, container, VM backends and automation",
+          "source_ids": [
+            "readme",
+            "docs"
+          ]
+        }
+      ],
+      "pilot": {
+        "zh": "用无敏感任务调度两个模拟编码代理并检查审批边界",
+        "en": "Coordinate two mock coding agents on harmless tasks and test approval gates",
+        "steps": [
+          {
+            "zh": "在隔离容器里固定后端版本与文件系统权限",
+            "en": "Pin backend versions and filesystem access inside an isolated container"
+          },
+          {
+            "zh": "发出不含凭据的代码审查任务并模拟一项失败",
+            "en": "Send a credential-free review task and simulate one agent failure"
+          },
+          {
+            "zh": "检查审计日志、资源访问和重复任务处理",
+            "en": "Inspect audit logs, resource access and duplicate task handling"
+          }
+        ],
+        "metrics": {
+          "zh": "任务恢复率、越权文件访问、重复执行和成本",
+          "en": "Recovery rate, unauthorized file access, duplicate actions and cost"
+        }
+      },
+      "limitations": {
+        "zh": "官方 README 提示本机代理可能拥有文件系统完全访问权；必须独立设计隔离",
+        "en": "Official README warns local agents may have full filesystem access; isolation is mandatory",
+        "source_ids": [
+          "readme",
+          "docs"
+        ]
+      },
+      "alternatives": [
+        "openai/codex",
+        "anthropics/claude-code"
+      ],
+      "review": {
+        "license_text": "not-reviewed",
+        "dependency_licenses": "not-reviewed",
+        "security": "not-audited",
+        "reproducibility": "not-tested",
+        "sandbox_sha": null,
+        "fork_decision": "HOLD"
+      }
+    },
+    {
+      "repo": "browser-use/browser-use",
+      "tier": "Curated",
+      "research_status": "editorial-desk-study",
+      "sources": [
+        {
+          "id": "readme",
+          "kind": "official-github-readme",
+          "url": "https://github.com/browser-use/browser-use/blob/main/README.md",
+          "snapshot_url": "https://api.github.com/repos/browser-use/browser-use/git/blobs/fe0d153c091192af376573013bf27974de9169ff",
+          "git_blob_sha": "fe0d153c091192af376573013bf27974de9169ff"
+        },
+        {
+          "id": "docs",
+          "kind": "official-documentation",
+          "url": "https://docs.browser-use.com/open-source/introduction"
+        }
+      ],
+      "headline": {
+        "zh": "面向网页任务的浏览器自动化 Agent 工具",
+        "en": "Browser automation agents for web-based tasks"
+      },
+      "best_for": {
+        "zh": "需要可追踪的只读网页研究和沙箱任务测试的开发者",
+        "en": "Developers building traceable read-only browser studies and sandbox tests"
+      },
+      "not_for": {
+        "zh": "希望绕过网站规则、验证码限制或不经授权操作账号的人",
+        "en": "Users seeking to bypass site rules or operate accounts without authorization"
+      },
+      "capabilities": [
+        {
+          "zh": "README 展示通过语言模型驱动页面导航与任务执行",
+          "en": "README describes model-driven page navigation and task execution",
+          "source_ids": [
+            "readme"
+          ]
+        },
+        {
+          "zh": "官方指南涵盖本地 Python 库、云浏览器和工具配置",
+          "en": "Docs cover local Python library, cloud browsers and tool configuration",
+          "source_ids": [
+            "readme",
+            "docs"
+          ]
+        }
+      ],
+      "pilot": {
+        "zh": "在本地构造网站上测试动态导航、错误恢复与人工接管",
+        "en": "Test dynamic navigation, recovery and human handoff on a controlled website",
+        "steps": [
+          {
+            "zh": "部署仅本地可访问的测试站并录入模拟表单",
+            "en": "Host a local test site with synthetic forms"
+          },
+          {
+            "zh": "注入延迟、弹窗和导航变化，记录浏览器动作",
+            "en": "Inject delays, dialogs and navigation changes; log browser actions"
+          },
+          {
+            "zh": "核查是否有跨站访问、重复提交及未授权动作",
+            "en": "Review cross-site actions, duplicate submissions and unauthorized steps"
+          }
+        ],
+        "metrics": {
+          "zh": "任务成功率、操作次数、权限越界和平均耗时",
+          "en": "Task success rate, action count, permission violations and latency"
+        }
+      },
+      "limitations": {
+        "zh": "模型驱动操作可能不稳定；网站条款、隐私与第三方模型费用需要另行审查",
+        "en": "Agent actions may be unreliable; site terms, privacy and model costs need separate review",
+        "source_ids": [
+          "readme",
+          "docs"
+        ]
+      },
+      "alternatives": [
+        "github/gh-aw",
+        "openai/codex"
+      ],
+      "review": {
+        "license_text": "not-reviewed",
+        "dependency_licenses": "not-reviewed",
+        "security": "not-audited",
+        "reproducibility": "not-tested",
+        "sandbox_sha": null,
+        "fork_decision": "HOLD"
+      }
+    },
+    {
+      "repo": "github/gh-aw",
+      "tier": "Curated",
+      "research_status": "editorial-desk-study",
+      "sources": [
+        {
+          "id": "readme",
+          "kind": "official-github-readme",
+          "url": "https://github.com/github/gh-aw/blob/main/README.md",
+          "snapshot_url": "https://api.github.com/repos/github/gh-aw/git/blobs/4e0667b04eb87108ea18aa995aecc7c108c61d91",
+          "git_blob_sha": "4e0667b04eb87108ea18aa995aecc7c108c61d91"
+        },
+        {
+          "id": "docs",
+          "kind": "official-documentation",
+          "url": "https://github.github.com/gh-aw/"
+        }
+      ],
+      "headline": {
+        "zh": "以 GitHub Actions 执行带权限约束的 Agent 自动化",
+        "en": "Permission-governed agent workflows in GitHub Actions"
+      },
+      "best_for": {
+        "zh": "希望在仓库 CI 中用代理协助审查与汇总的维护者",
+        "en": "Repository maintainers adding agent-assisted reviews and reporting"
+      },
+      "not_for": {
+        "zh": "计划向自动化工作流授予未经复核的仓库写权限的人",
+        "en": "Teams granting unchecked repository write permissions to workflows"
+      },
+      "capabilities": [
+        {
+          "zh": "README 介绍使用 Markdown 加 YAML 头部定义 Agent 工作流",
+          "en": "README describes Markdown workflows with YAML frontmatter",
+          "source_ids": [
+            "readme"
+          ]
+        },
+        {
+          "zh": "官方规范强调 GitHub Actions 权限与受控写入",
+          "en": "Official guidance emphasizes Actions permissions and controlled writes",
+          "source_ids": [
+            "readme",
+            "docs"
+          ]
+        }
+      ],
+      "pilot": {
+        "zh": "搭建只读 Issue 分类任务并验证不允许修改仓库",
+        "en": "Build a read-only issue-classification workflow and test write denial",
+        "steps": [
+          {
+            "zh": "固定测试仓库、最小 GitHub token 权限和数据权限",
+            "en": "Use a test repository with minimal GitHub token permissions"
+          },
+          {
+            "zh": "输入合成 Issue 并模拟包含恶意指令的文本",
+            "en": "Feed synthetic issues including adversarial instructions"
+          },
+          {
+            "zh": "检查未授权提交、审计日志和审稿结果差异",
+            "en": "Inspect unauthorized commits, logs and review disagreements"
+          }
+        ],
+        "metrics": {
+          "zh": "权限绕过次数、建议质量、执行耗时和费用",
+          "en": "Permission bypasses, suggestion quality, run duration and cost"
+        }
+      },
+      "limitations": {
+        "zh": "代理工作流属于可执行自动化而非默认安全保证；保留 CI 和人工合并审核",
+        "en": "Agent workflows execute code and are not inherently safe; keep CI and human merge review",
+        "source_ids": [
+          "readme",
+          "docs"
+        ]
+      },
+      "alternatives": [
+        "openai/codex",
+        "langchain-ai/langgraph"
+      ],
+      "review": {
+        "license_text": "not-reviewed",
+        "dependency_licenses": "not-reviewed",
+        "security": "not-audited",
+        "reproducibility": "not-tested",
+        "sandbox_sha": null,
+        "fork_decision": "HOLD"
+      }
+    },
+    {
+      "repo": "run-llama/llama_index",
+      "tier": "Curated",
+      "research_status": "editorial-desk-study",
+      "sources": [
+        {
+          "id": "readme",
+          "kind": "official-github-readme",
+          "url": "https://github.com/run-llama/llama_index/blob/main/README.md",
+          "snapshot_url": "https://api.github.com/repos/run-llama/llama_index/git/blobs/572527a8f5293bcf001366da01e51549280ff2e0",
+          "git_blob_sha": "572527a8f5293bcf001366da01e51549280ff2e0"
+        },
+        {
+          "id": "docs",
+          "kind": "official-documentation",
+          "url": "https://developers.llamaindex.ai/python/framework/"
+        }
+      ],
+      "headline": {
+        "zh": "以文档与数据为核心的检索增强应用框架",
+        "en": "Document-centric retrieval-augmented application framework"
+      },
+      "best_for": {
+        "zh": "构建可引用的企业知识问答与数据检索产品的团队",
+        "en": "Teams building cited knowledge QA and retrieval systems"
+      },
+      "not_for": {
+        "zh": "没有数据使用权却计划直接把私有材料送给模型的团队",
+        "en": "Teams sending unlicensed or private materials to models"
+      },
+      "capabilities": [
+        {
+          "zh": "README 介绍数据连接、索引、RAG 和查询工作流",
+          "en": "README describes connectors, indexing, RAG and query workflows",
+          "source_ids": [
+            "readme"
+          ]
+        },
+        {
+          "zh": "官方框架文档介绍构建检索链路的基础组件",
+          "en": "Framework docs cover the basic building blocks of retrieval",
+          "source_ids": [
+            "readme",
+            "docs"
+          ]
+        }
+      ],
+      "pilot": {
+        "zh": "用少量授权文档验证引文覆盖与错误拒答",
+        "en": "Evaluate citations and abstention using a small licensed document set",
+        "steps": [
+          {
+            "zh": "制作有页码引用和冲突段落的合成文档集",
+            "en": "Create synthetic documents with page citations and conflicting passages"
+          },
+          {
+            "zh": "构建固定切块和检索参数的只读问答链路",
+            "en": "Build a read-only QA pipeline with fixed chunking and retrieval"
+          },
+          {
+            "zh": "在未知答案、过期内容和诱导问题上测错误回答",
+            "en": "Test unknown, stale and adversarial questions"
+          }
+        ],
+        "metrics": {
+          "zh": "引用准确率、错误拒答、token 成本和延迟",
+          "en": "Citation accuracy, abstention error, token cost and latency"
+        }
+      },
+      "limitations": {
+        "zh": "索引命中并不保证生成答案正确；需控制资料权限、向量存储与模型供应商",
+        "en": "Retrieval matches do not guarantee answer truth; manage data rights, vectors and model vendors",
+        "source_ids": [
+          "readme",
+          "docs"
+        ]
+      },
+      "alternatives": [
+        "infiniflow/ragflow",
+        "docling-project/docling"
+      ],
+      "review": {
+        "license_text": "not-reviewed",
+        "dependency_licenses": "not-reviewed",
+        "security": "not-audited",
+        "reproducibility": "not-tested",
+        "sandbox_sha": null,
+        "fork_decision": "HOLD"
+      }
+    },
+    {
+      "repo": "microsoft/markitdown",
+      "tier": "Curated",
+      "research_status": "editorial-desk-study",
+      "sources": [
+        {
+          "id": "readme",
+          "kind": "official-github-readme",
+          "url": "https://github.com/microsoft/markitdown/blob/main/README.md",
+          "snapshot_url": "https://api.github.com/repos/microsoft/markitdown/git/blobs/13e1ea8b1c60275a4b3afab8ce8cd442531cf736",
+          "git_blob_sha": "13e1ea8b1c60275a4b3afab8ce8cd442531cf736"
+        },
+        {
+          "id": "docs",
+          "kind": "official-documentation",
+          "url": "https://github.com/microsoft/markitdown"
+        }
+      ],
+      "headline": {
+        "zh": "将 PDF、文档和其他文件转换为便于模型处理的 Markdown",
+        "en": "Converting diverse documents into LLM-friendly Markdown"
+      },
+      "best_for": {
+        "zh": "需要轻量级文档转写和文本处理管道的团队",
+        "en": "Teams needing lightweight document conversion and text pipelines"
+      },
+      "not_for": {
+        "zh": "希望转换过程无需限制文件或网络访问权限的人",
+        "en": "Users assuming conversion has no filesystem or network access risk"
+      },
+      "capabilities": [
+        {
+          "zh": "README 描述多种文件格式转换和可选 OCR 能力",
+          "en": "README documents multi-format conversion and optional OCR",
+          "source_ids": [
+            "readme"
+          ]
+        },
+        {
+          "zh": "安全说明提醒转换过程使用当前进程的文件及网络权限",
+          "en": "Security notes warn converters use the current process's I/O privileges",
+          "source_ids": [
+            "readme",
+            "docs"
+          ]
+        }
+      ],
+      "pilot": {
+        "zh": "用授权混合文档建立转换保真度和权限边界测试",
+        "en": "Evaluate conversion fidelity and permission boundaries on licensed files",
+        "steps": [
+          {
+            "zh": "准备纯文本、表格及模拟恶意链接的合成文件",
+            "en": "Prepare synthetic text, table and malicious-link fixture files"
+          },
+          {
+            "zh": "在受限容器执行转换并记录文件与网络访问",
+            "en": "Run conversion in a restricted container and log I/O"
+          },
+          {
+            "zh": "比对 Markdown 内容完整性与未授权访问事件",
+            "en": "Compare Markdown completeness and unauthorized access events"
+          }
+        ],
+        "metrics": {
+          "zh": "内容保留率、表格误差、转换时间与越权访问数",
+          "en": "Content retention, table errors, conversion latency and unauthorized accesses"
+        }
+      },
+      "limitations": {
+        "zh": "转换器以进程权限执行 I/O，必须限制不可信文件输入和外部网络",
+        "en": "Converter performs I/O as its process, so restrict untrusted files and network access",
+        "source_ids": [
+          "readme",
+          "docs"
+        ]
+      },
+      "alternatives": [
+        "docling-project/docling",
+        "run-llama/llama_index"
+      ],
+      "review": {
+        "license_text": "not-reviewed",
+        "dependency_licenses": "not-reviewed",
+        "security": "not-audited",
+        "reproducibility": "not-tested",
+        "sandbox_sha": null,
+        "fork_decision": "HOLD"
+      }
+    },
+    {
+      "repo": "infiniflow/ragflow",
+      "tier": "Curated",
+      "research_status": "editorial-desk-study",
+      "sources": [
+        {
+          "id": "readme",
+          "kind": "official-github-readme",
+          "url": "https://github.com/infiniflow/ragflow/blob/main/README.md",
+          "snapshot_url": "https://api.github.com/repos/infiniflow/ragflow/git/blobs/fba9e6a51b4cb255f704b80e18efea4f75c83fa3",
+          "git_blob_sha": "fba9e6a51b4cb255f704b80e18efea4f75c83fa3"
+        },
+        {
+          "id": "docs",
+          "kind": "official-documentation",
+          "url": "https://ragflow.io/docs/dev/"
+        }
+      ],
+      "headline": {
+        "zh": "面向文档知识库的检索增强生成及工作流服务",
+        "en": "Document-oriented retrieval-augmented generation and workflows"
+      },
+      "best_for": {
+        "zh": "需要自托管文档检索、引用核验和知识问答的团队",
+        "en": "Teams evaluating self-hosted document retrieval and cited QA"
+      },
+      "not_for": {
+        "zh": "以为上传内容即可免除权限管理、检索评估与运维的人",
+        "en": "Teams assuming uploaded documents eliminate access control or operations"
+      },
+      "capabilities": [
+        {
+          "zh": "README 描述文档解析、知识库检索和 Agent 工作流",
+          "en": "README describes document parsing, knowledge retrieval and agent workflows",
+          "source_ids": [
+            "readme"
+          ]
+        },
+        {
+          "zh": "官方指南涵盖本地部署、模型连接和运行配置",
+          "en": "Official docs cover deployment, model connections and operations",
+          "source_ids": [
+            "readme",
+            "docs"
+          ]
+        }
+      ],
+      "pilot": {
+        "zh": "用授权文档和冲突段落测试检索准确性与拒答",
+        "en": "Test retrieval precision and abstention with licensed conflicting passages",
+        "steps": [
+          {
+            "zh": "固定文档版本、切块、embedding 与检索配置",
+            "en": "Pin document revision, chunking, embeddings and retrieval settings"
+          },
+          {
+            "zh": "将合成问题拆分成已知、未知与冲突集合",
+            "en": "Split synthetic questions into known, unknown and conflicting sets"
+          },
+          {
+            "zh": "人工复核检索引用位置、错误回答和成本",
+            "en": "Review cited passages, erroneous answers and costs"
+          }
+        ],
+        "metrics": {
+          "zh": "文段召回率、错误回答率、拒答率和单次查询成本",
+          "en": "Passage recall, false-answer rate, abstention and per-query cost"
+        }
+      },
+      "limitations": {
+        "zh": "RAG 引用并不能自动证明答案正确；部署时仍涉及个人信息和模型费用",
+        "en": "RAG citations do not automatically prove truth; deployment still involves data privacy and model costs",
+        "source_ids": [
+          "readme",
+          "docs"
+        ]
+      },
+      "alternatives": [
+        "run-llama/llama_index",
+        "docling-project/docling"
+      ],
+      "review": {
+        "license_text": "not-reviewed",
+        "dependency_licenses": "not-reviewed",
+        "security": "not-audited",
+        "reproducibility": "not-tested",
+        "sandbox_sha": null,
+        "fork_decision": "HOLD"
+      }
+    },
+    {
+      "repo": "microsoft/ai-agents-for-beginners",
+      "tier": "Curated",
+      "research_status": "editorial-desk-study",
+      "sources": [
+        {
+          "id": "readme",
+          "kind": "official-github-readme",
+          "url": "https://github.com/microsoft/ai-agents-for-beginners/blob/main/README.md",
+          "snapshot_url": "https://api.github.com/repos/microsoft/ai-agents-for-beginners/git/blobs/3479a3bc8f2245906aacfd4279cb6276cd277386",
+          "git_blob_sha": "3479a3bc8f2245906aacfd4279cb6276cd277386"
+        },
+        {
+          "id": "docs",
+          "kind": "official-documentation",
+          "url": "https://github.com/microsoft/ai-agents-for-beginners"
+        }
+      ],
+      "headline": {
+        "zh": "微软维护的 AI Agent 分章节教程与代码示例",
+        "en": "Microsoft-maintained chapter-based AI agent lessons and examples"
+      },
+      "best_for": {
+        "zh": "希望系统学习 Agent 架构、工具使用与基础安全的初学者",
+        "en": "Beginners learning agent design, tool use and basic safety"
+      },
+      "not_for": {
+        "zh": "把课程示例当成经过安全审计的生产部署模板的人",
+        "en": "Users interpreting educational examples as audited production templates"
+      },
+      "capabilities": [
+        {
+          "zh": "README 列出课程、分章节示例以及学习所需的工具链",
+          "en": "README lists the course, chapter examples and learning tools",
+          "source_ids": [
+            "readme"
+          ]
+        },
+        {
+          "zh": "课程材料配合案例讲解规划、工具调用与多 Agent 模式",
+          "en": "Lesson materials cover planning, tool calling and multi-agent patterns",
+          "source_ids": [
+            "readme",
+            "docs"
+          ]
+        }
+      ],
+      "pilot": {
+        "zh": "选择两节课重写成没有真实密钥的教学闯关任务",
+        "en": "Convert two lessons into exercises requiring no real credentials",
+        "steps": [
+          {
+            "zh": "提取学习目标与所需背景，不直接复制受版权限制素材",
+            "en": "Extract learning objectives and prerequisites without copying restricted assets"
+          },
+          {
+            "zh": "设计一段模拟工具调用任务和错误案例题",
+            "en": "Design a mock tool-calling task and a failure-case quiz"
+          },
+          {
+            "zh": "用评分规则核对完成率、提示依赖及反馈质量",
+            "en": "Score completion, hint dependency and feedback quality"
+          }
+        ],
+        "metrics": {
+          "zh": "概念题正确率、任务完成率、提示次数与学习耗时",
+          "en": "Concept accuracy, task completion, hint count and learning time"
+        }
+      },
+      "limitations": {
+        "zh": "教材并非对模型质量或生产安全的独立认证；课程图文使用权需复核",
+        "en": "Course material is not evidence of model quality or production security; content rights need review",
+        "source_ids": [
+          "readme",
+          "docs"
+        ]
+      },
+      "alternatives": [
+        "langchain-ai/langgraph",
+        "github/gh-aw"
+      ],
+      "review": {
+        "license_text": "not-reviewed",
+        "dependency_licenses": "not-reviewed",
+        "security": "not-audited",
+        "reproducibility": "not-tested",
+        "sandbox_sha": null,
+        "fork_decision": "HOLD"
+      }
+    },
+    {
+      "repo": "n8n-io/n8n",
+      "tier": "Curated",
+      "research_status": "editorial-desk-study",
+      "sources": [
+        {
+          "id": "readme",
+          "kind": "official-github-readme",
+          "url": "https://github.com/n8n-io/n8n/blob/master/README.md",
+          "snapshot_url": "https://api.github.com/repos/n8n-io/n8n/git/blobs/567d03f771487fd0be47cb5ac764d359cb281d2a",
+          "git_blob_sha": "567d03f771487fd0be47cb5ac764d359cb281d2a",
+          "readme_ref": "master"
+        },
+        {
+          "id": "docs",
+          "kind": "official-documentation",
+          "url": "https://docs.n8n.io/"
+        }
+      ],
+      "headline": {
+        "zh": "以可视化节点和自托管连接多系统业务流程",
+        "en": "Visual workflow automation with self-hosting and system integrations"
+      },
+      "best_for": {
+        "zh": "需要审批型业务自动化、数据流转与失败重试的产品团队",
+        "en": "Product teams orchestrating approvals, data movement and retries"
+      },
+      "not_for": {
+        "zh": "以为可自托管就默认拥有无限制分发或商业授权的人",
+        "en": "Users assuming self-hosting grants unrestricted commercial redistribution"
+      },
+      "capabilities": [
+        {
+          "zh": "README 描述 AI 工作流、可视化编辑与连接工具生态",
+          "en": "README documents AI workflows, visual design and integration ecosystem",
+          "source_ids": [
+            "readme"
+          ]
+        },
+        {
+          "zh": "官方文档明确自托管路径与 Sustainable Use License",
+          "en": "Official docs describe self-hosting and the Sustainable Use License",
+          "source_ids": [
+            "readme",
+            "docs"
+          ]
+        }
+      ],
+      "pilot": {
+        "zh": "用模拟 CRM 事件验证重试幂等与人工审批",
+        "en": "Validate retries, idempotency and human approval using mock CRM events",
+        "steps": [
+          {
+            "zh": "只连接本地模拟服务并记录节点权限",
+            "en": "Connect only local mock services and record node permissions"
+          },
+          {
+            "zh": "注入重复事件、服务失败与人工拒绝审批",
+            "en": "Inject duplicate events, service faults and rejected approvals"
+          },
+          {
+            "zh": "检查重复副作用、撤销行为及成本预算",
+            "en": "Audit duplicate side effects, cancellation behavior and budget"
+          }
+        ],
+        "metrics": {
+          "zh": "重复发送率、恢复成功率、审批绕过数和执行时间",
+          "en": "Duplicate send rate, recovery success, approval bypasses and runtime"
+        }
+      },
+      "limitations": {
+        "zh": "n8n 为 fair-code 而非当然适合所有闭源商业用途；须审查其原文使用许可",
+        "en": "n8n uses fair-code terms, not unrestricted commercial licensing; review exact terms",
+        "source_ids": [
+          "readme",
+          "docs"
+        ]
+      },
+      "alternatives": [
+        "activepieces/activepieces",
+        "langgenius/dify"
+      ],
+      "review": {
+        "license_text": "not-reviewed",
+        "dependency_licenses": "not-reviewed",
+        "security": "not-audited",
+        "reproducibility": "not-tested",
+        "sandbox_sha": null,
+        "fork_decision": "HOLD"
+      }
+    },
+    {
+      "repo": "activepieces/activepieces",
+      "tier": "Curated",
+      "research_status": "editorial-desk-study",
+      "sources": [
+        {
+          "id": "readme",
+          "kind": "official-github-readme",
+          "url": "https://github.com/activepieces/activepieces/blob/main/README.md",
+          "snapshot_url": "https://api.github.com/repos/activepieces/activepieces/git/blobs/a0b8adff34d2909d02480a2ed61a13b4e87a2ce4",
+          "git_blob_sha": "a0b8adff34d2909d02480a2ed61a13b4e87a2ce4"
+        },
+        {
+          "id": "docs",
+          "kind": "official-documentation",
+          "url": "https://www.activepieces.com/docs/install/overview"
+        }
+      ],
+      "headline": {
+        "zh": "可视化自动化、类型安全连接件与 MCP 扩展",
+        "en": "Visual automation, typed integration pieces and MCP extensions"
+      },
+      "best_for": {
+        "zh": "希望组合可复用连接器和内部业务工作流的开发团队",
+        "en": "Developers assembling reusable connectors and internal automation"
+      },
+      "not_for": {
+        "zh": "忽略企业版功能边界与服务账号权限管理的组织",
+        "en": "Organizations ignoring edition boundaries and service-account permissions"
+      },
+      "capabilities": [
+        {
+          "zh": "README 说明 TypeScript 可扩展 pieces 与 MCP 相关工具",
+          "en": "README describes extensible TypeScript pieces and MCP-oriented integration",
+          "source_ids": [
+            "readme"
+          ]
+        },
+        {
+          "zh": "官方部署文档介绍自托管与流程配置选项",
+          "en": "Official deployment docs explain self-hosting and configuration",
+          "source_ids": [
+            "readme",
+            "docs"
+          ]
+        }
+      ],
+      "pilot": {
+        "zh": "在合成客户线索流程中验证连接器最小授权与去重",
+        "en": "Test least privilege and deduplication in a synthetic lead workflow",
+        "steps": [
+          {
+            "zh": "使用模拟 API 搭建双步骤连接器并控制范围",
+            "en": "Implement a two-step connector against a mock API with scoped access"
+          },
+          {
+            "zh": "注入重复事件与凭据过期，禁止真实外呼",
+            "en": "Inject duplicate events and expired mock credentials; no outreach"
+          },
+          {
+            "zh": "评估撤回同意后停止下游消息的可靠性",
+            "en": "Assess whether revoked consent blocks downstream actions"
+          }
+        ],
+        "metrics": {
+          "zh": "事件去重率、权限失败拦截、延迟与撤回正确率",
+          "en": "Event deduplication, authorization denials, latency and opt-out correctness"
+        }
+      },
+      "limitations": {
+        "zh": "社区版与企业版功能及许可可能不同，必须按部署形态审查条款",
+        "en": "Community and enterprise features or terms may differ; review relevant edition rights",
+        "source_ids": [
+          "readme",
+          "docs"
+        ]
+      },
+      "alternatives": [
+        "n8n-io/n8n",
+        "langgenius/dify"
+      ],
+      "review": {
+        "license_text": "not-reviewed",
+        "dependency_licenses": "not-reviewed",
+        "security": "not-audited",
+        "reproducibility": "not-tested",
+        "sandbox_sha": null,
+        "fork_decision": "HOLD"
+      }
+    },
+    {
+      "repo": "gitroomhq/postiz-app",
+      "tier": "Curated",
+      "research_status": "editorial-desk-study",
+      "sources": [
+        {
+          "id": "readme",
+          "kind": "official-github-readme",
+          "url": "https://github.com/gitroomhq/postiz-app/blob/main/README.md",
+          "snapshot_url": "https://api.github.com/repos/gitroomhq/postiz-app/git/blobs/1b21e0a0d886e6a5e536837046e35eb86cd3ad31",
+          "git_blob_sha": "1b21e0a0d886e6a5e536837046e35eb86cd3ad31"
+        },
+        {
+          "id": "docs",
+          "kind": "official-documentation",
+          "url": "https://docs.postiz.com/quickstart"
+        }
+      ],
+      "headline": {
+        "zh": "社交媒体内容排期、跨平台发布与数据分析",
+        "en": "Social content scheduling, multi-platform publishing and analytics"
+      },
+      "best_for": {
+        "zh": "合法拥有素材且需要人工审批发布的内容运营团队",
+        "en": "Content teams with media rights and human publication approvals"
+      },
+      "not_for": {
+        "zh": "计划绕过平台限制批量刷量或未经授权使用媒体素材的人",
+        "en": "Users circumventing platform rules or reusing unlicensed assets"
+      },
+      "capabilities": [
+        {
+          "zh": "README 描述社媒排期、内容自动化及开放 API",
+          "en": "README documents social scheduling, automation and public APIs",
+          "source_ids": [
+            "readme"
+          ]
+        },
+        {
+          "zh": "官方指南提供自托管和内容发布流程入口",
+          "en": "Official docs describe self-hosting and publishing workflows",
+          "source_ids": [
+            "readme",
+            "docs"
+          ]
+        }
+      ],
+      "pilot": {
+        "zh": "在模拟社媒账号上设计脚本审批、排期及撤稿测试",
+        "en": "Design review, scheduling and retraction tests on mock social profiles",
+        "steps": [
+          {
+            "zh": "创建原创演示视频、版权清单与不对外发布的草稿",
+            "en": "Prepare original demo videos, rights checklist and unpublished drafts"
+          },
+          {
+            "zh": "通过测试 API 验证排期冲突、重复发布和审批环节",
+            "en": "Test schedule collisions, duplicate posts and approvals via mock APIs"
+          },
+          {
+            "zh": "人工复核平台合规、失败回退与删除记录",
+            "en": "Review platform compliance, failure rollback and deletion logs"
+          }
+        ],
+        "metrics": {
+          "zh": "排期成功率、重复发布率、审核时间和内容授权覆盖率",
+          "en": "Schedule success, duplicate rate, review time and rights coverage"
+        }
+      },
+      "limitations": {
+        "zh": "官方资料说明 AGPL 授权；另需核验平台 API 权限、素材版权和自动发布规则",
+        "en": "README names AGPL terms; review platform API permissions, asset rights and posting rules",
+        "source_ids": [
+          "readme",
+          "docs"
+        ]
+      },
+      "alternatives": [
+        "remotion-dev/remotion",
+        "n8n-io/n8n"
+      ],
+      "review": {
+        "license_text": "not-reviewed",
+        "dependency_licenses": "not-reviewed",
+        "security": "not-audited",
+        "reproducibility": "not-tested",
+        "sandbox_sha": null,
+        "fork_decision": "HOLD"
+      }
+    },
+    {
+      "repo": "chatwoot/chatwoot",
+      "tier": "Curated",
+      "research_status": "editorial-desk-study",
+      "sources": [
+        {
+          "id": "readme",
+          "kind": "official-github-readme",
+          "url": "https://github.com/chatwoot/chatwoot/blob/develop/README.md",
+          "snapshot_url": "https://api.github.com/repos/chatwoot/chatwoot/git/blobs/d8b8ae7a2331ba9eb4002ea7d2911a4ae36bf297",
+          "git_blob_sha": "d8b8ae7a2331ba9eb4002ea7d2911a4ae36bf297",
+          "readme_ref": "develop"
+        },
+        {
+          "id": "docs",
+          "kind": "official-documentation",
+          "url": "https://www.chatwoot.com/help-center"
+        }
+      ],
+      "headline": {
+        "zh": "可自托管的多渠道客户对话与 AI 客服平台",
+        "en": "Self-hosted multi-channel customer support and AI assistant platform"
+      },
+      "best_for": {
+        "zh": "需要统一客户服务收件箱和升级人工客服流程的团队",
+        "en": "Teams centralizing customer conversations and human escalation"
+      },
+      "not_for": {
+        "zh": "打算用客服工具未经同意发送营销推广的人",
+        "en": "Teams using support channels for unsolicited promotional messages"
+      },
+      "capabilities": [
+        {
+          "zh": "README 说明多渠道会话管理、团队协作与 AI 客服功能",
+          "en": "README documents omnichannel conversations, teams and AI support features",
+          "source_ids": [
+            "readme"
+          ]
+        },
+        {
+          "zh": "官方帮助中心介绍客服流程及账户配置",
+          "en": "Official help center covers support workflows and setup",
+          "source_ids": [
+            "readme",
+            "docs"
+          ]
+        }
+      ],
+      "pilot": {
+        "zh": "用合成售后工单检验分派、撤回和人工接管",
+        "en": "Test assignment, opt-out and human escalation using synthetic tickets",
+        "steps": [
+          {
+            "zh": "构建无真实个人信息的工单与虚拟客服队列",
+            "en": "Create fictional support tickets and a mock agent queue"
+          },
+          {
+            "zh": "测试重复消息、错分派与客户要求人工介入",
+            "en": "Inject duplicates, misrouting and human-escalation requests"
+          },
+          {
+            "zh": "审计工单可见性、响应准确性与删除流程",
+            "en": "Audit ticket visibility, response accuracy and deletion workflow"
+          }
+        ],
+        "metrics": {
+          "zh": "首次响应时间、分派准确率、误回复和删除覆盖率",
+          "en": "First-response time, routing accuracy, wrong replies and deletion coverage"
+        }
+      },
+      "limitations": {
+        "zh": "客服数据可能高度敏感；需要明示同意、访问控制和独立安全审查",
+        "en": "Support data can be sensitive; apply consent, access controls and independent security review",
+        "source_ids": [
+          "readme",
+          "docs"
+        ]
+      },
+      "alternatives": [
+        "TwentyHQ/twenty",
+        "formbricks/formbricks"
+      ],
+      "review": {
+        "license_text": "not-reviewed",
+        "dependency_licenses": "not-reviewed",
+        "security": "not-audited",
+        "reproducibility": "not-tested",
+        "sandbox_sha": null,
+        "fork_decision": "HOLD"
+      }
+    },
+    {
+      "repo": "posthog/posthog",
+      "tier": "Curated",
+      "research_status": "editorial-desk-study",
+      "sources": [
+        {
+          "id": "readme",
+          "kind": "official-github-readme",
+          "url": "https://github.com/posthog/posthog/blob/master/README.md",
+          "snapshot_url": "https://api.github.com/repos/posthog/posthog/git/blobs/bd1feadbfe3824e089c8651589f147c0d38aedea",
+          "git_blob_sha": "bd1feadbfe3824e089c8651589f147c0d38aedea",
+          "readme_ref": "master"
+        },
+        {
+          "id": "docs",
+          "kind": "official-documentation",
+          "url": "https://posthog.com/docs"
+        }
+      ],
+      "headline": {
+        "zh": "产品使用行为、实验、错误与会话数据分析平台",
+        "en": "Product analytics, experiments, errors and session-data platform"
+      },
+      "best_for": {
+        "zh": "需要验证增长漏斗与产品留存假设的产品团队",
+        "en": "Product teams testing funnel and retention hypotheses"
+      },
+      "not_for": {
+        "zh": "在缺乏告知和数据治理情况下采集敏感行为或会话的人",
+        "en": "Operators capturing sensitive behavior or sessions without governance"
+      },
+      "capabilities": [
+        {
+          "zh": "README 描述产品分析、会话回放、错误和数据上下文能力",
+          "en": "README describes product analytics, replay, errors and context",
+          "source_ids": [
+            "readme"
+          ]
+        },
+        {
+          "zh": "文档列出分析事件埋点和自托管选项及限制",
+          "en": "Docs cover event instrumentation and self-hosting options with constraints",
+          "source_ids": [
+            "readme",
+            "docs"
+          ]
+        }
+      ],
+      "pilot": {
+        "zh": "以合成事件构建注册→激活→留存漏斗并模拟指标偏差",
+        "en": "Build synthetic signup-to-retention funnels and test metric sensitivity",
+        "steps": [
+          {
+            "zh": "建立匿名事件字典并限制不必要的个人属性",
+            "en": "Create an anonymized event schema with minimal attributes"
+          },
+          {
+            "zh": "用生成数据检验去重、时区与分组口径一致性",
+            "en": "Test deduplication, time zone and cohort-definition consistency"
+          },
+          {
+            "zh": "核对漏斗率、留存定义、样本偏差与删除流程",
+            "en": "Audit funnel conversion, retention definitions, sampling bias and deletion"
+          }
+        ],
+        "metrics": {
+          "zh": "事件重复率、漏斗一致性、留存口径差异和治理完成率",
+          "en": "Event duplication, funnel consistency, cohort drift and governance coverage"
+        }
+      },
+      "limitations": {
+        "zh": "行为采集和会话回放需要隐私、同意与数据保留控制；自托管可用性和支持另核验",
+        "en": "Behavior collection and replay require privacy, consent and retention controls; self-hosted support differs",
+        "source_ids": [
+          "readme",
+          "docs"
+        ]
+      },
+      "alternatives": [
+        "formbricks/formbricks",
+        "TwentyHQ/twenty"
       ],
       "review": {
         "license_text": "not-reviewed",
