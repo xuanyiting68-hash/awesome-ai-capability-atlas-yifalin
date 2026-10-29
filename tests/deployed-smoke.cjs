@@ -69,6 +69,7 @@ const errors=[];
       assert.equal(await page.locator('#fork').innerText(),'0');
       assert.equal(await page.locator('#done').innerText(),'0');
       assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,'Star Pack horizontal overflow '+width);
+      if(width===390){const card=await page.locator('#cards .card').first().boundingBox();assert.ok(card&&card.y<844,'First mobile Star Pack card should appear in the first screen');}
       assert.equal(await page.locator('.card .flag.hold').count(),30);
       await page.evaluate(()=>scrollTo(0,0));
       await page.screenshot({path:'test-results/adoption-'+width+'.png'});
