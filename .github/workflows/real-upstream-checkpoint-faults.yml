@@ -1,0 +1,65 @@
+name: Pilot 09 actual SQLite checkpoint-write process crashes
+on:
+  pull_request:
+    paths:
+      - 'scripts/real_checkpoint_faults.py'
+      - 'scripts/verify_checkpoint_faults.py'
+      - 'scripts/real_crash_consistency.py'
+      - 'scripts/real_durable_recovery.py'
+      - '.github/workflows/real-upstream-checkpoint-faults.yml'
+      - 'docs/REAL_UPSTREAM_CHECKPOINT_FAULTS_CN.md'
+      - 'pilot-lab.html'
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/real_checkpoint_faults.py'
+      - 'scripts/verify_checkpoint_faults.py'
+      - 'scripts/real_crash_consistency.py'
+      - 'scripts/real_durable_recovery.py'
+      - '.github/workflows/real-upstream-checkpoint-faults.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  checkpoint-write-faults:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONNOUSERSITE: '1'
+      LANGSMITH_TRACING: 'false'
+      LANGCHAIN_TRACING_V2: 'false'
+      LANGGRAPH_STRICT_MSGPACK: 'true'
+      PIP_DISABLE_PIP_VERSION_CHECK: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned actual upstream SDK/checkpointer
+        run: |
+          python -m pip install --only-binary=:all: --no-cache-dir 'langgraph==1.2.18' 'langgraph-checkpoint-sqlite==3.1.2'
+          python -m pip freeze --all > pilot09-dependencies.txt
+      - name: Verify Python syntax
+        run: python -m py_compile scripts/real_checkpoint_faults.py scripts/verify_checkpoint_faults.py
+      - name: Actual saver checkpoint/writes SQL-trigger abrupt crashes
+        run: python scripts/verify_checkpoint_faults.py --output-dir test-results/p09-a
+      - name: Independent rerun in entirely fresh SQLite DB set
+        run: python scripts/verify_checkpoint_faults.py --output-dir test-results/p09-b
+      - name: Upload synthetic run evidence without raw database
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pilot09-real-sqlite-checkpoint-fault-evidence
+          path: |
+            test-results/p09-a/pilot09-result.json
+            test-results/p09-a/stages/*.json
+            test-results/p09-a/*.p09-faults.jsonl
+            test-results/p09-b/pilot09-result.json
+            test-results/p09-b/stages/*.json
+            test-results/p09-b/*.p09-faults.jsonl
+            pilot09-dependencies.txt
+          if-no-files-found: warn
+          retention-days: 30
