@@ -16,7 +16,7 @@ SITES=("checkpoint_before","checkpoint_after","writes_after")
 def execute(root):
     root=Path(root);root.mkdir(parents=True,exist_ok=True)
     stages=root/"stages";stages.mkdir(exist_ok=True)
-    checks=[];count=0
+    checks=[];count=0;site_results=[]
 
     def require(label,ok,details=None):
         if not ok:raise AssertionError(label+" | evidence="+json.dumps(details,sort_keys=True))
@@ -103,10 +103,38 @@ def execute(root):
         with __import__("sqlite3").connect(db) as conn:
             integrity=conn.execute("PRAGMA integrity_check").fetchone()[0]
         require(site+" SQLite physical integrity_check passes",integrity=="ok",integrity)
+        site_results.append({"site":site,"graph_recovery_route":recovered["route"],
+                             "local_compensation_used":correction is not None,
+                             "sqlite_checkpoints_after_crash":after["checkpoint_rows"],
+                             "sqlite_writes_after_crash":after["write_rows"],
+                             "postcrash_effects":after["counts"]["effects"],
+                             "final_effects":finalized["counts"]["effects"]})
+
+    # A separate fresh DB must show that a checkpoint-only approval string
+    # does not override a revoked durable server-side synthetic ticket.
+    thread="alpha-revoked_control"
+    db=root/"revoked-control.sqlite"
+    call(db,"p09","start",thread)
+    call(db,"p07","grant",thread)
+    call(db,"p09","fault",thread,site="checkpoint_before",expected_exit=89)
+    call(db,"p07","revoke",thread)
+    orphan=call(db,"p09","recover",thread)
+    denied=call(db,"p09","compensate",thread)
+    final=call(db,"p09","inspect",thread)
+    require("P09 revoked durable approval blocks local compensation",
+            orphan["orphaned_approval_detected"] is True
+            and denied["outcome"]=="BLOCK: expired_or_revoked_approval"
+            and denied["counts"]["effects"]==0
+            and final["counts"]["audit"]==0
+            and final["counts"]["outbox"]==0
+            and final["consumed_approvals"]==0,
+            {"recovery":orphan,"denied":denied,"final":final})
 
     result={"schema_version":1,"all_passed":True,"checks":checks,
             "cases_passed":len(checks),"independent_cli_processes":count,
             "injection_sites":list(SITES),
+            "observed_recovery_routes":site_results,
+            "revoked_approval_negative_control_passed":True,
             "actual_upstream":{"langgraph":"1.2.18",
                                "langgraph-checkpoint-sqlite":"3.1.2"},
             "actual_crash":"os._exit(89) inside SQLite TEMP trigger user function",
