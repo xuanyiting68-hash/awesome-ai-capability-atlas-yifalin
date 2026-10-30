@@ -1,0 +1,68 @@
+name: Pilot 11 real cross-database ACK gaps, clock drift and audit
+on:
+  pull_request:
+    paths:
+      - 'scripts/real_crossdb_reliability.py'
+      - 'scripts/verify_crossdb_reliability.py'
+      - 'scripts/real_recovery_coordinator.py'
+      - 'scripts/real_checkpoint_faults.py'
+      - 'scripts/real_outbox_dispatch.py'
+      - 'scripts/real_crash_consistency.py'
+      - 'scripts/real_durable_recovery.py'
+      - '.github/workflows/real-upstream-crossdb.yml'
+      - 'docs/REAL_UPSTREAM_CROSSDB_CN.md'
+      - 'pilot-lab.html'
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/real_crossdb_reliability.py'
+      - 'scripts/verify_crossdb_reliability.py'
+      - '.github/workflows/real-upstream-crossdb.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  crossdb-recovery:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 18
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONNOUSERSITE: '1'
+      LANGSMITH_TRACING: 'false'
+      LANGCHAIN_TRACING_V2: 'false'
+      LANGGRAPH_STRICT_MSGPACK: 'true'
+      PIP_DISABLE_PIP_VERSION_CHECK: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned genuine LangGraph upstream and SQLite Saver
+        run: |
+          python -m pip install --only-binary=:all: --no-cache-dir 'langgraph==1.2.18' 'langgraph-checkpoint-sqlite==3.1.2'
+          python -m pip freeze --all > pilot11-dependencies.txt
+      - name: Validate Python source syntax
+        run: python -m py_compile scripts/real_crossdb_reliability.py scripts/verify_crossdb_reliability.py
+      - name: Actual subprocess SQL-trigger, ACK-gap, clock and audit tests
+        run: python scripts/verify_crossdb_reliability.py --output-dir test-results/p11-a
+      - name: Independent rerun on entirely separate producer receiver and auditor files
+        run: python scripts/verify_crossdb_reliability.py --output-dir test-results/p11-b
+      - name: Upload sanitized evidence without any SQLite DBs or account info
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pilot11-real-crossdb-audit-evidence
+          path: |
+            test-results/p11-a/pilot11-result.json
+            test-results/p11-a/steps/*.json
+            test-results/p11-a/*.p09-faults.jsonl
+            test-results/p11-a/*.p11-faults.jsonl
+            test-results/p11-b/pilot11-result.json
+            test-results/p11-b/steps/*.json
+            test-results/p11-b/*.p09-faults.jsonl
+            test-results/p11-b/*.p11-faults.jsonl
+            pilot11-dependencies.txt
+          if-no-files-found: warn
+          retention-days: 30
