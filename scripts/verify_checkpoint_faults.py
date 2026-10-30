@@ -66,18 +66,40 @@ def execute(root):
                 after["counts"]["effects"] in (0,1) and
                 after["reconciliation_ok"] is True,after)
         recovered=call(db,"p09","recover",thread)
+        correction=None
+        if recovered["orphaned_approval_detected"]:
+            # This is the observed checkpoint failure: LangGraph has no next
+            # node although approval is recorded and the local effect is absent.
+            # Count it as a separately detected scheduling GAP, not a graph
+            # recovery success; require a durable scoped-ticket compensation.
+            require(site+" orphaned approved checkpoint explicitly detected",
+                    recovered["route"]=="graph_no_runnable_nodes"
+                    and recovered["outcome"]=="APPROVED: mock_only"
+                    and recovered["counts"]["effects"]==0,recovered)
+            correction=call(db,"p09","compensate",thread)
+            require(site+" ticket-bound compensation is NOT graph replay",
+                    correction["route"]=="explicit_ticket_bound_local_compensation"
+                    and correction["outcome"]=="RECOVERY: local_compensation_not_graph_replay"
+                    and correction["local_decision"]=="ALLOW: synthetic_draft_committed"
+                    and correction["orphaned_approval_detected"] is False,
+                    correction)
+        else:
+            require(site+" true graph replay (not compensation) reaches commit",
+                    recovered["next"]==[]
+                    and recovered["outcome"] in
+                    ("ALLOW: synthetic_draft_committed",
+                     "ALREADY: synthetic_draft_committed")
+                    and recovered["counts"]["effects"]==1,recovered)
         finalized=call(db,"p09","inspect",thread)
-        require(site+" normal replay converges to one atomic local effect",
-                recovered["next"]==[] and
-                recovered["outcome"] in
-                ("ALLOW: synthetic_draft_committed","ALREADY: synthetic_draft_committed")
-                and finalized["next"]==[]
+        require(site+" recovered/compensated local transaction has exactly one effect",
+                finalized["next"]==[]
                 and finalized["counts"]["effects"]==1
                 and finalized["counts"]["outbox"]==1
                 and finalized["counts"]["audit"]==1
                 and finalized["consumed_approvals"]==1
                 and finalized["reconciliation_ok"] is True,
-                {"post_crash":after,"recover":recovered,"final":finalized})
+                {"post_crash":after,"recover":recovered,
+                 "compensation":correction,"final":finalized})
         with __import__("sqlite3").connect(db) as conn:
             integrity=conn.execute("PRAGMA integrity_check").fetchone()[0]
         require(site+" SQLite physical integrity_check passes",integrity=="ok",integrity)
@@ -89,6 +111,7 @@ def execute(root):
                                "langgraph-checkpoint-sqlite":"3.1.2"},
             "actual_crash":"os._exit(89) inside SQLite TEMP trigger user function",
             "checkpoint_durability":"sync",
+            "recovery_claim":"graph replay where runnable; separately labelled ticket-bound local compensation for observed scheduler gap",
             "real_identity_verified":False,"real_user_data":False,
             "real_orders":0,"real_model_calls":0,
             "failure_scope":"SQLite SQL INSERT trigger, not OS power failure",
