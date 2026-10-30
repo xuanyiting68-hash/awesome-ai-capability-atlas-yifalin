@@ -79,23 +79,6 @@ def execute(root):
         if p.returncode:raise RuntimeError(json.dumps(evidence))
         return json.loads(p.stdout)
 
-    def orphan(case,thread=None,site="checkpoint_before",ttl=60,principal=None):
-        t=thread or ("alpha-"+case)
-        start=cli(case,"p09","start",thread=t)
-        require(case+" real LangGraph review interrupt",
-                start["interrupted"] and "review" in start["next"],start)
-        grant=cli(case,"p07","grant",thread=t,ttl=ttl,
-                  principal=principal or ("beta_owner" if t.startswith("beta-") else "alpha_owner"))
-        require(case+" synthetic scoped grant",grant["granted"] is True,grant)
-        fault=cli(case,"p09","fault",thread=t,site=site) if False else None
-        # p09 fault site must be passed as --site, not --fault.
-        db=root/(case+".sqlite")
-        args=P09+["--db",str(db),"--stage","fault","--thread",t,"--site",site]
-        p=subprocess.run(args,cwd=ROOT,capture_output=True,text=True,timeout=45)
-        nonlocal_count[0]+=0  # reserved for cross-call counters
-        # Record this process precisely like all CLI calls.
-        return t,p
-
     # Seed a real checkpoint crash using the same logger as other stages.
     def seed(case,thread=None,site="checkpoint_before",ttl=60,principal=None):
         nonlocal count
