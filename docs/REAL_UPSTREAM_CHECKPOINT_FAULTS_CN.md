@@ -26,6 +26,20 @@ Pilot Lab 07 的故障注入是在**业务 commit 节点**运行过程中；本�
 
 **受控补偿不是 LangGraph 原生调度恢复，也不是真实生产身份认证。** 如果无授权、跨租户、凭证撤销或过期，不能补偿。每个故障场景单独记录发生的是图直接恢复还是测试环境本地补偿。第一轮失败日志保留，修复后的独立 CI 才能成为新证据。
 
+## 最新实测结果（PR 分支指定运行）
+
+对应 `c110c24d05cfd2ad4b4c49c52527d67777b029a7` 的 [真实 GitHub Actions 运行](https://github.com/xuanyiting68-hash/awesome-ai-capability-atlas-yifalin/actions/runs/41023283302)：**两套独立数据库均为 29/29 检查通过，每套 27 次单独 Python CLI 调用**。原始工件内有两个 `pilot09-result.json`，记录了以下同样的结果：
+
+| 触发点 | 崩溃后 checkpoint / writes 行数 | 直接图恢复 | 独立本地补偿 | 最终本地效果 |
+|---|---:|---|---|---:|
+| `checkpoint_before` | 3 / 13 | `graph_no_runnable_nodes` | 有（有效模拟审批） | 1 |
+| `checkpoint_after` | 3 / 13 | `graph_no_runnable_nodes` | 有（有效模拟审批） | 1 |
+| `writes_after` | 3 / 8 | `graph_review_resume` | 不需要 | 1 |
+
+单独的撤销控制：对发生调度缺口的独立合成任务撤销其服务端模拟批准，再调用受控补偿，必须得到 `BLOCK: expired_or_revoked_approval`，且业务效果、outbox、审计全部保持零。两套独立复现一致。数据库 `PRAGMA integrity_check` 通过。未上传 SQLite 原始文件。
+
+**关键解释：**这是准确观测到的 LangGraph 1.2.18 + SqliteSaver 3.1.2 在本轮 SQL trigger 故障注入下的**调度与本地业务账本分离**现象；不代表数据库损坏，也不证明所有 checkpoint 写入中断都会产生同样结果。对实际部署而言，需要显式的工作队列和审计对账门禁，不能只凭 `StateSnapshot.next=[]` 判定业务已完成。已提交的受控补偿并不声称自动恢复了原始图调度器。
+
 ## 后续恢复与强制验收
 
 1. 使用真实 `StateGraph`、`interrupt`、`Command(resume)` 和真实 `SqliteSaver` 建立可恢复模拟审批线程。
