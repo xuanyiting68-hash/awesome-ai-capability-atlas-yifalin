@@ -195,6 +195,7 @@ def inspect(sender,receiver,auditor):
         prev=rowhash
         indexed[(t,k)]=(event,ph)
     source_mismatch=[]
+    pending_sender=sum(not delivered for payload,delivered in out.values())
     receipt_orphans=[]
     ack_without_receipt=[]
     ack_without_audit=[]
@@ -217,9 +218,10 @@ def inspect(sender,receiver,auditor):
         if pair not in out:audit_invalid.append(pair)
     consistent=(chain_ok and not source_mismatch and not receipt_orphans
                 and not ack_without_receipt and not ack_without_audit and
-                not receipt_before_ack and not audit_invalid
+                not receipt_before_ack and not audit_invalid and pending_sender==0
                 and len(out)==len(effect)==len(origin))
     return {"source_count":len(out),"source_acked":sum(v[1] for v in out.values()),
+            "pending_sender":pending_sender,
             "receiver_unique":len(receipts),"auditor_events":len(events),
             "audit_chain_ok":chain_ok,
             "source_mismatch":len(source_mismatch),
