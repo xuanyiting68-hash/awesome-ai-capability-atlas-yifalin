@@ -245,7 +245,8 @@ def reconcile(path):
             "done_effect_mismatches":task_gaps,"orphaned_unqueued":missing_tasks,
             "approved_graph_candidates":candidates,
             "total_attempts":sum(x[4] for x in tasks),
-            "atomic_recovery_verified":not(task_gaps or missing_tasks) and ledger_ok,
+            "atomic_recovery_verified":not(task_gaps or missing_tasks) and ledger_ok
+                                       and all(x[3]=="DONE" for x in tasks),
             "real_identity_verified":False,"real_external_delivery":False,
             "real_orders":0}
 
