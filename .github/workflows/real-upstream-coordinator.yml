@@ -1,0 +1,66 @@
+name: Pilot 10 real checkpoint-orphan recovery coordinator (isolated)
+on:
+  pull_request:
+    paths:
+      - 'scripts/real_recovery_coordinator.py'
+      - 'scripts/verify_recovery_coordinator.py'
+      - 'scripts/real_checkpoint_faults.py'
+      - 'scripts/real_crash_consistency.py'
+      - 'scripts/real_durable_recovery.py'
+      - '.github/workflows/real-upstream-coordinator.yml'
+      - 'docs/REAL_UPSTREAM_COORDINATOR_CN.md'
+      - 'pilot-lab.html'
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/real_recovery_coordinator.py'
+      - 'scripts/verify_recovery_coordinator.py'
+      - '.github/workflows/real-upstream-coordinator.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  independent-coordinator:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 18
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONNOUSERSITE: '1'
+      LANGSMITH_TRACING: 'false'
+      LANGCHAIN_TRACING_V2: 'false'
+      LANGGRAPH_STRICT_MSGPACK: 'true'
+      PIP_DISABLE_PIP_VERSION_CHECK: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned upstream LangGraph and SqliteSaver
+        run: |
+          python -m pip install --only-binary=:all: --no-cache-dir 'langgraph==1.2.18' 'langgraph-checkpoint-sqlite==3.1.2'
+          python -m pip freeze --all > pilot10-dependencies.txt
+      - name: Check Python syntax
+        run: python -m py_compile scripts/real_recovery_coordinator.py scripts/verify_recovery_coordinator.py
+      - name: Actual independent coordinator recovering SQL-trigger crash orphans
+        run: python scripts/verify_recovery_coordinator.py --output-dir test-results/p10-a
+      - name: Independent second run using all-new synthetic SQLite databases
+        run: python scripts/verify_recovery_coordinator.py --output-dir test-results/p10-b
+      - name: Upload sanitized process and assertion evidence (exclude SQLite)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pilot10-coordinator-real-recovery-evidence
+          path: |
+            test-results/p10-a/pilot10-result.json
+            test-results/p10-a/stages/*.json
+            test-results/p10-a/*.p09-faults.jsonl
+            test-results/p10-a/*.p10-faults.jsonl
+            test-results/p10-b/pilot10-result.json
+            test-results/p10-b/stages/*.json
+            test-results/p10-b/*.p09-faults.jsonl
+            test-results/p10-b/*.p10-faults.jsonl
+            pilot10-dependencies.txt
+          if-no-files-found: warn
+          retention-days: 30
