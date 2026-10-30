@@ -166,7 +166,7 @@ def execute(root):
         case="coordinator-"+crash.replace("_","-")
         thread=seed(case)
         cli(case,"p10","scan")
-        lease=cli(case,"p10","claim",owner="crashing-worker",lease_seconds=0.45)
+        lease=cli(case,"p10","claim",owner="crashing-worker",lease_seconds=3.0)
         cli(case,"p10","apply",thread=thread,owner="crashing-worker",
             token=lease["token"],fault=crash,expected_exit=90)
         after=cli(case,"p10","inspect")
@@ -178,7 +178,7 @@ def execute(root):
                 after["effect_count"]==1 and after["phases"]["DONE"]==1
                 and after["atomic_recovery_verified"] is True,after)
         if not persisted:
-            time.sleep(0.7)
+            time.sleep(3.3)
             renewed=cli(case,"p10","claim",owner="reboot-worker",lease_seconds=3)
             settled=cli(case,"p10","apply",thread=thread,owner="reboot-worker",token=renewed["token"])
             require("Precommit crash rolled back all and replayed with fresh lease",
