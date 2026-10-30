@@ -81,21 +81,52 @@ def run(path,stage,thread,site):
             if "review" in state.next:
                 result=graph.invoke(Command(resume={"approved":True,
                     "source":"owner_session"}),config=cfg,durability="sync")
+                route="graph_review_resume"
             elif state.next:
                 result=graph.invoke(None,config=cfg,durability="sync")
+                route="graph_pending_node_replay"
             else:
                 result=state.values
+                route="graph_no_runnable_nodes"
+        elif stage=="compensate":
+            # Do NOT infer that an approved-looking LangGraph checkpoint is enough
+            # to execute a side effect. Reconcile against a durable, scoped, active
+            # mock approval in the SERVER DATABASE before any local compensation.
+            state=graph.get_state(cfg)
+            if state.next or state.values.get("outcome")!="APPROVED: mock_only":
+                raise RuntimeError("not an approved checkpoint scheduling gap")
+            tenant=p07.tenant_for(thread)
+            key="p09-"+thread
+            with base.connect(path) as conn:
+                ticket=conn.execute("""SELECT tenant,resource,idem,expires_at,
+                    revoked,consumed FROM p07_approvals WHERE thread=?""",
+                    (thread,)).fetchone()
+            if not ticket or ticket[:3]!=(tenant,"synthetic_draft",key):
+                result={"outcome":"BLOCK: scope_mismatch_or_missing_approval"}
+            elif ticket[4] or ticket[3]<=__import__("time").time():
+                result={"outcome":"BLOCK: expired_or_revoked_approval"}
+            else:
+                decision=p07.consistent_commit(path,thread,key)
+                result={"outcome":"RECOVERY: local_compensation_not_graph_replay",
+                        "local_decision":decision}
+            route="explicit_ticket_bound_local_compensation"
         else:raise ValueError(stage)
         state=graph.get_state(cfg)
+        observed=p07.snapshot(path)
+        orphan=(not state.next and state.values.get("outcome")=="APPROVED: mock_only"
+                and observed["counts"]["effects"]==0)
         return {"stage":stage,"outcome":result.get("outcome"),
+                "route":route if stage in ("recover","compensate") else stage,
+                "orphaned_approval_detected":orphan,
+                "local_decision":result.get("local_decision"),
                 "next":list(state.next),"interrupted":"__interrupt__" in result,
-                "pid":os.getpid(),**p07.snapshot(path)}
+                "pid":os.getpid(),**observed}
 
 
 def main():
     p=argparse.ArgumentParser()
     p.add_argument("--db",type=Path,required=True)
-    p.add_argument("--stage",choices=("start","fault","recover","inspect"),required=True)
+    p.add_argument("--stage",choices=("start","fault","recover","compensate","inspect"),required=True)
     p.add_argument("--thread",required=True)
     p.add_argument("--site",choices=sorted(SITES),default="checkpoint_before")
     a=p.parse_args()
