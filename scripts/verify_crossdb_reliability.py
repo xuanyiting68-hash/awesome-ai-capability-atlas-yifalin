@@ -41,6 +41,8 @@ def execute(root):
             args=P09+["--db",str(sender),"--stage",stage,"--thread",thread]
         elif tool=="p10":
             args=P10+["--db",str(sender),"--stage",stage]
+            if stage in ("apply","enqueue") and thread:
+                args+=["--thread",thread]
         else:
             args=P11+["--sender",str(sender),"--receiver",str(receiver),
                        "--auditor",str(auditor),"--stage",stage]
