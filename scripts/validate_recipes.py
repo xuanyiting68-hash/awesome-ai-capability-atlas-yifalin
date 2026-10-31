@@ -70,6 +70,8 @@ def validate_recipes(data, blueprints, curated, briefs, metadata):
             if (step.get("order") != index or step.get("label_zh") != bp["stages"][index-1]
                     or step.get("candidate_repo") not in [None, *tools]
                     or step.get("gate") not in ("human-approval", "manual-review")
+                    or not isinstance(step.get("label_en"), str)
+                    or len(step["label_en"]) < 12
                     or step.get("output_marker") != f"step-{index}.md"):
                 raise ValueError("untraceable step or missing evidence output")
         if steps[0]["gate"] != "human-approval" or steps[-1]["gate"] != "human-approval":
@@ -82,6 +84,8 @@ def validate_recipes(data, blueprints, curated, briefs, metadata):
             vals = item.get(key)
             if not isinstance(vals, list) or len(vals) < 2 or any(not isinstance(v, str) or len(v.strip()) < 6 for v in vals):
                 raise ValueError("reproduction evidence missing " + key)
+        if not isinstance(item.get("guardrails_en"), list) or len(item["guardrails_en"]) != len(bp["guardrails"]) or any(len(v) < 12 for v in item["guardrails_en"]):
+            raise ValueError("incomplete English safety guardrails")
         if item.get("guardrails_zh") != bp["guardrails"] or item.get("metrics_zh") != bp["kpis"]:
             raise ValueError("blueprint guardrails or KPIs were silently altered")
         demo = item.get("offline_demo_path")
