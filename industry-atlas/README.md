@@ -44,3 +44,15 @@
 运行：`python build.py` 后执行 `python validate.py && python check.py && python check_expert.py && python check_workflows.py`。
 
 所有64套均属于编辑研究假说而非真实客户案例，工具推荐不是已验证兼容性保证；ROI 是用户输入的算术情景、不是已实现收益。
+
+## V1.2 | AI Career & Competency Mobility
+
+The standalone [career.html](career.html) is an offline-first, mobile-responsive companion to the 32-industry Expert Studio. It includes **225 existing occupational/role labels**, **50 emerging or editorial composite AI roles**, **22 transferable competency tags**, **69 learning/documentation gateways** and **675 editorial transition suggestions** (three per source role). These are *not* verified vacancy counts, occupational forecasts, salaries, certifications, real personal skills or job-placement probabilities.
+
+On page: industry/role selection, editable self-assessment of existing competencies, target-role exploration, displayed overlaps and gaps, curated source-linked learning entries, four-week practice plan, Markdown portfolio plan and CSV gap export. Automatic action levels L0-L4 explicitly require authentication, approval, audit and testing before any real system access. No data leaves the page and no third-party skills are executed.
+
+Machine-readable datasets: `careers.json`, `current_roles_v12.csv`, `new_ai_roles_v12.csv`, `learning_resources_v12.csv`, `migration_routes_v12.csv`. Built from editorial occupation labels; **O*NET/ESCO mappings have not been completed**. Training portals and vendor tools are discovery links, not audited course licenses or certified compatible modules.
+
+References: [WEF Future of Jobs 2025](https://www.weforum.org/publications/the-future-of-jobs-report-2025), [O*NET](https://www.onetcenter.org/database.html), [ESCO](https://esco.ec.europa.eu/en/classification), [Microsoft WTI](https://www.microsoft.com/en-us/worklab/work-trend-index/2025-the-year-the-frontier-firm-is-born), [OpenAI Academy](https://academy.openai.com/pages/courses), [NIST AI RMF](https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence).
+
+Validation: `python validate_career.py` and optional pinned Playwright browser smoke `python check_career.py`. **Draft PR / merge HOLD** until exact-head CI passes, sources and rights are reviewed, and an owner approves publication.
