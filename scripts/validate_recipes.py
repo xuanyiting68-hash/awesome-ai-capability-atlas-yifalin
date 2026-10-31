@@ -12,7 +12,7 @@ LEVELS = {"beginner", "intermediate", "advanced"}
 
 
 def validate_recipes(data, blueprints, curated, briefs, metadata):
-    if data.get("schema_version") != 1 or data.get("version") != "1.5.0":
+    if data.get("schema_version") != 1 or data.get("version") != "1.5.1":
         raise ValueError("unsupported recipes schema/version")
     if data.get("source_blueprints_version") != blueprints.get("version"):
         raise ValueError("stale source blueprint version")
@@ -89,7 +89,16 @@ def validate_recipes(data, blueprints, curated, briefs, metadata):
         if item.get("guardrails_zh") != bp["guardrails"] or item.get("metrics_zh") != bp["kpis"]:
             raise ValueError("blueprint guardrails or KPIs were silently altered")
         demo = item.get("offline_demo_path")
-        if demo is not None and (rid != "leads" or demo != "examples/consent_lead_triage/run_demo.py"):
+        info = item.get("first_party_demo")
+        if rid in ("leads", "education", "finance"):
+            required = {"state": "synthetic-stdlib-only", "scenario": rid,
+                        "runner": "examples/recipe_demos/run_demo.py",
+                        "fixture": "examples/recipe_demos/synthetic_fixtures.json",
+                        "expected": "data/recipe_demo_contract.json",
+                        "verified_third_party_integration": False}
+            if info != required or demo != required["runner"]:
+                raise ValueError("first-party demo scope, provenance or integration claim invalid")
+        elif info is not None or demo is not None:
             raise ValueError("unverified or external demo path")
     if ids != set(plans) or len(repo_refs) < 15:
         raise ValueError("source blueprint coverage incomplete")
