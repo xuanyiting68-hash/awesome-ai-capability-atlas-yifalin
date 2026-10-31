@@ -1,0 +1,59 @@
+name: V1.5.1 three first-party offline recipe demos
+on:
+  pull_request:
+    paths:
+      - 'examples/recipe_demos/**'
+      - 'examples/consent_lead_triage/**'
+      - 'data/recipe_demo_contract.json'
+      - 'data/capability_recipes.json'
+      - 'scripts/verify_recipe_demos.py'
+      - 'scripts/test_recipe_demos.py'
+      - 'scripts/validate_recipes.py'
+      - 'scripts/build_site.py'
+      - 'recipes.html'
+      - '.github/workflows/recipe-demos.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'examples/recipe_demos/**'
+      - 'examples/consent_lead_triage/**'
+      - 'data/recipe_demo_contract.json'
+      - 'data/capability_recipes.json'
+      - 'scripts/verify_recipe_demos.py'
+      - '.github/workflows/recipe-demos.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  three-stdlib-scenarios:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONNOUSERSITE: '1'
+      PIP_DISABLE_PIP_VERSION_CHECK: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Stdlib only - verify real CLI syntax
+        run: python -m py_compile examples/recipe_demos/run_demo.py scripts/verify_recipe_demos.py scripts/test_recipe_demos.py
+      - name: Run all three fixed synthetic scenario CLI processes and compare independently
+        run: python scripts/verify_recipe_demos.py --output-dir test-results/recipe-a
+      - name: Clean independent reproduction with same source and fixed fixtures
+        run: python scripts/verify_recipe_demos.py --output-dir test-results/recipe-b
+      - name: Negative controls - forbid source hallucination, future leakage, false consent, and output forgery
+        run: python -m unittest scripts.test_recipe_demos -v
+      - name: Upload only fixture demo results (no customer data or executable database)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: atlas-v151-first-party-synthetic-demo-results
+          path: |
+            test-results/recipe-a/recipe-demo-results.json
+            test-results/recipe-b/recipe-demo-results.json
+          if-no-files-found: warn
+          retention-days: 30
