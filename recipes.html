@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0c1b35">
+<meta name="description" content="YIFALIN Atlas capability recipes: source-linked skills, agents and workflows, transparent evidence scores and reproducible manual acceptance gates.">
+<title>Capability Recipe Studio · YIFALIN Atlas</title>
+<style>
+:root{--ink:#152b48;--muted:#61748a;--line:#dfe7f2;--bg:#f4f7fc;--blue:#3658ba;--deep:#0c1b35;--aqua:#96eee7}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,"Noto Sans CJK SC","Microsoft YaHei",system-ui,sans-serif}button,input,select{font:inherit}button{cursor:pointer}a{color:#3159b1}button:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #319cbd;outline-offset:2px}
+header{background:radial-gradient(ellipse at 90% 0%,#264c81 0%,transparent 60%),#0c1b35;color:#fff;padding:26px max(20px,calc((100vw - 1200px)/2)) 38px}
+nav{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}nav a{color:#cfe2ff;text-decoration:none;font-size:13px;font-weight:600}nav .left{font-size:14px;font-weight:850;letter-spacing:.6px;color:#fff}nav button{background:none;border:1px solid #7490b6;color:white;border-radius:9px;padding:8px 14px}
+.eyebrow{margin-top:27px;font-size:11px;letter-spacing:2px;color:var(--aqua);font-weight:750}h1{font-size:clamp(28px,4.5vw,44px);letter-spacing:-.7px;margin:10px 0}header p{font-size:14px;line-height:1.75;color:#c4d5ec;max-width:870px}.links{display:flex;gap:15px;flex-wrap:wrap;margin-top:18px}.links a{color:#b5ebe8;font-size:12px}
+main{max-width:1236px;margin:auto;padding:24px 20px 74px}.notice{background:#fff;border:1px solid #cbdbea;border-radius:13px;padding:17px 20px;font-size:13px;line-height:1.8;color:#536981}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:18px 0}.stat{padding:17px 20px;background:#fff;border:1px solid var(--line);border-radius:12px}.stat strong{font-size:27px;display:block}.stat span{font-size:12px;color:var(--muted)}
+.controls{background:white;border:1px solid var(--line);padding:18px;display:grid;grid-template-columns:minmax(180px,2fr) repeat(3,minmax(120px,1fr));gap:11px;border-radius:13px;margin:16px 0}.controls input,.controls select{background:white;border:1px solid #c9d5e7;padding:12px;border-radius:9px;width:100%;min-width:0;color:#1b3559}.controls .actions{grid-column:1/-1;display:flex;gap:10px;flex-wrap:wrap;align-items:center}.controls button{background:#eef3fc;border:1px solid #c9d8f1;padding:9px 14px;border-radius:8px;color:#294a8b}.controls label{display:inline-flex;gap:7px;align-items:center;font-size:13px}.controls input[type=checkbox]{width:auto}
+.resultbar{display:flex;justify-content:space-between;gap:12px;align-items:center;margin:20px 0 12px;color:#5b6c86;font-size:12px;flex-wrap:wrap}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.card{background:#fff;border-radius:15px;border:1px solid var(--line);padding:21px;min-width:0;box-shadow:0 4px 16px #183e6c08}.card-head{display:flex;gap:12px;justify-content:space-between;align-items:flex-start}.card h2{font-size:20px;margin:7px 0}.tag{font-size:11px;color:#31588b;background:#eaf2fc;border-radius:5px;padding:5px 7px;display:inline-block}.card p{color:#5a6e83;font-size:13px;line-height:1.7;margin:7px 0}.save-recipe{border:1px solid #c9d7e9;background:white;border-radius:9px;padding:9px 12px;font-size:12px;color:#33517c;white-space:nowrap}.save-recipe[aria-pressed=true]{background:#edf7f3;border-color:#7fb3a6}
+.rubric{background:#f5f8fe;border:1px solid #e1eaf6;padding:12px;border-radius:10px;margin:15px 0}.rubric strong{font-size:20px}.rubric small{font-size:11px;color:#6c819b}.bar{height:7px;background:#dce7f4;border-radius:8px;margin:8px 0 4px;overflow:hidden}.bar i{height:100%;display:block;background:#5377bb;border-radius:8px}
+.tools{display:flex;flex-direction:column;gap:8px;margin-top:12px}.tool{display:flex;gap:12px;justify-content:space-between;align-items:center;padding:9px;background:#fbfcff;border:1px solid #edf0f7;border-radius:9px}.tool a{font-size:12px;font-weight:650;overflow-wrap:anywhere}.tool small{display:block;color:#8290a5;font-size:11px;margin-top:4px}.tool button{border:1px solid #d7e0ec;background:white;border-radius:8px;min-width:35px;height:33px;font-size:18px;color:#41629c}.tool button[aria-pressed=true]{background:#e4f3ec}
+.details{border-top:1px solid #e4eaf3;margin-top:15px;padding-top:13px}details>summary{cursor:pointer;color:#2a5097;font-weight:700;font-size:13px}.playbook{padding:11px 0 0;font-size:12px;line-height:1.75;color:#465e7a}.playbook h3{font-size:12px;margin:13px 0 5px;color:#1e3556}.playbook ol{padding-left:23px}.playbook li{margin:7px 0}.playbook code{background:#eaf0f9;border-radius:4px;padding:2px 5px}.playbook a{overflow-wrap:anywhere}.steps li strong{display:block}.steps li span{display:block;color:#667b90}.caution{background:#fff5e9;border-left:3px solid #c48e52;border-radius:4px;padding:11px;margin:13px 0;font-size:12px;color:#6f4a21}.links-row{display:flex;gap:12px;flex-wrap:wrap;font-size:12px;margin-top:13px}
+.empty{background:white;border-radius:12px;padding:34px;text-align:center;color:#5c7189}.foot{font-size:12px;color:#647994;margin:24px 0}#feedback{font-size:12px;color:#3658aa;min-height:1.2em}
+@media(max-width:800px){.grid{grid-template-columns:1fr}.controls{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:500px){header{padding:20px 16px 30px}main{padding:18px 13px 60px}.stats{grid-template-columns:repeat(3,minmax(0,1fr))}.stat{padding:12px}.stat strong{font-size:19px}.stat span{font-size:10px}.controls{grid-template-columns:1fr}.card{padding:15px}.tool{gap:7px}}
+</style></head>
+<body><header><nav><a class="left" href="./index.html">◈ YIFALIN / CAPABILITY ATLAS</a><div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap"><a href="./top30.html" data-i18n="top30">Top 30 研究</a><a href="./blueprints.html" data-i18n="blueprints">业务蓝图</a><a href="./pilot-lab.html">Pilot Lab</a><button type="button" id="language" aria-label="Switch language">English</button></div></nav>
+<div class="eyebrow">V1.5 · CAPABILITY RECIPE STUDIO · RESEARCH-ONLY</div><h1 data-i18n="title">把 AI 开源能力组合成真正的工作流程</h1><p data-i18n="intro">从编辑精选与 Top 30 官方来源研究中挑选组件，按场景获取输入、步骤、交接产物、验收条件和人工审批门禁。配方只是可手动复现的研究参考，不代表组件已经集成或获得商业部署许可。</p>
+<div class="links"><a href="./docs/CAPABILITY_RECIPES_CN.md" data-i18n="method">评分方法与复现边界</a><a href="./data/capability_recipes.json" data-i18n="dataset">查看原始组合数据</a><a href="./data/repo_metadata.json" data-i18n="snapshot">查看 GitHub 元数据快照</a></div></header>
+<main><div class="notice" id="notice" data-i18n="warning">研究证据分 ≠ 安全评分 ≠ 可投产。所有组合尚未作为集成系统实测；第三方许可证、安全与数据权限需要逐项独立检查。收藏只保存在当前浏览器，不会自动 Star、Fork 或授权任何第三方。</div>
+<div class="stats"><div class="stat"><strong id="total">—</strong><span data-i18n="total">参考组合</span></div><div class="stat"><strong id="projects">—</strong><span data-i18n="projects">涉及的精选仓库</span></div><div class="stat"><strong id="saved">0</strong><span data-i18n="saved">本机收藏组合</span></div></div>
+<div class="controls" aria-label="Filter capability recipes">
+<input id="search" type="search" aria-label="Search recipes" placeholder="搜索场景、工具、流程…">
+<select id="scenario" aria-label="Scenario"><option value="" data-i18n="allScenarios">全部场景</option><option value="content" data-i18n="content">视频与内容创作</option><option value="growth" data-i18n="growth">营销与用户增长</option><option value="finance" data-i18n="finance">金融研究</option><option value="education" data-i18n="education">互动教育</option></select>
+<select id="level" aria-label="Skill level"><option value="" data-i18n="allLevels">全部难度</option><option value="beginner" data-i18n="beginner">入门</option><option value="intermediate" data-i18n="intermediate">进阶</option><option value="advanced" data-i18n="advanced">专业</option></select>
+<select id="sort" aria-label="Sort recipes"><option value="match" data-i18n="matchSort">场景匹配优先</option><option value="evidence" data-i18n="evidenceSort">研究证据分</option><option value="title" data-i18n="titleSort">名称 A–Z</option></select>
+<div class="actions"><label><input type="checkbox" id="savedOnly"><span data-i18n="savedOnly">只看收藏组合</span></label><button id="reset" type="button" data-i18n="reset">清除筛选</button><button id="share" type="button" data-i18n="share">复制当前筛选链接</button><button id="export" type="button" data-i18n="export">导出研究清单 JSON</button><span id="feedback" aria-live="polite"></span></div></div>
+<div class="resultbar"><span id="count" aria-live="polite">—</span><span id="updated">—</span></div><div id="cards" class="grid"></div><div id="empty" class="empty" hidden data-i18n="empty">没有匹配的研究组合。请调整场景或搜索条件。</div>
+<p class="foot" data-i18n="footer">数据来自已提交到仓库的来源快照。自动维护仅更新项目公开元数据，不代表每个 Skill 已执行、许可证获批或集成通过。</p></main>
+<script>
+"use strict";
+const $=id=>document.getElementById(id);
+const translations={
+zh:{top30:"Top 30 研究",blueprints:"业务蓝图",title:"把 AI 开源能力组合成真正的工作流程",intro:"从编辑精选与 Top 30 官方来源研究中挑选组件，按场景获取输入、步骤、交接产物、验收条件和人工审批门禁。配方只是可手动复现的研究参考，不代表组件已经集成或获得商业部署许可。",method:"评分方法与复现边界",dataset:"查看原始组合数据",snapshot:"GitHub 元数据快照",warning:"研究证据分 ≠ 安全评分 ≠ 可投产。所有组合尚未作为集成系统实测；第三方许可证、安全与数据权限需要逐项独立检查。收藏只保存在当前浏览器，不会自动 Star、Fork 或授权任何第三方。",total:"参考组合",projects:"涉及的精选仓库",saved:"本机收藏组合",allScenarios:"全部场景",content:"视频与内容创作",growth:"营销与用户增长",finance:"金融研究",education:"互动教育",allLevels:"全部难度",beginner:"入门",intermediate:"进阶",advanced:"专业",matchSort:"场景匹配优先",evidenceSort:"研究证据分",titleSort:"名称 A–Z",savedOnly:"只看收藏组合",reset:"清除筛选",share:"复制当前筛选链接",export:"导出研究清单 JSON",empty:"没有匹配的研究组合。请调整场景或搜索条件。",footer:"数据来自已提交到仓库的来源快照。每周元数据更新不代表 Skill 已执行、许可证获批或集成通过。",ref:"研究参考 · 尚未集成",save:"☆ 收藏组合",unsave:"★ 已收藏",avg:"组件平均研究证据分",rubric:"仅评估来源及公开证据覆盖，非性能/安全认证",tools:"候选组件",repoSave:"收藏项目",repoUnsave:"取消项目收藏",expand:"查看复现步骤、输入输出与验收",inputs:"所需输入",outputs:"建议留存成果",steps:"人工复现与交接步骤",acceptance:"验收与失败条件",guardrails:"必须遵守的门禁",stop:"停止条件",demo:"查看现有合成离线示例（不代表工具链集成）",source:"查看项目研究档案",repo:"GitHub 源仓库",missing:"数据载入失败，原始资源仍可从 GitHub 仓库查看。",ready:"筛选链接已复制",copy:"可复制浏览器地址栏分享筛选",savedFeedback:"收藏已保存在此浏览器",emptyEvidence:"没有证据",snapshotLabel:"来源快照：",stale:"（快照已超过 60 天，需更新核查）",scoreBreakdown:"来源 / 活跃度 / 组件隔离测试 / 法律与安全审查"},
+en:{top30:"Top 30 research",blueprints:"Blueprints",title:"Combine open AI tools into inspectable workflows",intro:"Explore sourced components from the curated Atlas and official Top 30 desk research, with manual inputs, handoffs, acceptance criteria and human approval gates. These are research recipes, NOT deployed integrations or license clearances.",method:"Evidence rubric & reproducibility limits",dataset:"Recipe source data",snapshot:"GitHub metadata snapshot",warning:"Research evidence score ≠ safety score ≠ production readiness. None of these compositions have been integrated or end-to-end verified. Third-party license, security and data permissions need independent review. Favorites stay in this browser; no GitHub stars, forks or permissions are created.",total:"Reference recipes",projects:"Curated project references",saved:"Saved recipes here",allScenarios:"All scenarios",content:"Video and content",growth:"Growth & customers",finance:"Finance research",education:"Interactive education",allLevels:"All levels",beginner:"Beginner",intermediate:"Intermediate",advanced:"Advanced",matchSort:"Scenario fit",evidenceSort:"Research evidence score",titleSort:"Title A–Z",savedOnly:"Saved recipes only",reset:"Reset filters",share:"Copy filtered URL",export:"Export JSON research list",empty:"No matching recipes. Change your filters or search.",footer:"Evidence comes from committed source snapshots. Scheduled metadata refresh does not prove a tool has run, licensing has passed, or an integration has shipped.",ref:"Reference only · NOT integrated",save:"☆ Save recipe",unsave:"★ Saved",avg:"Average component research evidence",rubric:"Source-coverage signal only; not performance or safety certification",tools:"Candidate components",repoSave:"Save repo",repoUnsave:"Unsave repo",expand:"Open manual reproduction steps, inputs and acceptance",inputs:"Inputs",outputs:"Expected retained artifacts",steps:"Manual reproduction & handoffs",acceptance:"Acceptance and falsification checks",guardrails:"Mandatory guardrails",stop:"Stop condition",demo:"Existing offline synthetic example (NOT a composed integration)",source:"Open research dossier",repo:"GitHub repository",missing:"Data unavailable. Source artifacts remain accessible on GitHub.",ready:"Filter link copied",copy:"You can share the URL from the address bar",savedFeedback:"Saved in this browser only",emptyEvidence:"No evidence",snapshotLabel:"Source snapshot: ",stale:" (snapshot older than 60 days; refresh recommended)",scoreBreakdown:"Sourcing / Activity / Isolated component test / Safety & rights"}
+};
+let lang=new URLSearchParams(location.search).get("lang")==="en"?"en":"zh";
+let manifest=null,curated=new Map(),briefs=new Map(),metadata={},favorites=new Set(),savedRecipes=new Set(),selectedScenario="",query="";
+const safe=value=>String(value??"").replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
+const getkey=(name)=>"repo:"+name.toLowerCase();
+function localRead(key){try{const value=JSON.parse(localStorage.getItem(key)||"[]");return new Set(Array.isArray(value)?value.filter(x=>typeof x==="string"):[])}catch{return new Set()}}
+function localSave(key,values){try{localStorage.setItem(key,JSON.stringify([...values]));return true}catch{return false}}
+const t=k=>translations[lang][k]||k;
+function quality(repo){
+ const c=curated.get(repo.toLowerCase()),b=briefs.get(repo.toLowerCase());
+ const m=metadata.repositories?.[repo.toLowerCase()]||metadata.repositories?.[repo]||null;
+ const hasReadme=!!b?.sources?.some(s=>s.id==="readme"&&s.kind==="official-github-readme");
+ const immutable=!!b?.sources?.some(s=>s.git_blob_sha&&/^[a-f0-9]{40}$/.test(s.git_blob_sha));
+ const source=(c?.verification==="repository-exists"?10:0)+(hasReadme?20:0)+(immutable?10:0);
+ const snap=Date.parse(metadata.generated_at_utc||"");const pushed=Date.parse(m?.last_push||"");
+ const age=Number.isFinite(snap)&&Number.isFinite(pushed)?(snap-pushed)/86400000:Infinity;
+ const active=age<=90?20:age<=365?10:0;
+ // Only the single-component Docling native PDF workflow has a concrete, separately linked upstream CI pilot.
+ // NO recipe-level integration score is awarded.
+ const isolated=repo.toLowerCase()==="docling-project/docling"?25:0;
+ // Security and license TEXT review remain uncompleted for all third-party components.
+ const rights=0;
+ return {source,active,isolated,rights,total:source+active+isolated+rights,pushed:m?.last_push||null,brief:hasReadme,metadata:!!m};
+}
+function scenarioName(value){return t(value)||value}
+function recipeScore(recipe){return Math.round(recipe.tools.reduce((sum,repo)=>sum+quality(repo).total,0)/recipe.tools.length)}
+function stateParams(){
+ const url=new URL(location.href);
+ for(const [name,value] of [["scenario",$("scenario").value],["level",$("level").value],["q",$("search").value.trim()],["sort",$("sort").value==="match"?"":$("sort").value],["lang",lang==="zh"?"":lang],["saved",$("savedOnly").checked?"1":""]]){
+  if(value)url.searchParams.set(name,value);else url.searchParams.delete(name);
+ }
+ history.replaceState(null,"",url);
+}
+function label(id){const item=manifest.recipes.find(x=>x.id===id);return item?(lang==="en"?item.goal_en:item.title_zh):id}
+function render(){
+ if(!manifest)return;
+ stateParams();
+ const scenario=$("scenario").value,level=$("level").value,term=$("search").value.trim().toLowerCase();
+ const list=manifest.recipes.filter(x=>{
+  const hay=[x.id,x.title_zh,x.goal_zh,x.goal_en,x.scenario,x.difficulty,...x.tools].join(" ").toLowerCase();
+  return (!scenario||x.scenario===scenario)&&(!level||x.difficulty===level)
+      &&(!term||hay.includes(term))&&(!$("savedOnly").checked||savedRecipes.has(x.id));
+ });
+ if($("sort").value==="evidence")list.sort((a,b)=>recipeScore(b)-recipeScore(a)||a.id.localeCompare(b.id));
+ if($("sort").value==="title")list.sort((a,b)=>label(a.id).localeCompare(label(b.id)));
+ $("count").textContent=lang==="en"?(list.length+" / "+manifest.recipes.length+" recipes"):(list.length+" / "+manifest.recipes.length+" 套组合");
+ $("saved").textContent=String(savedRecipes.size);
+ $("empty").hidden=list.length!==0;
+ $("cards").innerHTML=list.map(recipe=>{
+  const score=recipeScore(recipe),saved=savedRecipes.has(recipe.id);
+  const detail=recipe.tools.map(repo=>{
+    const q=quality(repo),fav=favorites.has(getkey(repo));
+    const url="https://github.com/"+repo;
+    return '<div class="tool"><div><a href="'+safe(url)+'" target="_blank" rel="noopener noreferrer">'+safe(repo)+'</a><small>'+safe(String(q.total))+'/100 · '+safe(t("scoreBreakdown"))+': '+[q.source,q.active,q.isolated,q.rights].join(" / ")+'</small></div><button type="button" class="save-tool" data-repo="'+safe(repo)+'" aria-pressed="'+fav+'" aria-label="'+safe(fav?t("repoUnsave"):t("repoSave"))+'">'+(fav?"★":"☆")+'</button></div>';
+  }).join("");
+  const inputs=lang==="en"?recipe.inputs_en:recipe.inputs_zh,outputs=lang==="en"?recipe.outputs_en:recipe.outputs_zh,tests=lang==="en"?recipe.acceptance_en:recipe.acceptance_zh;
+  const steps=recipe.steps.map(step=>'<li><strong>'+safe(step.order+". "+step.label_zh)+'</strong><span>'+safe(step.candidate_repo|| (lang==="en"?"Human-led, no software assumed":"人工环节，不假设软件已经集成"))+' · '+safe(step.gate)+' · <code>'+safe(step.output_marker)+'</code></span></li>').join("");
+  const listHtml=xs=>'<ul>'+xs.map(v=>'<li>'+safe(v)+'</li>').join("")+'</ul>';
+  const demo=recipe.offline_demo_path?'<div class="links-row"><a target="_blank" rel="noopener noreferrer" href="https://github.com/xuanyiting68-hash/awesome-ai-capability-atlas-yifalin/blob/main/'+safe(recipe.offline_demo_path)+'">'+safe(t("demo"))+'</a></div>':"";
+  return '<article class="card" data-id="'+safe(recipe.id)+'"><div class="card-head"><div><span class="tag">'+safe(t(recipe.scenario))+' · '+safe(t(recipe.difficulty))+'</span><h2>'+safe(lang==="en"?recipe.goal_en:recipe.title_zh)+'</h2></div><button type="button" class="save-recipe" data-id="'+safe(recipe.id)+'" aria-pressed="'+saved+'">'+safe(saved?t("unsave"):t("save"))+'</button></div><p>'+safe(lang==="en"?recipe.goal_en:recipe.goal_zh)+'</p><span class="tag">'+safe(t("ref"))+'</span><div class="rubric"><small>'+safe(t("avg"))+'</small><div><strong>'+score+'</strong> / 100</div><div class="bar"><i style="width:'+score+'%"></i></div><small>'+safe(t("rubric"))+'</small></div><div class="tools">'+detail+'</div><div class="details"><details><summary>'+safe(t("expand"))+'</summary><div class="playbook"><h3>'+safe(t("inputs"))+'</h3>'+listHtml(inputs)+'<h3>'+safe(t("steps"))+'</h3><ol class="steps">'+steps+'</ol><h3>'+safe(t("outputs"))+'</h3>'+listHtml(outputs)+'<h3>'+safe(t("acceptance"))+'</h3>'+listHtml(tests)+'<h3>'+safe(t("guardrails"))+'</h3>'+listHtml(recipe.guardrails_zh)+'<div class="caution">'+safe(lang==="en"?recipe.stop_condition_en:recipe.stop_condition_zh)+'</div>'+demo+'</div></details></div><div class="links-row"><a href="./blueprints.html" data-source="blueprint">'+safe(t("blueprints"))+'</a><a href="./top30.html">'+safe(t("top30"))+'</a></div></article>';
+ }).join("");
+}
+function updateLabels(){
+ document.documentElement.lang=lang==="en"?"en":"zh-CN";
+ document.querySelectorAll("[data-i18n]").forEach(el=>el.textContent=t(el.dataset.i18n));
+ $("language").textContent=lang==="en"?"中文":"English";
+ $("search").placeholder=lang==="en"?"Search recipe, project, scenario…":"搜索场景、工具、流程…";
+ const timestamp=metadata.generated_at_utc||manifest?.baseline_utc||"";
+ const stale=Date.now()-Date.parse(timestamp)>60*86400000;
+ $("updated").textContent=t("snapshotLabel")+timestamp+(stale?t("stale"):"");
+}
+function changeFavorite(kind,id){
+ if(kind==="recipe"){
+  if(!manifest.recipes.some(x=>x.id===id))return;
+  if(savedRecipes.has(id))savedRecipes.delete(id);else savedRecipes.add(id);
+  localSave("atlas_recipe_favorites_v1",savedRecipes);
+ }else{
+  if(!curated.has(id.toLowerCase()))return;
+  const key=getkey(id);
+  if(favorites.has(key))favorites.delete(key);else favorites.add(key);
+  localSave("atlas_favorites_v1",favorites);
+ }
+ $("feedback").textContent=t("savedFeedback");
+ render();
+}
+async function load(){
+ try{
+  const paths=["data/capability_recipes.json","data/curated.json","data/research_briefs.json","data/repo_metadata.json"];
+  const responses=await Promise.all(paths.map(path=>fetch("./"+path,{cache:"no-cache"})));
+  if(responses.some(x=>!x.ok))throw Error("unavailable source snapshot");
+  const [m,c,b,meta]=await Promise.all(responses.map(x=>x.json()));
+  if(m.schema_version!==1||m.recipes.length!==6||m.verified_integration_count!==0||!Array.isArray(c)||!Array.isArray(b.entries))throw Error("invalid source contract");
+  manifest=m;curated=new Map(c.map(x=>[x.repo.toLowerCase(),x]));briefs=new Map(b.entries.map(x=>[x.repo.toLowerCase(),x]));metadata=meta;
+  if(m.recipes.some(x=>x.tools.some(repo=>!curated.has(repo.toLowerCase()))))throw Error("recipe uses unknown project");
+  $("total").textContent=String(m.recipes.length);
+  $("projects").textContent=String(new Set(m.recipes.flatMap(x=>x.tools.map(p=>p.toLowerCase()))).size);
+  updateLabels();render();
+ }catch(e){$("count").textContent=t("missing")+" "+String(e.message);$("cards").replaceChildren();}
+}
+function exportCurrent(){
+ if(!manifest)return;
+ const filter={scenario:$("scenario").value,level:$("level").value,search:$("search").value,saved_only:$("savedOnly").checked};
+ const ids=[...document.querySelectorAll("#cards .card")].map(e=>e.dataset.id);
+ const list=manifest.recipes.filter(x=>ids.includes(x.id)).map(x=>({id:x.id,status:x.status,tools:x.tools,inputs:x.inputs_zh,steps:x.steps,acceptance:x.acceptance_zh,security_review:x.security_review,license_review:x.license_review,evidence_score:recipeScore(x)}));
+ const data={schema_version:1,source_snapshot_utc:metadata.generated_at_utc,scoring_disclaimer:manifest.score_label,filters:filter,bookmarked_recipe_ids:[...savedRecipes],items:list,execution_claim:"No recipe executed or integrated by this export"};
+ const blob=new Blob([JSON.stringify(data,null,2)],{type:"application/json"});
+ const url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download="atlas-recipe-research-export.json";document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
+}
+const urlParams=new URLSearchParams(location.search);
+$("scenario").value=["content","growth","finance","education"].includes(urlParams.get("scenario"))?urlParams.get("scenario"):"";
+$("level").value=["beginner","intermediate","advanced"].includes(urlParams.get("level"))?urlParams.get("level"):"";
+$("search").value=(urlParams.get("q")||"").slice(0,180);
+$("sort").value=["match","evidence","title"].includes(urlParams.get("sort"))?urlParams.get("sort"):"match";
+$("savedOnly").checked=urlParams.get("saved")==="1";
+favorites=localRead("atlas_favorites_v1");savedRecipes=localRead("atlas_recipe_favorites_v1");
+for(const id of ["scenario","level","sort","savedOnly"])$(id).addEventListener("change",render);
+$("search").addEventListener("input",render);
+$("cards").addEventListener("click",ev=>{
+ const recipe=ev.target.closest(".save-recipe"),tool=ev.target.closest(".save-tool");
+ if(recipe)changeFavorite("recipe",recipe.dataset.id);
+ else if(tool)changeFavorite("tool",tool.dataset.repo);
+});
+$("language").addEventListener("click",()=>{lang=lang==="en"?"zh":"en";updateLabels();render()});
+$("reset").addEventListener("click",()=>{$("scenario").value="";$("level").value="";$("search").value="";$("sort").value="match";$("savedOnly").checked=false;render()});
+$("export").addEventListener("click",exportCurrent);
+$("share").addEventListener("click",async()=>{stateParams();try{await navigator.clipboard.writeText(location.href);$("feedback").textContent=t("ready")}catch{$("feedback").textContent=t("copy")}});
+window.addEventListener("storage",event=>{
+ if(event.key==="atlas_favorites_v1"||event.key==="atlas_recipe_favorites_v1"){
+  favorites=localRead("atlas_favorites_v1");savedRecipes=localRead("atlas_recipe_favorites_v1");render();
+ }
+});
+updateLabels();load();
+</script></body></html>
