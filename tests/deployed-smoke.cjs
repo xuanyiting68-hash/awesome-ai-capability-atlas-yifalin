@@ -35,6 +35,10 @@ const errors=[];
     assert.equal(manifest.recipe_demo_upstream_integrations,0,'No third-party recipe integration certified');
     assert.equal(manifest.interactive_demo_count,3);
     assert.equal(manifest.interactive_demo_third_party_integrations,0);
+    assert.equal(manifest.mission_studio_enabled,true);
+    assert.equal(manifest.mission_studio_curated_candidates,133);
+    assert.equal(manifest.mission_studio_source_briefs,30);
+    assert.equal(manifest.mission_studio_verified_integrations,0);
     assert.match(manifest.interactive_demo_runtime,/client-side first-party/);
     const evidenceResponse=await context.request.get(new URL('data/recipe_demo_results.json',base).href);
     assert.equal(evidenceResponse.status(),200,'Recomputed published first-party evidence must exist');
@@ -268,6 +272,41 @@ const errors=[];
     assert.match(await page.locator('.hands-on-link').getAttribute('href'),/demos.html\?scenario=finance/);
     await page.goto(base);
     assert.ok(await page.locator('a[href="./demos.html"]').count()>=1,'Homepage must directly link to interactive demos');
+    // Real Chrome decision product, driven by all 133 original curated projects.
+    for(const width of [1440,768,390]){
+      await page.setViewportSize({width,height:850});
+      await page.goto(new URL('mission-studio.html',base).href);
+      await page.waitForFunction(()=>document.querySelectorAll('#candidates .tool').length===18);
+      assert.equal(await page.locator('#match-count').innerText(),'133 个来源匹配');
+      assert.equal(await page.locator('#pick-count').innerText(),'3 / 5');
+      assert.equal(await page.locator('#workflow .step').count(),4);
+      assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,'Mission Studio horizontal overflow '+width);
+      await page.screenshot({path:'test-results/mission-studio-'+width+'.png'});
+    }
+    // A real user changes their intent; new matching, risk evidence and workflow must follow.
+    await page.locator('.example[data-area="finance"]').click();
+    assert.equal(await page.locator('#workflow .step').count(),4);
+    assert.match(await page.locator('#goal-status').innerText(),/金融与研究/);
+    assert.equal(await page.locator('#match-count').innerText(),'133 个来源匹配');
+    assert.ok(await page.locator('#candidates .tool').first().locator('.blockers').innerText().then(x=>x.includes('安全与商业许可证')));
+    const repo=await page.locator('#candidates .tool').first().getAttribute('data-repo');
+    assert.ok(repo.includes('/'));
+    assert.equal(await page.locator('#candidates .tool').first().locator('.metric').count(),3);
+    await page.locator('.example[data-area="education"]').click();
+    assert.match(await page.locator('#goal-status').innerText(),/教育与知识/);
+    const before=await page.locator('#pick-count').innerText();
+    await page.locator('#candidates .tool').first().locator('button.add-tool').click();
+    assert.notEqual(await page.locator('#pick-count').innerText(),before);
+    await page.locator('#save-plan').click();
+    assert.equal(await page.locator('#saved-count').innerText(),'1');
+    assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('atlas_mission_plans_v1'))[0].independent_3rd_party_integration_verified),false);
+    await page.reload();
+    await page.waitForFunction(()=>document.querySelectorAll('#candidates .tool').length===18);
+    assert.equal(await page.locator('#saved-count').innerText(),'1','Local plans should be preserved after reload');
+    await page.locator('#saved-plans button').last().click();
+    assert.equal(await page.locator('#saved-count').innerText(),'0');
+    await page.goto(base);
+    assert.ok(await page.locator('a[href="./mission-studio.html"]').count()>=2,'Homepage must prominently link to Mission Studio');
     // Validate every official-source project dossier, not a hard-coded previous wave.
     const sourceResult=await context.request.get(new URL('data/research_briefs.json',base).href);
     assert.equal(sourceResult.status(),200);
