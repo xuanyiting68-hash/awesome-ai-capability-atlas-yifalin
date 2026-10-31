@@ -46,7 +46,7 @@ function inferScenario(query,selected){
  }).sort((a,b)=>b.score-a.score||a.key.localeCompare(b.key));
  return scores[0].score>0?scores[0].key:"engineering";
 }
-function validRepo(x){return !!x&&typeof x.repo==="string"&&/^[a-z\d_.-]+\/[a-z\d_.-]+$/i.test(x.repo)&&typeof x.topic==="string"&&typeof x.type==="string"&&x.verification==="repository-exists"}
+function validRepo(x){return !!x&&typeof x.repo==="string"&&/^[a-z\d_.-]+\/[a-z\d_.-]+$/i.test(x.repo)&&typeof x.topic==="string"&&typeof x.type==="string"&&typeof x.url==="string"&&x.url.replace(/\/$/,"").toLowerCase()==="https://github.com/"+x.repo.toLowerCase()&&x.verification==="repository-exists"}
 function evidence(repo,meta,brief,asOf){
  const updated=Date.parse(asOf),pushed=Date.parse(meta?.last_push||"");
  const known=Number.isFinite(updated)&&Number.isFinite(pushed);
