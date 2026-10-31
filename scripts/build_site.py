@@ -19,7 +19,7 @@ else:
     from verify_recipe_demos import verify_from_files as verify_recipe_demos
 
 ROOT = Path(__file__).resolve().parents[1]
-FILES = ('index.html', 'top30.html', 'project.html', 'blueprints.html', 'network.html', 'adoption.html', 'pilot-lab.html', 'recipes.html', 'demos.html', 'README.md', 'LICENSE')
+FILES = ('index.html', 'top30.html', 'project.html', 'blueprints.html', 'network.html', 'adoption.html', 'pilot-lab.html', 'recipes.html', 'demos.html', 'mission-studio.html', 'mission-engine.js', 'README.md', 'LICENSE')
 DIRECTORIES = ('data', 'docs')
 EXAMPLE_SUBDIRS = ('consent_lead_triage', 'recipe_demos')
 
@@ -94,6 +94,11 @@ def build(destination, source=ROOT, commit=None):
         'interactive_demo_count': 3,
         'interactive_demo_runtime': 'client-side first-party synthetic JavaScript',
         'interactive_demo_third_party_integrations': 0,
+        'mission_studio_enabled': True,
+        'mission_studio_curated_candidates': len(curated),
+        'mission_studio_source_briefs': len(research_summary) if isinstance(research_summary,list) else research_summary['count'],
+        'mission_studio_runtime': 'browser-local deterministic source matching',
+        'mission_studio_verified_integrations': 0,
         'pilot_contract_cases': pilot_summary['total_cases'],
         'pilot_contract_passed': pilot_summary['passed_cases'],
         'pilot_upstream_packages_executed': pilot_summary['upstream_code_executed'],
