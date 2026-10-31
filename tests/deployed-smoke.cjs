@@ -159,8 +159,13 @@ const errors=[];
       assert.equal(scores.length,6);
       assert.ok(scores.every(s=>Number(s)>0&&Number(s)<100),'No recipe can be certified by evidence-only score');
       assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,'Recipe horizontal overflow '+width);
+      if(width===390){
+        const card=await page.locator('#cards .card').first().boundingBox();
+        assert.ok(card&&card.y<844,'Mobile first recipe should be visible above fold');
+      }
       await page.locator('#cards .card').first().locator('details summary').click();
       assert.ok(await page.locator('#cards .card').first().locator('.steps li').count()>=4);
+      assert.match(await page.locator('#cards .card').first().locator('.steps li').first().innerText(),/Check topic and asset permissions/);
       await page.evaluate(()=>scrollTo(0,0));
       await page.screenshot({path:'test-results/recipes-'+width+'.png'});
     }
