@@ -10,7 +10,7 @@ class PublishBoundaryTests(unittest.TestCase):
             destination = Path(directory) / 'site'
             manifest = build(destination, commit='a' * 40)
             self.assertEqual(set(p.name for p in destination.iterdir()),
-                             {'index.html', 'top30.html', 'project.html', 'blueprints.html', 'network.html', 'adoption.html', 'pilot-lab.html', 'recipes.html', 'demos.html', 'data', 'docs', 'examples', 'LICENSE', 'README.md', 'deployment.json'})
+                             {'index.html', 'top30.html', 'project.html', 'blueprints.html', 'network.html', 'adoption.html', 'pilot-lab.html', 'recipes.html', 'demos.html', 'mission-studio.html', 'mission-engine.js', 'data', 'docs', 'examples', 'LICENSE', 'README.md', 'deployment.json'})
             self.assertEqual(json.loads((destination / 'deployment.json').read_text()), manifest)
             self.assertEqual(manifest['source_commit'], 'a' * 40)
             self.assertEqual(manifest['catalog_count'], 5000)
@@ -26,6 +26,13 @@ class PublishBoundaryTests(unittest.TestCase):
             self.assertEqual(manifest['recipe_demo_upstream_integrations'],0)
             self.assertEqual(manifest['interactive_demo_count'],3)
             self.assertEqual(manifest['interactive_demo_third_party_integrations'],0)
+            self.assertTrue(manifest['mission_studio_enabled'])
+            self.assertEqual(manifest['mission_studio_curated_candidates'],133)
+            self.assertEqual(manifest['mission_studio_source_briefs'],30)
+            self.assertEqual(manifest['mission_studio_verified_integrations'],0)
+            self.assertIn('browser-local',manifest['mission_studio_runtime'])
+            self.assertTrue((destination/'mission-studio.html').is_file())
+            self.assertTrue((destination/'mission-engine.js').is_file())
             self.assertIn('client-side',manifest['interactive_demo_runtime'])
             self.assertTrue((destination/'demos.html').is_file())
             self.assertIn('立即进入 AI 体验中心',(destination/'index.html').read_text('utf-8'))

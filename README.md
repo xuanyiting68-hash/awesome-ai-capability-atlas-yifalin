@@ -14,6 +14,19 @@
 
 **务必区分：**“已被目录索引 / repository-exists / security-audited / battle-tested / licensed-for-commercial-use” 是不同的状态。本项目目前只对 133 个精选 GitHub 项目完成了存在性与未归档状态的核验。目录候选不经过人工实测。
 
+## V1.6 · Mission Studio：目标 → 工具证据 → 可复核实施计划
+
+[直接使用 AI 方案决策工作台](mission-studio.html) · [完整研发说明](docs/MISSION_STUDIO_V16_CN.md)
+
+用户可以输入中文/英文业务需求，从已有 **133 条编辑精选仓库** 中获得可解释的场景匹配，比较原始 Top 30 官方研究档案、GitHub 维护快照、许可证和风险门禁；最多选五个项目，编辑四阶段工作流，并导出 JSON/Markdown 实施计划。浏览器可保存本机方案，不需要 GitHub、账号或 API Key。真实 Node + Chrome 测试验证筛选、编辑、移动端和部署。
+
+**明确边界：** 这是本地规则匹配的**选型决策辅助**，不是正在运行的多 Agent 或 LLM 工作流；工具安全/商用许可/接口兼容性均未获批准，生成的每个文件都标注 `RESEARCH_PLAN_NOT_EXECUTED`。不发送任何真实客户数据、交易订单或第三方调用。下一阶段才开展经过授权的真实开源组件隔离集成。
+
+```bash
+node --check mission-engine.js
+node --test tests/mission-engine.test.cjs
+```
+
 ## V1.5.1 · 三项第一方离线合成能力组合演示
 
 [进入能力组合工作台](recipes.html) · [运行脚本](examples/recipe_demos/run_demo.py) · [固定验收合同](data/recipe_demo_contract.json) · [完整实验方法](docs/RECIPE_DEMOS_V151_CN.md)
