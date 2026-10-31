@@ -7,9 +7,11 @@ import subprocess
 import sys
 import tempfile
 from pathlib import Path
-from examples.recipe_demos.run_demo import run_from_files
 
 ROOT=Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0,str(ROOT))
+from examples.recipe_demos.run_demo import run_from_files  # noqa: E402
 CLI=ROOT/"examples/recipe_demos/run_demo.py"
 
 
