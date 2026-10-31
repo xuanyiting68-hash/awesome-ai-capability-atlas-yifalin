@@ -1,0 +1,38 @@
+name: Industry AI Atlas V1.1 (isolated validation)
+on:
+  pull_request:
+    paths:
+      - 'industry-atlas/**'
+      - '.github/workflows/industry-atlas-v1.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: industry-ai-atlas-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  source-and-browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout PR code
+        uses: actions/checkout@v4
+      - name: Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Rebuild and check structured data
+        working-directory: industry-atlas
+        run: |
+          python build.py
+          python validate.py
+          python check_workflows.py
+      - name: Install pinned Playwright and Chromium
+        run: |
+          python -m pip install --disable-pip-version-check playwright==1.57.0
+          python -m playwright install --with-deps chromium
+      - name: Offline browser regressions
+        working-directory: industry-atlas
+        run: |
+          python check.py
+          python check_expert.py
