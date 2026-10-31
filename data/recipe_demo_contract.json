@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "case": "three_first_party_synthetic_demos",
+  "fixed_as_of": "2026-10-27T00:00:00Z",
+  "runtime": "Python 3.12 standard library; deterministic local fixtures",
+  "third_party_execution": false,
+  "cases": {
+    "leads": {
+      "input_count": 8,
+      "eligible_count": 3,
+      "blocked_count": 5,
+      "outbound_messages": 0
+    },
+    "education": {
+      "source_count": 3,
+      "question_count": 4,
+      "supported_count": 3,
+      "abstained_count": 1,
+      "generated_answers": 0
+    },
+    "finance": {
+      "train_end_index": 10,
+      "holdout_decisions": 9,
+      "positive_direction_matches": 3,
+      "roundtrip_cost_bps": "16.00",
+      "gross_bps_sum": "10.21",
+      "net_bps_sum": "-133.79",
+      "broker_orders": 0
+    }
+  },
+  "publication_policy": "All four independent subprocess outcomes including composite must match these pinned outputs; reject any inflated integration claim. No personal data, real market feed, LLM, live/demo orders or external contacts."
+}
