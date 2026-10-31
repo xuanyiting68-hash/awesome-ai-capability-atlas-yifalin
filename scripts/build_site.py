@@ -96,7 +96,7 @@ def build(destination, source=ROOT, commit=None):
         'interactive_demo_third_party_integrations': 0,
         'mission_studio_enabled': True,
         'mission_studio_curated_candidates': len(curated),
-        'mission_studio_source_briefs': len(research_summary) if isinstance(research_summary,list) else research_summary['count'],
+        'mission_studio_source_briefs': research_summary['count'],
         'mission_studio_runtime': 'browser-local deterministic source matching',
         'mission_studio_verified_integrations': 0,
         'pilot_contract_cases': pilot_summary['total_cases'],
