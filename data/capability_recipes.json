@@ -67,35 +67,40 @@
           "label_zh": "选题与来源授权",
           "candidate_repo": null,
           "gate": "human-approval",
-          "output_marker": "step-1.md"
+          "output_marker": "step-1.md",
+          "label_en": "Check topic and asset permissions"
         },
         {
           "order": 2,
           "label_zh": "独立研究脚本与事实复核",
           "candidate_repo": "remotion-dev/remotion",
           "gate": "manual-review",
-          "output_marker": "step-2.md"
+          "output_marker": "step-2.md",
+          "label_en": "Draft source-linked script and verify claims"
         },
         {
           "order": 3,
           "label_zh": "视频/字幕/配音制作",
           "candidate_repo": "FFmpeg/FFmpeg",
           "gate": "manual-review",
-          "output_marker": "step-3.md"
+          "output_marker": "step-3.md",
+          "label_en": "Produce video, subtitles and narration"
         },
         {
           "order": 4,
           "label_zh": "人工内容审批",
           "candidate_repo": "SYSTRAN/faster-whisper",
           "gate": "manual-review",
-          "output_marker": "step-4.md"
+          "output_marker": "step-4.md",
+          "label_en": "Obtain human editorial approval"
         },
         {
           "order": 5,
           "label_zh": "官方支持渠道发布及复盘",
           "candidate_repo": "gitroomhq/postiz-app",
           "gate": "human-approval",
-          "output_marker": "step-5.md"
+          "output_marker": "step-5.md",
+          "label_en": "Publish via authorized channels and review results"
         }
       ],
       "guardrails_zh": [
@@ -111,7 +116,13 @@
       ],
       "stop_condition_zh": "发布前必须人工核对内容与授权",
       "stop_condition_en": "Human legal and editorial review required before publication",
-      "offline_demo_path": null
+      "offline_demo_path": null,
+      "guardrails_en": [
+        "Use only licensed material",
+        "Keep original research and identifiable human review",
+        "Do not give direct buy/sell recommendations in finance content",
+        "Never clone voices without permission"
+      ]
     },
     {
       "id": "social",
@@ -158,35 +169,40 @@
           "label_zh": "按各平台撰写原创版本",
           "candidate_repo": null,
           "gate": "human-approval",
-          "output_marker": "step-1.md"
+          "output_marker": "step-1.md",
+          "label_en": "Write distinct original copy for each platform"
         },
         {
           "order": 2,
           "label_zh": "审批内容日历",
           "candidate_repo": "n8n-io/n8n",
           "gate": "manual-review",
-          "output_marker": "step-2.md"
+          "output_marker": "step-2.md",
+          "label_en": "Approve the editorial calendar"
         },
         {
           "order": 3,
           "label_zh": "平台 API 授权验证",
           "candidate_repo": null,
           "gate": "manual-review",
-          "output_marker": "step-3.md"
+          "output_marker": "step-3.md",
+          "label_en": "Validate official platform API authorization"
         },
         {
           "order": 4,
           "label_zh": "排期发布与评论分流",
           "candidate_repo": "gitroomhq/postiz-app",
           "gate": "manual-review",
-          "output_marker": "step-4.md"
+          "output_marker": "step-4.md",
+          "label_en": "Schedule publication and triage comments"
         },
         {
           "order": 5,
           "label_zh": "平台指标与转化复盘",
           "candidate_repo": "posthog/posthog",
           "gate": "human-approval",
-          "output_marker": "step-5.md"
+          "output_marker": "step-5.md",
+          "label_en": "Review platform metrics and attribution"
         }
       ],
       "guardrails_zh": [
@@ -201,7 +217,12 @@
       ],
       "stop_condition_zh": "官方 API 条款及发布审批不可跳过",
       "stop_condition_en": "Platform API rules and editorial approval are mandatory",
-      "offline_demo_path": null
+      "offline_demo_path": null,
+      "guardrails_en": [
+        "Follow each platform's API rules and terms",
+        "No fake engagement or spam follows",
+        "Require original content and final human approval"
+      ]
     },
     {
       "id": "leads",
@@ -249,35 +270,40 @@
           "label_zh": "原创活动/内容吸引咨询",
           "candidate_repo": null,
           "gate": "human-approval",
-          "output_marker": "step-1.md"
+          "output_marker": "step-1.md",
+          "label_en": "Invite voluntary contact through original materials"
         },
         {
           "order": 2,
           "label_zh": "表单明确告知与同意",
           "candidate_repo": "formbricks/formbricks",
           "gate": "manual-review",
-          "output_marker": "step-2.md"
+          "output_marker": "step-2.md",
+          "label_en": "Present clear notice and collect explicit consent"
         },
         {
           "order": 3,
           "label_zh": "数据校验和 CRM 去重",
           "candidate_repo": "baptisteArno/typebot.io",
           "gate": "manual-review",
-          "output_marker": "step-3.md"
+          "output_marker": "step-3.md",
+          "label_en": "Validate input and deduplicate CRM records"
         },
         {
           "order": 4,
           "label_zh": "按自报需求进行分层",
           "candidate_repo": "TwentyHQ/twenty",
           "gate": "manual-review",
-          "output_marker": "step-4.md"
+          "output_marker": "step-4.md",
+          "label_en": "Categorize stated user needs"
         },
         {
           "order": 5,
           "label_zh": "用户主动预约或人工沟通",
           "candidate_repo": "calcom/cal.com",
           "gate": "human-approval",
-          "output_marker": "step-5.md"
+          "output_marker": "step-5.md",
+          "label_en": "Offer user-initiated booking or human contact"
         }
       ],
       "guardrails_zh": [
@@ -293,7 +319,13 @@
       ],
       "stop_condition_zh": "严禁抓取真实个人信息或自动私信",
       "stop_condition_en": "No scraping real personal data or unsolicited mass messaging",
-      "offline_demo_path": "examples/consent_lead_triage/run_demo.py"
+      "offline_demo_path": "examples/consent_lead_triage/run_demo.py",
+      "guardrails_en": [
+        "Never scrape private personal data",
+        "No unsolicited mass DMs",
+        "Record opt-in and permit withdrawal",
+        "Minimize sensitive data collection"
+      ]
     },
     {
       "id": "crm",
@@ -341,35 +373,40 @@
           "label_zh": "权限隔离的 CRM 资料",
           "candidate_repo": "TwentyHQ/twenty",
           "gate": "human-approval",
-          "output_marker": "step-1.md"
+          "output_marker": "step-1.md",
+          "label_en": "Scope tenant access to CRM data"
         },
         {
           "order": 2,
           "label_zh": "客户问题受理与分类",
           "candidate_repo": "chatwoot/chatwoot",
           "gate": "manual-review",
-          "output_marker": "step-2.md"
+          "output_marker": "step-2.md",
+          "label_en": "Accept and classify service requests"
         },
         {
           "order": 3,
           "label_zh": "知识库建议与人工复核",
           "candidate_repo": "chatwoot/chatwoot",
           "gate": "manual-review",
-          "output_marker": "step-3.md"
+          "output_marker": "step-3.md",
+          "label_en": "Propose answers with human verification"
         },
         {
           "order": 4,
           "label_zh": "经同意的提醒与教育",
           "candidate_repo": "mautic/mautic",
           "gate": "manual-review",
-          "output_marker": "step-4.md"
+          "output_marker": "step-4.md",
+          "label_en": "Send only consented learning or service updates"
         },
         {
           "order": 5,
           "label_zh": "留存、满意度和退订监控",
           "candidate_repo": "posthog/posthog",
           "gate": "human-approval",
-          "output_marker": "step-5.md"
+          "output_marker": "step-5.md",
+          "label_en": "Review retention, opt-outs and deletion requests"
         }
       ],
       "guardrails_zh": [
@@ -386,7 +423,13 @@
       ],
       "stop_condition_zh": "任何真实客户信息需要独立认证与权限审查",
       "stop_condition_en": "Real customer data needs separately reviewed authentication and authorization",
-      "offline_demo_path": null
+      "offline_demo_path": null,
+      "guardrails_en": [
+        "Enforce least-privilege access",
+        "Respect unsubscribe and contact frequency",
+        "Do not impersonate a human or promise outcomes",
+        "Audit actions and support deletion"
+      ]
     },
     {
       "id": "finance",
@@ -434,35 +477,40 @@
           "label_zh": "冻结研究假设与可追溯行情",
           "candidate_repo": "microsoft/qlib",
           "gate": "human-approval",
-          "output_marker": "step-1.md"
+          "output_marker": "step-1.md",
+          "label_en": "Freeze hypothesis and licensed market-data provenance"
         },
         {
           "order": 2,
           "label_zh": "检验泄漏、偏差和条件预测",
           "candidate_repo": "microsoft/RD-Agent",
           "gate": "manual-review",
-          "output_marker": "step-2.md"
+          "output_marker": "step-2.md",
+          "label_en": "Check data leakage and selection bias"
         },
         {
           "order": 3,
           "label_zh": "真实交易成本模拟",
           "candidate_repo": "QuantConnect/Lean",
           "gate": "manual-review",
-          "output_marker": "step-3.md"
+          "output_marker": "step-3.md",
+          "label_en": "Model realistic spreads, slippage and costs"
         },
         {
           "order": 4,
           "label_zh": "样本外和模拟盘前瞻审查",
           "candidate_repo": "QuantConnect/Lean",
           "gate": "manual-review",
-          "output_marker": "step-4.md"
+          "output_marker": "step-4.md",
+          "label_en": "Run chronological OOS and paper-only analysis"
         },
         {
           "order": 5,
           "label_zh": "独立审批风险参数和部署",
           "candidate_repo": "Arize-ai/phoenix",
           "gate": "human-approval",
-          "output_marker": "step-5.md"
+          "output_marker": "step-5.md",
+          "label_en": "Independently review risk policy before deployment"
         }
       ],
       "guardrails_zh": [
@@ -478,7 +526,12 @@
       ],
       "stop_condition_zh": "严格研究用途，不连接账户、无需收益承诺",
       "stop_condition_en": "Research only; no brokerage access or return guarantees",
-      "offline_demo_path": null
+      "offline_demo_path": null,
+      "guardrails_en": [
+        "Do not grant AI live-order permissions",
+        "Never guarantee financial returns",
+        "Require separate legal, security and risk approval before live execution"
+      ]
     },
     {
       "id": "education",
@@ -526,35 +579,40 @@
           "label_zh": "课程版权和使用授权",
           "candidate_repo": null,
           "gate": "human-approval",
-          "output_marker": "step-1.md"
+          "output_marker": "step-1.md",
+          "label_en": "Verify curriculum and content rights"
         },
         {
           "order": 2,
           "label_zh": "文档结构化并保存引用",
           "candidate_repo": "docling-project/docling",
           "gate": "manual-review",
-          "output_marker": "step-2.md"
+          "output_marker": "step-2.md",
+          "label_en": "Structure lesson sources with traceable citations"
         },
         {
           "order": 3,
           "label_zh": "题目、案例、可视化练习",
           "candidate_repo": "infiniflow/ragflow",
           "gate": "manual-review",
-          "output_marker": "step-3.md"
+          "output_marker": "step-3.md",
+          "label_en": "Build exercises, cases and visual practice"
         },
         {
           "order": 4,
           "label_zh": "语音互动及错误诊断",
           "candidate_repo": "openedx/edx-platform",
           "gate": "manual-review",
-          "output_marker": "step-4.md"
+          "output_marker": "step-4.md",
+          "label_en": "Review speech interactions and mistakes"
         },
         {
           "order": 5,
           "label_zh": "学习前后测与质量抽检",
           "candidate_repo": "ggml-org/whisper.cpp",
           "gate": "human-approval",
-          "output_marker": "step-5.md"
+          "output_marker": "step-5.md",
+          "label_en": "Evaluate learning outcomes and sample quality"
         }
       ],
       "guardrails_zh": [
@@ -571,7 +629,13 @@
       ],
       "stop_condition_zh": "教学内容与学生隐私必须分别审查",
       "stop_condition_en": "Review teaching content rights and learner privacy separately",
-      "offline_demo_path": null
+      "offline_demo_path": null,
+      "guardrails_en": [
+        "Verify course, media and illustration rights",
+        "Protect student data",
+        "Keep explanations checkable against sources",
+        "Avoid ungrounded score or improvement promises"
+      ]
     }
   ]
 }
