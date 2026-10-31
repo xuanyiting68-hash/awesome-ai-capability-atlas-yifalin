@@ -57,7 +57,7 @@ function analysis(){
 }
 function renderCandidates(){
  const el=$("candidates");el.replaceChildren();const shown=ranking.slice(0,18);
- addText($("match-count"),"span","");$("match-count").textContent=ranking.length+" 个来源匹配";
+ $("match-count").textContent=ranking.length+" 个来源匹配";
  if(!shown.length){addText(el,"div","无匹配项目；请取消维护过滤或更换业务场景。","empty");return}
  shown.forEach(x=>{
   const card=document.createElement("article");card.className="tool";card.dataset.repo=x.repo;
