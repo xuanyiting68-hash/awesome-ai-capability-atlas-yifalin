@@ -36,7 +36,7 @@ jobs:
         run: node --test tests/mission-engine.test.cjs
       - name: Inspect published page for no bundled model keys or remote SDK
         run: |
-          node --check - <<'END'
+          node - <<'END'
           const fs = require('node:fs');
           const s = fs.readFileSync('mission-studio.html', 'utf8');
           if (!s.includes('mission-engine.js') || /https?:\/\/[^"'\s]+\.js/.test(s)) {
