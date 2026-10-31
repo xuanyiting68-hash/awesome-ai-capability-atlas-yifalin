@@ -6193,6 +6193,7 @@
         "s32"
       ],
       "skills": [
+        "ai-literacy",
         "product",
         "task-design",
         "evaluation",
@@ -6246,6 +6247,7 @@
         "s32"
       ],
       "skills": [
+        "ai-literacy",
         "api",
         "agent",
         "rag",
@@ -6299,6 +6301,7 @@
         "s32"
       ],
       "skills": [
+        "ai-literacy",
         "agent",
         "task-design",
         "evaluation"
@@ -6351,6 +6354,7 @@
         "s32"
       ],
       "skills": [
+        "ai-literacy",
         "agent",
         "operations",
         "governance"
@@ -6403,6 +6407,7 @@
         "s32"
       ],
       "skills": [
+        "ai-literacy",
         "leadership",
         "operations",
         "product"
@@ -6455,6 +6460,7 @@
         "s32"
       ],
       "skills": [
+        "ai-literacy",
         "no-code",
         "api",
         "task-design"
@@ -6507,6 +6513,7 @@
         "s32"
       ],
       "skills": [
+        "ai-literacy",
         "rag",
         "source-check",
         "domain"
@@ -6559,6 +6566,7 @@
         "s32"
       ],
       "skills": [
+        "ai-literacy",
         "rag",
         "ai-coding",
         "evaluation"
@@ -6611,6 +6619,7 @@
         "s32"
       ],
       "skills": [
+        "ai-literacy",
         "data",
         "governance",
         "security"
@@ -6663,6 +6672,7 @@
         "s32"
       ],
       "skills": [
+        "ai-literacy",
         "evaluation",
         "ai-coding",
         "source-check"
@@ -6715,6 +6725,7 @@
         "s32"
       ],
       "skills": [
+        "ai-literacy",
         "security",
         "evaluation",
         "agent"
@@ -6767,6 +6778,7 @@
         "s32"
       ],
       "skills": [
+        "ai-literacy",
         "governance",
         "security",
         "leadership"
@@ -6819,6 +6831,7 @@
         "s32"
       ],
       "skills": [
+        "ai-literacy",
         "communication",
         "teaching",
         "leadership"
@@ -6842,6 +6855,7 @@
         "s08"
       ],
       "skills": [
+        "ai-literacy",
         "teaching",
         "product",
         "evaluation"
@@ -6865,6 +6879,7 @@
         "s08"
       ],
       "skills": [
+        "ai-literacy",
         "teaching",
         "rag",
         "governance"
@@ -6888,6 +6903,7 @@
         "s08"
       ],
       "skills": [
+        "ai-literacy",
         "teaching",
         "multimodal",
         "source-check"
@@ -6911,6 +6927,7 @@
         "s03"
       ],
       "skills": [
+        "ai-literacy",
         "product",
         "domain",
         "research"
@@ -6934,6 +6951,7 @@
         "s03"
       ],
       "skills": [
+        "ai-literacy",
         "domain",
         "data",
         "evaluation"
@@ -6957,6 +6975,7 @@
         "s03"
       ],
       "skills": [
+        "ai-literacy",
         "governance",
         "agent",
         "security"
@@ -6980,6 +6999,7 @@
         "s03"
       ],
       "skills": [
+        "ai-literacy",
         "governance",
         "rag",
         "task-design"
@@ -7001,6 +7021,7 @@
         "s21"
       ],
       "skills": [
+        "ai-literacy",
         "rag",
         "source-check",
         "domain"
@@ -7022,6 +7043,7 @@
         "s22"
       ],
       "skills": [
+        "ai-literacy",
         "data",
         "evaluation",
         "domain"
@@ -7043,6 +7065,7 @@
         "s04"
       ],
       "skills": [
+        "ai-literacy",
         "governance",
         "product",
         "domain"
@@ -7064,6 +7087,7 @@
         "s04"
       ],
       "skills": [
+        "ai-literacy",
         "evaluation",
         "governance",
         "domain"
@@ -7085,6 +7109,7 @@
         "s04"
       ],
       "skills": [
+        "ai-literacy",
         "rag",
         "source-check",
         "security"
@@ -7106,6 +7131,7 @@
         "s05"
       ],
       "skills": [
+        "ai-literacy",
         "data",
         "ml",
         "research"
@@ -7130,6 +7156,7 @@
         "s19"
       ],
       "skills": [
+        "ai-literacy",
         "ml",
         "operations",
         "data"
@@ -7154,6 +7181,7 @@
         "s19"
       ],
       "skills": [
+        "ai-literacy",
         "ml",
         "evaluation",
         "domain"
@@ -7178,6 +7206,7 @@
         "s19"
       ],
       "skills": [
+        "ai-literacy",
         "data",
         "ml",
         "operations"
@@ -7202,6 +7231,7 @@
         "s19"
       ],
       "skills": [
+        "ai-literacy",
         "product",
         "data",
         "operations"
@@ -7224,6 +7254,7 @@
         "s12"
       ],
       "skills": [
+        "ai-literacy",
         "api",
         "no-code",
         "domain"
@@ -7246,6 +7277,7 @@
         "s20"
       ],
       "skills": [
+        "ai-literacy",
         "data",
         "ml",
         "domain"
@@ -7267,6 +7299,7 @@
         "s17"
       ],
       "skills": [
+        "ai-literacy",
         "data",
         "domain",
         "product"
@@ -7291,6 +7324,7 @@
         "s19"
       ],
       "skills": [
+        "ai-literacy",
         "data",
         "operations",
         "ml"
@@ -7313,6 +7347,7 @@
         "s26"
       ],
       "skills": [
+        "ai-literacy",
         "product",
         "data",
         "operations"
@@ -7335,6 +7370,7 @@
         "s28"
       ],
       "skills": [
+        "ai-literacy",
         "multimodal",
         "task-design",
         "evaluation"
@@ -7357,6 +7393,7 @@
         "s26"
       ],
       "skills": [
+        "ai-literacy",
         "research",
         "source-check",
         "data"
@@ -7378,6 +7415,7 @@
         "s13"
       ],
       "skills": [
+        "ai-literacy",
         "no-code",
         "api",
         "governance"
@@ -7399,6 +7437,7 @@
         "s14"
       ],
       "skills": [
+        "ai-literacy",
         "data",
         "domain",
         "research"
@@ -7420,6 +7459,7 @@
         "s29"
       ],
       "skills": [
+        "ai-literacy",
         "data",
         "operations",
         "domain"
@@ -7442,6 +7482,7 @@
         "s28"
       ],
       "skills": [
+        "ai-literacy",
         "agent",
         "product",
         "multimodal"
@@ -7464,6 +7505,7 @@
         "s28"
       ],
       "skills": [
+        "ai-literacy",
         "product",
         "multimodal",
         "evaluation"
@@ -7486,6 +7528,7 @@
         "s28"
       ],
       "skills": [
+        "ai-literacy",
         "multimodal",
         "product",
         "domain"
@@ -7507,6 +7550,7 @@
         "s25"
       ],
       "skills": [
+        "ai-literacy",
         "operations",
         "governance",
         "task-design"
@@ -7528,6 +7572,7 @@
         "s20"
       ],
       "skills": [
+        "ai-literacy",
         "data",
         "source-check",
         "domain"
@@ -7550,6 +7595,7 @@
         "s08"
       ],
       "skills": [
+        "ai-literacy",
         "teaching",
         "product",
         "governance"
@@ -7572,6 +7618,7 @@
         "s08"
       ],
       "skills": [
+        "ai-literacy",
         "governance",
         "security",
         "evaluation"
@@ -7593,6 +7640,7 @@
         "s32"
       ],
       "skills": [
+        "ai-literacy",
         "no-code",
         "product",
         "leadership"
@@ -7615,6 +7663,7 @@
         "s31"
       ],
       "skills": [
+        "ai-literacy",
         "operations",
         "ai-coding",
         "data"
@@ -7638,6 +7687,7 @@
         "s31"
       ],
       "skills": [
+        "ai-literacy",
         "evaluation",
         "communication",
         "operations"
@@ -8816,10 +8866,12 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "domain",
         "research"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-069",
         "learn-037"
       ],
@@ -8848,10 +8900,12 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "data",
         "security"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011",
         "learn-020"
       ],
@@ -8881,6 +8935,7 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent"
       ],
       "learning_ids": [
@@ -8912,9 +8967,11 @@
         "research"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "product"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-017"
       ],
       "practice": "发布带原始来源、回测隔离的研究工作台",
@@ -8943,9 +9000,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -8973,6 +9032,7 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "operations"
       ],
@@ -9006,9 +9066,11 @@
         "research"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "product"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-017"
       ],
       "practice": "发布带原始来源、回测隔离的研究工作台",
@@ -9037,9 +9099,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -9067,6 +9131,7 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "operations"
       ],
@@ -9100,9 +9165,11 @@
         "research"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "product"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-017"
       ],
       "practice": "发布带原始来源、回测隔离的研究工作台",
@@ -9131,9 +9198,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -9161,6 +9230,7 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "operations"
       ],
@@ -9194,9 +9264,11 @@
         "research"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "product"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-017"
       ],
       "practice": "发布带原始来源、回测隔离的研究工作台",
@@ -9225,9 +9297,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -9255,6 +9329,7 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "operations"
       ],
@@ -9287,10 +9362,12 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "domain",
         "research"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-069",
         "learn-037"
       ],
@@ -9319,10 +9396,12 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "data",
         "security"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011",
         "learn-020"
       ],
@@ -9352,6 +9431,7 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent"
       ],
       "learning_ids": [
@@ -9383,9 +9463,11 @@
         "research"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "product"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-017"
       ],
       "practice": "发布带原始来源、回测隔离的研究工作台",
@@ -9414,9 +9496,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -9444,6 +9528,7 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "operations"
       ],
@@ -9477,9 +9562,11 @@
         "domain"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "data"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011"
       ],
       "practice": "比较AI风险筛查和人工审计样本",
@@ -9508,9 +9595,11 @@
         "domain"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -9538,6 +9627,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -9570,9 +9660,11 @@
         "research"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "product"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-017"
       ],
       "practice": "发布带原始来源、回测隔离的研究工作台",
@@ -9601,9 +9693,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -9631,6 +9725,7 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "operations"
       ],
@@ -9663,10 +9758,12 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "domain",
         "research"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-069",
         "learn-037"
       ],
@@ -9695,10 +9792,12 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "data",
         "security"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011",
         "learn-020"
       ],
@@ -9728,6 +9827,7 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent"
       ],
       "learning_ids": [
@@ -9759,9 +9859,11 @@
         "research"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "product"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-017"
       ],
       "practice": "发布带原始来源、回测隔离的研究工作台",
@@ -9790,9 +9892,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -9820,6 +9924,7 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "operations"
       ],
@@ -9853,9 +9958,11 @@
         "research"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "product"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-017"
       ],
       "practice": "发布带原始来源、回测隔离的研究工作台",
@@ -9884,9 +9991,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -9914,6 +10023,7 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "operations"
       ],
@@ -9947,9 +10057,11 @@
         "research"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "product"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-017"
       ],
       "practice": "发布带原始来源、回测隔离的研究工作台",
@@ -9978,9 +10090,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -10008,6 +10122,7 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "operations"
       ],
@@ -10041,9 +10156,11 @@
         "research"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "product"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-017"
       ],
       "practice": "发布带原始来源、回测隔离的研究工作台",
@@ -10072,9 +10189,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -10102,6 +10221,7 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "operations"
       ],
@@ -10134,10 +10254,12 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "domain",
         "research"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-069",
         "learn-037"
       ],
@@ -10166,10 +10288,12 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "data",
         "security"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011",
         "learn-020"
       ],
@@ -10199,6 +10323,7 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent"
       ],
       "learning_ids": [
@@ -10230,9 +10355,11 @@
         "research"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "product"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-017"
       ],
       "practice": "发布带原始来源、回测隔离的研究工作台",
@@ -10261,9 +10388,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -10291,6 +10420,7 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "operations"
       ],
@@ -10324,9 +10454,11 @@
         "research"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "product"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-017"
       ],
       "practice": "发布带原始来源、回测隔离的研究工作台",
@@ -10355,9 +10487,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -10385,6 +10519,7 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "operations"
       ],
@@ -10418,9 +10553,11 @@
         "research"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "product"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-017"
       ],
       "practice": "发布带原始来源、回测隔离的研究工作台",
@@ -10449,9 +10586,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -10479,6 +10618,7 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "operations"
       ],
@@ -10512,9 +10652,11 @@
         "research"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "product"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-017"
       ],
       "practice": "发布带原始来源、回测隔离的研究工作台",
@@ -10543,9 +10685,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -10573,6 +10717,7 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "operations"
       ],
@@ -10606,9 +10751,11 @@
         "research"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "product"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-017"
       ],
       "practice": "发布带原始来源、回测隔离的研究工作台",
@@ -10637,9 +10784,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -10667,6 +10816,7 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "operations"
       ],
@@ -10700,9 +10850,11 @@
         "domain"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "data"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011"
       ],
       "practice": "比较AI风险筛查和人工审计样本",
@@ -10731,9 +10883,11 @@
         "domain"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -10761,6 +10915,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -10793,9 +10948,11 @@
         "research"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "product"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-017"
       ],
       "practice": "发布带原始来源、回测隔离的研究工作台",
@@ -10824,9 +10981,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -10854,6 +11013,7 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "operations"
       ],
@@ -10887,9 +11047,11 @@
         "research"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "product"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-017"
       ],
       "practice": "发布带原始来源、回测隔离的研究工作台",
@@ -10918,9 +11080,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -10948,6 +11112,7 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "operations"
       ],
@@ -10981,8 +11146,12 @@
         "governance",
         "evaluation"
       ],
-      "skill_gaps": [],
-      "learning_ids": [],
+      "skill_gaps": [
+        "ai-literacy"
+      ],
+      "learning_ids": [
+        "learn-001"
+      ],
       "practice": "记录医生基线、漏检成本和人工干预",
       "suggested_pilot_id": "s04-documents",
       "reason": "同行业任务相关",
@@ -11009,9 +11178,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -11040,9 +11211,11 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "ai-coding"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-010"
       ],
       "practice": "制作包含失败对照和回归的评测报告",
@@ -11071,8 +11244,12 @@
         "governance",
         "evaluation"
       ],
-      "skill_gaps": [],
-      "learning_ids": [],
+      "skill_gaps": [
+        "ai-literacy"
+      ],
+      "learning_ids": [
+        "learn-001"
+      ],
       "practice": "记录医生基线、漏检成本和人工干预",
       "suggested_pilot_id": "s04-documents",
       "reason": "同行业任务相关",
@@ -11099,9 +11276,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -11130,9 +11309,11 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "ai-coding"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-010"
       ],
       "practice": "制作包含失败对照和回归的评测报告",
@@ -11161,8 +11342,12 @@
         "governance",
         "evaluation"
       ],
-      "skill_gaps": [],
-      "learning_ids": [],
+      "skill_gaps": [
+        "ai-literacy"
+      ],
+      "learning_ids": [
+        "learn-001"
+      ],
       "practice": "记录医生基线、漏检成本和人工干预",
       "suggested_pilot_id": "s04-documents",
       "reason": "同行业任务相关",
@@ -11189,9 +11374,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -11220,9 +11407,11 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "ai-coding"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-010"
       ],
       "practice": "制作包含失败对照和回归的评测报告",
@@ -11251,8 +11440,12 @@
         "governance",
         "evaluation"
       ],
-      "skill_gaps": [],
-      "learning_ids": [],
+      "skill_gaps": [
+        "ai-literacy"
+      ],
+      "learning_ids": [
+        "learn-001"
+      ],
       "practice": "记录医生基线、漏检成本和人工干预",
       "suggested_pilot_id": "s04-documents",
       "reason": "同行业任务相关",
@@ -11279,9 +11472,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -11310,9 +11505,11 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "ai-coding"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-010"
       ],
       "practice": "制作包含失败对照和回归的评测报告",
@@ -11341,8 +11538,12 @@
         "governance",
         "evaluation"
       ],
-      "skill_gaps": [],
-      "learning_ids": [],
+      "skill_gaps": [
+        "ai-literacy"
+      ],
+      "learning_ids": [
+        "learn-001"
+      ],
       "practice": "记录医生基线、漏检成本和人工干预",
       "suggested_pilot_id": "s04-documents",
       "reason": "同行业任务相关",
@@ -11369,9 +11570,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -11400,9 +11603,11 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "ai-coding"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-010"
       ],
       "practice": "制作包含失败对照和回归的评测报告",
@@ -11431,8 +11636,12 @@
         "governance",
         "evaluation"
       ],
-      "skill_gaps": [],
-      "learning_ids": [],
+      "skill_gaps": [
+        "ai-literacy"
+      ],
+      "learning_ids": [
+        "learn-001"
+      ],
       "practice": "记录医生基线、漏检成本和人工干预",
       "suggested_pilot_id": "s04-documents",
       "reason": "同行业任务相关",
@@ -11459,9 +11668,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -11490,9 +11701,11 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "ai-coding"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-010"
       ],
       "practice": "制作包含失败对照和回归的评测报告",
@@ -11521,8 +11734,12 @@
         "governance",
         "evaluation"
       ],
-      "skill_gaps": [],
-      "learning_ids": [],
+      "skill_gaps": [
+        "ai-literacy"
+      ],
+      "learning_ids": [
+        "learn-001"
+      ],
       "practice": "记录医生基线、漏检成本和人工干预",
       "suggested_pilot_id": "s04-documents",
       "reason": "同行业任务相关",
@@ -11549,9 +11766,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -11580,9 +11799,11 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "ai-coding"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-010"
       ],
       "practice": "制作包含失败对照和回归的评测报告",
@@ -11611,9 +11832,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -11639,13 +11862,14 @@
       "to_role": "ai-026",
       "shared_skills": [],
       "skill_gaps": [
+        "ai-literacy",
         "data",
         "ml",
         "research"
       ],
       "learning_ids": [
-        "learn-011",
-        "learn-037"
+        "learn-001",
+        "learn-011"
       ],
       "practice": "创建可复现合成数据分析",
       "suggested_pilot_id": "s05-research",
@@ -11673,9 +11897,11 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "ai-coding"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-010"
       ],
       "practice": "制作包含失败对照和回归的评测报告",
@@ -11704,9 +11930,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -11732,13 +11960,14 @@
       "to_role": "ai-026",
       "shared_skills": [],
       "skill_gaps": [
+        "ai-literacy",
         "data",
         "ml",
         "research"
       ],
       "learning_ids": [
-        "learn-011",
-        "learn-037"
+        "learn-001",
+        "learn-011"
       ],
       "practice": "创建可复现合成数据分析",
       "suggested_pilot_id": "s05-research",
@@ -11766,9 +11995,11 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "ai-coding"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-010"
       ],
       "practice": "制作包含失败对照和回归的评测报告",
@@ -11797,9 +12028,11 @@
         "domain"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -11825,13 +12058,14 @@
       "to_role": "ai-026",
       "shared_skills": [],
       "skill_gaps": [
+        "ai-literacy",
         "data",
         "ml",
         "research"
       ],
       "learning_ids": [
-        "learn-011",
-        "learn-037"
+        "learn-001",
+        "learn-011"
       ],
       "practice": "创建可复现合成数据分析",
       "suggested_pilot_id": "s05-research",
@@ -11859,9 +12093,11 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "ai-coding"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-010"
       ],
       "practice": "制作包含失败对照和回归的评测报告",
@@ -11890,9 +12126,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -11918,13 +12156,14 @@
       "to_role": "ai-026",
       "shared_skills": [],
       "skill_gaps": [
+        "ai-literacy",
         "data",
         "ml",
         "research"
       ],
       "learning_ids": [
-        "learn-011",
-        "learn-037"
+        "learn-001",
+        "learn-011"
       ],
       "practice": "创建可复现合成数据分析",
       "suggested_pilot_id": "s05-research",
@@ -11952,9 +12191,11 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "ai-coding"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-010"
       ],
       "practice": "制作包含失败对照和回归的评测报告",
@@ -11983,9 +12224,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -12011,13 +12254,14 @@
       "to_role": "ai-026",
       "shared_skills": [],
       "skill_gaps": [
+        "ai-literacy",
         "data",
         "ml",
         "research"
       ],
       "learning_ids": [
-        "learn-011",
-        "learn-037"
+        "learn-001",
+        "learn-011"
       ],
       "practice": "创建可复现合成数据分析",
       "suggested_pilot_id": "s05-research",
@@ -12045,9 +12289,11 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "ai-coding"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-010"
       ],
       "practice": "制作包含失败对照和回归的评测报告",
@@ -12076,9 +12322,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -12104,13 +12352,14 @@
       "to_role": "ai-026",
       "shared_skills": [],
       "skill_gaps": [
+        "ai-literacy",
         "data",
         "ml",
         "research"
       ],
       "learning_ids": [
-        "learn-011",
-        "learn-037"
+        "learn-001",
+        "learn-011"
       ],
       "practice": "创建可复现合成数据分析",
       "suggested_pilot_id": "s05-research",
@@ -12138,9 +12387,11 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "ai-coding"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-010"
       ],
       "practice": "制作包含失败对照和回归的评测报告",
@@ -12169,9 +12420,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -12197,13 +12450,14 @@
       "to_role": "ai-026",
       "shared_skills": [],
       "skill_gaps": [
+        "ai-literacy",
         "data",
         "ml",
         "research"
       ],
       "learning_ids": [
-        "learn-011",
-        "learn-037"
+        "learn-001",
+        "learn-011"
       ],
       "practice": "创建可复现合成数据分析",
       "suggested_pilot_id": "s05-research",
@@ -12231,9 +12485,11 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "ai-coding"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-010"
       ],
       "practice": "制作包含失败对照和回归的评测报告",
@@ -12262,9 +12518,11 @@
         "communication"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "leadership"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-004"
       ],
       "practice": "开展岗位训练并评估练习与采纳",
@@ -12293,9 +12551,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -12324,10 +12584,12 @@
         "task-design"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "product",
         "evaluation"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-017",
         "learn-003"
       ],
@@ -12357,9 +12619,11 @@
         "communication"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "leadership"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-004"
       ],
       "practice": "开展岗位训练并评估练习与采纳",
@@ -12388,9 +12652,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -12419,10 +12685,12 @@
         "task-design"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "product",
         "evaluation"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-017",
         "learn-003"
       ],
@@ -12452,9 +12720,11 @@
         "communication"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "teaching"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-032"
       ],
       "practice": "开展岗位训练并评估练习与采纳",
@@ -12483,8 +12753,12 @@
         "operations",
         "product"
       ],
-      "skill_gaps": [],
-      "learning_ids": [],
+      "skill_gaps": [
+        "ai-literacy"
+      ],
+      "learning_ids": [
+        "learn-001"
+      ],
       "practice": "完成流程诊断、成本边界和试点路线图",
       "suggested_pilot_id": "s06-learning",
       "reason": "同行业任务相关",
@@ -12510,10 +12784,12 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "data",
         "security"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011",
         "learn-020"
       ],
@@ -12543,9 +12819,11 @@
         "communication"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "leadership"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-004"
       ],
       "practice": "开展岗位训练并评估练习与采纳",
@@ -12574,9 +12852,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -12604,14 +12884,14 @@
         "domain"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "product",
         "task-design",
         "evaluation"
       ],
       "learning_ids": [
-        "learn-017",
         "learn-001",
-        "learn-003"
+        "learn-017"
       ],
       "practice": "交付一个带用户测试和失败案例的AI产品原型",
       "suggested_pilot_id": "s06-learning",
@@ -12639,9 +12919,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "teaching"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-032"
       ],
       "practice": "交付能测量学习效果的微课程",
@@ -12669,10 +12951,12 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag",
         "domain"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013",
         "learn-069"
       ],
@@ -12701,14 +12985,14 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "task-design",
         "evaluation",
         "domain"
       ],
       "learning_ids": [
         "learn-001",
-        "learn-003",
-        "learn-069"
+        "learn-003"
       ],
       "practice": "交付一个带用户测试和失败案例的AI产品原型",
       "suggested_pilot_id": "s06-learning",
@@ -12736,9 +13020,11 @@
         "communication"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "leadership"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-004"
       ],
       "practice": "开展岗位训练并评估练习与采纳",
@@ -12767,9 +13053,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -12797,14 +13085,14 @@
         "domain"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "product",
         "task-design",
         "evaluation"
       ],
       "learning_ids": [
-        "learn-017",
         "learn-001",
-        "learn-003"
+        "learn-017"
       ],
       "practice": "交付一个带用户测试和失败案例的AI产品原型",
       "suggested_pilot_id": "s06-learning",
@@ -12832,9 +13120,11 @@
         "communication"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "leadership"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-004"
       ],
       "practice": "开展岗位训练并评估练习与采纳",
@@ -12863,9 +13153,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -12893,14 +13185,14 @@
         "domain"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "product",
         "task-design",
         "evaluation"
       ],
       "learning_ids": [
-        "learn-017",
         "learn-001",
-        "learn-003"
+        "learn-017"
       ],
       "practice": "交付一个带用户测试和失败案例的AI产品原型",
       "suggested_pilot_id": "s06-learning",
@@ -12928,9 +13220,11 @@
         "communication"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "leadership"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-004"
       ],
       "practice": "开展岗位训练并评估练习与采纳",
@@ -12959,9 +13253,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -12989,14 +13285,14 @@
         "domain"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "product",
         "task-design",
         "evaluation"
       ],
       "learning_ids": [
-        "learn-017",
         "learn-001",
-        "learn-003"
+        "learn-017"
       ],
       "practice": "交付一个带用户测试和失败案例的AI产品原型",
       "suggested_pilot_id": "s07-research",
@@ -13024,9 +13320,11 @@
         "communication"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "leadership"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-004"
       ],
       "practice": "开展岗位训练并评估练习与采纳",
@@ -13055,9 +13353,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -13085,14 +13385,14 @@
         "domain"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "product",
         "task-design",
         "evaluation"
       ],
       "learning_ids": [
-        "learn-017",
         "learn-001",
-        "learn-003"
+        "learn-017"
       ],
       "practice": "交付一个带用户测试和失败案例的AI产品原型",
       "suggested_pilot_id": "s07-research",
@@ -13120,9 +13420,11 @@
         "communication"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "leadership"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-004"
       ],
       "practice": "开展岗位训练并评估练习与采纳",
@@ -13151,9 +13453,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -13181,14 +13485,14 @@
         "domain"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "product",
         "task-design",
         "evaluation"
       ],
       "learning_ids": [
-        "learn-017",
         "learn-001",
-        "learn-003"
+        "learn-017"
       ],
       "practice": "交付一个带用户测试和失败案例的AI产品原型",
       "suggested_pilot_id": "s07-research",
@@ -13216,9 +13520,11 @@
         "communication"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "teaching"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-032"
       ],
       "practice": "开展岗位训练并评估练习与采纳",
@@ -13247,8 +13553,12 @@
         "operations",
         "product"
       ],
-      "skill_gaps": [],
-      "learning_ids": [],
+      "skill_gaps": [
+        "ai-literacy"
+      ],
+      "learning_ids": [
+        "learn-001"
+      ],
       "practice": "完成流程诊断、成本边界和试点路线图",
       "suggested_pilot_id": "s07-research",
       "reason": "同行业任务相关",
@@ -13274,10 +13584,12 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "data",
         "security"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011",
         "learn-020"
       ],
@@ -13306,10 +13618,12 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "teaching",
         "product"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-032",
         "learn-017"
       ],
@@ -13339,9 +13653,11 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "比较检索召回、引用正确率和无答案处理",
@@ -13369,14 +13685,14 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "product",
         "task-design",
         "domain"
       ],
       "learning_ids": [
-        "learn-017",
         "learn-001",
-        "learn-069"
+        "learn-017"
       ],
       "practice": "交付一个带用户测试和失败案例的AI产品原型",
       "suggested_pilot_id": "s07-research",
@@ -13404,9 +13720,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "teaching"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-032"
       ],
       "practice": "交付能测量学习效果的微课程",
@@ -13434,10 +13752,12 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag",
         "domain"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013",
         "learn-069"
       ],
@@ -13466,14 +13786,14 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "task-design",
         "evaluation",
         "domain"
       ],
       "learning_ids": [
         "learn-001",
-        "learn-003",
-        "learn-069"
+        "learn-003"
       ],
       "practice": "交付一个带用户测试和失败案例的AI产品原型",
       "suggested_pilot_id": "s07-research",
@@ -13501,9 +13821,11 @@
         "communication"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "leadership"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-004"
       ],
       "practice": "开展岗位训练并评估练习与采纳",
@@ -13532,9 +13854,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -13562,14 +13886,14 @@
         "domain"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "product",
         "task-design",
         "evaluation"
       ],
       "learning_ids": [
-        "learn-017",
         "learn-001",
-        "learn-003"
+        "learn-017"
       ],
       "practice": "交付一个带用户测试和失败案例的AI产品原型",
       "suggested_pilot_id": "s07-research",
@@ -13597,9 +13921,11 @@
         "communication"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "leadership"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-004"
       ],
       "practice": "开展岗位训练并评估练习与采纳",
@@ -13628,9 +13954,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -13659,10 +13987,12 @@
         "task-design"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "product",
         "evaluation"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-017",
         "learn-003"
       ],
@@ -13692,9 +14022,11 @@
         "communication"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "leadership"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-004"
       ],
       "practice": "开展岗位训练并评估练习与采纳",
@@ -13723,9 +14055,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -13754,10 +14088,12 @@
         "task-design"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "product",
         "evaluation"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-017",
         "learn-003"
       ],
@@ -13787,9 +14123,11 @@
         "communication"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "leadership"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-004"
       ],
       "practice": "开展岗位训练并评估练习与采纳",
@@ -13818,9 +14156,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -13848,14 +14188,14 @@
         "domain"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "product",
         "task-design",
         "evaluation"
       ],
       "learning_ids": [
-        "learn-017",
         "learn-001",
-        "learn-003"
+        "learn-017"
       ],
       "practice": "交付一个带用户测试和失败案例的AI产品原型",
       "suggested_pilot_id": "s08-learning",
@@ -13883,9 +14223,11 @@
         "communication"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "leadership"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-004"
       ],
       "practice": "开展岗位训练并评估练习与采纳",
@@ -13914,9 +14256,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -13944,14 +14288,14 @@
         "domain"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "product",
         "task-design",
         "evaluation"
       ],
       "learning_ids": [
-        "learn-017",
         "learn-001",
-        "learn-003"
+        "learn-017"
       ],
       "practice": "交付一个带用户测试和失败案例的AI产品原型",
       "suggested_pilot_id": "s08-learning",
@@ -13979,9 +14323,11 @@
         "communication"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "leadership"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-004"
       ],
       "practice": "开展岗位训练并评估练习与采纳",
@@ -14010,9 +14356,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -14040,14 +14388,14 @@
         "domain"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "product",
         "task-design",
         "evaluation"
       ],
       "learning_ids": [
-        "learn-017",
         "learn-001",
-        "learn-003"
+        "learn-017"
       ],
       "practice": "交付一个带用户测试和失败案例的AI产品原型",
       "suggested_pilot_id": "s08-learning",
@@ -14075,9 +14423,11 @@
         "communication"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "leadership"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-004"
       ],
       "practice": "开展岗位训练并评估练习与采纳",
@@ -14106,9 +14456,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -14137,10 +14489,12 @@
         "task-design"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "product",
         "evaluation"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-017",
         "learn-003"
       ],
@@ -14170,9 +14524,11 @@
         "communication"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "leadership"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-004"
       ],
       "practice": "开展岗位训练并评估练习与采纳",
@@ -14201,9 +14557,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -14231,14 +14589,14 @@
         "domain"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "product",
         "task-design",
         "evaluation"
       ],
       "learning_ids": [
-        "learn-017",
         "learn-001",
-        "learn-003"
+        "learn-017"
       ],
       "practice": "交付一个带用户测试和失败案例的AI产品原型",
       "suggested_pilot_id": "s08-learning",
@@ -14266,9 +14624,11 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "data"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011"
       ],
       "practice": "在沙盒模拟关键设备约束",
@@ -14296,10 +14656,12 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "data",
         "security"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011",
         "learn-020"
       ],
@@ -14329,6 +14691,7 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent"
       ],
       "learning_ids": [
@@ -14360,9 +14723,11 @@
         "operations"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "ml"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011"
       ],
       "practice": "制作离线设备异常验证报告",
@@ -14391,9 +14756,11 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "比较检索召回、引用正确率和无答案处理",
@@ -14421,6 +14788,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -14453,9 +14821,11 @@
         "data"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "ml"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011"
       ],
       "practice": "制作离线设备异常验证报告",
@@ -14484,9 +14854,11 @@
         "security"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "governance"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-004"
       ],
       "practice": "交付数据字典、保留策略、质量规则",
@@ -14514,6 +14886,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -14546,9 +14919,11 @@
         "data"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "ml"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011"
       ],
       "practice": "制作离线设备异常验证报告",
@@ -14577,9 +14952,11 @@
         "security"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "governance"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-004"
       ],
       "practice": "交付数据字典、保留策略、质量规则",
@@ -14607,6 +14984,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -14639,9 +15017,11 @@
         "operations"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "ml"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011"
       ],
       "practice": "制作离线设备异常验证报告",
@@ -14670,9 +15050,11 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "比较检索召回、引用正确率和无答案处理",
@@ -14700,6 +15082,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -14732,9 +15115,11 @@
         "data"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "ml"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011"
       ],
       "practice": "制作离线设备异常验证报告",
@@ -14763,9 +15148,11 @@
         "security"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "governance"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-004"
       ],
       "practice": "交付数据字典、保留策略、质量规则",
@@ -14793,6 +15180,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -14825,9 +15213,11 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "data"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011"
       ],
       "practice": "在沙盒模拟关键设备约束",
@@ -14855,10 +15245,12 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "data",
         "security"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011",
         "learn-020"
       ],
@@ -14888,6 +15280,7 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent"
       ],
       "learning_ids": [
@@ -14919,9 +15312,11 @@
         "data"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "ml"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011"
       ],
       "practice": "制作离线设备异常验证报告",
@@ -14950,9 +15345,11 @@
         "security"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "governance"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-004"
       ],
       "practice": "交付数据字典、保留策略、质量规则",
@@ -14980,6 +15377,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -15012,9 +15410,11 @@
         "data"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "ml"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011"
       ],
       "practice": "制作离线设备异常验证报告",
@@ -15043,9 +15443,11 @@
         "security"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "governance"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-004"
       ],
       "practice": "交付数据字典、保留策略、质量规则",
@@ -15073,6 +15475,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -15105,9 +15508,11 @@
         "data"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "ml"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011"
       ],
       "practice": "制作离线设备异常验证报告",
@@ -15136,9 +15541,11 @@
         "security"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "governance"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-004"
       ],
       "practice": "交付数据字典、保留策略、质量规则",
@@ -15166,6 +15573,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -15198,9 +15606,11 @@
         "operations"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "ml"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011"
       ],
       "practice": "制作离线设备异常验证报告",
@@ -15229,9 +15639,11 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "比较检索召回、引用正确率和无答案处理",
@@ -15259,6 +15671,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -15291,9 +15704,11 @@
         "operations"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "ml"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011"
       ],
       "practice": "制作离线设备异常验证报告",
@@ -15322,9 +15737,11 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "比较检索召回、引用正确率和无答案处理",
@@ -15352,6 +15769,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -15384,9 +15802,11 @@
         "operations"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "ml"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011"
       ],
       "practice": "制作离线设备异常验证报告",
@@ -15415,9 +15835,11 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "比较检索召回、引用正确率和无答案处理",
@@ -15445,6 +15867,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -15477,9 +15900,11 @@
         "operations"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "ml"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011"
       ],
       "practice": "制作离线设备异常验证报告",
@@ -15508,9 +15933,11 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "比较检索召回、引用正确率和无答案处理",
@@ -15538,6 +15965,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -15569,10 +15997,12 @@
         "domain"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "api",
         "no-code"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-010",
         "learn-014"
       ],
@@ -15602,9 +16032,11 @@
         "security"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "governance"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-004"
       ],
       "practice": "交付数据字典、保留策略、质量规则",
@@ -15632,6 +16064,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -15661,14 +16094,15 @@
       "to_role": "ai-031",
       "shared_skills": [],
       "skill_gaps": [
+        "ai-literacy",
         "api",
         "no-code",
         "domain"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-010",
-        "learn-014",
-        "learn-069"
+        "learn-014"
       ],
       "practice": "生成可审查BIM变更报告",
       "suggested_pilot_id": "s11-documents",
@@ -15695,10 +16129,12 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "data",
         "security"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011",
         "learn-020"
       ],
@@ -15728,6 +16164,7 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent"
       ],
       "learning_ids": [
@@ -15758,10 +16195,12 @@
         "domain"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "api",
         "no-code"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-010",
         "learn-014"
       ],
@@ -15791,9 +16230,11 @@
         "security"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "governance"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-004"
       ],
       "practice": "交付数据字典、保留策略、质量规则",
@@ -15821,6 +16262,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -15852,10 +16294,12 @@
         "api"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "no-code",
         "domain"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-014",
         "learn-069"
       ],
@@ -15885,9 +16329,11 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "比较检索召回、引用正确率和无答案处理",
@@ -15915,6 +16361,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -15946,10 +16393,12 @@
         "api"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "no-code",
         "domain"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-014",
         "learn-069"
       ],
@@ -15979,9 +16428,11 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "比较检索召回、引用正确率和无答案处理",
@@ -16009,6 +16460,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -16040,10 +16492,12 @@
         "domain"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "api",
         "no-code"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-010",
         "learn-014"
       ],
@@ -16073,9 +16527,11 @@
         "security"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "governance"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-004"
       ],
       "practice": "交付数据字典、保留策略、质量规则",
@@ -16103,6 +16559,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -16134,10 +16591,12 @@
         "domain"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "api",
         "no-code"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-010",
         "learn-014"
       ],
@@ -16167,9 +16626,11 @@
         "domain"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -16197,6 +16658,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -16228,10 +16690,12 @@
         "domain"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "api",
         "no-code"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-010",
         "learn-014"
       ],
@@ -16261,9 +16725,11 @@
         "security"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "governance"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-004"
       ],
       "practice": "交付数据字典、保留策略、质量规则",
@@ -16291,6 +16757,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -16320,14 +16787,15 @@
       "to_role": "ai-031",
       "shared_skills": [],
       "skill_gaps": [
+        "ai-literacy",
         "api",
         "no-code",
         "domain"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-010",
-        "learn-014",
-        "learn-069"
+        "learn-014"
       ],
       "practice": "生成可审查BIM变更报告",
       "suggested_pilot_id": "s12-support",
@@ -16354,10 +16822,12 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "data",
         "security"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011",
         "learn-020"
       ],
@@ -16387,6 +16857,7 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent"
       ],
       "learning_ids": [
@@ -16417,10 +16888,12 @@
         "domain"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "api",
         "no-code"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-010",
         "learn-014"
       ],
@@ -16450,9 +16923,11 @@
         "security"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "governance"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-004"
       ],
       "practice": "交付数据字典、保留策略、质量规则",
@@ -16480,6 +16955,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -16511,10 +16987,12 @@
         "domain"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "api",
         "no-code"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-010",
         "learn-014"
       ],
@@ -16544,9 +17022,11 @@
         "security"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "governance"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-004"
       ],
       "practice": "交付数据字典、保留策略、质量规则",
@@ -16574,6 +17054,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -16605,10 +17086,12 @@
         "domain"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "api",
         "no-code"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-010",
         "learn-014"
       ],
@@ -16638,9 +17121,11 @@
         "security"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "governance"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-004"
       ],
       "practice": "交付数据字典、保留策略、质量规则",
@@ -16668,6 +17153,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -16699,10 +17185,12 @@
         "api"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "no-code",
         "domain"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-014",
         "learn-069"
       ],
@@ -16732,9 +17220,11 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "比较检索召回、引用正确率和无答案处理",
@@ -16762,6 +17252,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -16793,10 +17284,12 @@
         "domain"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "api",
         "no-code"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-010",
         "learn-014"
       ],
@@ -16826,9 +17319,11 @@
         "security"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "governance"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-004"
       ],
       "practice": "交付数据字典、保留策略、质量规则",
@@ -16856,6 +17351,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -16888,8 +17384,12 @@
         "operations",
         "product"
       ],
-      "skill_gaps": [],
-      "learning_ids": [],
+      "skill_gaps": [
+        "ai-literacy"
+      ],
+      "learning_ids": [
+        "learn-001"
+      ],
       "practice": "完成流程诊断、成本边界和试点路线图",
       "suggested_pilot_id": "s13-sales",
       "reason": "同行业任务相关",
@@ -16915,10 +17415,12 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "no-code",
         "api"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-014",
         "learn-010"
       ],
@@ -16948,6 +17450,7 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent"
       ],
       "learning_ids": [
@@ -16979,8 +17482,12 @@
         "operations",
         "product"
       ],
-      "skill_gaps": [],
-      "learning_ids": [],
+      "skill_gaps": [
+        "ai-literacy"
+      ],
+      "learning_ids": [
+        "learn-001"
+      ],
       "practice": "完成流程诊断、成本边界和试点路线图",
       "suggested_pilot_id": "s13-sales",
       "reason": "同行业任务相关",
@@ -17006,10 +17513,12 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "no-code",
         "api"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-014",
         "learn-010"
       ],
@@ -17039,6 +17548,7 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent"
       ],
       "learning_ids": [
@@ -17070,6 +17580,7 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "task-design",
         "evaluation"
       ],
@@ -17100,14 +17611,15 @@
       "to_role": "ai-038",
       "shared_skills": [],
       "skill_gaps": [
+        "ai-literacy",
         "no-code",
         "api",
         "governance"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-014",
-        "learn-010",
-        "learn-004"
+        "learn-010"
       ],
       "practice": "仅经同意并人工审批后外发",
       "suggested_pilot_id": "s13-sales",
@@ -17134,6 +17646,7 @@
         "operations"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "governance"
       ],
@@ -17167,6 +17680,7 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "task-design",
         "evaluation"
       ],
@@ -17197,14 +17711,15 @@
       "to_role": "ai-038",
       "shared_skills": [],
       "skill_gaps": [
+        "ai-literacy",
         "no-code",
         "api",
         "governance"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-014",
-        "learn-010",
-        "learn-004"
+        "learn-010"
       ],
       "practice": "仅经同意并人工审批后外发",
       "suggested_pilot_id": "s13-sales",
@@ -17231,6 +17746,7 @@
         "operations"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "governance"
       ],
@@ -17264,8 +17780,12 @@
         "operations",
         "product"
       ],
-      "skill_gaps": [],
-      "learning_ids": [],
+      "skill_gaps": [
+        "ai-literacy"
+      ],
+      "learning_ids": [
+        "learn-001"
+      ],
       "practice": "完成流程诊断、成本边界和试点路线图",
       "suggested_pilot_id": "s13-sales",
       "reason": "同行业任务相关",
@@ -17291,10 +17811,12 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "no-code",
         "api"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-014",
         "learn-010"
       ],
@@ -17324,6 +17846,7 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent"
       ],
       "learning_ids": [
@@ -17355,6 +17878,7 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "task-design",
         "evaluation"
       ],
@@ -17385,14 +17909,15 @@
       "to_role": "ai-038",
       "shared_skills": [],
       "skill_gaps": [
+        "ai-literacy",
         "no-code",
         "api",
         "governance"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-014",
-        "learn-010",
-        "learn-004"
+        "learn-010"
       ],
       "practice": "仅经同意并人工审批后外发",
       "suggested_pilot_id": "s13-sales",
@@ -17419,6 +17944,7 @@
         "operations"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "governance"
       ],
@@ -17452,8 +17978,12 @@
         "operations",
         "product"
       ],
-      "skill_gaps": [],
-      "learning_ids": [],
+      "skill_gaps": [
+        "ai-literacy"
+      ],
+      "learning_ids": [
+        "learn-001"
+      ],
       "practice": "完成流程诊断、成本边界和试点路线图",
       "suggested_pilot_id": "s13-sales",
       "reason": "同行业任务相关",
@@ -17479,10 +18009,12 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "no-code",
         "api"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-014",
         "learn-010"
       ],
@@ -17512,6 +18044,7 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent"
       ],
       "learning_ids": [
@@ -17543,9 +18076,11 @@
         "data"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "research"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-037"
       ],
       "practice": "建立真实采购成本与转化指标",
@@ -17574,6 +18109,7 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "task-design",
         "evaluation"
       ],
@@ -17607,9 +18143,11 @@
         "communication"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "evaluation"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-003"
       ],
       "practice": "量化用户纠错、升级与满意度",
@@ -17638,9 +18176,11 @@
         "data"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "research"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-037"
       ],
       "practice": "建立真实采购成本与转化指标",
@@ -17669,6 +18209,7 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "task-design",
         "evaluation"
       ],
@@ -17702,9 +18243,11 @@
         "communication"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "evaluation"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-003"
       ],
       "practice": "量化用户纠错、升级与满意度",
@@ -17733,9 +18276,11 @@
         "data"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "research"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-037"
       ],
       "practice": "建立真实采购成本与转化指标",
@@ -17764,6 +18309,7 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "task-design",
         "evaluation"
       ],
@@ -17797,9 +18343,11 @@
         "communication"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "evaluation"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-003"
       ],
       "practice": "量化用户纠错、升级与满意度",
@@ -17828,9 +18376,11 @@
         "data"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "research"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-037"
       ],
       "practice": "建立真实采购成本与转化指标",
@@ -17859,6 +18409,7 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "task-design",
         "evaluation"
       ],
@@ -17892,9 +18443,11 @@
         "communication"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "evaluation"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-003"
       ],
       "practice": "量化用户纠错、升级与满意度",
@@ -17923,9 +18476,11 @@
         "data"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "research"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-037"
       ],
       "practice": "建立真实采购成本与转化指标",
@@ -17954,6 +18509,7 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "task-design",
         "evaluation"
       ],
@@ -17987,9 +18543,11 @@
         "communication"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "evaluation"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-003"
       ],
       "practice": "量化用户纠错、升级与满意度",
@@ -18018,9 +18576,11 @@
         "data"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "research"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-037"
       ],
       "practice": "建立真实采购成本与转化指标",
@@ -18049,6 +18609,7 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "task-design",
         "evaluation"
       ],
@@ -18082,9 +18643,11 @@
         "communication"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "evaluation"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-003"
       ],
       "practice": "量化用户纠错、升级与满意度",
@@ -18113,9 +18676,11 @@
         "data"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "research"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-037"
       ],
       "practice": "建立真实采购成本与转化指标",
@@ -18144,6 +18709,7 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "task-design",
         "evaluation"
       ],
@@ -18177,9 +18743,11 @@
         "communication"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "evaluation"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-003"
       ],
       "practice": "量化用户纠错、升级与满意度",
@@ -18208,9 +18776,11 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "data"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011"
       ],
       "practice": "在沙盒模拟关键设备约束",
@@ -18238,10 +18808,12 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "data",
         "security"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011",
         "learn-020"
       ],
@@ -18271,6 +18843,7 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent"
       ],
       "learning_ids": [
@@ -18302,9 +18875,11 @@
         "data"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "ml"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011"
       ],
       "practice": "制作离线设备异常验证报告",
@@ -18333,9 +18908,11 @@
         "security"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "governance"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-004"
       ],
       "practice": "交付数据字典、保留策略、质量规则",
@@ -18363,6 +18940,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -18395,9 +18973,11 @@
         "data"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "ml"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011"
       ],
       "practice": "制作离线设备异常验证报告",
@@ -18426,9 +19006,11 @@
         "security"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "governance"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-004"
       ],
       "practice": "交付数据字典、保留策略、质量规则",
@@ -18456,6 +19038,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -18488,9 +19071,11 @@
         "data"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "ml"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011"
       ],
       "practice": "制作离线设备异常验证报告",
@@ -18519,9 +19104,11 @@
         "security"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "governance"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-004"
       ],
       "practice": "交付数据字典、保留策略、质量规则",
@@ -18549,6 +19136,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -18581,9 +19169,11 @@
         "data"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "ml"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011"
       ],
       "practice": "制作离线设备异常验证报告",
@@ -18612,9 +19202,11 @@
         "security"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "governance"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-004"
       ],
       "practice": "交付数据字典、保留策略、质量规则",
@@ -18642,6 +19234,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -18674,9 +19267,11 @@
         "data"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "ml"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011"
       ],
       "practice": "制作离线设备异常验证报告",
@@ -18705,9 +19300,11 @@
         "security"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "governance"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-004"
       ],
       "practice": "交付数据字典、保留策略、质量规则",
@@ -18735,6 +19332,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -18767,9 +19365,11 @@
         "data"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "ml"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011"
       ],
       "practice": "制作离线设备异常验证报告",
@@ -18798,9 +19398,11 @@
         "security"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "governance"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-004"
       ],
       "practice": "交付数据字典、保留策略、质量规则",
@@ -18828,6 +19430,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -18860,9 +19463,11 @@
         "security"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "governance"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-004"
       ],
       "practice": "交付数据字典、保留策略、质量规则",
@@ -18890,6 +19495,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -18922,6 +19528,7 @@
         "security"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent"
       ],
       "learning_ids": [
@@ -18952,10 +19559,12 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "data",
         "security"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011",
         "learn-020"
       ],
@@ -18985,6 +19594,7 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent"
       ],
       "learning_ids": [
@@ -19016,9 +19626,11 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "security"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-020"
       ],
       "practice": "输出风险登记册与审批矩阵",
@@ -19047,9 +19659,11 @@
         "security"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "governance"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-004"
       ],
       "practice": "交付数据字典、保留策略、质量规则",
@@ -19077,6 +19691,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -19109,6 +19724,7 @@
         "security"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent"
       ],
       "learning_ids": [
@@ -19140,9 +19756,11 @@
         "security"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "governance"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-004"
       ],
       "practice": "交付数据字典、保留策略、质量规则",
@@ -19170,6 +19788,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -19202,6 +19821,7 @@
         "security"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent"
       ],
       "learning_ids": [
@@ -19232,10 +19852,12 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "data",
         "security"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011",
         "learn-020"
       ],
@@ -19265,6 +19887,7 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent"
       ],
       "learning_ids": [
@@ -19296,9 +19919,11 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "security"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-020"
       ],
       "practice": "输出风险登记册与审批矩阵",
@@ -19327,9 +19952,11 @@
         "security"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "governance"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-004"
       ],
       "practice": "交付数据字典、保留策略、质量规则",
@@ -19357,6 +19984,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -19389,6 +20017,7 @@
         "security"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent"
       ],
       "learning_ids": [
@@ -19420,9 +20049,11 @@
         "security"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "governance"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-004"
       ],
       "practice": "交付数据字典、保留策略、质量规则",
@@ -19450,6 +20081,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -19482,6 +20114,7 @@
         "security"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent"
       ],
       "learning_ids": [
@@ -19513,9 +20146,11 @@
         "data"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "product"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-017"
       ],
       "practice": "标注地区、时令、证据与失效场景",
@@ -19544,9 +20179,11 @@
         "security"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "governance"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-004"
       ],
       "practice": "交付数据字典、保留策略、质量规则",
@@ -19574,6 +20211,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -19606,9 +20244,11 @@
         "data"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "product"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-017"
       ],
       "practice": "标注地区、时令、证据与失效场景",
@@ -19637,9 +20277,11 @@
         "security"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "governance"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-004"
       ],
       "practice": "交付数据字典、保留策略、质量规则",
@@ -19667,6 +20309,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -19699,9 +20342,11 @@
         "data"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "product"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-017"
       ],
       "practice": "标注地区、时令、证据与失效场景",
@@ -19730,9 +20375,11 @@
         "security"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "governance"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-004"
       ],
       "practice": "交付数据字典、保留策略、质量规则",
@@ -19760,6 +20407,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -19792,9 +20440,11 @@
         "data"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "product"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-017"
       ],
       "practice": "标注地区、时令、证据与失效场景",
@@ -19823,9 +20473,11 @@
         "security"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "governance"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-004"
       ],
       "practice": "交付数据字典、保留策略、质量规则",
@@ -19853,6 +20505,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -19885,9 +20538,11 @@
         "data"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "product"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-017"
       ],
       "practice": "标注地区、时令、证据与失效场景",
@@ -19916,9 +20571,11 @@
         "security"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "governance"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-004"
       ],
       "practice": "交付数据字典、保留策略、质量规则",
@@ -19946,6 +20603,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -19977,10 +20635,12 @@
         "data"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "domain",
         "product"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-069",
         "learn-017"
       ],
@@ -20010,9 +20670,11 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "比较检索召回、引用正确率和无答案处理",
@@ -20040,6 +20702,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -20072,9 +20735,11 @@
         "data"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "product"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-017"
       ],
       "practice": "标注地区、时令、证据与失效场景",
@@ -20103,9 +20768,11 @@
         "security"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "governance"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-004"
       ],
       "practice": "交付数据字典、保留策略、质量规则",
@@ -20133,6 +20800,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -20165,9 +20833,11 @@
         "data"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "ml"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011"
       ],
       "practice": "评估预测误差与安全余量",
@@ -20196,9 +20866,11 @@
         "security"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "governance"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-004"
       ],
       "practice": "交付数据字典、保留策略、质量规则",
@@ -20226,6 +20898,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -20258,9 +20931,11 @@
         "data"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "ml"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011"
       ],
       "practice": "评估预测误差与安全余量",
@@ -20289,9 +20964,11 @@
         "security"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "governance"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-004"
       ],
       "practice": "交付数据字典、保留策略、质量规则",
@@ -20319,6 +20996,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -20348,13 +21026,14 @@
       "to_role": "ai-032",
       "shared_skills": [],
       "skill_gaps": [
+        "ai-literacy",
         "data",
         "ml",
         "domain"
       ],
       "learning_ids": [
-        "learn-011",
-        "learn-069"
+        "learn-001",
+        "learn-011"
       ],
       "practice": "评估预测误差与安全余量",
       "suggested_pilot_id": "s18-maintenance",
@@ -20381,10 +21060,12 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "data",
         "security"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011",
         "learn-020"
       ],
@@ -20414,6 +21095,7 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent"
       ],
       "learning_ids": [
@@ -20444,10 +21126,12 @@
         "data"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "ml",
         "domain"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011",
         "learn-069"
       ],
@@ -20477,9 +21161,11 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "比较检索召回、引用正确率和无答案处理",
@@ -20507,6 +21193,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -20539,9 +21226,11 @@
         "data"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "ml"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011"
       ],
       "practice": "评估预测误差与安全余量",
@@ -20570,9 +21259,11 @@
         "security"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "governance"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-004"
       ],
       "practice": "交付数据字典、保留策略、质量规则",
@@ -20600,6 +21291,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -20631,10 +21323,12 @@
         "data"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "ml",
         "domain"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011",
         "learn-069"
       ],
@@ -20664,9 +21358,11 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "比较检索召回、引用正确率和无答案处理",
@@ -20694,6 +21390,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -20726,9 +21423,11 @@
         "data"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "ml"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011"
       ],
       "practice": "评估预测误差与安全余量",
@@ -20757,9 +21456,11 @@
         "security"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "governance"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-004"
       ],
       "practice": "交付数据字典、保留策略、质量规则",
@@ -20787,6 +21488,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -20819,9 +21521,11 @@
         "operations"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "ml"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011"
       ],
       "practice": "制作离线设备异常验证报告",
@@ -20850,9 +21554,11 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "比较检索召回、引用正确率和无答案处理",
@@ -20880,6 +21586,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -20912,9 +21619,11 @@
         "data"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "ml"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011"
       ],
       "practice": "制作离线设备异常验证报告",
@@ -20943,9 +21652,11 @@
         "security"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "governance"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-004"
       ],
       "practice": "交付数据字典、保留策略、质量规则",
@@ -20973,6 +21684,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -21005,9 +21717,11 @@
         "data"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "ml"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011"
       ],
       "practice": "制作离线设备异常验证报告",
@@ -21036,9 +21750,11 @@
         "security"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "governance"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-004"
       ],
       "practice": "交付数据字典、保留策略、质量规则",
@@ -21066,6 +21782,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -21098,9 +21815,11 @@
         "data"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "ml"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011"
       ],
       "practice": "制作离线设备异常验证报告",
@@ -21129,9 +21848,11 @@
         "security"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "governance"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-004"
       ],
       "practice": "交付数据字典、保留策略、质量规则",
@@ -21159,6 +21880,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -21191,9 +21913,11 @@
         "operations"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "ml"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011"
       ],
       "practice": "制作离线设备异常验证报告",
@@ -21222,9 +21946,11 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "比较检索召回、引用正确率和无答案处理",
@@ -21252,6 +21978,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -21284,9 +22011,11 @@
         "domain"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "ml"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011"
       ],
       "practice": "建立漏检/误检成本矩阵",
@@ -21315,9 +22044,11 @@
         "domain"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -21345,6 +22076,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -21377,9 +22109,11 @@
         "data"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "ml"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011"
       ],
       "practice": "制作离线设备异常验证报告",
@@ -21408,9 +22142,11 @@
         "security"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "governance"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-004"
       ],
       "practice": "交付数据字典、保留策略、质量规则",
@@ -21438,6 +22174,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -21470,9 +22207,11 @@
         "domain"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "source-check"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-002"
       ],
       "practice": "保留单位、核算方法与审计轨迹",
@@ -21500,10 +22239,12 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "security",
         "leadership"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-020",
         "learn-004"
       ],
@@ -21533,9 +22274,11 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "security"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-020"
       ],
       "practice": "交付数据字典、保留策略、质量规则",
@@ -21563,10 +22306,12 @@
         "data"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "source-check",
         "domain"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-002",
         "learn-069"
       ],
@@ -21596,9 +22341,11 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "source-check"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-002"
       ],
       "practice": "制作包含失败对照和回归的评测报告",
@@ -21627,9 +22374,11 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "比较检索召回、引用正确率和无答案处理",
@@ -21658,9 +22407,11 @@
         "domain"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "source-check"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-002"
       ],
       "practice": "保留单位、核算方法与审计轨迹",
@@ -21688,10 +22439,12 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "security",
         "leadership"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-020",
         "learn-004"
       ],
@@ -21721,9 +22474,11 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "security"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-020"
       ],
       "practice": "交付数据字典、保留策略、质量规则",
@@ -21752,9 +22507,11 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "security"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-020"
       ],
       "practice": "输出风险登记册与审批矩阵",
@@ -21780,14 +22537,15 @@
       "to_role": "ai-045",
       "shared_skills": [],
       "skill_gaps": [
+        "ai-literacy",
         "data",
         "source-check",
         "domain"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011",
-        "learn-002",
-        "learn-069"
+        "learn-002"
       ],
       "practice": "保留单位、核算方法与审计轨迹",
       "suggested_pilot_id": "s20-documents",
@@ -21815,8 +22573,12 @@
         "operations",
         "product"
       ],
-      "skill_gaps": [],
-      "learning_ids": [],
+      "skill_gaps": [
+        "ai-literacy"
+      ],
+      "learning_ids": [
+        "learn-001"
+      ],
       "practice": "完成流程诊断、成本边界和试点路线图",
       "suggested_pilot_id": "s20-documents",
       "reason": "同行业任务相关",
@@ -21843,9 +22605,11 @@
         "domain"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "source-check"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-002"
       ],
       "practice": "保留单位、核算方法与审计轨迹",
@@ -21873,10 +22637,12 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "security",
         "leadership"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-020",
         "learn-004"
       ],
@@ -21906,9 +22672,11 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "security"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-020"
       ],
       "practice": "交付数据字典、保留策略、质量规则",
@@ -21937,9 +22705,11 @@
         "domain"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "source-check"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-002"
       ],
       "practice": "保留单位、核算方法与审计轨迹",
@@ -21967,10 +22737,12 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "security",
         "leadership"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-020",
         "learn-004"
       ],
@@ -22000,9 +22772,11 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "security"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-020"
       ],
       "practice": "交付数据字典、保留策略、质量规则",
@@ -22031,9 +22805,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "建立引用准确率与缺失来源测试",
@@ -22061,10 +22837,12 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "evaluation",
         "ai-coding"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-003",
         "learn-010"
       ],
@@ -22094,9 +22872,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -22125,9 +22905,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "建立引用准确率与缺失来源测试",
@@ -22155,10 +22937,12 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "evaluation",
         "ai-coding"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-003",
         "learn-010"
       ],
@@ -22188,9 +22972,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -22219,9 +23005,11 @@
         "domain"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "建立引用准确率与缺失来源测试",
@@ -22250,9 +23038,11 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "ai-coding"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-010"
       ],
       "practice": "制作包含失败对照和回归的评测报告",
@@ -22281,9 +23071,11 @@
         "domain"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -22312,9 +23104,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "建立引用准确率与缺失来源测试",
@@ -22342,10 +23136,12 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "evaluation",
         "ai-coding"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-003",
         "learn-010"
       ],
@@ -22375,9 +23171,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -22406,9 +23204,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "建立引用准确率与缺失来源测试",
@@ -22436,10 +23236,12 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "evaluation",
         "ai-coding"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-003",
         "learn-010"
       ],
@@ -22469,9 +23271,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -22500,9 +23304,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "建立引用准确率与缺失来源测试",
@@ -22530,10 +23336,12 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "evaluation",
         "ai-coding"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-003",
         "learn-010"
       ],
@@ -22563,9 +23371,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -22594,9 +23404,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "建立引用准确率与缺失来源测试",
@@ -22624,10 +23436,12 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "evaluation",
         "ai-coding"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-003",
         "learn-010"
       ],
@@ -22657,9 +23471,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -22688,9 +23504,11 @@
         "data"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "evaluation"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-003"
       ],
       "practice": "建立样本标注、异常解释与复核",
@@ -22719,9 +23537,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -22749,6 +23569,7 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "operations"
       ],
@@ -22782,9 +23603,11 @@
         "domain"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "data"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011"
       ],
       "practice": "建立样本标注、异常解释与复核",
@@ -22813,9 +23636,11 @@
         "domain"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -22843,6 +23668,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -22872,14 +23698,15 @@
       "to_role": "ai-022",
       "shared_skills": [],
       "skill_gaps": [
+        "ai-literacy",
         "data",
         "evaluation",
         "domain"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011",
-        "learn-003",
-        "learn-069"
+        "learn-003"
       ],
       "practice": "建立样本标注、异常解释与复核",
       "suggested_pilot_id": "s22-documents",
@@ -22906,10 +23733,12 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "data",
         "security"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011",
         "learn-020"
       ],
@@ -22939,6 +23768,7 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent"
       ],
       "learning_ids": [
@@ -22970,9 +23800,11 @@
         "data"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "evaluation"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-003"
       ],
       "practice": "建立样本标注、异常解释与复核",
@@ -23001,9 +23833,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -23031,6 +23865,7 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "operations"
       ],
@@ -23064,9 +23899,11 @@
         "data"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "evaluation"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-003"
       ],
       "practice": "建立样本标注、异常解释与复核",
@@ -23095,9 +23932,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -23125,6 +23964,7 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "operations"
       ],
@@ -23158,9 +23998,11 @@
         "data"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "evaluation"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-003"
       ],
       "practice": "建立样本标注、异常解释与复核",
@@ -23189,9 +24031,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -23219,6 +24063,7 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "operations"
       ],
@@ -23252,9 +24097,11 @@
         "data"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "evaluation"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-003"
       ],
       "practice": "建立样本标注、异常解释与复核",
@@ -23283,9 +24130,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "制作有引用、权限和过期策略的FAQ",
@@ -23313,6 +24162,7 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "operations"
       ],
@@ -23346,8 +24196,12 @@
         "operations",
         "product"
       ],
-      "skill_gaps": [],
-      "learning_ids": [],
+      "skill_gaps": [
+        "ai-literacy"
+      ],
+      "learning_ids": [
+        "learn-001"
+      ],
       "practice": "完成流程诊断、成本边界和试点路线图",
       "suggested_pilot_id": "s23-hr",
       "reason": "同行业任务相关",
@@ -23374,6 +24228,7 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent"
       ],
       "learning_ids": [
@@ -23405,9 +24260,11 @@
         "communication"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "teaching"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-032"
       ],
       "practice": "开展岗位训练并评估练习与采纳",
@@ -23436,6 +24293,7 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "task-design",
         "evaluation"
       ],
@@ -23469,8 +24327,12 @@
         "data",
         "product"
       ],
-      "skill_gaps": [],
-      "learning_ids": [],
+      "skill_gaps": [
+        "ai-literacy"
+      ],
+      "learning_ids": [
+        "learn-001"
+      ],
       "practice": "从授权线索开展A/B实验复盘",
       "suggested_pilot_id": "s23-hr",
       "reason": "可迁移的任务与技能组合",
@@ -23496,6 +24358,7 @@
         "operations"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "governance"
       ],
@@ -23529,6 +24392,7 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "task-design",
         "evaluation"
       ],
@@ -23562,8 +24426,12 @@
         "data",
         "product"
       ],
-      "skill_gaps": [],
-      "learning_ids": [],
+      "skill_gaps": [
+        "ai-literacy"
+      ],
+      "learning_ids": [
+        "learn-001"
+      ],
       "practice": "从授权线索开展A/B实验复盘",
       "suggested_pilot_id": "s23-hr",
       "reason": "可迁移的任务与技能组合",
@@ -23589,6 +24457,7 @@
         "operations"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "governance"
       ],
@@ -23622,8 +24491,12 @@
         "operations",
         "product"
       ],
-      "skill_gaps": [],
-      "learning_ids": [],
+      "skill_gaps": [
+        "ai-literacy"
+      ],
+      "learning_ids": [
+        "learn-001"
+      ],
       "practice": "完成流程诊断、成本边界和试点路线图",
       "suggested_pilot_id": "s23-hr",
       "reason": "同行业任务相关",
@@ -23650,6 +24523,7 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent"
       ],
       "learning_ids": [
@@ -23681,9 +24555,11 @@
         "communication"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "teaching"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-032"
       ],
       "practice": "开展岗位训练并评估练习与采纳",
@@ -23712,6 +24588,7 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "task-design",
         "evaluation"
       ],
@@ -23745,8 +24622,12 @@
         "data",
         "product"
       ],
-      "skill_gaps": [],
-      "learning_ids": [],
+      "skill_gaps": [
+        "ai-literacy"
+      ],
+      "learning_ids": [
+        "learn-001"
+      ],
       "practice": "从授权线索开展A/B实验复盘",
       "suggested_pilot_id": "s23-hr",
       "reason": "可迁移的任务与技能组合",
@@ -23772,6 +24653,7 @@
         "operations"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "governance"
       ],
@@ -23805,6 +24687,7 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "task-design",
         "evaluation"
       ],
@@ -23838,8 +24721,12 @@
         "data",
         "product"
       ],
-      "skill_gaps": [],
-      "learning_ids": [],
+      "skill_gaps": [
+        "ai-literacy"
+      ],
+      "learning_ids": [
+        "learn-001"
+      ],
       "practice": "从授权线索开展A/B实验复盘",
       "suggested_pilot_id": "s23-hr",
       "reason": "可迁移的任务与技能组合",
@@ -23865,6 +24752,7 @@
         "operations"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "governance"
       ],
@@ -23898,6 +24786,7 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "task-design",
         "evaluation"
       ],
@@ -23931,8 +24820,12 @@
         "data",
         "product"
       ],
-      "skill_gaps": [],
-      "learning_ids": [],
+      "skill_gaps": [
+        "ai-literacy"
+      ],
+      "learning_ids": [
+        "learn-001"
+      ],
       "practice": "从授权线索开展A/B实验复盘",
       "suggested_pilot_id": "s23-hr",
       "reason": "可迁移的任务与技能组合",
@@ -23958,6 +24851,7 @@
         "operations"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "governance"
       ],
@@ -23991,6 +24885,7 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "task-design",
         "evaluation"
       ],
@@ -24024,8 +24919,12 @@
         "data",
         "product"
       ],
-      "skill_gaps": [],
-      "learning_ids": [],
+      "skill_gaps": [
+        "ai-literacy"
+      ],
+      "learning_ids": [
+        "learn-001"
+      ],
       "practice": "从授权线索开展A/B实验复盘",
       "suggested_pilot_id": "s24-research",
       "reason": "可迁移的任务与技能组合",
@@ -24051,6 +24950,7 @@
         "operations"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "governance"
       ],
@@ -24084,8 +24984,12 @@
         "operations",
         "product"
       ],
-      "skill_gaps": [],
-      "learning_ids": [],
+      "skill_gaps": [
+        "ai-literacy"
+      ],
+      "learning_ids": [
+        "learn-001"
+      ],
       "practice": "完成流程诊断、成本边界和试点路线图",
       "suggested_pilot_id": "s24-research",
       "reason": "同行业任务相关",
@@ -24112,6 +25016,7 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent"
       ],
       "learning_ids": [
@@ -24143,9 +25048,11 @@
         "communication"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "teaching"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-032"
       ],
       "practice": "开展岗位训练并评估练习与采纳",
@@ -24174,8 +25081,12 @@
         "operations",
         "product"
       ],
-      "skill_gaps": [],
-      "learning_ids": [],
+      "skill_gaps": [
+        "ai-literacy"
+      ],
+      "learning_ids": [
+        "learn-001"
+      ],
       "practice": "完成流程诊断、成本边界和试点路线图",
       "suggested_pilot_id": "s24-research",
       "reason": "同行业任务相关",
@@ -24202,6 +25113,7 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent"
       ],
       "learning_ids": [
@@ -24233,9 +25145,11 @@
         "communication"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "teaching"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-032"
       ],
       "practice": "开展岗位训练并评估练习与采纳",
@@ -24264,6 +25178,7 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "task-design",
         "evaluation"
       ],
@@ -24297,8 +25212,12 @@
         "data",
         "product"
       ],
-      "skill_gaps": [],
-      "learning_ids": [],
+      "skill_gaps": [
+        "ai-literacy"
+      ],
+      "learning_ids": [
+        "learn-001"
+      ],
       "practice": "从授权线索开展A/B实验复盘",
       "suggested_pilot_id": "s24-research",
       "reason": "可迁移的任务与技能组合",
@@ -24324,6 +25243,7 @@
         "operations"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "governance"
       ],
@@ -24357,6 +25277,7 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "task-design",
         "evaluation"
       ],
@@ -24390,8 +25311,12 @@
         "data",
         "product"
       ],
-      "skill_gaps": [],
-      "learning_ids": [],
+      "skill_gaps": [
+        "ai-literacy"
+      ],
+      "learning_ids": [
+        "learn-001"
+      ],
       "practice": "从授权线索开展A/B实验复盘",
       "suggested_pilot_id": "s24-research",
       "reason": "可迁移的任务与技能组合",
@@ -24417,6 +25342,7 @@
         "operations"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "governance"
       ],
@@ -24450,8 +25376,12 @@
         "operations",
         "product"
       ],
-      "skill_gaps": [],
-      "learning_ids": [],
+      "skill_gaps": [
+        "ai-literacy"
+      ],
+      "learning_ids": [
+        "learn-001"
+      ],
       "practice": "完成流程诊断、成本边界和试点路线图",
       "suggested_pilot_id": "s24-research",
       "reason": "同行业任务相关",
@@ -24478,6 +25408,7 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent"
       ],
       "learning_ids": [
@@ -24509,9 +25440,11 @@
         "communication"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "teaching"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-032"
       ],
       "practice": "开展岗位训练并评估练习与采纳",
@@ -24540,6 +25473,7 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "task-design",
         "evaluation"
       ],
@@ -24573,8 +25507,12 @@
         "data",
         "product"
       ],
-      "skill_gaps": [],
-      "learning_ids": [],
+      "skill_gaps": [
+        "ai-literacy"
+      ],
+      "learning_ids": [
+        "learn-001"
+      ],
       "practice": "从授权线索开展A/B实验复盘",
       "suggested_pilot_id": "s24-research",
       "reason": "可迁移的任务与技能组合",
@@ -24600,6 +25538,7 @@
         "operations"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "governance"
       ],
@@ -24633,6 +25572,7 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "task-design"
       ],
       "learning_ids": [
@@ -24663,10 +25603,12 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "security",
         "leadership"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-020",
         "learn-004"
       ],
@@ -24696,9 +25638,11 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "security"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-020"
       ],
       "practice": "交付数据字典、保留策略、质量规则",
@@ -24727,6 +25671,7 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "task-design"
       ],
       "learning_ids": [
@@ -24757,10 +25702,12 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "security",
         "leadership"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-020",
         "learn-004"
       ],
@@ -24790,9 +25737,11 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "security"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-020"
       ],
       "practice": "交付数据字典、保留策略、质量规则",
@@ -24821,6 +25770,7 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "task-design"
       ],
       "learning_ids": [
@@ -24851,10 +25801,12 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "security",
         "leadership"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-020",
         "learn-004"
       ],
@@ -24884,9 +25836,11 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "security"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-020"
       ],
       "practice": "交付数据字典、保留策略、质量规则",
@@ -24914,12 +25868,13 @@
         "operations"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "governance",
         "task-design"
       ],
       "learning_ids": [
-        "learn-004",
-        "learn-001"
+        "learn-001",
+        "learn-004"
       ],
       "practice": "强制可申诉与人工决策流程",
       "suggested_pilot_id": "s25-knowledge",
@@ -24947,9 +25902,11 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "source-check"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-002"
       ],
       "practice": "制作包含失败对照和回归的评测报告",
@@ -24978,9 +25935,11 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "rag"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-013"
       ],
       "practice": "比较检索召回、引用正确率和无答案处理",
@@ -25009,6 +25968,7 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "task-design"
       ],
       "learning_ids": [
@@ -25039,10 +25999,12 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "security",
         "leadership"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-020",
         "learn-004"
       ],
@@ -25072,9 +26034,11 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "security"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-020"
       ],
       "practice": "交付数据字典、保留策略、质量规则",
@@ -25103,6 +26067,7 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "task-design"
       ],
       "learning_ids": [
@@ -25133,10 +26098,12 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "security",
         "leadership"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-020",
         "learn-004"
       ],
@@ -25166,9 +26133,11 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "security"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-020"
       ],
       "practice": "交付数据字典、保留策略、质量规则",
@@ -25197,6 +26166,7 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "task-design"
       ],
       "learning_ids": [
@@ -25227,10 +26197,12 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "security",
         "leadership"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-020",
         "learn-004"
       ],
@@ -25260,9 +26232,11 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "security"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-020"
       ],
       "practice": "交付数据字典、保留策略、质量规则",
@@ -25291,6 +26265,7 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent"
       ],
       "learning_ids": [
@@ -25322,9 +26297,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "data"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011"
       ],
       "practice": "对比不同内容版本的真实点击",
@@ -25352,14 +26329,14 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "task-design",
         "evaluation",
         "domain"
       ],
       "learning_ids": [
         "learn-001",
-        "learn-003",
-        "learn-069"
+        "learn-003"
       ],
       "practice": "交付一个带用户测试和失败案例的AI产品原型",
       "suggested_pilot_id": "s26-research",
@@ -25387,6 +26364,7 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent"
       ],
       "learning_ids": [
@@ -25418,9 +26396,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "data"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011"
       ],
       "practice": "对比不同内容版本的真实点击",
@@ -25448,14 +26428,14 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "task-design",
         "evaluation",
         "domain"
       ],
       "learning_ids": [
         "learn-001",
-        "learn-003",
-        "learn-069"
+        "learn-003"
       ],
       "practice": "交付一个带用户测试和失败案例的AI产品原型",
       "suggested_pilot_id": "s26-research",
@@ -25483,6 +26463,7 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent"
       ],
       "learning_ids": [
@@ -25514,9 +26495,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "data"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011"
       ],
       "practice": "对比不同内容版本的真实点击",
@@ -25544,14 +26527,14 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "task-design",
         "evaluation",
         "domain"
       ],
       "learning_ids": [
         "learn-001",
-        "learn-003",
-        "learn-069"
+        "learn-003"
       ],
       "practice": "交付一个带用户测试和失败案例的AI产品原型",
       "suggested_pilot_id": "s26-research",
@@ -25579,6 +26562,7 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent"
       ],
       "learning_ids": [
@@ -25610,9 +26594,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "data"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011"
       ],
       "practice": "对比不同内容版本的真实点击",
@@ -25640,14 +26626,14 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "task-design",
         "evaluation",
         "domain"
       ],
       "learning_ids": [
         "learn-001",
-        "learn-003",
-        "learn-069"
+        "learn-003"
       ],
       "practice": "交付一个带用户测试和失败案例的AI产品原型",
       "suggested_pilot_id": "s26-research",
@@ -25675,6 +26661,7 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent"
       ],
       "learning_ids": [
@@ -25706,9 +26693,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "data"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011"
       ],
       "practice": "对比不同内容版本的真实点击",
@@ -25736,14 +26725,14 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "task-design",
         "evaluation",
         "domain"
       ],
       "learning_ids": [
         "learn-001",
-        "learn-003",
-        "learn-069"
+        "learn-003"
       ],
       "practice": "交付一个带用户测试和失败案例的AI产品原型",
       "suggested_pilot_id": "s26-research",
@@ -25771,6 +26760,7 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent"
       ],
       "learning_ids": [
@@ -25802,9 +26792,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "data"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011"
       ],
       "practice": "对比不同内容版本的真实点击",
@@ -25832,14 +26824,14 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "task-design",
         "evaluation",
         "domain"
       ],
       "learning_ids": [
         "learn-001",
-        "learn-003",
-        "learn-069"
+        "learn-003"
       ],
       "practice": "交付一个带用户测试和失败案例的AI产品原型",
       "suggested_pilot_id": "s26-research",
@@ -25867,6 +26859,7 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent"
       ],
       "learning_ids": [
@@ -25898,9 +26891,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "data"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011"
       ],
       "practice": "对比不同内容版本的真实点击",
@@ -25928,14 +26923,14 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "task-design",
         "evaluation",
         "domain"
       ],
       "learning_ids": [
         "learn-001",
-        "learn-003",
-        "learn-069"
+        "learn-003"
       ],
       "practice": "交付一个带用户测试和失败案例的AI产品原型",
       "suggested_pilot_id": "s26-research",
@@ -25963,9 +26958,11 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "data"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011"
       ],
       "practice": "从授权线索开展A/B实验复盘",
@@ -25994,8 +26991,12 @@
         "operations",
         "product"
       ],
-      "skill_gaps": [],
-      "learning_ids": [],
+      "skill_gaps": [
+        "ai-literacy"
+      ],
+      "learning_ids": [
+        "learn-001"
+      ],
       "practice": "完成流程诊断、成本边界和试点路线图",
       "suggested_pilot_id": "s27-content",
       "reason": "同行业任务相关",
@@ -26022,6 +27023,7 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent"
       ],
       "learning_ids": [
@@ -26053,9 +27055,11 @@
         "source-check"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "data"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011"
       ],
       "practice": "对比不同内容版本的真实点击",
@@ -26083,14 +27087,14 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "task-design",
         "evaluation",
         "domain"
       ],
       "learning_ids": [
         "learn-001",
-        "learn-003",
-        "learn-069"
+        "learn-003"
       ],
       "practice": "交付一个带用户测试和失败案例的AI产品原型",
       "suggested_pilot_id": "s27-content",
@@ -26115,13 +27119,13 @@
       "to_role": "ai-003",
       "shared_skills": [],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design",
         "evaluation"
       ],
       "learning_ids": [
-        "learn-001",
-        "learn-003"
+        "learn-001"
       ],
       "practice": "建立具权限与回归测试的Agent演示",
       "suggested_pilot_id": "s27-content",
@@ -26149,9 +27153,11 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "data"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011"
       ],
       "practice": "从授权线索开展A/B实验复盘",
@@ -26180,8 +27186,12 @@
         "operations",
         "product"
       ],
-      "skill_gaps": [],
-      "learning_ids": [],
+      "skill_gaps": [
+        "ai-literacy"
+      ],
+      "learning_ids": [
+        "learn-001"
+      ],
       "practice": "完成流程诊断、成本边界和试点路线图",
       "suggested_pilot_id": "s27-content",
       "reason": "同行业任务相关",
@@ -26208,6 +27218,7 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent"
       ],
       "learning_ids": [
@@ -26239,9 +27250,11 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "data"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011"
       ],
       "practice": "从授权线索开展A/B实验复盘",
@@ -26270,8 +27283,12 @@
         "operations",
         "product"
       ],
-      "skill_gaps": [],
-      "learning_ids": [],
+      "skill_gaps": [
+        "ai-literacy"
+      ],
+      "learning_ids": [
+        "learn-001"
+      ],
       "practice": "完成流程诊断、成本边界和试点路线图",
       "suggested_pilot_id": "s27-content",
       "reason": "同行业任务相关",
@@ -26298,6 +27315,7 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent"
       ],
       "learning_ids": [
@@ -26329,8 +27347,12 @@
         "data",
         "product"
       ],
-      "skill_gaps": [],
-      "learning_ids": [],
+      "skill_gaps": [
+        "ai-literacy"
+      ],
+      "learning_ids": [
+        "learn-001"
+      ],
       "practice": "从授权线索开展A/B实验复盘",
       "suggested_pilot_id": "s27-content",
       "reason": "同行业任务相关",
@@ -26357,6 +27379,7 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "task-design",
         "evaluation"
       ],
@@ -26389,6 +27412,7 @@
         "operations"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "governance"
       ],
@@ -26422,8 +27446,12 @@
         "data",
         "product"
       ],
-      "skill_gaps": [],
-      "learning_ids": [],
+      "skill_gaps": [
+        "ai-literacy"
+      ],
+      "learning_ids": [
+        "learn-001"
+      ],
       "practice": "从授权线索开展A/B实验复盘",
       "suggested_pilot_id": "s27-content",
       "reason": "同行业任务相关",
@@ -26450,6 +27478,7 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "task-design",
         "evaluation"
       ],
@@ -26482,6 +27511,7 @@
         "operations"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "governance"
       ],
@@ -26515,8 +27545,12 @@
         "data",
         "product"
       ],
-      "skill_gaps": [],
-      "learning_ids": [],
+      "skill_gaps": [
+        "ai-literacy"
+      ],
+      "learning_ids": [
+        "learn-001"
+      ],
       "practice": "从授权线索开展A/B实验复盘",
       "suggested_pilot_id": "s27-content",
       "reason": "同行业任务相关",
@@ -26543,6 +27577,7 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "task-design",
         "evaluation"
       ],
@@ -26575,6 +27610,7 @@
         "operations"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "governance"
       ],
@@ -26608,6 +27644,7 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent"
       ],
       "learning_ids": [
@@ -26638,6 +27675,7 @@
         "multimodal"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "task-design",
         "evaluation"
       ],
@@ -26670,14 +27708,14 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "task-design",
         "evaluation",
         "domain"
       ],
       "learning_ids": [
         "learn-001",
-        "learn-003",
-        "learn-069"
+        "learn-003"
       ],
       "practice": "交付一个带用户测试和失败案例的AI产品原型",
       "suggested_pilot_id": "s28-design",
@@ -26705,6 +27743,7 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent"
       ],
       "learning_ids": [
@@ -26735,6 +27774,7 @@
         "multimodal"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "task-design",
         "evaluation"
       ],
@@ -26767,14 +27807,14 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "task-design",
         "evaluation",
         "domain"
       ],
       "learning_ids": [
         "learn-001",
-        "learn-003",
-        "learn-069"
+        "learn-003"
       ],
       "practice": "交付一个带用户测试和失败案例的AI产品原型",
       "suggested_pilot_id": "s28-design",
@@ -26802,6 +27842,7 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent"
       ],
       "learning_ids": [
@@ -26832,6 +27873,7 @@
         "multimodal"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "task-design",
         "evaluation"
       ],
@@ -26864,14 +27906,14 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "task-design",
         "evaluation",
         "domain"
       ],
       "learning_ids": [
         "learn-001",
-        "learn-003",
-        "learn-069"
+        "learn-003"
       ],
       "practice": "交付一个带用户测试和失败案例的AI产品原型",
       "suggested_pilot_id": "s28-design",
@@ -26899,6 +27941,7 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent"
       ],
       "learning_ids": [
@@ -26929,6 +27972,7 @@
         "multimodal"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "task-design",
         "evaluation"
       ],
@@ -26961,14 +28005,14 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "task-design",
         "evaluation",
         "domain"
       ],
       "learning_ids": [
         "learn-001",
-        "learn-003",
-        "learn-069"
+        "learn-003"
       ],
       "practice": "交付一个带用户测试和失败案例的AI产品原型",
       "suggested_pilot_id": "s28-design",
@@ -26996,6 +28040,7 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent"
       ],
       "learning_ids": [
@@ -27026,6 +28071,7 @@
         "multimodal"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "task-design",
         "evaluation"
       ],
@@ -27058,14 +28104,14 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "task-design",
         "evaluation",
         "domain"
       ],
       "learning_ids": [
         "learn-001",
-        "learn-003",
-        "learn-069"
+        "learn-003"
       ],
       "practice": "交付一个带用户测试和失败案例的AI产品原型",
       "suggested_pilot_id": "s28-design",
@@ -27093,6 +28139,7 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent"
       ],
       "learning_ids": [
@@ -27123,6 +28170,7 @@
         "multimodal"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "task-design",
         "evaluation"
       ],
@@ -27155,14 +28203,14 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "task-design",
         "evaluation",
         "domain"
       ],
       "learning_ids": [
         "learn-001",
-        "learn-003",
-        "learn-069"
+        "learn-003"
       ],
       "practice": "交付一个带用户测试和失败案例的AI产品原型",
       "suggested_pilot_id": "s28-design",
@@ -27190,6 +28238,7 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent"
       ],
       "learning_ids": [
@@ -27220,6 +28269,7 @@
         "multimodal"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "task-design",
         "evaluation"
       ],
@@ -27252,14 +28302,14 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "task-design",
         "evaluation",
         "domain"
       ],
       "learning_ids": [
         "learn-001",
-        "learn-003",
-        "learn-069"
+        "learn-003"
       ],
       "practice": "交付一个带用户测试和失败案例的AI产品原型",
       "suggested_pilot_id": "s28-design",
@@ -27287,8 +28337,12 @@
         "operations",
         "product"
       ],
-      "skill_gaps": [],
-      "learning_ids": [],
+      "skill_gaps": [
+        "ai-literacy"
+      ],
+      "learning_ids": [
+        "learn-001"
+      ],
       "practice": "完成流程诊断、成本边界和试点路线图",
       "suggested_pilot_id": "s29-support",
       "reason": "同行业任务相关",
@@ -27314,10 +28368,12 @@
         "operations"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "data",
         "domain"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011",
         "learn-069"
       ],
@@ -27347,6 +28403,7 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent"
       ],
       "learning_ids": [
@@ -27378,8 +28435,12 @@
         "domain",
         "data"
       ],
-      "skill_gaps": [],
-      "learning_ids": [],
+      "skill_gaps": [
+        "ai-literacy"
+      ],
+      "learning_ids": [
+        "learn-001"
+      ],
       "practice": "按真实历史收益与投诉率评测",
       "suggested_pilot_id": "s29-support",
       "reason": "同行业任务相关",
@@ -27406,6 +28467,7 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "task-design",
         "evaluation"
       ],
@@ -27438,6 +28500,7 @@
         "operations"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "governance"
       ],
@@ -27471,8 +28534,12 @@
         "domain",
         "data"
       ],
-      "skill_gaps": [],
-      "learning_ids": [],
+      "skill_gaps": [
+        "ai-literacy"
+      ],
+      "learning_ids": [
+        "learn-001"
+      ],
       "practice": "按真实历史收益与投诉率评测",
       "suggested_pilot_id": "s29-support",
       "reason": "同行业任务相关",
@@ -27499,6 +28566,7 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "task-design",
         "evaluation"
       ],
@@ -27531,6 +28599,7 @@
         "operations"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "governance"
       ],
@@ -27564,8 +28633,12 @@
         "domain",
         "data"
       ],
-      "skill_gaps": [],
-      "learning_ids": [],
+      "skill_gaps": [
+        "ai-literacy"
+      ],
+      "learning_ids": [
+        "learn-001"
+      ],
       "practice": "按真实历史收益与投诉率评测",
       "suggested_pilot_id": "s29-support",
       "reason": "同行业任务相关",
@@ -27592,6 +28665,7 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "task-design",
         "evaluation"
       ],
@@ -27624,6 +28698,7 @@
         "operations"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "governance"
       ],
@@ -27657,8 +28732,12 @@
         "operations",
         "product"
       ],
-      "skill_gaps": [],
-      "learning_ids": [],
+      "skill_gaps": [
+        "ai-literacy"
+      ],
+      "learning_ids": [
+        "learn-001"
+      ],
       "practice": "完成流程诊断、成本边界和试点路线图",
       "suggested_pilot_id": "s29-support",
       "reason": "同行业任务相关",
@@ -27684,10 +28763,12 @@
         "operations"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "data",
         "domain"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011",
         "learn-069"
       ],
@@ -27717,6 +28798,7 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent"
       ],
       "learning_ids": [
@@ -27748,8 +28830,12 @@
         "operations",
         "product"
       ],
-      "skill_gaps": [],
-      "learning_ids": [],
+      "skill_gaps": [
+        "ai-literacy"
+      ],
+      "learning_ids": [
+        "learn-001"
+      ],
       "practice": "完成流程诊断、成本边界和试点路线图",
       "suggested_pilot_id": "s29-support",
       "reason": "同行业任务相关",
@@ -27775,10 +28861,12 @@
         "operations"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "data",
         "domain"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-011",
         "learn-069"
       ],
@@ -27808,6 +28896,7 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent"
       ],
       "learning_ids": [
@@ -27839,8 +28928,12 @@
         "domain",
         "data"
       ],
-      "skill_gaps": [],
-      "learning_ids": [],
+      "skill_gaps": [
+        "ai-literacy"
+      ],
+      "learning_ids": [
+        "learn-001"
+      ],
       "practice": "按真实历史收益与投诉率评测",
       "suggested_pilot_id": "s29-support",
       "reason": "同行业任务相关",
@@ -27867,6 +28960,7 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "task-design",
         "evaluation"
       ],
@@ -27899,6 +28993,7 @@
         "operations"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "governance"
       ],
@@ -27932,8 +29027,12 @@
         "ai-coding",
         "operations"
       ],
-      "skill_gaps": [],
-      "learning_ids": [],
+      "skill_gaps": [
+        "ai-literacy"
+      ],
+      "learning_ids": [
+        "learn-001"
+      ],
       "practice": "形成质量-成本-时延对照表",
       "suggested_pilot_id": "s30-coding",
       "reason": "同行业任务相关",
@@ -27959,6 +29058,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -27991,9 +29091,11 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "source-check"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-002"
       ],
       "practice": "制作包含失败对照和回归的评测报告",
@@ -28021,10 +29123,12 @@
         "operations"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "ai-coding",
         "data"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-010",
         "learn-011"
       ],
@@ -28054,6 +29158,7 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent"
       ],
       "learning_ids": [
@@ -28085,9 +29190,11 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "security"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-020"
       ],
       "practice": "输出风险登记册与审批矩阵",
@@ -28115,14 +29222,14 @@
         "security"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "api",
         "agent",
         "rag"
       ],
       "learning_ids": [
-        "learn-010",
         "learn-001",
-        "learn-013"
+        "learn-010"
       ],
       "practice": "提供连接器隔离方案与最小权限拓扑",
       "suggested_pilot_id": "s30-coding",
@@ -28149,6 +29256,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -28181,9 +29289,11 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "ai-coding"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-010"
       ],
       "practice": "制作包含失败对照和回归的评测报告",
@@ -28212,8 +29322,12 @@
         "ai-coding",
         "operations"
       ],
-      "skill_gaps": [],
-      "learning_ids": [],
+      "skill_gaps": [
+        "ai-literacy"
+      ],
+      "learning_ids": [
+        "learn-001"
+      ],
       "practice": "形成质量-成本-时延对照表",
       "suggested_pilot_id": "s30-coding",
       "reason": "同行业任务相关",
@@ -28239,6 +29353,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -28271,9 +29386,11 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "source-check"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-002"
       ],
       "practice": "制作包含失败对照和回归的评测报告",
@@ -28302,8 +29419,12 @@
         "ai-coding",
         "operations"
       ],
-      "skill_gaps": [],
-      "learning_ids": [],
+      "skill_gaps": [
+        "ai-literacy"
+      ],
+      "learning_ids": [
+        "learn-001"
+      ],
       "practice": "形成质量-成本-时延对照表",
       "suggested_pilot_id": "s30-coding",
       "reason": "同行业任务相关",
@@ -28329,6 +29450,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -28361,9 +29483,11 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "source-check"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-002"
       ],
       "practice": "制作包含失败对照和回归的评测报告",
@@ -28392,8 +29516,12 @@
         "ai-coding",
         "operations"
       ],
-      "skill_gaps": [],
-      "learning_ids": [],
+      "skill_gaps": [
+        "ai-literacy"
+      ],
+      "learning_ids": [
+        "learn-001"
+      ],
       "practice": "形成质量-成本-时延对照表",
       "suggested_pilot_id": "s30-coding",
       "reason": "同行业任务相关",
@@ -28419,6 +29547,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -28451,9 +29580,11 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "source-check"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-002"
       ],
       "practice": "制作包含失败对照和回归的评测报告",
@@ -28482,8 +29613,12 @@
         "ai-coding",
         "operations"
       ],
-      "skill_gaps": [],
-      "learning_ids": [],
+      "skill_gaps": [
+        "ai-literacy"
+      ],
+      "learning_ids": [
+        "learn-001"
+      ],
       "practice": "形成质量-成本-时延对照表",
       "suggested_pilot_id": "s30-coding",
       "reason": "同行业任务相关",
@@ -28509,6 +29644,7 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "task-design"
       ],
@@ -28541,9 +29677,11 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "source-check"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-002"
       ],
       "practice": "制作包含失败对照和回归的评测报告",
@@ -28572,8 +29710,12 @@
         "ai-coding",
         "operations"
       ],
-      "skill_gaps": [],
-      "learning_ids": [],
+      "skill_gaps": [
+        "ai-literacy"
+      ],
+      "learning_ids": [
+        "learn-001"
+      ],
       "practice": "形成质量-成本-时延对照表",
       "suggested_pilot_id": "s31-support",
       "reason": "同行业任务相关",
@@ -28600,9 +29742,11 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "communication"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-048"
       ],
       "practice": "量化用户纠错、升级与满意度",
@@ -28631,9 +29775,11 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "source-check"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-002"
       ],
       "practice": "制作包含失败对照和回归的评测报告",
@@ -28662,8 +29808,12 @@
         "operations",
         "data"
       ],
-      "skill_gaps": [],
-      "learning_ids": [],
+      "skill_gaps": [
+        "ai-literacy"
+      ],
+      "learning_ids": [
+        "learn-001"
+      ],
       "practice": "形成质量-成本-时延对照表",
       "suggested_pilot_id": "s31-support",
       "reason": "同行业任务相关",
@@ -28689,6 +29839,7 @@
         "operations"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "governance"
       ],
@@ -28721,10 +29872,12 @@
         "ai-coding"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "evaluation",
         "source-check"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-003",
         "learn-002"
       ],
@@ -28754,8 +29907,12 @@
         "operations",
         "data"
       ],
-      "skill_gaps": [],
-      "learning_ids": [],
+      "skill_gaps": [
+        "ai-literacy"
+      ],
+      "learning_ids": [
+        "learn-001"
+      ],
       "practice": "形成质量-成本-时延对照表",
       "suggested_pilot_id": "s31-support",
       "reason": "同行业任务相关",
@@ -28781,6 +29938,7 @@
         "operations"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "governance"
       ],
@@ -28813,10 +29971,12 @@
         "ai-coding"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "evaluation",
         "source-check"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-003",
         "learn-002"
       ],
@@ -28845,10 +30005,12 @@
         "operations"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "ai-coding",
         "data"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-010",
         "learn-011"
       ],
@@ -28878,6 +30040,7 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent"
       ],
       "learning_ids": [
@@ -28909,9 +30072,11 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "security"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-020"
       ],
       "practice": "输出风险登记册与审批矩阵",
@@ -28940,8 +30105,12 @@
         "ai-coding",
         "operations"
       ],
-      "skill_gaps": [],
-      "learning_ids": [],
+      "skill_gaps": [
+        "ai-literacy"
+      ],
+      "learning_ids": [
+        "learn-001"
+      ],
       "practice": "形成质量-成本-时延对照表",
       "suggested_pilot_id": "s31-support",
       "reason": "同行业任务相关",
@@ -28968,9 +30137,11 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "communication"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-048"
       ],
       "practice": "量化用户纠错、升级与满意度",
@@ -28999,9 +30170,11 @@
         "evaluation"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "source-check"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-002"
       ],
       "practice": "制作包含失败对照和回归的评测报告",
@@ -29030,8 +30203,12 @@
         "operations",
         "data"
       ],
-      "skill_gaps": [],
-      "learning_ids": [],
+      "skill_gaps": [
+        "ai-literacy"
+      ],
+      "learning_ids": [
+        "learn-001"
+      ],
       "practice": "形成质量-成本-时延对照表",
       "suggested_pilot_id": "s31-support",
       "reason": "同行业任务相关",
@@ -29057,6 +30234,7 @@
         "operations"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "governance"
       ],
@@ -29089,10 +30267,12 @@
         "ai-coding"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "evaluation",
         "source-check"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-003",
         "learn-002"
       ],
@@ -29121,10 +30301,12 @@
         "operations"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "ai-coding",
         "data"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-010",
         "learn-011"
       ],
@@ -29154,6 +30336,7 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent"
       ],
       "learning_ids": [
@@ -29185,9 +30368,11 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "security"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-020"
       ],
       "practice": "输出风险登记册与审批矩阵",
@@ -29216,8 +30401,12 @@
         "operations",
         "product"
       ],
-      "skill_gaps": [],
-      "learning_ids": [],
+      "skill_gaps": [
+        "ai-literacy"
+      ],
+      "learning_ids": [
+        "learn-001"
+      ],
       "practice": "完成流程诊断、成本边界和试点路线图",
       "suggested_pilot_id": "s32-content",
       "reason": "同行业任务相关",
@@ -29244,6 +30433,7 @@
         "governance"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent"
       ],
       "learning_ids": [
@@ -29275,9 +30465,11 @@
         "communication"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "teaching"
       ],
       "learning_ids": [
+        "learn-001",
         "learn-032"
       ],
       "practice": "开展岗位训练并评估练习与采纳",
@@ -29306,6 +30498,7 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "task-design",
         "evaluation"
       ],
@@ -29339,8 +30532,12 @@
         "data",
         "product"
       ],
-      "skill_gaps": [],
-      "learning_ids": [],
+      "skill_gaps": [
+        "ai-literacy"
+      ],
+      "learning_ids": [
+        "learn-001"
+      ],
       "practice": "从授权线索开展A/B实验复盘",
       "suggested_pilot_id": "s32-content",
       "reason": "可迁移的任务与技能组合",
@@ -29366,6 +30563,7 @@
         "operations"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "governance"
       ],
@@ -29399,6 +30597,7 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "task-design",
         "evaluation"
       ],
@@ -29432,8 +30631,12 @@
         "data",
         "product"
       ],
-      "skill_gaps": [],
-      "learning_ids": [],
+      "skill_gaps": [
+        "ai-literacy"
+      ],
+      "learning_ids": [
+        "learn-001"
+      ],
       "practice": "从授权线索开展A/B实验复盘",
       "suggested_pilot_id": "s32-content",
       "reason": "可迁移的任务与技能组合",
@@ -29459,6 +30662,7 @@
         "operations"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "governance"
       ],
@@ -29492,6 +30696,7 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "task-design",
         "evaluation"
       ],
@@ -29525,8 +30730,12 @@
         "data",
         "product"
       ],
-      "skill_gaps": [],
-      "learning_ids": [],
+      "skill_gaps": [
+        "ai-literacy"
+      ],
+      "learning_ids": [
+        "learn-001"
+      ],
       "practice": "从授权线索开展A/B实验复盘",
       "suggested_pilot_id": "s32-content",
       "reason": "可迁移的任务与技能组合",
@@ -29552,6 +30761,7 @@
         "operations"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "governance"
       ],
@@ -29585,6 +30795,7 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "task-design",
         "evaluation"
       ],
@@ -29618,8 +30829,12 @@
         "data",
         "product"
       ],
-      "skill_gaps": [],
-      "learning_ids": [],
+      "skill_gaps": [
+        "ai-literacy"
+      ],
+      "learning_ids": [
+        "learn-001"
+      ],
       "practice": "从授权线索开展A/B实验复盘",
       "suggested_pilot_id": "s32-content",
       "reason": "可迁移的任务与技能组合",
@@ -29645,6 +30860,7 @@
         "operations"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "governance"
       ],
@@ -29678,6 +30894,7 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "task-design",
         "evaluation"
       ],
@@ -29711,8 +30928,12 @@
         "data",
         "product"
       ],
-      "skill_gaps": [],
-      "learning_ids": [],
+      "skill_gaps": [
+        "ai-literacy"
+      ],
+      "learning_ids": [
+        "learn-001"
+      ],
       "practice": "从授权线索开展A/B实验复盘",
       "suggested_pilot_id": "s32-content",
       "reason": "可迁移的任务与技能组合",
@@ -29738,6 +30959,7 @@
         "operations"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "governance"
       ],
@@ -29771,6 +30993,7 @@
         "product"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "task-design",
         "evaluation"
       ],
@@ -29804,8 +31027,12 @@
         "data",
         "product"
       ],
-      "skill_gaps": [],
-      "learning_ids": [],
+      "skill_gaps": [
+        "ai-literacy"
+      ],
+      "learning_ids": [
+        "learn-001"
+      ],
       "practice": "从授权线索开展A/B实验复盘",
       "suggested_pilot_id": "s32-content",
       "reason": "可迁移的任务与技能组合",
@@ -29831,6 +31058,7 @@
         "operations"
       ],
       "skill_gaps": [
+        "ai-literacy",
         "agent",
         "governance"
       ],
