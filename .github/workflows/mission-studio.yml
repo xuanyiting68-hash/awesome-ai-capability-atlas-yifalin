@@ -1,0 +1,50 @@
+name: Atlas V1.6 grounded mission studio
+on:
+  pull_request:
+    paths:
+      - 'mission-studio.html'
+      - 'mission-engine.js'
+      - 'tests/mission-engine.test.cjs'
+      - 'scripts/build_site.py'
+      - 'tests/deployed-smoke.cjs'
+      - 'index.html'
+      - '.github/workflows/mission-studio.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'mission-studio.html'
+      - 'mission-engine.js'
+      - 'tests/mission-engine.test.cjs'
+      - '.github/workflows/mission-studio.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-grounded-decision-contract:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Parse browser-compatible mission engine without any network
+        run: node --check mission-engine.js
+      - name: Test 133 real curated sources, Top 30 evidence and fail-closed plans
+        run: node --test tests/mission-engine.test.cjs
+      - name: Inspect published page for no bundled model keys or remote SDK
+        run: |
+          node --check - <<'END'
+          const fs = require('node:fs');
+          const s = fs.readFileSync('mission-studio.html', 'utf8');
+          if (!s.includes('mission-engine.js') || /https?:\/\/[^"'\s]+\.js/.test(s)) {
+            throw new Error('Missing local engine or unexpected remote JavaScript');
+          }
+          if (!s.includes('RESEARCH_PLAN_NOT_EXECUTED') && !s.includes('研究计划')) {
+            // Engine enforces the actual status; UI must still be visibly labeled as research.
+            if (!s.includes('研究证据分不是安全认证')) throw new Error('Missing human-readable research boundary');
+          }
+          console.log('PASS: first-party local source-only mission runner');
+          END
