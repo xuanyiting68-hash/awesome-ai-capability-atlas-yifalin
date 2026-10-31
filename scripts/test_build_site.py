@@ -10,7 +10,7 @@ class PublishBoundaryTests(unittest.TestCase):
             destination = Path(directory) / 'site'
             manifest = build(destination, commit='a' * 40)
             self.assertEqual(set(p.name for p in destination.iterdir()),
-                             {'index.html', 'top30.html', 'project.html', 'blueprints.html', 'network.html', 'adoption.html', 'pilot-lab.html', 'recipes.html', 'data', 'docs', 'LICENSE', 'README.md', 'deployment.json'})
+                             {'index.html', 'top30.html', 'project.html', 'blueprints.html', 'network.html', 'adoption.html', 'pilot-lab.html', 'recipes.html', 'data', 'docs', 'examples', 'LICENSE', 'README.md', 'deployment.json'})
             self.assertEqual(json.loads((destination / 'deployment.json').read_text()), manifest)
             self.assertEqual(manifest['source_commit'], 'a' * 40)
             self.assertEqual(manifest['catalog_count'], 5000)
@@ -21,6 +21,14 @@ class PublishBoundaryTests(unittest.TestCase):
             self.assertEqual(manifest['recipe_count'],6)
             self.assertEqual(manifest['recipe_curated_tool_count'],20)
             self.assertEqual(manifest['recipe_verified_integrations'],0)
+            self.assertEqual(manifest['recipe_demo_count'],3)
+            self.assertIs(manifest['recipe_demo_contract_passed'],True)
+            self.assertEqual(manifest['recipe_demo_upstream_integrations'],0)
+            demo=json.loads((destination/'data/recipe_demo_results.json').read_text('utf-8'))
+            self.assertEqual(set(demo['scenarios']),{'leads','education','finance'})
+            self.assertEqual(demo['scenarios']['finance']['net_bps_sum'],'-133.79')
+            self.assertTrue((destination/'examples/recipe_demos/run_demo.py').is_file())
+            self.assertTrue((destination/'examples/consent_lead_triage/synthetic_leads.json').is_file())
             self.assertTrue((destination / 'data/capability_recipes.json').is_file())
             self.assertTrue((destination / 'recipes.html').is_file())
             self.assertEqual(manifest['star_shortlist_count'],30)
