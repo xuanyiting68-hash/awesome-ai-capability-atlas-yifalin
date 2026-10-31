@@ -170,6 +170,7 @@ const errors=[];
       assert.match(await page.locator('#notice').innerText(),/NOT integrated|None of these compositions/i);
       assert.equal(await page.locator('[data-demo]').count(),3,'All three runnable recipe evidence panels are published');
       assert.equal(await page.locator('[data-demo="finance"]').count(),1);
+      await page.locator('#cards .card[data-id="finance"] details summary').click();
       assert.match(await page.locator('[data-demo="finance"]').innerText(),/-133.79/);
       const scores=await page.locator('.rubric strong').allTextContents();
       assert.equal(scores.length,6);
