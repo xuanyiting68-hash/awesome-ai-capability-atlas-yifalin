@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0a1a31"><meta name="description" content="从业务目标到可信的开源 AI 工具研究方案：检索 133 个真实精选项目，比较证据、维护和风险，组合实施蓝图并导出。">
+<title>Mission Studio · YIFALIN AI Capability Atlas</title>
+<style>
+:root{font-family:Inter,"PingFang SC","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;color:#192e4c;background:#f3f6fb;--ink:#192e4c;--muted:#647995;--line:#dce5ef;--navy:#0a1a31;--accent:#255db0}
+*{box-sizing:border-box}body{margin:0}a{color:#2b5aa6;text-decoration:none}button,textarea,select,input{font:inherit}button{cursor:pointer}button:disabled{cursor:not-allowed;opacity:.45}button:focus-visible,a:focus-visible,select:focus-visible,textarea:focus-visible,input:focus-visible{outline:3px solid #30a9b3;outline-offset:2px}
+header{background:radial-gradient(circle at 94% 0,#214e77 0,transparent 57%),#0a1a31;color:#fff;padding:23px max(20px,calc((100vw - 1340px)/2)) 35px}
+nav{display:flex;align-items:center;gap:17px;flex-wrap:wrap}nav .logo{font-size:14px;font-weight:850;color:#fff;margin-right:auto}nav a{font-size:12px;color:#cbdff1}h1{font-size:clamp(28px,3.3vw,43px);line-height:1.22;margin:26px 0 10px;letter-spacing:-.7px}header p{max-width:830px;color:#c8d7eb;font-size:14px;line-height:1.76;margin:0}.eyebrow{color:#97e6dc;font-size:11px;letter-spacing:1.4px;font-weight:800}
+main{max-width:1380px;margin:auto;padding:22px 19px 85px}.notice{padding:14px 17px;background:#eaf4fa;border:1px solid #d2e7ef;color:#325772;border-radius:12px;font-size:12px;line-height:1.7;margin-bottom:17px}
+.panel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:0 3px 20px #132c5110;min-width:0}.panel h2{font-size:18px;margin:0 0 5px}.sub{font-size:12px;color:var(--muted);line-height:1.6;margin:5px 0 15px}.label{font-size:12px;font-weight:800;color:#274669}.mission-form{display:grid;grid-template-columns:minmax(0,1fr) 205px;gap:13px;align-items:end}.mission-form textarea{display:block;margin-top:8px;width:100%;min-height:89px;resize:vertical;border:1px solid #c5d3e6;border-radius:11px;padding:12px 14px;line-height:1.6;color:var(--ink);font-size:14px}.mission-form select{display:block;width:100%;margin-top:8px;border:1px solid #c5d3e6;background:white;border-radius:10px;padding:13px 11px;color:var(--ink)}.hint{color:#7186a2;font-size:11px;margin:8px 0}.examples{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}.example{border:1px solid #cbd9eb;background:#f3f7ff;color:#31547f;border-radius:8px;padding:8px 11px;font-size:11px}.buttonbar{display:flex;gap:9px;flex-wrap:wrap;align-items:center}.primary{border:1px solid #2458a3;background:#2458a3;color:white;border-radius:10px;padding:11px 19px;font-weight:750;font-size:13px}.secondary{border:1px solid #d4e0f0;background:#f3f7fd;border-radius:10px;padding:10px 14px;font-size:12px;color:#2d5188}.ghost{border:1px solid #d9e2ed;background:white;border-radius:9px;padding:8px 11px;font-size:11px;color:#3f628e}.ghost[aria-pressed=true]{background:#e2f1e7;border-color:#8ac3ae;color:#155d49}.group{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:20px 0 12px}.group h2{margin:0;font-size:20px}.group p{font-size:11px;color:var(--muted);margin:0}.layout{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(365px,1fr);gap:16px;align-items:start}.stack{display:grid;gap:12px}.tools{display:grid;gap:10px}.tool{border:1px solid #e0e8f2;border-radius:12px;padding:15px;background:#fff}.tool-top{display:flex;gap:12px;align-items:flex-start;justify-content:space-between}.tool h3{font-size:15px;margin:3px 0 6px;overflow-wrap:anywhere}.tool h3 a{color:#1d4b90}.tool p{font-size:12px;color:#60758f;line-height:1.6;margin:6px 0}.tool .tags{display:flex;flex-wrap:wrap;gap:5px}.tag{display:inline-block;padding:4px 7px;border-radius:6px;background:#edf2fa;color:#45678b;font-size:10px}.metricrow{display:flex;flex-wrap:wrap;gap:9px;align-items:center;margin:10px 0}.metric{background:#f4f7fb;border:1px solid #e4ecf5;border-radius:8px;padding:8px 10px;font-size:11px;color:#45617f}.metric b{font-size:15px;color:#254a84}.red{color:#a24c39}.green{color:#22735f}.source{font-size:11px;color:#426ba4}.why{font-size:11px;color:#56708a;line-height:1.6;margin:6px 0}.blockers{font-size:11px;color:#89512f;line-height:1.65;background:#fff7ec;border:1px solid #f2e3cf;border-radius:8px;padding:9px;margin-top:9px}
+.sticky{position:sticky;top:14px}.sticky .panel{margin-bottom:13px}.count{display:inline-block;background:#dceef8;border-radius:7px;padding:4px 7px;color:#315476;font-size:11px}.empty{font-size:13px;color:#6c7d94;border:1px dashed #ccdbea;border-radius:12px;padding:20px;text-align:center}.pick-row{display:flex;gap:7px;align-items:center;justify-content:space-between;border-bottom:1px solid #e8edf4;padding:8px 0;font-size:12px}.pick-row span{overflow-wrap:anywhere}.pick-row button{flex:none;border:0;background:#f1f4fb;color:#7e4660;padding:5px 9px;border-radius:7px}
+.workflow{display:grid;gap:12px;margin-top:12px}.step{border:1px solid #dae5f2;border-radius:11px;background:#f7faff;padding:12px;position:relative}.step:not(:last-child):after{content:"↓";position:absolute;bottom:-19px;left:24px;color:#7c9fc2;font-weight:900;font-size:18px}.step strong{font-size:13px;display:block}.step p{font-size:12px;color:#5d7290;line-height:1.6;margin:8px 0}.step small{font-size:11px;color:#9a672e}.step select{width:100%;padding:9px;border:1px solid #d2dfef;background:white;border-radius:8px;color:#335178;font-size:12px;margin-top:8px}.compare{width:100%;border-collapse:collapse;font-size:11px;min-width:340px}.compare th,.compare td{text-align:left;border-bottom:1px solid #e7edf4;padding:9px 7px;vertical-align:top;overflow-wrap:anywhere}.compare th{color:#657c99;background:#f6f9fd}.compare a{font-weight:700}.small{font-size:11px;color:#697e99}.exports{display:flex;flex-wrap:wrap;gap:8px;margin-top:15px}.toolbar{display:flex;gap:9px;flex-wrap:wrap;align-items:center}.toolbar label{font-size:12px;color:#506888}.toolbar input{accent-color:#2867af}.loading{background:white;padding:24px;border-radius:12px;color:#526b8a;font-size:13px}.status{font-size:12px;color:#4b6985;min-height:1.4em}.saved-list{display:grid;gap:6px}.saved-row{display:flex;align-items:center;gap:10px;justify-content:space-between;border:1px solid #e2eaf6;border-radius:8px;padding:10px;font-size:11px}.saved-row button{border:1px solid #dbe4ef;border-radius:6px;background:#f6f9fd;font-size:10px;padding:6px}
+@media(max-width:1020px){.layout{grid-template-columns:1fr}.sticky{position:static}}@media(max-width:600px){header{padding:14px 14px 22px}nav{gap:10px}nav .logo{width:100%}nav a{font-size:11px}h1{font-size:27px;margin-top:18px}header p{font-size:12px}main{padding:12px 10px 50px}.panel{padding:14px}.mission-form{grid-template-columns:1fr}.mission-form textarea{min-height:80px}.group{margin:13px 0 9px}.group h2{font-size:17px}.tool{padding:12px}}
+</style></head><body>
+<header><nav><a class="logo" href="./index.html">◈ YIFALIN / AI CAPABILITY ATLAS</a><a href="./recipes.html">能力组合</a><a href="./demos.html">基础演示</a><a href="./top30.html">Top 30 研究</a></nav>
+<div class="eyebrow">V1.6 · DECISION INTELLIGENCE · SOURCE-GROUNDED</div><h1>从业务目标，到可审查的 AI 方案</h1><p>不再只是工具清单。输入你希望完成的事，从 133 个编辑精选项目中筛选真实候选，理解匹配依据、维护快照和阻断风险，组合四阶段工作流，并导出可交给团队执行与复核的计划。</p></header>
+<main>
+<div class="notice">信任说明：这是<b>本地规则匹配和方案构建器，不是真正的 LLM Agent</b>。133 个项目来自编辑精选快照；相关度不是模型预测准确率，研究证据分不是安全认证。代码、许可证和接口兼容性均需独立审查。你输入的目标不发送至服务器，保存操作仅写入当前浏览器。</div>
+<section class="panel" aria-labelledby="mission-title"><h2 id="mission-title">01 · 描述你的业务目标</h2><p class="sub">中文或英文都可以。选择业务场景，或者让规则引擎推断。避免输入客户隐私、密钥、真实交易账户信息。</p>
+<div class="mission-form"><div><label class="label" for="goal">我要完成什么任务？</label><textarea id="goal" maxlength="240" placeholder="例如：将公开课程材料整理成带原文引用的双语练习，供老师审核">将公开课程资料整理成可追溯的互动练习，支持老师审核和复习</textarea></div>
+<div><label class="label" for="scenario">应用场景</label><select id="scenario"><option value="auto">自动推断（规则）</option><option value="education">教育与知识</option><option value="finance">金融与研究</option><option value="growth">增长与客户</option><option value="content">内容与视频</option><option value="engineering">Agent 与开发</option><option value="governance">安全与治理</option></select><p class="hint">仅使用本地已核验目录数据。</p></div></div>
+<div class="examples"><button class="example" data-goal="将授权课程内容生成可检查的互动练习，并支持老师审核" data-area="education">教育课程自动化</button><button class="example" data-goal="研究金融数据、因子与样本外验证，避免实盘权限" data-area="finance">金融投研工作台</button><button class="example" data-goal="收集获得同意的用户需求，去重并交给人工销售审核" data-area="growth">合规营销获客</button><button class="example" data-goal="用开源 Agents 和 MCP 建立可审计的自动化工作流" data-area="engineering">Agent 工具链</button></div>
+<div class="buttonbar"><button class="primary" id="analyze">分析目标，匹配工具</button><span id="goal-status" role="status" class="status"></span></div></section>
+<div class="group"><div><h2>02 · 候选工具与研究证据</h2><p>相关度表示规则匹配程度，证据覆盖度表示档案信息丰富程度；两者都不是产品质量评级。</p></div><div class="toolbar"><label><input type="checkbox" id="maintained"> 仅看快照中近一年有更新的项目</label><span id="match-count" class="count">—</span></div></div>
+<div class="layout"><div class="stack"><div id="loading" class="loading" aria-live="polite">正在读取精选目录与研究快照…</div><div id="candidates" class="tools"></div></div>
+<div class="sticky"><section class="panel"><h2>03 · 我的方案候选 <span id="pick-count" class="count">0 / 5</span></h2><p class="sub">从左边选择或移除仓库；最多五个候选，避免堆砌过多组件。比较依据实时更新。</p><div id="selected" class="saved-list"><div class="empty">从左边添加候选工具后开始组合。</div></div><div id="comparison"></div></section>
+<section class="panel"><h2>04 · 四阶段实施蓝图</h2><p class="sub">每个阶段都要交付检查证据；请选择候选工具进行分配。未核验接口前，组合不会自动执行。</p><div id="workflow" class="workflow"></div><div class="exports"><button id="export-json" type="button" class="primary">导出方案 JSON</button><button id="export-md" type="button" class="secondary">导出实施说明 Markdown</button><button id="save-plan" type="button" class="secondary">保存到本机</button></div><p class="status" id="plan-status" role="status"></p></section>
+<section class="panel"><h2>本机保存的方案 <span id="saved-count" class="count">0</span></h2><p class="sub">只在当前设备浏览器保存，不是云账号。可以加载或删除，不会调用外部服务。</p><div id="saved-plans" class="saved-list"></div></section>
+</div></div>
+<div class="notice" style="margin-top:20px">产品边界：当前已实现<b>目标检索、可解释排序、风险比较、人工工作流编辑、计划存储与导出</b>。尚未实现真实 LLM 推理、第三方 SDK 串接、可执行自动化、用户认证、跨设备云同步。真正的生产 AI Agent 需要单独开发安全后端、身份、权限、额度和审计。</div>
+</main><script src="./mission-engine.js"></script><script>
+"use strict";
+const $=id=>document.getElementById(id),E=window.AtlasMissionEngine;
+let curated=[],metadata=null,briefs=null,ranking=[],scenario="education",picks=[],stages=[],savedPlans=[];
+const store="atlas_mission_plans_v1";
+function addText(el,tag,value,cls){const x=document.createElement(tag);x.textContent=String(value);if(cls)x.className=cls;el.append(x);return x}
+function button(text,fn,cls){const x=document.createElement("button");x.textContent=text;x.type="button";x.className=cls||"ghost";x.addEventListener("click",fn);return x}
+function updateMessage(id,msg){$(id).textContent=msg}
+function safePlans(){try{const v=JSON.parse(localStorage.getItem(store)||"[]");return Array.isArray(v)?v.filter(p=>p&&p.schema_version===1&&p.status==="RESEARCH_PLAN_NOT_EXECUTED").slice(0,12):[]}catch{return []}}
+function persist(){try{localStorage.setItem(store,JSON.stringify(savedPlans));return true}catch{return false}}
+function shortlist(repo){
+ if(picks.includes(repo)){picks=picks.filter(x=>x!==repo);stages.forEach(s=>{if(s.tool===repo)s.tool=null})}
+ else if(picks.length<5)picks.push(repo);else{updateMessage("goal-status","候选数量上限为五个。先移除一个再添加。");return}
+ render();
+}
+function analysis(){
+ const goal=$("goal").value.trim();if(goal.length<5){updateMessage("goal-status","请至少输入五个字符的业务目标。");return}
+ scenario=E.inferScenario(goal,$("scenario").value);
+ ranking=E.rank(goal,scenario,curated,metadata,briefs,{onlyMaintained:$("maintained").checked});
+ const valid=new Set(ranking.map(x=>x.repo));picks=picks.filter(x=>valid.has(x));
+ stages=E.getStages(scenario);
+ if(!picks.length)picks=ranking.slice(0,3).map(x=>x.repo);
+ stages.forEach((s,i)=>s.tool=picks[i%Math.max(1,picks.length)]||null);
+ updateMessage("goal-status","已按「"+E.PROFILES[scenario].name+"」给出可检查的候选排序；可以手动调整。");
+ render();
+}
+function renderCandidates(){
+ const el=$("candidates");el.replaceChildren();const shown=ranking.slice(0,18);
+ addText($("match-count"),"span","");$("match-count").textContent=ranking.length+" 个来源匹配";
+ if(!shown.length){addText(el,"div","无匹配项目；请取消维护过滤或更换业务场景。","empty");return}
+ shown.forEach(x=>{
+  const card=document.createElement("article");card.className="tool";card.dataset.repo=x.repo;
+  const top=addText(card,"div","","tool-top"),left=addText(top,"div","");
+  const heading=addText(left,"h3",""),anchor=addText(heading,"a",x.repo);anchor.href=x.url;anchor.target="_blank";anchor.rel="noopener noreferrer";
+  addText(left,"p",x.description||x.useCase);
+  const pick=button(picks.includes(x.repo)?"✓ 已加入":"＋ 加入方案",()=>shortlist(x.repo));pick.className="ghost add-tool";pick.setAttribute("aria-pressed",String(picks.includes(x.repo)));top.append(pick);
+  const tags=addText(card,"div","","tags");[x.topic,x.type,"编辑优先级 "+x.priority].forEach(v=>addText(tags,"span",v,"tag"));
+  const metrics=addText(card,"div","","metricrow");const fit=addText(metrics,"span","","metric");addText(fit,"b",x.fit);fit.append(document.createTextNode(" /100 规则相关度"));
+  const ev=addText(metrics,"span","","metric");addText(ev,"b",x.evidence.total);ev.append(document.createTextNode(" /100 证据覆盖"));
+  const license=addText(metrics,"span","","metric");license.textContent="许可证快照："+x.evidence.license;
+  const why=addText(card,"p","匹配依据："+x.reasons.join(" · "),"why");why.title="来源为 Atlas 编辑整理，非模型预测";
+  const src=addText(card,"a",x.evidence.officialBrief?"查看 Top 30 来源档案 →":"查看 GitHub 官方项目 →","source");
+  src.href=x.evidence.officialBrief?"./project.html?repo="+encodeURIComponent(x.repo):x.url;
+  if(!x.evidence.officialBrief){src.target="_blank";src.rel="noopener noreferrer"}
+  const risks=addText(card,"div","审核门禁："+x.blockers.join("；"),"blockers");
+  el.append(card);
+ });
+}
+function renderSelected(){
+ const box=$("selected");box.replaceChildren();$("pick-count").textContent=picks.length+" / 5";
+ if(!picks.length){addText(box,"div","请至少加入一个项目候选。","empty");}
+ picks.forEach(name=>{
+  const r=ranking.find(x=>x.repo===name);if(!r)return;
+  const row=addText(box,"div","","pick-row");addText(row,"span",r.repo);
+  row.append(button("移除",()=>shortlist(name)));
+ });
+ const host=$("comparison");host.replaceChildren();if(!picks.length)return;
+ const wrap=addText(host,"div","","tablewrap");wrap.style.overflow="auto";wrap.style.marginTop="13px";
+ const table=addText(wrap,"table","","compare"),thead=addText(table,"thead",""),headrow=addText(thead,"tr","");
+ ["候选仓库","匹配/证据","风险","元数据推送","许可证"].forEach(t=>addText(headrow,"th",t));
+ const tbody=addText(table,"tbody","");
+ picks.forEach(name=>{const p=ranking.find(x=>x.repo===name);if(!p)return;
+  const tr=addText(tbody,"tr","");addText(tr,"td",p.repo);addText(tr,"td",p.fit+" / "+p.evidence.total);
+  addText(tr,"td",p.risk+" · 未审计");addText(tr,"td",p.evidence.lastPush?.slice(0,10)||"未知");addText(tr,"td",p.evidence.license);
+ });
+}
+function renderWorkflow(){
+ const box=$("workflow");box.replaceChildren();
+ stages.forEach((step,i)=>{
+  const card=addText(box,"div","","step");addText(card,"strong",(i+1)+" · "+step.title);addText(card,"p",step.task);
+  const output=addText(card,"p","交付："+step.output);output.style.fontWeight="650";
+  addText(card,"small","门禁："+step.gate);
+  const select=document.createElement("select");select.setAttribute("aria-label",step.title+" 阶段组件");const blank=document.createElement("option");blank.value="";blank.textContent="未指定工具（人工处理）";select.append(blank);
+  picks.forEach(name=>{const opt=document.createElement("option");opt.value=name;opt.textContent=name;select.append(opt)});
+  select.value=picks.includes(step.tool)?step.tool:"";select.addEventListener("change",()=>{step.tool=select.value||null});
+  card.append(select);
+ });
+}
+function currentPlan(){return E.makePlan({goal:$("goal").value,scenario,ranking,picks,stages,metadataTime:metadata?.generated_at_utc})}
+function download(text,type,file){
+ const blob=new Blob([text],{type});const url=URL.createObjectURL(blob);
+ const a=document.createElement("a");a.href=url;a.download=file;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),800);
+ updateMessage("plan-status","已生成本地文件（未向服务器传输）。");
+}
+function renderSaved(){
+ $("saved-count").textContent=String(savedPlans.length);const box=$("saved-plans");box.replaceChildren();
+ if(!savedPlans.length){addText(box,"div","暂无本地方案。","empty");return}
+ savedPlans.forEach((plan,i)=>{
+  const row=addText(box,"div","","saved-row");addText(row,"span",plan.title.slice(0,65));
+  row.append(button("导出",()=>download(E.toMarkdown(plan),"text/markdown;charset=utf-8","atlas-plan-"+(i+1)+".md")));
+  row.append(button("删除",()=>{savedPlans.splice(i,1);persist();renderSaved()}));
+ });
+}
+function render(){renderCandidates();renderSelected();renderWorkflow();renderSaved()}
+async function boot(){
+ try{
+  const paths=["data/curated.json","data/repo_metadata.json","data/research_briefs.json"];
+  const responses=await Promise.all(paths.map(p=>fetch("./"+p,{cache:"no-cache"})));
+  if(responses.some(x=>!x.ok))throw Error("公开研究数据无法获取");
+  [curated,metadata,briefs]=await Promise.all(responses.map(x=>x.json()));
+  if(!Array.isArray(curated)||curated.length!==133||metadata.coverage_count!==133||!Array.isArray(briefs.entries)||briefs.entries.length!==30)throw Error("来源数据版本不一致");
+  $("loading").hidden=true;savedPlans=safePlans();analysis();
+ }catch(e){$("loading").textContent="无法安全载入工作台："+e.message;updateMessage("goal-status","请查看 GitHub Pages 发布状态。")}
+}
+$("analyze").addEventListener("click",analysis);
+$("maintained").addEventListener("change",analysis);
+document.querySelectorAll(".example").forEach(b=>b.addEventListener("click",()=>{$("goal").value=b.dataset.goal;$("scenario").value=b.dataset.area;analysis()}));
+$("export-json").addEventListener("click",()=>{if(picks.length)download(JSON.stringify(currentPlan(),null,2),"application/json","atlas-mission-plan.json");else updateMessage("plan-status","请先添加候选工具。")});
+$("export-md").addEventListener("click",()=>{if(picks.length)download(E.toMarkdown(currentPlan()),"text/markdown;charset=utf-8","atlas-mission-plan.md");else updateMessage("plan-status","请先添加候选工具。")});
+$("save-plan").addEventListener("click",()=>{if(!picks.length){updateMessage("plan-status","请先选择候选工具。");return}
+ savedPlans.unshift(currentPlan());savedPlans=savedPlans.slice(0,10);
+ updateMessage("plan-status",persist()?"已保存到当前浏览器（不跨设备同步）。":"本机保存被浏览器禁止，请改用文件导出。");renderSaved();
+});
+boot();
+</script></body></html>
