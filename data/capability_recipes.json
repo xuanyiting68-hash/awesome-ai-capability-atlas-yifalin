@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "version": "1.5.0",
+  "version": "1.5.1",
   "source_blueprints_version": "1.3.0",
   "baseline_utc": "2026-10-28T08:52:34.444204+00:00",
   "purpose": "Researchable, manually reproducible capability compositions. Not integrated apps.",
@@ -122,7 +122,8 @@
         "Keep original research and identifiable human review",
         "Do not give direct buy/sell recommendations in finance content",
         "Never clone voices without permission"
-      ]
+      ],
+      "first_party_demo": null
     },
     {
       "id": "social",
@@ -222,7 +223,8 @@
         "Follow each platform's API rules and terms",
         "No fake engagement or spam follows",
         "Require original content and final human approval"
-      ]
+      ],
+      "first_party_demo": null
     },
     {
       "id": "leads",
@@ -319,13 +321,21 @@
       ],
       "stop_condition_zh": "严禁抓取真实个人信息或自动私信",
       "stop_condition_en": "No scraping real personal data or unsolicited mass messaging",
-      "offline_demo_path": "examples/consent_lead_triage/run_demo.py",
+      "offline_demo_path": "examples/recipe_demos/run_demo.py",
       "guardrails_en": [
         "Never scrape private personal data",
         "No unsolicited mass DMs",
         "Record opt-in and permit withdrawal",
         "Minimize sensitive data collection"
-      ]
+      ],
+      "first_party_demo": {
+        "state": "synthetic-stdlib-only",
+        "scenario": "leads",
+        "runner": "examples/recipe_demos/run_demo.py",
+        "fixture": "examples/recipe_demos/synthetic_fixtures.json",
+        "expected": "data/recipe_demo_contract.json",
+        "verified_third_party_integration": false
+      }
     },
     {
       "id": "crm",
@@ -429,7 +439,8 @@
         "Respect unsubscribe and contact frequency",
         "Do not impersonate a human or promise outcomes",
         "Audit actions and support deletion"
-      ]
+      ],
+      "first_party_demo": null
     },
     {
       "id": "finance",
@@ -526,12 +537,20 @@
       ],
       "stop_condition_zh": "严格研究用途，不连接账户、无需收益承诺",
       "stop_condition_en": "Research only; no brokerage access or return guarantees",
-      "offline_demo_path": null,
+      "offline_demo_path": "examples/recipe_demos/run_demo.py",
       "guardrails_en": [
         "Do not grant AI live-order permissions",
         "Never guarantee financial returns",
         "Require separate legal, security and risk approval before live execution"
-      ]
+      ],
+      "first_party_demo": {
+        "state": "synthetic-stdlib-only",
+        "scenario": "finance",
+        "runner": "examples/recipe_demos/run_demo.py",
+        "fixture": "examples/recipe_demos/synthetic_fixtures.json",
+        "expected": "data/recipe_demo_contract.json",
+        "verified_third_party_integration": false
+      }
     },
     {
       "id": "education",
@@ -629,13 +648,21 @@
       ],
       "stop_condition_zh": "教学内容与学生隐私必须分别审查",
       "stop_condition_en": "Review teaching content rights and learner privacy separately",
-      "offline_demo_path": null,
+      "offline_demo_path": "examples/recipe_demos/run_demo.py",
       "guardrails_en": [
         "Verify course, media and illustration rights",
         "Protect student data",
         "Keep explanations checkable against sources",
         "Avoid ungrounded score or improvement promises"
-      ]
+      ],
+      "first_party_demo": {
+        "state": "synthetic-stdlib-only",
+        "scenario": "education",
+        "runner": "examples/recipe_demos/run_demo.py",
+        "fixture": "examples/recipe_demos/synthetic_fixtures.json",
+        "expected": "data/recipe_demo_contract.json",
+        "verified_third_party_integration": false
+      }
     }
   ]
 }

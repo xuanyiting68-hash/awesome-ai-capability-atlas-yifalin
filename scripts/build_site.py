@@ -10,21 +10,24 @@ if __package__:
     from .validate_adoption import validate_from_files as validate_adoption
     from .pilot_lab import run_from_files as run_pilot
     from .validate_recipes import validate_from_files as validate_recipes
+    from .verify_recipe_demos import verify_from_files as verify_recipe_demos
 else:
     from validate_research_briefs import validate_from_files
     from validate_adoption import validate_from_files as validate_adoption
     from pilot_lab import run_from_files as run_pilot
     from validate_recipes import validate_from_files as validate_recipes
+    from verify_recipe_demos import verify_from_files as verify_recipe_demos
 
 ROOT = Path(__file__).resolve().parents[1]
 FILES = ('index.html', 'top30.html', 'project.html', 'blueprints.html', 'network.html', 'adoption.html', 'pilot-lab.html', 'recipes.html', 'README.md', 'LICENSE')
 DIRECTORIES = ('data', 'docs')
+EXAMPLE_SUBDIRS = ('consent_lead_triage', 'recipe_demos')
 
 def build(destination, source=ROOT, commit=None):
     destination, source = Path(destination).resolve(), Path(source).resolve()
     if destination == source or source.is_relative_to(destination):
         raise ValueError('Destination must not contain the source repository')
-    for name in (*FILES, *DIRECTORIES):
+    for name in (*FILES, *DIRECTORIES, *(str(Path('examples') / x) for x in EXAMPLE_SUBDIRS)):
         item = source / name
         if not item.exists():
             raise ValueError('Missing site asset: ' + name)
@@ -65,6 +68,7 @@ def build(destination, source=ROOT, commit=None):
     research_summary = validate_from_files(source)
     adoption_summary = validate_adoption(source)
     recipe_summary = validate_recipes(source)
+    demo_results = verify_recipe_demos(source)
     pilot_summary = run_pilot(source)
     if not pilot_summary['all_expected_met'] or pilot_summary['total_cases'] != 24:
         raise ValueError('Pilot contract baseline not reproducible; refuse deployment')
@@ -84,6 +88,9 @@ def build(destination, source=ROOT, commit=None):
         'recipe_count': recipe_summary['recipes_count'],
         'recipe_curated_tool_count': recipe_summary['unique_curated_tool_refs'],
         'recipe_verified_integrations': recipe_summary['verified_integrations'],
+        'recipe_demo_count': len(demo_results['scenarios']),
+        'recipe_demo_contract_passed': demo_results['all_passed'],
+        'recipe_demo_upstream_integrations': demo_results['verified_3rd_party_integrations'],
         'pilot_contract_cases': pilot_summary['total_cases'],
         'pilot_contract_passed': pilot_summary['passed_cases'],
         'pilot_upstream_packages_executed': pilot_summary['upstream_code_executed'],
@@ -98,6 +105,10 @@ def build(destination, source=ROOT, commit=None):
         shutil.copyfile(source / name, destination / name)
     for name in DIRECTORIES:
         shutil.copytree(source / name, destination / name)
+    for name in EXAMPLE_SUBDIRS:
+        shutil.copytree(source / 'examples' / name, destination / 'examples' / name)
+    (destination / 'data/recipe_demo_results.json').write_text(
+        json.dumps(demo_results, ensure_ascii=False, sort_keys=True, indent=2) + '\n', encoding='utf-8')
     (destination / 'data/pilot_lab_results.json').write_text(
         json.dumps(pilot_summary, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     (destination / 'deployment.json').write_text(json.dumps(manifest, indent=2) + '\n')
