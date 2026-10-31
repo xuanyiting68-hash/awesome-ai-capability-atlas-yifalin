@@ -1,0 +1,1000 @@
+{
+  "as_of": "2026-11-01",
+  "version": "1.0.0",
+  "sectors": [
+    {
+      "id": "s01",
+      "name": "银行与金融服务",
+      "group": "金融",
+      "roles": "银行经理、投研、风控、运营",
+      "pain": "信息碎片化、核验耗时、审计压力",
+      "quick": "财报与政策知识库；投研文档溯源",
+      "mid": "合规问答与风控案例工作流",
+      "future": "可追溯多智能体投研、风险监测协作",
+      "kpi": "资料核验时间、错误率、审查覆盖率",
+      "risk": "敏感账户信息、投资建议和模型漂移需人工审批",
+      "scenarios": [
+        "knowledge",
+        "research",
+        "analytics",
+        "risk",
+        "documents"
+      ]
+    },
+    {
+      "id": "s02",
+      "name": "证券与资管",
+      "group": "金融",
+      "roles": "量化分析师、基金经理、交易员",
+      "pain": "研究重复、数据孤岛、模型过拟合",
+      "quick": "研报抽取、数据字典和行情摘要",
+      "mid": "研究实验注册、组合分析和报告核查",
+      "future": "多源预测与可审计策略研究工厂",
+      "kpi": "研究复用率、样本外表现、净成本后风险收益",
+      "risk": "禁止以回测收益推定实盘；不得自动执行交易",
+      "scenarios": [
+        "research",
+        "analytics",
+        "forecast",
+        "risk",
+        "documents"
+      ]
+    },
+    {
+      "id": "s03",
+      "name": "保险",
+      "group": "金融",
+      "roles": "核保、理赔、精算、客服",
+      "pain": "资料审核慢、欺诈风险、客户体验差",
+      "quick": "理赔材料分类和保单问答",
+      "mid": "核保辅助与异常索赔分流",
+      "future": "个性化保障方案与人机协作理赔",
+      "kpi": "理赔周转时间、漏检率、申诉率",
+      "risk": "公平性、个人敏感信息及拒赔决定需人工复核",
+      "scenarios": [
+        "documents",
+        "support",
+        "risk",
+        "analytics",
+        "automation"
+      ]
+    },
+    {
+      "id": "s04",
+      "name": "医疗服务",
+      "group": "健康",
+      "roles": "医生、护士、医院运营",
+      "pain": "病历录入耗时、院内知识分散",
+      "quick": "临床记录草稿、院内制度知识搜索",
+      "mid": "转诊协作和医疗流程文书核对",
+      "future": "以临床验证为前提的个体化诊疗支持",
+      "kpi": "文书时间、临床纠错率、医患满意度",
+      "risk": "高风险；诊断治疗、患者数据必须专业审核",
+      "scenarios": [
+        "clinical",
+        "documents",
+        "knowledge",
+        "automation",
+        "research"
+      ]
+    },
+    {
+      "id": "s05",
+      "name": "制药与生物科技",
+      "group": "健康",
+      "roles": "药物研发、临床试验、法规事务",
+      "pain": "文献爆炸、试验设计复杂、监管提交繁琐",
+      "quick": "文献证据图谱、试验文件索引",
+      "mid": "实验假说检索与监管文档辅助",
+      "future": "多模态研究与实验闭环（需真实验证）",
+      "kpi": "检索召回率、试验周期、实验复现率",
+      "risk": "实验结论、药物安全和医学证据不能由生成文本替代",
+      "scenarios": [
+        "research",
+        "knowledge",
+        "documents",
+        "analytics",
+        "forecast"
+      ]
+    },
+    {
+      "id": "s06",
+      "name": "基础教育",
+      "group": "教育",
+      "roles": "教师、教研员、校长",
+      "pain": "备课耗时、分层教学困难、反馈延迟",
+      "quick": "教案草稿、题目分层、教学资料索引",
+      "mid": "基于教师审查的个性化反馈",
+      "future": "持续诊断式学习与教师主导教学协作",
+      "kpi": "备课时间、学习进步、误判率",
+      "risk": "未成年人隐私、学术诚信与教学公平",
+      "scenarios": [
+        "learning",
+        "content",
+        "knowledge",
+        "analytics",
+        "documents"
+      ]
+    },
+    {
+      "id": "s07",
+      "name": "高等教育与科研",
+      "group": "教育",
+      "roles": "教授、研究助理、学生",
+      "pain": "文献密集、研究流程重复、复现困难",
+      "quick": "文献矩阵、引文定位与数据清理",
+      "mid": "研究工作流与实验复现管理",
+      "future": "可审计 AI 研究助理、跨学科知识发现",
+      "kpi": "文献核验率、复现率、研究周期",
+      "risk": "禁止捏造引文、论文作者身份和实验结果",
+      "scenarios": [
+        "research",
+        "learning",
+        "knowledge",
+        "analytics",
+        "coding"
+      ]
+    },
+    {
+      "id": "s08",
+      "name": "职业培训与企业学习",
+      "group": "教育",
+      "roles": "培训经理、讲师、HRBP",
+      "pain": "课程更新慢、培训效果不透明",
+      "quick": "课程知识库与技能差距评估",
+      "mid": "岗位技能图谱、智能练习",
+      "future": "工作过程内嵌个性化持续学习",
+      "kpi": "完课率、岗位表现、知识保留率",
+      "risk": "员工评估避免歧视与过度监控",
+      "scenarios": [
+        "learning",
+        "knowledge",
+        "hr",
+        "analytics",
+        "content"
+      ]
+    },
+    {
+      "id": "s09",
+      "name": "工业制造",
+      "group": "工业",
+      "roles": "工厂经理、工艺工程师、质检员",
+      "pain": "停机损失、质检成本、经验难传承",
+      "quick": "SOP 检索、维修记录问答",
+      "mid": "视觉质检、预测性维护试点",
+      "future": "数字孪生与柔性智能制造",
+      "kpi": "停机时间、废品率、OEE",
+      "risk": "生产系统隔离、工业安全和模型漂移",
+      "scenarios": [
+        "maintenance",
+        "vision",
+        "knowledge",
+        "forecast",
+        "simulation"
+      ]
+    },
+    {
+      "id": "s10",
+      "name": "汽车与零部件",
+      "group": "工业",
+      "roles": "研发、生产、售后",
+      "pain": "研发迭代与供应链协调复杂",
+      "quick": "设计评审摘要、故障工单整理",
+      "mid": "质量追溯、生产缺陷检验",
+      "future": "仿真驱动的产品开发与供应协同",
+      "kpi": "质量缺陷率、研发周期、返修率",
+      "risk": "安全关键部件需独立验证",
+      "scenarios": [
+        "design",
+        "vision",
+        "maintenance",
+        "supply",
+        "simulation"
+      ]
+    },
+    {
+      "id": "s11",
+      "name": "建筑工程与设计",
+      "group": "工业",
+      "roles": "建筑师、施工经理、造价师",
+      "pain": "图纸冲突、进度风险、招投标文件复杂",
+      "quick": "图纸与合同知识搜索",
+      "mid": "现场图像进度核对、工程问答",
+      "future": "BIM 联动的项目风险预测与方案优化",
+      "kpi": "返工率、延期天数、审图覆盖率",
+      "risk": "工程安全、施工决策及审批责任",
+      "scenarios": [
+        "documents",
+        "design",
+        "vision",
+        "forecast",
+        "simulation"
+      ]
+    },
+    {
+      "id": "s12",
+      "name": "房地产与物业",
+      "group": "服务",
+      "roles": "经纪人、物业经理、资产运营",
+      "pain": "线索分散、维修响应慢、资产数据割裂",
+      "quick": "房源资料标准化、物业知识库",
+      "mid": "客户问答与工单分流",
+      "future": "建筑能耗与资产全生命周期运营",
+      "kpi": "工单响应时间、出租周期、投诉率",
+      "risk": "房源真实性、公平住房和客户隐私",
+      "scenarios": [
+        "support",
+        "knowledge",
+        "sales",
+        "maintenance",
+        "analytics"
+      ]
+    },
+    {
+      "id": "s13",
+      "name": "零售与连锁门店",
+      "group": "商业",
+      "roles": "店长、品类经理、门店运营",
+      "pain": "库存错配、陈列效率低、客流变化快",
+      "quick": "商品问答、营销内容生成",
+      "mid": "需求预测与补货优化",
+      "future": "门店智能运营与动态供应链",
+      "kpi": "缺货率、库存周转、转化率",
+      "risk": "价格歧视、消费者隐私与促销真实性",
+      "scenarios": [
+        "sales",
+        "content",
+        "forecast",
+        "supply",
+        "analytics"
+      ]
+    },
+    {
+      "id": "s14",
+      "name": "电商与跨境贸易",
+      "group": "商业",
+      "roles": "电商运营、卖家、客服",
+      "pain": "多语种运营成本高、客服高峰、投放效率低",
+      "quick": "商品素材与多语翻译",
+      "mid": "营销实验、客服和订单协作",
+      "future": "跨渠道预测与个性化服务闭环",
+      "kpi": "退货率、CAC、复购率、转化率",
+      "risk": "遵守平台政策、营销授权和跨境数据规定",
+      "scenarios": [
+        "content",
+        "sales",
+        "support",
+        "forecast",
+        "automation"
+      ]
+    },
+    {
+      "id": "s15",
+      "name": "物流与仓储",
+      "group": "交通",
+      "roles": "运输经理、仓储规划师、调度",
+      "pain": "路线优化难、库存不可见、异常处理慢",
+      "quick": "运单抽取与异常知识库",
+      "mid": "需求预测、库存可视化",
+      "future": "端到端动态供应链协调代理",
+      "kpi": "准时交付率、单位配送成本、库存准确率",
+      "risk": "调度系统必须有人为覆盖机制",
+      "scenarios": [
+        "supply",
+        "forecast",
+        "documents",
+        "analytics",
+        "automation"
+      ]
+    },
+    {
+      "id": "s16",
+      "name": "交通运输与出行",
+      "group": "交通",
+      "roles": "交通规划师、车队经理、司机",
+      "pain": "调度波动、运力利用率低",
+      "quick": "客服和道路政策知识库",
+      "mid": "车队维护提醒、运力预测",
+      "future": "安全约束下的智能交通协同",
+      "kpi": "准点率、能耗、事故率",
+      "risk": "车辆控制与交通安全须严格审批",
+      "scenarios": [
+        "forecast",
+        "maintenance",
+        "support",
+        "simulation",
+        "analytics"
+      ]
+    },
+    {
+      "id": "s17",
+      "name": "农业与种植",
+      "group": "资源",
+      "roles": "农场主、农艺师、合作社",
+      "pain": "病虫害难识别、天气影响大、投入品成本高",
+      "quick": "农业知识问答与记录整理",
+      "mid": "遥感监测、病害辅助识别",
+      "future": "气候与生产联合决策系统",
+      "kpi": "每公顷产量、药剂投入、病害误报率",
+      "risk": "农业建议须结合地区法规和实地验证",
+      "scenarios": [
+        "vision",
+        "geo",
+        "forecast",
+        "knowledge",
+        "analytics"
+      ]
+    },
+    {
+      "id": "s18",
+      "name": "能源与电力",
+      "group": "资源",
+      "roles": "能源分析师、电网运营、设备经理",
+      "pain": "资产复杂、故障成本高、负荷波动",
+      "quick": "运维手册搜索、事故记录分类",
+      "mid": "负荷预测、设备异常监测",
+      "future": "智能电网数字孪生与需求响应",
+      "kpi": "计划外停机、预测误差、能耗",
+      "risk": "关键基础设施及电网控制必须隔离",
+      "scenarios": [
+        "forecast",
+        "maintenance",
+        "simulation",
+        "analytics",
+        "knowledge"
+      ]
+    },
+    {
+      "id": "s19",
+      "name": "矿业与材料",
+      "group": "资源",
+      "roles": "矿业工程师、选矿专家、现场管理",
+      "pain": "地质数据分散、安全要求高",
+      "quick": "勘探报告与矿山 SOP 搜索",
+      "mid": "传感监测和设备维护预测",
+      "future": "地质模型、采矿与能源协同优化",
+      "kpi": "设备可用率、事故率、资源回收率",
+      "risk": "重大安全和生态影响决策需专业审核",
+      "scenarios": [
+        "simulation",
+        "maintenance",
+        "vision",
+        "forecast",
+        "knowledge"
+      ]
+    },
+    {
+      "id": "s20",
+      "name": "环境与可持续发展",
+      "group": "资源",
+      "roles": "ESG 分析师、环境工程师",
+      "pain": "监测数据多、披露核验困难",
+      "quick": "排放资料整理、标准比对",
+      "mid": "遥感与监测异常分析",
+      "future": "可审计环境数字孪生与适应策略",
+      "kpi": "核算误差、数据覆盖率、响应时间",
+      "risk": "防范虚假绿色声明与误报",
+      "scenarios": [
+        "geo",
+        "analytics",
+        "documents",
+        "forecast",
+        "research"
+      ]
+    },
+    {
+      "id": "s21",
+      "name": "法律服务",
+      "group": "专业服务",
+      "roles": "律师、法务、合规官",
+      "pain": "条款审查繁琐、法规更新快、证据检索耗时",
+      "quick": "合同抽取、法条知识检索",
+      "mid": "条款差异审查和审阅工单",
+      "future": "可追溯法律研究与争议分析助手",
+      "kpi": "审阅时间、错误率、来源可核验率",
+      "risk": "法律意见由执业人员签发；司法区差异",
+      "scenarios": [
+        "legal",
+        "documents",
+        "knowledge",
+        "research",
+        "automation"
+      ]
+    },
+    {
+      "id": "s22",
+      "name": "会计税务与审计",
+      "group": "专业服务",
+      "roles": "会计师、审计师、财务主管",
+      "pain": "票据繁杂、审计样本量大、政策频繁变化",
+      "quick": "凭证分类、对账差异识别",
+      "mid": "异常交易提示和税务资料辅助",
+      "future": "持续审计与可解释财务控制",
+      "kpi": "对账时间、审计覆盖率、例外误报率",
+      "risk": "会计结论、税务申报及外部审计需复核",
+      "scenarios": [
+        "documents",
+        "analytics",
+        "risk",
+        "automation",
+        "legal"
+      ]
+    },
+    {
+      "id": "s23",
+      "name": "人力资源与招聘",
+      "group": "专业服务",
+      "roles": "招聘经理、HRBP、人才发展",
+      "pain": "简历筛选量大、培训个性化不足",
+      "quick": "职位说明和面试题草稿",
+      "mid": "岗位能力图谱与培训推荐",
+      "future": "技能为中心的人才流动匹配",
+      "kpi": "招聘周期、留存率、培训效果",
+      "risk": "就业歧视、候选人数据隐私",
+      "scenarios": [
+        "hr",
+        "learning",
+        "knowledge",
+        "analytics",
+        "automation"
+      ]
+    },
+    {
+      "id": "s24",
+      "name": "咨询与企业管理",
+      "group": "专业服务",
+      "roles": "咨询师、运营总监、战略经理",
+      "pain": "行业资料碎片化、反复出报告",
+      "quick": "资料搜集与访谈纪要整理",
+      "mid": "行业对标与决策备选方案引擎",
+      "future": "企业实时情报与跨职能协作代理",
+      "kpi": "分析交付周期、引用核验率、决策采纳率",
+      "risk": "客户保密、利益冲突和幻觉",
+      "scenarios": [
+        "research",
+        "documents",
+        "analytics",
+        "knowledge",
+        "automation"
+      ]
+    },
+    {
+      "id": "s25",
+      "name": "政府与公共服务",
+      "group": "公共",
+      "roles": "政务办事、政策研究、公共服务",
+      "pain": "政策检索难、材料审核重复、便民压力",
+      "quick": "政策问答和办事指引",
+      "mid": "多部门工单分流、材料初审",
+      "future": "透明可解释的公共服务协同",
+      "kpi": "办结时间、可及性、投诉率",
+      "risk": "行政决定权、人权、公平性和数据主权",
+      "scenarios": [
+        "knowledge",
+        "documents",
+        "support",
+        "automation",
+        "legal"
+      ]
+    },
+    {
+      "id": "s26",
+      "name": "媒体新闻与出版",
+      "group": "创意",
+      "roles": "编辑、记者、出版运营",
+      "pain": "素材检索慢、多渠道内容适配繁琐",
+      "quick": "采访转录、稿件校对与资料定位",
+      "mid": "内容生产流水线与事实核查",
+      "future": "多模态生产与可信内容溯源",
+      "kpi": "采编时间、纠错率、阅读留存",
+      "risk": "版权、肖像权、真实性及来源可追溯",
+      "scenarios": [
+        "content",
+        "research",
+        "documents",
+        "design",
+        "automation"
+      ]
+    },
+    {
+      "id": "s27",
+      "name": "广告营销与品牌",
+      "group": "创意",
+      "roles": "市场经理、创意总监、投放经理",
+      "pain": "素材迭代快、获客成本波动",
+      "quick": "创意草稿、品牌知识库",
+      "mid": "活动自动化和 A/B 测试",
+      "future": "从受众研究到素材的可控增长系统",
+      "kpi": "CAC、线索质量、转化率",
+      "risk": "平台规则、广告真实性和用户同意",
+      "scenarios": [
+        "content",
+        "sales",
+        "design",
+        "analytics",
+        "automation"
+      ]
+    },
+    {
+      "id": "s28",
+      "name": "影视游戏与内容创作",
+      "group": "创意",
+      "roles": "导演、设计师、游戏策划",
+      "pain": "美术成本高、制作链条长、需求变化快",
+      "quick": "概念图、视频脚本、原型素材",
+      "mid": "跨媒体生产工作流",
+      "future": "实时交互世界生成与制作协作",
+      "kpi": "迭代周期、素材复用率、返工率",
+      "risk": "版权、演员权益、深伪标识",
+      "scenarios": [
+        "design",
+        "content",
+        "simulation",
+        "coding",
+        "automation"
+      ]
+    },
+    {
+      "id": "s29",
+      "name": "餐饮酒店与旅游",
+      "group": "服务",
+      "roles": "餐厅经理、酒店运营、旅行顾问",
+      "pain": "服务高峰、预订变动、评价管理",
+      "quick": "菜单翻译、服务知识库",
+      "mid": "预订咨询与需求预测",
+      "future": "个性化旅行与服务协作",
+      "kpi": "人均服务时间、预订转化、客诉率",
+      "risk": "不得伪造订单、评价和实时可用性",
+      "scenarios": [
+        "support",
+        "forecast",
+        "content",
+        "sales",
+        "automation"
+      ]
+    },
+    {
+      "id": "s30",
+      "name": "IT 软件与网络安全",
+      "group": "技术",
+      "roles": "开发者、产品经理、安全运营",
+      "pain": "迭代压力、技术债、告警噪音",
+      "quick": "代码助手、文档问答",
+      "mid": "自动测试与工单协作",
+      "future": "具备验证与回滚能力的软件开发代理",
+      "kpi": "交付周期、缺陷逃逸率、告警误报率",
+      "risk": "最小权限、密钥安全和代码审查",
+      "scenarios": [
+        "coding",
+        "security",
+        "automation",
+        "knowledge",
+        "analytics"
+      ]
+    },
+    {
+      "id": "s31",
+      "name": "电信与互联网服务",
+      "group": "技术",
+      "roles": "网络运维、客服、产品运营",
+      "pain": "网络告警复杂、用户服务工单量大",
+      "quick": "技术知识库和客服辅助",
+      "mid": "告警归因、网络流量分析",
+      "future": "自适应网络保障与智能运维",
+      "kpi": "MTTR、客户流失率、故障率",
+      "risk": "关键通信系统的授权与可靠性",
+      "scenarios": [
+        "maintenance",
+        "support",
+        "analytics",
+        "automation",
+        "security"
+      ]
+    },
+    {
+      "id": "s32",
+      "name": "中小微企业与个体经营",
+      "group": "通用",
+      "roles": "创业者、自由职业者、个体商户",
+      "pain": "预算有限、重复事务占用时间",
+      "quick": "文案、表格、客服常见问答",
+      "mid": "发票/预约/CRM 轻量自动化",
+      "future": "单人多 Agent 的小型企业运营",
+      "kpi": "工时节省、线索转化、毛利率",
+      "risk": "先用不含敏感数据的流程试点",
+      "scenarios": [
+        "content",
+        "support",
+        "sales",
+        "automation",
+        "analytics"
+      ]
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "knowledge",
+      "name": "知识库与RAG",
+      "tip": "找得到、答得有来源"
+    },
+    {
+      "id": "research",
+      "name": "研究与信息检索",
+      "tip": "证据搜集和归纳"
+    },
+    {
+      "id": "analytics",
+      "name": "数据分析",
+      "tip": "看板、SQL 与洞察"
+    },
+    {
+      "id": "risk",
+      "name": "风控与审计",
+      "tip": "检测异常和留痕"
+    },
+    {
+      "id": "support",
+      "name": "客服与服务",
+      "tip": "问答、分类、转人工"
+    },
+    {
+      "id": "sales",
+      "name": "销售与获客",
+      "tip": "线索管理与CRM"
+    },
+    {
+      "id": "content",
+      "name": "营销与内容",
+      "tip": "文案、视频、传播"
+    },
+    {
+      "id": "documents",
+      "name": "文档与OCR",
+      "tip": "抽取、比对、归档"
+    },
+    {
+      "id": "automation",
+      "name": "工作流自动化",
+      "tip": "跨软件编排与审批"
+    },
+    {
+      "id": "learning",
+      "name": "学习培训",
+      "tip": "教案、个性化练习"
+    },
+    {
+      "id": "clinical",
+      "name": "临床文书支持",
+      "tip": "医疗记录草稿与审查"
+    },
+    {
+      "id": "forecast",
+      "name": "预测与优化",
+      "tip": "需求、负荷和风险预测"
+    },
+    {
+      "id": "maintenance",
+      "name": "设备运维",
+      "tip": "检修助手、故障预测"
+    },
+    {
+      "id": "vision",
+      "name": "计算机视觉",
+      "tip": "质检、识别、现场巡检"
+    },
+    {
+      "id": "design",
+      "name": "设计与创意",
+      "tip": "原型、建筑、设计"
+    },
+    {
+      "id": "supply",
+      "name": "供应链与采购",
+      "tip": "库存、采购、调度"
+    },
+    {
+      "id": "legal",
+      "name": "法规与法律检索",
+      "tip": "法律文书审阅"
+    },
+    {
+      "id": "hr",
+      "name": "人力与招聘",
+      "tip": "岗位能力与学习路径"
+    },
+    {
+      "id": "coding",
+      "name": "软件研发",
+      "tip": "编码、测试、部署"
+    },
+    {
+      "id": "security",
+      "name": "安全与治理",
+      "tip": "权限、评测、监控"
+    },
+    {
+      "id": "meeting",
+      "name": "会议与协作",
+      "tip": "录音转录、会议决策"
+    },
+    {
+      "id": "simulation",
+      "name": "数字孪生与仿真",
+      "tip": "设计验证与场景模拟"
+    },
+    {
+      "id": "geo",
+      "name": "遥感与空间数据",
+      "tip": "GIS、卫星监测"
+    }
+  ],
+  "tools": [
+    {
+      "id": "t001",
+      "name": "ChatGPT",
+      "type": "模型/助手",
+      "scenarios": [
+        "research",
+        "content",
+        "documents",
+        "analytics",
+        "learning"
+      ],
+      "industries": [],
+      "region": "全球",
+      "deployment": "SaaS",
+      "url": "https://chatgpt.com/",
+      "desc": "通用任务、推理、文件与学习辅助",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t002",
+      "name": "Claude",
+      "type": "模型/助手",
+      "scenarios": [
+        "research",
+        "coding",
+        "documents",
+        "content"
+      ],
+      "industries": [],
+      "region": "全球",
+      "deployment": "SaaS",
+      "url": "https://claude.ai/",
+      "desc": "长文档阅读、写作与代码任务",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t003",
+      "name": "Gemini",
+      "type": "模型/助手",
+      "scenarios": [
+        "research",
+        "learning",
+        "content",
+        "analytics"
+      ],
+      "industries": [],
+      "region": "全球",
+      "deployment": "SaaS",
+      "url": "https://gemini.google.com/",
+      "desc": "Google 生态通用助手",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t004",
+      "name": "DeepSeek",
+      "type": "模型/助手",
+      "scenarios": [
+        "research",
+        "coding",
+        "analytics",
+        "content"
+      ],
+      "industries": [],
+      "region": "中国/全球",
+      "deployment": "SaaS/API",
+      "url": "https://www.deepseek.com/",
+      "desc": "中文推理与技术辅助",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t005",
+      "name": "Kimi",
+      "type": "模型/助手",
+      "scenarios": [
+        "research",
+        "documents",
+        "content"
+      ],
+      "industries": [],
+      "region": "中国/全球",
+      "deployment": "SaaS",
+      "url": "https://www.kimi.com/",
+      "desc": "文档阅读与资料整理",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t006",
+      "name": "豆包",
+      "type": "模型/助手",
+      "scenarios": [
+        "content",
+        "documents",
+        "learning"
+      ],
+      "industries": [],
+      "region": "中国",
+      "deployment": "SaaS",
+      "url": "https://www.doubao.com/",
+      "desc": "中文内容与办公助手",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t007",
+      "name": "通义",
+      "type": "模型/助手",
+      "scenarios": [
+        "research",
+        "content",
+        "coding"
+      ],
+      "industries": [],
+      "region": "中国",
+      "deployment": "SaaS",
+      "url": "https://tongyi.aliyun.com/",
+      "desc": "国内生态通用助手",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t008",
+      "name": "Perplexity",
+      "type": "研究/数据",
+      "scenarios": [
+        "research",
+        "knowledge"
+      ],
+      "industries": [],
+      "region": "全球",
+      "deployment": "SaaS",
+      "url": "https://www.perplexity.ai/",
+      "desc": "带来源的网络研究入口",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t009",
+      "name": "Microsoft 365 Copilot",
+      "type": "模型/助手",
+      "scenarios": [
+        "documents",
+        "knowledge",
+        "analytics",
+        "meeting"
+      ],
+      "industries": [],
+      "region": "全球",
+      "deployment": "SaaS",
+      "url": "https://www.microsoft.com/en-us/microsoft-365/copilot",
+      "desc": "Microsoft 365 办公协作",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t010",
+      "name": "Google Workspace Gemini",
+      "type": "模型/助手",
+      "scenarios": [
+        "documents",
+        "knowledge",
+        "content",
+        "meeting"
+      ],
+      "industries": [],
+      "region": "全球",
+      "deployment": "SaaS",
+      "url": "https://workspace.google.com/solutions/ai/",
+      "desc": "Google Workspace 办公内嵌AI",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t011",
+      "name": "NotebookLM",
+      "type": "知识库",
+      "scenarios": [
+        "knowledge",
+        "research",
+        "learning",
+        "documents"
+      ],
+      "industries": [],
+      "region": "全球",
+      "deployment": "SaaS",
+      "url": "https://notebooklm.google.com/",
+      "desc": "基于上传来源的学习和研究笔记",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t012",
+      "name": "Dify",
+      "type": "Agent/框架",
+      "scenarios": [
+        "knowledge",
+        "automation",
+        "support",
+        "research"
+      ],
+      "industries": [],
+      "region": "全球/中国",
+      "deployment": "自托管/云",
+      "url": "https://dify.ai/",
+      "desc": "可视化 Agent、工作流与 RAG 应用",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t013",
+      "name": "RAGFlow",
+      "type": "知识库",
+      "scenarios": [
+        "knowledge",
+        "documents",
+        "research"
+      ],
+      "industries": [],
+      "region": "全球/中国",
+      "deployment": "自托管",
+      "url": "https://github.com/infiniflow/ragflow",
+      "desc": "面向复杂文档的 RAG 系统",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t014",
+      "name": "LlamaIndex",
+      "type": "知识库",
+      "scenarios": [
+        "knowledge",
+        "documents",
+        "research"
+      ],
+      "industries": [],
+      "region": "全球",
+      "deployment": "代码/云",
+      "url": "https://www.llamaindex.ai/",
+      "desc": "面向非结构化数据的 Agent/RAG 框架",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t015",
+      "name": "AnythingLLM",
+      "type": "知识库",
+      "scenarios": [
+        "knowledge",
+        "documents",
+        "research"
+      ],
+      "industries": [],
+      "region": "全球",
+      "deployment": "本地/自托管",
+      "url": "https://anythingllm.com/",
+      "desc": "私有知识库与聊天入口",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t016",
+      "name": "Glean",
+      "type": "知识库",
+      "scenarios": [
+        "knowledge",
