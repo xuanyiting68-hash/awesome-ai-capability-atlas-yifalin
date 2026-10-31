@@ -56,3 +56,16 @@ Machine-readable datasets: `careers.json`, `current_roles_v12.csv`, `new_ai_role
 References: [WEF Future of Jobs 2025](https://www.weforum.org/publications/the-future-of-jobs-report-2025), [O*NET](https://www.onetcenter.org/database.html), [ESCO](https://esco.ec.europa.eu/en/classification), [Microsoft WTI](https://www.microsoft.com/en-us/worklab/work-trend-index/2025-the-year-the-frontier-firm-is-born), [OpenAI Academy](https://academy.openai.com/pages/courses), [NIST AI RMF](https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence).
 
 Validation: `python validate_career.py` and optional pinned Playwright browser smoke `python check_career.py`. **Draft PR / merge HOLD** until exact-head CI passes, sources and rights are reviewed, and an owner approves publication.
+
+
+## V1.3 · 行业标准与完整职业目录入口（独立分类层）
+
+[打开 taxonomy.html](taxonomy.html) · [来源、验证边界和分类缺口](TAXONOMY_V1_3_README.md)
+
+- 依据中国 `GB/T 4754—2017` 整理 **20/20 门类、97/97 大类**；473 中类和 1,382 小类**尚未导入**，不可称为全深度覆盖。
+- 职业索引采用《职业分类大典（2022 年版）》的 **8 大类、1,639 职业**标准总量作为目标；详细名称、编码通过用户明确点击加载来自第三方公开镜像（或本地文件导入），**未逐条官方核验、未在本站再发布整份镜像**。只导入职业分类，不导入主观替代概率。
+- 32 行业应用专题 / 225 编辑岗位 / 50 研究型新职能是不同于官方职业代码的编辑层；禁止相加凑“覆盖率”，禁止无依据建立行业—职业确定性映射。
+- 可按层级检索、导出，按 8 大职业类别查看经人工批准的起步 AI 试点；外部职业信息的读取仅在用户点击后进行。
+- ILO ISCO-08、联合国 ISIC Rev.5、澳洲 OSCA、美国 O*NET、EU ESCO 的来源入口已经列出，尚未宣称跨地区编码已经交叉对齐。
+
+**合并与上线继续 HOLD**，直到 CI、来源/许可、可访问性、内容核验和生产发布审查结束。
