@@ -1,0 +1,1000 @@
+{
+  "version": "1.1.0",
+  "as_of": "2026-11-01",
+  "state": "editorial-prototypes-not-verified-business-results",
+  "industry_count": 32,
+  "scenario_count": 23,
+  "workflow_count": 64,
+  "sources": [
+    {
+      "id": "ms2026",
+      "title": "Microsoft Work Trend Index 2026",
+      "url": "https://www.microsoft.com/en-us/worklab/work-trend-index/agents-human-agency-and-the-opportunity-for-every-organization",
+      "use": "跨行业工作重构方法背景；不作为具体方案有效性证据"
+    },
+    {
+      "id": "anthropic2026",
+      "title": "Anthropic Economic Index 2026",
+      "url": "https://www.anthropic.com/economic-index",
+      "use": "职业任务的自动化与增强分类背景；不推断个别岗位替代率"
+    },
+    {
+      "id": "nist600",
+      "title": "NIST AI RMF Generative AI Profile",
+      "url": "https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence",
+      "use": "生成式AI风险管理框架"
+    },
+    {
+      "id": "who",
+      "title": "WHO Healthcare AI Governance",
+      "url": "https://www.who.int/publications/i/item/9789240084759",
+      "use": "医疗AI临床使用需额外安全和专业验证"
+    },
+    {
+      "id": "unesco",
+      "title": "UNESCO Teacher AI Competency Framework",
+      "url": "https://www.unesco.org/en/articles/ai-competency-framework-teachers?hub=365",
+      "use": "教师AI能力与教育情境"
+    },
+    {
+      "id": "wef",
+      "title": "WEF Future of Jobs 2025",
+      "url": "https://www.weforum.org/publications/the-future-of-jobs-report-2025/",
+      "use": "技能转型与劳动力趋势背景；不是个别岗位预测"
+    }
+  ],
+  "workflows": [
+    {
+      "id": "s01-documents",
+      "industry_id": "s01",
+      "industry": "银行与金融服务",
+      "group": "金融",
+      "role": "银行经理",
+      "scenario_id": "documents",
+      "scenario": "文档与OCR",
+      "title": "银行与金融服务｜文档抽取、比对与溯源",
+      "problem": "信息碎片化、核验耗时、审计压力",
+      "input_contract": "已获授权的文档样本、页码、字段标准",
+      "steps": [
+        "定义抽取字段",
+        "建立引用定位",
+        "对照人工标注",
+        "标记低置信度和空值",
+        "专业人员复核"
+      ],
+      "expected_outputs": [
+        "文档抽取、比对与溯源结果草稿",
+        "原始证据与失败样本记录",
+        "人工审核/停止决策"
+      ],
+      "kpi": "字段准确率、漏检率、单件处理时间",
+      "start_point": "财报与政策知识库；投研文档溯源",
+      "future_hypothesis": "可追溯多智能体投研、风险监测协作",
+      "guardrail": "敏感账户信息、投资建议和模型漂移需人工审批",
+      "risk_tier": "一般—授权数据+人工抽查",
+      "candidate_tools": [
+        {
+          "id": "t022",
+          "name": "Activepieces",
+          "url": "https://www.activepieces.com/",
+          "type": "自动化"
+        },
+        {
+          "id": "t015",
+          "name": "AnythingLLM",
+          "url": "https://anythingllm.com/",
+          "type": "知识库"
+        },
+        {
+          "id": "t026",
+          "name": "CrewAI",
+          "url": "https://www.crewai.com/",
+          "type": "Agent/框架"
+        },
+        {
+          "id": "t090",
+          "name": "DeepL",
+          "url": "https://www.deepl.com/",
+          "type": "文档工具"
+        },
+        {
+          "id": "t039",
+          "name": "Docling",
+          "url": "https://github.com/docling-project/docling",
+          "type": "文档工具"
+        }
+      ],
+      "skill_templates": [
+        {
+          "id": "skill-source-grounded-rag",
+          "name": "有来源的知识库问答",
+          "path": "skills/source-grounded-rag/SKILL.md"
+        },
+        {
+          "id": "skill-contract-review-draft",
+          "name": "合同条款差异初审",
+          "path": "skills/contract-review-draft/SKILL.md"
+        }
+      ],
+      "evidence_status": "编辑方案 / 未进行真实业务测试",
+      "sources": [
+        "ms2026",
+        "anthropic2026",
+        "nist600"
+      ],
+      "review_gate": "以同一测试集比较人工与AI流程。引用、权限、错误和成本未通过则不部署。",
+      "published_at": "2026-11-01"
+    },
+    {
+      "id": "s01-risk",
+      "industry_id": "s01",
+      "industry": "银行与金融服务",
+      "group": "金融",
+      "role": "银行经理",
+      "scenario_id": "risk",
+      "scenario": "风控与审计",
+      "title": "银行与金融服务｜风险事件分流与审计",
+      "problem": "信息碎片化、核验耗时、审计压力",
+      "input_contract": "公开或脱敏的审计案例、风控分类口径",
+      "steps": [
+        "列出风险分类",
+        "建立负例和严重性等级",
+        "输出仅作预警的信号",
+        "记录误报漏报",
+        "风控人员签发"
+      ],
+      "expected_outputs": [
+        "风险事件分流与审计结果草稿",
+        "原始证据与失败样本记录",
+        "人工审核/停止决策"
+      ],
+      "kpi": "漏报率、误报率、审计追踪完整率",
+      "start_point": "合规问答与风控案例工作流",
+      "future_hypothesis": "可追溯多智能体投研、风险监测协作",
+      "guardrail": "敏感账户信息、投资建议和模型漂移需人工审批",
+      "risk_tier": "高敏感—只读/草稿+专业审批",
+      "candidate_tools": [
+        {
+          "id": "t111",
+          "name": "MindBridge",
+          "url": "https://www.mindbridge.ai/",
+          "type": "行业应用"
+        },
+        {
+          "id": "t071",
+          "name": "Qlib",
+          "url": "https://github.com/microsoft/qlib",
+          "type": "研究/数据"
+        },
+        {
+          "id": "t108",
+          "name": "NIST AI RMF",
+          "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+          "type": "评测/治理"
+        }
+      ],
+      "skill_templates": [
+        {
+          "id": "skill-ai-pilot-roi-audit",
+          "name": "AI试点成本效益审计",
+          "path": "skills/ai-pilot-roi-audit/SKILL.md"
+        },
+        {
+          "id": "skill-audit-ready-financial-research",
+          "name": "可审计金融研究简报",
+          "path": "skills/audit-ready-financial-research/SKILL.md"
+        }
+      ],
+      "evidence_status": "编辑方案 / 未进行真实业务测试",
+      "sources": [
+        "ms2026",
+        "anthropic2026",
+        "nist600"
+      ],
+      "review_gate": "以同一测试集比较人工与AI流程。引用、权限、错误和成本未通过则不部署。",
+      "published_at": "2026-11-01"
+    },
+    {
+      "id": "s02-research",
+      "industry_id": "s02",
+      "industry": "证券与资管",
+      "group": "金融",
+      "role": "量化分析师",
+      "scenario_id": "research",
+      "scenario": "研究与信息检索",
+      "title": "证券与资管｜来源可信的研究证据图谱",
+      "problem": "研究重复、数据孤岛、模型过拟合",
+      "input_contract": "研究问题、公开文献、纳入排除标准",
+      "steps": [
+        "定义研究问题与搜索边界",
+        "登记每项来源时间和作者",
+        "抽取证据/反例",
+        "建立引用矩阵",
+        "专业人员核验结论"
+      ],
+      "expected_outputs": [
+        "来源可信的研究证据图谱结果草稿",
+        "原始证据与失败样本记录",
+        "人工审核/停止决策"
+      ],
+      "kpi": "引文可回溯率、遗漏率、研究用时",
+      "start_point": "研报抽取、数据字典和行情摘要",
+      "future_hypothesis": "多源预测与可审计策略研究工厂",
+      "guardrail": "禁止以回测收益推定实盘；不得自动执行交易",
+      "risk_tier": "高敏感—只读/草稿+专业审批",
+      "candidate_tools": [
+        {
+          "id": "t073",
+          "name": "FinGPT",
+          "url": "https://github.com/AI4Finance-Foundation/FinGPT",
+          "type": "研究/数据"
+        },
+        {
+          "id": "t072",
+          "name": "OpenBB",
+          "url": "https://openbb.co/",
+          "type": "研究/数据"
+        },
+        {
+          "id": "t015",
+          "name": "AnythingLLM",
+          "url": "https://anythingllm.com/",
+          "type": "知识库"
+        },
+        {
+          "id": "t027",
+          "name": "AutoGen",
+          "url": "https://github.com/microsoft/autogen",
+          "type": "Agent/框架"
+        },
+        {
+          "id": "t026",
+          "name": "CrewAI",
+          "url": "https://www.crewai.com/",
+          "type": "Agent/框架"
+        }
+      ],
+      "skill_templates": [
+        {
+          "id": "skill-research-evidence-map",
+          "name": "研究证据矩阵",
+          "path": "skills/research-evidence-map/SKILL.md"
+        },
+        {
+          "id": "skill-audit-ready-financial-research",
+          "name": "可审计金融研究简报",
+          "path": "skills/audit-ready-financial-research/SKILL.md"
+        }
+      ],
+      "evidence_status": "编辑方案 / 未进行真实业务测试",
+      "sources": [
+        "ms2026",
+        "anthropic2026",
+        "nist600"
+      ],
+      "review_gate": "以同一测试集比较人工与AI流程。引用、权限、错误和成本未通过则不部署。",
+      "published_at": "2026-11-01"
+    },
+    {
+      "id": "s02-forecast",
+      "industry_id": "s02",
+      "industry": "证券与资管",
+      "group": "金融",
+      "role": "量化分析师",
+      "scenario_id": "forecast",
+      "scenario": "预测与优化",
+      "title": "证券与资管｜基线可比较的预测试点",
+      "problem": "研究重复、数据孤岛、模型过拟合",
+      "input_contract": "按时间排序的匿名历史记录、未来留出集",
+      "steps": [
+        "固定预测目标和时间窗口",
+        "构造简单基线",
+        "仅用历史信息训练",
+        "未来留出集比较",
+        "观察漂移与停止条件"
+      ],
+      "expected_outputs": [
+        "基线可比较的预测试点结果草稿",
+        "原始证据与失败样本记录",
+        "人工审核/停止决策"
+      ],
+      "kpi": "MAE或业务损失、缺失率、失效触发次数",
+      "start_point": "研究实验注册、组合分析和报告核查",
+      "future_hypothesis": "多源预测与可审计策略研究工厂",
+      "guardrail": "禁止以回测收益推定实盘；不得自动执行交易",
+      "risk_tier": "高敏感—只读/草稿+专业审批",
+      "candidate_tools": [
+        {
+          "id": "t071",
+          "name": "Qlib",
+          "url": "https://github.com/microsoft/qlib",
+          "type": "研究/数据"
+        },
+        {
+          "id": "t094",
+          "name": "Databricks",
+          "url": "https://www.databricks.com/",
+          "type": "研究/数据"
+        },
+        {
+          "id": "t093",
+          "name": "Dataiku",
+          "url": "https://www.dataiku.com/",
+          "type": "研究/数据"
+        },
+        {
+          "id": "t038",
+          "name": "Kaggle",
+          "url": "https://www.kaggle.com/",
+          "type": "资源/目录"
+        },
+        {
+          "id": "t097",
+          "name": "Power BI",
+          "url": "https://www.microsoft.com/en-us/power-platform/products/power-bi",
+          "type": "研究/数据"
+        }
+      ],
+      "skill_templates": [
+        {
+          "id": "skill-predictive-maintenance-pilot",
+          "name": "设备维护异常监测试点",
+          "path": "skills/predictive-maintenance-pilot/SKILL.md"
+        }
+      ],
+      "evidence_status": "编辑方案 / 未进行真实业务测试",
+      "sources": [
+        "ms2026",
+        "anthropic2026",
+        "nist600"
+      ],
+      "review_gate": "以同一测试集比较人工与AI流程。引用、权限、错误和成本未通过则不部署。",
+      "published_at": "2026-11-01"
+    },
+    {
+      "id": "s03-documents",
+      "industry_id": "s03",
+      "industry": "保险",
+      "group": "金融",
+      "role": "核保",
+      "scenario_id": "documents",
+      "scenario": "文档与OCR",
+      "title": "保险｜文档抽取、比对与溯源",
+      "problem": "资料审核慢、欺诈风险、客户体验差",
+      "input_contract": "已获授权的文档样本、页码、字段标准",
+      "steps": [
+        "定义抽取字段",
+        "建立引用定位",
+        "对照人工标注",
+        "标记低置信度和空值",
+        "专业人员复核"
+      ],
+      "expected_outputs": [
+        "文档抽取、比对与溯源结果草稿",
+        "原始证据与失败样本记录",
+        "人工审核/停止决策"
+      ],
+      "kpi": "字段准确率、漏检率、单件处理时间",
+      "start_point": "理赔材料分类和保单问答",
+      "future_hypothesis": "个性化保障方案与人机协作理赔",
+      "guardrail": "公平性、个人敏感信息及拒赔决定需人工复核",
+      "risk_tier": "高敏感—只读/草稿+专业审批",
+      "candidate_tools": [
+        {
+          "id": "t099",
+          "name": "UiPath",
+          "url": "https://www.uipath.com/",
+          "type": "自动化"
+        },
+        {
+          "id": "t114",
+          "name": "V7 Go",
+          "url": "https://www.v7labs.com/go",
+          "type": "行业应用"
+        },
+        {
+          "id": "t022",
+          "name": "Activepieces",
+          "url": "https://www.activepieces.com/",
+          "type": "自动化"
+        },
+        {
+          "id": "t015",
+          "name": "AnythingLLM",
+          "url": "https://anythingllm.com/",
+          "type": "知识库"
+        },
+        {
+          "id": "t026",
+          "name": "CrewAI",
+          "url": "https://www.crewai.com/",
+          "type": "Agent/框架"
+        }
+      ],
+      "skill_templates": [
+        {
+          "id": "skill-source-grounded-rag",
+          "name": "有来源的知识库问答",
+          "path": "skills/source-grounded-rag/SKILL.md"
+        },
+        {
+          "id": "skill-contract-review-draft",
+          "name": "合同条款差异初审",
+          "path": "skills/contract-review-draft/SKILL.md"
+        }
+      ],
+      "evidence_status": "编辑方案 / 未进行真实业务测试",
+      "sources": [
+        "ms2026",
+        "anthropic2026",
+        "nist600"
+      ],
+      "review_gate": "以同一测试集比较人工与AI流程。引用、权限、错误和成本未通过则不部署。",
+      "published_at": "2026-11-01"
+    },
+    {
+      "id": "s03-support",
+      "industry_id": "s03",
+      "industry": "保险",
+      "group": "金融",
+      "role": "核保",
+      "scenario_id": "support",
+      "scenario": "客服与服务",
+      "title": "保险｜客服知识检索与人工升级",
+      "problem": "资料审核慢、欺诈风险、客户体验差",
+      "input_contract": "可公开的FAQ、工单标签、升级条件",
+      "steps": [
+        "核查知识授权和时效",
+        "构建意图分类",
+        "运行合成测试",
+        "敏感问题直接转人工",
+        "追踪回访和错误案例"
+      ],
+      "expected_outputs": [
+        "客服知识检索与人工升级结果草稿",
+        "原始证据与失败样本记录",
+        "人工审核/停止决策"
+      ],
+      "kpi": "首响时间、解决率、错误转人工率",
+      "start_point": "核保辅助与异常索赔分流",
+      "future_hypothesis": "个性化保障方案与人机协作理赔",
+      "guardrail": "公平性、个人敏感信息及拒赔决定需人工复核",
+      "risk_tier": "高敏感—只读/草稿+专业审批",
+      "candidate_tools": [
+        {
+          "id": "t074",
+          "name": "Salesforce Agentforce",
+          "url": "https://www.salesforce.com/agentforce/",
+          "type": "行业应用"
+        },
+        {
+          "id": "t022",
+          "name": "Activepieces",
+          "url": "https://www.activepieces.com/",
+          "type": "自动化"
+        },
+        {
+          "id": "t024",
+          "name": "Copilot Studio",
+          "url": "https://www.microsoft.com/en-us/microsoft-copilot/microsoft-copilot-studio",
+          "type": "Agent/框架"
+        },
+        {
+          "id": "t012",
+          "name": "Dify",
+          "url": "https://dify.ai/",
+          "type": "Agent/框架"
+        },
+        {
+          "id": "t028",
+          "name": "Flowise",
+          "url": "https://flowiseai.com/",
+          "type": "Agent/框架"
+        }
+      ],
+      "skill_templates": [
+        {
+          "id": "skill-service-triage",
+          "name": "客服分流与人工升级",
+          "path": "skills/service-triage/SKILL.md"
+        }
+      ],
+      "evidence_status": "编辑方案 / 未进行真实业务测试",
+      "sources": [
+        "ms2026",
+        "anthropic2026",
+        "nist600"
+      ],
+      "review_gate": "以同一测试集比较人工与AI流程。引用、权限、错误和成本未通过则不部署。",
+      "published_at": "2026-11-01"
+    },
+    {
+      "id": "s04-documents",
+      "industry_id": "s04",
+      "industry": "医疗服务",
+      "group": "健康",
+      "role": "医生",
+      "scenario_id": "documents",
+      "scenario": "文档与OCR",
+      "title": "医疗服务｜文档抽取、比对与溯源",
+      "problem": "病历录入耗时、院内知识分散",
+      "input_contract": "已获授权的文档样本、页码、字段标准",
+      "steps": [
+        "定义抽取字段",
+        "建立引用定位",
+        "对照人工标注",
+        "标记低置信度和空值",
+        "专业人员复核"
+      ],
+      "expected_outputs": [
+        "文档抽取、比对与溯源结果草稿",
+        "原始证据与失败样本记录",
+        "人工审核/停止决策"
+      ],
+      "kpi": "字段准确率、漏检率、单件处理时间",
+      "start_point": "临床记录草稿、院内制度知识搜索",
+      "future_hypothesis": "以临床验证为前提的个体化诊疗支持",
+      "guardrail": "高风险；诊断治疗、患者数据必须专业审核",
+      "risk_tier": "高敏感—只读/草稿+专业审批",
+      "candidate_tools": [
+        {
+          "id": "t063",
+          "name": "Abridge",
+          "url": "https://www.abridge.com/",
+          "type": "行业应用"
+        },
+        {
+          "id": "t065",
+          "name": "Microsoft Dragon Copilot",
+          "url": "https://learn.microsoft.com/en-us/industry/healthcare/dragon-copilot/about/",
+          "type": "行业应用"
+        },
+        {
+          "id": "t064",
+          "name": "Nabla",
+          "url": "https://www.nabla.com/",
+          "type": "行业应用"
+        },
+        {
+          "id": "t022",
+          "name": "Activepieces",
+          "url": "https://www.activepieces.com/",
+          "type": "自动化"
+        },
+        {
+          "id": "t015",
+          "name": "AnythingLLM",
+          "url": "https://anythingllm.com/",
+          "type": "知识库"
+        }
+      ],
+      "skill_templates": [
+        {
+          "id": "skill-source-grounded-rag",
+          "name": "有来源的知识库问答",
+          "path": "skills/source-grounded-rag/SKILL.md"
+        },
+        {
+          "id": "skill-contract-review-draft",
+          "name": "合同条款差异初审",
+          "path": "skills/contract-review-draft/SKILL.md"
+        }
+      ],
+      "evidence_status": "编辑方案 / 未进行真实业务测试",
+      "sources": [
+        "ms2026",
+        "anthropic2026",
+        "nist600",
+        "who"
+      ],
+      "review_gate": "以同一测试集比较人工与AI流程。引用、权限、错误和成本未通过则不部署。",
+      "published_at": "2026-11-01"
+    },
+    {
+      "id": "s04-knowledge",
+      "industry_id": "s04",
+      "industry": "医疗服务",
+      "group": "健康",
+      "role": "医生",
+      "scenario_id": "knowledge",
+      "scenario": "知识库与RAG",
+      "title": "医疗服务｜证据可追溯知识问答",
+      "problem": "病历录入耗时、院内知识分散",
+      "input_contract": "有权限的公开资料、文件版本号、10个测试问题",
+      "steps": [
+        "建立文档授权清单",
+        "按页码和版本索引",
+        "设计检索与引用",
+        "准备无法回答的负样本",
+        "抽样人工审核"
+      ],
+      "expected_outputs": [
+        "证据可追溯知识问答结果草稿",
+        "原始证据与失败样本记录",
+        "人工审核/停止决策"
+      ],
+      "kpi": "来源可核对率、拒答质量、平均检索用时",
+      "start_point": "转诊协作和医疗流程文书核对",
+      "future_hypothesis": "以临床验证为前提的个体化诊疗支持",
+      "guardrail": "高风险；诊断治疗、患者数据必须专业审核",
+      "risk_tier": "高敏感—只读/草稿+专业审批",
+      "candidate_tools": [
+        {
+          "id": "t044",
+          "name": "Consensus",
+          "url": "https://consensus.app/",
+          "type": "研究/数据"
+        },
+        {
+          "id": "t015",
+          "name": "AnythingLLM",
+          "url": "https://anythingllm.com/",
+          "type": "知识库"
+        },
+        {
+          "id": "t024",
+          "name": "Copilot Studio",
+          "url": "https://www.microsoft.com/en-us/microsoft-copilot/microsoft-copilot-studio",
+          "type": "Agent/框架"
+        },
+        {
+          "id": "t012",
+          "name": "Dify",
+          "url": "https://dify.ai/",
+          "type": "Agent/框架"
+        },
+        {
+          "id": "t039",
+          "name": "Docling",
+          "url": "https://github.com/docling-project/docling",
+          "type": "文档工具"
+        }
+      ],
+      "skill_templates": [
+        {
+          "id": "skill-source-grounded-rag",
+          "name": "有来源的知识库问答",
+          "path": "skills/source-grounded-rag/SKILL.md"
+        },
+        {
+          "id": "skill-research-evidence-map",
+          "name": "研究证据矩阵",
+          "path": "skills/research-evidence-map/SKILL.md"
+        }
+      ],
+      "evidence_status": "编辑方案 / 未进行真实业务测试",
+      "sources": [
+        "ms2026",
+        "anthropic2026",
+        "nist600",
+        "who"
+      ],
+      "review_gate": "以同一测试集比较人工与AI流程。引用、权限、错误和成本未通过则不部署。",
+      "published_at": "2026-11-01"
+    },
+    {
+      "id": "s05-research",
+      "industry_id": "s05",
+      "industry": "制药与生物科技",
+      "group": "健康",
+      "role": "药物研发",
+      "scenario_id": "research",
+      "scenario": "研究与信息检索",
+      "title": "制药与生物科技｜来源可信的研究证据图谱",
+      "problem": "文献爆炸、试验设计复杂、监管提交繁琐",
+      "input_contract": "研究问题、公开文献、纳入排除标准",
+      "steps": [
+        "定义研究问题与搜索边界",
+        "登记每项来源时间和作者",
+        "抽取证据/反例",
+        "建立引用矩阵",
+        "专业人员核验结论"
+      ],
+      "expected_outputs": [
+        "来源可信的研究证据图谱结果草稿",
+        "原始证据与失败样本记录",
+        "人工审核/停止决策"
+      ],
+      "kpi": "引文可回溯率、遗漏率、研究用时",
+      "start_point": "文献证据图谱、试验文件索引",
+      "future_hypothesis": "多模态研究与实验闭环（需真实验证）",
+      "guardrail": "实验结论、药物安全和医学证据不能由生成文本替代",
+      "risk_tier": "高敏感—只读/草稿+专业审批",
+      "candidate_tools": [
+        {
+          "id": "t043",
+          "name": "Elicit",
+          "url": "https://elicit.com/",
+          "type": "研究/数据"
+        },
+        {
+          "id": "t045",
+          "name": "Semantic Scholar",
+          "url": "https://www.semanticscholar.org/",
+          "type": "研究/数据"
+        },
+        {
+          "id": "t015",
+          "name": "AnythingLLM",
+          "url": "https://anythingllm.com/",
+          "type": "知识库"
+        },
+        {
+          "id": "t027",
+          "name": "AutoGen",
+          "url": "https://github.com/microsoft/autogen",
+          "type": "Agent/框架"
+        },
+        {
+          "id": "t026",
+          "name": "CrewAI",
+          "url": "https://www.crewai.com/",
+          "type": "Agent/框架"
+        }
+      ],
+      "skill_templates": [
+        {
+          "id": "skill-research-evidence-map",
+          "name": "研究证据矩阵",
+          "path": "skills/research-evidence-map/SKILL.md"
+        },
+        {
+          "id": "skill-audit-ready-financial-research",
+          "name": "可审计金融研究简报",
+          "path": "skills/audit-ready-financial-research/SKILL.md"
+        }
+      ],
+      "evidence_status": "编辑方案 / 未进行真实业务测试",
+      "sources": [
+        "ms2026",
+        "anthropic2026",
+        "nist600"
+      ],
+      "review_gate": "以同一测试集比较人工与AI流程。引用、权限、错误和成本未通过则不部署。",
+      "published_at": "2026-11-01"
+    },
+    {
+      "id": "s05-documents",
+      "industry_id": "s05",
+      "industry": "制药与生物科技",
+      "group": "健康",
+      "role": "药物研发",
+      "scenario_id": "documents",
+      "scenario": "文档与OCR",
+      "title": "制药与生物科技｜文档抽取、比对与溯源",
+      "problem": "文献爆炸、试验设计复杂、监管提交繁琐",
+      "input_contract": "已获授权的文档样本、页码、字段标准",
+      "steps": [
+        "定义抽取字段",
+        "建立引用定位",
+        "对照人工标注",
+        "标记低置信度和空值",
+        "专业人员复核"
+      ],
+      "expected_outputs": [
+        "文档抽取、比对与溯源结果草稿",
+        "原始证据与失败样本记录",
+        "人工审核/停止决策"
+      ],
+      "kpi": "字段准确率、漏检率、单件处理时间",
+      "start_point": "实验假说检索与监管文档辅助",
+      "future_hypothesis": "多模态研究与实验闭环（需真实验证）",
+      "guardrail": "实验结论、药物安全和医学证据不能由生成文本替代",
+      "risk_tier": "高敏感—只读/草稿+专业审批",
+      "candidate_tools": [
+        {
+          "id": "t114",
+          "name": "V7 Go",
+          "url": "https://www.v7labs.com/go",
+          "type": "行业应用"
+        },
+        {
+          "id": "t022",
+          "name": "Activepieces",
+          "url": "https://www.activepieces.com/",
+          "type": "自动化"
+        },
+        {
+          "id": "t015",
+          "name": "AnythingLLM",
+          "url": "https://anythingllm.com/",
+          "type": "知识库"
+        },
+        {
+          "id": "t026",
+          "name": "CrewAI",
+          "url": "https://www.crewai.com/",
+          "type": "Agent/框架"
+        },
+        {
+          "id": "t090",
+          "name": "DeepL",
+          "url": "https://www.deepl.com/",
+          "type": "文档工具"
+        }
+      ],
+      "skill_templates": [
+        {
+          "id": "skill-source-grounded-rag",
+          "name": "有来源的知识库问答",
+          "path": "skills/source-grounded-rag/SKILL.md"
+        },
+        {
+          "id": "skill-contract-review-draft",
+          "name": "合同条款差异初审",
+          "path": "skills/contract-review-draft/SKILL.md"
+        }
+      ],
+      "evidence_status": "编辑方案 / 未进行真实业务测试",
+      "sources": [
+        "ms2026",
+        "anthropic2026",
+        "nist600"
+      ],
+      "review_gate": "以同一测试集比较人工与AI流程。引用、权限、错误和成本未通过则不部署。",
+      "published_at": "2026-11-01"
+    },
+    {
+      "id": "s06-learning",
+      "industry_id": "s06",
+      "industry": "基础教育",
+      "group": "教育",
+      "role": "教师",
+      "scenario_id": "learning",
+      "scenario": "学习培训",
+      "title": "基础教育｜分层学习练习与反馈",
+      "problem": "备课耗时、分层教学困难、反馈延迟",
+      "input_contract": "课程目标、获授权教案、匿名练习样本",
+      "steps": [
+        "分解学习目标",
+        "生成多级练习",
+        "核对答案与依据",
+        "教师审核并试教",
+        "比较前后测结果"
+      ],
+      "expected_outputs": [
+        "分层学习练习与反馈结果草稿",
+        "原始证据与失败样本记录",
+        "人工审核/停止决策"
+      ],
+      "kpi": "知识掌握变化、错误反馈率、教师准备时间",
+      "start_point": "教案草稿、题目分层、教学资料索引",
+      "future_hypothesis": "持续诊断式学习与教师主导教学协作",
+      "guardrail": "未成年人隐私、学术诚信与教学公平",
+      "risk_tier": "高敏感—只读/草稿+专业审批",
+      "candidate_tools": [
+        {
+          "id": "t068",
+          "name": "Brisk Teaching",
+          "url": "https://www.briskteaching.com/",
+          "type": "行业应用"
+        },
+        {
+          "id": "t066",
+          "name": "Khanmigo",
+          "url": "https://www.khanacademy.org/khan-labs",
+          "type": "行业应用"
+        },
+        {
+          "id": "t067",
+          "name": "MagicSchool",
+          "url": "https://www.magicschool.ai/",
+          "type": "行业应用"
+        },
+        {
+          "id": "t011",
+          "name": "NotebookLM",
+          "url": "https://notebooklm.google.com/",
+          "type": "知识库"
+        },
+        {
+          "id": "t001",
+          "name": "ChatGPT",
+          "url": "https://chatgpt.com/",
+          "type": "模型/助手"
+        }
+      ],
+      "skill_templates": [
+        {
+          "id": "skill-lesson-design-review",
+          "name": "差异化课程设计",
+          "path": "skills/lesson-design-review/SKILL.md"
+        }
+      ],
+      "evidence_status": "编辑方案 / 未进行真实业务测试",
+      "sources": [
+        "ms2026",
+        "anthropic2026",
+        "nist600",
+        "unesco"
+      ],
+      "review_gate": "以同一测试集比较人工与AI流程。引用、权限、错误和成本未通过则不部署。",
+      "published_at": "2026-11-01"
+    },
+    {
+      "id": "s06-analytics",
+      "industry_id": "s06",
+      "industry": "基础教育",
+      "group": "教育",
+      "role": "教师",
+      "scenario_id": "analytics",
+      "scenario": "数据分析",
+      "title": "基础教育｜业务分析与异常解释",
+      "problem": "备课耗时、分层教学困难、反馈延迟",
+      "input_contract": "脱敏指标表、原分析基线、指标字典",
+      "steps": [
+        "锁定指标定义",
+        "清洗脱敏表格",
+        "对照人工计算",
+        "输出原因假设",
+        "复核异常及保留查询日志"
+      ],
+      "expected_outputs": [
+        "业务分析与异常解释结果草稿",
+        "原始证据与失败样本记录",
+        "人工审核/停止决策"
+      ],
+      "kpi": "指标误差、可复现率、人工复核用时",
+      "start_point": "基于教师审查的个性化反馈",
+      "future_hypothesis": "持续诊断式学习与教师主导教学协作",
+      "guardrail": "未成年人隐私、学术诚信与教学公平",
+      "risk_tier": "高敏感—只读/草稿+专业审批",
+      "candidate_tools": [
+        {
+          "id": "t023",
+          "name": "Power Automate",
+          "url": "https://www.microsoft.com/en-us/power-platform/products/power-automate",
+          "type": "自动化"
+        },
+        {
+          "id": "t106",
+          "name": "Arize Phoenix",
+          "url": "https://phoenix.arize.com/",
+          "type": "评测/治理"
+        },
+        {
+          "id": "t001",
+          "name": "ChatGPT",
+          "url": "https://chatgpt.com/",
+          "type": "模型/助手"
+        },
+        {
+          "id": "t094",
+          "name": "Databricks",
+          "url": "https://www.databricks.com/",
+          "type": "研究/数据"
+        },
+        {
+          "id": "t093",
+          "name": "Dataiku",
+          "url": "https://www.dataiku.com/",
+          "type": "研究/数据"
+        }
+      ],
+      "skill_templates": [
+        {
+          "id": "skill-ai-workflow-diagnosis",
+          "name": "AI 工作流程体检",
+          "path": "skills/ai-workflow-diagnosis/SKILL.md"
+        },
+        {
+          "id": "skill-marketing-test-design",
+          "name": "内容实验与转化测量",
+          "path": "skills/marketing-test-design/SKILL.md"
+        }
+      ],
+      "evidence_status": "编辑方案 / 未进行真实业务测试",
+      "sources": [
+        "ms2026",
+        "anthropic2026",
+        "nist600",
+        "unesco"
+      ],
+      "review_gate": "以同一测试集比较人工与AI流程。引用、权限、错误和成本未通过则不部署。",
+      "published_at": "2026-11-01"
+    },
+    {
+      "id": "s07-research",
+      "industry_id": "s07",
+      "industry": "高等教育与科研",
+      "group": "教育",
