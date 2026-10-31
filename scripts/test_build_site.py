@@ -10,7 +10,7 @@ class PublishBoundaryTests(unittest.TestCase):
             destination = Path(directory) / 'site'
             manifest = build(destination, commit='a' * 40)
             self.assertEqual(set(p.name for p in destination.iterdir()),
-                             {'index.html', 'top30.html', 'project.html', 'blueprints.html', 'network.html', 'adoption.html', 'pilot-lab.html', 'data', 'docs', 'LICENSE', 'README.md', 'deployment.json'})
+                             {'index.html', 'top30.html', 'project.html', 'blueprints.html', 'network.html', 'adoption.html', 'pilot-lab.html', 'recipes.html', 'data', 'docs', 'LICENSE', 'README.md', 'deployment.json'})
             self.assertEqual(json.loads((destination / 'deployment.json').read_text()), manifest)
             self.assertEqual(manifest['source_commit'], 'a' * 40)
             self.assertEqual(manifest['catalog_count'], 5000)
@@ -18,6 +18,11 @@ class PublishBoundaryTests(unittest.TestCase):
             self.assertEqual(manifest['blueprint_count'], 10)
             self.assertEqual(manifest['research_briefs_count'],30)
             self.assertEqual(manifest['research_reviewed_count'],0)
+            self.assertEqual(manifest['recipe_count'],6)
+            self.assertEqual(manifest['recipe_curated_tool_count'],20)
+            self.assertEqual(manifest['recipe_verified_integrations'],0)
+            self.assertTrue((destination / 'data/capability_recipes.json').is_file())
+            self.assertTrue((destination / 'recipes.html').is_file())
             self.assertEqual(manifest['star_shortlist_count'],30)
             self.assertEqual(manifest['pilot_contract_cases'],24)
             self.assertEqual(manifest['pilot_contract_passed'],24)
