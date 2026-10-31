@@ -27,6 +27,9 @@ const errors=[];
     assert.equal(manifest.priority_integration_candidates,8,'Eight research candidates only');
     assert.equal(manifest.fork_approved_count,0,'No forks approved');
     assert.equal(manifest.star_actions_executed_by_atlas,0,'Never claim account changes');
+    assert.equal(manifest.recipe_count,6,'Six sourced research recipes required');
+    assert.equal(manifest.recipe_curated_tool_count,20,'Twenty unique sourced component candidates required');
+    assert.equal(manifest.recipe_verified_integrations,0,'Never claim untested integrated workflows');
     await page.goto(new URL('top30.html?lang=en',base).href);
     await page.waitForFunction(n=>document.querySelectorAll('.item').length===n&&document.querySelector('#count').textContent.includes('Showing'),manifest.research_project_count);
     assert.equal(await page.locator('html').getAttribute('lang'),'en');
@@ -143,6 +146,59 @@ const errors=[];
       assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,'Blueprint horizontal overflow at '+width);
       await page.screenshot({path:'test-results/blueprints-'+width+'.png'});
     }
+    // Recipe Studio: static, sourced, bilingual and browser-local only.
+    for(const width of [1440,768,390]){
+      await page.setViewportSize({width,height:844});
+      await page.goto(new URL('recipes.html?lang=en',base).href);
+      await page.waitForFunction(()=>document.querySelectorAll('#cards .card').length===6);
+      assert.equal(await page.locator('html').getAttribute('lang'),'en');
+      assert.equal(await page.locator('#total').innerText(),'6');
+      assert.equal(await page.locator('#projects').innerText(),'20');
+      assert.match(await page.locator('#notice').innerText(),/NOT integrated|None of these compositions/i);
+      const scores=await page.locator('.rubric strong').allTextContents();
+      assert.equal(scores.length,6);
+      assert.ok(scores.every(s=>Number(s)>0&&Number(s)<100),'No recipe can be certified by evidence-only score');
+      assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,'Recipe horizontal overflow '+width);
+      if(width===390){
+        const card=await page.locator('#cards .card').first().boundingBox();
+        assert.ok(card&&card.y<844,'Mobile first recipe should be visible above fold');
+      }
+      await page.locator('#cards .card').first().locator('details summary').click();
+      assert.ok(await page.locator('#cards .card').first().locator('.steps li').count()>=4);
+      assert.match(await page.locator('#cards .card').first().locator('.steps li').first().innerText(),/Check topic and asset permissions/);
+      await page.evaluate(()=>scrollTo(0,0));
+      await page.screenshot({path:'test-results/recipes-'+width+'.png'});
+    }
+    await page.selectOption('#scenario','finance');
+    assert.equal(await page.locator('#cards .card').count(),1);
+    assert.equal(new URL(page.url()).searchParams.get('scenario'),'finance');
+    await page.reload();
+    await page.waitForFunction(()=>document.querySelectorAll('#cards .card').length===1);
+    await page.click('#reset');
+    assert.equal(await page.locator('#cards .card').count(),6);
+    await page.selectOption('#level','beginner');
+    assert.equal(await page.locator('#cards .card').count(),1);
+    await page.click('#reset');
+    // Existing repository favorites must be shared, but recipe favorites remain separate.
+    await page.locator('.save-recipe').first().click();
+    await page.check('#savedOnly');
+    assert.equal(await page.locator('#cards .card').count(),1);
+    assert.equal(await page.locator('#saved').innerText(),'1');
+    assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('atlas_recipe_favorites_v1')).length),1);
+    await page.uncheck('#savedOnly');
+    await page.locator('.save-tool').first().click();
+    assert.ok(await page.evaluate(()=>JSON.parse(localStorage.getItem('atlas_favorites_v1')).some(s=>s==='repo:remotion-dev/remotion')));
+    await page.click('#language');
+    assert.equal(await page.locator('html').getAttribute('lang'),'zh-CN');
+    assert.equal(new URL(page.url()).searchParams.has('lang'),false);
+    await page.fill('#search','nonexistent---recipe');
+    assert.equal(await page.locator('#cards .card').count(),0);
+    assert.equal(await page.locator('#empty').isVisible(),true);
+    await page.click('#reset');
+    assert.equal(await page.locator('#cards .card').count(),6);
+    assert.ok(await page.locator('a[href="./recipes.html"]').count()===0,'Recipe page should not link to itself in navbar');
+    await page.goto(base);
+    assert.ok(await page.locator('a[href="./recipes.html"]').count()>=1,'Home must expose Recipe Studio');
     // Validate every official-source project dossier, not a hard-coded previous wave.
     const sourceResult=await context.request.get(new URL('data/research_briefs.json',base).href);
     assert.equal(sourceResult.status(),200);

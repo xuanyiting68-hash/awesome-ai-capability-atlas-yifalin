@@ -1,0 +1,641 @@
+{
+  "schema_version": 1,
+  "version": "1.5.0",
+  "source_blueprints_version": "1.3.0",
+  "baseline_utc": "2026-10-28T08:52:34.444204+00:00",
+  "purpose": "Researchable, manually reproducible capability compositions. Not integrated apps.",
+  "score_label": "Research evidence coverage, NOT project quality, safety certification, or integration readiness.",
+  "score_axes": {
+    "curated_repo_exists": 10,
+    "official_source_brief": 20,
+    "immutable_source_snapshot": 10,
+    "metadata_maintained_recently": 20,
+    "individual_isolated_test": 25,
+    "completed_security_license_audit": 15
+  },
+  "score_cutoffs": {
+    "recent_days": 90,
+    "older_days": 365
+  },
+  "bookmark_policy": "Client-side only. Repo bookmarks reuse atlas_favorites_v1; recipe bookmarks use atlas_recipe_favorites_v1. Neither is a GitHub Star.",
+  "license_policy": "No commercial use or deployment without independent review.",
+  "verified_integration_count": 0,
+  "recipes": [
+    {
+      "id": "video",
+      "title_zh": "AI 视频工厂",
+      "goal_zh": "将原创研究转为可审核短视频",
+      "goal_en": "Turn licensed research into a reviewable short video",
+      "scenario": "content",
+      "difficulty": "intermediate",
+      "status": "reference-not-integrated",
+      "license_review": "not-reviewed",
+      "security_review": "not-audited",
+      "tools": [
+        "remotion-dev/remotion",
+        "FFmpeg/FFmpeg",
+        "SYSTRAN/faster-whisper",
+        "gitroomhq/postiz-app"
+      ],
+      "inputs_zh": [
+        "经版权确认的原创脚本与素材清单",
+        "合成测试素材或有授权的视频片段"
+      ],
+      "inputs_en": [
+        "Original script and documented asset rights",
+        "Synthetic or licensed media clips"
+      ],
+      "outputs_zh": [
+        "待人工复核的视频样片",
+        "字幕校对表与授权记录"
+      ],
+      "outputs_en": [
+        "Video preview awaiting human review",
+        "Subtitle QA and source-rights log"
+      ],
+      "acceptance_zh": [
+        "字幕抽检与原文一致",
+        "未授权素材不进入发布清单"
+      ],
+      "acceptance_en": [
+        "Subtitle sampling matches source text",
+        "Unlicensed assets do not enter the publish queue"
+      ],
+      "steps": [
+        {
+          "order": 1,
+          "label_zh": "选题与来源授权",
+          "candidate_repo": null,
+          "gate": "human-approval",
+          "output_marker": "step-1.md",
+          "label_en": "Check topic and asset permissions"
+        },
+        {
+          "order": 2,
+          "label_zh": "独立研究脚本与事实复核",
+          "candidate_repo": "remotion-dev/remotion",
+          "gate": "manual-review",
+          "output_marker": "step-2.md",
+          "label_en": "Draft source-linked script and verify claims"
+        },
+        {
+          "order": 3,
+          "label_zh": "视频/字幕/配音制作",
+          "candidate_repo": "FFmpeg/FFmpeg",
+          "gate": "manual-review",
+          "output_marker": "step-3.md",
+          "label_en": "Produce video, subtitles and narration"
+        },
+        {
+          "order": 4,
+          "label_zh": "人工内容审批",
+          "candidate_repo": "SYSTRAN/faster-whisper",
+          "gate": "manual-review",
+          "output_marker": "step-4.md",
+          "label_en": "Obtain human editorial approval"
+        },
+        {
+          "order": 5,
+          "label_zh": "官方支持渠道发布及复盘",
+          "candidate_repo": "gitroomhq/postiz-app",
+          "gate": "human-approval",
+          "output_marker": "step-5.md",
+          "label_en": "Publish via authorized channels and review results"
+        }
+      ],
+      "guardrails_zh": [
+        "版权授权",
+        "真人出镜与独立推导",
+        "财经内容不提供直接买卖建议",
+        "禁止未获授权的声纹克隆"
+      ],
+      "metrics_zh": [
+        "人工制作与复核耗时",
+        "视频完播率",
+        "有效咨询率"
+      ],
+      "stop_condition_zh": "发布前必须人工核对内容与授权",
+      "stop_condition_en": "Human legal and editorial review required before publication",
+      "offline_demo_path": null,
+      "guardrails_en": [
+        "Use only licensed material",
+        "Keep original research and identifiable human review",
+        "Do not give direct buy/sell recommendations in finance content",
+        "Never clone voices without permission"
+      ]
+    },
+    {
+      "id": "social",
+      "title_zh": "自媒体智能运营",
+      "goal_zh": "规划、审批并衡量跨平台原创内容",
+      "goal_en": "Plan, review and measure original multi-channel content",
+      "scenario": "growth",
+      "difficulty": "intermediate",
+      "status": "reference-not-integrated",
+      "license_review": "not-reviewed",
+      "security_review": "not-audited",
+      "tools": [
+        "gitroomhq/postiz-app",
+        "n8n-io/n8n",
+        "posthog/posthog"
+      ],
+      "inputs_zh": [
+        "三条原创内容与平台差异化版本",
+        "预设指标与无需真实账户的测试日历"
+      ],
+      "inputs_en": [
+        "Three original posts tailored to each channel",
+        "Synthetic calendar with predeclared metrics"
+      ],
+      "outputs_zh": [
+        "审批后的内容日历",
+        "测试渠道追踪表"
+      ],
+      "outputs_en": [
+        "Approved content calendar",
+        "Synthetic channel attribution sheet"
+      ],
+      "acceptance_zh": [
+        "未经批准的内容不得进入发布状态",
+        "不把合成互动当成真实流量"
+      ],
+      "acceptance_en": [
+        "No unapproved content is marked for publication",
+        "Synthetic engagement never presented as real"
+      ],
+      "steps": [
+        {
+          "order": 1,
+          "label_zh": "按各平台撰写原创版本",
+          "candidate_repo": null,
+          "gate": "human-approval",
+          "output_marker": "step-1.md",
+          "label_en": "Write distinct original copy for each platform"
+        },
+        {
+          "order": 2,
+          "label_zh": "审批内容日历",
+          "candidate_repo": "n8n-io/n8n",
+          "gate": "manual-review",
+          "output_marker": "step-2.md",
+          "label_en": "Approve the editorial calendar"
+        },
+        {
+          "order": 3,
+          "label_zh": "平台 API 授权验证",
+          "candidate_repo": null,
+          "gate": "manual-review",
+          "output_marker": "step-3.md",
+          "label_en": "Validate official platform API authorization"
+        },
+        {
+          "order": 4,
+          "label_zh": "排期发布与评论分流",
+          "candidate_repo": "gitroomhq/postiz-app",
+          "gate": "manual-review",
+          "output_marker": "step-4.md",
+          "label_en": "Schedule publication and triage comments"
+        },
+        {
+          "order": 5,
+          "label_zh": "平台指标与转化复盘",
+          "candidate_repo": "posthog/posthog",
+          "gate": "human-approval",
+          "output_marker": "step-5.md",
+          "label_en": "Review platform metrics and attribution"
+        }
+      ],
+      "guardrails_zh": [
+        "遵守每个平台 API 和用户协议",
+        "不得自动刷评论/粉丝",
+        "原创表达与人工最终审核"
+      ],
+      "metrics_zh": [
+        "每周原创内容数",
+        "各渠道有效互动率",
+        "真实线索转化率"
+      ],
+      "stop_condition_zh": "官方 API 条款及发布审批不可跳过",
+      "stop_condition_en": "Platform API rules and editorial approval are mandatory",
+      "offline_demo_path": null,
+      "guardrails_en": [
+        "Follow each platform's API rules and terms",
+        "No fake engagement or spam follows",
+        "Require original content and final human approval"
+      ]
+    },
+    {
+      "id": "leads",
+      "title_zh": "合规智能获客",
+      "goal_zh": "将用户主动同意留资转为可审计线索",
+      "goal_en": "Convert explicit opt-in into auditable lead records",
+      "scenario": "growth",
+      "difficulty": "beginner",
+      "status": "reference-not-integrated",
+      "license_review": "not-reviewed",
+      "security_review": "not-audited",
+      "tools": [
+        "formbricks/formbricks",
+        "baptisteArno/typebot.io",
+        "TwentyHQ/twenty",
+        "calcom/cal.com"
+      ],
+      "inputs_zh": [
+        "合成表单及明确的同意字段",
+        "不含个人信息的测试线索"
+      ],
+      "inputs_en": [
+        "Synthetic form with explicit consent field",
+        "Test leads containing no personal information"
+      ],
+      "outputs_zh": [
+        "去重后获同意的合成线索表",
+        "撤回同意与预约的测试日志"
+      ],
+      "outputs_en": [
+        "Deduplicated synthetic consented leads",
+        "Revocation and booking test log"
+      ],
+      "acceptance_zh": [
+        "拒绝无同意与重复线索",
+        "撤销同意后停止后续处理"
+      ],
+      "acceptance_en": [
+        "Reject unconsented and duplicate leads",
+        "Stop downstream processing after consent withdrawal"
+      ],
+      "steps": [
+        {
+          "order": 1,
+          "label_zh": "原创活动/内容吸引咨询",
+          "candidate_repo": null,
+          "gate": "human-approval",
+          "output_marker": "step-1.md",
+          "label_en": "Invite voluntary contact through original materials"
+        },
+        {
+          "order": 2,
+          "label_zh": "表单明确告知与同意",
+          "candidate_repo": "formbricks/formbricks",
+          "gate": "manual-review",
+          "output_marker": "step-2.md",
+          "label_en": "Present clear notice and collect explicit consent"
+        },
+        {
+          "order": 3,
+          "label_zh": "数据校验和 CRM 去重",
+          "candidate_repo": "baptisteArno/typebot.io",
+          "gate": "manual-review",
+          "output_marker": "step-3.md",
+          "label_en": "Validate input and deduplicate CRM records"
+        },
+        {
+          "order": 4,
+          "label_zh": "按自报需求进行分层",
+          "candidate_repo": "TwentyHQ/twenty",
+          "gate": "manual-review",
+          "output_marker": "step-4.md",
+          "label_en": "Categorize stated user needs"
+        },
+        {
+          "order": 5,
+          "label_zh": "用户主动预约或人工沟通",
+          "candidate_repo": "calcom/cal.com",
+          "gate": "human-approval",
+          "output_marker": "step-5.md",
+          "label_en": "Offer user-initiated booking or human contact"
+        }
+      ],
+      "guardrails_zh": [
+        "不得抓取私人资料",
+        "禁止未经授权的批量自动私信",
+        "记录营销同意和可撤销机制",
+        "敏感数据最小化"
+      ],
+      "metrics_zh": [
+        "自愿留资率",
+        "有效线索率",
+        "预约转化率"
+      ],
+      "stop_condition_zh": "严禁抓取真实个人信息或自动私信",
+      "stop_condition_en": "No scraping real personal data or unsolicited mass messaging",
+      "offline_demo_path": "examples/consent_lead_triage/run_demo.py",
+      "guardrails_en": [
+        "Never scrape private personal data",
+        "No unsolicited mass DMs",
+        "Record opt-in and permit withdrawal",
+        "Minimize sensitive data collection"
+      ]
+    },
+    {
+      "id": "crm",
+      "title_zh": "客户维护与服务",
+      "goal_zh": "将客户问题整理为可审核服务流程",
+      "goal_en": "Prepare a reviewable customer-service flow",
+      "scenario": "growth",
+      "difficulty": "intermediate",
+      "status": "reference-not-integrated",
+      "license_review": "not-reviewed",
+      "security_review": "not-audited",
+      "tools": [
+        "TwentyHQ/twenty",
+        "chatwoot/chatwoot",
+        "mautic/mautic",
+        "posthog/posthog"
+      ],
+      "inputs_zh": [
+        "脱敏或合成客服请求",
+        "最小权限与退订约束"
+      ],
+      "inputs_en": [
+        "Redacted or synthetic support requests",
+        "Least-privilege and opt-out rules"
+      ],
+      "outputs_zh": [
+        "工单处理状态记录",
+        "人工复核和退订审计清单"
+      ],
+      "outputs_en": [
+        "Ticket status trace",
+        "Human review and opt-out audit checklist"
+      ],
+      "acceptance_zh": [
+        "测试租户不能看到另一租户记录",
+        "撤销订阅不得再发送提醒"
+      ],
+      "acceptance_en": [
+        "Synthetic tenants cannot see each other's records",
+        "Unsubscribed users receive no follow-up"
+      ],
+      "steps": [
+        {
+          "order": 1,
+          "label_zh": "权限隔离的 CRM 资料",
+          "candidate_repo": "TwentyHQ/twenty",
+          "gate": "human-approval",
+          "output_marker": "step-1.md",
+          "label_en": "Scope tenant access to CRM data"
+        },
+        {
+          "order": 2,
+          "label_zh": "客户问题受理与分类",
+          "candidate_repo": "chatwoot/chatwoot",
+          "gate": "manual-review",
+          "output_marker": "step-2.md",
+          "label_en": "Accept and classify service requests"
+        },
+        {
+          "order": 3,
+          "label_zh": "知识库建议与人工复核",
+          "candidate_repo": "chatwoot/chatwoot",
+          "gate": "manual-review",
+          "output_marker": "step-3.md",
+          "label_en": "Propose answers with human verification"
+        },
+        {
+          "order": 4,
+          "label_zh": "经同意的提醒与教育",
+          "candidate_repo": "mautic/mautic",
+          "gate": "manual-review",
+          "output_marker": "step-4.md",
+          "label_en": "Send only consented learning or service updates"
+        },
+        {
+          "order": 5,
+          "label_zh": "留存、满意度和退订监控",
+          "candidate_repo": "posthog/posthog",
+          "gate": "human-approval",
+          "output_marker": "step-5.md",
+          "label_en": "Review retention, opt-outs and deletion requests"
+        }
+      ],
+      "guardrails_zh": [
+        "最小权限",
+        "退订与频次控制",
+        "不把 AI 回复伪装成人类承诺",
+        "审计与数据删除"
+      ],
+      "metrics_zh": [
+        "工单首响时长",
+        "问题解决率",
+        "续费率",
+        "退订率"
+      ],
+      "stop_condition_zh": "任何真实客户信息需要独立认证与权限审查",
+      "stop_condition_en": "Real customer data needs separately reviewed authentication and authorization",
+      "offline_demo_path": null,
+      "guardrails_en": [
+        "Enforce least-privilege access",
+        "Respect unsubscribe and contact frequency",
+        "Do not impersonate a human or promise outcomes",
+        "Audit actions and support deletion"
+      ]
+    },
+    {
+      "id": "finance",
+      "title_zh": "金融 AI 研究",
+      "goal_zh": "构造成本与样本外约束下的量化研究方案",
+      "goal_en": "Design an out-of-sample, cost-aware finance research baseline",
+      "scenario": "finance",
+      "difficulty": "advanced",
+      "status": "reference-not-integrated",
+      "license_review": "not-reviewed",
+      "security_review": "not-audited",
+      "tools": [
+        "microsoft/qlib",
+        "microsoft/RD-Agent",
+        "QuantConnect/Lean",
+        "Arize-ai/phoenix"
+      ],
+      "inputs_zh": [
+        "已获使用权的历史行情数据说明",
+        "冻结的预测目标与时间分割"
+      ],
+      "inputs_en": [
+        "Licensed historical market-data description",
+        "Frozen target and chronological split"
+      ],
+      "outputs_zh": [
+        "可审计的研究实验卡",
+        "样本外指标与成本敏感性记录"
+      ],
+      "outputs_en": [
+        "Auditable experiment specification",
+        "Out-of-sample and cost-sensitivity report"
+      ],
+      "acceptance_zh": [
+        "不存在未来数据泄漏",
+        "绝不发送模拟盘或实盘订单"
+      ],
+      "acceptance_en": [
+        "No future-information leakage",
+        "Do not send demo or live brokerage orders"
+      ],
+      "steps": [
+        {
+          "order": 1,
+          "label_zh": "冻结研究假设与可追溯行情",
+          "candidate_repo": "microsoft/qlib",
+          "gate": "human-approval",
+          "output_marker": "step-1.md",
+          "label_en": "Freeze hypothesis and licensed market-data provenance"
+        },
+        {
+          "order": 2,
+          "label_zh": "检验泄漏、偏差和条件预测",
+          "candidate_repo": "microsoft/RD-Agent",
+          "gate": "manual-review",
+          "output_marker": "step-2.md",
+          "label_en": "Check data leakage and selection bias"
+        },
+        {
+          "order": 3,
+          "label_zh": "真实交易成本模拟",
+          "candidate_repo": "QuantConnect/Lean",
+          "gate": "manual-review",
+          "output_marker": "step-3.md",
+          "label_en": "Model realistic spreads, slippage and costs"
+        },
+        {
+          "order": 4,
+          "label_zh": "样本外和模拟盘前瞻审查",
+          "candidate_repo": "QuantConnect/Lean",
+          "gate": "manual-review",
+          "output_marker": "step-4.md",
+          "label_en": "Run chronological OOS and paper-only analysis"
+        },
+        {
+          "order": 5,
+          "label_zh": "独立审批风险参数和部署",
+          "candidate_repo": "Arize-ai/phoenix",
+          "gate": "human-approval",
+          "output_marker": "step-5.md",
+          "label_en": "Independently review risk policy before deployment"
+        }
+      ],
+      "guardrails_zh": [
+        "禁止直接授予 AI 实盘下单权限",
+        "不得承诺盈利",
+        "实盘前独立合法性与风险审查"
+      ],
+      "metrics_zh": [
+        "样本外校准",
+        "成本后净期望",
+        "最大回撤",
+        "风险门禁通过率"
+      ],
+      "stop_condition_zh": "严格研究用途，不连接账户、无需收益承诺",
+      "stop_condition_en": "Research only; no brokerage access or return guarantees",
+      "offline_demo_path": null,
+      "guardrails_en": [
+        "Do not grant AI live-order permissions",
+        "Never guarantee financial returns",
+        "Require separate legal, security and risk approval before live execution"
+      ]
+    },
+    {
+      "id": "education",
+      "title_zh": "AI 互动教育",
+      "goal_zh": "从授权课程素材到可检查的练习反馈",
+      "goal_en": "Build an auditable learning exercise from licensed materials",
+      "scenario": "education",
+      "difficulty": "intermediate",
+      "status": "reference-not-integrated",
+      "license_review": "not-reviewed",
+      "security_review": "not-audited",
+      "tools": [
+        "docling-project/docling",
+        "infiniflow/ragflow",
+        "openedx/edx-platform",
+        "ggml-org/whisper.cpp"
+      ],
+      "inputs_zh": [
+        "授权课程讲义或公开示例材料",
+        "不含学生信息的合成问答"
+      ],
+      "inputs_en": [
+        "Licensed lesson notes or public example content",
+        "Synthetic Q&A without student records"
+      ],
+      "outputs_zh": [
+        "带引用的结构化课程片段",
+        "有评分依据的练习和复盘记录"
+      ],
+      "outputs_en": [
+        "Source-linked structured lesson fragments",
+        "Evidence-backed exercises and review notes"
+      ],
+      "acceptance_zh": [
+        "每条题解可以返回原文证据",
+        "不展示无依据的能力或分数承诺"
+      ],
+      "acceptance_en": [
+        "Each explanation links back to source evidence",
+        "No unsupported performance claims"
+      ],
+      "steps": [
+        {
+          "order": 1,
+          "label_zh": "课程版权和使用授权",
+          "candidate_repo": null,
+          "gate": "human-approval",
+          "output_marker": "step-1.md",
+          "label_en": "Verify curriculum and content rights"
+        },
+        {
+          "order": 2,
+          "label_zh": "文档结构化并保存引用",
+          "candidate_repo": "docling-project/docling",
+          "gate": "manual-review",
+          "output_marker": "step-2.md",
+          "label_en": "Structure lesson sources with traceable citations"
+        },
+        {
+          "order": 3,
+          "label_zh": "题目、案例、可视化练习",
+          "candidate_repo": "infiniflow/ragflow",
+          "gate": "manual-review",
+          "output_marker": "step-3.md",
+          "label_en": "Build exercises, cases and visual practice"
+        },
+        {
+          "order": 4,
+          "label_zh": "语音互动及错误诊断",
+          "candidate_repo": "openedx/edx-platform",
+          "gate": "manual-review",
+          "output_marker": "step-4.md",
+          "label_en": "Review speech interactions and mistakes"
+        },
+        {
+          "order": 5,
+          "label_zh": "学习前后测与质量抽检",
+          "candidate_repo": "ggml-org/whisper.cpp",
+          "gate": "human-approval",
+          "output_marker": "step-5.md",
+          "label_en": "Evaluate learning outcomes and sample quality"
+        }
+      ],
+      "guardrails_zh": [
+        "课程与图片版权",
+        "学生数据保护",
+        "教学答案要可验证",
+        "避免无依据的成绩承诺"
+      ],
+      "metrics_zh": [
+        "课程完成率",
+        "知识掌握提升",
+        "引用准确率",
+        "学习留存"
+      ],
+      "stop_condition_zh": "教学内容与学生隐私必须分别审查",
+      "stop_condition_en": "Review teaching content rights and learner privacy separately",
+      "offline_demo_path": null,
+      "guardrails_en": [
+        "Verify course, media and illustration rights",
+        "Protect student data",
+        "Keep explanations checkable against sources",
+        "Avoid ungrounded score or improvement promises"
+      ]
+    }
+  ]
+}
