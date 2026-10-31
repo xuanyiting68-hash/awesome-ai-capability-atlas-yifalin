@@ -14,6 +14,22 @@
 
 **务必区分：**“已被目录索引 / repository-exists / security-audited / battle-tested / licensed-for-commercial-use” 是不同的状态。本项目目前只对 133 个精选 GitHub 项目完成了存在性与未归档状态的核验。目录候选不经过人工实测。
 
+## V1.5.1 · 三项第一方离线合成能力组合演示
+
+[进入能力组合工作台](recipes.html) · [运行脚本](examples/recipe_demos/run_demo.py) · [固定验收合同](data/recipe_demo_contract.json) · [完整实验方法](docs/RECIPE_DEMOS_V151_CN.md)
+
+原有 6 套研究组合中的 **合规获客、AI 教育、金融研究** 已提供真实可执行的第一方 Python 标准库离线合成样本，其他三套继续作为手动研究方案。获客包含同意与撤销/去重门禁（8 输入、3 待人工复核），教育展示真实片段引用和无依据弃答（3 条有据、1 条弃答），金融使用完全虚构的 20 个价格及严格样本外时间分割（9 个假设决策，**毛收益 +10.21 bps、成本后 −133.79 bps**）。**不代表盈利能力或真实行情。**
+
+复现（无需第三方模型或软件安装）：
+
+```bash
+python examples/recipe_demos/run_demo.py --scenario all
+python scripts/verify_recipe_demos.py --output-dir test-results/recipes
+python -m unittest scripts.test_recipe_demos -v
+```
+
+站点发布必须运行并与预期合同逐项核对，通过后才写入 `data/recipe_demo_results.json`，且 GitHub Actions 两轮独立重跑。**三条全部是本站第一方规则代码；没有运行 Formbricks、Docling、RAGFlow、Qlib、LEAN 等组合中列出的第三方工具，也没有连接真实客户、学生、行情或下达订单。当前第三方组合集成验证数：0。**
+
 ## V1.4.4 · 可核验发布与巡检
 
 发布产物包含源提交清单 `deployment.json`，发布前验证数据，发布后及每日通过 Chromium 巡检站点。仅打包公共页面和数据，不发布开发依赖。详见 [发布验证记录](docs/V1_4_4_RELEASE_MONITORING_CN.md)。
