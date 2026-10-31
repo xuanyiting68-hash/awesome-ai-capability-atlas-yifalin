@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "fixture_only": true,
+  "description": "Original, synthetic, non-private educational examples. No third-party integration or API.",
+  "education": {
+    "sources": [
+      {
+        "source_id": "lesson-01",
+        "text": "The synthetic course has five lessons on data provenance and reproducible tests."
+      },
+      {
+        "source_id": "lesson-02",
+        "text": "A leakage-free time series evaluation uses earlier observations for training and later observations for holdout."
+      },
+      {
+        "source_id": "lesson-03",
+        "text": "A learner can request deletion of synthetic practice history at any time."
+      }
+    ],
+    "questions": [
+      {
+        "question_id": "q-01",
+        "question": "How many lessons are in this fictional course?",
+        "source_id": "lesson-01",
+        "answer_span": "five lessons"
+      },
+      {
+        "question_id": "q-02",
+        "question": "What chronology prevents time-series leakage?",
+        "source_id": "lesson-02",
+        "answer_span": "earlier observations for training and later observations for holdout"
+      },
+      {
+        "question_id": "q-03",
+        "question": "What deletion request is supported by this example?",
+        "source_id": "lesson-03",
+        "answer_span": "request deletion of synthetic practice history"
+      },
+      {
+        "question_id": "q-04",
+        "question": "Does this course guarantee employment?",
+        "source_id": null,
+        "answer_span": null
+      }
+    ]
+  },
+  "finance": {
+    "start_date": "2026-01-01",
+    "symbol": "SYNTHETIC_XAU_DEMO_NOT_MARKET",
+    "frequency": "one_synthetic_observation_per_day",
+    "prices": [
+      "100.00",
+      "100.20",
+      "100.40",
+      "100.50",
+      "100.30",
+      "100.20",
+      "100.60",
+      "100.90",
+      "100.70",
+      "100.80",
+      "101.00",
+      "100.90",
+      "101.30",
+      "101.40",
+      "101.10",
+      "101.50",
+      "101.70",
+      "101.60",
+      "101.90",
+      "102.10"
+    ],
+    "train_end_index": 10,
+    "cost_bps": {
+      "spread": "6.0",
+      "commission": "4.0",
+      "slippage": "6.0"
+    },
+    "rule": "Predict t->t+1 direction from sign(price[t-1]-price[t-2]) only; no fitting and no orders."
+  }
+}
