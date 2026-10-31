@@ -9,13 +9,15 @@ if __package__:
     from .validate_research_briefs import validate_from_files
     from .validate_adoption import validate_from_files as validate_adoption
     from .pilot_lab import run_from_files as run_pilot
+    from .validate_recipes import validate_from_files as validate_recipes
 else:
     from validate_research_briefs import validate_from_files
     from validate_adoption import validate_from_files as validate_adoption
     from pilot_lab import run_from_files as run_pilot
+    from validate_recipes import validate_from_files as validate_recipes
 
 ROOT = Path(__file__).resolve().parents[1]
-FILES = ('index.html', 'top30.html', 'project.html', 'blueprints.html', 'network.html', 'adoption.html', 'pilot-lab.html', 'README.md', 'LICENSE')
+FILES = ('index.html', 'top30.html', 'project.html', 'blueprints.html', 'network.html', 'adoption.html', 'pilot-lab.html', 'recipes.html', 'README.md', 'LICENSE')
 DIRECTORIES = ('data', 'docs')
 
 def build(destination, source=ROOT, commit=None):
@@ -62,6 +64,7 @@ def build(destination, source=ROOT, commit=None):
     # Editorial claims are first-class release data; stale or forged promotions block shipping.
     research_summary = validate_from_files(source)
     adoption_summary = validate_adoption(source)
+    recipe_summary = validate_recipes(source)
     pilot_summary = run_pilot(source)
     if not pilot_summary['all_expected_met'] or pilot_summary['total_cases'] != 24:
         raise ValueError('Pilot contract baseline not reproducible; refuse deployment')
@@ -78,6 +81,9 @@ def build(destination, source=ROOT, commit=None):
         'research_briefs_count': research_summary['count'],
         'research_reviewed_count': research_summary['reviewed'],
         **adoption_summary,
+        'recipe_count': recipe_summary['recipes_count'],
+        'recipe_curated_tool_count': recipe_summary['unique_curated_tool_refs'],
+        'recipe_verified_integrations': recipe_summary['verified_integrations'],
         'pilot_contract_cases': pilot_summary['total_cases'],
         'pilot_contract_passed': pilot_summary['passed_cases'],
         'pilot_upstream_packages_executed': pilot_summary['upstream_code_executed'],
