@@ -33,6 +33,9 @@ const errors=[];
     assert.equal(manifest.recipe_demo_count,3,'Exactly three first-party offline demos must run at release');
     assert.equal(manifest.recipe_demo_contract_passed,true,'Frozen demo evidence contract must pass');
     assert.equal(manifest.recipe_demo_upstream_integrations,0,'No third-party recipe integration certified');
+    assert.equal(manifest.interactive_demo_count,3);
+    assert.equal(manifest.interactive_demo_third_party_integrations,0);
+    assert.match(manifest.interactive_demo_runtime,/client-side first-party/);
     const evidenceResponse=await context.request.get(new URL('data/recipe_demo_results.json',base).href);
     assert.equal(evidenceResponse.status(),200,'Recomputed published first-party evidence must exist');
     const demoEvidence=await evidenceResponse.json();
@@ -216,6 +219,55 @@ const errors=[];
     assert.ok(await page.locator('a[href="./recipes.html"]').count()===0,'Recipe page should not link to itself in navbar');
     await page.goto(base);
     assert.ok(await page.locator('a[href="./recipes.html"]').count()>=1,'Home must expose Recipe Studio');
+    // Hands-on, no-account browser experience: all scenarios actually recompute locally.
+    for(const width of [1440,768,390]){
+      await page.setViewportSize({width,height:844});
+      await page.goto(new URL('demos.html?scenario=leads',base).href);
+      await page.waitForFunction(()=>document.querySelector('#loading').hidden===true);
+      assert.equal(await page.locator('#lead-total').innerText(),'8');
+      assert.equal(await page.locator('#lead-eligible').innerText(),'3');
+      assert.equal(await page.locator('#lead-blocked').innerText(),'5');
+      assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,'Demo horizontal overflow '+width);
+      if(width===390){
+        const target=await page.locator('#tab-finance').boundingBox();
+        assert.ok(target && target.y<844,'Mobile demo navigation buried offscreen');
+      }
+      await page.screenshot({path:'test-results/interactive-demo-'+width+'.png'});
+    }
+    await page.locator('input[aria-label="demo-001 记录 1 允许联系"]').uncheck();
+    assert.equal(await page.locator('#lead-eligible').innerText(),'2','Disabling synthetic consent must re-run policy');
+    assert.equal(await page.locator('#lead-blocked').innerText(),'6');
+    await page.click('#reset-leads');
+    assert.equal(await page.locator('#lead-eligible').innerText(),'3');
+    await page.click('#tab-education');
+    assert.equal(new URL(page.url()).searchParams.get('scenario'),'education');
+    await page.selectOption('#question','q-04');
+    assert.match(await page.locator('#education-answer').innerText(),/证据不足/);
+    await page.fill('#candidate','guaranteed employment');
+    await page.selectOption('#citation','lesson-01');
+    await page.click('#check-candidate');
+    assert.match(await page.locator('#candidate-result').innerText(),/未通过/);
+    await page.fill('#candidate','five lessons');
+    await page.click('#check-candidate');
+    assert.match(await page.locator('#candidate-result').innerText(),/原文中确实存在/);
+    await page.click('#tab-finance');
+    assert.equal(new URL(page.url()).searchParams.get('scenario'),'finance');
+    assert.equal(await page.locator('#finance-gross').innerText(),'10.21');
+    assert.equal(await page.locator('#finance-net').innerText(),'-133.79');
+    await page.locator('#spread').fill('0');
+    assert.equal(await page.locator('#finance-cost').innerText(),'10.00');
+    assert.equal(await page.locator('#finance-net').innerText(),'-79.79','Less cost must increase net by 54 bps across 9 decisions');
+    await page.click('#reset-finance');
+    assert.equal(await page.locator('#finance-net').innerText(),'-133.79');
+    await page.reload();
+    await page.waitForFunction(()=>document.querySelector('#loading').hidden===true);
+    assert.equal(await page.locator('#tab-finance').getAttribute('aria-selected'),'true','Deep-link scenario must survive refresh');
+    assert.equal(await page.locator('#finance-net').innerText(),'-133.79');
+    await page.goto(new URL('recipes.html?scenario=finance',base).href);
+    await page.waitForFunction(()=>document.querySelectorAll('#cards .card').length===1);
+    assert.match(await page.locator('.hands-on-link').getAttribute('href'),/demos.html\?scenario=finance/);
+    await page.goto(base);
+    assert.ok(await page.locator('a[href="./demos.html"]').count()>=1,'Homepage must directly link to interactive demos');
     // Validate every official-source project dossier, not a hard-coded previous wave.
     const sourceResult=await context.request.get(new URL('data/research_briefs.json',base).href);
     assert.equal(sourceResult.status(),200);

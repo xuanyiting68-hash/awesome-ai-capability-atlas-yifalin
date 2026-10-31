@@ -19,7 +19,7 @@ else:
     from verify_recipe_demos import verify_from_files as verify_recipe_demos
 
 ROOT = Path(__file__).resolve().parents[1]
-FILES = ('index.html', 'top30.html', 'project.html', 'blueprints.html', 'network.html', 'adoption.html', 'pilot-lab.html', 'recipes.html', 'README.md', 'LICENSE')
+FILES = ('index.html', 'top30.html', 'project.html', 'blueprints.html', 'network.html', 'adoption.html', 'pilot-lab.html', 'recipes.html', 'demos.html', 'README.md', 'LICENSE')
 DIRECTORIES = ('data', 'docs')
 EXAMPLE_SUBDIRS = ('consent_lead_triage', 'recipe_demos')
 
@@ -91,6 +91,9 @@ def build(destination, source=ROOT, commit=None):
         'recipe_demo_count': len(demo_results['scenarios']),
         'recipe_demo_contract_passed': demo_results['all_passed'],
         'recipe_demo_upstream_integrations': demo_results['verified_3rd_party_integrations'],
+        'interactive_demo_count': 3,
+        'interactive_demo_runtime': 'client-side first-party synthetic JavaScript',
+        'interactive_demo_third_party_integrations': 0,
         'pilot_contract_cases': pilot_summary['total_cases'],
         'pilot_contract_passed': pilot_summary['passed_cases'],
         'pilot_upstream_packages_executed': pilot_summary['upstream_code_executed'],

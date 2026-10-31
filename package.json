@@ -1,7 +1,7 @@
 {
   "name": "yifalin-ai-capability-atlas",
   "private": true,
-  "version": "1.5.1",
+  "version": "1.5.2",
   "scripts": {
     "test:e2e": "node tests/top30.e2e.cjs",
     "test:smoke": "node tests/deployed-smoke.cjs",

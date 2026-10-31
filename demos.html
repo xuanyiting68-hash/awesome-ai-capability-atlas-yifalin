@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0d223e">
+<meta name="description" content="Atlas AI 体验中心：在浏览器中修改纯合成样本，实时体验同意门禁、来源引用与金融成本敏感性。">
+<title>AI 体验中心 · YIFALIN Capability Atlas</title>
+<style>
+:root{font-family:Inter,"PingFang SC","Microsoft YaHei",system-ui,sans-serif;color:#1d304c;background:#f3f6fc;--ink:#17304e;--muted:#637894;--line:#dde6f2;--blue:#3c60bd;--white:#fff}
+*{box-sizing:border-box}body{margin:0}button,select,input{font:inherit}button{cursor:pointer}button:disabled{opacity:.5;cursor:not-allowed}a{color:#2d55b0}a:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid #3ab5ce;outline-offset:3px}
+header{background:radial-gradient(circle at 92% 0,#234b76,transparent 54%),#0d223e;color:white;padding:22px max(20px,calc((100vw - 1140px)/2)) 29px}
+nav{display:flex;gap:16px;flex-wrap:wrap;align-items:center}nav a{color:#cce0f7;text-decoration:none;font-size:13px}.brand{font-size:13px;font-weight:850;letter-spacing:.4px;margin-right:auto;color:#fff}h1{font-size:clamp(27px,4vw,38px);margin:21px 0 10px}header p{color:#d4e2f4;font-size:14px;line-height:1.7;max-width:750px}
+main{max-width:1180px;margin:auto;padding:20px 18px 75px}.eyebrow{color:#92e3de;font-size:11px;letter-spacing:1.4px}
+.notice{color:#485e79;font-size:12px;line-height:1.7;background:white;border:1px solid var(--line);padding:13px 18px;border-radius:12px;margin-bottom:15px}
+.tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:10px 0 19px}.tab{background:white;border:1px solid var(--line);border-radius:11px;text-align:left;padding:16px 15px;color:var(--ink);font-size:14px;font-weight:750;min-height:60px}.tab[aria-selected=true]{color:#fff;background:#244d80;border-color:#244d80}.tab small{display:block;font-size:11px;font-weight:450;margin-top:5px;opacity:.82}
+section.panel{display:none}section.panel.active{display:block}.panel h2{margin:2px 0 7px;font-size:23px}.lead{margin:0 0 18px;color:#60758f;font-size:13px;line-height:1.8}
+.layout{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(290px,.9fr);gap:15px;align-items:start}.card{border:1px solid var(--line);border-radius:14px;background:white;padding:21px;min-width:0}.card h3{margin:0 0 12px;font-size:17px}.card p,.card li{font-size:13px;line-height:1.65;color:#526781}
+.kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.kpi{border:1px solid #dce7f4;background:#f3f7fd;border-radius:10px;padding:12px;min-width:0}.kpi strong{font-size:clamp(18px,2.5vw,25px);display:block;overflow-wrap:anywhere}.kpi small{font-size:11px;color:#5e7694}.control-row{display:flex;align-items:center;justify-content:space-between;gap:10px;border-top:1px solid #edf1f6;padding:13px 0}.control-row:first-child{border-top:0}.control-row strong{font-size:12px}.control-row small{display:block;font-size:11px;color:#7185a1;margin-top:4px}.control-row label{font-size:12px;display:flex;align-items:center;gap:6px}.control-row input[type=checkbox]{width:19px;height:19px}.status{font-size:12px;color:#456481}.buttonbar{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}.primary{background:#2c56a3;color:white;border:1px solid #2c56a3;padding:10px 15px;border-radius:9px;font-size:12px;font-weight:750}.secondary{background:#edf3ff;color:#23467e;border:1px solid #cddbf5;padding:10px 15px;border-radius:9px;font-size:12px}.tablewrap{overflow:auto;width:100%;border:1px solid #e6edf6;border-radius:9px;margin-top:12px}table{border-collapse:collapse;width:100%;min-width:415px;font-size:11px}th,td{padding:9px;border-bottom:1px solid #e9eff7;text-align:left}th{background:#f4f7fc;color:#4c607a}td{color:#3f5774}.tag{display:inline-block;font-size:10px;border-radius:5px;padding:4px 7px;background:#e8effb;color:#335ca1}.ok{color:#18745b}.blocked{color:#9d4b36}
+.question-select,select,input[type=text]{width:100%;padding:11px 12px;border:1px solid #cbd8eb;background:white;border-radius:9px;color:#263d60;margin-top:6px}.source{border:1px solid #e5ecf5;border-radius:9px;padding:12px;margin:9px 0;background:#f9fbff}.source strong{font-size:12px}.source p{margin:7px 0 0;line-height:1.7}.source mark{background:#fce5ad;color:#412f0e;border-radius:2px;padding:1px}
+.answer{background:#edf7ff;border:1px solid #d2e5f6;border-radius:11px;padding:14px;margin-top:12px;line-height:1.65;font-size:12px;white-space:pre-wrap;overflow-wrap:anywhere}.answer.warn{background:#fff6e8;border-color:#f2dfbf}.answer strong{display:block;color:#183b6b;margin-bottom:5px}
+.finance-controls{display:grid;gap:17px}.slider-label{display:flex;justify-content:space-between;gap:9px;font-size:13px}.slider-label b{font-variant-numeric:tabular-nums}.finance-controls input[type=range]{width:100%;accent-color:#3158aa;margin-top:8px}.bars{display:grid;gap:15px;margin:18px 0}.bar-track{height:12px;background:#e6ecf7;border-radius:10px;position:relative;overflow:hidden}.bar-fill{height:100%;background:#3e75a8;border-radius:10px}.bar-fill.negative{background:#c67c58}.bar-label{font-size:12px;color:#566b85;margin-bottom:6px}.data-warning{border-left:3px solid #d59d51;background:#fff7ed;border-radius:5px;padding:12px;color:#715225;font-size:12px;line-height:1.7}
+.sr-only{position:absolute;clip:rect(0,0,0,0);width:1px;height:1px;overflow:hidden}
+footer{padding:20px 18px;text-align:center;color:#61748d;font-size:12px}
+@media(max-width:790px){.layout{grid-template-columns:1fr}.card{padding:16px}}
+@media(max-width:520px){header{padding:13px 15px 20px}nav{gap:9px}nav a{font-size:11px}.brand{font-size:12px;width:100%}header h1{font-size:26px;margin:13px 0 6px}header p{font-size:12px;margin:6px 0}main{padding:12px 12px 44px}.tabs{gap:5px;margin:9px 0}.tab{padding:10px 8px;font-size:12px;min-height:56px}.tab small{font-size:10px}.notice{font-size:11px;line-height:1.45;padding:10px}.panel h2{font-size:20px}.lead{font-size:12px;margin-bottom:10px}.kpi{padding:9px 7px}.kpi strong{font-size:18px}.kpi small{font-size:10px}.card{padding:14px}}
+</style></head><body>
+<header><nav><a class="brand" href="./index.html">◈ YIFALIN / AI CAPABILITY ATLAS</a><a href="./recipes.html">能力组合工作台</a><a href="./pilot-lab.html">Pilot Lab</a><a href="./docs/INTERACTIVE_DEMOS_V152_CN.md">实验边界</a></nav>
+<div class="eyebrow">V1.5.2 · INTERACTIVE FIRST-PARTY DEMOS</div><h1>不用 GitHub，也能亲手体验 AI 工作流</h1><p>选择一个场景，调整虚构数据，立刻看到处理结果。每个操作都在你的浏览器本地完成；无需登录、安装软件或付费。</p></header>
+<main><div class="notice" id="trust">体验边界：所有资料均为原创合成样本。这里是<b>规则驱动的第一方交互演示</b>，不调用大模型、第三方 Skills/MCP、真实 CRM、券商或交易系统；不会上传你输入的内容。真实 Python 基准结果由 GitHub CI 独立验证。</div>
+<div role="tablist" aria-label="选择体验场景" class="tabs">
+<button type="button" role="tab" id="tab-leads" class="tab" aria-controls="panel-leads" aria-selected="true" data-scenario="leads">◉ 合规获客<small>检查同意与撤销</small></button>
+<button type="button" role="tab" id="tab-education" class="tab" aria-controls="panel-education" aria-selected="false" data-scenario="education">◈ AI 教育<small>有据回答与弃答</small></button>
+<button type="button" role="tab" id="tab-finance" class="tab" aria-controls="panel-finance" aria-selected="false" data-scenario="finance">▥ 金融研究<small>调整模拟交易成本</small></button>
+</div><div id="loading" role="status" aria-live="polite">正在载入公开合成样本…</div>
+<section id="panel-leads" class="panel" role="tabpanel" aria-labelledby="tab-leads"><h2>合规获客：谁可以进入人工复核？</h2><p class="lead">修改虚构客户的同意或退订状态，观察拒绝理由。不会向任何人发消息，也不会保存客户资料。</p>
+<div class="layout"><div class="card"><h3>可交互的虚构客户</h3><div id="lead-controls"></div><div class="buttonbar"><button id="reset-leads" class="secondary" type="button">恢复原始合成样本</button></div><div class="data-warning" style="margin-top:14px">重复客户 ID、过期同意、仅同意订阅而未同意联系，都会触发阻断。改变一条记录不能绕过冲突 ID 的拒绝规则。</div></div>
+<div class="card"><h3>即时结果</h3><div class="kpis"><div class="kpi"><strong id="lead-total">—</strong><small>输入记录</small></div><div class="kpi"><strong id="lead-eligible">—</strong><small>符合条件</small></div><div class="kpi"><strong id="lead-blocked">—</strong><small>阻断记录</small></div></div><div class="tablewrap"><table><thead><tr><th>ID</th><th>决策</th><th>原因</th></tr></thead><tbody id="lead-results"></tbody></table></div><p class="status" id="lead-summary" aria-live="polite"></p></div></div></section>
+<section id="panel-education" class="panel" role="tabpanel" aria-labelledby="tab-education"><h2>教育：回答必须有原文依据</h2><p class="lead">选择虚构课程问题，看有依据的提取答案；也可以输入一段候选答案并选择出处，亲手测试是否得到原文支持。这不是大模型问答。</p>
+<div class="layout"><div class="card"><h3>原创示例课程</h3><div id="lesson-sources"></div></div><div class="card"><h3>验证问题</h3><label for="question">选择一个已定义的问题</label><select id="question" class="question-select" aria-label="选择课程问题"></select><div id="education-answer" class="answer" aria-live="polite"></div><h3 style="margin-top:19px">试试自己的答案片段</h3><label for="candidate">候选答案（仅本地验证，不生成新回答）</label><input id="candidate" type="text" maxlength="200" placeholder="例如：five lessons"><label for="citation" style="display:block;margin-top:10px">你声称的原文出处</label><select id="citation"></select><div class="buttonbar"><button id="check-candidate" type="button" class="primary">检查答案是否在原文中</button><button id="reset-education" type="button" class="secondary">恢复示例</button></div><div id="candidate-result" class="answer" aria-live="polite" hidden></div></div></div></section>
+<section id="panel-finance" class="panel" role="tabpanel" aria-labelledby="tab-finance"><h2>金融研究：成本怎样改变结果？</h2><p class="lead">固定使用 20 个完全虚构的每日价格、9 次时间顺序判断。拖动三种成本参数，浏览器立即重新计算成本后结果；不连接任何真实行情。</p>
+<div class="layout"><div class="card"><h3>调整合成成本（bps）</h3><div id="finance-controls" class="finance-controls">
+<div><label class="slider-label" for="spread">点差 <b id="spread-value">6.0 bps</b></label><input id="spread" type="range" min="0" max="30" step="1" value="6"></div>
+<div><label class="slider-label" for="commission">佣金 <b id="commission-value">4.0 bps</b></label><input id="commission" type="range" min="0" max="30" step="1" value="4"></div>
+<div><label class="slider-label" for="slippage">滑点 <b id="slippage-value">6.0 bps</b></label><input id="slippage" type="range" min="0" max="30" step="1" value="6"></div>
+</div><div class="buttonbar"><button id="reset-finance" class="secondary" type="button">恢复基准成本</button></div>
+<div class="data-warning" style="margin-top:16px">负值不代表真实亏损或实际收益。这里只是把逐期假设头寸的 bps 相加，未估计账户资金曲线、杠杆、成交可行性或预测显著性。</div></div>
+<div class="card"><h3>动态计算结果</h3><div class="kpis"><div class="kpi"><strong id="finance-n">9</strong><small>样本外决策</small></div><div class="kpi"><strong id="finance-cost">16.00</strong><small>每次成本 bps</small></div><div class="kpi"><strong id="finance-net">—</strong><small>净结果合计 bps</small></div></div>
+<div class="bars"><div><div class="bar-label">毛结果：<b id="finance-gross">—</b> bps</div><div class="bar-track"><div class="bar-fill" id="gross-bar"></div></div></div><div><div class="bar-label">成本后：<b id="finance-net-copy">—</b> bps</div><div class="bar-track"><div class="bar-fill negative" id="net-bar"></div></div></div></div>
+<div class="tablewrap"><table><thead><tr><th>索引 t</th><th>预测方向</th><th>毛收益 bps</th><th>成本后 bps</th></tr></thead><tbody id="finance-rows"></tbody></table></div><p class="status" id="finance-note">—</p></div></div></section>
+<div class="buttonbar" style="margin-top:23px"><a class="secondary" href="./recipes.html" style="text-decoration:none">← 返回能力组合工作台</a><a class="secondary" href="./data/recipe_demo_results.json" style="text-decoration:none">查看发布时的 Python 基准证据</a></div></main>
+<footer>YIFALIN · FIRST-PARTY LOCAL SYNTHETIC SANDBOX · NO LLM / NO REAL DATA / NO ORDERS</footer>
+<script>
+"use strict";
+const $=id=>document.getElementById(id);
+const SENTINEL="2026-10-27T00:00:00Z";let leadsOriginal=[],leads=[],fixtures=null,baseline=null;
+const fmt=x=>Number(x).toFixed(2);
+function text(id,value){$(id).textContent=String(value)}
+function make(tag,value){const node=document.createElement(tag);node.textContent=String(value);return node}
+function setTab(name){
+ if(!["leads","education","finance"].includes(name))name="leads";
+ document.querySelectorAll("[role=tab]").forEach(btn=>{const on=btn.dataset.scenario===name;btn.setAttribute("aria-selected",String(on));btn.tabIndex=on?0:-1});
+ document.querySelectorAll("section.panel").forEach(sec=>sec.classList.toggle("active",sec.id==="panel-"+name));
+ const url=new URL(location.href);url.searchParams.set("scenario",name);history.replaceState(null,"",url);
+}
+function category(question){
+ const v=typeof question==="string"?question.toLowerCase():"";
+ const cats={video:["video","subtitle","剪辑","视频","字幕"],crm:["crm","support","ticket","客服","客户"],finance_research:["finance","research","rag","金融","研究"]};
+ const found=Object.entries(cats).filter(([,terms])=>terms.some(term=>v.includes(term))).map(([name])=>name);
+ return found.length===1?found[0]:"manual_review";
+}
+function evaluateLeads(rows){
+ const count=new Map();rows.forEach(r=>count.set(r.lead_id,(count.get(r.lead_id)||0)+1));
+ const asOf=Date.parse(SENTINEL),results=[];
+ rows.forEach(r=>{
+  let why="";
+  if(!/^[A-Za-z0-9_-]{1,64}$/.test(r.lead_id))why="无效匿名 ID";
+  else if(count.get(r.lead_id)>1)why="ID 冲突 / 重复";
+  else if(r.opt_out!==false)why="已退订或退订状态不明";
+  else if(r.consent!==true||r.consent_purpose!=="contact_requested")why="未明确同意联系";
+  else {
+   const ts=Date.parse(r.consent_at);
+   if(!Number.isFinite(ts)||ts>asOf||ts<asOf-90*86400000)why="同意过期或时间无效";
+  }
+  results.push({id:r.lead_id,eligible:why==="",reason:why||category(r.question)});
+ });
+ return {results,eligible:results.filter(r=>r.eligible).length,blocked:results.filter(r=>!r.eligible).length};
+}
+function renderLeads(){
+ const host=$("lead-controls");host.replaceChildren();
+ leads.forEach((r,i)=>{
+  const wrap=make("div","");wrap.className="control-row";
+  const label=make("div","");label.append(make("strong",r.lead_id+" · "+category(r.question)));
+  label.append(make("small","合成记录 #"+(i+1)+(r.consent_purpose!=="contact_requested"?" · 仅订阅":"")));
+  const switches=make("div","");switches.style.display="flex";switches.style.gap="10px";switches.style.flexWrap="wrap";
+  for(const [key,title] of [["consent","允许联系"],["opt_out","退订"]]){
+   const item=make("label","");const checkbox=document.createElement("input");checkbox.type="checkbox";checkbox.checked=r[key]===true;
+   checkbox.setAttribute("aria-label",r.lead_id+" 记录 "+(i+1)+" "+title);
+   checkbox.addEventListener("change",()=>{r[key]=checkbox.checked;renderLeadResults()});
+   item.append(checkbox,make("span",title));switches.append(item);
+  }
+  wrap.append(label,switches);host.append(wrap);
+ });
+ renderLeadResults();
+}
+function renderLeadResults(){
+ const summary=evaluateLeads(leads);text("lead-total",summary.results.length);text("lead-eligible",summary.eligible);text("lead-blocked",summary.blocked);
+ const body=$("lead-results");body.replaceChildren();
+ summary.results.forEach(r=>{const tr=document.createElement("tr");tr.append(make("td",r.id));
+  const outcome=make("td",r.eligible?"待人工复核":"阻断");outcome.className=r.eligible?"ok":"blocked";
+  tr.append(outcome,make("td",r.reason));body.append(tr);
+ });
+ text("lead-summary","已处理 "+summary.results.length+" 条虚构记录；向外联系 0 次。更改复选框会立即重新评估。");
+}
+function setupEducation(){
+ const src=$("lesson-sources");src.replaceChildren();const c=$("citation");c.replaceChildren();
+ fixtures.education.sources.forEach(row=>{
+  const block=document.createElement("div");block.className="source";block.append(make("strong",row.source_id),make("p",row.text));src.append(block);
+  const opt=document.createElement("option");opt.value=row.source_id;opt.textContent=row.source_id;c.append(opt);
+ });
+ const q=$("question");q.replaceChildren();fixtures.education.questions.forEach(row=>{
+  const opt=document.createElement("option");opt.value=row.question_id;opt.textContent=row.question;q.append(opt);
+ });
+ q.addEventListener("change",renderQuestion);renderQuestion();
+}
+function renderQuestion(){
+ const row=fixtures.education.questions.find(q=>q.question_id===$("question").value);
+ const target=$("education-answer");target.replaceChildren();target.className="answer";
+ if(!row)return;
+ if(!row.source_id||!row.answer_span){target.classList.add("warn");target.append(make("strong","证据不足，拒绝回答"),make("span","预定义材料中没有相关依据，不能凭空承诺或生成答案。"));return}
+ const source=fixtures.education.sources.find(s=>s.source_id===row.source_id);
+ if(!source||!source.text.includes(row.answer_span)){target.classList.add("warn");target.append(make("strong","来源验证失败"));return}
+ target.append(make("strong","原文支持的片段 · "+row.source_id),make("span",row.answer_span));
+}
+function checkCandidate(){
+ const value=$("candidate").value.trim();const source=fixtures.education.sources.find(s=>s.source_id===$("citation").value);
+ const result=$("candidate-result");result.hidden=false;result.replaceChildren();
+ const passed=value.length>=3&&value.length<=200&&source&&source.text.includes(value);
+ result.className=passed?"answer":"answer warn";
+ result.append(make("strong",passed?"原文中确实存在该片段":"未通过：答案不能从选定来源核实"),
+               make("span",passed?"可追溯到 "+source.source_id+"。这只是原文匹配，不代表内容真实或回答语义正确。":"需要选择正确的原文出处并输入原文中连续存在的片段；不生成答案。"));
+}
+function evaluateFinance({spread,commission,slippage}){
+ const prices=fixtures.finance.prices.map(Number),split=fixtures.finance.train_end_index;
+ const costs=spread+commission+slippage;let gross=0,net=0;
+ const rows=[];
+ for(let t=split;t<prices.length-1;t++){
+  // Important: price[t+1] is used only for scoring, never as a predictor.
+  const past=prices[t-1]-prices[t-2],direction=past>0?1:past<0?-1:0;
+  const g=direction*(prices[t+1]-prices[t])/prices[t]*10000;
+  const n=g-(direction===0?0:costs);
+  gross+=g;net+=n;rows.push({t,direction,gross:g,net:n});
+ }
+ return {gross,net,costs,rows};
+}
+function renderFinance(){
+ const costs={spread:Number($("spread").value),commission:Number($("commission").value),slippage:Number($("slippage").value)};
+ for(const key of Object.keys(costs))text(key+"-value",costs[key].toFixed(1)+" bps");
+ const outcome=evaluateFinance(costs);
+ text("finance-n",outcome.rows.length);text("finance-cost",fmt(outcome.costs));text("finance-gross",fmt(outcome.gross));
+ text("finance-net",fmt(outcome.net));text("finance-net-copy",fmt(outcome.net));
+ $("gross-bar").style.width=Math.min(100,Math.abs(outcome.gross)/160*100)+"%";
+ $("net-bar").style.width=Math.min(100,Math.abs(outcome.net)/160*100)+"%";
+ $("net-bar").classList.toggle("negative",outcome.net<0);
+ const body=$("finance-rows");body.replaceChildren();
+ outcome.rows.forEach(x=>{const tr=document.createElement("tr");[x.t,x.direction===1?"看涨":x.direction===-1?"看跌":"观望",fmt(x.gross),fmt(x.net)].forEach(v=>tr.append(make("td",v)));body.append(tr)});
+ const baselineNet=Number(baseline.scenarios.finance.net_bps_sum);
+ text("finance-note",Math.abs(outcome.costs-16)<1e-9?
+  "基准校验："+fmt(outcome.net)+" bps；Python 固定输出："+fmt(baselineNet)+" bps。数值一致仅证明这份合成样本的本地计算。":
+  "这是你修改后的浏览器即时情景结果；不是已通过 Python 基准认证的另一条策略。");
+}
+async function start(){
+ try{
+  const paths=["./examples/recipe_demos/synthetic_fixtures.json","./examples/consent_lead_triage/synthetic_leads.json","./data/recipe_demo_results.json"];
+  const responses=await Promise.all(paths.map(p=>fetch(p,{cache:"no-store"})));if(responses.some(x=>!x.ok))throw Error("合成样本尚不可用");
+  const [data,records,evidence]=await Promise.all(responses.map(x=>x.json()));
+  if(data.schema_version!==1||data.fixture_only!==true||!Array.isArray(records)||records.length!==8||
+   evidence.all_passed!==true||evidence.verified_3rd_party_integrations!==0||
+   evidence.scenarios.leads.eligible_count!==3||evidence.scenarios.education.abstained_count!==1||
+   evidence.scenarios.finance.net_bps_sum!=="-133.79")throw Error("发布证据合同校验失败");
+  fixtures=data;baseline=evidence;leadsOriginal=records;leads=JSON.parse(JSON.stringify(leadsOriginal));
+  renderLeads();setupEducation();for(const key of ["spread","commission","slippage"])$(key).value=String(data.finance.cost_bps[key]);
+  const check=evaluateFinance({spread:6,commission:4,slippage:6});
+  if(fmt(check.gross)!==evidence.scenarios.finance.gross_bps_sum||fmt(check.net)!==evidence.scenarios.finance.net_bps_sum)throw Error("金融本地公式与 Python 发布证据不一致");
+  renderFinance();$("loading").hidden=true;setTab(new URLSearchParams(location.search).get("scenario"));
+ }catch(e){$("loading").textContent="当前无法安全载入演示："+e.message;document.querySelectorAll(".tabs button").forEach(x=>x.disabled=true)}
+}
+document.querySelectorAll("[role=tab]").forEach(btn=>btn.addEventListener("click",()=>setTab(btn.dataset.scenario)));
+$("reset-leads").addEventListener("click",()=>{leads=JSON.parse(JSON.stringify(leadsOriginal));renderLeads()});
+$("check-candidate").addEventListener("click",checkCandidate);
+$("reset-education").addEventListener("click",()=>{$("question").selectedIndex=0;$("candidate").value="";$("citation").selectedIndex=0;$("candidate-result").hidden=true;renderQuestion()});
+for(const key of ["spread","commission","slippage"])$(key).addEventListener("input",renderFinance);
+$("reset-finance").addEventListener("click",()=>{for(const k of ["spread","commission","slippage"])$(k).value=fixtures.finance.cost_bps[k];renderFinance()});
+start();
+</script></body></html>
