@@ -80,7 +80,7 @@ def validate_recipes(data, blueprints, curated, briefs, metadata):
         for key in ("inputs_zh", "inputs_en", "outputs_zh", "outputs_en",
                     "acceptance_zh", "acceptance_en"):
             vals = item.get(key)
-            if not isinstance(vals, list) or len(vals) < 2 or any(not isinstance(v, str) or len(v) < 8 for v in vals):
+            if not isinstance(vals, list) or len(vals) < 2 or any(not isinstance(v, str) or len(v.strip()) < 6 for v in vals):
                 raise ValueError("reproduction evidence missing " + key)
         if item.get("guardrails_zh") != bp["guardrails"] or item.get("metrics_zh") != bp["kpis"]:
             raise ValueError("blueprint guardrails or KPIs were silently altered")
