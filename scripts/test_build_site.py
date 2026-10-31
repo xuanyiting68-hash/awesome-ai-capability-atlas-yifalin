@@ -10,7 +10,7 @@ class PublishBoundaryTests(unittest.TestCase):
             destination = Path(directory) / 'site'
             manifest = build(destination, commit='a' * 40)
             self.assertEqual(set(p.name for p in destination.iterdir()),
-                             {'index.html', 'top30.html', 'project.html', 'blueprints.html', 'network.html', 'adoption.html', 'pilot-lab.html', 'recipes.html', 'data', 'docs', 'examples', 'LICENSE', 'README.md', 'deployment.json'})
+                             {'index.html', 'top30.html', 'project.html', 'blueprints.html', 'network.html', 'adoption.html', 'pilot-lab.html', 'recipes.html', 'demos.html', 'data', 'docs', 'examples', 'LICENSE', 'README.md', 'deployment.json'})
             self.assertEqual(json.loads((destination / 'deployment.json').read_text()), manifest)
             self.assertEqual(manifest['source_commit'], 'a' * 40)
             self.assertEqual(manifest['catalog_count'], 5000)
@@ -24,6 +24,11 @@ class PublishBoundaryTests(unittest.TestCase):
             self.assertEqual(manifest['recipe_demo_count'],3)
             self.assertIs(manifest['recipe_demo_contract_passed'],True)
             self.assertEqual(manifest['recipe_demo_upstream_integrations'],0)
+            self.assertEqual(manifest['interactive_demo_count'],3)
+            self.assertEqual(manifest['interactive_demo_third_party_integrations'],0)
+            self.assertIn('client-side',manifest['interactive_demo_runtime'])
+            self.assertTrue((destination/'demos.html').is_file())
+            self.assertIn('立即进入 AI 体验中心',(destination/'index.html').read_text('utf-8'))
             demo=json.loads((destination/'data/recipe_demo_results.json').read_text('utf-8'))
             self.assertEqual(set(demo['scenarios']),{'leads','education','finance'})
             self.assertEqual(demo['scenarios']['finance']['net_bps_sum'],'-133.79')
