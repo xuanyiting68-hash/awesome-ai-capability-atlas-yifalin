@@ -1,0 +1,3179 @@
+{
+  "as_of": "2026-11-01",
+  "version": "1.0.0",
+  "sectors": [
+    {
+      "id": "s01",
+      "name": "银行与金融服务",
+      "group": "金融",
+      "roles": "银行经理、投研、风控、运营",
+      "pain": "信息碎片化、核验耗时、审计压力",
+      "quick": "财报与政策知识库；投研文档溯源",
+      "mid": "合规问答与风控案例工作流",
+      "future": "可追溯多智能体投研、风险监测协作",
+      "kpi": "资料核验时间、错误率、审查覆盖率",
+      "risk": "敏感账户信息、投资建议和模型漂移需人工审批",
+      "scenarios": [
+        "knowledge",
+        "research",
+        "analytics",
+        "risk",
+        "documents"
+      ]
+    },
+    {
+      "id": "s02",
+      "name": "证券与资管",
+      "group": "金融",
+      "roles": "量化分析师、基金经理、交易员",
+      "pain": "研究重复、数据孤岛、模型过拟合",
+      "quick": "研报抽取、数据字典和行情摘要",
+      "mid": "研究实验注册、组合分析和报告核查",
+      "future": "多源预测与可审计策略研究工厂",
+      "kpi": "研究复用率、样本外表现、净成本后风险收益",
+      "risk": "禁止以回测收益推定实盘；不得自动执行交易",
+      "scenarios": [
+        "research",
+        "analytics",
+        "forecast",
+        "risk",
+        "documents"
+      ]
+    },
+    {
+      "id": "s03",
+      "name": "保险",
+      "group": "金融",
+      "roles": "核保、理赔、精算、客服",
+      "pain": "资料审核慢、欺诈风险、客户体验差",
+      "quick": "理赔材料分类和保单问答",
+      "mid": "核保辅助与异常索赔分流",
+      "future": "个性化保障方案与人机协作理赔",
+      "kpi": "理赔周转时间、漏检率、申诉率",
+      "risk": "公平性、个人敏感信息及拒赔决定需人工复核",
+      "scenarios": [
+        "documents",
+        "support",
+        "risk",
+        "analytics",
+        "automation"
+      ]
+    },
+    {
+      "id": "s04",
+      "name": "医疗服务",
+      "group": "健康",
+      "roles": "医生、护士、医院运营",
+      "pain": "病历录入耗时、院内知识分散",
+      "quick": "临床记录草稿、院内制度知识搜索",
+      "mid": "转诊协作和医疗流程文书核对",
+      "future": "以临床验证为前提的个体化诊疗支持",
+      "kpi": "文书时间、临床纠错率、医患满意度",
+      "risk": "高风险；诊断治疗、患者数据必须专业审核",
+      "scenarios": [
+        "clinical",
+        "documents",
+        "knowledge",
+        "automation",
+        "research"
+      ]
+    },
+    {
+      "id": "s05",
+      "name": "制药与生物科技",
+      "group": "健康",
+      "roles": "药物研发、临床试验、法规事务",
+      "pain": "文献爆炸、试验设计复杂、监管提交繁琐",
+      "quick": "文献证据图谱、试验文件索引",
+      "mid": "实验假说检索与监管文档辅助",
+      "future": "多模态研究与实验闭环（需真实验证）",
+      "kpi": "检索召回率、试验周期、实验复现率",
+      "risk": "实验结论、药物安全和医学证据不能由生成文本替代",
+      "scenarios": [
+        "research",
+        "knowledge",
+        "documents",
+        "analytics",
+        "forecast"
+      ]
+    },
+    {
+      "id": "s06",
+      "name": "基础教育",
+      "group": "教育",
+      "roles": "教师、教研员、校长",
+      "pain": "备课耗时、分层教学困难、反馈延迟",
+      "quick": "教案草稿、题目分层、教学资料索引",
+      "mid": "基于教师审查的个性化反馈",
+      "future": "持续诊断式学习与教师主导教学协作",
+      "kpi": "备课时间、学习进步、误判率",
+      "risk": "未成年人隐私、学术诚信与教学公平",
+      "scenarios": [
+        "learning",
+        "content",
+        "knowledge",
+        "analytics",
+        "documents"
+      ]
+    },
+    {
+      "id": "s07",
+      "name": "高等教育与科研",
+      "group": "教育",
+      "roles": "教授、研究助理、学生",
+      "pain": "文献密集、研究流程重复、复现困难",
+      "quick": "文献矩阵、引文定位与数据清理",
+      "mid": "研究工作流与实验复现管理",
+      "future": "可审计 AI 研究助理、跨学科知识发现",
+      "kpi": "文献核验率、复现率、研究周期",
+      "risk": "禁止捏造引文、论文作者身份和实验结果",
+      "scenarios": [
+        "research",
+        "learning",
+        "knowledge",
+        "analytics",
+        "coding"
+      ]
+    },
+    {
+      "id": "s08",
+      "name": "职业培训与企业学习",
+      "group": "教育",
+      "roles": "培训经理、讲师、HRBP",
+      "pain": "课程更新慢、培训效果不透明",
+      "quick": "课程知识库与技能差距评估",
+      "mid": "岗位技能图谱、智能练习",
+      "future": "工作过程内嵌个性化持续学习",
+      "kpi": "完课率、岗位表现、知识保留率",
+      "risk": "员工评估避免歧视与过度监控",
+      "scenarios": [
+        "learning",
+        "knowledge",
+        "hr",
+        "analytics",
+        "content"
+      ]
+    },
+    {
+      "id": "s09",
+      "name": "工业制造",
+      "group": "工业",
+      "roles": "工厂经理、工艺工程师、质检员",
+      "pain": "停机损失、质检成本、经验难传承",
+      "quick": "SOP 检索、维修记录问答",
+      "mid": "视觉质检、预测性维护试点",
+      "future": "数字孪生与柔性智能制造",
+      "kpi": "停机时间、废品率、OEE",
+      "risk": "生产系统隔离、工业安全和模型漂移",
+      "scenarios": [
+        "maintenance",
+        "vision",
+        "knowledge",
+        "forecast",
+        "simulation"
+      ]
+    },
+    {
+      "id": "s10",
+      "name": "汽车与零部件",
+      "group": "工业",
+      "roles": "研发、生产、售后",
+      "pain": "研发迭代与供应链协调复杂",
+      "quick": "设计评审摘要、故障工单整理",
+      "mid": "质量追溯、生产缺陷检验",
+      "future": "仿真驱动的产品开发与供应协同",
+      "kpi": "质量缺陷率、研发周期、返修率",
+      "risk": "安全关键部件需独立验证",
+      "scenarios": [
+        "design",
+        "vision",
+        "maintenance",
+        "supply",
+        "simulation"
+      ]
+    },
+    {
+      "id": "s11",
+      "name": "建筑工程与设计",
+      "group": "工业",
+      "roles": "建筑师、施工经理、造价师",
+      "pain": "图纸冲突、进度风险、招投标文件复杂",
+      "quick": "图纸与合同知识搜索",
+      "mid": "现场图像进度核对、工程问答",
+      "future": "BIM 联动的项目风险预测与方案优化",
+      "kpi": "返工率、延期天数、审图覆盖率",
+      "risk": "工程安全、施工决策及审批责任",
+      "scenarios": [
+        "documents",
+        "design",
+        "vision",
+        "forecast",
+        "simulation"
+      ]
+    },
+    {
+      "id": "s12",
+      "name": "房地产与物业",
+      "group": "服务",
+      "roles": "经纪人、物业经理、资产运营",
+      "pain": "线索分散、维修响应慢、资产数据割裂",
+      "quick": "房源资料标准化、物业知识库",
+      "mid": "客户问答与工单分流",
+      "future": "建筑能耗与资产全生命周期运营",
+      "kpi": "工单响应时间、出租周期、投诉率",
+      "risk": "房源真实性、公平住房和客户隐私",
+      "scenarios": [
+        "support",
+        "knowledge",
+        "sales",
+        "maintenance",
+        "analytics"
+      ]
+    },
+    {
+      "id": "s13",
+      "name": "零售与连锁门店",
+      "group": "商业",
+      "roles": "店长、品类经理、门店运营",
+      "pain": "库存错配、陈列效率低、客流变化快",
+      "quick": "商品问答、营销内容生成",
+      "mid": "需求预测与补货优化",
+      "future": "门店智能运营与动态供应链",
+      "kpi": "缺货率、库存周转、转化率",
+      "risk": "价格歧视、消费者隐私与促销真实性",
+      "scenarios": [
+        "sales",
+        "content",
+        "forecast",
+        "supply",
+        "analytics"
+      ]
+    },
+    {
+      "id": "s14",
+      "name": "电商与跨境贸易",
+      "group": "商业",
+      "roles": "电商运营、卖家、客服",
+      "pain": "多语种运营成本高、客服高峰、投放效率低",
+      "quick": "商品素材与多语翻译",
+      "mid": "营销实验、客服和订单协作",
+      "future": "跨渠道预测与个性化服务闭环",
+      "kpi": "退货率、CAC、复购率、转化率",
+      "risk": "遵守平台政策、营销授权和跨境数据规定",
+      "scenarios": [
+        "content",
+        "sales",
+        "support",
+        "forecast",
+        "automation"
+      ]
+    },
+    {
+      "id": "s15",
+      "name": "物流与仓储",
+      "group": "交通",
+      "roles": "运输经理、仓储规划师、调度",
+      "pain": "路线优化难、库存不可见、异常处理慢",
+      "quick": "运单抽取与异常知识库",
+      "mid": "需求预测、库存可视化",
+      "future": "端到端动态供应链协调代理",
+      "kpi": "准时交付率、单位配送成本、库存准确率",
+      "risk": "调度系统必须有人为覆盖机制",
+      "scenarios": [
+        "supply",
+        "forecast",
+        "documents",
+        "analytics",
+        "automation"
+      ]
+    },
+    {
+      "id": "s16",
+      "name": "交通运输与出行",
+      "group": "交通",
+      "roles": "交通规划师、车队经理、司机",
+      "pain": "调度波动、运力利用率低",
+      "quick": "客服和道路政策知识库",
+      "mid": "车队维护提醒、运力预测",
+      "future": "安全约束下的智能交通协同",
+      "kpi": "准点率、能耗、事故率",
+      "risk": "车辆控制与交通安全须严格审批",
+      "scenarios": [
+        "forecast",
+        "maintenance",
+        "support",
+        "simulation",
+        "analytics"
+      ]
+    },
+    {
+      "id": "s17",
+      "name": "农业与种植",
+      "group": "资源",
+      "roles": "农场主、农艺师、合作社",
+      "pain": "病虫害难识别、天气影响大、投入品成本高",
+      "quick": "农业知识问答与记录整理",
+      "mid": "遥感监测、病害辅助识别",
+      "future": "气候与生产联合决策系统",
+      "kpi": "每公顷产量、药剂投入、病害误报率",
+      "risk": "农业建议须结合地区法规和实地验证",
+      "scenarios": [
+        "vision",
+        "geo",
+        "forecast",
+        "knowledge",
+        "analytics"
+      ]
+    },
+    {
+      "id": "s18",
+      "name": "能源与电力",
+      "group": "资源",
+      "roles": "能源分析师、电网运营、设备经理",
+      "pain": "资产复杂、故障成本高、负荷波动",
+      "quick": "运维手册搜索、事故记录分类",
+      "mid": "负荷预测、设备异常监测",
+      "future": "智能电网数字孪生与需求响应",
+      "kpi": "计划外停机、预测误差、能耗",
+      "risk": "关键基础设施及电网控制必须隔离",
+      "scenarios": [
+        "forecast",
+        "maintenance",
+        "simulation",
+        "analytics",
+        "knowledge"
+      ]
+    },
+    {
+      "id": "s19",
+      "name": "矿业与材料",
+      "group": "资源",
+      "roles": "矿业工程师、选矿专家、现场管理",
+      "pain": "地质数据分散、安全要求高",
+      "quick": "勘探报告与矿山 SOP 搜索",
+      "mid": "传感监测和设备维护预测",
+      "future": "地质模型、采矿与能源协同优化",
+      "kpi": "设备可用率、事故率、资源回收率",
+      "risk": "重大安全和生态影响决策需专业审核",
+      "scenarios": [
+        "simulation",
+        "maintenance",
+        "vision",
+        "forecast",
+        "knowledge"
+      ]
+    },
+    {
+      "id": "s20",
+      "name": "环境与可持续发展",
+      "group": "资源",
+      "roles": "ESG 分析师、环境工程师",
+      "pain": "监测数据多、披露核验困难",
+      "quick": "排放资料整理、标准比对",
+      "mid": "遥感与监测异常分析",
+      "future": "可审计环境数字孪生与适应策略",
+      "kpi": "核算误差、数据覆盖率、响应时间",
+      "risk": "防范虚假绿色声明与误报",
+      "scenarios": [
+        "geo",
+        "analytics",
+        "documents",
+        "forecast",
+        "research"
+      ]
+    },
+    {
+      "id": "s21",
+      "name": "法律服务",
+      "group": "专业服务",
+      "roles": "律师、法务、合规官",
+      "pain": "条款审查繁琐、法规更新快、证据检索耗时",
+      "quick": "合同抽取、法条知识检索",
+      "mid": "条款差异审查和审阅工单",
+      "future": "可追溯法律研究与争议分析助手",
+      "kpi": "审阅时间、错误率、来源可核验率",
+      "risk": "法律意见由执业人员签发；司法区差异",
+      "scenarios": [
+        "legal",
+        "documents",
+        "knowledge",
+        "research",
+        "automation"
+      ]
+    },
+    {
+      "id": "s22",
+      "name": "会计税务与审计",
+      "group": "专业服务",
+      "roles": "会计师、审计师、财务主管",
+      "pain": "票据繁杂、审计样本量大、政策频繁变化",
+      "quick": "凭证分类、对账差异识别",
+      "mid": "异常交易提示和税务资料辅助",
+      "future": "持续审计与可解释财务控制",
+      "kpi": "对账时间、审计覆盖率、例外误报率",
+      "risk": "会计结论、税务申报及外部审计需复核",
+      "scenarios": [
+        "documents",
+        "analytics",
+        "risk",
+        "automation",
+        "legal"
+      ]
+    },
+    {
+      "id": "s23",
+      "name": "人力资源与招聘",
+      "group": "专业服务",
+      "roles": "招聘经理、HRBP、人才发展",
+      "pain": "简历筛选量大、培训个性化不足",
+      "quick": "职位说明和面试题草稿",
+      "mid": "岗位能力图谱与培训推荐",
+      "future": "技能为中心的人才流动匹配",
+      "kpi": "招聘周期、留存率、培训效果",
+      "risk": "就业歧视、候选人数据隐私",
+      "scenarios": [
+        "hr",
+        "learning",
+        "knowledge",
+        "analytics",
+        "automation"
+      ]
+    },
+    {
+      "id": "s24",
+      "name": "咨询与企业管理",
+      "group": "专业服务",
+      "roles": "咨询师、运营总监、战略经理",
+      "pain": "行业资料碎片化、反复出报告",
+      "quick": "资料搜集与访谈纪要整理",
+      "mid": "行业对标与决策备选方案引擎",
+      "future": "企业实时情报与跨职能协作代理",
+      "kpi": "分析交付周期、引用核验率、决策采纳率",
+      "risk": "客户保密、利益冲突和幻觉",
+      "scenarios": [
+        "research",
+        "documents",
+        "analytics",
+        "knowledge",
+        "automation"
+      ]
+    },
+    {
+      "id": "s25",
+      "name": "政府与公共服务",
+      "group": "公共",
+      "roles": "政务办事、政策研究、公共服务",
+      "pain": "政策检索难、材料审核重复、便民压力",
+      "quick": "政策问答和办事指引",
+      "mid": "多部门工单分流、材料初审",
+      "future": "透明可解释的公共服务协同",
+      "kpi": "办结时间、可及性、投诉率",
+      "risk": "行政决定权、人权、公平性和数据主权",
+      "scenarios": [
+        "knowledge",
+        "documents",
+        "support",
+        "automation",
+        "legal"
+      ]
+    },
+    {
+      "id": "s26",
+      "name": "媒体新闻与出版",
+      "group": "创意",
+      "roles": "编辑、记者、出版运营",
+      "pain": "素材检索慢、多渠道内容适配繁琐",
+      "quick": "采访转录、稿件校对与资料定位",
+      "mid": "内容生产流水线与事实核查",
+      "future": "多模态生产与可信内容溯源",
+      "kpi": "采编时间、纠错率、阅读留存",
+      "risk": "版权、肖像权、真实性及来源可追溯",
+      "scenarios": [
+        "content",
+        "research",
+        "documents",
+        "design",
+        "automation"
+      ]
+    },
+    {
+      "id": "s27",
+      "name": "广告营销与品牌",
+      "group": "创意",
+      "roles": "市场经理、创意总监、投放经理",
+      "pain": "素材迭代快、获客成本波动",
+      "quick": "创意草稿、品牌知识库",
+      "mid": "活动自动化和 A/B 测试",
+      "future": "从受众研究到素材的可控增长系统",
+      "kpi": "CAC、线索质量、转化率",
+      "risk": "平台规则、广告真实性和用户同意",
+      "scenarios": [
+        "content",
+        "sales",
+        "design",
+        "analytics",
+        "automation"
+      ]
+    },
+    {
+      "id": "s28",
+      "name": "影视游戏与内容创作",
+      "group": "创意",
+      "roles": "导演、设计师、游戏策划",
+      "pain": "美术成本高、制作链条长、需求变化快",
+      "quick": "概念图、视频脚本、原型素材",
+      "mid": "跨媒体生产工作流",
+      "future": "实时交互世界生成与制作协作",
+      "kpi": "迭代周期、素材复用率、返工率",
+      "risk": "版权、演员权益、深伪标识",
+      "scenarios": [
+        "design",
+        "content",
+        "simulation",
+        "coding",
+        "automation"
+      ]
+    },
+    {
+      "id": "s29",
+      "name": "餐饮酒店与旅游",
+      "group": "服务",
+      "roles": "餐厅经理、酒店运营、旅行顾问",
+      "pain": "服务高峰、预订变动、评价管理",
+      "quick": "菜单翻译、服务知识库",
+      "mid": "预订咨询与需求预测",
+      "future": "个性化旅行与服务协作",
+      "kpi": "人均服务时间、预订转化、客诉率",
+      "risk": "不得伪造订单、评价和实时可用性",
+      "scenarios": [
+        "support",
+        "forecast",
+        "content",
+        "sales",
+        "automation"
+      ]
+    },
+    {
+      "id": "s30",
+      "name": "IT 软件与网络安全",
+      "group": "技术",
+      "roles": "开发者、产品经理、安全运营",
+      "pain": "迭代压力、技术债、告警噪音",
+      "quick": "代码助手、文档问答",
+      "mid": "自动测试与工单协作",
+      "future": "具备验证与回滚能力的软件开发代理",
+      "kpi": "交付周期、缺陷逃逸率、告警误报率",
+      "risk": "最小权限、密钥安全和代码审查",
+      "scenarios": [
+        "coding",
+        "security",
+        "automation",
+        "knowledge",
+        "analytics"
+      ]
+    },
+    {
+      "id": "s31",
+      "name": "电信与互联网服务",
+      "group": "技术",
+      "roles": "网络运维、客服、产品运营",
+      "pain": "网络告警复杂、用户服务工单量大",
+      "quick": "技术知识库和客服辅助",
+      "mid": "告警归因、网络流量分析",
+      "future": "自适应网络保障与智能运维",
+      "kpi": "MTTR、客户流失率、故障率",
+      "risk": "关键通信系统的授权与可靠性",
+      "scenarios": [
+        "maintenance",
+        "support",
+        "analytics",
+        "automation",
+        "security"
+      ]
+    },
+    {
+      "id": "s32",
+      "name": "中小微企业与个体经营",
+      "group": "通用",
+      "roles": "创业者、自由职业者、个体商户",
+      "pain": "预算有限、重复事务占用时间",
+      "quick": "文案、表格、客服常见问答",
+      "mid": "发票/预约/CRM 轻量自动化",
+      "future": "单人多 Agent 的小型企业运营",
+      "kpi": "工时节省、线索转化、毛利率",
+      "risk": "先用不含敏感数据的流程试点",
+      "scenarios": [
+        "content",
+        "support",
+        "sales",
+        "automation",
+        "analytics"
+      ]
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "knowledge",
+      "name": "知识库与RAG",
+      "tip": "找得到、答得有来源"
+    },
+    {
+      "id": "research",
+      "name": "研究与信息检索",
+      "tip": "证据搜集和归纳"
+    },
+    {
+      "id": "analytics",
+      "name": "数据分析",
+      "tip": "看板、SQL 与洞察"
+    },
+    {
+      "id": "risk",
+      "name": "风控与审计",
+      "tip": "检测异常和留痕"
+    },
+    {
+      "id": "support",
+      "name": "客服与服务",
+      "tip": "问答、分类、转人工"
+    },
+    {
+      "id": "sales",
+      "name": "销售与获客",
+      "tip": "线索管理与CRM"
+    },
+    {
+      "id": "content",
+      "name": "营销与内容",
+      "tip": "文案、视频、传播"
+    },
+    {
+      "id": "documents",
+      "name": "文档与OCR",
+      "tip": "抽取、比对、归档"
+    },
+    {
+      "id": "automation",
+      "name": "工作流自动化",
+      "tip": "跨软件编排与审批"
+    },
+    {
+      "id": "learning",
+      "name": "学习培训",
+      "tip": "教案、个性化练习"
+    },
+    {
+      "id": "clinical",
+      "name": "临床文书支持",
+      "tip": "医疗记录草稿与审查"
+    },
+    {
+      "id": "forecast",
+      "name": "预测与优化",
+      "tip": "需求、负荷和风险预测"
+    },
+    {
+      "id": "maintenance",
+      "name": "设备运维",
+      "tip": "检修助手、故障预测"
+    },
+    {
+      "id": "vision",
+      "name": "计算机视觉",
+      "tip": "质检、识别、现场巡检"
+    },
+    {
+      "id": "design",
+      "name": "设计与创意",
+      "tip": "原型、建筑、设计"
+    },
+    {
+      "id": "supply",
+      "name": "供应链与采购",
+      "tip": "库存、采购、调度"
+    },
+    {
+      "id": "legal",
+      "name": "法规与法律检索",
+      "tip": "法律文书审阅"
+    },
+    {
+      "id": "hr",
+      "name": "人力与招聘",
+      "tip": "岗位能力与学习路径"
+    },
+    {
+      "id": "coding",
+      "name": "软件研发",
+      "tip": "编码、测试、部署"
+    },
+    {
+      "id": "security",
+      "name": "安全与治理",
+      "tip": "权限、评测、监控"
+    },
+    {
+      "id": "meeting",
+      "name": "会议与协作",
+      "tip": "录音转录、会议决策"
+    },
+    {
+      "id": "simulation",
+      "name": "数字孪生与仿真",
+      "tip": "设计验证与场景模拟"
+    },
+    {
+      "id": "geo",
+      "name": "遥感与空间数据",
+      "tip": "GIS、卫星监测"
+    }
+  ],
+  "tools": [
+    {
+      "id": "t001",
+      "name": "ChatGPT",
+      "type": "模型/助手",
+      "scenarios": [
+        "research",
+        "content",
+        "documents",
+        "analytics",
+        "learning"
+      ],
+      "industries": [],
+      "region": "全球",
+      "deployment": "SaaS",
+      "url": "https://chatgpt.com/",
+      "desc": "通用任务、推理、文件与学习辅助",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t002",
+      "name": "Claude",
+      "type": "模型/助手",
+      "scenarios": [
+        "research",
+        "coding",
+        "documents",
+        "content"
+      ],
+      "industries": [],
+      "region": "全球",
+      "deployment": "SaaS",
+      "url": "https://claude.ai/",
+      "desc": "长文档阅读、写作与代码任务",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t003",
+      "name": "Gemini",
+      "type": "模型/助手",
+      "scenarios": [
+        "research",
+        "learning",
+        "content",
+        "analytics"
+      ],
+      "industries": [],
+      "region": "全球",
+      "deployment": "SaaS",
+      "url": "https://gemini.google.com/",
+      "desc": "Google 生态通用助手",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t004",
+      "name": "DeepSeek",
+      "type": "模型/助手",
+      "scenarios": [
+        "research",
+        "coding",
+        "analytics",
+        "content"
+      ],
+      "industries": [],
+      "region": "中国/全球",
+      "deployment": "SaaS/API",
+      "url": "https://www.deepseek.com/",
+      "desc": "中文推理与技术辅助",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t005",
+      "name": "Kimi",
+      "type": "模型/助手",
+      "scenarios": [
+        "research",
+        "documents",
+        "content"
+      ],
+      "industries": [],
+      "region": "中国/全球",
+      "deployment": "SaaS",
+      "url": "https://www.kimi.com/",
+      "desc": "文档阅读与资料整理",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t006",
+      "name": "豆包",
+      "type": "模型/助手",
+      "scenarios": [
+        "content",
+        "documents",
+        "learning"
+      ],
+      "industries": [],
+      "region": "中国",
+      "deployment": "SaaS",
+      "url": "https://www.doubao.com/",
+      "desc": "中文内容与办公助手",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t007",
+      "name": "通义",
+      "type": "模型/助手",
+      "scenarios": [
+        "research",
+        "content",
+        "coding"
+      ],
+      "industries": [],
+      "region": "中国",
+      "deployment": "SaaS",
+      "url": "https://tongyi.aliyun.com/",
+      "desc": "国内生态通用助手",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t008",
+      "name": "Perplexity",
+      "type": "研究/数据",
+      "scenarios": [
+        "research",
+        "knowledge"
+      ],
+      "industries": [],
+      "region": "全球",
+      "deployment": "SaaS",
+      "url": "https://www.perplexity.ai/",
+      "desc": "带来源的网络研究入口",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t009",
+      "name": "Microsoft 365 Copilot",
+      "type": "模型/助手",
+      "scenarios": [
+        "documents",
+        "knowledge",
+        "analytics",
+        "meeting"
+      ],
+      "industries": [],
+      "region": "全球",
+      "deployment": "SaaS",
+      "url": "https://www.microsoft.com/en-us/microsoft-365/copilot",
+      "desc": "Microsoft 365 办公协作",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t010",
+      "name": "Google Workspace Gemini",
+      "type": "模型/助手",
+      "scenarios": [
+        "documents",
+        "knowledge",
+        "content",
+        "meeting"
+      ],
+      "industries": [],
+      "region": "全球",
+      "deployment": "SaaS",
+      "url": "https://workspace.google.com/solutions/ai/",
+      "desc": "Google Workspace 办公内嵌AI",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t011",
+      "name": "NotebookLM",
+      "type": "知识库",
+      "scenarios": [
+        "knowledge",
+        "research",
+        "learning",
+        "documents"
+      ],
+      "industries": [],
+      "region": "全球",
+      "deployment": "SaaS",
+      "url": "https://notebooklm.google.com/",
+      "desc": "基于上传来源的学习和研究笔记",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t012",
+      "name": "Dify",
+      "type": "Agent/框架",
+      "scenarios": [
+        "knowledge",
+        "automation",
+        "support",
+        "research"
+      ],
+      "industries": [],
+      "region": "全球/中国",
+      "deployment": "自托管/云",
+      "url": "https://dify.ai/",
+      "desc": "可视化 Agent、工作流与 RAG 应用",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t013",
+      "name": "RAGFlow",
+      "type": "知识库",
+      "scenarios": [
+        "knowledge",
+        "documents",
+        "research"
+      ],
+      "industries": [],
+      "region": "全球/中国",
+      "deployment": "自托管",
+      "url": "https://github.com/infiniflow/ragflow",
+      "desc": "面向复杂文档的 RAG 系统",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t014",
+      "name": "LlamaIndex",
+      "type": "知识库",
+      "scenarios": [
+        "knowledge",
+        "documents",
+        "research"
+      ],
+      "industries": [],
+      "region": "全球",
+      "deployment": "代码/云",
+      "url": "https://www.llamaindex.ai/",
+      "desc": "面向非结构化数据的 Agent/RAG 框架",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t015",
+      "name": "AnythingLLM",
+      "type": "知识库",
+      "scenarios": [
+        "knowledge",
+        "documents",
+        "research"
+      ],
+      "industries": [],
+      "region": "全球",
+      "deployment": "本地/自托管",
+      "url": "https://anythingllm.com/",
+      "desc": "私有知识库与聊天入口",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t016",
+      "name": "Glean",
+      "type": "知识库",
+      "scenarios": [
+        "knowledge",
+        "research",
+        "hr"
+      ],
+      "industries": [],
+      "region": "全球",
+      "deployment": "企业SaaS",
+      "url": "https://www.glean.com/",
+      "desc": "企业搜索与知识发现",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t017",
+      "name": "Notion AI",
+      "type": "知识库",
+      "scenarios": [
+        "knowledge",
+        "documents",
+        "automation"
+      ],
+      "industries": [],
+      "region": "全球",
+      "deployment": "SaaS",
+      "url": "https://www.notion.so/product/ai",
+      "desc": "团队文档、任务与AI检索",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t018",
+      "name": "飞书",
+      "type": "知识库",
+      "scenarios": [
+        "knowledge",
+        "documents",
+        "automation",
+        "meeting"
+      ],
+      "industries": [],
+      "region": "中国",
+      "deployment": "SaaS",
+      "url": "https://www.feishu.cn/",
+      "desc": "文档、知识库及协作平台",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t019",
+      "name": "n8n",
+      "type": "自动化",
+      "scenarios": [
+        "automation",
+        "support",
+        "sales",
+        "documents"
+      ],
+      "industries": [],
+      "region": "全球/中国",
+      "deployment": "自托管/云",
+      "url": "https://n8n.io/",
+      "desc": "可视化业务工作流与Agent编排",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t020",
+      "name": "Make",
+      "type": "自动化",
+      "scenarios": [
+        "automation",
+        "sales",
+        "content",
+        "support"
+      ],
+      "industries": [],
+      "region": "全球",
+      "deployment": "SaaS",
+      "url": "https://www.make.com/",
+      "desc": "跨应用自动化与条件逻辑",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t021",
+      "name": "Zapier",
+      "type": "自动化",
+      "scenarios": [
+        "automation",
+        "sales",
+        "support",
+        "content"
+      ],
+      "industries": [],
+      "region": "全球",
+      "deployment": "SaaS",
+      "url": "https://zapier.com/",
+      "desc": "SaaS 软件连接和自动化",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t022",
+      "name": "Activepieces",
+      "type": "自动化",
+      "scenarios": [
+        "automation",
+        "documents",
+        "support"
+      ],
+      "industries": [],
+      "region": "全球/中国",
+      "deployment": "自托管/云",
+      "url": "https://www.activepieces.com/",
+      "desc": "开源可自托管流程自动化",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t023",
+      "name": "Power Automate",
+      "type": "自动化",
+      "scenarios": [
+        "automation",
+        "documents",
+        "analytics"
+      ],
+      "industries": [],
+      "region": "全球",
+      "deployment": "SaaS/企业",
+      "url": "https://www.microsoft.com/en-us/power-platform/products/power-automate",
+      "desc": "微软生态流程自动化",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t024",
+      "name": "Copilot Studio",
+      "type": "Agent/框架",
+      "scenarios": [
+        "automation",
+        "support",
+        "knowledge"
+      ],
+      "industries": [],
+      "region": "全球",
+      "deployment": "企业SaaS",
+      "url": "https://www.microsoft.com/en-us/microsoft-copilot/microsoft-copilot-studio",
+      "desc": "可配置企业代理及工具接入",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t025",
+      "name": "LangGraph",
+      "type": "Agent/框架",
+      "scenarios": [
+        "automation",
+        "research",
+        "coding"
+      ],
+      "industries": [],
+      "region": "全球",
+      "deployment": "代码/自托管",
+      "url": "https://www.langchain.com/langgraph",
+      "desc": "有状态 Agent 工作流",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t026",
+      "name": "CrewAI",
+      "type": "Agent/框架",
+      "scenarios": [
+        "automation",
+        "research",
+        "documents"
+      ],
+      "industries": [],
+      "region": "全球",
+      "deployment": "代码/云",
+      "url": "https://www.crewai.com/",
+      "desc": "多Agent任务编排",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t027",
+      "name": "AutoGen",
+      "type": "Agent/框架",
+      "scenarios": [
+        "automation",
+        "coding",
+        "research"
+      ],
+      "industries": [],
+      "region": "全球",
+      "deployment": "开源代码",
+      "url": "https://github.com/microsoft/autogen",
+      "desc": "多Agent研究与开发框架",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t028",
+      "name": "Flowise",
+      "type": "Agent/框架",
+      "scenarios": [
+        "knowledge",
+        "automation",
+        "support"
+      ],
+      "industries": [],
+      "region": "全球",
+      "deployment": "自托管/云",
+      "url": "https://flowiseai.com/",
+      "desc": "低代码 LLM/Agent 流程",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t029",
+      "name": "扣子 Coze",
+      "type": "Agent/框架",
+      "scenarios": [
+        "automation",
+        "support",
+        "knowledge",
+        "content"
+      ],
+      "industries": [],
+      "region": "中国",
+      "deployment": "SaaS",
+      "url": "https://www.coze.cn/",
+      "desc": "中文智能体构建平台",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t030",
+      "name": "OpenAI Agents SDK",
+      "type": "Agent/框架",
+      "scenarios": [
+        "automation",
+        "coding",
+        "research"
+      ],
+      "industries": [],
+      "region": "全球",
+      "deployment": "开源代码",
+      "url": "https://openai.github.io/openai-agents-python/",
+      "desc": "多智能体/工具调用SDK",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t031",
+      "name": "Agent Skills 标准",
+      "type": "Skills/MCP",
+      "scenarios": [
+        "automation",
+        "coding",
+        "knowledge"
+      ],
+      "industries": [],
+      "region": "全球",
+      "deployment": "开放标准",
+      "url": "https://agentskills.io/",
+      "desc": "可复用的技能包规范",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t032",
+      "name": "Anthropic Skills",
+      "type": "Skills/MCP",
+      "scenarios": [
+        "automation",
+        "coding",
+        "documents"
+      ],
+      "industries": [],
+      "region": "全球",
+      "deployment": "开源目录",
+      "url": "https://github.com/anthropics/skills",
+      "desc": "技能模板与参考实现",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t033",
+      "name": "OpenAI Skills",
+      "type": "Skills/MCP",
+      "scenarios": [
+        "automation",
+        "coding",
+        "documents"
+      ],
+      "industries": [],
+      "region": "全球",
+      "deployment": "开源目录",
+      "url": "https://github.com/openai/skills",
+      "desc": "技能样例资源",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t034",
+      "name": "n8n 官方 Skills",
+      "type": "Skills/MCP",
+      "scenarios": [
+        "automation",
+        "coding"
+      ],
+      "industries": [],
+      "region": "全球",
+      "deployment": "开源目录",
+      "url": "https://github.com/n8n-io/skills",
+      "desc": "面向n8n构建的官方技能包",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t035",
+      "name": "MCP Registry",
+      "type": "Skills/MCP",
+      "scenarios": [
+        "automation",
+        "knowledge",
+        "coding"
+      ],
+      "industries": [],
+      "region": "全球",
+      "deployment": "注册目录",
+      "url": "https://registry.modelcontextprotocol.io/",
+      "desc": "MCP连接器索引；质量与安全需另核验",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t036",
+      "name": "Dify Marketplace",
+      "type": "Skills/MCP",
+      "scenarios": [
+        "automation",
+        "knowledge",
+        "support"
+      ],
+      "industries": [],
+      "region": "全球/中国",
+      "deployment": "插件目录",
+      "url": "https://marketplace.dify.ai/",
+      "desc": "Dify插件与Agent策略目录",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t037",
+      "name": "Hugging Face",
+      "type": "资源/目录",
+      "scenarios": [
+        "research",
+        "coding",
+        "vision"
+      ],
+      "industries": [],
+      "region": "全球",
+      "deployment": "社区/云",
+      "url": "https://huggingface.co/",
+      "desc": "模型、数据、Space与评估资源",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t038",
+      "name": "Kaggle",
+      "type": "资源/目录",
+      "scenarios": [
+        "analytics",
+        "forecast",
+        "research"
+      ],
+      "industries": [],
+      "region": "全球",
+      "deployment": "社区/云",
+      "url": "https://www.kaggle.com/",
+      "desc": "公开数据集、比赛、Notebook",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t039",
+      "name": "Docling",
+      "type": "文档工具",
+      "scenarios": [
+        "documents",
+        "knowledge",
+        "research"
+      ],
+      "industries": [],
+      "region": "全球",
+      "deployment": "开源代码",
+      "url": "https://github.com/docling-project/docling",
+      "desc": "复杂文档结构化解析",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t040",
+      "name": "MarkItDown",
+      "type": "文档工具",
+      "scenarios": [
+        "documents",
+        "knowledge"
+      ],
+      "industries": [],
+      "region": "全球",
+      "deployment": "开源代码",
+      "url": "https://github.com/microsoft/markitdown",
+      "desc": "多种文件转Markdown",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t041",
+      "name": "Unstructured",
+      "type": "文档工具",
+      "scenarios": [
+        "documents",
+        "knowledge"
+      ],
+      "industries": [],
+      "region": "全球",
+      "deployment": "自托管/云",
+      "url": "https://unstructured.io/",
+      "desc": "非结构化文本和文档预处理",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t042",
+      "name": "Firecrawl",
+      "type": "研究/数据",
+      "scenarios": [
+        "research",
+        "documents",
+        "knowledge"
+      ],
+      "industries": [],
+      "region": "全球",
+      "deployment": "自托管/云",
+      "url": "https://www.firecrawl.dev/",
+      "desc": "网页抓取和结构化输出",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t043",
+      "name": "Elicit",
+      "type": "研究/数据",
+      "scenarios": [
+        "research",
+        "knowledge"
+      ],
+      "industries": [
+        "高等教育与科研",
+        "制药与生物科技"
+      ],
+      "region": "全球",
+      "deployment": "SaaS",
+      "url": "https://elicit.com/",
+      "desc": "学术文献工作流与论文检索",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t044",
+      "name": "Consensus",
+      "type": "研究/数据",
+      "scenarios": [
+        "research",
+        "knowledge"
+      ],
+      "industries": [
+        "高等教育与科研",
+        "医疗服务"
+      ],
+      "region": "全球",
+      "deployment": "SaaS",
+      "url": "https://consensus.app/",
+      "desc": "研究文献问答",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t045",
+      "name": "Semantic Scholar",
+      "type": "研究/数据",
+      "scenarios": [
+        "research",
+        "knowledge"
+      ],
+      "industries": [
+        "高等教育与科研",
+        "制药与生物科技"
+      ],
+      "region": "全球",
+      "deployment": "网站/API",
+      "url": "https://www.semanticscholar.org/",
+      "desc": "论文与引用搜索",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t046",
+      "name": "Cursor",
+      "type": "开发工具",
+      "scenarios": [
+        "coding",
+        "automation"
+      ],
+      "industries": [
+        "IT 软件与网络安全",
+        "高等教育与科研"
+      ],
+      "region": "全球",
+      "deployment": "桌面应用",
+      "url": "https://cursor.com/",
+      "desc": "AI 编程环境",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t047",
+      "name": "GitHub Copilot",
+      "type": "开发工具",
+      "scenarios": [
+        "coding",
+        "automation"
+      ],
+      "industries": [
+        "IT 软件与网络安全"
+      ],
+      "region": "全球",
+      "deployment": "SaaS/IDE",
+      "url": "https://github.com/features/copilot",
+      "desc": "代码补全和编码助手",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t048",
+      "name": "OpenAI Codex",
+      "type": "开发工具",
+      "scenarios": [
+        "coding",
+        "automation"
+      ],
+      "industries": [
+        "IT 软件与网络安全"
+      ],
+      "region": "全球",
+      "deployment": "应用/CLI",
+      "url": "https://openai.com/codex/",
+      "desc": "AI 软件开发代理",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t049",
+      "name": "Claude Code",
+      "type": "开发工具",
+      "scenarios": [
+        "coding",
+        "automation"
+      ],
+      "industries": [
+        "IT 软件与网络安全"
+      ],
+      "region": "全球",
+      "deployment": "CLI/IDE",
+      "url": "https://www.anthropic.com/claude-code",
+      "desc": "代理式代码开发",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t050",
+      "name": "Replit Agent",
+      "type": "开发工具",
+      "scenarios": [
+        "coding",
+        "automation"
+      ],
+      "industries": [
+        "IT 软件与网络安全",
+        "中小微企业与个体经营"
+      ],
+      "region": "全球",
+      "deployment": "SaaS",
+      "url": "https://replit.com/",
+      "desc": "网页应用构建",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t051",
+      "name": "Lovable",
+      "type": "开发工具",
+      "scenarios": [
+        "coding",
+        "design"
+      ],
+      "industries": [
+        "中小微企业与个体经营",
+        "IT 软件与网络安全"
+      ],
+      "region": "全球",
+      "deployment": "SaaS",
+      "url": "https://lovable.dev/",
+      "desc": "自然语言应用原型",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t052",
+      "name": "Roboflow",
+      "type": "行业应用",
+      "scenarios": [
+        "vision",
+        "analytics"
+      ],
+      "industries": [
+        "工业制造",
+        "农业与种植",
+        "汽车与零部件"
+      ],
+      "region": "全球",
+      "deployment": "云/SDK",
+      "url": "https://roboflow.com/",
+      "desc": "视觉数据标注与模型流程",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t053",
+      "name": "LandingAI",
+      "type": "行业应用",
+      "scenarios": [
+        "vision",
+        "documents"
+      ],
+      "industries": [
+        "工业制造",
+        "建筑工程与设计"
+      ],
+      "region": "全球",
+      "deployment": "SaaS/企业",
+      "url": "https://landing.ai/",
+      "desc": "工业视觉与文档AI",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t054",
+      "name": "Siemens Industrial AI",
+      "type": "行业应用",
+      "scenarios": [
+        "maintenance",
+        "simulation",
+        "forecast"
+      ],
+      "industries": [
+        "工业制造",
+        "能源与电力",
+        "矿业与材料"
+      ],
+      "region": "全球",
+      "deployment": "企业产品",
+      "url": "https://www.siemens.com/en-us/company/artificial-intelligence/",
+      "desc": "工业AI、设备诊断和数字孪生",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t055",
+      "name": "Autodesk Fusion",
+      "type": "行业应用",
+      "scenarios": [
+        "design",
+        "simulation"
+      ],
+      "industries": [
+        "工业制造",
+        "汽车与零部件"
+      ],
+      "region": "全球",
+      "deployment": "企业SaaS",
+      "url": "https://www.autodesk.com/products/fusion-360/overview",
+      "desc": "产品设计与制造集成",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t056",
+      "name": "Autodesk Forma",
+      "type": "行业应用",
+      "scenarios": [
+        "design",
+        "simulation",
+        "documents"
+      ],
+      "industries": [
+        "建筑工程与设计"
+      ],
+      "region": "全球",
+      "deployment": "企业SaaS",
+      "url": "https://www.autodesk.com/products/forma/overview",
+      "desc": "建筑工程设计与项目智能",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t057",
+      "name": "OpenSpace",
+      "type": "行业应用",
+      "scenarios": [
+        "vision",
+        "simulation"
+      ],
+      "industries": [
+        "建筑工程与设计",
+        "房地产与物业"
+      ],
+      "region": "全球",
+      "deployment": "企业SaaS",
+      "url": "https://www.openspace.ai/",
+      "desc": "现场视觉记录与项目协同",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t058",
+      "name": "NVIDIA Omniverse",
+      "type": "行业应用",
+      "scenarios": [
+        "simulation",
+        "design"
+      ],
+      "industries": [
+        "工业制造",
+        "汽车与零部件",
+        "影视游戏与内容创作"
+      ],
+      "region": "全球",
+      "deployment": "开发平台",
+      "url": "https://www.nvidia.com/en-us/omniverse/",
+      "desc": "数字孪生仿真生态",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t059",
+      "name": "Plantix",
+      "type": "行业应用",
+      "scenarios": [
+        "vision",
+        "knowledge"
+      ],
+      "industries": [
+        "农业与种植"
+      ],
+      "region": "全球",
+      "deployment": "移动应用",
+      "url": "https://plantix.net/",
+      "desc": "作物病害辅助识别",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t060",
+      "name": "EOSDA Crop Monitoring",
+      "type": "行业应用",
+      "scenarios": [
+        "geo",
+        "forecast"
+      ],
+      "industries": [
+        "农业与种植",
+        "环境与可持续发展"
+      ],
+      "region": "全球",
+      "deployment": "SaaS",
+      "url": "https://eos.com/crop-monitoring/",
+      "desc": "农业遥感与地块监控",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t061",
+      "name": "Google Earth Engine",
+      "type": "研究/数据",
+      "scenarios": [
+        "geo",
+        "analytics"
+      ],
+      "industries": [
+        "农业与种植",
+        "环境与可持续发展",
+        "能源与电力"
+      ],
+      "region": "全球",
+      "deployment": "平台/API",
+      "url": "https://earthengine.google.com/",
+      "desc": "遥感时空数据分析",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t062",
+      "name": "Esri GeoAI",
+      "type": "行业应用",
+      "scenarios": [
+        "geo",
+        "forecast"
+      ],
+      "industries": [
+        "环境与可持续发展",
+        "政府与公共服务"
+      ],
+      "region": "全球",
+      "deployment": "GIS/企业",
+      "url": "https://www.esri.com/en-us/arcgis/products/arcgis/geoai",
+      "desc": "空间智能与机器学习",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t063",
+      "name": "Abridge",
+      "type": "行业应用",
+      "scenarios": [
+        "clinical",
+        "documents"
+      ],
+      "industries": [
+        "医疗服务"
+      ],
+      "region": "全球",
+      "deployment": "医疗企业",
+      "url": "https://www.abridge.com/",
+      "desc": "临床对话与文书辅助",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t064",
+      "name": "Nabla",
+      "type": "行业应用",
+      "scenarios": [
+        "clinical",
+        "documents"
+      ],
+      "industries": [
+        "医疗服务"
+      ],
+      "region": "全球",
+      "deployment": "医疗企业",
+      "url": "https://www.nabla.com/",
+      "desc": "临床文书辅助",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t065",
+      "name": "Microsoft Dragon Copilot",
+      "type": "行业应用",
+      "scenarios": [
+        "clinical",
+        "documents"
+      ],
+      "industries": [
+        "医疗服务"
+      ],
+      "region": "全球",
+      "deployment": "医疗企业",
+      "url": "https://learn.microsoft.com/en-us/industry/healthcare/dragon-copilot/about/",
+      "desc": "临床记录草稿与临床工作流",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t066",
+      "name": "Khanmigo",
+      "type": "行业应用",
+      "scenarios": [
+        "learning",
+        "knowledge"
+      ],
+      "industries": [
+        "基础教育",
+        "职业培训与企业学习"
+      ],
+      "region": "全球",
+      "deployment": "教育SaaS",
+      "url": "https://www.khanacademy.org/khan-labs",
+      "desc": "Khan Academy教学与学习AI",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t067",
+      "name": "MagicSchool",
+      "type": "行业应用",
+      "scenarios": [
+        "learning",
+        "content"
+      ],
+      "industries": [
+        "基础教育"
+      ],
+      "region": "全球",
+      "deployment": "教育SaaS",
+      "url": "https://www.magicschool.ai/",
+      "desc": "教师备课与课堂辅助",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t068",
+      "name": "Brisk Teaching",
+      "type": "行业应用",
+      "scenarios": [
+        "learning",
+        "content"
+      ],
+      "industries": [
+        "基础教育"
+      ],
+      "region": "全球",
+      "deployment": "浏览器插件",
+      "url": "https://www.briskteaching.com/",
+      "desc": "教师任务与教学材料辅助",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t069",
+      "name": "Harvey",
+      "type": "行业应用",
+      "scenarios": [
+        "legal",
+        "documents",
+        "research"
+      ],
+      "industries": [
+        "法律服务"
+      ],
+      "region": "全球",
+      "deployment": "法律企业",
+      "url": "https://www.harvey.ai/",
+      "desc": "法律AI研究与起草平台",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t070",
+      "name": "Thomson Reuters CoCounsel",
+      "type": "行业应用",
+      "scenarios": [
+        "legal",
+        "research",
+        "documents"
+      ],
+      "industries": [
+        "法律服务",
+        "会计税务与审计"
+      ],
+      "region": "全球",
+      "deployment": "法律企业",
+      "url": "https://www.thomsonreuters.com/",
+      "desc": "专业服务研究与AI协作产品入口",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t071",
+      "name": "Qlib",
+      "type": "研究/数据",
+      "scenarios": [
+        "forecast",
+        "analytics",
+        "risk"
+      ],
+      "industries": [
+        "证券与资管",
+        "银行与金融服务"
+      ],
+      "region": "全球",
+      "deployment": "开源代码",
+      "url": "https://github.com/microsoft/qlib",
+      "desc": "量化投资研究框架",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t072",
+      "name": "OpenBB",
+      "type": "研究/数据",
+      "scenarios": [
+        "research",
+        "analytics"
+      ],
+      "industries": [
+        "银行与金融服务",
+        "证券与资管"
+      ],
+      "region": "全球",
+      "deployment": "开源/企业",
+      "url": "https://openbb.co/",
+      "desc": "金融数据和分析工作台",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t073",
+      "name": "FinGPT",
+      "type": "研究/数据",
+      "scenarios": [
+        "research",
+        "analytics"
+      ],
+      "industries": [
+        "证券与资管",
+        "银行与金融服务"
+      ],
+      "region": "全球",
+      "deployment": "开源代码",
+      "url": "https://github.com/AI4Finance-Foundation/FinGPT",
+      "desc": "金融语言模型研究生态",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t074",
+      "name": "Salesforce Agentforce",
+      "type": "行业应用",
+      "scenarios": [
+        "support",
+        "sales",
+        "automation"
+      ],
+      "industries": [
+        "零售与连锁门店",
+        "保险",
+        "电商与跨境贸易"
+      ],
+      "region": "全球",
+      "deployment": "企业SaaS",
+      "url": "https://www.salesforce.com/agentforce/",
+      "desc": "企业CRM代理",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t075",
+      "name": "HubSpot Breeze",
+      "type": "行业应用",
+      "scenarios": [
+        "sales",
+        "support",
+        "content"
+      ],
+      "industries": [
+        "中小微企业与个体经营",
+        "广告营销与品牌"
+      ],
+      "region": "全球",
+      "deployment": "SaaS",
+      "url": "https://www.hubspot.com/products/artificial-intelligence",
+      "desc": "营销、销售、客服AI工具",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t076",
+      "name": "Intercom Fin",
+      "type": "行业应用",
+      "scenarios": [
+        "support",
+        "knowledge"
+      ],
+      "industries": [
+        "电商与跨境贸易",
+        "餐饮酒店与旅游"
+      ],
+      "region": "全球",
+      "deployment": "企业SaaS",
+      "url": "https://www.intercom.com/fin",
+      "desc": "AI 客户服务",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t077",
+      "name": "Zendesk AI",
+      "type": "行业应用",
+      "scenarios": [
+        "support",
+        "knowledge"
+      ],
+      "industries": [
+        "电商与跨境贸易",
+        "电信与互联网服务"
+      ],
+      "region": "全球",
+      "deployment": "企业SaaS",
+      "url": "https://www.zendesk.com/ai/",
+      "desc": "客户支持自动化",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t078",
+      "name": "Shopify Magic",
+      "type": "行业应用",
+      "scenarios": [
+        "sales",
+        "content",
+        "support"
+      ],
+      "industries": [
+        "电商与跨境贸易",
+        "零售与连锁门店"
+      ],
+      "region": "全球",
+      "deployment": "SaaS",
+      "url": "https://www.shopify.com/magic",
+      "desc": "电商经营与内容AI",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t079",
+      "name": "Chatwoot",
+      "type": "行业应用",
+      "scenarios": [
+        "support",
+        "sales"
+      ],
+      "industries": [
+        "中小微企业与个体经营",
+        "电商与跨境贸易"
+      ],
+      "region": "全球",
+      "deployment": "自托管/云",
+      "url": "https://www.chatwoot.com/",
+      "desc": "开源客服协作平台",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t080",
+      "name": "Twenty CRM",
+      "type": "行业应用",
+      "scenarios": [
+        "sales",
+        "automation"
+      ],
+      "industries": [
+        "中小微企业与个体经营",
+        "广告营销与品牌"
+      ],
+      "region": "全球",
+      "deployment": "自托管/云",
+      "url": "https://twenty.com/",
+      "desc": "可自托管CRM",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t081",
+      "name": "Clay",
+      "type": "行业应用",
+      "scenarios": [
+        "sales",
+        "analytics"
+      ],
+      "industries": [
+        "广告营销与品牌",
+        "咨询与企业管理"
+      ],
+      "region": "全球",
+      "deployment": "SaaS",
+      "url": "https://www.clay.com/",
+      "desc": "B2B线索数据研究及工作流",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t082",
+      "name": "Canva Magic Studio",
+      "type": "内容/设计",
+      "scenarios": [
+        "content",
+        "design"
+      ],
+      "industries": [],
+      "region": "全球",
+      "deployment": "SaaS",
+      "url": "https://www.canva.com/magic-studio/",
+      "desc": "视觉设计与AI素材",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t083",
+      "name": "Adobe Firefly",
+      "type": "内容/设计",
+      "scenarios": [
+        "content",
+        "design"
+      ],
+      "industries": [],
+      "region": "全球",
+      "deployment": "SaaS",
+      "url": "https://firefly.adobe.com/",
+      "desc": "生成式设计与媒体素材",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t084",
+      "name": "Runway",
+      "type": "内容/设计",
+      "scenarios": [
+        "content",
+        "design"
+      ],
+      "industries": [
+        "影视游戏与内容创作",
+        "媒体新闻与出版",
+        "广告营销与品牌"
+      ],
+      "region": "全球",
+      "deployment": "SaaS",
+      "url": "https://runwayml.com/",
+      "desc": "AI 视频制作",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t085",
+      "name": "CapCut 剪映",
+      "type": "内容/设计",
+      "scenarios": [
+        "content",
+        "design"
+      ],
+      "industries": [],
+      "region": "中国/全球",
+      "deployment": "桌面/手机",
+      "url": "https://www.capcut.com/",
+      "desc": "视频剪辑与AI创作",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t086",
+      "name": "ElevenLabs",
+      "type": "内容/设计",
+      "scenarios": [
+        "content",
+        "meeting"
+      ],
+      "industries": [
+        "媒体新闻与出版",
+        "影视游戏与内容创作"
+      ],
+      "region": "全球",
+      "deployment": "SaaS/API",
+      "url": "https://elevenlabs.io/",
+      "desc": "语音合成与音频工作流",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t087",
+      "name": "HeyGen",
+      "type": "内容/设计",
+      "scenarios": [
+        "content",
+        "design"
+      ],
+      "industries": [
+        "广告营销与品牌",
+        "职业培训与企业学习"
+      ],
+      "region": "全球",
+      "deployment": "SaaS",
+      "url": "https://www.heygen.com/",
+      "desc": "虚拟人物视频制作",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t088",
+      "name": "Gamma",
+      "type": "内容/设计",
+      "scenarios": [
+        "content",
+        "design"
+      ],
+      "industries": [
+        "咨询与企业管理",
+        "职业培训与企业学习"
+      ],
+      "region": "全球",
+      "deployment": "SaaS",
+      "url": "https://gamma.app/",
+      "desc": "演示文稿生成",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t089",
+      "name": "Figma AI",
+      "type": "内容/设计",
+      "scenarios": [
+        "design",
+        "coding"
+      ],
+      "industries": [
+        "IT 软件与网络安全",
+        "广告营销与品牌"
+      ],
+      "region": "全球",
+      "deployment": "SaaS",
+      "url": "https://www.figma.com/ai/",
+      "desc": "设计、原型与产品协作",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t090",
+      "name": "DeepL",
+      "type": "文档工具",
+      "scenarios": [
+        "documents",
+        "content"
+      ],
+      "industries": [],
+      "region": "全球",
+      "deployment": "SaaS/API",
+      "url": "https://www.deepl.com/",
+      "desc": "文本与文档翻译",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t091",
+      "name": "Otter.ai",
+      "type": "文档工具",
+      "scenarios": [
+        "meeting",
+        "documents"
+      ],
+      "industries": [],
+      "region": "全球",
+      "deployment": "SaaS",
+      "url": "https://otter.ai/",
+      "desc": "会议转录与摘要",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t092",
+      "name": "Fireflies.ai",
+      "type": "文档工具",
+      "scenarios": [
+        "meeting",
+        "documents"
+      ],
+      "industries": [],
+      "region": "全球",
+      "deployment": "SaaS",
+      "url": "https://fireflies.ai/",
+      "desc": "会议记录辅助",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t093",
+      "name": "Dataiku",
+      "type": "研究/数据",
+      "scenarios": [
+        "analytics",
+        "forecast",
+        "automation"
+      ],
+      "industries": [],
+      "region": "全球",
+      "deployment": "企业平台",
+      "url": "https://www.dataiku.com/",
+      "desc": "企业数据分析与AI开发",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t094",
+      "name": "Databricks",
+      "type": "研究/数据",
+      "scenarios": [
+        "analytics",
+        "forecast",
+        "coding"
+      ],
+      "industries": [],
+      "region": "全球",
+      "deployment": "企业平台",
+      "url": "https://www.databricks.com/",
+      "desc": "数据和ML平台",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t095",
+      "name": "Snowflake Cortex",
+      "type": "研究/数据",
+      "scenarios": [
+        "analytics",
+        "knowledge"
+      ],
+      "industries": [],
+      "region": "全球",
+      "deployment": "企业平台",
+      "url": "https://www.snowflake.com/",
+      "desc": "企业数据平台中的AI功能",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t096",
+      "name": "PostHog",
+      "type": "研究/数据",
+      "scenarios": [
+        "analytics",
+        "sales"
+      ],
+      "industries": [
+        "广告营销与品牌",
+        "IT 软件与网络安全",
+        "电商与跨境贸易"
+      ],
+      "region": "全球",
+      "deployment": "SaaS/自托管",
+      "url": "https://posthog.com/",
+      "desc": "产品分析与实验",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t097",
+      "name": "Power BI",
+      "type": "研究/数据",
+      "scenarios": [
+        "analytics",
+        "forecast"
+      ],
+      "industries": [],
+      "region": "全球",
+      "deployment": "企业SaaS",
+      "url": "https://www.microsoft.com/en-us/power-platform/products/power-bi",
+      "desc": "数据看板与AI辅助分析",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t098",
+      "name": "Tableau",
+      "type": "研究/数据",
+      "scenarios": [
+        "analytics",
+        "forecast"
+      ],
+      "industries": [],
+      "region": "全球",
+      "deployment": "企业SaaS",
+      "url": "https://www.tableau.com/",
+      "desc": "商业智能与数据探索",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t099",
+      "name": "UiPath",
+      "type": "自动化",
+      "scenarios": [
+        "automation",
+        "documents"
+      ],
+      "industries": [
+        "会计税务与审计",
+        "保险",
+        "政府与公共服务"
+      ],
+      "region": "全球",
+      "deployment": "企业平台",
+      "url": "https://www.uipath.com/",
+      "desc": "RPA与企业工作流",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t100",
+      "name": "SAP Business AI",
+      "type": "行业应用",
+      "scenarios": [
+        "supply",
+        "forecast",
+        "analytics"
+      ],
+      "industries": [
+        "工业制造",
+        "物流与仓储",
+        "能源与电力"
+      ],
+      "region": "全球",
+      "deployment": "企业SaaS",
+      "url": "https://www.sap.com/products/artificial-intelligence.html",
+      "desc": "ERP与企业AI集成",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t101",
+      "name": "ServiceNow Now Assist",
+      "type": "行业应用",
+      "scenarios": [
+        "support",
+        "automation",
+        "maintenance"
+      ],
+      "industries": [
+        "IT 软件与网络安全",
+        "电信与互联网服务"
+      ],
+      "region": "全球",
+      "deployment": "企业SaaS",
+      "url": "https://www.servicenow.com/products/now-assist.html",
+      "desc": "ITSM 与服务工作流AI",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t102",
+      "name": "Workday AI",
+      "type": "行业应用",
+      "scenarios": [
+        "hr",
+        "analytics"
+      ],
+      "industries": [
+        "人力资源与招聘",
+        "职业培训与企业学习"
+      ],
+      "region": "全球",
+      "deployment": "企业SaaS",
+      "url": "https://www.workday.com/",
+      "desc": "HR与企业管理AI",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t103",
+      "name": "Promptfoo",
+      "type": "评测/治理",
+      "scenarios": [
+        "security",
+        "coding",
+        "automation"
+      ],
+      "industries": [],
+      "region": "全球",
+      "deployment": "开源代码",
+      "url": "https://www.promptfoo.dev/",
+      "desc": "LLM和Agent评测、红队测试",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t104",
+      "name": "DeepEval",
+      "type": "评测/治理",
+      "scenarios": [
+        "security",
+        "knowledge",
+        "automation"
+      ],
+      "industries": [],
+      "region": "全球",
+      "deployment": "开源代码",
+      "url": "https://github.com/confident-ai/deepeval",
+      "desc": "LLM应用评测框架",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t105",
+      "name": "Langfuse",
+      "type": "评测/治理",
+      "scenarios": [
+        "security",
+        "analytics",
+        "automation"
+      ],
+      "industries": [],
+      "region": "全球",
+      "deployment": "自托管/云",
+      "url": "https://langfuse.com/",
+      "desc": "Agent可观测性与追踪",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t106",
+      "name": "Arize Phoenix",
+      "type": "评测/治理",
+      "scenarios": [
+        "security",
+        "analytics",
+        "automation"
+      ],
+      "industries": [],
+      "region": "全球",
+      "deployment": "开源/云",
+      "url": "https://phoenix.arize.com/",
+      "desc": "AI调用追踪与评测",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t107",
+      "name": "OWASP GenAI Security",
+      "type": "评测/治理",
+      "scenarios": [
+        "security",
+        "knowledge"
+      ],
+      "industries": [],
+      "region": "全球",
+      "deployment": "公益文档",
+      "url": "https://genai.owasp.org/",
+      "desc": "LLM安全风险参考",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t108",
+      "name": "NIST AI RMF",
+      "type": "评测/治理",
+      "scenarios": [
+        "security",
+        "risk"
+      ],
+      "industries": [],
+      "region": "全球",
+      "deployment": "政策框架",
+      "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+      "desc": "跨行业AI风险管理框架",
+      "source": "官方主页或公开维护仓库",
+      "review": "初步收录／未实测"
+    },
+    {
+      "id": "t109",
+      "name": "IBM Maximo",
+      "type": "行业应用",
+      "scenarios": [
+        "maintenance",
+        "analytics",
+        "forecast"
+      ],
+      "industries": [
+        "工业制造",
+        "汽车与零部件",
+        "房地产与物业",
+        "能源与电力",
+        "矿业与材料"
+      ],
+      "region": "全球",
+      "deployment": "企业SaaS",
+      "url": "https://www.ibm.com/products/maximo",
+      "desc": "资产运维、设备监测与维护管理候选（官方产品资料）",
+      "source": "2026-11-01 官方产品页面核验",
+      "review": "产品入口存在／未进行业务实测"
+    },
+    {
+      "id": "t110",
+      "name": "o9 Solutions",
+      "type": "行业应用",
+      "scenarios": [
+        "supply",
+        "forecast",
+        "analytics"
+      ],
+      "industries": [
+        "工业制造",
+        "汽车与零部件",
+        "零售与连锁门店",
+        "物流与仓储"
+      ],
+      "region": "全球",
+      "deployment": "企业SaaS",
+      "url": "https://o9solutions.com/solutions/supply-chain-planning",
+      "desc": "供应链需求与供给规划候选（官方产品资料）",
+      "source": "2026-11-01 官方产品页面核验",
+      "review": "产品入口存在／未进行业务实测"
+    },
+    {
+      "id": "t111",
+      "name": "MindBridge",
+      "type": "行业应用",
+      "scenarios": [
+        "risk",
+        "analytics"
+      ],
+      "industries": [
+        "会计税务与审计",
+        "银行与金融服务"
+      ],
+      "region": "全球",
+      "deployment": "企业SaaS",
+      "url": "https://www.mindbridge.ai/",
+      "desc": "财务异常检索与风险分析候选（官方产品资料）",
+      "source": "2026-11-01 官方产品页面核验",
+      "review": "产品入口存在／未进行业务实测"
+    },
+    {
+      "id": "t112",
+      "name": "Esri ArcGIS",
+      "type": "行业应用",
+      "scenarios": [
+        "geo",
+        "analytics",
+        "vision"
+      ],
+      "industries": [
+        "农业与种植",
+        "环境与可持续发展",
+        "矿业与材料"
+      ],
+      "region": "全球",
+      "deployment": "企业SaaS",
+      "url": "https://www.esri.com/en-us/arcgis/geospatial-platform/overview",
+      "desc": "地理信息与空间分析候选（官方产品资料）",
+      "source": "2026-11-01 官方产品页面核验",
+      "review": "产品入口存在／未进行业务实测"
+    },
+    {
+      "id": "t113",
+      "name": "Palantir AIP",
+      "type": "行业应用",
+      "scenarios": [
+        "automation",
+        "analytics",
+        "knowledge",
+        "supply"
+      ],
+      "industries": [
+        "工业制造",
+        "能源与电力",
+        "物流与仓储",
+        "汽车与零部件"
+      ],
+      "region": "全球",
+      "deployment": "企业平台",
+      "url": "https://www.palantir.com/platforms/aip",
+      "desc": "企业业务数据与AI工作流平台候选（官方产品资料）",
+      "source": "2026-11-01 官方产品页面核验",
+      "review": "产品入口存在／未进行业务实测"
+    },
+    {
+      "id": "t114",
+      "name": "V7 Go",
+      "type": "行业应用",
+      "scenarios": [
+        "documents",
+        "knowledge",
+        "automation"
+      ],
+      "industries": [
+        "法律服务",
+        "制药与生物科技",
+        "保险"
+      ],
+      "region": "全球",
+      "deployment": "企业SaaS",
+      "url": "https://www.v7labs.com/go",
+      "desc": "知识中心、文件与工作流代理候选（官方产品资料）",
+      "source": "2026-11-01 官方产品页面核验",
+      "review": "产品入口存在／未进行业务实测"
+    }
+  ],
+  "first_party_skills": [
+    {
+      "id": "skill-ai-workflow-diagnosis",
+      "slug": "ai-workflow-diagnosis",
+      "name": "AI 工作流程体检",
+      "scenarios": [
+        "automation",
+        "analytics"
+      ],
+      "goal": "识别适合 AI 处理但可撤回的高频流程",
+      "inputs": "岗位说明、流程步骤、每月次数、单次耗时、错误及数据类别",
+      "steps": [
+        "画出原流程",
+        "记录人工作业与决策点",
+        "把步骤分成只读/草稿/审批/写入",
+        "建立优先级和基线"
+      ],
+      "outputs": "瓶颈矩阵、试点优先级、RACI、30天计划",
+      "metric": "处理时间/错误率/成本",
+      "gate": "不访问生产系统；未经业务Owner批准不作写操作",
+      "status": "第一方草案 / 未在业务环境执行"
+    },
+    {
+      "id": "skill-source-grounded-rag",
+      "slug": "source-grounded-rag",
+      "name": "有来源的知识库问答",
+      "scenarios": [
+        "knowledge",
+        "documents"
+      ],
+      "goal": "让回答返回对应来源和不足证据标记",
+      "inputs": "授权文档、版本、问题样本、标准答案",
+      "steps": [
+        "检查授权和隐私",
+        "清洗并标记文件页码",
+        "建立检索与引用",
+        "以负例测试拒答",
+        "人工抽样核对"
+      ],
+      "outputs": "引用式问答规范、误答样本、失效条件",
+      "metric": "引用准确率/拒答合理率",
+      "gate": "禁止臆造来源；不把机密资料发到未经批准的云",
+      "status": "第一方草案 / 未在业务环境执行"
+    },
+    {
+      "id": "skill-contract-review-draft",
+      "slug": "contract-review-draft",
+      "name": "合同条款差异初审",
+      "scenarios": [
+        "legal",
+        "documents"
+      ],
+      "goal": "辅助专业人员定位条款差异而非出具法律意见",
+      "inputs": "两个合同版本、司法辖区、条款清单",
+      "steps": [
+        "文本提取与页码锁定",
+        "比对义务/日期/金额",
+        "列出异常与引用",
+        "标记不能确认处",
+        "交给律师复核"
+      ],
+      "outputs": "对照表、差异项、出处与待核问句",
+      "metric": "漏检率/人工复核时间",
+      "gate": "不得形成自动法律意见或签约动作",
+      "status": "第一方草案 / 未在业务环境执行"
+    },
+    {
+      "id": "skill-clinical-document-draft",
+      "slug": "clinical-document-draft",
+      "name": "临床记录草稿检查",
+      "scenarios": [
+        "clinical",
+        "documents"
+      ],
+      "goal": "协助专业人员审阅记录而非诊断",
+      "inputs": "经许可且脱敏的病例示例、标准模板",
+      "steps": [
+        "检查保密与最小必要",
+        "按模板整理语音/文字",
+        "追溯原始记录",
+        "标记模糊药物剂量",
+        "由临床人员签发"
+      ],
+      "outputs": "病历草稿、待确认项目、审查日志",
+      "metric": "医生更正率/文书时间",
+      "gate": "不提供独立诊断、用药或治疗决定",
+      "status": "第一方草案 / 未在业务环境执行"
+    },
+    {
+      "id": "skill-lesson-design-review",
+      "slug": "lesson-design-review",
+      "name": "差异化课程设计",
+      "scenarios": [
+        "learning",
+        "content"
+      ],
+      "goal": "帮助教师针对不同水平制作经过审查的教学练习",
+      "inputs": "课程目标、学段、教材授权、学生能力范围",
+      "steps": [
+        "识别教学目标",
+        "生成难度分层任务",
+        "给出解析和可能错因",
+        "教师校验",
+        "设计学习效果测量"
+      ],
+      "outputs": "教案、难度梯度、评分准则",
+      "metric": "知识掌握度/批改时间",
+      "gate": "不上传未成年人识别信息；教师负责最终教学",
+      "status": "第一方草案 / 未在业务环境执行"
+    },
+    {
+      "id": "skill-research-evidence-map",
+      "slug": "research-evidence-map",
+      "name": "研究证据矩阵",
+      "scenarios": [
+        "research",
+        "knowledge"
+      ],
+      "goal": "可追溯整理观点、论文与反例",
+      "inputs": "研究问题、允许的文献来源、纳排标准",
+      "steps": [
+        "固定查询策略",
+        "记录每个来源及日期",
+        "抽取研究设计和限制",
+        "辨识相互矛盾证据",
+        "列出研究空白"
+      ],
+      "outputs": "文献矩阵、证据等级、未解决问题",
+      "metric": "来源核验率/复现率",
+      "gate": "禁止杜撰 DOI、作者、研究结论",
+      "status": "第一方草案 / 未在业务环境执行"
+    },
+    {
+      "id": "skill-service-triage",
+      "slug": "service-triage",
+      "name": "客服分流与人工升级",
+      "scenarios": [
+        "support",
+        "automation"
+      ],
+      "goal": "将常见问答自动分类并安全转人工",
+      "inputs": "FAQ、工单标签、人工升级阈值",
+      "steps": [
+        "设置分类标签",
+        "用合成样本测试意图",
+        "高风险提问直接转人工",
+        "记录失败案例",
+        "建立定期更新"
+      ],
+      "outputs": "分类规则、标准回答草稿、升级策略",
+      "metric": "首响时间/误分流率",
+      "gate": "不自动退款、承诺、索取敏感资料",
+      "status": "第一方草案 / 未在业务环境执行"
+    },
+    {
+      "id": "skill-consent-lead-triage",
+      "slug": "consent-lead-triage",
+      "name": "合规线索登记与CRM分流",
+      "scenarios": [
+        "sales",
+        "automation"
+      ],
+      "goal": "只处理已授权的线索和后续跟进建议",
+      "inputs": "自愿提交的线索、用途同意、撤回机制",
+      "steps": [
+        "校验同意和数据来源",
+        "去重",
+        "按需求标签路由",
+        "生成待审回复",
+        "保留撤回和删除流程"
+      ],
+      "outputs": "客户需求分类、草稿、审查与撤回记录",
+      "metric": "线索质量/撤回响应时间",
+      "gate": "禁止抓取私人邮箱、未经授权群发或伪装身份",
+      "status": "第一方草案 / 未在业务环境执行"
+    },
+    {
+      "id": "skill-marketing-test-design",
+      "slug": "marketing-test-design",
+      "name": "内容实验与转化测量",
+      "scenarios": [
+        "content",
+        "analytics"
+      ],
+      "goal": "为营销素材制定可验证的内容实验",
+      "inputs": "受众需求、品牌约束、渠道规则、预算上限",
+      "steps": [
+        "明确假设与指标",
+        "产出不同文案草稿",
+        "检查真实性与版权",
+        "随机实验",
+        "记录结果和不确定性"
+      ],
+      "outputs": "活动计划、原创素材建议、实验表",
+      "metric": "转化率/CAC/投诉率",
+      "gate": "不伪造评价，不进行暗中数据采集",
+      "status": "第一方草案 / 未在业务环境执行"
+    },
+    {
+      "id": "skill-predictive-maintenance-pilot",
+      "slug": "predictive-maintenance-pilot",
+      "name": "设备维护异常监测试点",
+      "scenarios": [
+        "maintenance",
+        "forecast"
+      ],
+      "goal": "在不接管设备控制的前提下评测维护预警",
+      "inputs": "历史传感器、维修工单、设备手册",
+      "steps": [
+        "脱敏数据清理",
+        "锁定训练和未来时段",
+        "建立基线预测",
+        "测试漏报/误报",
+        "由工程师审核告警"
+      ],
+      "outputs": "异常样本、模型对比、告警流程",
+      "metric": "误报率/提前预警时长",
+      "gate": "不得自动改变工业控制参数",
+      "status": "第一方草案 / 未在业务环境执行"
+    },
+    {
+      "id": "skill-visual-inspection-evaluation",
+      "slug": "visual-inspection-evaluation",
+      "name": "工业视觉质检评测",
+      "scenarios": [
+        "vision",
+        "analytics"
+      ],
+      "goal": "以有标签图片验证视觉质检模型",
+      "inputs": "经授权的训练与独立测试图像、缺陷标准",
+      "steps": [
+        "分类缺陷类型",
+        "按批次/时间分割样本",
+        "评估精确率和召回",
+        "关注罕见重大缺陷",
+        "记录人工复判"
+      ],
+      "outputs": "缺陷标签表、混淆矩阵、失败案例",
+      "metric": "漏检率/人工复判时长",
+      "gate": "不因模型分数替代安全检验标准",
+      "status": "第一方草案 / 未在业务环境执行"
+    },
+    {
+      "id": "skill-ai-pilot-roi-audit",
+      "slug": "ai-pilot-roi-audit",
+      "name": "AI试点成本效益审计",
+      "scenarios": [
+        "analytics",
+        "risk"
+      ],
+      "goal": "区别演示效果和实际可复制收益",
+      "inputs": "原流程用时、成本、质量、试点日志、人工复核耗时",
+      "steps": [
+        "计算基线",
+        "核实模型与维护费用",
+        "加入返工及错误成本",
+        "做敏感性分析",
+        "明确因果识别限制"
+      ],
+      "outputs": "ROI区间、指标口径、风险登记簿",
+      "metric": "净节省时间/全成本/错误率",
+      "gate": "无对照证据时不承诺ROI",
+      "status": "第一方草案 / 未在业务环境执行"
+    },
+    {
+      "id": "skill-agent-permission-review",
+      "slug": "agent-permission-review",
+      "name": "Agent 权限与安全审查",
+      "scenarios": [
+        "security",
+        "automation"
+      ],
+      "goal": "在实施前检查 Agent、Skills、MCP 的真实权限",
+      "inputs": "候选技能清单、依赖、触发器、敏感资源",
+      "steps": [
+        "检查作者与许可证",
+        "列出读写权限",
+        "运行隔离恶意输入测试",
+        "验证人工审批",
+        "制定中止与回滚步骤"
+      ],
+      "outputs": "权限矩阵、负面测试、上线门槛",
+      "metric": "越权率/无授权调用次数",
+      "gate": "不得默认授予密钥、终端、支付或生产写入权限",
+      "status": "第一方草案 / 未在业务环境执行"
+    },
+    {
+      "id": "skill-audit-ready-financial-research",
+      "slug": "audit-ready-financial-research",
+      "name": "可审计金融研究简报",
+      "scenarios": [
+        "research",
+        "risk"
+      ],
+      "goal": "用可复核证据形成金融研究简报草稿",
+      "inputs": "公开财报、数据截面、日期、假设",
+      "steps": [
+        "记录来源与访问时间",
+        "抽取结构化事实",
+        "区分事实和预测",
+        "检查滞后与幸存者偏差",
+        "由专业人士审阅"
+      ],
+      "outputs": "研究简报、假设/证据表、风险说明",
+      "metric": "事实准确率/来源完整率",
+      "gate": "不构成投资建议或交易执行指令",
+      "status": "第一方草案 / 未在业务环境执行"
+    }
+  ],
+  "sources": [
+    {
+      "name": "McKinsey 2026 AI Survey",
+      "desc": "行业与职能的Agent扩展差异",
+      "url": "https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai"
+    },
+    {
+      "name": "Microsoft Work Trend Index 2026",
+      "desc": "工作重构、人机协同与评测",
+      "url": "https://www.microsoft.com/en-us/worklab/work-trend-index/agents-human-agency-and-the-opportunity-for-every-organization"
+    },
+    {
+      "name": "NIST AI RMF",
+      "desc": "跨行业AI风险治理",
+      "url": "https://www.nist.gov/itl/ai-risk-management-framework"
+    },
+    {
+      "name": "WHO 大模型医疗治理",
+      "desc": "医疗AI专业审查与患者安全",
+      "url": "https://www.who.int/news/item/18-01-2024-who-releases-ai-ethics-and-governance-guidance-for-large-multi-modal-models"
+    },
+    {
+      "name": "UNESCO 教师AI能力框架",
+      "desc": "教师AI能力要求",
+      "url": "https://www.unesco.org/zh/articles/ai-competency-framework-teachers?hub=66370"
+    },
+    {
+      "name": "MCP Registry",
+      "desc": "官方MCP注册目录（收录不代表安全审计）",
+      "url": "https://registry.modelcontextprotocol.io/"
+    },
+    {
+      "name": "Agent Skills 标准",
+      "desc": "可移植技能标准",
+      "url": "https://agentskills.io/"
+    },
+    {
+      "name": "Siemens Industrial AI",
+      "desc": "工业AI产品及方向",
+      "url": "https://www.siemens.com/en-us/company/artificial-intelligence/"
+    },
+    {
+      "name": "Autodesk Forma AI",
+      "desc": "建筑工程AI场景",
+      "url": "https://construction.autodesk.com.au/workflows/artificial-intelligence-construction/"
+    },
+    {
+      "name": "Microsoft Copilot Studio Docs",
+      "desc": "企业Agent设计、发布与治理",
+      "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/"
+    },
+    {
+      "name": "Thomson Reuters专业服务调查",
+      "desc": "法律、税务和审计的AI采用",
+      "url": "https://www.thomsonreuters.com/"
+    },
+    {
+      "name": "Abridge",
+      "desc": "临床文书产品官方资料",
+      "url": "https://www.abridge.com/"
+    },
+    {
+      "name": "YIFALIN AI Capability Atlas",
+      "desc": "已有5,000条目录索引与研究档案",
+      "url": "https://github.com/xuanyiting68-hash/awesome-ai-capability-atlas-yifalin"
+    }
+  ]
+}

@@ -1,0 +1,5745 @@
+{
+  "as_of": "2026-11-01",
+  "nodes": [
+    {
+      "id": "s01",
+      "type": "industry",
+      "name": "银行与金融服务"
+    },
+    {
+      "id": "s02",
+      "type": "industry",
+      "name": "证券与资管"
+    },
+    {
+      "id": "s03",
+      "type": "industry",
+      "name": "保险"
+    },
+    {
+      "id": "s04",
+      "type": "industry",
+      "name": "医疗服务"
+    },
+    {
+      "id": "s05",
+      "type": "industry",
+      "name": "制药与生物科技"
+    },
+    {
+      "id": "s06",
+      "type": "industry",
+      "name": "基础教育"
+    },
+    {
+      "id": "s07",
+      "type": "industry",
+      "name": "高等教育与科研"
+    },
+    {
+      "id": "s08",
+      "type": "industry",
+      "name": "职业培训与企业学习"
+    },
+    {
+      "id": "s09",
+      "type": "industry",
+      "name": "工业制造"
+    },
+    {
+      "id": "s10",
+      "type": "industry",
+      "name": "汽车与零部件"
+    },
+    {
+      "id": "s11",
+      "type": "industry",
+      "name": "建筑工程与设计"
+    },
+    {
+      "id": "s12",
+      "type": "industry",
+      "name": "房地产与物业"
+    },
+    {
+      "id": "s13",
+      "type": "industry",
+      "name": "零售与连锁门店"
+    },
+    {
+      "id": "s14",
+      "type": "industry",
+      "name": "电商与跨境贸易"
+    },
+    {
+      "id": "s15",
+      "type": "industry",
+      "name": "物流与仓储"
+    },
+    {
+      "id": "s16",
+      "type": "industry",
+      "name": "交通运输与出行"
+    },
+    {
+      "id": "s17",
+      "type": "industry",
+      "name": "农业与种植"
+    },
+    {
+      "id": "s18",
+      "type": "industry",
+      "name": "能源与电力"
+    },
+    {
+      "id": "s19",
+      "type": "industry",
+      "name": "矿业与材料"
+    },
+    {
+      "id": "s20",
+      "type": "industry",
+      "name": "环境与可持续发展"
+    },
+    {
+      "id": "s21",
+      "type": "industry",
+      "name": "法律服务"
+    },
+    {
+      "id": "s22",
+      "type": "industry",
+      "name": "会计税务与审计"
+    },
+    {
+      "id": "s23",
+      "type": "industry",
+      "name": "人力资源与招聘"
+    },
+    {
+      "id": "s24",
+      "type": "industry",
+      "name": "咨询与企业管理"
+    },
+    {
+      "id": "s25",
+      "type": "industry",
+      "name": "政府与公共服务"
+    },
+    {
+      "id": "s26",
+      "type": "industry",
+      "name": "媒体新闻与出版"
+    },
+    {
+      "id": "s27",
+      "type": "industry",
+      "name": "广告营销与品牌"
+    },
+    {
+      "id": "s28",
+      "type": "industry",
+      "name": "影视游戏与内容创作"
+    },
+    {
+      "id": "s29",
+      "type": "industry",
+      "name": "餐饮酒店与旅游"
+    },
+    {
+      "id": "s30",
+      "type": "industry",
+      "name": "IT 软件与网络安全"
+    },
+    {
+      "id": "s31",
+      "type": "industry",
+      "name": "电信与互联网服务"
+    },
+    {
+      "id": "s32",
+      "type": "industry",
+      "name": "中小微企业与个体经营"
+    },
+    {
+      "id": "t001",
+      "type": "tool",
+      "name": "ChatGPT",
+      "url": "https://chatgpt.com/"
+    },
+    {
+      "id": "t002",
+      "type": "tool",
+      "name": "Claude",
+      "url": "https://claude.ai/"
+    },
+    {
+      "id": "t003",
+      "type": "tool",
+      "name": "Gemini",
+      "url": "https://gemini.google.com/"
+    },
+    {
+      "id": "t004",
+      "type": "tool",
+      "name": "DeepSeek",
+      "url": "https://www.deepseek.com/"
+    },
+    {
+      "id": "t005",
+      "type": "tool",
+      "name": "Kimi",
+      "url": "https://www.kimi.com/"
+    },
+    {
+      "id": "t006",
+      "type": "tool",
+      "name": "豆包",
+      "url": "https://www.doubao.com/"
+    },
+    {
+      "id": "t007",
+      "type": "tool",
+      "name": "通义",
+      "url": "https://tongyi.aliyun.com/"
+    },
+    {
+      "id": "t008",
+      "type": "tool",
+      "name": "Perplexity",
+      "url": "https://www.perplexity.ai/"
+    },
+    {
+      "id": "t009",
+      "type": "tool",
+      "name": "Microsoft 365 Copilot",
+      "url": "https://www.microsoft.com/en-us/microsoft-365/copilot"
+    },
+    {
+      "id": "t010",
+      "type": "tool",
+      "name": "Google Workspace Gemini",
+      "url": "https://workspace.google.com/solutions/ai/"
+    },
+    {
+      "id": "t011",
+      "type": "tool",
+      "name": "NotebookLM",
+      "url": "https://notebooklm.google.com/"
+    },
+    {
+      "id": "t012",
+      "type": "tool",
+      "name": "Dify",
+      "url": "https://dify.ai/"
+    },
+    {
+      "id": "t013",
+      "type": "tool",
+      "name": "RAGFlow",
+      "url": "https://github.com/infiniflow/ragflow"
+    },
+    {
+      "id": "t014",
+      "type": "tool",
+      "name": "LlamaIndex",
+      "url": "https://www.llamaindex.ai/"
+    },
+    {
+      "id": "t015",
+      "type": "tool",
+      "name": "AnythingLLM",
+      "url": "https://anythingllm.com/"
+    },
+    {
+      "id": "t016",
+      "type": "tool",
+      "name": "Glean",
+      "url": "https://www.glean.com/"
+    },
+    {
+      "id": "t017",
+      "type": "tool",
+      "name": "Notion AI",
+      "url": "https://www.notion.so/product/ai"
+    },
+    {
+      "id": "t018",
+      "type": "tool",
+      "name": "飞书",
+      "url": "https://www.feishu.cn/"
+    },
+    {
+      "id": "t019",
+      "type": "tool",
+      "name": "n8n",
+      "url": "https://n8n.io/"
+    },
+    {
+      "id": "t020",
+      "type": "tool",
+      "name": "Make",
+      "url": "https://www.make.com/"
+    },
+    {
+      "id": "t021",
+      "type": "tool",
+      "name": "Zapier",
+      "url": "https://zapier.com/"
+    },
+    {
+      "id": "t022",
+      "type": "tool",
+      "name": "Activepieces",
+      "url": "https://www.activepieces.com/"
+    },
+    {
+      "id": "t023",
+      "type": "tool",
+      "name": "Power Automate",
+      "url": "https://www.microsoft.com/en-us/power-platform/products/power-automate"
+    },
+    {
+      "id": "t024",
+      "type": "tool",
+      "name": "Copilot Studio",
+      "url": "https://www.microsoft.com/en-us/microsoft-copilot/microsoft-copilot-studio"
+    },
+    {
+      "id": "t025",
+      "type": "tool",
+      "name": "LangGraph",
+      "url": "https://www.langchain.com/langgraph"
+    },
+    {
+      "id": "t026",
+      "type": "tool",
+      "name": "CrewAI",
+      "url": "https://www.crewai.com/"
+    },
+    {
+      "id": "t027",
+      "type": "tool",
+      "name": "AutoGen",
+      "url": "https://github.com/microsoft/autogen"
+    },
+    {
+      "id": "t028",
+      "type": "tool",
+      "name": "Flowise",
+      "url": "https://flowiseai.com/"
+    },
+    {
+      "id": "t029",
+      "type": "tool",
+      "name": "扣子 Coze",
+      "url": "https://www.coze.cn/"
+    },
+    {
+      "id": "t030",
+      "type": "tool",
+      "name": "OpenAI Agents SDK",
+      "url": "https://openai.github.io/openai-agents-python/"
+    },
+    {
+      "id": "t031",
+      "type": "tool",
+      "name": "Agent Skills 标准",
+      "url": "https://agentskills.io/"
+    },
+    {
+      "id": "t032",
+      "type": "tool",
+      "name": "Anthropic Skills",
+      "url": "https://github.com/anthropics/skills"
+    },
+    {
+      "id": "t033",
+      "type": "tool",
+      "name": "OpenAI Skills",
+      "url": "https://github.com/openai/skills"
+    },
+    {
+      "id": "t034",
+      "type": "tool",
+      "name": "n8n 官方 Skills",
+      "url": "https://github.com/n8n-io/skills"
+    },
+    {
+      "id": "t035",
+      "type": "tool",
+      "name": "MCP Registry",
+      "url": "https://registry.modelcontextprotocol.io/"
+    },
+    {
+      "id": "t036",
+      "type": "tool",
+      "name": "Dify Marketplace",
+      "url": "https://marketplace.dify.ai/"
+    },
+    {
+      "id": "t037",
+      "type": "tool",
+      "name": "Hugging Face",
+      "url": "https://huggingface.co/"
+    },
+    {
+      "id": "t038",
+      "type": "tool",
+      "name": "Kaggle",
+      "url": "https://www.kaggle.com/"
+    },
+    {
+      "id": "t039",
+      "type": "tool",
+      "name": "Docling",
+      "url": "https://github.com/docling-project/docling"
+    },
+    {
+      "id": "t040",
+      "type": "tool",
+      "name": "MarkItDown",
+      "url": "https://github.com/microsoft/markitdown"
+    },
+    {
+      "id": "t041",
+      "type": "tool",
+      "name": "Unstructured",
+      "url": "https://unstructured.io/"
+    },
+    {
+      "id": "t042",
+      "type": "tool",
+      "name": "Firecrawl",
+      "url": "https://www.firecrawl.dev/"
+    },
+    {
+      "id": "t043",
+      "type": "tool",
+      "name": "Elicit",
+      "url": "https://elicit.com/"
+    },
+    {
+      "id": "t044",
+      "type": "tool",
+      "name": "Consensus",
+      "url": "https://consensus.app/"
+    },
+    {
+      "id": "t045",
+      "type": "tool",
+      "name": "Semantic Scholar",
+      "url": "https://www.semanticscholar.org/"
+    },
+    {
+      "id": "t046",
+      "type": "tool",
+      "name": "Cursor",
+      "url": "https://cursor.com/"
+    },
+    {
+      "id": "t047",
+      "type": "tool",
+      "name": "GitHub Copilot",
+      "url": "https://github.com/features/copilot"
+    },
+    {
+      "id": "t048",
+      "type": "tool",
+      "name": "OpenAI Codex",
+      "url": "https://openai.com/codex/"
+    },
+    {
+      "id": "t049",
+      "type": "tool",
+      "name": "Claude Code",
+      "url": "https://www.anthropic.com/claude-code"
+    },
+    {
+      "id": "t050",
+      "type": "tool",
+      "name": "Replit Agent",
+      "url": "https://replit.com/"
+    },
+    {
+      "id": "t051",
+      "type": "tool",
+      "name": "Lovable",
+      "url": "https://lovable.dev/"
+    },
+    {
+      "id": "t052",
+      "type": "tool",
+      "name": "Roboflow",
+      "url": "https://roboflow.com/"
+    },
+    {
+      "id": "t053",
+      "type": "tool",
+      "name": "LandingAI",
+      "url": "https://landing.ai/"
+    },
+    {
+      "id": "t054",
+      "type": "tool",
+      "name": "Siemens Industrial AI",
+      "url": "https://www.siemens.com/en-us/company/artificial-intelligence/"
+    },
+    {
+      "id": "t055",
+      "type": "tool",
+      "name": "Autodesk Fusion",
+      "url": "https://www.autodesk.com/products/fusion-360/overview"
+    },
+    {
+      "id": "t056",
+      "type": "tool",
+      "name": "Autodesk Forma",
+      "url": "https://www.autodesk.com/products/forma/overview"
+    },
+    {
+      "id": "t057",
+      "type": "tool",
+      "name": "OpenSpace",
+      "url": "https://www.openspace.ai/"
+    },
+    {
+      "id": "t058",
+      "type": "tool",
+      "name": "NVIDIA Omniverse",
+      "url": "https://www.nvidia.com/en-us/omniverse/"
+    },
+    {
+      "id": "t059",
+      "type": "tool",
+      "name": "Plantix",
+      "url": "https://plantix.net/"
+    },
+    {
+      "id": "t060",
+      "type": "tool",
+      "name": "EOSDA Crop Monitoring",
+      "url": "https://eos.com/crop-monitoring/"
+    },
+    {
+      "id": "t061",
+      "type": "tool",
+      "name": "Google Earth Engine",
+      "url": "https://earthengine.google.com/"
+    },
+    {
+      "id": "t062",
+      "type": "tool",
+      "name": "Esri GeoAI",
+      "url": "https://www.esri.com/en-us/arcgis/products/arcgis/geoai"
+    },
+    {
+      "id": "t063",
+      "type": "tool",
+      "name": "Abridge",
+      "url": "https://www.abridge.com/"
+    },
+    {
+      "id": "t064",
+      "type": "tool",
+      "name": "Nabla",
+      "url": "https://www.nabla.com/"
+    },
+    {
+      "id": "t065",
+      "type": "tool",
+      "name": "Microsoft Dragon Copilot",
+      "url": "https://learn.microsoft.com/en-us/industry/healthcare/dragon-copilot/about/"
+    },
+    {
+      "id": "t066",
+      "type": "tool",
+      "name": "Khanmigo",
+      "url": "https://www.khanacademy.org/khan-labs"
+    },
+    {
+      "id": "t067",
+      "type": "tool",
+      "name": "MagicSchool",
+      "url": "https://www.magicschool.ai/"
+    },
+    {
+      "id": "t068",
+      "type": "tool",
+      "name": "Brisk Teaching",
+      "url": "https://www.briskteaching.com/"
+    },
+    {
+      "id": "t069",
+      "type": "tool",
+      "name": "Harvey",
+      "url": "https://www.harvey.ai/"
+    },
+    {
+      "id": "t070",
+      "type": "tool",
+      "name": "Thomson Reuters CoCounsel",
+      "url": "https://www.thomsonreuters.com/"
+    },
+    {
+      "id": "t071",
+      "type": "tool",
+      "name": "Qlib",
+      "url": "https://github.com/microsoft/qlib"
+    },
+    {
+      "id": "t072",
+      "type": "tool",
+      "name": "OpenBB",
+      "url": "https://openbb.co/"
+    },
+    {
+      "id": "t073",
+      "type": "tool",
+      "name": "FinGPT",
+      "url": "https://github.com/AI4Finance-Foundation/FinGPT"
+    },
+    {
+      "id": "t074",
+      "type": "tool",
+      "name": "Salesforce Agentforce",
+      "url": "https://www.salesforce.com/agentforce/"
+    },
+    {
+      "id": "t075",
+      "type": "tool",
+      "name": "HubSpot Breeze",
+      "url": "https://www.hubspot.com/products/artificial-intelligence"
+    },
+    {
+      "id": "t076",
+      "type": "tool",
+      "name": "Intercom Fin",
+      "url": "https://www.intercom.com/fin"
+    },
+    {
+      "id": "t077",
+      "type": "tool",
+      "name": "Zendesk AI",
+      "url": "https://www.zendesk.com/ai/"
+    },
+    {
+      "id": "t078",
+      "type": "tool",
+      "name": "Shopify Magic",
+      "url": "https://www.shopify.com/magic"
+    },
+    {
+      "id": "t079",
+      "type": "tool",
+      "name": "Chatwoot",
+      "url": "https://www.chatwoot.com/"
+    },
+    {
+      "id": "t080",
+      "type": "tool",
+      "name": "Twenty CRM",
+      "url": "https://twenty.com/"
+    },
+    {
+      "id": "t081",
+      "type": "tool",
+      "name": "Clay",
+      "url": "https://www.clay.com/"
+    },
+    {
+      "id": "t082",
+      "type": "tool",
+      "name": "Canva Magic Studio",
+      "url": "https://www.canva.com/magic-studio/"
+    },
+    {
+      "id": "t083",
+      "type": "tool",
+      "name": "Adobe Firefly",
+      "url": "https://firefly.adobe.com/"
+    },
+    {
+      "id": "t084",
+      "type": "tool",
+      "name": "Runway",
+      "url": "https://runwayml.com/"
+    },
+    {
+      "id": "t085",
+      "type": "tool",
+      "name": "CapCut 剪映",
+      "url": "https://www.capcut.com/"
+    },
+    {
+      "id": "t086",
+      "type": "tool",
+      "name": "ElevenLabs",
+      "url": "https://elevenlabs.io/"
+    },
+    {
+      "id": "t087",
+      "type": "tool",
+      "name": "HeyGen",
+      "url": "https://www.heygen.com/"
+    },
+    {
+      "id": "t088",
+      "type": "tool",
+      "name": "Gamma",
+      "url": "https://gamma.app/"
+    },
+    {
+      "id": "t089",
+      "type": "tool",
+      "name": "Figma AI",
+      "url": "https://www.figma.com/ai/"
+    },
+    {
+      "id": "t090",
+      "type": "tool",
+      "name": "DeepL",
+      "url": "https://www.deepl.com/"
+    },
+    {
+      "id": "t091",
+      "type": "tool",
+      "name": "Otter.ai",
+      "url": "https://otter.ai/"
+    },
+    {
+      "id": "t092",
+      "type": "tool",
+      "name": "Fireflies.ai",
+      "url": "https://fireflies.ai/"
+    },
+    {
+      "id": "t093",
+      "type": "tool",
+      "name": "Dataiku",
+      "url": "https://www.dataiku.com/"
+    },
+    {
+      "id": "t094",
+      "type": "tool",
+      "name": "Databricks",
+      "url": "https://www.databricks.com/"
+    },
+    {
+      "id": "t095",
+      "type": "tool",
+      "name": "Snowflake Cortex",
+      "url": "https://www.snowflake.com/"
+    },
+    {
+      "id": "t096",
+      "type": "tool",
+      "name": "PostHog",
+      "url": "https://posthog.com/"
+    },
+    {
+      "id": "t097",
+      "type": "tool",
+      "name": "Power BI",
+      "url": "https://www.microsoft.com/en-us/power-platform/products/power-bi"
+    },
+    {
+      "id": "t098",
+      "type": "tool",
+      "name": "Tableau",
+      "url": "https://www.tableau.com/"
+    },
+    {
+      "id": "t099",
+      "type": "tool",
+      "name": "UiPath",
+      "url": "https://www.uipath.com/"
+    },
+    {
+      "id": "t100",
+      "type": "tool",
+      "name": "SAP Business AI",
+      "url": "https://www.sap.com/products/artificial-intelligence.html"
+    },
+    {
+      "id": "t101",
+      "type": "tool",
+      "name": "ServiceNow Now Assist",
+      "url": "https://www.servicenow.com/products/now-assist.html"
+    },
+    {
+      "id": "t102",
+      "type": "tool",
+      "name": "Workday AI",
+      "url": "https://www.workday.com/"
+    },
+    {
+      "id": "t103",
+      "type": "tool",
+      "name": "Promptfoo",
+      "url": "https://www.promptfoo.dev/"
+    },
+    {
+      "id": "t104",
+      "type": "tool",
+      "name": "DeepEval",
+      "url": "https://github.com/confident-ai/deepeval"
+    },
+    {
+      "id": "t105",
+      "type": "tool",
+      "name": "Langfuse",
+      "url": "https://langfuse.com/"
+    },
+    {
+      "id": "t106",
+      "type": "tool",
+      "name": "Arize Phoenix",
+      "url": "https://phoenix.arize.com/"
+    },
+    {
+      "id": "t107",
+      "type": "tool",
+      "name": "OWASP GenAI Security",
+      "url": "https://genai.owasp.org/"
+    },
+    {
+      "id": "t108",
+      "type": "tool",
+      "name": "NIST AI RMF",
+      "url": "https://www.nist.gov/itl/ai-risk-management-framework"
+    },
+    {
+      "id": "t109",
+      "type": "tool",
+      "name": "IBM Maximo",
+      "url": "https://www.ibm.com/products/maximo"
+    },
+    {
+      "id": "t110",
+      "type": "tool",
+      "name": "o9 Solutions",
+      "url": "https://o9solutions.com/solutions/supply-chain-planning"
+    },
+    {
+      "id": "t111",
+      "type": "tool",
+      "name": "MindBridge",
+      "url": "https://www.mindbridge.ai/"
+    },
+    {
+      "id": "t112",
+      "type": "tool",
+      "name": "Esri ArcGIS",
+      "url": "https://www.esri.com/en-us/arcgis/geospatial-platform/overview"
+    },
+    {
+      "id": "t113",
+      "type": "tool",
+      "name": "Palantir AIP",
+      "url": "https://www.palantir.com/platforms/aip"
+    },
+    {
+      "id": "t114",
+      "type": "tool",
+      "name": "V7 Go",
+      "url": "https://www.v7labs.com/go"
+    },
+    {
+      "id": "knowledge",
+      "type": "scenario",
+      "name": "知识库与RAG"
+    },
+    {
+      "id": "research",
+      "type": "scenario",
+      "name": "研究与信息检索"
+    },
+    {
+      "id": "analytics",
+      "type": "scenario",
+      "name": "数据分析"
+    },
+    {
+      "id": "risk",
+      "type": "scenario",
+      "name": "风控与审计"
+    },
+    {
+      "id": "support",
+      "type": "scenario",
+      "name": "客服与服务"
+    },
+    {
+      "id": "sales",
+      "type": "scenario",
+      "name": "销售与获客"
+    },
+    {
+      "id": "content",
+      "type": "scenario",
+      "name": "营销与内容"
+    },
+    {
+      "id": "documents",
+      "type": "scenario",
+      "name": "文档与OCR"
+    },
+    {
+      "id": "automation",
+      "type": "scenario",
+      "name": "工作流自动化"
+    },
+    {
+      "id": "learning",
+      "type": "scenario",
+      "name": "学习培训"
+    },
+    {
+      "id": "clinical",
+      "type": "scenario",
+      "name": "临床文书支持"
+    },
+    {
+      "id": "forecast",
+      "type": "scenario",
+      "name": "预测与优化"
+    },
+    {
+      "id": "maintenance",
+      "type": "scenario",
+      "name": "设备运维"
+    },
+    {
+      "id": "vision",
+      "type": "scenario",
+      "name": "计算机视觉"
+    },
+    {
+      "id": "design",
+      "type": "scenario",
+      "name": "设计与创意"
+    },
+    {
+      "id": "supply",
+      "type": "scenario",
+      "name": "供应链与采购"
+    },
+    {
+      "id": "legal",
+      "type": "scenario",
+      "name": "法规与法律检索"
+    },
+    {
+      "id": "hr",
+      "type": "scenario",
+      "name": "人力与招聘"
+    },
+    {
+      "id": "coding",
+      "type": "scenario",
+      "name": "软件研发"
+    },
+    {
+      "id": "security",
+      "type": "scenario",
+      "name": "安全与治理"
+    },
+    {
+      "id": "meeting",
+      "type": "scenario",
+      "name": "会议与协作"
+    },
+    {
+      "id": "simulation",
+      "type": "scenario",
+      "name": "数字孪生与仿真"
+    },
+    {
+      "id": "geo",
+      "type": "scenario",
+      "name": "遥感与空间数据"
+    },
+    {
+      "id": "role-001",
+      "type": "role",
+      "name": "银行经理"
+    },
+    {
+      "id": "role-002",
+      "type": "role",
+      "name": "投研"
+    },
+    {
+      "id": "role-003",
+      "type": "role",
+      "name": "风控"
+    },
+    {
+      "id": "role-004",
+      "type": "role",
+      "name": "运营"
+    },
+    {
+      "id": "role-005",
+      "type": "role",
+      "name": "量化分析师"
+    },
+    {
+      "id": "role-006",
+      "type": "role",
+      "name": "基金经理"
+    },
+    {
+      "id": "role-007",
+      "type": "role",
+      "name": "交易员"
+    },
+    {
+      "id": "role-008",
+      "type": "role",
+      "name": "核保"
+    },
+    {
+      "id": "role-009",
+      "type": "role",
+      "name": "理赔"
+    },
+    {
+      "id": "role-010",
+      "type": "role",
+      "name": "精算"
+    },
+    {
+      "id": "role-011",
+      "type": "role",
+      "name": "客服"
+    },
+    {
+      "id": "role-012",
+      "type": "role",
+      "name": "医生"
+    },
+    {
+      "id": "role-013",
+      "type": "role",
+      "name": "护士"
+    },
+    {
+      "id": "role-014",
+      "type": "role",
+      "name": "医院运营"
+    },
+    {
+      "id": "role-015",
+      "type": "role",
+      "name": "药物研发"
+    },
+    {
+      "id": "role-016",
+      "type": "role",
+      "name": "临床试验"
+    },
+    {
+      "id": "role-017",
+      "type": "role",
+      "name": "法规事务"
+    },
+    {
+      "id": "role-018",
+      "type": "role",
+      "name": "教师"
+    },
+    {
+      "id": "role-019",
+      "type": "role",
+      "name": "教研员"
+    },
+    {
+      "id": "role-020",
+      "type": "role",
+      "name": "校长"
+    },
+    {
+      "id": "role-021",
+      "type": "role",
+      "name": "教授"
+    },
+    {
+      "id": "role-022",
+      "type": "role",
+      "name": "研究助理"
+    },
+    {
+      "id": "role-023",
+      "type": "role",
+      "name": "学生"
+    },
+    {
+      "id": "role-024",
+      "type": "role",
+      "name": "培训经理"
+    },
+    {
+      "id": "role-025",
+      "type": "role",
+      "name": "讲师"
+    },
+    {
+      "id": "role-026",
+      "type": "role",
+      "name": "HRBP"
+    },
+    {
+      "id": "role-027",
+      "type": "role",
+      "name": "工厂经理"
+    },
+    {
+      "id": "role-028",
+      "type": "role",
+      "name": "工艺工程师"
+    },
+    {
+      "id": "role-029",
+      "type": "role",
+      "name": "质检员"
+    },
+    {
+      "id": "role-030",
+      "type": "role",
+      "name": "研发"
+    },
+    {
+      "id": "role-031",
+      "type": "role",
+      "name": "生产"
+    },
+    {
+      "id": "role-032",
+      "type": "role",
+      "name": "售后"
+    },
+    {
+      "id": "role-033",
+      "type": "role",
+      "name": "建筑师"
+    },
+    {
+      "id": "role-034",
+      "type": "role",
+      "name": "施工经理"
+    },
+    {
+      "id": "role-035",
+      "type": "role",
+      "name": "造价师"
+    },
+    {
+      "id": "role-036",
+      "type": "role",
+      "name": "经纪人"
+    },
+    {
+      "id": "role-037",
+      "type": "role",
+      "name": "物业经理"
+    },
+    {
+      "id": "role-038",
+      "type": "role",
+      "name": "资产运营"
+    },
+    {
+      "id": "role-039",
+      "type": "role",
+      "name": "店长"
+    },
+    {
+      "id": "role-040",
+      "type": "role",
+      "name": "品类经理"
+    },
+    {
+      "id": "role-041",
+      "type": "role",
+      "name": "门店运营"
+    },
+    {
+      "id": "role-042",
+      "type": "role",
+      "name": "电商运营"
+    },
+    {
+      "id": "role-043",
+      "type": "role",
+      "name": "卖家"
+    },
+    {
+      "id": "role-044",
+      "type": "role",
+      "name": "客服"
+    },
+    {
+      "id": "role-045",
+      "type": "role",
+      "name": "运输经理"
+    },
+    {
+      "id": "role-046",
+      "type": "role",
+      "name": "仓储规划师"
+    },
+    {
+      "id": "role-047",
+      "type": "role",
+      "name": "调度"
+    },
+    {
+      "id": "role-048",
+      "type": "role",
+      "name": "交通规划师"
+    },
+    {
+      "id": "role-049",
+      "type": "role",
+      "name": "车队经理"
+    },
+    {
+      "id": "role-050",
+      "type": "role",
+      "name": "司机"
+    },
+    {
+      "id": "role-051",
+      "type": "role",
+      "name": "农场主"
+    },
+    {
+      "id": "role-052",
+      "type": "role",
+      "name": "农艺师"
+    },
+    {
+      "id": "role-053",
+      "type": "role",
+      "name": "合作社"
+    },
+    {
+      "id": "role-054",
+      "type": "role",
+      "name": "能源分析师"
+    },
+    {
+      "id": "role-055",
+      "type": "role",
+      "name": "电网运营"
+    },
+    {
+      "id": "role-056",
+      "type": "role",
+      "name": "设备经理"
+    },
+    {
+      "id": "role-057",
+      "type": "role",
+      "name": "矿业工程师"
+    },
+    {
+      "id": "role-058",
+      "type": "role",
+      "name": "选矿专家"
+    },
+    {
+      "id": "role-059",
+      "type": "role",
+      "name": "现场管理"
+    },
+    {
+      "id": "role-060",
+      "type": "role",
+      "name": "ESG 分析师"
+    },
+    {
+      "id": "role-061",
+      "type": "role",
+      "name": "环境工程师"
+    },
+    {
+      "id": "role-062",
+      "type": "role",
+      "name": "律师"
+    },
+    {
+      "id": "role-063",
+      "type": "role",
+      "name": "法务"
+    },
+    {
+      "id": "role-064",
+      "type": "role",
+      "name": "合规官"
+    },
+    {
+      "id": "role-065",
+      "type": "role",
+      "name": "会计师"
+    },
+    {
+      "id": "role-066",
+      "type": "role",
+      "name": "审计师"
+    },
+    {
+      "id": "role-067",
+      "type": "role",
+      "name": "财务主管"
+    },
+    {
+      "id": "role-068",
+      "type": "role",
+      "name": "招聘经理"
+    },
+    {
+      "id": "role-069",
+      "type": "role",
+      "name": "HRBP"
+    },
+    {
+      "id": "role-070",
+      "type": "role",
+      "name": "人才发展"
+    },
+    {
+      "id": "role-071",
+      "type": "role",
+      "name": "咨询师"
+    },
+    {
+      "id": "role-072",
+      "type": "role",
+      "name": "运营总监"
+    },
+    {
+      "id": "role-073",
+      "type": "role",
+      "name": "战略经理"
+    },
+    {
+      "id": "role-074",
+      "type": "role",
+      "name": "政务办事"
+    },
+    {
+      "id": "role-075",
+      "type": "role",
+      "name": "政策研究"
+    },
+    {
+      "id": "role-076",
+      "type": "role",
+      "name": "公共服务"
+    },
+    {
+      "id": "role-077",
+      "type": "role",
+      "name": "编辑"
+    },
+    {
+      "id": "role-078",
+      "type": "role",
+      "name": "记者"
+    },
+    {
+      "id": "role-079",
+      "type": "role",
+      "name": "出版运营"
+    },
+    {
+      "id": "role-080",
+      "type": "role",
+      "name": "市场经理"
+    },
+    {
+      "id": "role-081",
+      "type": "role",
+      "name": "创意总监"
+    },
+    {
+      "id": "role-082",
+      "type": "role",
+      "name": "投放经理"
+    },
+    {
+      "id": "role-083",
+      "type": "role",
+      "name": "导演"
+    },
+    {
+      "id": "role-084",
+      "type": "role",
+      "name": "设计师"
+    },
+    {
+      "id": "role-085",
+      "type": "role",
+      "name": "游戏策划"
+    },
+    {
+      "id": "role-086",
+      "type": "role",
+      "name": "餐厅经理"
+    },
+    {
+      "id": "role-087",
+      "type": "role",
+      "name": "酒店运营"
+    },
+    {
+      "id": "role-088",
+      "type": "role",
+      "name": "旅行顾问"
+    },
+    {
+      "id": "role-089",
+      "type": "role",
+      "name": "开发者"
+    },
+    {
+      "id": "role-090",
+      "type": "role",
+      "name": "产品经理"
+    },
+    {
+      "id": "role-091",
+      "type": "role",
+      "name": "安全运营"
+    },
+    {
+      "id": "role-092",
+      "type": "role",
+      "name": "网络运维"
+    },
+    {
+      "id": "role-093",
+      "type": "role",
+      "name": "客服"
+    },
+    {
+      "id": "role-094",
+      "type": "role",
+      "name": "产品运营"
+    },
+    {
+      "id": "role-095",
+      "type": "role",
+      "name": "创业者"
+    },
+    {
+      "id": "role-096",
+      "type": "role",
+      "name": "自由职业者"
+    },
+    {
+      "id": "role-097",
+      "type": "role",
+      "name": "个体商户"
+    },
+    {
+      "id": "skill-ai-workflow-diagnosis",
+      "type": "skill-template",
+      "name": "AI 工作流程体检"
+    },
+    {
+      "id": "skill-source-grounded-rag",
+      "type": "skill-template",
+      "name": "有来源的知识库问答"
+    },
+    {
+      "id": "skill-contract-review-draft",
+      "type": "skill-template",
+      "name": "合同条款差异初审"
+    },
+    {
+      "id": "skill-clinical-document-draft",
+      "type": "skill-template",
+      "name": "临床记录草稿检查"
+    },
+    {
+      "id": "skill-lesson-design-review",
+      "type": "skill-template",
+      "name": "差异化课程设计"
+    },
+    {
+      "id": "skill-research-evidence-map",
+      "type": "skill-template",
+      "name": "研究证据矩阵"
+    },
+    {
+      "id": "skill-service-triage",
+      "type": "skill-template",
+      "name": "客服分流与人工升级"
+    },
+    {
+      "id": "skill-consent-lead-triage",
+      "type": "skill-template",
+      "name": "合规线索登记与CRM分流"
+    },
+    {
+      "id": "skill-marketing-test-design",
+      "type": "skill-template",
+      "name": "内容实验与转化测量"
+    },
+    {
+      "id": "skill-predictive-maintenance-pilot",
+      "type": "skill-template",
+      "name": "设备维护异常监测试点"
+    },
+    {
+      "id": "skill-visual-inspection-evaluation",
+      "type": "skill-template",
+      "name": "工业视觉质检评测"
+    },
+    {
+      "id": "skill-ai-pilot-roi-audit",
+      "type": "skill-template",
+      "name": "AI试点成本效益审计"
+    },
+    {
+      "id": "skill-agent-permission-review",
+      "type": "skill-template",
+      "name": "Agent 权限与安全审查"
+    },
+    {
+      "id": "skill-audit-ready-financial-research",
+      "type": "skill-template",
+      "name": "可审计金融研究简报"
+    }
+  ],
+  "edges": [
+    {
+      "source": "s01",
+      "target": "role-001",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s01",
+      "target": "role-002",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s01",
+      "target": "role-003",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s01",
+      "target": "role-004",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s01",
+      "target": "knowledge",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s01",
+      "target": "research",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s01",
+      "target": "analytics",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s01",
+      "target": "risk",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s01",
+      "target": "documents",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s02",
+      "target": "role-005",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s02",
+      "target": "role-006",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s02",
+      "target": "role-007",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s02",
+      "target": "research",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s02",
+      "target": "analytics",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s02",
+      "target": "forecast",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s02",
+      "target": "risk",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s02",
+      "target": "documents",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s03",
+      "target": "role-008",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s03",
+      "target": "role-009",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s03",
+      "target": "role-010",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s03",
+      "target": "role-011",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s03",
+      "target": "documents",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s03",
+      "target": "support",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s03",
+      "target": "risk",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s03",
+      "target": "analytics",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s03",
+      "target": "automation",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s04",
+      "target": "role-012",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s04",
+      "target": "role-013",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s04",
+      "target": "role-014",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s04",
+      "target": "clinical",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s04",
+      "target": "documents",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s04",
+      "target": "knowledge",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s04",
+      "target": "automation",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s04",
+      "target": "research",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s05",
+      "target": "role-015",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s05",
+      "target": "role-016",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s05",
+      "target": "role-017",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s05",
+      "target": "research",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s05",
+      "target": "knowledge",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s05",
+      "target": "documents",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s05",
+      "target": "analytics",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s05",
+      "target": "forecast",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s06",
+      "target": "role-018",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s06",
+      "target": "role-019",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s06",
+      "target": "role-020",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s06",
+      "target": "learning",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s06",
+      "target": "content",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s06",
+      "target": "knowledge",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s06",
+      "target": "analytics",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s06",
+      "target": "documents",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s07",
+      "target": "role-021",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s07",
+      "target": "role-022",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s07",
+      "target": "role-023",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s07",
+      "target": "research",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s07",
+      "target": "learning",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s07",
+      "target": "knowledge",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s07",
+      "target": "analytics",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s07",
+      "target": "coding",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s08",
+      "target": "role-024",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s08",
+      "target": "role-025",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s08",
+      "target": "role-026",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s08",
+      "target": "learning",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s08",
+      "target": "knowledge",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s08",
+      "target": "hr",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s08",
+      "target": "analytics",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s08",
+      "target": "content",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s09",
+      "target": "role-027",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s09",
+      "target": "role-028",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s09",
+      "target": "role-029",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s09",
+      "target": "maintenance",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s09",
+      "target": "vision",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s09",
+      "target": "knowledge",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s09",
+      "target": "forecast",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s09",
+      "target": "simulation",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s10",
+      "target": "role-030",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s10",
+      "target": "role-031",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s10",
+      "target": "role-032",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s10",
+      "target": "design",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s10",
+      "target": "vision",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s10",
+      "target": "maintenance",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s10",
+      "target": "supply",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s10",
+      "target": "simulation",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s11",
+      "target": "role-033",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s11",
+      "target": "role-034",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s11",
+      "target": "role-035",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s11",
+      "target": "documents",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s11",
+      "target": "design",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s11",
+      "target": "vision",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s11",
+      "target": "forecast",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s11",
+      "target": "simulation",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s12",
+      "target": "role-036",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s12",
+      "target": "role-037",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s12",
+      "target": "role-038",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s12",
+      "target": "support",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s12",
+      "target": "knowledge",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s12",
+      "target": "sales",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s12",
+      "target": "maintenance",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s12",
+      "target": "analytics",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s13",
+      "target": "role-039",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s13",
+      "target": "role-040",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s13",
+      "target": "role-041",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s13",
+      "target": "sales",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s13",
+      "target": "content",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s13",
+      "target": "forecast",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s13",
+      "target": "supply",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s13",
+      "target": "analytics",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s14",
+      "target": "role-042",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s14",
+      "target": "role-043",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s14",
+      "target": "role-044",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s14",
+      "target": "content",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s14",
+      "target": "sales",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s14",
+      "target": "support",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s14",
+      "target": "forecast",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s14",
+      "target": "automation",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s15",
+      "target": "role-045",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s15",
+      "target": "role-046",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s15",
+      "target": "role-047",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s15",
+      "target": "supply",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s15",
+      "target": "forecast",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s15",
+      "target": "documents",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s15",
+      "target": "analytics",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s15",
+      "target": "automation",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s16",
+      "target": "role-048",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s16",
+      "target": "role-049",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s16",
+      "target": "role-050",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s16",
+      "target": "forecast",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s16",
+      "target": "maintenance",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s16",
+      "target": "support",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s16",
+      "target": "simulation",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s16",
+      "target": "analytics",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s17",
+      "target": "role-051",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s17",
+      "target": "role-052",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s17",
+      "target": "role-053",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s17",
+      "target": "vision",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s17",
+      "target": "geo",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s17",
+      "target": "forecast",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s17",
+      "target": "knowledge",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s17",
+      "target": "analytics",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s18",
+      "target": "role-054",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s18",
+      "target": "role-055",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s18",
+      "target": "role-056",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s18",
+      "target": "forecast",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s18",
+      "target": "maintenance",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s18",
+      "target": "simulation",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s18",
+      "target": "analytics",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s18",
+      "target": "knowledge",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s19",
+      "target": "role-057",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s19",
+      "target": "role-058",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s19",
+      "target": "role-059",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s19",
+      "target": "simulation",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s19",
+      "target": "maintenance",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s19",
+      "target": "vision",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s19",
+      "target": "forecast",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s19",
+      "target": "knowledge",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s20",
+      "target": "role-060",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s20",
+      "target": "role-061",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s20",
+      "target": "geo",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s20",
+      "target": "analytics",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s20",
+      "target": "documents",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s20",
+      "target": "forecast",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s20",
+      "target": "research",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s21",
+      "target": "role-062",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s21",
+      "target": "role-063",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s21",
+      "target": "role-064",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s21",
+      "target": "legal",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s21",
+      "target": "documents",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s21",
+      "target": "knowledge",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s21",
+      "target": "research",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s21",
+      "target": "automation",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s22",
+      "target": "role-065",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s22",
+      "target": "role-066",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s22",
+      "target": "role-067",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s22",
+      "target": "documents",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s22",
+      "target": "analytics",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s22",
+      "target": "risk",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s22",
+      "target": "automation",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s22",
+      "target": "legal",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s23",
+      "target": "role-068",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s23",
+      "target": "role-069",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s23",
+      "target": "role-070",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s23",
+      "target": "hr",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s23",
+      "target": "learning",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s23",
+      "target": "knowledge",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s23",
+      "target": "analytics",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s23",
+      "target": "automation",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s24",
+      "target": "role-071",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s24",
+      "target": "role-072",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s24",
+      "target": "role-073",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s24",
+      "target": "research",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s24",
+      "target": "documents",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s24",
+      "target": "analytics",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s24",
+      "target": "knowledge",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s24",
+      "target": "automation",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s25",
+      "target": "role-074",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s25",
+      "target": "role-075",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s25",
+      "target": "role-076",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s25",
+      "target": "knowledge",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s25",
+      "target": "documents",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s25",
+      "target": "support",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s25",
+      "target": "automation",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s25",
+      "target": "legal",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s26",
+      "target": "role-077",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s26",
+      "target": "role-078",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s26",
+      "target": "role-079",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s26",
+      "target": "content",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s26",
+      "target": "research",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s26",
+      "target": "documents",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s26",
+      "target": "design",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s26",
+      "target": "automation",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s27",
+      "target": "role-080",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s27",
+      "target": "role-081",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s27",
+      "target": "role-082",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s27",
+      "target": "content",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s27",
+      "target": "sales",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s27",
+      "target": "design",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s27",
+      "target": "analytics",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s27",
+      "target": "automation",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s28",
+      "target": "role-083",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s28",
+      "target": "role-084",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s28",
+      "target": "role-085",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s28",
+      "target": "design",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s28",
+      "target": "content",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s28",
+      "target": "simulation",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s28",
+      "target": "coding",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s28",
+      "target": "automation",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s29",
+      "target": "role-086",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s29",
+      "target": "role-087",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s29",
+      "target": "role-088",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s29",
+      "target": "support",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s29",
+      "target": "forecast",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s29",
+      "target": "content",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s29",
+      "target": "sales",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s29",
+      "target": "automation",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s30",
+      "target": "role-089",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s30",
+      "target": "role-090",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s30",
+      "target": "role-091",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s30",
+      "target": "coding",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s30",
+      "target": "security",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s30",
+      "target": "automation",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s30",
+      "target": "knowledge",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s30",
+      "target": "analytics",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s31",
+      "target": "role-092",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s31",
+      "target": "role-093",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s31",
+      "target": "role-094",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s31",
+      "target": "maintenance",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s31",
+      "target": "support",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s31",
+      "target": "analytics",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s31",
+      "target": "automation",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s31",
+      "target": "security",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s32",
+      "target": "role-095",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s32",
+      "target": "role-096",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s32",
+      "target": "role-097",
+      "relation": "HAS_ROLE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s32",
+      "target": "content",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s32",
+      "target": "support",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s32",
+      "target": "sales",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s32",
+      "target": "automation",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "s32",
+      "target": "analytics",
+      "relation": "RELEVANT_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t001",
+      "target": "research",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t001",
+      "target": "content",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t001",
+      "target": "documents",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t001",
+      "target": "analytics",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t001",
+      "target": "learning",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t002",
+      "target": "research",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t002",
+      "target": "coding",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t002",
+      "target": "documents",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t002",
+      "target": "content",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t003",
+      "target": "research",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t003",
+      "target": "learning",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t003",
+      "target": "content",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t003",
+      "target": "analytics",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t004",
+      "target": "research",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t004",
+      "target": "coding",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t004",
+      "target": "analytics",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t004",
+      "target": "content",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t005",
+      "target": "research",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t005",
+      "target": "documents",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t005",
+      "target": "content",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t006",
+      "target": "content",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t006",
+      "target": "documents",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t006",
+      "target": "learning",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t007",
+      "target": "research",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t007",
+      "target": "content",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t007",
+      "target": "coding",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t008",
+      "target": "research",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t008",
+      "target": "knowledge",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t009",
+      "target": "documents",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t009",
+      "target": "knowledge",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t009",
+      "target": "analytics",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t009",
+      "target": "meeting",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t010",
+      "target": "documents",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t010",
+      "target": "knowledge",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t010",
+      "target": "content",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t010",
+      "target": "meeting",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t011",
+      "target": "knowledge",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t011",
+      "target": "research",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t011",
+      "target": "learning",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t011",
+      "target": "documents",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t012",
+      "target": "knowledge",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t012",
+      "target": "automation",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t012",
+      "target": "support",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t012",
+      "target": "research",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t013",
+      "target": "knowledge",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t013",
+      "target": "documents",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t013",
+      "target": "research",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t014",
+      "target": "knowledge",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t014",
+      "target": "documents",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t014",
+      "target": "research",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t015",
+      "target": "knowledge",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t015",
+      "target": "documents",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t015",
+      "target": "research",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t016",
+      "target": "knowledge",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t016",
+      "target": "research",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t016",
+      "target": "hr",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t017",
+      "target": "knowledge",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t017",
+      "target": "documents",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t017",
+      "target": "automation",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t018",
+      "target": "knowledge",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t018",
+      "target": "documents",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t018",
+      "target": "automation",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t018",
+      "target": "meeting",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t019",
+      "target": "automation",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t019",
+      "target": "support",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t019",
+      "target": "sales",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t019",
+      "target": "documents",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t020",
+      "target": "automation",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t020",
+      "target": "sales",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t020",
+      "target": "content",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t020",
+      "target": "support",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t021",
+      "target": "automation",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t021",
+      "target": "sales",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t021",
+      "target": "support",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t021",
+      "target": "content",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t022",
+      "target": "automation",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t022",
+      "target": "documents",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t022",
+      "target": "support",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t023",
+      "target": "automation",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t023",
+      "target": "documents",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t023",
+      "target": "analytics",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t024",
+      "target": "automation",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t024",
+      "target": "support",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t024",
+      "target": "knowledge",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t025",
+      "target": "automation",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t025",
+      "target": "research",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t025",
+      "target": "coding",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t026",
+      "target": "automation",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t026",
+      "target": "research",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t026",
+      "target": "documents",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t027",
+      "target": "automation",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t027",
+      "target": "coding",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t027",
+      "target": "research",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t028",
+      "target": "knowledge",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t028",
+      "target": "automation",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t028",
+      "target": "support",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t029",
+      "target": "automation",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t029",
+      "target": "support",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t029",
+      "target": "knowledge",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t029",
+      "target": "content",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t030",
+      "target": "automation",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t030",
+      "target": "coding",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t030",
+      "target": "research",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t031",
+      "target": "automation",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t031",
+      "target": "coding",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t031",
+      "target": "knowledge",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t032",
+      "target": "automation",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t032",
+      "target": "coding",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t032",
+      "target": "documents",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t033",
+      "target": "automation",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t033",
+      "target": "coding",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t033",
+      "target": "documents",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t034",
+      "target": "automation",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t034",
+      "target": "coding",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t035",
+      "target": "automation",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t035",
+      "target": "knowledge",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t035",
+      "target": "coding",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t036",
+      "target": "automation",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t036",
+      "target": "knowledge",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t036",
+      "target": "support",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t037",
+      "target": "research",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t037",
+      "target": "coding",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t037",
+      "target": "vision",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t038",
+      "target": "analytics",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t038",
+      "target": "forecast",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t038",
+      "target": "research",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t039",
+      "target": "documents",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t039",
+      "target": "knowledge",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t039",
+      "target": "research",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t040",
+      "target": "documents",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t040",
+      "target": "knowledge",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t041",
+      "target": "documents",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t041",
+      "target": "knowledge",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t042",
+      "target": "research",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t042",
+      "target": "documents",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t042",
+      "target": "knowledge",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t043",
+      "target": "research",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t043",
+      "target": "knowledge",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t043",
+      "target": "s07",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t043",
+      "target": "s05",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t044",
+      "target": "research",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t044",
+      "target": "knowledge",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t044",
+      "target": "s07",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t044",
+      "target": "s04",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t045",
+      "target": "research",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t045",
+      "target": "knowledge",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t045",
+      "target": "s07",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t045",
+      "target": "s05",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t046",
+      "target": "coding",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t046",
+      "target": "automation",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t046",
+      "target": "s30",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t046",
+      "target": "s07",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t047",
+      "target": "coding",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t047",
+      "target": "automation",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t047",
+      "target": "s30",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t048",
+      "target": "coding",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t048",
+      "target": "automation",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t048",
+      "target": "s30",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t049",
+      "target": "coding",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t049",
+      "target": "automation",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t049",
+      "target": "s30",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t050",
+      "target": "coding",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t050",
+      "target": "automation",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t050",
+      "target": "s30",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t050",
+      "target": "s32",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t051",
+      "target": "coding",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t051",
+      "target": "design",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t051",
+      "target": "s32",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t051",
+      "target": "s30",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t052",
+      "target": "vision",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t052",
+      "target": "analytics",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t052",
+      "target": "s09",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t052",
+      "target": "s17",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t052",
+      "target": "s10",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t053",
+      "target": "vision",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t053",
+      "target": "documents",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t053",
+      "target": "s09",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t053",
+      "target": "s11",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t054",
+      "target": "maintenance",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t054",
+      "target": "simulation",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t054",
+      "target": "forecast",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t054",
+      "target": "s09",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t054",
+      "target": "s18",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t054",
+      "target": "s19",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t055",
+      "target": "design",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t055",
+      "target": "simulation",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t055",
+      "target": "s09",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t055",
+      "target": "s10",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t056",
+      "target": "design",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t056",
+      "target": "simulation",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t056",
+      "target": "documents",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t056",
+      "target": "s11",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t057",
+      "target": "vision",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t057",
+      "target": "simulation",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t057",
+      "target": "s11",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t057",
+      "target": "s12",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t058",
+      "target": "simulation",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t058",
+      "target": "design",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t058",
+      "target": "s09",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t058",
+      "target": "s10",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t058",
+      "target": "s28",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t059",
+      "target": "vision",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t059",
+      "target": "knowledge",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t059",
+      "target": "s17",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t060",
+      "target": "geo",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t060",
+      "target": "forecast",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t060",
+      "target": "s17",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t060",
+      "target": "s20",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t061",
+      "target": "geo",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t061",
+      "target": "analytics",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t061",
+      "target": "s17",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t061",
+      "target": "s20",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t061",
+      "target": "s18",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t062",
+      "target": "geo",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t062",
+      "target": "forecast",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t062",
+      "target": "s20",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t062",
+      "target": "s25",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t063",
+      "target": "clinical",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t063",
+      "target": "documents",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t063",
+      "target": "s04",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t064",
+      "target": "clinical",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t064",
+      "target": "documents",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t064",
+      "target": "s04",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t065",
+      "target": "clinical",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t065",
+      "target": "documents",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t065",
+      "target": "s04",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t066",
+      "target": "learning",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t066",
+      "target": "knowledge",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t066",
+      "target": "s06",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t066",
+      "target": "s08",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t067",
+      "target": "learning",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t067",
+      "target": "content",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t067",
+      "target": "s06",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t068",
+      "target": "learning",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t068",
+      "target": "content",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t068",
+      "target": "s06",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t069",
+      "target": "legal",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t069",
+      "target": "documents",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t069",
+      "target": "research",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t069",
+      "target": "s21",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t070",
+      "target": "legal",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t070",
+      "target": "research",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t070",
+      "target": "documents",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t070",
+      "target": "s21",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t070",
+      "target": "s22",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t071",
+      "target": "forecast",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t071",
+      "target": "analytics",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t071",
+      "target": "risk",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t071",
+      "target": "s02",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t071",
+      "target": "s01",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t072",
+      "target": "research",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t072",
+      "target": "analytics",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t072",
+      "target": "s01",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t072",
+      "target": "s02",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t073",
+      "target": "research",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t073",
+      "target": "analytics",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t073",
+      "target": "s02",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t073",
+      "target": "s01",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t074",
+      "target": "support",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t074",
+      "target": "sales",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t074",
+      "target": "automation",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t074",
+      "target": "s13",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t074",
+      "target": "s03",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t074",
+      "target": "s14",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t075",
+      "target": "sales",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t075",
+      "target": "support",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t075",
+      "target": "content",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t075",
+      "target": "s32",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t075",
+      "target": "s27",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t076",
+      "target": "support",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t076",
+      "target": "knowledge",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t076",
+      "target": "s14",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t076",
+      "target": "s29",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t077",
+      "target": "support",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t077",
+      "target": "knowledge",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t077",
+      "target": "s14",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t077",
+      "target": "s31",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t078",
+      "target": "sales",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t078",
+      "target": "content",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t078",
+      "target": "support",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t078",
+      "target": "s14",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t078",
+      "target": "s13",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t079",
+      "target": "support",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t079",
+      "target": "sales",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t079",
+      "target": "s32",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t079",
+      "target": "s14",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t080",
+      "target": "sales",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t080",
+      "target": "automation",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t080",
+      "target": "s32",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t080",
+      "target": "s27",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t081",
+      "target": "sales",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t081",
+      "target": "analytics",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t081",
+      "target": "s27",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t081",
+      "target": "s24",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t082",
+      "target": "content",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t082",
+      "target": "design",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t083",
+      "target": "content",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t083",
+      "target": "design",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t084",
+      "target": "content",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t084",
+      "target": "design",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t084",
+      "target": "s28",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t084",
+      "target": "s26",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t084",
+      "target": "s27",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t085",
+      "target": "content",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t085",
+      "target": "design",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t086",
+      "target": "content",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t086",
+      "target": "meeting",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t086",
+      "target": "s26",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t086",
+      "target": "s28",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t087",
+      "target": "content",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t087",
+      "target": "design",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t087",
+      "target": "s27",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t087",
+      "target": "s08",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t088",
+      "target": "content",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t088",
+      "target": "design",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t088",
+      "target": "s24",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t088",
+      "target": "s08",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t089",
+      "target": "design",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t089",
+      "target": "coding",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t089",
+      "target": "s30",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t089",
+      "target": "s27",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t090",
+      "target": "documents",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t090",
+      "target": "content",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t091",
+      "target": "meeting",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t091",
+      "target": "documents",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t092",
+      "target": "meeting",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t092",
+      "target": "documents",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t093",
+      "target": "analytics",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t093",
+      "target": "forecast",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t093",
+      "target": "automation",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t094",
+      "target": "analytics",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t094",
+      "target": "forecast",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t094",
+      "target": "coding",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t095",
+      "target": "analytics",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t095",
+      "target": "knowledge",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t096",
+      "target": "analytics",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t096",
+      "target": "sales",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t096",
+      "target": "s27",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t096",
+      "target": "s30",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t096",
+      "target": "s14",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t097",
+      "target": "analytics",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t097",
+      "target": "forecast",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t098",
+      "target": "analytics",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t098",
+      "target": "forecast",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t099",
+      "target": "automation",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t099",
+      "target": "documents",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t099",
+      "target": "s22",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t099",
+      "target": "s03",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t099",
+      "target": "s25",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t100",
+      "target": "supply",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t100",
+      "target": "forecast",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t100",
+      "target": "analytics",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t100",
+      "target": "s09",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t100",
+      "target": "s15",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t100",
+      "target": "s18",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t101",
+      "target": "support",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t101",
+      "target": "automation",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t101",
+      "target": "maintenance",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t101",
+      "target": "s30",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t101",
+      "target": "s31",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t102",
+      "target": "hr",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t102",
+      "target": "analytics",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t102",
+      "target": "s23",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t102",
+      "target": "s08",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t103",
+      "target": "security",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t103",
+      "target": "coding",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t103",
+      "target": "automation",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t104",
+      "target": "security",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t104",
+      "target": "knowledge",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t104",
+      "target": "automation",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t105",
+      "target": "security",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t105",
+      "target": "analytics",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t105",
+      "target": "automation",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t106",
+      "target": "security",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t106",
+      "target": "analytics",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t106",
+      "target": "automation",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t107",
+      "target": "security",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t107",
+      "target": "knowledge",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t108",
+      "target": "security",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t108",
+      "target": "risk",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t109",
+      "target": "maintenance",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t109",
+      "target": "analytics",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t109",
+      "target": "forecast",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t109",
+      "target": "s09",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t109",
+      "target": "s10",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t109",
+      "target": "s12",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t109",
+      "target": "s18",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t109",
+      "target": "s19",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t110",
+      "target": "supply",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t110",
+      "target": "forecast",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t110",
+      "target": "analytics",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t110",
+      "target": "s09",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t110",
+      "target": "s10",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t110",
+      "target": "s13",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t110",
+      "target": "s15",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t111",
+      "target": "risk",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t111",
+      "target": "analytics",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t111",
+      "target": "s22",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t111",
+      "target": "s01",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t112",
+      "target": "geo",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t112",
+      "target": "analytics",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t112",
+      "target": "vision",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t112",
+      "target": "s17",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t112",
+      "target": "s20",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t112",
+      "target": "s19",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t113",
+      "target": "automation",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t113",
+      "target": "analytics",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t113",
+      "target": "knowledge",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t113",
+      "target": "supply",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t113",
+      "target": "s09",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t113",
+      "target": "s18",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t113",
+      "target": "s15",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t113",
+      "target": "s10",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t114",
+      "target": "documents",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t114",
+      "target": "knowledge",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t114",
+      "target": "automation",
+      "relation": "SUPPORTS_SCENARIO",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t114",
+      "target": "s21",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t114",
+      "target": "s05",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "t114",
+      "target": "s03",
+      "relation": "INDUSTRY_SPECIFIC_CANDIDATE",
+      "evidence": "editorial"
+    },
+    {
+      "source": "skill-ai-workflow-diagnosis",
+      "target": "automation",
+      "relation": "SKILL_TEMPLATE_FOR",
+      "evidence": "draft"
+    },
+    {
+      "source": "skill-ai-workflow-diagnosis",
+      "target": "analytics",
+      "relation": "SKILL_TEMPLATE_FOR",
+      "evidence": "draft"
+    },
+    {
+      "source": "skill-source-grounded-rag",
+      "target": "knowledge",
+      "relation": "SKILL_TEMPLATE_FOR",
+      "evidence": "draft"
+    },
+    {
+      "source": "skill-source-grounded-rag",
+      "target": "documents",
+      "relation": "SKILL_TEMPLATE_FOR",
+      "evidence": "draft"
+    },
+    {
+      "source": "skill-contract-review-draft",
+      "target": "legal",
+      "relation": "SKILL_TEMPLATE_FOR",
+      "evidence": "draft"
+    },
+    {
+      "source": "skill-contract-review-draft",
+      "target": "documents",
+      "relation": "SKILL_TEMPLATE_FOR",
+      "evidence": "draft"
+    },
+    {
+      "source": "skill-clinical-document-draft",
+      "target": "clinical",
+      "relation": "SKILL_TEMPLATE_FOR",
+      "evidence": "draft"
+    },
+    {
+      "source": "skill-clinical-document-draft",
+      "target": "documents",
+      "relation": "SKILL_TEMPLATE_FOR",
+      "evidence": "draft"
+    },
+    {
+      "source": "skill-lesson-design-review",
+      "target": "learning",
+      "relation": "SKILL_TEMPLATE_FOR",
+      "evidence": "draft"
+    },
+    {
+      "source": "skill-lesson-design-review",
+      "target": "content",
+      "relation": "SKILL_TEMPLATE_FOR",
+      "evidence": "draft"
+    },
+    {
+      "source": "skill-research-evidence-map",
+      "target": "research",
+      "relation": "SKILL_TEMPLATE_FOR",
+      "evidence": "draft"
+    },
+    {
+      "source": "skill-research-evidence-map",
+      "target": "knowledge",
+      "relation": "SKILL_TEMPLATE_FOR",
+      "evidence": "draft"
+    },
+    {
+      "source": "skill-service-triage",
+      "target": "support",
+      "relation": "SKILL_TEMPLATE_FOR",
+      "evidence": "draft"
+    },
+    {
+      "source": "skill-service-triage",
+      "target": "automation",
+      "relation": "SKILL_TEMPLATE_FOR",
+      "evidence": "draft"
+    },
+    {
+      "source": "skill-consent-lead-triage",
+      "target": "sales",
+      "relation": "SKILL_TEMPLATE_FOR",
+      "evidence": "draft"
+    },
+    {
+      "source": "skill-consent-lead-triage",
+      "target": "automation",
+      "relation": "SKILL_TEMPLATE_FOR",
+      "evidence": "draft"
+    },
+    {
+      "source": "skill-marketing-test-design",
+      "target": "content",
+      "relation": "SKILL_TEMPLATE_FOR",
+      "evidence": "draft"
+    },
+    {
+      "source": "skill-marketing-test-design",
+      "target": "analytics",
+      "relation": "SKILL_TEMPLATE_FOR",
+      "evidence": "draft"
+    },
+    {
+      "source": "skill-predictive-maintenance-pilot",
+      "target": "maintenance",
+      "relation": "SKILL_TEMPLATE_FOR",
+      "evidence": "draft"
+    },
+    {
+      "source": "skill-predictive-maintenance-pilot",
+      "target": "forecast",
+      "relation": "SKILL_TEMPLATE_FOR",
+      "evidence": "draft"
+    },
+    {
+      "source": "skill-visual-inspection-evaluation",
+      "target": "vision",
+      "relation": "SKILL_TEMPLATE_FOR",
+      "evidence": "draft"
+    },
+    {
+      "source": "skill-visual-inspection-evaluation",
+      "target": "analytics",
+      "relation": "SKILL_TEMPLATE_FOR",
+      "evidence": "draft"
+    },
+    {
+      "source": "skill-ai-pilot-roi-audit",
+      "target": "analytics",
+      "relation": "SKILL_TEMPLATE_FOR",
+      "evidence": "draft"
+    },
+    {
+      "source": "skill-ai-pilot-roi-audit",
+      "target": "risk",
+      "relation": "SKILL_TEMPLATE_FOR",
+      "evidence": "draft"
+    },
+    {
+      "source": "skill-agent-permission-review",
+      "target": "security",
+      "relation": "SKILL_TEMPLATE_FOR",
+      "evidence": "draft"
+    },
+    {
+      "source": "skill-agent-permission-review",
+      "target": "automation",
+      "relation": "SKILL_TEMPLATE_FOR",
+      "evidence": "draft"
+    },
+    {
+      "source": "skill-audit-ready-financial-research",
+      "target": "research",
+      "relation": "SKILL_TEMPLATE_FOR",
+      "evidence": "draft"
+    },
+    {
+      "source": "skill-audit-ready-financial-research",
+      "target": "risk",
+      "relation": "SKILL_TEMPLATE_FOR",
+      "evidence": "draft"
+    }
+  ]
+}
