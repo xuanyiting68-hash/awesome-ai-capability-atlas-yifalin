@@ -35,6 +35,24 @@ try:
             assert page.locator("#cards a[href^='https://']").count()>=12
             page.locator("#more").click()
             assert page.locator(".item").count()==24
+            # Real in-page research: not an approval action, and no forced export.
+            page.locator(".item .reviewPanel summary").first.click()
+            assert "not" in page.locator(".item .researchHelp").first.inner_text().lower() or "不构成" in page.locator(".item .researchHelp").first.inner_text()
+            page.locator(".item [data-check='license']").first.check()
+            page.locator(".item [data-note-url]").first.fill("Only reviewed public license evidence, not independently certified")
+            assert page.locator("#persistNotes").is_checked() is False
+            assert page.locator(".item [data-note-url]").first.input_value().startswith("Only reviewed")
+            page.locator("#persistNotes").check()
+            assert page.locator("#persistNotes").is_checked()
+            page.reload(wait_until="networkidle")
+            assert page.locator("#persistNotes").is_checked()
+            page.locator(".item .reviewPanel summary").first.click()
+            assert page.locator(".item [data-check='license']").first.is_checked()
+            assert "public license" in page.locator(".item [data-note-url]").first.input_value()
+            page.locator("#clearNotes").click()
+            assert not page.locator("#persistNotes").is_checked()
+            page.locator(".item .reviewPanel summary").first.click()
+            assert not page.locator(".item [data-check='license']").first.is_checked()
             page.locator("#langBtn").click()
             assert page.locator("#headline").inner_text().startswith("不只追踪") or page.locator("#headline").inner_text().startswith("Discover useful")
             page.locator("#langBtn").click()
