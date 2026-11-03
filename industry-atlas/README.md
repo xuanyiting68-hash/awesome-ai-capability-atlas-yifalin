@@ -100,3 +100,20 @@ Validation: `python validate_career.py` and optional pinned Playwright browser s
 **验收边界：** 分类仅是 AI 业务应用层，**不等于国家行业细类或国际职业编码**。工具和课程仅为编辑候选，未完成许可证、隐私、性能、价格、兼容性等独立评估。没有连接模型 API、CRM、邮件、券商或业务数据库；没有 Agent 自动执行、实盘下单、法律/医疗专业结论，商业 ROI 未经验证。
 
 **待交付的真正 AI 模型服务**需要独立的受认证服务端，包含检索引用验证、限额与成本控制、用户授权、敏感数据脱敏、角色权限、审计及独立评测。严禁在公开 HTML 内嵌模型密钥。当前 PR 保持 Draft 和 Merge HOLD，不直接生产发布。
+
+## V1.6 | Guided Workspace (2026-11-03)
+
+**Start:** [start.html](start.html) → [advisor_v16.html](advisor_v16.html). The original Atlas index, V1.5 advisor, career and taxonomy views remain available. This is a product UX layer, **not a real LLM/Agent deployment**.
+
+User-facing improvements:
+- Intent-first chips (explore / learn / compare tools / automation); natural-language industry and specialty resolution remains bounded and explainable, without fabricating missing matches.
+- Next-best-action card, checkable five-step pilot, and editable in-page evidence notes. Notes/progress/favorites are separated by specialty, retained while switching topics within a session.
+- At most three source-linked candidate tools can be compared in place; descriptions/why-matched/verification caveats are not audited benchmark scores.
+- Inline feedback (helpful or needs work) is stored only in local page state or optional same-device storage; **no telemetry or submission**.
+- Mobile bottom navigation and larger touch targets, keyboard Ctrl/⌘+Enter, reduced-motion support, optional local persistence with honest failure on unsupported origins.
+- Personal task text is **not** auto-appended to share URLs. The user must explicitly opt in before task text, notes and history are written to browser localStorage.
+- Links go to existing source sites; no real customer data, remote models, CRM writes, trading, diagnostics, or production execution.
+
+**Sources/build/tests:** `advisor_v16_template.html`, `advisor_v16_data.json`, `patch_advisor_v16.py`, `build_advisor_v16.py`, `check_advisor_v16.py`. Run `python patch_advisor_v16.py && python build_advisor_v16.py && python check_advisor_v16.py`. Browser persistence tests use a simulated localStorage object; they do not prove cross-device sync.
+
+**Status:** separate research branch / Draft PR, no merge, no automatic deployment. Future genuine AI assistant integration needs a secure server-side model gateway, explicit identity and permissions, audit logs, rate limits, privacy notice, evaluation and real-world acceptance evidence.
