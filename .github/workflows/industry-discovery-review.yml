@@ -1,0 +1,54 @@
+name: Industry AI discovery (research-only artifacts)
+on:
+  pull_request:
+    paths:
+      - 'industry-atlas/discovery_review.py'
+      - 'industry-atlas/test_discovery_review.py'
+      - 'industry-atlas/discovery_seed.json'
+      - 'industry-atlas/intelligence.html'
+      - 'industry-atlas/check_intelligence_ui.py'
+      - '.github/workflows/industry-discovery-review.yml'
+  workflow_dispatch:
+  schedule:
+    - cron: '43 6 * * 4'
+permissions:
+  contents: read
+concurrency:
+  group: industry-discovery-review-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  discovery-queue:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Checkout source without giving write access
+        uses: actions/checkout@v4
+      - name: Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Regression (synthetic / no internet)
+        working-directory: industry-atlas
+        run: python -m unittest -v test_discovery_review
+      - name: Re-rank existing Atlas public index (no network, no auto approval)
+        working-directory: industry-atlas
+        run: |
+          mkdir -p "$RUNNER_TEMP/discovery-review"
+          python discovery_review.py --mode offline --limit 100 --output "$RUNNER_TEMP/discovery-review/offline.json"
+          python -c "import json,os; d=json.load(open(os.path.join(os.environ['RUNNER_TEMP'],'discovery-review','offline.json')));assert not d['auto_promoted'] and not d['live_llm'];assert all(not r['approved'] for r in d['records']);print('Offline candidates:',d['queue_count'])"
+      - name: Fetch official live metadata only when explicitly dispatched or scheduled
+        if: github.event_name == 'workflow_dispatch' || github.event_name == 'schedule'
+        working-directory: industry-atlas
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python discovery_review.py --mode live --limit 80 --output "$RUNNER_TEMP/discovery-review/live.json"
+          python -c "import json,os; d=json.load(open(os.path.join(os.environ['RUNNER_TEMP'],'discovery-review','live.json')));assert d['mode']=='live' and not d['auto_promoted'];assert all(not r['approved'] for r in d['records']);print('Live unreviewed:',d['queue_count'])"
+      - name: Attach results for human review, never publish to main
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: industry-discovery-review-${{ github.run_id }}
+          path: ${{ runner.temp }}/discovery-review/*.json
+          if-no-files-found: warn
+          retention-days: 14
