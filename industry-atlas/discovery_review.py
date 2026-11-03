@@ -19,17 +19,18 @@ import os
 from pathlib import Path
 import re
 import sys
+from xml.etree import ElementTree as ET
 from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode, urlsplit, urlunsplit
 from urllib.request import Request, build_opener, HTTPRedirectHandler
 
 ROOT = Path(__file__).resolve().parents[1]
-ALLOWED_FETCH_HOSTS = {"api.github.com", "huggingface.co"}
+ALLOWED_FETCH_HOSTS = {"api.github.com", "huggingface.co", "export.arxiv.org"}
 ALLOWED_LINK_HOSTS = {"github.com", "huggingface.co", "arxiv.org", "clawskills.sh"}
 MAX_RESPONSE = 2_500_000
 MAX_LIVE = 90
 MAX_OFFLINE = 250
-USER_AGENT = "YIFALIN-Atlas-Discovery-Review/1.0 (metadata-only, 3 bounded queries)"
+USER_AGENT = "YIFALIN-Atlas-Discovery-Review/1.1 (metadata-only, 4 bounded queries)"
 KNOWN_PUBLISHERS = {"openai", "anthropics", "microsoft", "google", "huggingface", "meta-llama"}
 TOPICS = [
     ("s02", ("quant", "trading", "portfolio", "stock", "investment", "finance", "factor", "finance")),
@@ -45,7 +46,7 @@ TOPICS = [
 ]
 UNSAFE_WORDS = ("credential stealer", "keylogger", "crack", "malware", "password dump")
 VALID_KINDS = {"skill", "agent", "workflow", "model", "project", "tool", "paper", "repository", "mcp"}
-ALLOWED_SOURCE_KIND = {"existing-catalog", "github-api", "huggingface-api"}
+ALLOWED_SOURCE_KIND = {"existing-catalog", "github-api", "huggingface-api", "arxiv-api"}
 
 
 class NoRedirect(HTTPRedirectHandler):
@@ -85,6 +86,54 @@ def request_json(url: str) -> object:
         raise ValueError("Public metadata response exceeded byte limit")
     return json.loads(payload.decode("utf-8"))
 
+
+
+def request_atom(url: str) -> ET.Element:
+    """One bounded arXiv official Atom request, never full-paper crawling."""
+    parts = urlsplit(url)
+    if parts.scheme != "https" or parts.hostname != "export.arxiv.org" or parts.port or parts.username:
+        raise ValueError("Unapproved arXiv endpoint")
+    req = Request(url, headers={"Accept": "application/atom+xml", "User-Agent": USER_AGENT})
+    try:
+        with build_opener(NoRedirect()).open(req, timeout=18) as response:
+            if response.status != 200 or urlsplit(response.geturl()).hostname != "export.arxiv.org":
+                raise RuntimeError("Invalid arXiv response")
+            payload = response.read(MAX_RESPONSE + 1)
+    except (HTTPError, URLError, TimeoutError) as error:
+        raise RuntimeError("arXiv metadata unavailable; previous queue preserved: " + str(error)) from error
+    if len(payload) > MAX_RESPONSE:
+        raise ValueError("arXiv metadata exceeded byte limit")
+    root = ET.fromstring(payload)
+    if root.tag != "{http://www.w3.org/2005/Atom}feed":
+        raise ValueError("Unexpected arXiv Atom structure")
+    return root
+
+
+def arxiv_candidates() -> list[dict]:
+    url = "https://export.arxiv.org/api/query?" + urlencode({
+        "search_query": "cat:cs.AI OR cat:cs.LG", "start": "0",
+        "max_results": "20", "sortBy": "submittedDate", "sortOrder": "descending",
+    })
+    root = request_atom(url)
+    ns = "{http://www.w3.org/2005/Atom}"
+    rows = []
+    for entry in root.findall(ns + "entry"):
+        identifier = entry.findtext(ns + "id") or ""
+        # arXiv ID, not untrusted Atom link: construct a canonical HTTPS abstract URL.
+        match = re.search(r"/abs/(\d{4}\.\d{4,5}(?:v\d+)?)$", identifier)
+        if not match:
+            continue
+        title = " ".join((entry.findtext(ns + "title") or "").split())
+        summary = " ".join((entry.findtext(ns + "summary") or "").split())[:450]
+        rows.append({
+            "name": title[:120], "url": "https://arxiv.org/abs/" + match.group(1),
+            "kind": "paper", "description": summary, "source_kind": "arxiv-api",
+            "source_url": "https://arxiv.org/abs/" + match.group(1),
+            "owner": "arxiv", "last_modified": entry.findtext(ns + "updated") or "",
+            # Individual preprints have varying rights; metadata is not permission to republish.
+            "license_spdx": "unknown",
+        })
+    return rows
 
 def age_days(iso_date: str, now: datetime) -> int | None:
     try:
@@ -226,6 +275,7 @@ def live_candidates(now: datetime) -> list[dict]:
             "last_modified": model.get("lastModified") or "",
             "license_spdx": model_card.get("license") or next((str(t).split(":", 1)[1] for t in tags if str(t).startswith("license:")), "unknown"),
         })
+    records.extend(arxiv_candidates())
     return records[:MAX_LIVE]
 
 
@@ -243,7 +293,7 @@ def assemble(rows: list[dict], now: datetime, mode: str, limit: int) -> dict:
         "schema_version": "1.0", "generated_at_utc": now.isoformat(), "mode": mode,
         "reviewed_for_safety": False, "live_llm": False, "auto_promoted": False,
         "total_input": len(rows), "deduplicated": len(scored), "queue_count": len(selected),
-        "sources": ["Existing Atlas catalog + cached metadata"] if mode == "offline" else ["GitHub public search API", "Hugging Face Hub public models API"],
+        "sources": ["Existing Atlas catalog + cached metadata"] if mode == "offline" else ["GitHub public search API", "Hugging Face Hub public models API", "arXiv official Atom metadata API"],
         "score_notice": "Heuristic triage, NOT evaluated quality, license rights, security or job fit.",
         "records": selected,
     }
