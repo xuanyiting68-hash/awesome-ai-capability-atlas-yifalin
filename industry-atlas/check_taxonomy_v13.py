@@ -36,7 +36,9 @@ with tempfile.TemporaryDirectory() as t:
    page.locator('[data-tab="occupation"]').click()
    assert page.locator('#roleResults .item').count()==0
    page.locator('#uploadMirror').set_input_files(str(path))
-   assert '1,639 / 1,639' in page.locator('.numpanel').inner_text()
+   # FileReader/text() resolves asynchronously; wait for the full import, not a pre-render snapshot.
+   page.wait_for_function("document.getElementById('roleNumber').textContent.includes('1,639 / 1,639')", timeout=10000)
+   assert '1,639 / 1,639' in page.locator('#roleNumber').inner_text()
    assert page.locator('#roleResults .item').count()==80
    page.locator('#roleSearch').fill('合成测试职业128')
    assert page.locator('#roleResults .item').count()>0
