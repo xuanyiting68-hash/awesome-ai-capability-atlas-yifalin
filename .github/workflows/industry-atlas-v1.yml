@@ -27,6 +27,8 @@ jobs:
           python validate.py
           python check_workflows.py
           python validate_career.py
+          python -m unittest -v test_discovery_review
+          python discovery_review.py --mode offline --limit 80 --output /tmp/yifalin_discovery_offline.json
           python build_advisor_v15.py
           git diff --exit-code -- advisor.html advisor_v15_data.json
           python patch_advisor_v16.py
@@ -49,3 +51,4 @@ jobs:
           python check_advisor_v15.py
           python check_advisor_v16.py
           python check_advisor_v17.py
+          python check_intelligence_ui.py
