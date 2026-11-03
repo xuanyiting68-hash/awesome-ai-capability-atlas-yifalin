@@ -123,6 +123,22 @@ class LifecycleAndGate(TestCase):
         self.assertIn("license_signal_unknown", result["missing_evidence"])
         self.assertIn("safety_review_url", result["missing_evidence"])
 
+    def test_duplicate_evidence_urls_cannot_pass_review_gate(self):
+        x=entry()
+        result=gate.prepare(queue([x]), [{
+            "candidate_id":x["id"],"url":x["url"],"reviewer":"atlas-editor",
+            "decision":"request-promotion",
+            "rationale":"A sample finance case but independent sources require separate review.",
+            "evidence":{
+                "license_evidence_url":"https://github.com/sample/finance-factor-agent/blob/main/LICENSE",
+                "safety_review_url":"https://github.com/sample/finance-factor-agent/blob/main/LICENSE",
+                "task_test_evidence_url":"https://github.com/sample/finance-factor-agent/actions",
+            },
+        }])["requests"][0]
+        self.assertEqual(result["request_state"],"evidence-incomplete")
+        self.assertIn("duplicate_evidence_links",result["missing_evidence"])
+        self.assertFalse(result["approved"])
+
     def test_forged_or_conflicting_decisions_rejected(self):
         x=entry()
         source=queue([x])
