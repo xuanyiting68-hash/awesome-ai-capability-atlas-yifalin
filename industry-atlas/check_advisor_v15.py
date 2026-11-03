@@ -21,6 +21,10 @@ with sync_playwright() as p:
         assert 'AI 行业任务顾问 V1.5' in page.title()
         assert page.locator('#steps input').count()==5
         assert '演示' in page.locator('#why').inner_text()
+        # Fail closed when an opaque-origin browser blocks localStorage.
+        page.locator('#persist').click()
+        assert not page.locator('#persist').is_checked()
+        assert '不支持本地保存' in page.locator('.message.bot').last.inner_text()
         # Natural language selects relevant sector and strictly scoped professional subdomain.
         page.locator('#query').fill('我在证券资管做量化因子研究，想建立研报知识库并复核回测结果')
         page.locator('#searchForm button').click()
