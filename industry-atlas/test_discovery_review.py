@@ -45,6 +45,12 @@ class DiscoveryReview(TestCase):
         no_industry = app.evaluate(item(name="misc-helper", description="generic utility"), NOW)
         self.assertEqual(no_industry["review_state"], "needs-evidence")
 
+    def test_chinese_finance_classification_is_scoped(self):
+        row = app.evaluate(item(name="量化研究助手", description="专业投资组合回测与因子研究", topic="金融量化"), NOW)
+        self.assertIn("s02", row["sector_ids"])
+        self.assertNotIn("s09", row["sector_ids"])
+        self.assertFalse(row["approved"])
+
     def test_unsafe_and_archived_exclusions(self):
         self.assertIsNone(app.evaluate(item(description="credential stealer library"), NOW))
         self.assertIsNone(app.evaluate(item(archived=True), NOW))
