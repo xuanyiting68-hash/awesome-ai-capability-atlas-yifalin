@@ -48,6 +48,9 @@ def validate_decision(row: dict, candidates: dict) -> dict:
             # Evidence links pointing at the resource itself are not independent checks.
             if not link or link == url:
                 blockers.append(k)
+        complete_links = [canonical_url(evidence.get(k)) for k in REQUIRED if canonical_url(evidence.get(k))]
+        if len(complete_links) != len(set(complete_links)):
+            blockers.append("duplicate_evidence_links")
         if not target.get("sector_ids"):
             blockers.append("industry_fit_unverified")
         if target.get("license_spdx_signal") in (None, "", "unknown", "NOASSERTION"):
