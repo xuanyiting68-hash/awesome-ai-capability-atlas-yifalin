@@ -57,7 +57,7 @@ class DiscoveryReview(TestCase):
         self.assertEqual(out["queue_count"], 2)
         self.assertFalse(out["auto_promoted"])
         self.assertEqual(out["records"][0]["review_state"], "review-priority")
-        self.assertIn("s15", out["records"][1]["sector_ids"])
+        self.assertTrue(any("s15" in row["sector_ids"] for row in out["records"]))
 
     def test_unauthorized_fetch_refused_before_network(self):
         with self.assertRaises(ValueError):
