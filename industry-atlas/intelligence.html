@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>YIFALIN | AI 情报雷达 · 来源与候选审核</title>
+<meta name="description" content="AI工具、模型与Skill来源发现、任务匹配、审核优先级与风险边界。">
+<style>
+:root{color-scheme:light;font:15px/1.65 Inter,"PingFang SC","Microsoft YaHei",system-ui,sans-serif;--deep:#09253a;--ink:#19374b;--line:#dce9ed;--sub:#60798a;--mint:#0b9783}
+*{box-sizing:border-box}body{margin:0;color:var(--ink);background:#f3f8fa}a{color:#116f88}button,input,select{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,select:focus-visible,a:focus-visible{outline:3px solid #14b8a6;outline-offset:2px}
+.head{color:white;background:radial-gradient(circle at 85% 20%,#126b7299,transparent 45%),linear-gradient(110deg,#081c35,#0c4358);padding:18px max(18px,calc((100% - 1160px)/2)) 45px}
+nav{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13px}nav a{color:#bff2e8;text-decoration:none}.mark{font-weight:900;letter-spacing:.7px}.micro{color:#88e5d9;letter-spacing:1.7px;font-weight:800;font-size:11px;margin:35px 0 8px}h1{font-size:clamp(27px,4.4vw,46px);line-height:1.16;letter-spacing:-.6px;margin:0 0 14px;max-width:780px}p{margin:0 0 12px}.intro{color:#c3dce5;max-width:850px;font-size:16px}.hint{font-size:12px;color:var(--sub)}.head .hint{color:#c5e1e7}
+.main{max-width:1200px;margin:-24px auto 80px;padding:0 18px}.panel{background:white;border:1px solid var(--line);border-radius:17px;padding:19px 22px;box-shadow:0 10px 26px #2346580a;margin-bottom:16px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.stat{padding:14px;border:1px solid #dbebec;border-radius:13px;background:#f7fbfb}.stat strong{display:block;font-size:27px;color:#096d71}.stat span{font-size:12px;color:#567486}
+.controls{display:grid;grid-template-columns:minmax(200px,2fr) minmax(155px,1fr) minmax(155px,1fr);gap:12px;align-items:end}
+label{font-size:12px;color:#536d7d;font-weight:780;display:block}input,select{margin-top:6px;width:100%;min-height:47px;border:1px solid #c9dce2;border-radius:10px;background:#fff;color:var(--ink);padding:10px 12px;font-size:15px}
+.controls + p{margin-top:12px}.tag{display:inline-block;border-radius:99px;font-size:11px;padding:4px 9px;background:#e5f5f1;border:1px solid #cce8e4;color:#23665e;margin-right:6px}
+.sectionTitle{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin:0 0 12px}h2{font-size:20px;margin:0}.candidates{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.item{padding:18px;border:1px solid #dce8ed;border-radius:14px;background:#fdfefe;min-width:0}.item h3{font-size:17px;margin:10px 0 7px;overflow-wrap:anywhere;line-height:1.3}.item p{font-size:13px;color:#557282;max-height:84px;overflow:hidden;overflow-wrap:anywhere}.item .meta{font-size:12px;color:#567282}.item a{font-weight:760;font-size:13px;text-decoration:none}.item a:hover{text-decoration:underline}.item .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}.item .meta{display:flex;gap:8px;flex-wrap:wrap}.action{border:1px solid #9cd9d1;background:#f2fbf9;border-radius:8px;padding:7px 9px;color:#126b6a;text-decoration:none}
+.empty{padding:30px;text-align:center;color:#5d7788;border:1px dashed #bcd4da;border-radius:12px}.notice{background:#f6fafc;border-left:3px solid #78beb6;border-radius:8px;padding:12px 14px;font-size:12px;color:#546f82;margin-top:14px}
+.footer{font-size:12px;text-align:center;color:#678393;padding:0 16px 40px}.footer a{color:#3b7282}
+button.more{display:block;margin:18px auto 3px;border:1px solid #b5dcd6;padding:11px 20px;border-radius:10px;background:#e8f8f3;color:#126c69;font-weight:800;min-height:46px}
+.topActions{display:flex;gap:8px;flex-wrap:wrap}.topActions button{min-height:41px;border:1px solid #d9eaec;background:#f5fbfb;border-radius:9px;padding:8px 13px;color:#356b7b}.topActions button[aria-pressed=true]{background:#c9f4e9;color:#115b56;border-color:#72c9b6;font-weight:800}
+@media(max-width:780px){.stats{grid-template-columns:repeat(3,minmax(0,1fr))}.stat strong{font-size:23px}.controls{grid-template-columns:1fr}.candidates{grid-template-columns:1fr}.panel{padding:17px}.head{padding-left:18px;padding-right:18px}.main{padding:0 12px}}
+@media(max-width:390px){.stats{gap:6px}.stat{padding:10px}.stat span{font-size:10px}.item{padding:14px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+</style></head>
+<body>
+<header class="head"><nav><div class="mark">◇ YIFALIN / INTELLIGENCE RADAR</div><div><a href="start.html">AI 行业工作台</a> · <a href="career.html">职业成长</a> · <a href="../index.html">AI 资源目录</a></div></nav>
+<div class="micro" id="tagline">AI DISCOVERY / HUMAN REVIEW</div><h1 id="headline">不只追踪热门 AI，重点寻找真正有用的能力。</h1>
+<p class="intro" id="intro">先看来源、更新、行业适配与未证实的信息，再决定值得研究什么。候选不是认证产品，也不自动执行第三方技能。</p>
+<p class="hint" id="noticeHero">当前显示既有 133 条编辑精选作为参考基线，并非今天实时新发现；自动扫描的新项目先进入独立待审核报告。</p></header>
+<main class="main">
+<section class="panel">
+<div class="stats"><div class="stat"><strong id="countTotal">—</strong><span id="labTotal">现有参考条目</span></div><div class="stat"><strong id="countSectors">—</strong><span id="labSectors">有明确行业关键词</span></div><div class="stat"><strong id="countFiltered">—</strong><span id="labShown">当前筛选结果</span></div></div>
+<div class="notice" role="note" id="evidenceNotice">“编辑精选”不代表安全审计、实际效果测试或商用许可证核准。评分仅用于安排进一步研究的优先顺序。</div>
+</section>
+<section class="panel">
+<div class="sectionTitle"><h2 id="filterTitle">寻找与你的工作相关的 AI 资源</h2><div class="topActions"><button type="button" id="langBtn" aria-label="Switch language">English</button></div></div>
+<div class="controls"><label for="search" id="searchLabel">关键词（工具、任务、行业）<input id="search" placeholder="例如：量化、研究、视频、自动化、finance"></label>
+<label for="sector" id="sectorLabel">行业匹配<select id="sector"><option value="">全部行业</option></select></label>
+<label for="grade" id="gradeLabel">核验线索<select id="grade"><option value="">全部</option><option value="watch">有基本线索</option><option value="needs-evidence">证据不足</option></select></label>
+</div><p class="hint" id="resultsNote">行业映射为初步关键词提示，未完成标准职业交叉验证。</p>
+</section>
+<section class="panel" id="results"><div class="sectionTitle"><h2 id="resultTitle">资源审核与研究列表</h2><span class="tag" id="sampleTag">现有目录 · 非实时</span></div>
+<div class="candidates" id="cards" aria-live="polite"><div class="empty">正在读取当前仓库的编辑来源快照…</div></div>
+<button class="more" id="more" type="button" hidden>查看更多</button>
+<div class="notice" id="radarDisclaimer">自动采集系统的 live 输出是“待审核报告”。在安全、许可证及适用性核验前，它不会自动成为本站推荐内容。</div></section>
+</main>
+<footer class="footer">YIFALIN Atlas V1.7 · Metadata-only research, no execution, no live LLM or commercial proof · <a href="https://github.com/xuanyiting68-hash/awesome-ai-capability-atlas-yifalin">GitHub evidence and source</a></footer>
+<script>
+(()=>{"use strict";
+const $=id=>document.getElementById(id), esc=v=>String(v??"").replace(/[&<>"']/g,x=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[x]));
+const SECTORS={"s01":["银行","Banking"],"s02":["证券与资管","Securities & Asset Management"],"s04":["医疗","Healthcare"],"s06":["教育","Education"],"s09":["制造","Manufacturing"],"s15":["物流","Logistics"],"s17":["农业","Agriculture"],"s21":["法律","Legal"],"s25":["公共服务","Public services"],"s27":["营销","Marketing"],"s29":["餐饮酒店","Hospitality"],"s30":["软件开发","Software"],"s32":["创业","Entrepreneurship"]};
+const TXT={
+zh:{headline:"不只追踪热门 AI，重点寻找真正有用的能力。",intro:"先看来源、更新、行业适配与未证实的信息，再决定值得研究什么。候选不是认证产品，也不自动执行第三方技能。",hero:"当前显示既有 133 条编辑精选作为参考基线，并非今天实时新发现；自动扫描的新项目先进入独立待审核报告。",total:"现有参考条目",sectors:"有明确行业关键词",shown:"当前筛选结果",notice:"“编辑精选”不代表安全审计、实际效果测试或商用许可证核准。评分仅用于安排进一步研究的优先顺序。",filter:"寻找与你的工作相关的 AI 资源",search:"关键词（工具、任务、行业）",sector:"行业匹配",grade:"核验线索",result:"资源审核与研究列表",allSector:"全部行业",allGrade:"全部",watch:"有基本线索",needs:"证据不足",placeholder:"例如：量化、研究、视频、自动化",note:"行业映射为初步关键词提示，未完成标准职业交叉验证。",sample:"现有目录 · 非实时",warning:"自动采集系统的 live 输出是“待审核报告”。在安全、许可证及适用性核验前，它不会自动成为本站推荐内容。",source:"查看原始来源",explore:"去行业工作台研究",more:"查看更多",empty:"未找到匹配的条目，可换一个行业或关键词。",loadError:"未能读取来源快照。当前页面未提供联网推荐，请稍后重试。",noMatch:"尚无可靠行业匹配",license:"许可证标记",research:"仅供研究"},
+en:{headline:"Discover useful AI capabilities, not just popular tools.",intro:"Review provenance, freshness, task relevance and missing evidence before prioritising research. No third-party code is executed.",hero:"Currently showing 133 existing editorial entries as a cached reference, NOT today's live discoveries. New scans are separate unreviewed reports.",total:"Existing references",sectors:"With task-sector signals",shown:"Filtered matches",notice:"Editorial inclusion is not a security audit, benchmark or commercial licensing clearance. Scores only prioritise investigation.",filter:"Explore relevant AI resources",search:"Search tools, tasks or industries",sector:"Industry match",grade:"Evidence signal",result:"Research and review candidates",allSector:"All industries",allGrade:"All",watch:"Some metadata",needs:"Evidence missing",placeholder:"Try: research, agent, finance, video",note:"Sector matches are preliminary keyword signals, not verified job classifications.",sample:"Cached reference · not live",warning:"Live scans produce unreviewed artifacts. No candidate is promoted without license, safety and task-fit review.",source:"Open source",explore:"Explore a workflow",more:"Show more",empty:"No matching items. Try another search.",loadError:"Could not load the evidence snapshot. No substitute claims are shown.",noMatch:"Sector not verified",license:"License signal",research:"For investigation only"}};
+const state={rows:[],filtered:[],limit:12,lang:(navigator.language||"").toLowerCase().startsWith("zh")?"zh":"en"};
+function t(k){return TXT[state.lang][k]}
+function setText(){document.documentElement.lang=state.lang==="en"?"en":"zh-CN";const ids={headline:"headline",intro:"intro",noticeHero:"hero",labTotal:"total",labSectors:"sectors",labShown:"shown",evidenceNotice:"notice",filterTitle:"filter",searchLabel:"search",sectorLabel:"sector",gradeLabel:"grade",resultTitle:"result",sampleTag:"sample",resultsNote:"note",radarDisclaimer:"warning"};for(const [id,k] of Object.entries(ids)){$(id).childNodes[0].textContent=t(k)}
+$("search").placeholder=t("placeholder");$("langBtn").textContent=state.lang==="zh"?"English":"中文";
+$("sector").options[0].textContent=t("allSector");$("grade").options[0].textContent=t("allGrade");$("grade").options[1].textContent=t("watch");$("grade").options[2].textContent=t("needs");$("more").textContent=t("more");
+[...$("sector").options].slice(1).forEach(el=>el.textContent=(SECTORS[el.value]||[el.value,el.value])[state.lang==="zh"?0:1]);render();}
+function valid(row){try{const u=new URL(row.url);return u.protocol==="https:"&&["github.com","huggingface.co","clawskills.sh"].includes(u.hostname)&&row.name&&row.safety_review==="not-audited"&&row.approved===false}catch{return false}}
+function card(r){const sectors=(r.sector_ids||[]).slice(0,3).map(k=>SECTORS[k]?.[state.lang==="zh"?0:1]||k).join(" · ")||t("noMatch");
+const lic=esc(r.license_spdx_signal||"unknown");const label=r.review_state==="watch"?t("watch"):t("needs");
+const safe=esc(r.url);return '<article class="item"><div class="meta"><span class="tag">'+esc(r.kind||"tool")+'</span><span class="tag">'+esc(label)+'</span><span class="tag">'+t("research")+'</span></div><h3>'+esc(r.name)+'</h3><p>'+esc(r.description||"")+'</p><div class="meta">'+esc(sectors)+' · '+t("license")+': '+lic+'</div><div class="actions"><a class="action" href="'+safe+'" target="_blank" rel="noopener noreferrer">'+t("source")+'</a><a class="action" href="advisor_v17.html">'+t("explore")+'</a></div></article>';}
+function render(){if(!$("cards"))return;const q=$("search").value.trim().toLocaleLowerCase(),s=$("sector").value,g=$("grade").value;
+state.filtered=state.rows.filter(r=>(!s||(r.sector_ids||[]).includes(s))&&(!g||r.review_state===g)&&(!q||[r.name,r.description,r.topic,(r.sector_ids||[]).map(x=>SECTORS[x]?.join(" ")||"").join(" ")].join(" ").toLocaleLowerCase().includes(q)));
+$("countFiltered").textContent=state.filtered.length;
+$("cards").innerHTML=state.filtered.length?state.filtered.slice(0,state.limit).map(card).join(""):'<div class="empty">'+esc(t("empty"))+'</div>';
+$("more").hidden=state.limit>=state.filtered.length;}
+async function init(){try{const res=await fetch("discovery_seed.json",{cache:"no-store"});if(!res.ok)throw Error("snapshot unavailable");
+const data=await res.json();if(data.mode!=="cached-editorial-baseline"||data.auto_promoted!==false||!Array.isArray(data.records))throw Error("wrong evidence level");
+state.rows=data.records.filter(valid).slice(0,200);
+$("countTotal").textContent=state.rows.length;$("countSectors").textContent=state.rows.filter(x=>x.sector_ids?.length).length;
+$("sector").innerHTML='<option value=""></option>'+Object.keys(SECTORS).map(k=>'<option value="'+k+'"></option>').join("");
+setText();
+}catch(error){$("countTotal").textContent="0";$("countSectors").textContent="0";$("countFiltered").textContent="0";$("cards").innerHTML='<div class="empty">'+esc(t("loadError"))+'</div>';}}
+$("search").addEventListener("input",()=>{state.limit=12;render()});$("sector").addEventListener("change",()=>{state.limit=12;render()});$("grade").addEventListener("change",()=>{state.limit=12;render()});
+$("more").addEventListener("click",()=>{state.limit+=12;render()});$("langBtn").addEventListener("click",()=>{state.lang=state.lang==="zh"?"en":"zh";setText()});
+setText();init();
+})();
+</script></body></html>
