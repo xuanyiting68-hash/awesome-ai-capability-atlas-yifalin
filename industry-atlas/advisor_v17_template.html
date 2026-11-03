@@ -162,8 +162,10 @@ s04:[['门诊文书','我在医院做门诊文书，想生成待医生审核的�
 const DEFAULT_EXAMPLES=[['金融研究',EXAMPLES.s02[0][1]],['工厂维修',EXAMPLES.s09[0][1]],['教学改进',EXAMPLES.s06[0][1]],['餐厅经营',EXAMPLES.s29[0][1]]];
 function renderExamples(){
  const v=E('query').value.trim();let hits=v?rank(v):[];let best=hits.length&&hits[0].score>=7?hits[0].sectorId:null;
- const selected=best&&EXAMPLES[best]?EXAMPLES[best]:DEFAULT_EXAMPLES;
- E('sampleHeading').textContent=best&&EXAMPLES[best]?'与你输入的行业相关的例子：':'不知道怎么问？可直接试试：';
+ const sector=best?SEC.get(best):null;
+ const generic=sector?(DOM_BY.get(best)||[]).slice(0,3).map(d=>[d.name,'我在'+sector.name+'从事'+d.name+'，想改善：'+String(d.focus||'日常工作流程').slice(0,70)]):[];
+ const selected=best?(EXAMPLES[best]||generic.length&&generic||DEFAULT_EXAMPLES):DEFAULT_EXAMPLES;
+ E('sampleHeading').textContent=best?'与你输入的行业相关的例子：':'不知道怎么问？可直接试试：';
  E('dynamicSamples').innerHTML=selected.map(([name,q])=>'<button class="sample" type="button" data-example="'+esc(q)+'">'+esc(name)+'</button>').join('');
 }
 function renderView(){document.body.classList.toggle('expert-mode',state.expert);
