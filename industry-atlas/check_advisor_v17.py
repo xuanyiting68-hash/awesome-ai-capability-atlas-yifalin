@@ -62,6 +62,7 @@ with sync_playwright() as p:
         assert "关键词/领域索引" in page.locator("#chatlog .message.bot").last.inner_text()
         assert page.locator("#tools a[href^='https://']").count() > 0
         # Changing domain must isolate notes and checklist.
+        page.locator("#notesBox summary").click()
         page.locator("#workNote").fill("脱敏研究样本 10 份")
         page.locator("#query").fill("我是律师，在合同审核中减少重复工作")
         page.locator("#searchForm button").click()
