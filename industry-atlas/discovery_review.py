@@ -33,15 +33,15 @@ MAX_OFFLINE = 250
 USER_AGENT = "YIFALIN-Atlas-Discovery-Review/1.1 (metadata-only, 4 bounded queries)"
 KNOWN_PUBLISHERS = {"openai", "anthropics", "microsoft", "google", "huggingface", "meta-llama"}
 TOPICS = [
-    ("s02", ("quant", "trading", "portfolio", "stock", "investment", "finance", "factor", "finance")),
-    ("s09", ("manufacturing", "industry", "production", "predictive maintenance", "industrial")),
-    ("s06", ("teacher", "school", "classroom", "student", "lesson")),
-    ("s04", ("medical", "hospital", "clinical", "healthcare", "radiology")),
-    ("s15", ("logistics", "supply chain", "warehouse", "inventory", "shipping")),
-    ("s17", ("agriculture", "farming", "crop", "soil")),
-    ("s21", ("legal", "lawyer", "contract", "litigation")),
-    ("s29", ("restaurant", "hospitality", "hotel", "travel")),
-    ("s30", ("coding", "developer", "software", "code assistant", "devops")),
+    ("s02", ("quant", "trading", "portfolio", "stock", "investment", "finance", "financial", "factor", "量化", "金融", "证券", "资管", "投研")),
+    ("s09", ("manufacturing", "industry", "production", "predictive maintenance", "industrial", "制造", "工厂", "设备维护")),
+    ("s06", ("teacher", "school", "classroom", "student", "lesson", "教育", "教师", "教学")),
+    ("s04", ("medical", "hospital", "clinical", "healthcare", "radiology", "医疗", "医院", "临床")),
+    ("s15", ("logistics", "supply chain", "warehouse", "inventory", "shipping", "物流", "仓储")),
+    ("s17", ("agriculture", "farming", "crop", "soil", "农业", "种植")),
+    ("s21", ("legal", "lawyer", "contract", "litigation", "法律", "合同", "律师")),
+    ("s29", ("restaurant", "hospitality", "hotel", "travel", "餐饮", "酒店")),
+    ("s30", ("coding", "developer", "software", "code assistant", "devops", "软件", "开发工程", "代码")),
     ("s25", ("government", "public service", "civic", "policy")),
 ]
 UNSAFE_WORDS = ("credential stealer", "keylogger", "crack", "malware", "password dump")
@@ -165,7 +165,7 @@ def evaluate(item: dict, now: datetime) -> dict | None:
     if license_id.upper() == "NOASSERTION":
         license_id = "unknown"
     age = age_days(item.get("last_modified", ""), now)
-    sectors = infer_sectors(name, desc)
+    sectors = infer_sectors(name, desc + " " + str(item.get("topic") or ""))
     owner = str(item.get("owner") or "").casefold()
     # A metadata score for triage, NOT an estimate of commercial suitability.
     evidence = (12 if len(desc) >= 30 else 5 if desc else 0) + (6 if license_id not in ("", "unknown") else 0)
@@ -228,6 +228,7 @@ def existing_candidates() -> list[dict]:
         results.append({
             "name": row.get("name"), "url": url, "kind": row.get("type") or "project",
             "description": row.get("description_zh") or row.get("use_case") or "",
+            "topic": row.get("topic") or "",
             "source_kind": "existing-catalog", "source_url": row.get("url"),
             "owner": repo.split("/")[0], "archived": m.get("archived"),
             "last_modified": m.get("last_push") or "",
