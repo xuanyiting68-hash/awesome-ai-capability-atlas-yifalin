@@ -42,7 +42,7 @@ with sync_playwright() as p:
         assert "离线规则" in page.locator("#modeTag").inner_text()
         assert "V1.7" in page.locator("footer").inner_text()
         # Beginner mode: one task at a time. Changes don't erase progress.
-        page.locator("#steps .planstep:visible input").check()
+        page.locator('#steps input[data-check="0"]').click()  # stable target: current step changes on click
         assert "1/5" in page.locator("#taskCount").inner_text()
         assert page.locator("#steps .planstep:visible").count()==1
         assert "准备数据" in page.locator("#nextTitle").inner_text()
