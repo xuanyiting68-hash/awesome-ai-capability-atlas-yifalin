@@ -1,4 +1,4 @@
-name: Industry AI Atlas V1.3 (isolated validation)
+name: Industry AI Atlas V1.4 (isolated validation)
 on:
   pull_request:
     paths:
@@ -38,3 +38,4 @@ jobs:
           python check_expert.py
           python check_career.py
           python check_taxonomy_v13.py
+          python check_discover_v14.py
