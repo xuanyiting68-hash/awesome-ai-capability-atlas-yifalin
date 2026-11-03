@@ -1,0 +1,55 @@
+name: Industry AI Atlas V1.7 (isolated validation)
+on:
+  pull_request:
+    paths:
+      - 'industry-atlas/**'
+      - '.github/workflows/industry-atlas-v1.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: industry-ai-atlas-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  source-and-browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout PR code
+        uses: actions/checkout@v4
+      - name: Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate frozen source and career contracts
+        working-directory: industry-atlas
+        run: |
+          python validate.py
+          python check_workflows.py
+          python validate_career.py
+          python -m unittest -v test_discovery_review test_discovery_lifecycle
+          python discovery_review.py --mode offline --limit 80 --output /tmp/yifalin_discovery_offline.json
+          python discovery_lifecycle.py --current /tmp/yifalin_discovery_offline.json --output /tmp/yifalin_discovery_delta.json
+          python build_advisor_v15.py
+          git diff --exit-code -- advisor.html advisor_v15_data.json
+          python patch_advisor_v16.py
+          python build_advisor_v16.py
+          git diff --exit-code -- advisor_v16_template.html advisor_v16.html advisor_v16_data.json
+          python build_advisor_v17.py
+          git diff --exit-code -- advisor_v17.html
+      - name: Install pinned Playwright and Chromium
+        run: |
+          python -m pip install --disable-pip-version-check playwright==1.57.0
+          python -m playwright install --with-deps chromium
+      - name: Offline browser regressions
+        working-directory: industry-atlas
+        run: |
+          python check.py
+          python check_expert.py
+          python check_career.py
+          python check_taxonomy_v13.py
+          python check_discover_v14.py
+          python check_advisor_v15.py
+          python check_advisor_v16.py
+          python check_advisor_v17.py
+          python check_intelligence_ui.py

@@ -1,0 +1,87 @@
+name: Industry AI discovery (research-only artifacts)
+on:
+  pull_request:
+    paths:
+      - 'industry-atlas/discovery_review.py'
+      - 'industry-atlas/test_discovery_review.py'
+      - 'industry-atlas/discovery_lifecycle.py'
+      - 'industry-atlas/discovery_review_gate.py'
+      - 'industry-atlas/test_discovery_lifecycle.py'
+      - 'industry-atlas/discovery_seed.json'
+      - 'industry-atlas/intelligence.html'
+      - 'industry-atlas/check_intelligence_ui.py'
+      - '.github/workflows/industry-discovery-review.yml'
+  workflow_dispatch:
+  schedule:
+    - cron: '43 6 * * 4'
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: industry-discovery-review-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  discovery-queue:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Checkout source without giving write access
+        uses: actions/checkout@v4
+      - name: Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Regression (synthetic / no internet)
+        working-directory: industry-atlas
+        run: python -m unittest -v test_discovery_review test_discovery_lifecycle
+      - name: Re-rank existing Atlas public index (no network, no auto approval)
+        working-directory: industry-atlas
+        run: |
+          mkdir -p "$RUNNER_TEMP/discovery-review"
+          python discovery_review.py --mode offline --limit 100 --output "$RUNNER_TEMP/discovery-review/offline.json"
+          python -c "import json,os; d=json.load(open(os.path.join(os.environ['RUNNER_TEMP'],'discovery-review','offline.json')));assert not d['auto_promoted'] and not d['live_llm'];assert all(not r['approved'] for r in d['records']);print('Offline candidates:',d['queue_count'])"
+      - name: Offline baseline comparison and empty human-request gate
+        working-directory: industry-atlas
+        run: |
+          python discovery_lifecycle.py --current "$RUNNER_TEMP/discovery-review/offline.json" --output "$RUNNER_TEMP/discovery-review/offline_delta.json"
+          printf '[]\n' > "$RUNNER_TEMP/discovery-review/decisions_empty.json"
+          python discovery_review_gate.py --queue "$RUNNER_TEMP/discovery-review/offline.json" --decisions "$RUNNER_TEMP/discovery-review/decisions_empty.json" --output "$RUNNER_TEMP/discovery-review/review_requests.json"
+          python -c "import json,os; p=os.path.join(os.environ['RUNNER_TEMP'],'discovery-review','offline_delta.json'); d=json.load(open(p));assert d['comparison_state']=='no-prior-baseline' and not d['deletion_verified'];print('Safe baseline delta:',d['counts'])"
+      - name: Fetch official live metadata only when explicitly dispatched or scheduled
+        if: github.event_name == 'workflow_dispatch' || github.event_name == 'schedule'
+        working-directory: industry-atlas
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python discovery_review.py --mode live --limit 80 --output "$RUNNER_TEMP/discovery-review/live.json"
+          python -c "import json,os; d=json.load(open(os.path.join(os.environ['RUNNER_TEMP'],'discovery-review','live.json')));assert d['mode']=='live' and not d['auto_promoted'];assert all(not r['approved'] for r in d['records']);print('Live unreviewed:',d['queue_count'])"
+      - name: Compare live sample with previous successful live artifact (read only)
+        if: github.event_name == 'workflow_dispatch' || github.event_name == 'schedule'
+        working-directory: industry-atlas
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -eu
+          old_run=$(gh run list --workflow industry-discovery-review.yml --branch main --status success --limit 5 --json databaseId --jq '.[0].databaseId' 2>/dev/null || true)
+          prior_args=""
+          if [ -n "$old_run" ]; then
+            mkdir -p "$RUNNER_TEMP/previous-discovery"
+            if gh run download "$old_run" --name "industry-discovery-review-$old_run" --dir "$RUNNER_TEMP/previous-discovery"; then
+              if [ -s "$RUNNER_TEMP/previous-discovery/live.json" ]; then
+                prior_args="--previous $RUNNER_TEMP/previous-discovery/live.json"
+              fi
+            else
+              echo "::warning::No accessible prior live artifact; creating a truthful no-prior baseline"
+            fi
+          fi
+          # Only run on a completed live source query; never compare offline with live.
+          python discovery_lifecycle.py --current "$RUNNER_TEMP/discovery-review/live.json" $prior_args --output "$RUNNER_TEMP/discovery-review/live_delta.json"
+          python -c "import json,os; d=json.load(open(os.path.join(os.environ['RUNNER_TEMP'],'discovery-review','live_delta.json')));assert not d['auto_promoted'] and not d['deletion_verified'];print('Live delta:',d['comparison_state'],d['counts'])"
+      - name: Attach results for human review, never publish to main
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: industry-discovery-review-${{ github.run_id }}
+          path: ${{ runner.temp }}/discovery-review/*.json
+          if-no-files-found: warn
+          retention-days: 14

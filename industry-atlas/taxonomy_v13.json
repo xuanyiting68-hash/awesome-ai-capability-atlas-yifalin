@@ -1,0 +1,905 @@
+{
+  "schema": "1.3.0",
+  "created_on": "2026-11-01",
+  "sectors": [
+    {
+      "code": "A",
+      "name": "农、林、牧、渔业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "B",
+      "name": "采矿业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "C",
+      "name": "制造业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "D",
+      "name": "电力、热力、燃气及水生产和供应业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "E",
+      "name": "建筑业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "F",
+      "name": "批发和零售业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "G",
+      "name": "交通运输、仓储和邮政业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "H",
+      "name": "住宿和餐饮业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "I",
+      "name": "信息传输、软件和信息技术服务业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "J",
+      "name": "金融业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "K",
+      "name": "房地产业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "L",
+      "name": "租赁和商务服务业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "M",
+      "name": "科学研究和技术服务业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "N",
+      "name": "水利、环境和公共设施管理业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "O",
+      "name": "居民服务、修理和其他服务业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "P",
+      "name": "教育",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "Q",
+      "name": "卫生和社会工作",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "R",
+      "name": "文化、体育和娱乐业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "S",
+      "name": "公共管理、社会保障和社会组织",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "T",
+      "name": "国际组织",
+      "standard": "GB/T 4754-2017"
+    }
+  ],
+  "divisions": [
+    {
+      "code": "01",
+      "name": "农业",
+      "section_code": "A",
+      "section_name": "农、林、牧、渔业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "02",
+      "name": "林业",
+      "section_code": "A",
+      "section_name": "农、林、牧、渔业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "03",
+      "name": "畜牧业",
+      "section_code": "A",
+      "section_name": "农、林、牧、渔业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "04",
+      "name": "渔业",
+      "section_code": "A",
+      "section_name": "农、林、牧、渔业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "05",
+      "name": "农、林、牧、渔专业及辅助性活动",
+      "section_code": "A",
+      "section_name": "农、林、牧、渔业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "06",
+      "name": "煤炭开采和洗选业",
+      "section_code": "B",
+      "section_name": "采矿业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "07",
+      "name": "石油和天然气开采业",
+      "section_code": "B",
+      "section_name": "采矿业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "08",
+      "name": "黑色金属矿采选业",
+      "section_code": "B",
+      "section_name": "采矿业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "09",
+      "name": "有色金属矿采选业",
+      "section_code": "B",
+      "section_name": "采矿业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "10",
+      "name": "非金属矿采选业",
+      "section_code": "B",
+      "section_name": "采矿业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "11",
+      "name": "开采专业及辅助性活动",
+      "section_code": "B",
+      "section_name": "采矿业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "12",
+      "name": "其他采矿业",
+      "section_code": "B",
+      "section_name": "采矿业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "13",
+      "name": "农副食品加工业",
+      "section_code": "C",
+      "section_name": "制造业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "14",
+      "name": "食品制造业",
+      "section_code": "C",
+      "section_name": "制造业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "15",
+      "name": "酒、饮料和精制茶制造业",
+      "section_code": "C",
+      "section_name": "制造业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "16",
+      "name": "烟草制品业",
+      "section_code": "C",
+      "section_name": "制造业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "17",
+      "name": "纺织业",
+      "section_code": "C",
+      "section_name": "制造业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "18",
+      "name": "纺织服装、服饰业",
+      "section_code": "C",
+      "section_name": "制造业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "19",
+      "name": "皮革、毛皮、羽毛及其制品和制鞋业",
+      "section_code": "C",
+      "section_name": "制造业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "20",
+      "name": "木材加工和木、竹、藤、棕、草制品业",
+      "section_code": "C",
+      "section_name": "制造业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "21",
+      "name": "家具制造业",
+      "section_code": "C",
+      "section_name": "制造业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "22",
+      "name": "造纸和纸制品业",
+      "section_code": "C",
+      "section_name": "制造业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "23",
+      "name": "印刷和记录媒介复制业",
+      "section_code": "C",
+      "section_name": "制造业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "24",
+      "name": "文教、工美、体育和娱乐用品制造业",
+      "section_code": "C",
+      "section_name": "制造业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "25",
+      "name": "石油、煤炭及其他燃料加工业",
+      "section_code": "C",
+      "section_name": "制造业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "26",
+      "name": "化学原料和化学制品制造业",
+      "section_code": "C",
+      "section_name": "制造业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "27",
+      "name": "医药制造业",
+      "section_code": "C",
+      "section_name": "制造业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "28",
+      "name": "化学纤维制造业",
+      "section_code": "C",
+      "section_name": "制造业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "29",
+      "name": "橡胶和塑料制品业",
+      "section_code": "C",
+      "section_name": "制造业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "30",
+      "name": "非金属矿物制品业",
+      "section_code": "C",
+      "section_name": "制造业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "31",
+      "name": "黑色金属冶炼和压延加工业",
+      "section_code": "C",
+      "section_name": "制造业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "32",
+      "name": "有色金属冶炼和压延加工业",
+      "section_code": "C",
+      "section_name": "制造业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "33",
+      "name": "金属制品业",
+      "section_code": "C",
+      "section_name": "制造业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "34",
+      "name": "通用设备制造业",
+      "section_code": "C",
+      "section_name": "制造业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "35",
+      "name": "专用设备制造业",
+      "section_code": "C",
+      "section_name": "制造业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "36",
+      "name": "汽车制造业",
+      "section_code": "C",
+      "section_name": "制造业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "37",
+      "name": "铁路、船舶、航空航天和其他运输设备制造业",
+      "section_code": "C",
+      "section_name": "制造业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "38",
+      "name": "电气机械和器材制造业",
+      "section_code": "C",
+      "section_name": "制造业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "39",
+      "name": "计算机、通信和其他电子设备制造业",
+      "section_code": "C",
+      "section_name": "制造业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "40",
+      "name": "仪器仪表制造业",
+      "section_code": "C",
+      "section_name": "制造业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "41",
+      "name": "其他制造业",
+      "section_code": "C",
+      "section_name": "制造业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "42",
+      "name": "废弃资源综合利用业",
+      "section_code": "C",
+      "section_name": "制造业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "43",
+      "name": "金属制品、机械和设备修理业",
+      "section_code": "C",
+      "section_name": "制造业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "44",
+      "name": "电力、热力生产和供应业",
+      "section_code": "D",
+      "section_name": "电力、热力、燃气及水生产和供应业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "45",
+      "name": "燃气生产和供应业",
+      "section_code": "D",
+      "section_name": "电力、热力、燃气及水生产和供应业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "46",
+      "name": "水的生产和供应业",
+      "section_code": "D",
+      "section_name": "电力、热力、燃气及水生产和供应业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "47",
+      "name": "房屋建筑业",
+      "section_code": "E",
+      "section_name": "建筑业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "48",
+      "name": "土木工程建筑业",
+      "section_code": "E",
+      "section_name": "建筑业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "49",
+      "name": "建筑安装业",
+      "section_code": "E",
+      "section_name": "建筑业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "50",
+      "name": "建筑装饰、装修和其他建筑业",
+      "section_code": "E",
+      "section_name": "建筑业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "51",
+      "name": "批发业",
+      "section_code": "F",
+      "section_name": "批发和零售业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "52",
+      "name": "零售业",
+      "section_code": "F",
+      "section_name": "批发和零售业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "53",
+      "name": "铁路运输业",
+      "section_code": "G",
+      "section_name": "交通运输、仓储和邮政业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "54",
+      "name": "道路运输业",
+      "section_code": "G",
+      "section_name": "交通运输、仓储和邮政业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "55",
+      "name": "水上运输业",
+      "section_code": "G",
+      "section_name": "交通运输、仓储和邮政业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "56",
+      "name": "航空运输业",
+      "section_code": "G",
+      "section_name": "交通运输、仓储和邮政业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "57",
+      "name": "管道运输业",
+      "section_code": "G",
+      "section_name": "交通运输、仓储和邮政业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "58",
+      "name": "多式联运和运输代理业",
+      "section_code": "G",
+      "section_name": "交通运输、仓储和邮政业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "59",
+      "name": "装卸搬运和仓储业",
+      "section_code": "G",
+      "section_name": "交通运输、仓储和邮政业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "60",
+      "name": "邮政业",
+      "section_code": "G",
+      "section_name": "交通运输、仓储和邮政业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "61",
+      "name": "住宿业",
+      "section_code": "H",
+      "section_name": "住宿和餐饮业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "62",
+      "name": "餐饮业",
+      "section_code": "H",
+      "section_name": "住宿和餐饮业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "63",
+      "name": "电信、广播电视和卫星传输服务",
+      "section_code": "I",
+      "section_name": "信息传输、软件和信息技术服务业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "64",
+      "name": "互联网和相关服务",
+      "section_code": "I",
+      "section_name": "信息传输、软件和信息技术服务业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "65",
+      "name": "软件和信息技术服务业",
+      "section_code": "I",
+      "section_name": "信息传输、软件和信息技术服务业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "66",
+      "name": "货币金融服务",
+      "section_code": "J",
+      "section_name": "金融业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "67",
+      "name": "资本市场服务",
+      "section_code": "J",
+      "section_name": "金融业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "68",
+      "name": "保险业",
+      "section_code": "J",
+      "section_name": "金融业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "69",
+      "name": "其他金融业",
+      "section_code": "J",
+      "section_name": "金融业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "70",
+      "name": "房地产业",
+      "section_code": "K",
+      "section_name": "房地产业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "71",
+      "name": "租赁业",
+      "section_code": "L",
+      "section_name": "租赁和商务服务业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "72",
+      "name": "商务服务业",
+      "section_code": "L",
+      "section_name": "租赁和商务服务业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "73",
+      "name": "研究和试验发展",
+      "section_code": "M",
+      "section_name": "科学研究和技术服务业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "74",
+      "name": "专业技术服务业",
+      "section_code": "M",
+      "section_name": "科学研究和技术服务业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "75",
+      "name": "科技推广和应用服务业",
+      "section_code": "M",
+      "section_name": "科学研究和技术服务业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "76",
+      "name": "水利管理业",
+      "section_code": "N",
+      "section_name": "水利、环境和公共设施管理业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "77",
+      "name": "生态保护和环境治理业",
+      "section_code": "N",
+      "section_name": "水利、环境和公共设施管理业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "78",
+      "name": "公共设施管理业",
+      "section_code": "N",
+      "section_name": "水利、环境和公共设施管理业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "79",
+      "name": "土地管理业",
+      "section_code": "N",
+      "section_name": "水利、环境和公共设施管理业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "80",
+      "name": "居民服务业",
+      "section_code": "O",
+      "section_name": "居民服务、修理和其他服务业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "81",
+      "name": "机动车、电子产品和日用产品修理业",
+      "section_code": "O",
+      "section_name": "居民服务、修理和其他服务业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "82",
+      "name": "其他服务业",
+      "section_code": "O",
+      "section_name": "居民服务、修理和其他服务业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "83",
+      "name": "教育",
+      "section_code": "P",
+      "section_name": "教育",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "84",
+      "name": "卫生",
+      "section_code": "Q",
+      "section_name": "卫生和社会工作",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "85",
+      "name": "社会工作",
+      "section_code": "Q",
+      "section_name": "卫生和社会工作",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "86",
+      "name": "新闻和出版业",
+      "section_code": "R",
+      "section_name": "文化、体育和娱乐业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "87",
+      "name": "广播、电视、电影和录音制作业",
+      "section_code": "R",
+      "section_name": "文化、体育和娱乐业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "88",
+      "name": "文化艺术业",
+      "section_code": "R",
+      "section_name": "文化、体育和娱乐业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "89",
+      "name": "体育",
+      "section_code": "R",
+      "section_name": "文化、体育和娱乐业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "90",
+      "name": "娱乐业",
+      "section_code": "R",
+      "section_name": "文化、体育和娱乐业",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "91",
+      "name": "中国共产党机关",
+      "section_code": "S",
+      "section_name": "公共管理、社会保障和社会组织",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "92",
+      "name": "国家机构",
+      "section_code": "S",
+      "section_name": "公共管理、社会保障和社会组织",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "93",
+      "name": "人民政协、民主党派",
+      "section_code": "S",
+      "section_name": "公共管理、社会保障和社会组织",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "94",
+      "name": "社会保障",
+      "section_code": "S",
+      "section_name": "公共管理、社会保障和社会组织",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "95",
+      "name": "群众团体、社会团体和其他成员组织",
+      "section_code": "S",
+      "section_name": "公共管理、社会保障和社会组织",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "96",
+      "name": "基层群众自治组织",
+      "section_code": "S",
+      "section_name": "公共管理、社会保障和社会组织",
+      "standard": "GB/T 4754-2017"
+    },
+    {
+      "code": "97",
+      "name": "国际组织",
+      "section_code": "T",
+      "section_name": "国际组织",
+      "standard": "GB/T 4754-2017"
+    }
+  ],
+  "standards": [
+    {
+      "id": "gbt2017",
+      "label": "中国行业 GB/T 4754—2017",
+      "levels": "20 门类 / 97 大类 / 473 中类 / 1382 小类",
+      "ingestion": "已整理 20/97；473/1382 暂未导入",
+      "url": "https://www.stats.gov.cn/zs/tjws/tjbz/202301/t20230101_1903769.html"
+    },
+    {
+      "id": "cn_occ_2022",
+      "label": "中国职业分类大典 2022",
+      "levels": "8 大类 / 79 中类 / 社区镜像 450 小类 / 1639 职业",
+      "ingestion": "1639 条支持从第三方镜像按需导入；未完成逐项官方核对",
+      "url": "https://www.ndrc.gov.cn/fggz/jyysr/jysrsbxf/202210/t20221031_1340470_ext.html"
+    },
+    {
+      "id": "isic5",
+      "label": "联合国 ISIC Rev.5",
+      "levels": "22 sections / 87 divisions (第三方索引值)",
+      "ingestion": "来源入口，尚未逐级导入",
+      "url": "https://unstats.un.org/unsd/classifications/Econ/isic"
+    },
+    {
+      "id": "isco08",
+      "label": "国际劳工组织 ISCO-08",
+      "levels": "10 大类 / 43 次大类 / 130 小组 / 436 单元组",
+      "ingestion": "官方标准入口，尚未逐级导入",
+      "url": "https://isco.ilo.org/en/isco-08/"
+    },
+    {
+      "id": "osca2024",
+      "label": "澳大利亚 OSCA 2024 v1.0",
+      "levels": "8 / 53 / 111 / 421 / 1156 个职业",
+      "ingestion": "官方标准入口，尚未逐级导入",
+      "url": "https://www.abs.gov.au/statistics/classifications/osca-occupation-standard-classification-australia/2024-version-1-0/comparison-isco-08"
+    },
+    {
+      "id": "onet31",
+      "label": "美国 O*NET 31.0",
+      "levels": "1016 条 O*NET-SOC 职业记录",
+      "ingestion": "官方数据库入口，尚未逐级导入",
+      "url": "https://www.onetcenter.org/database.html"
+    },
+    {
+      "id": "esco",
+      "label": "欧盟 ESCO",
+      "levels": "职业 / 技能 / 资格多语言分类",
+      "ingestion": "官方下载入口，尚未导入",
+      "url": "https://esco.ec.europa.eu/en/use-esco/download"
+    }
+  ],
+  "occupation_major_groups": {
+    "1": "负责人和管理人员",
+    "2": "专业技术人员",
+    "3": "办事人员和有关人员",
+    "4": "社会生产服务和生活服务人员",
+    "5": "农、林、牧、渔业生产及辅助人员",
+    "6": "生产制造及有关人员",
+    "7": "军队人员",
+    "8": "不便分类的其他从业人员"
+  },
+  "starter_actions": {
+    "1": {
+      "task": "管理汇报与风险台账",
+      "pilot": "用匿名项目资料生成有来源的周报，再由负责人复核",
+      "learn": "数据治理、Agent 审批、人机协同管理",
+      "gate": "不得自动作出人事、财务、合规决定"
+    },
+    "2": {
+      "task": "专业资料检索与可追溯整理",
+      "pilot": "用公开资料做 RAG/证据引用试点并与专家结果比对",
+      "learn": "行业知识工程、来源核验、LLM 评测",
+      "gate": "医疗/法律/财务/工程结论必须由有资质人员复核"
+    },
+    "3": {
+      "task": "表单、文书与业务流程",
+      "pilot": "从去标识化表单中抽取字段并人工核对",
+      "learn": "OCR/文档理解、工作流、权限与审计",
+      "gate": "未经授权不得操作真实系统或读取敏感数据"
+    },
+    "4": {
+      "task": "客户咨询与服务知识库",
+      "pilot": "构建标准问答、转人工和申诉渠道并测量错答",
+      "learn": "服务设计、知识库、AI 客服评测",
+      "gate": "涉及健康、儿童、个人信息和实际合同须加强审核"
+    },
+    "5": {
+      "task": "生产日志、农情与维修文档",
+      "pilot": "将公开农情记录分层整理、由当地从业人员复核",
+      "learn": "遥感/传感器基础、AI 巡检、边缘计算",
+      "gate": "AI 不直接控制农机、喷洒或生物安全相关设备"
+    },
+    "6": {
+      "task": "质量检查与维修知识",
+      "pilot": "用授权的非生产缺陷样本评估误报和漏报",
+      "learn": "计算机视觉、数字孪生、机器安全",
+      "gate": "不能越过安全联锁或自行控制生产设备"
+    },
+    "7": {
+      "task": "行政文书与通用培训",
+      "pilot": "仅用非涉密公开培训资料归档检索",
+      "learn": "公开资料治理、基础 AI 素养",
+      "gate": "不处理涉密/作战/敏感人员资料，不连接指挥系统"
+    },
+    "8": {
+      "task": "先开展岗位职责访谈",
+      "pilot": "先匿名记录真实任务、时长、数据流和审批点",
+      "learn": "任务分析、AI 基础、数据安全",
+      "gate": "不能在岗位未识别时自动推荐高风险 Agent"
+    }
+  },
+  "community_source": {
+    "url": "https://raw.githubusercontent.com/Optima-Chat/china-jobs/main/data/occupations_raw.json",
+    "repo": "https://github.com/Optima-Chat/china-jobs",
+    "description": "独立第三方整理的《职业分类大典（2022）》结构化镜像，需独立核对，不转载其主观替代评分",
+    "license_status": "README 声称 MIT，但本轮未找到仓库根 LICENSE；生产再发布与商用权利仍待评估",
+    "verification": "发现记录为 1639 职业 / 8 大类 / 79 中类 / 450 小类，未完成逐条官方对照。"
+  }
+}
