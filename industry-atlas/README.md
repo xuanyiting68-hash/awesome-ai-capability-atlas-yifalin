@@ -117,3 +117,15 @@ User-facing improvements:
 **Sources/build/tests:** `advisor_v16_template.html`, `advisor_v16_data.json`, `patch_advisor_v16.py`, `build_advisor_v16.py`, `check_advisor_v16.py`. Run `python patch_advisor_v16.py && python build_advisor_v16.py && python check_advisor_v16.py`. Browser persistence tests use a simulated localStorage object; they do not prove cross-device sync.
 
 **Status:** separate research branch / Draft PR, no merge, no automatic deployment. Future genuine AI assistant integration needs a secure server-side model gateway, explicit identity and permissions, audit logs, rate limits, privacy notice, evaluation and real-world acceptance evidence.
+
+## V1.7 · Progressive Industry Workspace (Draft, 2026-11-03)
+
+**Entry:** [start.html](start.html) → [advisor_v17.html](advisor_v17.html). Built on top of the **unchanged V1.6 editorial snapshot** and reuses all existing V1.0–V1.6 pages, taxonomies, careers, tools and source links. New UI is not a separate platform.
+
+- First open is neutral: **no preselected finance demo incorrectly masquerading as a recommendation**. Submit a concrete industry/task question, or pick an example.
+- Contextual example prompts for finance, manufacturing, legal, logistics, agriculture, hospitality, teaching and healthcare. Finance samples remain in securities/asset management and do not mix other industries' specialties.
+- **Beginner mode** shows the current next step, two top candidate tools and direct quick actions. **Expert mode** shows all five steps, extended candidates and a navigable capability graph. Switch in-place without losing current progress.
+- In-page follow-ups, three-tool comparison, source-linked materials, per-specialty notebook, opt-in browser storage, no forced file download remain available. Unknown requests fail closed with no stale recommendations. Raw user questions are not added to share URLs.
+- [build_advisor_v17.py](build_advisor_v17.py) deterministically rebuilds the self-contained page from the frozen V1.6 data/script output; [check_advisor_v17.py](check_advisor_v17.py) exercises 1440/390px Chromium states including the no-match boundary and zero network requests. GitHub Actions also reruns V1.0–V1.6 checks.
+
+**Honest boundary:** This is an offline contextual-rules prototype, **not a live LLM, RAG service or agent execution**. No business data, telemetry, accounts, external writes, API key or paid calls. Browser opt-in local data is not cross-device sync or encrypted account storage. Candidate vendor links are research leads, not independently verified compatibility/security/performance. Source/legal review and a separate Owner deployment approval are mandatory. **PR stays Draft / no merge / no production publication**.
