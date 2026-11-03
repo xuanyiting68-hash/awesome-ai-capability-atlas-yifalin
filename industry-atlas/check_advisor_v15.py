@@ -59,6 +59,13 @@ with sync_playwright() as p:
         page.locator('#query').fill('我是一名律师，希望提升合同审核效率')
         page.locator('#searchForm button').click()
         assert '合同审查与法务管理' in page.locator('#targetTitle').inner_text()
+        # Cross-domain disambiguation: explicit aviation / restaurant details win over generic tasks.
+        page.locator('#query').fill('民航飞机维修管理')
+        page.locator('#searchForm button').click()
+        assert page.locator('#targetTitle').inner_text()=='航空与航运运营'
+        page.locator('#query').fill('我在中餐厅管理预订和客户服务')
+        page.locator('#searchForm button').click()
+        assert page.locator('#targetTitle').inner_text()=='餐饮经营与菜品'
         # Unknown questions never inherit the previous industry.
         page.locator('#query').fill('香蕉风铃神秘舞台')
         page.locator('#searchForm button').click()
