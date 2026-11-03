@@ -80,12 +80,16 @@ class DiscoveryReview(TestCase):
     def test_synthetic_live_api_adapter(self):
         gh = {"items": [{"full_name":"research-org/warehouse-helper", "html_url":"https://github.com/research-org/warehouse-helper", "description":"warehouse logistics assistant", "owner":{"login":"research-org"}, "license":{"spdx_id":"MIT"}, "pushed_at":"2026-10-31T10:00:00Z", "archived":False}], "incomplete_results":False}
         hf = [{"id":"demo/finance-model", "pipeline_tag":"text-generation", "tags":["finance","license:apache-2.0"],"lastModified":"2026-11-01T12:00:00Z"}]
-        with patch.object(app, "request_json", side_effect=[gh, gh, hf]) as req:
+        from xml.etree import ElementTree as ET
+        atom = ET.fromstring('<feed xmlns="http://www.w3.org/2005/Atom"><entry><id>https://arxiv.org/abs/2611.00001v1</id><title>Quant portfolio evaluation</title><summary>A reproducible portfolio research paper.</summary><updated>2026-11-03T10:00:00Z</updated></entry></feed>')
+        with patch.object(app, "request_json", side_effect=[gh, gh, hf]) as req, patch.object(app, "request_atom", return_value=atom) as papers:
             items = app.live_candidates(NOW)
-        self.assertEqual(len(items), 3)
+        self.assertEqual(len(items), 4)
         self.assertEqual(req.call_count, 3)
+        self.assertEqual(papers.call_count, 1)
         out = app.assemble(items, NOW, "live", 90)
-        self.assertEqual(out["deduplicated"], 2)
+        self.assertEqual(out["deduplicated"], 3)
+        self.assertTrue(any(r["kind"]=="paper" and r["review_state"]=="needs-evidence" for r in out["records"]))
         self.assertTrue(all(not r["approved"] for r in out["records"]))
 
 if __name__ == "__main__":
