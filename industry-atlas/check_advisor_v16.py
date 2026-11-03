@@ -14,7 +14,10 @@ assert (len(data['sectors']),len(data['subdomains']),len(data['tools']),len(data
 assert data['meta']['ai_runtime'] is False
 
 with sync_playwright() as p:
-    browser=p.chromium.launch(executable_path='/usr/bin/chromium',args=['--no-sandbox'],headless=True)
+    launch={'headless':True}
+    if Path('/usr/bin/chromium').exists():
+        launch.update(executable_path='/usr/bin/chromium',args=['--no-sandbox'])
+    browser=p.chromium.launch(**launch)
     for width,height in [(1440,900),(390,844)]:
         page=browser.new_page(viewport={'width':width,'height':height},accept_downloads=True)
         errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
