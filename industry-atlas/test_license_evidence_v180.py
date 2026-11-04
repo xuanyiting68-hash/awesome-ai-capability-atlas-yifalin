@@ -73,7 +73,7 @@ class LicenseReviewV180(unittest.TestCase):
         b["rows"].pop()
         delta=compare_license_reports(REPORT,b)
         self.assertEqual(delta["counts"]["not-in-current-sample-not-deletion"],1)
-        self.assertFalse(delta["events"][-1]["verified_deletion"])
+        self.assertTrue(all(not e["verified_deletion"] for e in delta["events"]))
     def test_determinism(self):
         self.assertEqual(REPORT,build_license_report(FILES,LEADS,S,A,P))
 if __name__=="__main__":
