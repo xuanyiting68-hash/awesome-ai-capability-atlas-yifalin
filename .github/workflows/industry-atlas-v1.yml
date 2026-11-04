@@ -37,6 +37,8 @@ jobs:
           git diff --exit-code -- advisor_v16_template.html advisor_v16.html advisor_v16_data.json
           python build_advisor_v17.py
           git diff --exit-code -- advisor_v17.html
+          python build_advisor_v173.py
+          git diff --exit-code -- advisor_v173.html
       - name: Install pinned Playwright and Chromium
         run: |
           python -m pip install --disable-pip-version-check playwright==1.57.0
@@ -52,4 +54,5 @@ jobs:
           python check_advisor_v15.py
           python check_advisor_v16.py
           python check_advisor_v17.py
+          python check_advisor_v173.py
           python check_intelligence_ui.py
