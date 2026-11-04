@@ -26,16 +26,16 @@ with sync_playwright() as playwright:
         page.locator("#coverageSector").select_option("s30")
         assert "未审核主题映射 37 条" in page.locator("#coverageSelection").inner_text()
         # Record all 37 proposals from every page and verify no duplicates/loss.
-        all_names=[]
+        all_links=[]
         for n in range(5):
-            names=page.locator("#coverageProposals .coverageSource strong").all_inner_texts()
-            all_names.extend(names)
+            links=page.locator("#coverageProposals .coverageSource a[href^='https://']").evaluate_all("(els) => els.map(el => el.href)")
+            all_links.extend(links)
             assert f"第 {n+1} / 5 页" in page.locator("#coverageProposalsPager").inner_text()
             if n<4:
                 assert page.locator("#coverageProposalsPager [data-cov-step='1']").is_enabled()
                 page.locator("#coverageProposalsPager [data-cov-step='1']").click()
-        assert len(all_names)==37, len(all_names)
-        assert len(all_names)==len(set(all_names)),all_names
+        assert len(all_links)==37, len(all_links)
+        assert len(all_links)==len(set(all_links)),all_links
         assert page.locator("#coverageProposalsPager [data-cov-step='1']").is_disabled()
         # Move to original labels: 24 records across 3 pages.
         assert "原有编辑标签 24 条" in page.locator("#coverageSelection").inner_text()
