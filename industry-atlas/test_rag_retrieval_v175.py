@@ -75,6 +75,25 @@ class RetrievalV175(unittest.TestCase):
     def test_task_limit(self):
         with self.assertRaises(ContractError):
             retrieve("x"*401, "s02", RECORDS, TOPICS)
+    def test_labelled_synthetic_hit_at_8_and_abstention(self):
+        import json
+        from pathlib import Path
+        root=Path(__file__).resolve().parent
+        cases=json.loads((root/"rag_eval_cases_v175.json").read_text(encoding="utf-8"))["cases"]
+        positive=empty=0
+        self.assertEqual(len(cases),12)
+        for c in cases:
+            with self.subTest(id=c["id"]):
+                hits=retrieve(c["task"],c["sector_id"],RECORDS,TOPICS,8)
+                if c["expect_empty"]:
+                    empty+=1
+                    self.assertEqual(hits,[],c["id"])
+                else:
+                    positive+=1
+                    matched={x.title.lower() for x in hits}
+                    expected={n.lower() for n in c["expected_any"]}
+                    self.assertTrue(matched & expected,(c["id"],matched,expected))
+        print("V1.7.5 synthetic frozen-source hit@8: %d/%d; no-evidence abstention: %d/%d (NOT field precision)"%(positive,positive,empty,empty))
 
 if __name__=="__main__":
     unittest.main()
