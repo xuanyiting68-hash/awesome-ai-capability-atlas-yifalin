@@ -27,7 +27,7 @@ jobs:
           python validate.py
           python check_workflows.py
           python validate_career.py
-          python -m unittest -v test_discovery_review test_discovery_lifecycle test_provider_contract_v174 test_rag_retrieval_v175 test_source_governance_v176 test_evidence_eval_v176 test_safe_provider_policy_v176
+          python -m unittest -v test_discovery_review test_discovery_lifecycle test_provider_contract_v174 test_rag_retrieval_v175 test_source_governance_v176 test_evidence_eval_v176 test_safe_provider_policy_v176 test_coverage_review_v177
           python discovery_review.py --mode offline --limit 80 --output /tmp/yifalin_discovery_offline.json
           python discovery_lifecycle.py --current /tmp/yifalin_discovery_offline.json --output /tmp/yifalin_discovery_delta.json
           python build_advisor_v15.py
@@ -45,6 +45,9 @@ jobs:
           git diff --exit-code -- advisor_v175.html
           python build_advisor_v176.py
           git diff --exit-code -- advisor_v176.html
+          python build_advisor_v177.py
+          git diff --exit-code -- advisor_v177.html
+          python coverage_review_v177.py --output /tmp/yifalin_coverage_review_v177.json
           python source_governance_v176.py --as-of 2026-11-04 --output /tmp/yifalin_source_governance_v176.json
           python evidence_eval_v176.py
       - name: Install pinned Playwright and Chromium
@@ -66,4 +69,5 @@ jobs:
           python check_advisor_v174.py
           python check_advisor_v175.py
           python check_advisor_v176.py
+          python check_advisor_v177.py
           python check_intelligence_ui.py
