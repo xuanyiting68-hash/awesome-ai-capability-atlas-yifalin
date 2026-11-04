@@ -1,0 +1,116 @@
+{
+  "schema_version": "1.0",
+  "scope": "manually authored synthetic smoke examples for frozen editorial metadata (not independent field relevance labels, user benchmark or verified product quality)",
+  "cases": [
+    {
+      "id": "quant_backtest",
+      "task": "证券资管量化策略回测",
+      "sector_id": "s02",
+      "expected_any": [
+        "backtrader",
+        "vectorbt",
+        "Lean"
+      ],
+      "expect_empty": false
+    },
+    {
+      "id": "quant_paper_pdf",
+      "task": "证券投研 PDF 研报论文整理",
+      "sector_id": "s02",
+      "expected_any": [
+        "markitdown"
+      ],
+      "expect_empty": false
+    },
+    {
+      "id": "education_rag",
+      "task": "学校课程知识库 RAG 检索",
+      "sector_id": "s06",
+      "expected_any": [
+        "ragflow",
+        "llama_index",
+        "haystack"
+      ],
+      "expect_empty": false
+    },
+    {
+      "id": "education_speech",
+      "task": "教育语音课程制作",
+      "sector_id": "s06",
+      "expected_any": [
+        "CosyVoice"
+      ],
+      "expect_empty": false
+    },
+    {
+      "id": "marketing_growth",
+      "task": "营销客户分群获客",
+      "sector_id": "s27",
+      "expected_any": [
+        "mautic"
+      ],
+      "expect_empty": false
+    },
+    {
+      "id": "marketing_crawl",
+      "task": "营销网站公开数据采集",
+      "sector_id": "s27",
+      "expected_any": [
+        "crawl4ai",
+        "scrapy",
+        "crawlee"
+      ],
+      "expect_empty": false
+    },
+    {
+      "id": "software_agent",
+      "task": "软件开发与 Agent 编码",
+      "sector_id": "s30",
+      "expected_any": [
+        "codex",
+        "opencode",
+        "gemini-cli"
+      ],
+      "expect_empty": false
+    },
+    {
+      "id": "software_workflow",
+      "task": "软件自动化工作流编排",
+      "sector_id": "s30",
+      "expected_any": [
+        "n8n",
+        "gh-aw",
+        "dify"
+      ],
+      "expect_empty": false
+    },
+    {
+      "id": "legal_no_radar",
+      "task": "法律合同审查与风险管理",
+      "sector_id": "s21",
+      "expected_any": [],
+      "expect_empty": true
+    },
+    {
+      "id": "finance_nonsense",
+      "task": "星际香蕉风铃神秘舞台",
+      "sector_id": "s02",
+      "expected_any": [],
+      "expect_empty": true
+    },
+    {
+      "id": "education_wrong_sector",
+      "task": "证券量化策略回测",
+      "sector_id": "s06",
+      "expected_any": [],
+      "expect_empty": true
+    },
+    {
+      "id": "manufacturing_no_radar",
+      "task": "工业制造预测性维护",
+      "sector_id": "s09",
+      "expected_any": [],
+      "expect_empty": true
+    }
+  ]
+}
