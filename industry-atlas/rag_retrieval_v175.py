@@ -26,7 +26,7 @@ def phrase_hit(text: str, term: str) -> bool:
         return False
     word = term.lower().strip()
     if re.fullmatch(r"[a-z0-9][a-z0-9\s-]*", word):
-        pat = r"(?<![a-z0-9])" + re.sub(r"[\s-]+", r"[\\s_-]+", re.escape(word)) + r"(?![a-z0-9])"
+        pat = r"(?<![a-z0-9])" + r"[\s_-]+".join(re.escape(part) for part in re.split(r"[\s-]+", word)) + r"(?![a-z0-9])"
         return re.search(pat, text.lower()) is not None
     clean = lambda v: re.sub(r"[\s，。；：！？,.;:!?·_\-\(\)\[\]（）]+", "", v.lower())
     return clean(word) in clean(text)
