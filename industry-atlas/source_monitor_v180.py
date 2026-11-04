@@ -136,7 +136,6 @@ def main(argv=None):
     parser.add_argument("--as-of",required=True,help="UTC YYYY-MM-DDTHH:MM:SSZ")
     parser.add_argument("--output",required=True,type=Path)
     args=parser.parse_args(argv)
-    from pathlib import Path
     snap,atlas,rules=load_data()
     leads=json.loads((ROOT/"external_leads_v179.json").read_text(encoding="utf-8"))
     files=json.loads((ROOT/"license_file_evidence_v180.json").read_text(encoding="utf-8"))
