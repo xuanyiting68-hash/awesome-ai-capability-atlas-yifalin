@@ -155,3 +155,14 @@ User-facing improvements:
 **Testing**: `python -m unittest -v test_discovery_review test_discovery_lifecycle`, plus `python check_intelligence_ui.py` for actual 1440/390px Chromium. All tests are synthetic/offline except local browser use and the inherited GitHub CI runtime; live API capability is not yet a verified operation. Relative recommendation value, commercial licensing and real-world accuracy remain unproven.
 
 **Next gates**: Independent source/robots/ToS and permission review; evidence integrity beyond self-declared links (licence file and release attestation, reproducible benchmark protocol, security assessment); curated migration using Owner-reviewed, auditable PR only; second-snapshot longitudinal evaluation; authenticated per-user notes and YIFALIN Education compatibility. No price-bearing API or production customer data.
+
+
+## V1.7.4 — task-level evidence relevance, feedback and disabled provider contract (research Draft)
+
+- Open `start.html` → `advisor_v174.html`: preserve frozen `advisor_v17.html` / `advisor_v173.html`. All 32 sectors, 133 specialties, 114 candidate tools, 69 learning gateways and 133 *unapproved/cached* radar reference records remain intact.
+- Intent ranking now uses complete-word matching for Latin terms (`it` must not match `orbital`); targeted English editorial aliases are supported. This is rule matching, not a live model or complete bilingual UI.
+- The radar only displays sector-scoped items with actual task-word overlap. Each surfaced item shows its matched words and underlying link; an empty result is explicit. Metadata age is not a refreshed verification date; licenses, security, prices and impact remain unverified.
+- Users may hide a candidate as irrelevant and restore it for that specialty. The action never alters the curated catalog, changes approvals, or sends telemetry. Persistence still requires explicit same-device opt-in.
+- The reproducible builder is `build_advisor_v174.py`. `task_eval_cases_v174.json` contains **30 hand-labelled synthetic / editorial regressions**, including English false-positive controls. They cannot establish field accuracy, commercial suitability, or occupational classification completeness. Real Chromium evaluation: `check_advisor_v174.py` on 1440px and 390px.
+- `provider_contract_v174.py` and `test_provider_contract_v174.py` define capped, source-ID-checked request/response structures, a local Mock, and a disabled OpenAI-compatible request-envelope builder. No network client, API credential, spending or live model routing exists. Remote provider use requires a separately authorised authenticated backend, privacy review, rate-limit/cost hard caps and evaluation.
+- Draft PR / MERGE HOLD / DEPLOY HOLD. This research branch is not permission to publish or operate on customer inputs.
