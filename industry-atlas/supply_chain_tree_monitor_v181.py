@@ -9,7 +9,7 @@ from __future__ import annotations
 from datetime import datetime,timezone
 from pathlib import Path
 from urllib.parse import quote
-import argparse,json
+import argparse,json,os
 from provider_contract_v174 import ContractError
 from coverage_review_v177 import load_data
 from supply_chain_review_v181 import validate_supply_chain
@@ -34,7 +34,7 @@ def monitor_trees(supply,leads,licenses,snap,atlas,rules, *,
         status="not-checked";reason=None
         if mode=="live":
             endpoint="https://api.github.com/repos/"+r["repo_full_name"]+"/git/trees/"+quote(r["observed_branch"],safe="")
-            observed=fetcher(endpoint,None)
+            observed=fetcher(endpoint,os.environ.get('GITHUB_TOKEN') if mode=='live' else None)
             if observed.get("kind")!="ok":
                 status="unavailable-not-deleted";reason="network-or-api-limitation"
             else:
