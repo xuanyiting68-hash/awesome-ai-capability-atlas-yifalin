@@ -8,6 +8,14 @@ on:
       - 'industry-atlas/discovery_review_gate.py'
       - 'industry-atlas/test_discovery_lifecycle.py'
       - 'industry-atlas/discovery_seed.json'
+      - 'industry-atlas/external_leads_v179.json'
+      - 'industry-atlas/license_file_evidence_v180.json'
+      - 'industry-atlas/external_leads_v179.py'
+      - 'industry-atlas/license_evidence_v180.py'
+      - 'industry-atlas/source_monitor_v180.py'
+      - 'industry-atlas/test_external_leads_v179.py'
+      - 'industry-atlas/test_license_evidence_v180.py'
+      - 'industry-atlas/test_source_monitor_v180.py'
       - 'industry-atlas/intelligence.html'
       - 'industry-atlas/check_intelligence_ui.py'
       - '.github/workflows/industry-discovery-review.yml'
@@ -33,7 +41,7 @@ jobs:
           python-version: '3.11'
       - name: Regression (synthetic / no internet)
         working-directory: industry-atlas
-        run: python -m unittest -v test_discovery_review test_discovery_lifecycle
+        run: python -m unittest -v test_discovery_review test_discovery_lifecycle test_external_leads_v179 test_license_evidence_v180 test_source_monitor_v180
       - name: Re-rank existing Atlas public index (no network, no auto approval)
         working-directory: industry-atlas
         run: |
@@ -77,6 +85,21 @@ jobs:
           # Only run on a completed live source query; never compare offline with live.
           python discovery_lifecycle.py --current "$RUNNER_TEMP/discovery-review/live.json" $prior_args --output "$RUNNER_TEMP/discovery-review/live_delta.json"
           python -c "import json,os; d=json.load(open(os.path.join(os.environ['RUNNER_TEMP'],'discovery-review','live_delta.json')));assert not d['auto_promoted'] and not d['deletion_verified'];print('Live delta:',d['comparison_state'],d['counts'])"
+      - name: Export immutable file-evidence and offline monitor (no network)
+        working-directory: industry-atlas
+        run: |
+          python license_evidence_v180.py --output "$RUNNER_TEMP/discovery-review/license_files.json"
+          python source_monitor_v180.py --mode offline --as-of 2026-11-04T08:45:00Z --output "$RUNNER_TEMP/discovery-review/monitor_offline.json"
+          python -c "import json,os; p=os.path.join(os.environ['RUNNER_TEMP'],'discovery-review','license_files.json'); x=json.load(open(p)); assert x['files_observed']==10 and x['needs_signal_reconciliation']==2 and x['legal_licenses_verified']==0; print('Review only license evidence ready')"
+      - name: Bounded 10-repository live metadata/license-SHA monitor (manual/weekly only)
+        if: github.event_name == 'workflow_dispatch' || github.event_name == 'schedule'
+        working-directory: industry-atlas
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          stamp="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          python source_monitor_v180.py --mode live --ack-read-only-live --as-of "$stamp" --output "$RUNNER_TEMP/discovery-review/license_sha_monitor_live.json"
+          python -c "import json,os; p=os.path.join(os.environ['RUNNER_TEMP'],'discovery-review','license_sha_monitor_live.json'); x=json.load(open(p)); assert x['total_repositories']==10 and x['approval_count']==0 and x['catalog_mutations']==0 and x['network_requests_attempted']<=20; print('Review-only drift flags:',sum(bool(e['flags']) for e in x['entries']))"
       - name: Attach results for human review, never publish to main
         if: always()
         uses: actions/upload-artifact@v4
