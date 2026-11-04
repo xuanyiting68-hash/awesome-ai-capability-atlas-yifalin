@@ -28,10 +28,10 @@ def https_source(url: str) -> str:
         raise ContractError("Local evidence host rejected")
     try:
         address = ip_address(host)
-        if not address.is_global:
-            raise ContractError("Non-public evidence address rejected")
     except ValueError:
-        pass
+        address = None  # Ordinary DNS name, not an IP literal.
+    if address is not None and not address.is_global:
+        raise ContractError("Non-public evidence address rejected")
     return url
 
 @dataclass(frozen=True)
