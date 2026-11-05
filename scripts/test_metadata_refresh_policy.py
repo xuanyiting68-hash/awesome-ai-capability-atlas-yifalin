@@ -17,7 +17,7 @@ class RefreshWorkflowPolicy(unittest.TestCase):
 
     def test_validated_data_preserved_before_any_review_pr(self):
         self.assertLess(self.workflow.index('Verify generated evidence invariants'),
-                        self.workflow.index('Preserve generated evidence for review'))
+                        self.workflow.index('Preserve validated evidence for review'))
         self.assertLess(self.workflow.index('uses: actions/upload-artifact@v4'),
                         self.workflow.index('gh pr create --base main'))
         self.assertIn('data/repo_metadata.json',self.workflow)
@@ -35,7 +35,7 @@ class RefreshWorkflowPolicy(unittest.TestCase):
         self.assertIn('persist-credentials: false',self.workflow)
         self.assertIn("if: github.event_name != 'pull_request'",self.workflow)
         self.assertIn('pull-requests: write',self.workflow)
-        self.assertIn('  contents: read\njobs:',self.workflow)
+        self.assertIn('permissions:\n  contents: read\nconcurrency:',self.workflow)
 
     def test_snapshot_proposal_not_construed_as_audited_safe(self):
         self.assertIn('not approved safety or software licenses',self.workflow)
