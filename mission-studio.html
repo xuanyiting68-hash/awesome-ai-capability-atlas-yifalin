@@ -13,7 +13,7 @@ main{max-width:1380px;margin:auto;padding:22px 19px 85px}.notice{padding:14px 17
 .workflow{display:grid;gap:12px;margin-top:12px}.step{border:1px solid #dae5f2;border-radius:11px;background:#f7faff;padding:12px;position:relative}.step:not(:last-child):after{content:"↓";position:absolute;bottom:-19px;left:24px;color:#7c9fc2;font-weight:900;font-size:18px}.step strong{font-size:13px;display:block}.step p{font-size:12px;color:#5d7290;line-height:1.6;margin:8px 0}.step small{font-size:11px;color:#9a672e}.step select{width:100%;padding:9px;border:1px solid #d2dfef;background:white;border-radius:8px;color:#335178;font-size:12px;margin-top:8px}.compare{width:100%;border-collapse:collapse;font-size:11px;min-width:340px}.compare th,.compare td{text-align:left;border-bottom:1px solid #e7edf4;padding:9px 7px;vertical-align:top;overflow-wrap:anywhere}.compare th{color:#657c99;background:#f6f9fd}.compare a{font-weight:700}.small{font-size:11px;color:#697e99}.exports{display:flex;flex-wrap:wrap;gap:8px;margin-top:15px}.toolbar{display:flex;gap:9px;flex-wrap:wrap;align-items:center}.toolbar label{font-size:12px;color:#506888}.toolbar input{accent-color:#2867af}.loading{background:white;padding:24px;border-radius:12px;color:#526b8a;font-size:13px}.status{font-size:12px;color:#4b6985;min-height:1.4em}.saved-list{display:grid;gap:6px}.saved-row{display:flex;align-items:center;gap:10px;justify-content:space-between;border:1px solid #e2eaf6;border-radius:8px;padding:10px;font-size:11px}.saved-row button{border:1px solid #dbe4ef;border-radius:6px;background:#f6f9fd;font-size:10px;padding:6px}
 @media(max-width:1020px){.layout{grid-template-columns:1fr}.sticky{position:static}}@media(max-width:600px){header{padding:14px 14px 22px}nav{gap:10px}nav .logo{width:100%}nav a{font-size:11px}h1{font-size:27px;margin-top:18px}header p{font-size:12px}main{padding:12px 10px 50px}.panel{padding:14px}.mission-form{grid-template-columns:1fr}.mission-form textarea{min-height:80px}.group{margin:13px 0 9px}.group h2{font-size:17px}.tool{padding:12px}}
 </style></head><body>
-<header><nav><a class="logo" href="./index.html">◈ YIFALIN / AI CAPABILITY ATLAS</a><a href="./recipes.html">能力组合</a><a href="./demos.html">基础演示</a><a href="./top30.html">Top 30 研究</a></nav>
+<header><nav><a class="logo" href="./index.html">◈ YIFALIN / AI CAPABILITY ATLAS</a><a href="./recipes.html">能力组合</a><a href="./semantic-studio.html">✦ 本地 AI 语义搜索</a><a href="./demos.html">基础演示</a><a href="./top30.html">Top 30 研究</a></nav>
 <div class="eyebrow">V1.6 · DECISION INTELLIGENCE · SOURCE-GROUNDED</div><h1>从业务目标，到可审查的 AI 方案</h1><p>不再只是工具清单。输入你希望完成的事，从 133 个编辑精选项目中筛选真实候选，理解匹配依据、维护快照和阻断风险，组合四阶段工作流，并导出可交给团队执行与复核的计划。</p></header>
 <main>
 <div class="notice">信任说明：这是<b>本地规则匹配和方案构建器，不是真正的 LLM Agent</b>。133 个项目来自编辑精选快照；相关度不是模型预测准确率，研究证据分不是安全认证。代码、许可证和接口兼容性均需独立审查。你输入的目标不发送至服务器，保存操作仅写入当前浏览器。</div>
@@ -130,7 +130,24 @@ async function boot(){
   if(responses.some(x=>!x.ok))throw Error("公开研究数据无法获取");
   [curated,metadata,briefs]=await Promise.all(responses.map(x=>x.json()));
   if(!Array.isArray(curated)||curated.length!==133||metadata.coverage_count!==133||!Array.isArray(briefs.entries)||briefs.entries.length!==30)throw Error("来源数据版本不一致");
-  $("loading").hidden=true;savedPlans=safePlans();analysis();
+  $("loading").hidden=true;savedPlans=safePlans();
+  let incoming=null;
+  try{
+    const raw=sessionStorage.getItem("atlas_semantic_handoff_v1");
+    sessionStorage.removeItem("atlas_semantic_handoff_v1");
+    incoming=raw?JSON.parse(raw):null;
+  }catch{incoming=null}
+  if(incoming&&incoming.version===1&&typeof incoming.goal==="string"&&incoming.goal.length>=5
+    &&incoming.goal.length<=240&&E.PROFILES[incoming.scenario]&&Array.isArray(incoming.picks)){
+    $("goal").value=incoming.goal;$("scenario").value=incoming.scenario;
+    analysis();
+    const real=new Set(ranking.map(x=>x.repo));
+    const safelyChosen=[...new Set(incoming.picks)].filter(x=>typeof x==="string"&&real.has(x)).slice(0,5);
+    if(safelyChosen.length){
+      picks=safelyChosen;stages.forEach((x,i)=>{x.tool=picks[i%picks.length]||null});render();
+      updateMessage("goal-status","已从本地 AI 语义检索安全接收目标和 "+picks.length+" 个原始精选仓库。工作流仍需人工审核。");
+    }
+  }else analysis();
  }catch(e){$("loading").textContent="无法安全载入工作台："+e.message;updateMessage("goal-status","请查看 GitHub Pages 发布状态。")}
 }
 $("analyze").addEventListener("click",analysis);
