@@ -14,6 +14,16 @@
 
 **务必区分：**“已被目录索引 / repository-exists / security-audited / battle-tested / licensed-for-commercial-use” 是不同的状态。本项目目前只对 133 个精选 GitHub 项目完成了存在性与未归档状态的核验。目录候选不经过人工实测。
 
+## V1.9 · 真正的本地神经语义检索（用户主动选择）
+
+[直接打开真实 AI 语义检索页面](semantic-studio.html) · [安全与模型方法](docs/SEMANTIC_MODEL_V19_CN.md)
+
+增加开源 **Multilingual E5 Small（384 维）** 的可选真实神经网络推理：由真实用户**主动点击**后在本地浏览器 Web Worker 加载 Transformers.js 3.8.1 和公开模型，给已有 133 个真实编辑精选项目中规则预筛的最多 32 个仓库重新计算语义相似度。保留此前的风险审核、未知许可证、维护快照和项目来源。无需付费模型 API，中文与英文目标均可使用。
+
+已增加一条**真正的上游模型测试**：GitHub Actions 在隔离 Runner 使用模型真实权重执行中文、英文向量推理；另启动真正的 Chromium 浏览器，实际点击“启用本地 AI”、加载模型、生成 18 张重新排序的真实仓库卡片。CI 的每个 HEAD 是否成功必须以实际 Actions 日志和证据为准。
+
+首次模型下载**可能超过 100MB**，不适用于所有设备与地区，失败时仍可用原规则搜索。模型没有生成式 Agent 能力，不会自动执行工作、登录账户或下单；第三方权重依赖和法律审查仍未完成；不是安全/许可认证。
+
 ## V1.6 · Mission Studio：目标 → 工具证据 → 可复核实施计划
 
 [直接使用 AI 方案决策工作台](mission-studio.html) · [完整研发说明](docs/MISSION_STUDIO_V16_CN.md)
