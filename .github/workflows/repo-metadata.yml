@@ -3,27 +3,48 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '34 2 * * 3'
-  push:
-    branches: [main]
+  pull_request:
     paths:
+      - '.github/workflows/repo-metadata.yml'
       - 'scripts/sync_repo_metadata.py'
       - 'scripts/build_top30_evidence.py'
-      - 'data/top30_evaluation.csv'
-      - '.github/workflows/repo-metadata.yml'
+      - 'scripts/test_metadata.py'
+      - 'scripts/test_metadata_refresh_policy.py'
 permissions:
-  contents: write
-  actions: write
+  contents: read
 concurrency:
   group: atlas-data-refresh
   cancel-in-progress: false
 jobs:
-  enrich:
-    runs-on: ubuntu-latest
+  validate-pr:
+    if: github.event_name == 'pull_request'
+    permissions:
+      contents: read
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: main
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verify no protected-main push and artifact-before-draft-PR protocol
+        run: python -m unittest scripts.test_metadata_refresh_policy -v
+      - name: Validate metadata source contracts
+        run: python -m unittest scripts.test_metadata scripts.test_top30_evidence -v
+  enrich:
+    if: github.event_name != 'pull_request'
+    permissions:
+      contents: write
+      pull-requests: write
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
           fetch-depth: 0
+          persist-credentials: true
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -37,16 +58,31 @@ jobs:
         run: python scripts/build_top30_evidence.py
       - name: Verify generated evidence invariants
         run: python -m unittest discover -s scripts -p 'test_top30_evidence.py' -v
-      - name: Commit verified metadata snapshot and request website refresh
+      - name: Preserve validated evidence for review even if GitHub branch rules deny pushes
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: atlas-metadata-refresh-review-candidate
+          path: |
+            data/repo_metadata.json
+            data/top30_evidence.json
+          retention-days: 30
+          if-no-files-found: error
+      - name: Open draft source refresh PR instead of forbidden direct main push
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add data/repo_metadata.json data/top30_evidence.json
-          if ! git diff --cached --quiet; then
-            git commit -m 'data: refresh curated repository metadata'
-            git pull --rebase origin main
-            git push origin HEAD:main
-            gh workflow run pages.yml --ref main
+          if git diff --cached --quiet; then
+            echo 'No changes in the verified public metadata snapshot.'
+            exit 0
           fi
+          branch="data/metadata-refresh-$GITHUB_RUN_ID"
+          git switch -c "$branch"
+          git commit -m 'data: propose verified public repository metadata refresh'
+          # Any protected-branch rejection must remain a visible failure; the artifact is still safe.
+          git push origin HEAD:"refs/heads/$branch"
+          gh pr create --base main --head "$branch" --draft --title "Data review: refreshed public repo metadata" --body "Automated, review-only public metadata update. Never merge without checking evidence freshness, source count (133), Top 30 snapshot coupling, CI and branch rules. GitHub Action bot has not approved safety or software licenses."
