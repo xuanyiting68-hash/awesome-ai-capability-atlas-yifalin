@@ -39,6 +39,11 @@ const errors=[];
     assert.equal(manifest.mission_studio_curated_candidates,133);
     assert.equal(manifest.mission_studio_source_briefs,30);
     assert.equal(manifest.mission_studio_verified_integrations,0);
+    assert.equal(manifest.semantic_studio_enabled,true);
+    assert.equal(manifest.semantic_studio_candidate_cap,32);
+    assert.equal(manifest.semantic_studio_user_model_consent_required,true);
+    assert.equal(manifest.semantic_studio_remote_inference_calls,0);
+    assert.equal(manifest.semantic_studio_verified_agent_integrations,0);
     assert.match(manifest.interactive_demo_runtime,/client-side first-party/);
     const evidenceResponse=await context.request.get(new URL('data/recipe_demo_results.json',base).href);
     assert.equal(evidenceResponse.status(),200,'Recomputed published first-party evidence must exist');
@@ -307,6 +312,32 @@ const errors=[];
     assert.equal(await page.locator('#saved-count').innerText(),'0');
     await page.goto(base);
     assert.ok(await page.locator('a[href="./mission-studio.html"]').count()>=2,'Homepage must prominently link to Mission Studio');
+    // New opt-in semantic search. DO NOT auto-download 100MB model in universal smoke.
+    for(const width of [1440,768,390]){
+      await page.setViewportSize({width,height:850});
+      await page.goto(new URL('semantic-studio.html',base).href);
+      await page.waitForFunction(()=>document.querySelectorAll('#results .tool').length===18);
+      assert.match(await page.locator('#status').innerText(),/规则筛选 133 个来源项目/);
+      assert.equal(await page.locator('#neural').isEnabled(),true);
+      assert.equal(await page.locator('#cancel').isEnabled(),false);
+      assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,'Semantic UI horizontal overflow '+width);
+      await page.screenshot({path:'test-results/semantic-opt-in-'+width+'.png'});
+    }
+    await page.locator('#goal').fill('金融量化策略样本外成本分析与研究');
+    await page.locator('#scenario').selectOption('finance');
+    await page.locator('#rule').click();
+    assert.match(await page.locator('#status').innerText(),/规则筛选 133 个来源项目/);
+    await page.locator('#results .tool').first().locator('button').click();
+    assert.equal(await page.locator('#picks .pick').count(),1);
+    await page.locator('#handoff').click();
+    await page.waitForURL(/mission-studio\.html/);
+    await page.waitForFunction(()=>document.querySelectorAll('#candidates .tool').length===18);
+    assert.equal(await page.locator('#goal').inputValue(),'金融量化策略样本外成本分析与研究');
+    assert.equal(await page.locator('#scenario').inputValue(),'finance');
+    assert.ok(await page.locator('#pick-count').innerText().then(t=>t.startsWith('1 / 5')));
+    assert.equal(await page.evaluate(()=>sessionStorage.getItem('atlas_semantic_handoff_v1')),null,'One-time handoff must erase source text');
+    await page.goto(base);
+    assert.ok(await page.locator('a[href="./semantic-studio.html"]').count()>=2,'Atlas homepage should expose real opt-in local semantic AI');
     // Validate every official-source project dossier, not a hard-coded previous wave.
     const sourceResult=await context.request.get(new URL('data/research_briefs.json',base).href);
     assert.equal(sourceResult.status(),200);
