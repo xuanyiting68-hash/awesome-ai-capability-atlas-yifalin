@@ -10,7 +10,7 @@ class PublishBoundaryTests(unittest.TestCase):
             destination = Path(directory) / 'site'
             manifest = build(destination, commit='a' * 40)
             self.assertEqual(set(p.name for p in destination.iterdir()),
-                             {'index.html', 'top30.html', 'project.html', 'blueprints.html', 'network.html', 'adoption.html', 'pilot-lab.html', 'recipes.html', 'demos.html', 'mission-studio.html', 'mission-engine.js', 'data', 'docs', 'examples', 'LICENSE', 'README.md', 'deployment.json'})
+                             {'index.html', 'top30.html', 'project.html', 'blueprints.html', 'network.html', 'adoption.html', 'pilot-lab.html', 'recipes.html', 'demos.html', 'mission-studio.html', 'mission-engine.js', 'semantic-studio.html', 'semantic-core.js', 'semantic-worker.js', 'data', 'docs', 'examples', 'LICENSE', 'README.md', 'deployment.json'})
             self.assertEqual(json.loads((destination / 'deployment.json').read_text()), manifest)
             self.assertEqual(manifest['source_commit'], 'a' * 40)
             self.assertEqual(manifest['catalog_count'], 5000)
@@ -32,6 +32,14 @@ class PublishBoundaryTests(unittest.TestCase):
             self.assertEqual(manifest['mission_studio_verified_integrations'],0)
             self.assertIn('browser-local',manifest['mission_studio_runtime'])
             self.assertTrue((destination/'mission-studio.html').is_file())
+            self.assertTrue(manifest['semantic_studio_enabled'])
+            self.assertEqual(manifest['semantic_studio_candidate_cap'],32)
+            self.assertTrue(manifest['semantic_studio_user_model_consent_required'])
+            self.assertEqual(manifest['semantic_studio_remote_inference_calls'],0)
+            self.assertEqual(manifest['semantic_studio_verified_agent_integrations'],0)
+            self.assertTrue((destination/'semantic-studio.html').is_file())
+            self.assertTrue((destination/'semantic-core.js').is_file())
+            self.assertTrue((destination/'semantic-worker.js').is_file())
             self.assertTrue((destination/'mission-engine.js').is_file())
             self.assertIn('client-side',manifest['interactive_demo_runtime'])
             self.assertTrue((destination/'demos.html').is_file())

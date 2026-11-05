@@ -19,7 +19,7 @@ else:
     from verify_recipe_demos import verify_from_files as verify_recipe_demos
 
 ROOT = Path(__file__).resolve().parents[1]
-FILES = ('index.html', 'top30.html', 'project.html', 'blueprints.html', 'network.html', 'adoption.html', 'pilot-lab.html', 'recipes.html', 'demos.html', 'mission-studio.html', 'mission-engine.js', 'README.md', 'LICENSE')
+FILES = ('index.html', 'top30.html', 'project.html', 'blueprints.html', 'network.html', 'adoption.html', 'pilot-lab.html', 'recipes.html', 'demos.html', 'mission-studio.html', 'mission-engine.js', 'semantic-studio.html', 'semantic-core.js', 'semantic-worker.js', 'README.md', 'LICENSE')
 DIRECTORIES = ('data', 'docs')
 EXAMPLE_SUBDIRS = ('consent_lead_triage', 'recipe_demos')
 
@@ -99,6 +99,12 @@ def build(destination, source=ROOT, commit=None):
         'mission_studio_source_briefs': research_summary['count'],
         'mission_studio_runtime': 'browser-local deterministic source matching',
         'mission_studio_verified_integrations': 0,
+        'semantic_studio_enabled': True,
+        'semantic_studio_scope': 'opt-in local pretrained embeddings only',
+        'semantic_studio_candidate_cap': 32,
+        'semantic_studio_user_model_consent_required': True,
+        'semantic_studio_remote_inference_calls': 0,
+        'semantic_studio_verified_agent_integrations': 0,
         'pilot_contract_cases': pilot_summary['total_cases'],
         'pilot_contract_passed': pilot_summary['passed_cases'],
         'pilot_upstream_packages_executed': pilot_summary['upstream_code_executed'],

@@ -1,0 +1,83 @@
+name: Atlas V1.9 actual multilingual E5 neural model
+on:
+  pull_request:
+    paths:
+      - 'semantic-core.js'
+      - 'semantic-worker.js'
+      - 'semantic-studio.html'
+      - 'mission-studio.html'
+      - 'tests/semantic-core.test.cjs'
+      - 'scripts/verify_real_semantic_model.mjs'
+      - 'tests/real_semantic_browser.cjs'
+      - '.github/workflows/real-semantic-model.yml'
+      - 'docs/SEMANTIC_MODEL_V19_CN.md'
+  push:
+    branches: [main]
+    paths:
+      - 'semantic-core.js'
+      - 'semantic-worker.js'
+      - 'semantic-studio.html'
+      - 'tests/semantic-core.test.cjs'
+      - 'scripts/verify_real_semantic_model.mjs'
+      - 'tests/real_semantic_browser.cjs'
+      - '.github/workflows/real-semantic-model.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  semantic-ui-contracts:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Syntax and source-only semantic ranking contract
+        run: |
+          node --check semantic-core.js
+          node --check semantic-worker.js
+          node --test tests/semantic-core.test.cjs
+  real-pretrained-neural-inference:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      HF_HOME: /tmp/atlas-public-semantic-cache
+      HF_HUB_DISABLE_TELEMETRY: '1'
+      DO_NOT_TRACK: '1'
+      TRANSFORMERS_OFFLINE: '0'
+      NPM_CONFIG_AUDIT: 'false'
+      NPM_CONFIG_FUND: 'false'
+      CI: 'true'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Install pinned open-source Transformers.js SDK in disposable read-only runner
+        run: |
+          npm install --no-save --ignore-scripts --no-audit --no-fund '@huggingface/transformers@3.8.1'
+      - name: Run actual quantized multilingual E5 neural model and inspect ranked source contrast
+        run: |
+          node scripts/verify_real_semantic_model.mjs test-results/semantic-real-model.json
+      - name: Install real Chromium for user-opt-in semantic Worker verification
+        run: |
+          npx playwright install --with-deps chromium
+      - name: Actually click local-AI button and verify web Worker model inference
+        run: |
+          node tests/real_semantic_browser.cjs
+      - name: Preserve synthetic model inference evidence, not weights or credentials
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: atlas-v19-real-neural-model-evidence
+          path: |
+            test-results/semantic-real-model.json
+            test-results/semantic-real-browser.json
+            test-results/semantic-real-browser.png
+          if-no-files-found: warn
+          retention-days: 30

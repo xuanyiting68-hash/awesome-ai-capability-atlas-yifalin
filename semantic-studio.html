@@ -1,0 +1,135 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#071c34">
+<title>本地 AI 语义选型｜YIFALIN Atlas</title><meta name="description" content="使用真正开源的多语言 E5 神经网络模型在浏览器本地计算 AI 工具与用户目标的语义相似度；始终保留来源证据和风险标记。">
+<style>
+:root{font-family:Inter,"PingFang SC","Microsoft YaHei",system-ui,sans-serif;color:#20334f;background:#f4f7fb;--border:#dce5f0;--muted:#687e99;--blue:#3157a5}*{box-sizing:border-box}
+body{margin:0}a{color:#305dab}button,textarea,select{font:inherit}button{cursor:pointer}button:disabled{opacity:.55;cursor:not-allowed}button:focus-visible,a:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #35bbc0;outline-offset:2px}
+header{background:radial-gradient(circle at 89% -10%,#295682,transparent 61%),#071c34;color:white;padding:24px max(18px,calc((100vw - 1170px)/2)) 33px}
+nav{display:flex;flex-wrap:wrap;gap:17px;align-items:center}nav a{color:#d5e4f6;text-decoration:none;font-size:12px}nav .brand{margin-right:auto;color:white;font-weight:850;font-size:13px}
+h1{margin:27px 0 9px;font-size:clamp(27px,4vw,38px);letter-spacing:-.6px}header p{max-width:830px;color:#c7d9ed;font-size:13px;line-height:1.7;margin:0}
+main{max-width:1210px;margin:0 auto;padding:20px 17px 80px}.card{background:white;border:1px solid var(--border);border-radius:15px;padding:21px;box-shadow:0 3px 14px #1838520c}.banner{background:#eaf8f6;border:1px solid #c3e7db;border-radius:12px;padding:14px 18px;color:#315b61;font-size:12px;line-height:1.75;margin-bottom:16px}.notice{font-size:11px;color:#6c819c;line-height:1.7}.sub{font-size:12px;line-height:1.65;color:var(--muted)}h2{font-size:19px;margin:0 0 9px}
+.row{display:flex;gap:11px;flex-wrap:wrap;align-items:flex-start}.row>*{flex:1 1 230px;min-width:0}
+textarea{display:block;width:100%;min-height:95px;padding:12px 13px;border:1px solid #bdcfe5;border-radius:10px;font-size:14px;line-height:1.6;resize:vertical}
+select{padding:13px;border:1px solid #bdcfe5;border-radius:9px;background:#fff;color:#294464;width:100%}
+label{font-size:12px;color:#375779;font-weight:750;display:block;margin-bottom:8px}
+.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:15px;align-items:center}.primary{background:#2859ab;border:1px solid #2859ab;color:white;border-radius:10px;padding:11px 16px;font-size:12px;font-weight:800}.secondary{background:#ecf3ff;border:1px solid #c9daf2;color:#28568c;padding:10px 14px;border-radius:10px;font-size:12px;font-weight:700}.danger{background:#fff6ed;border:1px solid #efdbba;color:#8b5629;padding:10px 14px;border-radius:9px;font-size:12px}
+.status{font-size:12px;line-height:1.6;color:#41658e;min-height:20px}
+.layout{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(310px,.8fr);gap:15px;margin-top:17px;align-items:start}.stack{display:grid;gap:9px}.tool{border:1px solid #e1e9f3;border-radius:12px;padding:16px;background:white;display:grid;gap:8px}.title{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}.title strong{font-size:15px;overflow-wrap:anywhere}.title a{font-size:13px;font-weight:750;overflow-wrap:anywhere}.score{font-size:11px;color:#557191}.score b{font-size:17px;color:#2658a3}.detail{font-size:12px;line-height:1.5;color:#637995}.tags{display:flex;flex-wrap:wrap;gap:7px}.tag{font-size:10px;border-radius:6px;padding:5px 7px;background:#eaf1fa;color:#446487}.tag.warn{background:#fff1df;color:#9a6135}.id{font-size:10px;color:#7e8ea5}.tiny{font-size:11px;color:#5d7390;line-height:1.5}
+.picks{display:flex;gap:7px;flex-wrap:wrap}.pick{background:#e6f1fa;border-radius:7px;padding:8px 9px;color:#365c7a;font-size:11px}.pick button{border:0;background:none;font-weight:700;color:#913e4a;margin-left:7px}
+.checks{font-size:12px;color:#567089;line-height:1.7}.checks li{margin:6px 0}.sticky{position:sticky;top:12px}.mono{font-family:ui-monospace,Consolas,monospace}
+footer{text-align:center;color:#7890aa;font-size:11px;padding:15px}
+@media(max-width:860px){.layout{grid-template-columns:1fr}.sticky{position:static}}@media(max-width:510px){header{padding:16px 14px 23px}nav{gap:10px}nav .brand{width:100%}main{padding:12px 11px 50px}.card{padding:14px}h1{font-size:26px;margin-top:18px}header p{font-size:12px}.tool{padding:12px}}
+</style></head><body>
+<header><nav><a class="brand" href="./index.html">◈ YIFALIN / AI CAPABILITY ATLAS</a><a href="./mission-studio.html">方案工作台</a><a href="./recipes.html">能力组合</a><a href="./industry-atlas/discover.html">全行业 AI 图谱</a></nav>
+<h1>用真正的开源语义模型，理解你的业务目标</h1><p>不只是关键词。你可以明确选择下载公开的多语言 E5 小型模型，由浏览器本地执行神经网络向量计算，将业务目标与精选 AI 工具重新排序。所有来源与审查门禁仍然可见。</p></header>
+<main><div class="banner"><strong>可验证的 AI 能力，而非演示话术</strong>：默认使用原 Atlas 的本地规则引擎。只有你点击「启用本地 AI 语义重排」，才会向公开的 CDN / Hugging Face 下载模型程序和权重（首次可能超过 100 MB），不需要模型 API Key，也没有付费推理调用。输入目标由浏览器本地编码，不上传给模型服务端；外部站点仍能看到下载请求的网络信息。移动端内存不足或网络受限时会保留规则结果。</div>
+<section class="card"><h2>01 · 给 AI 一个真实业务任务</h2><div class="row"><div style="flex:2 1 420px"><label for="goal">描述你的工作目标（中文 / English）</label><textarea id="goal" maxlength="280">我希望把专业课程资料整理成带证据引用的互动练习，并让老师审核</textarea></div><div><label for="scenario">业务方向</label><select id="scenario"><option value="auto">自动识别</option><option value="education">教育 / 知识</option><option value="finance">金融 / 研究</option><option value="growth">营销 / 增长</option><option value="content">内容 / 视频</option><option value="engineering">开发 / Agent</option><option value="governance">安全 / 治理</option></select></div></div>
+<div class="actions"><button class="secondary" id="rule" type="button">先用规则筛选</button><button class="primary" id="neural" type="button">✦ 启用本地 AI 语义重排</button><button class="danger" id="cancel" type="button" disabled>停止模型计算</button><span id="status" class="status" aria-live="polite">正在加载 Atlas 项目快照…</span></div><p class="notice" style="margin-bottom:0">注意：语义相似度仅衡量文本接近程度，不能证明安全、许可证、模型推理质量、实际兼容性或项目是否适合投产。模型权重来自 Hugging Face 公共仓库，尚未做完整供应链安全审查。</p></section>
+<div class="layout"><section class="card"><h2 id="result-title">02 · 工具候选</h2><p class="sub" id="result-note">来自 133 个编辑精选项目；先进行可解释规则过滤，语义模型只对前 32 个候选重排。</p><div class="stack" id="results"></div></section>
+<div class="sticky"><section class="card"><h2>03 · 我的选型组合</h2><p class="sub">最多选 5 个仓库。这里不执行第三方项目，不连接真实账号。</p><div class="picks" id="picks"></div><div class="actions"><button class="primary" id="handoff" type="button">在工作台设计实施流程</button></div><p class="notice">点击继续后，将当前目标与候选临时放入同源浏览器 sessionStorage，打开原 Mission Studio，并立即清除交接记录。不传输到云端。</p><h2 style="margin-top:25px">审查门禁</h2><ul class="checks"><li>源项目仓库、发布日期与许可证快照需复核。</li><li>任何工具都未获得完整安全 / 商用许可审核。</li><li>神经模型相似度不是采用成功概率。</li><li>真实 Agent 执行仍需要独立安全后端。</li></ul>
+<p class="tiny">模型：<a href="https://huggingface.co/Xenova/multilingual-e5-small" target="_blank" rel="noopener noreferrer">Xenova/multilingual-e5-small</a>；推理 SDK：Transformers.js 3.8.1。外部模型仅在你点击后下载。</p></section></div></div></main>
+<footer>Atlas V1.9 — On-device neural embeddings · Research-only · No user keys · No real external actions</footer>
+<script src="./mission-engine.js"></script><script src="./semantic-core.js"></script><script>
+"use strict";
+const $=id=>document.getElementById(id),E=window.AtlasMissionEngine,S=window.AtlasSemantic;
+let curated=[],meta=null,briefs=null,ranked=[],shown=[],pool=[],worker=null,busy=false,runId=0,picks=[],scenario="education",neural=false;
+function el(tag,text,cls){const n=document.createElement(tag);n.textContent=String(text??"");if(cls)n.className=cls;return n}
+function status(txt){$("status").textContent=txt}
+function selectedArea(){return E.inferScenario($("goal").value,$("scenario").value)}
+function putRank(){
+ if(!meta)return;const query=$("goal").value.trim();
+ if(query.length<3||query.length>280){status("请输入 3–280 个字符的业务目标。");return}
+ scenario=selectedArea();ranked=E.rank(query,scenario,curated,meta,briefs);
+ pool=S.passagesFromRanked(ranked);
+ shown=pool.map((x,i)=>({repo:x.repo,ruleRank:i+1,modelRank:null,cosine:null}));
+ neural=false;render();status("已按规则筛选 "+ranked.length+" 个来源项目；点击启用开源模型可进行真实语义重排。");
+}
+function sourceMap(){return new Map(ranked.map(x=>[x.repo,x]))}
+function render(){
+ const map=sourceMap(),box=$("results");box.replaceChildren();
+ $("result-title").textContent="02 · "+(neural?"真实本地神经模型重排":"可解释规则初筛");
+ $("result-note").textContent=neural?"已由公开多语言 E5 神经网络在你的浏览器计算相似度。数字只是向量余弦，不是信任或准确率。":"从 133 个精选项目中先选规则相关度最高的 32 个。";
+ if(!shown.length){box.append(el("p","暂无候选。","sub"));return}
+ shown.slice(0,18).forEach((item,i)=>{
+  const info=map.get(item.repo);if(!info)return;
+  const card=el("article","","tool");card.dataset.repo=info.repo;
+  const h=el("div","","title");const name=el("a",info.repo);name.href=info.url;name.target="_blank";name.rel="noopener noreferrer";h.append(name);
+  const btn=el("button",picks.includes(info.repo)?"✓ 已选":"＋ 加入","secondary");
+  btn.type="button";btn.setAttribute("aria-pressed",String(picks.includes(info.repo)));
+  btn.addEventListener("click",()=>{if(picks.includes(info.repo))picks=picks.filter(x=>x!==info.repo);else if(picks.length<5)picks.push(info.repo);else{status("组合上限 5 个项目。");return}render()});h.append(btn);card.append(h);
+  card.append(el("p",info.description||info.useCase,"detail"));
+  const tags=el("div","","tags");
+  for(const str of [info.topic,info.type,"安全未审核"]){tags.append(el("span",str,str==="安全未审核"?"tag warn":"tag"))}
+  card.append(tags);
+  const nums=el("div","","score");
+  const value=item.cosine===null?"匹配分 "+info.fit+"/100":"语义余弦 "+item.cosine.toFixed(4);
+  nums.append(el("b",String(i+1)),document.createTextNode(" · "+value+" · 研究证据 "+info.evidence.total+"/100"));
+  card.append(nums);
+  card.append(el("p","来源："+info.repo+" · "+info.reasons.slice(0,3).join("；"),"tiny"));
+  card.append(el("p","阻断："+info.blockers.slice(0,2).join("；"),"notice"));
+  box.append(card);
+ });
+ const picked=$("picks");picked.replaceChildren();
+ if(!picks.length)picked.append(el("p","还没有选中的组件。","sub"));
+ for(const repo of picks){const pill=el("span",repo,"pick");const rm=el("button","×");rm.setAttribute("aria-label","移除 "+repo);rm.addEventListener("click",()=>{picks=picks.filter(x=>x!==repo);render()});pill.append(rm);picked.append(pill)}
+}
+function stop(message){
+ if(worker){worker.terminate();worker=null}
+ busy=false;$("neural").disabled=false;$("cancel").disabled=true;
+ if(message)status(message);
+}
+async function neuralRun(){
+ if(busy)return;
+ if(!meta){status("数据未加载完成");return}
+ const query=$("goal").value.trim();
+ if(query.length<3||query.length>280){status("目标过短或过长");return}
+ // Always compute a fresh research shortlist rather than use stale prior prompts.
+ putRank();if(!pool.length)return;
+ try{
+  if(typeof Worker!=="function")throw Error("这个浏览器不支持本地模型 Worker");
+  worker=new Worker("./semantic-worker.js",{type:"module"});
+  busy=true;$("neural").disabled=true;$("cancel").disabled=false;
+  const id=++runId,selected=pool.map(x=>({repo:x.repo,fit:x.fit,passage:x.passage}));
+  status("已确认加载公开模型；正在启动浏览器本地推理…");
+  worker.onmessage=event=>{
+   const data=event.data;if(id!==runId)return;
+   if(data.type==="status"){status(data.message);return}
+   if(data.type==="error"){stop("本地模型无法完成："+data.message+"。已保留规则结果。");return}
+   if(data.type==="done"){
+    try{
+     S.validInput(query,selected);
+     shown=S.rerank(selected,data.vectors);
+     neural=true;render();stop("真实 E5 神经模型推理完成：本机计算了 "+shown.length+" 个仓库的语义相似度。");
+    }catch(e){stop("向量校验失败："+e.message+"。保留规则排序。")}
+   }
+  };
+  worker.onerror=()=>stop("模型 Worker 加载异常。已保留规则匹配；可使用原工作台。");
+  worker.postMessage({action:"run",id,query,items:selected});
+ }catch(e){stop("无法启动神经模型："+e.message)}
+}
+function handoff(){
+ if(!picks.length){status("请先添加至少一个工具候选。");return}
+ const selected=new Set(curated.map(x=>x.repo));
+ const input={version:1,goal:$("goal").value.trim().slice(0,240),scenario,picks:picks.filter(x=>selected.has(x)).slice(0,5)};
+ try{
+  sessionStorage.setItem("atlas_semantic_handoff_v1",JSON.stringify(input));
+  location.href="./mission-studio.html";
+ }catch{status("当前浏览器拒绝临时交接；请手动在 Mission Studio 输入目标。")}
+}
+async function boot(){
+ try{
+  const paths=["data/curated.json","data/repo_metadata.json","data/research_briefs.json"];
+  const resp=await Promise.all(paths.map(x=>fetch("./"+x,{cache:"no-cache"})));
+  if(resp.some(x=>!x.ok))throw Error("数据请求失败");
+  [curated,meta,briefs]=await Promise.all(resp.map(x=>x.json()));
+  if(curated.length!==133||meta.coverage_count!==133||briefs.entries.length!==30)throw Error("目录证据合同校验失败");
+  putRank();
+ }catch(e){status("无法安全加载："+e.message);$("neural").disabled=true}
+}
+$("rule").addEventListener("click",()=>{stop();putRank()});
+$("neural").addEventListener("click",neuralRun);
+$("cancel").addEventListener("click",()=>{runId++;stop("已停止本地模型推理；当前排序仍可使用。");putRank()});
+$("handoff").addEventListener("click",handoff);
+$("scenario").addEventListener("change",()=>{if(!busy)putRank()});
+$("goal").addEventListener("change",()=>{if(!busy)putRank()});
+boot();
+</script></body></html>
