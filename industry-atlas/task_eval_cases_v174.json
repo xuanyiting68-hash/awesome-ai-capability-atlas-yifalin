@@ -1,0 +1,186 @@
+{
+  "schema_version": "1.0",
+  "scope": "synthetic editorial matching regressions, not field accuracy",
+  "cases": [
+    {
+      "id": "quant",
+      "query": "我在证券资管行业做量化因子研究，希望 AI 自动分析论文、整理因子并回测策略",
+      "domain_id": "s02-d01",
+      "sector_id": "s02"
+    },
+    {
+      "id": "portfolio",
+      "query": "我在证券资管做投资组合资产配置",
+      "domain_id": "s02-d03",
+      "sector_id": "s02"
+    },
+    {
+      "id": "execution",
+      "query": "我做券商订单流和市场微观结构分析",
+      "domain_id": "s02-d04",
+      "sector_id": "s02"
+    },
+    {
+      "id": "derivatives",
+      "query": "我是期权定价研究员，希望做希腊值和对冲",
+      "domain_id": "s02-d05",
+      "sector_id": "s02"
+    },
+    {
+      "id": "legal",
+      "query": "我是律师，希望审核合同并保留人工复核",
+      "domain_id": "s21-d01",
+      "sector_id": "s21"
+    },
+    {
+      "id": "patent",
+      "query": "我在法律服务负责专利检索",
+      "domain_id": "s21-d04",
+      "sector_id": "s21"
+    },
+    {
+      "id": "credit",
+      "query": "我在银行做信贷审批，希望自动化",
+      "domain_id": "s01-d01",
+      "sector_id": "s01"
+    },
+    {
+      "id": "aml",
+      "query": "我是银行反洗钱合规专员",
+      "domain_id": "s01-d02",
+      "sector_id": "s01"
+    },
+    {
+      "id": "clinical",
+      "query": "我在医院做门诊病历整理",
+      "domain_id": "s04-d01",
+      "sector_id": "s04"
+    },
+    {
+      "id": "radiology",
+      "query": "我在医院做医学影像识别",
+      "domain_id": "s04-d02",
+      "sector_id": "s04"
+    },
+    {
+      "id": "factory",
+      "query": "我在制造工厂做设备维修，希望预测故障",
+      "domain_id": "s09-d02",
+      "sector_id": "s09"
+    },
+    {
+      "id": "quality",
+      "query": "我在制造工厂做工业质检和机器视觉",
+      "domain_id": "s09-d01",
+      "sector_id": "s09"
+    },
+    {
+      "id": "lesson",
+      "query": "我在基础教育学校当老师，想自动备课写教案",
+      "domain_id": "s06-d01",
+      "sector_id": "s06"
+    },
+    {
+      "id": "exercises",
+      "query": "我是学校老师，想做学生个性化练习和作业",
+      "domain_id": "s06-d02",
+      "sector_id": "s06"
+    },
+    {
+      "id": "warehouse",
+      "query": "我在物流仓储负责仓库拣货",
+      "domain_id": "s15-d01",
+      "sector_id": "s15"
+    },
+    {
+      "id": "route",
+      "query": "我在物流做运输线路和物流调度",
+      "domain_id": "s15-d02",
+      "sector_id": "s15"
+    },
+    {
+      "id": "tax",
+      "query": "我在会计所做税务申报报税",
+      "domain_id": "s22-d03",
+      "sector_id": "s22"
+    },
+    {
+      "id": "audit",
+      "query": "我在会计税务事务所做内部审计与异常交易",
+      "domain_id": "s22-d02",
+      "sector_id": "s22"
+    },
+    {
+      "id": "restaurant",
+      "query": "我是餐饮老板，想优化餐馆菜品",
+      "domain_id": "s29-d01",
+      "sector_id": "s29"
+    },
+    {
+      "id": "hotel",
+      "query": "我在酒店研究客户服务与收益优化",
+      "domain_id": "s29-d02",
+      "sector_id": "s29"
+    },
+    {
+      "id": "code",
+      "query": "我在软件研发部门写代码，想做代码审查",
+      "domain_id": "s30-d01",
+      "sector_id": "s30"
+    },
+    {
+      "id": "sre",
+      "query": "我在 IT 软件公司负责SRE运维与故障",
+      "domain_id": "s30-d03",
+      "sector_id": "s30"
+    },
+    {
+      "id": "english_law",
+      "query": "I'm a lawyer reviewing contracts at a law firm",
+      "domain_id": "s21-d01",
+      "sector_id": "s21"
+    },
+    {
+      "id": "english_factory",
+      "query": "I work in manufacturing on predictive maintenance",
+      "domain_id": "s09-d02",
+      "sector_id": "s09"
+    },
+    {
+      "id": "english_quant",
+      "query": "I work in asset management doing factor research and backtest",
+      "domain_id": "s02-d01",
+      "sector_id": "s02"
+    },
+    {
+      "id": "english_hotel",
+      "query": "I manage hotel customer service",
+      "domain_id": "s29-d02",
+      "sector_id": "s29"
+    },
+    {
+      "id": "english_code",
+      "query": "I am a software developer doing code review",
+      "domain_id": "s30-d01",
+      "sector_id": "s30"
+    },
+    {
+      "id": "unknown",
+      "query": "星际香蕉风铃神秘舞台",
+      "domain_id": null,
+      "sector_id": null
+    },
+    {
+      "id": "unknown_en",
+      "query": "mysterious orbital banana bell",
+      "domain_id": null,
+      "sector_id": null
+    },
+    {
+      "id": "unknown_it",
+      "query": "creative writing about gravity in a novel",
+      "domain_id": null,
+      "sector_id": null
+    }
+  ]
+}

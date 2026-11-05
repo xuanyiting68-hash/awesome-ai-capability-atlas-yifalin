@@ -1,0 +1,110 @@
+{
+  "schema_version": "1.0",
+  "scope": "Unapproved topic-to-sector editorial review proposals. Never source certification, approved sector tagging, automated catalog promotion, or task suitability proof.",
+  "decision_policy": "Rules match only EXACT pre-existing editorial topic labels for previously unassigned cached records. Review queue must remain separate from actual sector_ids; no catch-all, no fallback and no live source checks.",
+  "rules": [
+    {
+      "topic": "浏览器自动化",
+      "sector_ids": [
+        "s30",
+        "s32"
+      ],
+      "why": "浏览器操作框架可作为软件开发或小微企业自动化的研究候选；具体部署、许可和适用性未验证"
+    },
+    {
+      "topic": "AI视频制作",
+      "sector_ids": [
+        "s26",
+        "s28"
+      ],
+      "why": "视频、配音和媒体处理工具可能对应出版媒体及影视内容创作任务；尚未验证每个项目的行业适用性"
+    },
+    {
+      "topic": "自媒体运营",
+      "sector_ids": [
+        "s26",
+        "s27"
+      ],
+      "why": "内容分发与社交媒体排期可作为媒体及营销岗位的人工试验候选"
+    },
+    {
+      "topic": "企业办公",
+      "sector_ids": [
+        "s24",
+        "s32"
+      ],
+      "why": "办公协作类技能可能适用于企业管理及小微企业的工作流程；需要人工确认"
+    },
+    {
+      "topic": "多Agent协作",
+      "sector_ids": [
+        "s24",
+        "s30"
+      ],
+      "why": "多智能体框架可作为软件研发与企业流程编排的候选技术基础，不能证明可立即投入业务使用"
+    },
+    {
+      "topic": "技能目录",
+      "sector_ids": [
+        "s08",
+        "s30"
+      ],
+      "why": "技能/Agent Skills 索引可作为职业学习及开发者能力资源的候选入口，目录条目需单独核验"
+    },
+    {
+      "topic": "基础设施",
+      "sector_ids": [
+        "s30"
+      ],
+      "why": "本地模型与 API 基础设施的主要编辑候选行业是 IT 软件，其他行业需提供具体场景证据"
+    },
+    {
+      "topic": "AI研究",
+      "sector_ids": [
+        "s07",
+        "s30"
+      ],
+      "why": "研究 Agent、知识检索和技术研究框架可供高校科研或软件研发探索，不代表已达到学术证据标准"
+    },
+    {
+      "topic": "业务自动化",
+      "sector_ids": [
+        "s24",
+        "s32"
+      ],
+      "why": "工作流编排可作为咨询及小微企业流程优化的研究线索，非生产部署证明"
+    },
+    {
+      "topic": "客户关系维护",
+      "sector_ids": [
+        "s13",
+        "s14",
+        "s32"
+      ],
+      "why": "客户支持与 CRM 可供零售、电商和小微企业人工评估，但不能证明第三方合规性"
+    },
+    {
+      "topic": "产品运营",
+      "sector_ids": [
+        "s24",
+        "s32"
+      ],
+      "why": "产品及业务运营技能可作为管理和小微企业候选流程"
+    },
+    {
+      "topic": "安全评测",
+      "sector_ids": [
+        "s30"
+      ],
+      "why": "LLM 评测与安全工具应首先由 IT 专业团队审核；未经安全验收不得用于敏感任务"
+    },
+    {
+      "topic": "增长分析",
+      "sector_ids": [
+        "s14",
+        "s27"
+      ],
+      "why": "站点分析与实验框架可能支持电商和营销增长实验，效果必须通过真实样本复核"
+    }
+  ]
+}

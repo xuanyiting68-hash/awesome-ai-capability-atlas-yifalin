@@ -1,0 +1,294 @@
+{
+  "schema_version": "1.0",
+  "population": "github-tree-readonly-supply-chain-path-snapshot",
+  "observed_on": "2026-11-04",
+  "observed_branch_kind": "repository-default-branch-at-observation",
+  "source": "GitHub public git tree read-only recursively with sha, and selective source file reads; no installation, build, scanner or external dependency resolution",
+  "total_sources": 10,
+  "verified_sboms": 0,
+  "cve_scans_completed": 0,
+  "security_clearances": 0,
+  "license_compliance_verified": 0,
+  "warning": "A tree path/hash is evidence of file presence only. Absence from selected paths does not prove absence of policies/dependencies. A lockfile is not an SBOM, vulnerability scan or guarantee of secure dependencies.",
+  "records": [
+    {
+      "id": "github:ohif/viewers",
+      "repo_full_name": "OHIF/Viewers",
+      "observed_branch": "master",
+      "git_tree_sha": "f4a15ef9114e3e95fc739c1c15b76f046fd2cc25",
+      "tree_truncated": false,
+      "selected_dependency_files": [
+        {
+          "path": "package.json",
+          "sha": "586a6fd38092d37a0b861024231327e5c68d1324",
+          "role": "dependency-manifest",
+          "url": "https://github.com/OHIF/Viewers/blob/master/package.json"
+        },
+        {
+          "path": "pnpm-lock.yaml",
+          "sha": "25c4fdf9405104e0495b43e402e068c0cf7d2c77",
+          "role": "dependency-lockfile",
+          "url": "https://github.com/OHIF/Viewers/blob/master/pnpm-lock.yaml"
+        }
+      ],
+      "selected_security_policy_file": null,
+      "search_scope": "selected conventional paths in recursively fetched Git tree; not a full dependency resolution",
+      "dependency_inventory_complete": false,
+      "sbom_generated": false,
+      "vulnerability_scan_performed": false,
+      "security_policy_effectiveness_verified": false,
+      "dependencies_license_verified": false,
+      "automated_risk_classification_approved": false,
+      "source_promoted": false
+    },
+    {
+      "id": "github:deepchem/deepchem",
+      "repo_full_name": "deepchem/deepchem",
+      "observed_branch": "master",
+      "git_tree_sha": "455d07f3e17e880a4d980b5b0365e4a02b417e14",
+      "tree_truncated": false,
+      "selected_dependency_files": [
+        {
+          "path": "setup.py",
+          "sha": "1011e9c9a7e7d952ec37278b88ad06727c89479e",
+          "role": "dependency-manifest",
+          "url": "https://github.com/deepchem/deepchem/blob/master/setup.py"
+        },
+        {
+          "path": "setup.cfg",
+          "sha": "362b2064416625b8c130e197187466a2ae8402cf",
+          "role": "configuration",
+          "url": "https://github.com/deepchem/deepchem/blob/master/setup.cfg"
+        }
+      ],
+      "selected_security_policy_file": null,
+      "search_scope": "selected conventional paths in recursively fetched Git tree; not a full dependency resolution",
+      "dependency_inventory_complete": false,
+      "sbom_generated": false,
+      "vulnerability_scan_performed": false,
+      "security_policy_effectiveness_verified": false,
+      "dependencies_license_verified": false,
+      "automated_risk_classification_approved": false,
+      "source_promoted": false
+    },
+    {
+      "id": "github:commaai/openpilot",
+      "repo_full_name": "commaai/openpilot",
+      "observed_branch": "master",
+      "git_tree_sha": "070de2aefc9474a1b1cd9938939259f5764da490",
+      "tree_truncated": false,
+      "selected_dependency_files": [
+        {
+          "path": "pyproject.toml",
+          "sha": "7f5f7595116e37580ac3ab1ff5a7f772ad604890",
+          "role": "dependency-manifest",
+          "url": "https://github.com/commaai/openpilot/blob/master/pyproject.toml"
+        },
+        {
+          "path": "uv.lock",
+          "sha": "30c74a14a9b88ee25540bd8c262ace22a63c7330",
+          "role": "dependency-lockfile",
+          "url": "https://github.com/commaai/openpilot/blob/master/uv.lock"
+        }
+      ],
+      "selected_security_policy_file": {
+        "path": "SECURITY.md",
+        "sha": "8b66082bf241e6c014ab2417f6c1750d0bd5ece3",
+        "cue": "Security report contact instructions observed; not proof of response time or remediation.",
+        "url": "https://github.com/commaai/openpilot/blob/master/SECURITY.md"
+      },
+      "search_scope": "selected conventional paths in recursively fetched Git tree; not a full dependency resolution",
+      "dependency_inventory_complete": false,
+      "sbom_generated": false,
+      "vulnerability_scan_performed": false,
+      "security_policy_effectiveness_verified": false,
+      "dependencies_license_verified": false,
+      "automated_risk_classification_approved": false,
+      "source_promoted": false
+    },
+    {
+      "id": "github:ifcopenshell/ifcopenshell",
+      "repo_full_name": "IfcOpenShell/IfcOpenShell",
+      "observed_branch": "v0.9.0",
+      "git_tree_sha": "000cb804c7e5898fcf43da676c241494fe905cfc",
+      "tree_truncated": false,
+      "selected_dependency_files": [
+        {
+          "path": "pyproject.toml",
+          "sha": "a2c1004bf07e9814fbad95996eb473407b5f517e",
+          "role": "dependency-manifest",
+          "url": "https://github.com/IfcOpenShell/IfcOpenShell/blob/v0.9.0/pyproject.toml"
+        },
+        {
+          "path": "src/bonsaiviewer-autodesk/Cargo.lock",
+          "sha": "145e7ddf9777c08293b75905897265bc40d2e560",
+          "role": "component-lockfile",
+          "url": "https://github.com/IfcOpenShell/IfcOpenShell/blob/v0.9.0/src/bonsaiviewer-autodesk/Cargo.lock"
+        }
+      ],
+      "selected_security_policy_file": null,
+      "search_scope": "selected conventional paths in recursively fetched Git tree; not a full dependency resolution",
+      "dependency_inventory_complete": false,
+      "sbom_generated": false,
+      "vulnerability_scan_performed": false,
+      "security_policy_effectiveness_verified": false,
+      "dependencies_license_verified": false,
+      "automated_risk_classification_approved": false,
+      "source_promoted": false
+    },
+    {
+      "id": "github:vroom-project/vroom",
+      "repo_full_name": "VROOM-Project/vroom",
+      "observed_branch": "master",
+      "git_tree_sha": "07be776fc20b8d6c85d9f78797e38a9f4e44ec44",
+      "tree_truncated": false,
+      "selected_dependency_files": [],
+      "selected_security_policy_file": null,
+      "search_scope": "selected conventional paths in recursively fetched Git tree; not a full dependency resolution",
+      "dependency_inventory_complete": false,
+      "sbom_generated": false,
+      "vulnerability_scan_performed": false,
+      "security_policy_effectiveness_verified": false,
+      "dependencies_license_verified": false,
+      "automated_risk_classification_approved": false,
+      "source_promoted": false
+    },
+    {
+      "id": "github:opentripplanner/opentripplanner",
+      "repo_full_name": "opentripplanner/OpenTripPlanner",
+      "observed_branch": "dev-2.x",
+      "git_tree_sha": "60372eb1a125366eeccbabed51619185ac782f5e",
+      "tree_truncated": false,
+      "selected_dependency_files": [
+        {
+          "path": "pom.xml",
+          "sha": "30e2bb143d7115ee07ef615503b30ed11c0a9982",
+          "role": "dependency-manifest",
+          "url": "https://github.com/opentripplanner/OpenTripPlanner/blob/dev-2.x/pom.xml"
+        }
+      ],
+      "selected_security_policy_file": null,
+      "search_scope": "selected conventional paths in recursively fetched Git tree; not a full dependency resolution",
+      "dependency_inventory_complete": false,
+      "sbom_generated": false,
+      "vulnerability_scan_performed": false,
+      "security_policy_effectiveness_verified": false,
+      "dependencies_license_verified": false,
+      "automated_risk_classification_approved": false,
+      "source_promoted": false
+    },
+    {
+      "id": "github:farmos/farmos",
+      "repo_full_name": "farmOS/farmOS",
+      "observed_branch": "4.x",
+      "git_tree_sha": "d868bd4e556d84c9e61316eb120ea11a3a53f3db",
+      "tree_truncated": false,
+      "selected_dependency_files": [
+        {
+          "path": "composer.json",
+          "sha": "7e51ba0f99cfd4006b954ebcfb89d6d00daa6af9",
+          "role": "dependency-manifest",
+          "url": "https://github.com/farmOS/farmOS/blob/4.x/composer.json"
+        }
+      ],
+      "selected_security_policy_file": null,
+      "search_scope": "selected conventional paths in recursively fetched Git tree; not a full dependency resolution",
+      "dependency_inventory_complete": false,
+      "sbom_generated": false,
+      "vulnerability_scan_performed": false,
+      "security_policy_effectiveness_verified": false,
+      "dependencies_license_verified": false,
+      "automated_risk_classification_approved": false,
+      "source_promoted": false
+    },
+    {
+      "id": "github:beancount/beancount",
+      "repo_full_name": "beancount/beancount",
+      "observed_branch": "master",
+      "git_tree_sha": "9747213802acb733ce53acc6e963f5961f47d6cd",
+      "tree_truncated": false,
+      "selected_dependency_files": [
+        {
+          "path": "pyproject.toml",
+          "sha": "b1b6eec23e3d08dce980e18d2313952c3c8c3a20",
+          "role": "dependency-manifest",
+          "url": "https://github.com/beancount/beancount/blob/master/pyproject.toml"
+        }
+      ],
+      "selected_security_policy_file": null,
+      "search_scope": "selected conventional paths in recursively fetched Git tree; not a full dependency resolution",
+      "dependency_inventory_complete": false,
+      "sbom_generated": false,
+      "vulnerability_scan_performed": false,
+      "security_policy_effectiveness_verified": false,
+      "dependencies_license_verified": false,
+      "automated_risk_classification_approved": false,
+      "source_promoted": false
+    },
+    {
+      "id": "github:openfisca/openfisca-core",
+      "repo_full_name": "openfisca/openfisca-core",
+      "observed_branch": "main",
+      "git_tree_sha": "db0484b54871b0a73e673478b3153841dba908e9",
+      "tree_truncated": false,
+      "selected_dependency_files": [
+        {
+          "path": "pyproject.toml",
+          "sha": "1d7a1d167622fe25a0285d39e8f9bfc4ae21c039",
+          "role": "dependency-manifest",
+          "url": "https://github.com/openfisca/openfisca-core/blob/main/pyproject.toml"
+        },
+        {
+          "path": "uv.lock",
+          "sha": "801c56cdcb81584e542994bef8fca3ad8b327181",
+          "role": "dependency-lockfile",
+          "url": "https://github.com/openfisca/openfisca-core/blob/main/uv.lock"
+        }
+      ],
+      "selected_security_policy_file": null,
+      "search_scope": "selected conventional paths in recursively fetched Git tree; not a full dependency resolution",
+      "dependency_inventory_complete": false,
+      "sbom_generated": false,
+      "vulnerability_scan_performed": false,
+      "security_policy_effectiveness_verified": false,
+      "dependencies_license_verified": false,
+      "automated_risk_classification_approved": false,
+      "source_promoted": false
+    },
+    {
+      "id": "github:open5gs/open5gs",
+      "repo_full_name": "open5gs/open5gs",
+      "observed_branch": "main",
+      "git_tree_sha": "d9c44d67f3d860650600a21c0729f09ecfe37ff7",
+      "tree_truncated": false,
+      "selected_dependency_files": [
+        {
+          "path": "webui/package.json",
+          "sha": "df9539e4487215210da6b271fa9894d3c55550b5",
+          "role": "component-manifest",
+          "url": "https://github.com/open5gs/open5gs/blob/main/webui/package.json"
+        },
+        {
+          "path": "webui/package-lock.json",
+          "sha": "fc8a011c4503546652857453338fac620378b72c",
+          "role": "component-lockfile",
+          "url": "https://github.com/open5gs/open5gs/blob/main/webui/package-lock.json"
+        }
+      ],
+      "selected_security_policy_file": {
+        "path": ".github/SECURITY.md",
+        "sha": "af09fb8069bef818fc3430899e7ce1666b200a3f",
+        "cue": "Private vulnerability reporting channel documented; does not certify absence of vulnerabilities.",
+        "url": "https://github.com/open5gs/open5gs/blob/main/.github/SECURITY.md"
+      },
+      "search_scope": "selected conventional paths in recursively fetched Git tree; not a full dependency resolution",
+      "dependency_inventory_complete": false,
+      "sbom_generated": false,
+      "vulnerability_scan_performed": false,
+      "security_policy_effectiveness_verified": false,
+      "dependencies_license_verified": false,
+      "automated_risk_classification_approved": false,
+      "source_promoted": false
+    }
+  ]
+}
