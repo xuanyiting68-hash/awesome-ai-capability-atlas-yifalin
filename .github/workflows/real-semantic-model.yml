@@ -8,6 +8,7 @@ on:
       - 'mission-studio.html'
       - 'tests/semantic-core.test.cjs'
       - 'scripts/verify_real_semantic_model.mjs'
+      - 'tests/real_semantic_browser.cjs'
       - '.github/workflows/real-semantic-model.yml'
       - 'docs/SEMANTIC_MODEL_V19_CN.md'
   push:
@@ -18,6 +19,7 @@ on:
       - 'semantic-studio.html'
       - 'tests/semantic-core.test.cjs'
       - 'scripts/verify_real_semantic_model.mjs'
+      - 'tests/real_semantic_browser.cjs'
       - '.github/workflows/real-semantic-model.yml'
   workflow_dispatch:
 permissions:
@@ -62,11 +64,20 @@ jobs:
       - name: Run actual quantized multilingual E5 neural model and inspect ranked source contrast
         run: |
           node scripts/verify_real_semantic_model.mjs test-results/semantic-real-model.json
+      - name: Install real Chromium for user-opt-in semantic Worker verification
+        run: |
+          npx playwright install --with-deps chromium
+      - name: Actually click local-AI button and verify web Worker model inference
+        run: |
+          node tests/real_semantic_browser.cjs
       - name: Preserve synthetic model inference evidence, not weights or credentials
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: atlas-v19-real-neural-model-evidence
-          path: test-results/semantic-real-model.json
+          path: |
+            test-results/semantic-real-model.json
+            test-results/semantic-real-browser.json
+            test-results/semantic-real-browser.png
           if-no-files-found: warn
           retention-days: 30
