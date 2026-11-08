@@ -7,6 +7,12 @@ on:
       - 'scripts/test_agent_research_runtime.py'
       - 'examples/research_agent/**'
       - 'docs/AGENT_RESEARCH_RUNTIME_V20_CN.md'
+      - 'runtime-evidence.html'
+      - 'data/agent_runtime_public_case_v20.json'
+      - 'data/agent_runtime_public_denial_v20.json'
+      - 'scripts/build_site.py'
+      - 'scripts/test_build_site.py'
+      - 'tests/deployed-smoke.cjs'
       - '.github/workflows/agent-research-runtime.yml'
   push:
     branches: [main]
@@ -15,6 +21,9 @@ on:
       - 'scripts/agent_embed_candidates.mjs'
       - 'scripts/test_agent_research_runtime.py'
       - 'examples/research_agent/**'
+      - 'runtime-evidence.html'
+      - 'data/agent_runtime_public_case_v20.json'
+      - 'data/agent_runtime_public_denial_v20.json'
       - '.github/workflows/agent-research-runtime.yml'
   workflow_dispatch:
 permissions:
