@@ -40,10 +40,10 @@ python scripts/agent_research_runtime.py inspect \
   --workspace /tmp/atlas-v20-education --task-id atlas-edu-01
 python scripts/agent_research_runtime.py approve \
   --workspace /tmp/atlas-v20-education \
-  --task-id atlas-edu-01 --token 'prepare 输出的一次性凭证'
+  --task-id atlas-edu-01 --token-stdin
 \`\`\`
 
-报告写入 \`/tmp/atlas-v20-education/reports/atlas-edu-01.json\`。如果选择 \`deny\` 而非 \`approve\`，则不得写入任何报告。生产用户不用运行以上命令；这是开发者可核验的执行安全基线，面向普通用户的服务端界面尚未建设。
+批准命令从标准输入读取凭证，请在运行后粘贴 prepare 输出的凭证并按 Enter；不把凭证放在命令行参数或 shell 历史记录中。不要将凭证发送给网站或第三方。\n\n报告写入 \`/tmp/atlas-v20-education/reports/atlas-edu-01.json\`。如果选择 \`deny\` 而非 \`approve\`，则不得写入任何报告。生产用户不用运行以上命令；这是开发者可核验的执行安全基线，面向普通用户的服务端界面尚未建设。
 
 **安全要求：** 不要公开本地凭证、sqlite 文件或包含敏感工作目标的证据。CI 自动生成的临时 token 只在内存/子进程交互中使用，公开 artifact 仅包含批准后的**合成任务报告**与去敏摘要，不公开 token 或 DB。
 
