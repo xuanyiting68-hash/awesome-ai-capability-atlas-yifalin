@@ -35,10 +35,14 @@ pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:11px;background:#0b213
 <body><header><nav><a class="brand" href="./index.html">◈ YIFALIN / AI CAPABILITY ATLAS</a><a href="./semantic-studio.html">真实 AI 语义搜索</a><a href="./mission-studio.html">方案工作台</a><a href="./pilot-lab.html">Pilot Lab</a></nav>
 <div class="kicker" style="margin-top:25px">V2.0 · ACTUAL EXECUTION TRACE · NOT A LIVE CLOUD AGENT</div>
 <h1>看得见的 AI 任务执行，而不是预设演示</h1>
-<p>真实模型查找项目 → LangGraph 持久化运行 → 真实中断等待审批 → 新进程恢复 → 写入受限本地报告。下方展示的是独立 CI 中已经实际运行过的**公开合成任务结果**，你可以检查每一步的依据、风险及拒绝行为。</p></header>
+<p>真实模型查找项目 → LangGraph 持久化运行 → 真实中断等待审批 → 新进程恢复 → 写入受限本地报告。下方展示的是独立 CI 中已经实际运行过的<strong>公开合成任务结果</strong>，你可以检查每一步的依据、风险及拒绝行为。</p>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:17px">
+ <a href="./semantic-studio.html" style="background:#b8f2de;color:#143c4a;border-radius:9px;padding:12px 16px;text-decoration:none;font-size:12px;font-weight:850">✦ 用我的目标实时匹配 AI 工具</a>
+ <a href="#case-study" style="border:1px solid #6c9eb1;color:#e3f8fa;border-radius:9px;padding:12px 16px;text-decoration:none;font-size:12px;font-weight:750">查看真实执行证据 ↓</a>
+</div></header>
 <main><div class="notice"><strong>请区分两种操作：</strong>本页面展示真实运行留下的静态证据，可点击查看报告和官方来源；它不会现场调用后台 Agent。若希望自己输入需求并由模型实时匹配，请进入 <a href="./semantic-studio.html">本地 AI 语义搜索</a>。完整自主执行、账号权限及云端持久运行尚未开放。</div>
 <div class="cards"><div class="metric"><strong>384D</strong><small>真实 E5 神经向量</small></div><div class="metric"><strong>4</strong><small>实际选出并审查的候选</small></div><div class="metric"><strong>0</strong><small>外部业务操作 / 交易订单</small></div></div>
-<div class="tabs" role="tablist" aria-label="真实执行记录">
+<div id="case-study" class="tabs" role="tablist" aria-label="真实执行记录">
 <button type="button" class="tab" id="tab-approved" role="tab" aria-controls="page-approved" aria-selected="true">教育研究：批准后产出</button>
 <button type="button" class="tab" id="tab-denied" role="tab" aria-controls="page-denied" aria-selected="false">金融研究：拒绝后零输出</button></div>
 <div id="loading" role="status" aria-live="polite">正在读取 CI 真实执行报告的公开节选…</div>
