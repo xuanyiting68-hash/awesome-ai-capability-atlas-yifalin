@@ -1,13 +1,23 @@
 """Real subprocess end-to-end checkpoint and permission tests (requires actual E5 + LangGraph)."""
 import hashlib
 import json
+import os
+import shutil
 import subprocess
 import sys
 import tempfile
 import unittest
 from pathlib import Path
 
-from scripts import agent_research_runtime as runtime
+try:
+    from scripts import agent_research_runtime as runtime
+except ModuleNotFoundError as exc:
+    if exc.name and exc.name.startswith("langgraph"):
+        runtime = None
+    else:
+        raise
+if os.environ.get("ATLAS_REQUIRE_AGENT_RUNTIME") == "1" and runtime is None:
+    raise RuntimeError("Real LangGraph SDK missing; independent runtime CI MUST NOT SKIP")
 
 ROOT = Path(__file__).resolve().parents[1]
 CLI = ROOT / "scripts/agent_research_runtime.py"
@@ -25,6 +35,7 @@ def call(*args, success=True):
     return json.loads(p.stdout if success else p.stderr.splitlines()[-1])
 
 
+@unittest.skipUnless(runtime is not None, "Real LangGraph SDK only in independent runner")
 class LocalRuntimeTests(unittest.TestCase):
     def test_schema_action_and_injection_fail_closed_before_model(self):
         example = json.loads((ROOT / "examples/research_agent/education_task.json").read_text())
@@ -96,6 +107,21 @@ class LocalRuntimeTests(unittest.TestCase):
             self.assertEqual(duplicate["status"], "BLOCK")
             count = len(list((workspace / "reports").glob("*.json")))
             self.assertEqual(count, 1, "At most one local plan was written")
+            if os.environ.get("ATLAS_AGENT_EVIDENCE_DIR"):
+                dest = Path(os.environ["ATLAS_AGENT_EVIDENCE_DIR"])
+                dest.mkdir(parents=True, exist_ok=True)
+                shutil.copy2(workspace / complete["report"], dest / "approved-research-plan.json")
+                (dest / "approved-runtime-summary.json").write_text(json.dumps({
+                    "schema_version": 1,
+                    "actual_e5_executed": pending["actual_neural_model_executed"],
+                    "actual_sqlite_checkpoint_paused": pending["durable_graph_interrupted"],
+                    "separate_process_checkpoint_resume": complete["real_graph_resume"],
+                    "approval_token_exposed_in_artifact": False,
+                    "approved_report": "approved-research-plan.json",
+                    "replay_blocked": reuse["status"] == "BLOCK",
+                    "fake_capability_blocked": bad["status"] == "BLOCK",
+                    "external_business_actions": 0,
+                }, sort_keys=True, indent=2) + "\n", encoding="utf-8")
 
     def test_real_finance_model_denial_never_writes_report(self):
         with tempfile.TemporaryDirectory(prefix="atlas-real-denial-") as temp:
@@ -115,6 +141,16 @@ class LocalRuntimeTests(unittest.TestCase):
             retry = call("approve", "--workspace", ws, "--task-id", prepare["task_id"],
                          "--token", prepare["review_token"], success=False)
             self.assertEqual(retry["status"], "BLOCK")
+            if os.environ.get("ATLAS_AGENT_EVIDENCE_DIR"):
+                dest = Path(os.environ["ATLAS_AGENT_EVIDENCE_DIR"])
+                dest.mkdir(parents=True, exist_ok=True)
+                (dest / "denied-runtime-summary.json").write_text(json.dumps({
+                    "schema_version": 1,
+                    "actual_e5_executed": prepare["actual_neural_model_executed"],
+                    "decision": result["status"],
+                    "report_count": 0, "capability_consumed": after["gate"] == "CONSUMED_DENY",
+                    "external_business_actions": 0,
+                }, sort_keys=True, indent=2) + "\n", encoding="utf-8")
 
     def test_unauthorized_approval_without_workspace_fails_closed(self):
         with tempfile.TemporaryDirectory() as temp:
