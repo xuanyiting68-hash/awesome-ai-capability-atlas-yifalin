@@ -1,0 +1,93 @@
+name: Atlas V2.0 real evidence-bound research task runtime
+on:
+  pull_request:
+    paths:
+      - 'scripts/agent_research_runtime.py'
+      - 'scripts/agent_embed_candidates.mjs'
+      - 'scripts/test_agent_research_runtime.py'
+      - 'examples/research_agent/**'
+      - 'docs/AGENT_RESEARCH_RUNTIME_V20_CN.md'
+      - '.github/workflows/agent-research-runtime.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/agent_research_runtime.py'
+      - 'scripts/agent_embed_candidates.mjs'
+      - 'scripts/test_agent_research_runtime.py'
+      - 'examples/research_agent/**'
+      - '.github/workflows/agent-research-runtime.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  actual-neural-langgraph-runtime:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    env:
+      ATLAS_REQUIRE_AGENT_RUNTIME: '1'
+      ATLAS_AGENT_EVIDENCE_DIR: test-results/agent-runtime
+      HF_HOME: /tmp/atlas-v20-model-cache
+      HF_HUB_DISABLE_TELEMETRY: '1'
+      TRANSFORMERS_OFFLINE: '0'
+      LANGCHAIN_TRACING_V2: 'false'
+      LANGSMITH_TRACING: 'false'
+      DO_NOT_TRACK: '1'
+      NPM_CONFIG_AUDIT: 'false'
+      NPM_CONFIG_FUND: 'false'
+      PYTHONDONTWRITEBYTECODE: '1'
+      PYTHONNOUSERSITE: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Install pinned real LangGraph SQLite checkpoint SDK
+        run: |
+          python -m pip install --only-binary=:all: --no-cache-dir 'langgraph==1.2.18' 'langgraph-checkpoint-sqlite==3.1.2'
+      - name: Install pinned Transformers.js pretrained neural model runtime
+        run: |
+          npm install --no-save --ignore-scripts --no-audit --no-fund '@huggingface/transformers@3.8.1'
+      - name: Verify actual upstream package identities
+        run: |
+          python -c "from importlib.metadata import version; assert version('langgraph')=='1.2.18'; assert version('langgraph-checkpoint-sqlite')=='3.1.2'"
+          node -p "require('./node_modules/@huggingface/transformers/package.json').version" || node -e "const fs=require('node:fs');if(JSON.parse(fs.readFileSync('node_modules/@huggingface/transformers/package.json')).version!=='3.8.1')process.exit(1)"
+      - name: Syntax and real separate-process E5 plus LangGraph checkpoint/resume review contract
+        run: |
+          python -m py_compile scripts/agent_research_runtime.py scripts/test_agent_research_runtime.py
+          node --check scripts/agent_embed_candidates.mjs
+          python -m unittest scripts.test_agent_research_runtime -v
+      - name: Verify actual generated reports from the model + graph, never mock fixtures
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          root=Path('test-results/agent-runtime')
+          a=json.loads((root/'approved-runtime-summary.json').read_text())
+          d=json.loads((root/'denied-runtime-summary.json').read_text())
+          p=json.loads((root/'approved-research-plan.json').read_text())
+          assert a['actual_e5_executed'] and a['actual_sqlite_checkpoint_paused'] and a['separate_process_checkpoint_resume']
+          assert a['replay_blocked'] and a['fake_capability_blocked'] and not a['approval_token_exposed_in_artifact']
+          assert d['actual_e5_executed'] and d['report_count']==0 and d['decision']=='BLOCK: declined'
+          assert p['actual_neural_tool_executed'] and p['actual_langgraph_checkpoint_and_interrupt']
+          assert len(p['selected'])==4 and p['model_dimensions']==384 and len(p['steps'])==4
+          assert p['permissions']['orders']==p['permissions']['external_system_calls']==0
+          assert all(not c['verified_tool_compatibility'] and not c['reviewed_for_commercial_use'] for c in p['selected'])
+          assert 'review_token' not in json.dumps([a,d,p])
+          print('PASS actual pretrained E5 -> real LangGraph SQLite interrupt -> fresh Python process token-gated local report; denial + tamper controls')
+          PY
+      - name: Preserve only source-derived public and sanitized evidence, not local DB or capability tokens
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: atlas-v20-actual-neural-task-runtime
+          path: |
+            test-results/agent-runtime/approved-runtime-summary.json
+            test-results/agent-runtime/denied-runtime-summary.json
+            test-results/agent-runtime/approved-research-plan.json
+          if-no-files-found: warn
+          retention-days: 30
