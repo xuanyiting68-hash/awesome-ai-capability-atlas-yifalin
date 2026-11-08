@@ -44,6 +44,11 @@ const errors=[];
     assert.equal(manifest.semantic_studio_user_model_consent_required,true);
     assert.equal(manifest.semantic_studio_remote_inference_calls,0);
     assert.equal(manifest.semantic_studio_verified_agent_integrations,0);
+    assert.equal(manifest.agent_runtime_local_actual_model_and_graph,true);
+    assert.equal(manifest.agent_runtime_published_exhibit_not_live,true);
+    assert.equal(manifest.agent_runtime_verified_external_business_actions,0);
+    assert.equal(manifest.agent_runtime_published_approved_sample_count,1);
+    assert.equal(manifest.agent_runtime_published_denied_sample_count,1);
     assert.match(manifest.interactive_demo_runtime,/client-side first-party/);
     const evidenceResponse=await context.request.get(new URL('data/recipe_demo_results.json',base).href);
     assert.equal(evidenceResponse.status(),200,'Recomputed published first-party evidence must exist');
@@ -338,6 +343,36 @@ const errors=[];
     assert.equal(await page.evaluate(()=>sessionStorage.getItem('atlas_semantic_handoff_v1')),null,'One-time handoff must erase source text');
     await page.goto(base);
     assert.ok(await page.locator('a[href="./semantic-studio.html"]').count()>=2,'Atlas homepage should expose real opt-in local semantic AI');
+    // Source-linked real execution viewer; never mistake this public static exhibit for live runtime.
+    for(const width of [1440,768,390]){
+      await page.setViewportSize({width,height:850});
+      await page.goto(new URL('runtime-evidence.html',base).href);
+      await page.waitForFunction(()=>document.querySelector('#loading').hidden===true);
+      assert.equal(await page.locator('#tools .tool').count(),4,'All 4 actual E5 candidates must be visible');
+      assert.equal(await page.locator('#tab-approved').getAttribute('aria-selected'),'true');
+      assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,'Runtime evidence horizontal overflow '+width);
+      await page.screenshot({path:'test-results/actual-runtime-'+width+'.png'});
+    }
+    assert.match(await page.locator('#goal').innerText(),/课程材料/);
+    assert.ok(await page.locator('#tools .tool').first().locator('a[href="https://github.com/docling-project/docling"]').count()===1);
+    await page.click('#tab-denied');
+    assert.equal(await page.locator('#tab-denied').getAttribute('aria-selected'),'true');
+    assert.match(await page.locator('#page-denied').innerText(),/没有生成报告/);
+    assert.match(await page.locator('#denial-details').innerText(),/0 \/ 0/);
+    assert.equal(await page.locator('#page-approved').isVisible(),false);
+    await page.click('#tab-approved');
+    assert.equal(await page.locator('#tools .tool').count(),4);
+    const realSample=await context.request.get(new URL('data/agent_runtime_public_case_v20.json',base).href);
+    const deniedSample=await context.request.get(new URL('data/agent_runtime_public_denial_v20.json',base).href);
+    assert.equal(realSample.status(),200);assert.equal(deniedSample.status(),200);
+    const actual=await realSample.json(),rejected=await deniedSample.json();
+    assert.equal(actual.real_neural_executed,true);
+    assert.equal(actual.selected.length,4);
+    assert.equal(actual.scope.outbound_business_actions,0);
+    assert.equal(rejected.status,'BLOCK: declined');
+    assert.equal(rejected.generated_reports,0);
+    await page.goto(base);
+    assert.ok(await page.locator('a[href="./runtime-evidence.html"]').count()>=2,'Homepage must expose actual research run evidence');
     // Validate every official-source project dossier, not a hard-coded previous wave.
     const sourceResult=await context.request.get(new URL('data/research_briefs.json',base).href);
     assert.equal(sourceResult.status(),200);
