@@ -11,7 +11,7 @@ const require=createRequire(import.meta.url);
 const M=require("../mission-engine.js");
 const S=require("../semantic-core.js");
 const VERSION="3.8.1";
-const installed=require("@huggingface/transformers/package.json");
+const installed=JSON.parse(readFileSync(new URL("../node_modules/@huggingface/transformers/package.json",import.meta.url),"utf8"));
 if(installed.version!==VERSION)throw Error("Pinned model SDK version drift");
 const ROOT=new URL("../",import.meta.url);
 const read=n=>{
