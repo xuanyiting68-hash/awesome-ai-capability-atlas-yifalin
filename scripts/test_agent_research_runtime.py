@@ -23,10 +23,11 @@ ROOT = Path(__file__).resolve().parents[1]
 CLI = ROOT / "scripts/agent_research_runtime.py"
 
 
-def call(*args, success=True):
+def call(*args, success=True, stdin=None):
     p = subprocess.run(
         [sys.executable, str(CLI), *map(str, args)],
         cwd=ROOT, capture_output=True, text=True, timeout=290,
+        input=(stdin + '\n' if stdin is not None else None),
     )
     if success and p.returncode != 0:
         raise AssertionError("CLI failed: " + p.stderr[-1600:])
@@ -74,10 +75,10 @@ class LocalRuntimeTests(unittest.TestCase):
             self.assertIn("human_review", before["graph_next"])
             self.assertFalse(before["token_disclosed"])
             bad = call("approve", "--workspace", workspace, "--task-id", task,
-                       "--token", "not_the_correct_capability", success=False)
+                       "--token-stdin", stdin="not_the_correct_capability", success=False)
             self.assertEqual(bad["status"], "BLOCK")
             self.assertFalse((workspace / "reports" / (task + ".json")).exists())
-            complete = call("approve", "--workspace", workspace, "--task-id", task, "--token", token)
+            complete = call("approve", "--workspace", workspace, "--task-id", task, "--token-stdin", stdin=token)
             self.assertEqual(complete["status"], "LOCAL_REPORT_WRITTEN")
             self.assertEqual(complete["real_orders"], 0)
             self.assertFalse(complete["owner_authenticated"])
@@ -99,7 +100,7 @@ class LocalRuntimeTests(unittest.TestCase):
             self.assertFalse(report["claims"]["third_party_tool_executed"])
             self.assertFalse(report["claims"]["production_safe"])
             self.assertEqual(report["permissions"]["external_system_calls"], 0)
-            reuse = call("approve", "--workspace", workspace, "--task-id", task, "--token", token,
+            reuse = call("approve", "--workspace", workspace, "--task-id", task, "--token-stdin", stdin=token,
                          success=False)
             self.assertEqual(reuse["status"], "BLOCK")
             duplicate = call("prepare", "--workspace", workspace, "--task-file", fixture,
@@ -130,7 +131,7 @@ class LocalRuntimeTests(unittest.TestCase):
             prepare = call("prepare", "--workspace", ws, "--task-file", fixture)
             self.assertEqual(prepare["status"], "PENDING_ONE_TIME_LOCAL_REVIEW")
             result = call("deny", "--workspace", ws, "--task-id", prepare["task_id"],
-                          "--token", prepare["review_token"])
+                          "--token-stdin", stdin=prepare["review_token"])
             self.assertEqual(result["status"], "BLOCK: declined")
             self.assertIsNone(result["report"])
             self.assertFalse(list((ws / "reports").glob("*.json")))
@@ -139,7 +140,7 @@ class LocalRuntimeTests(unittest.TestCase):
             self.assertEqual(after["outcome"], "BLOCK: declined")
             self.assertEqual(after["graph_next"], [])
             retry = call("approve", "--workspace", ws, "--task-id", prepare["task_id"],
-                         "--token", prepare["review_token"], success=False)
+                         "--token-stdin", stdin=prepare["review_token"], success=False)
             self.assertEqual(retry["status"], "BLOCK")
             if os.environ.get("ATLAS_AGENT_EVIDENCE_DIR"):
                 dest = Path(os.environ["ATLAS_AGENT_EVIDENCE_DIR"])
@@ -155,7 +156,7 @@ class LocalRuntimeTests(unittest.TestCase):
     def test_unauthorized_approval_without_workspace_fails_closed(self):
         with tempfile.TemporaryDirectory() as temp:
             answer = call("approve", "--workspace", Path(temp) / "missing",
-                          "--task-id", "forged-task", "--token", "fake", success=False)
+                          "--task-id", "forged-task", "--token-stdin", stdin="fake", success=False)
             self.assertEqual(answer["status"], "BLOCK")
 
 
