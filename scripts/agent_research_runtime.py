@@ -46,7 +46,7 @@ class State(TypedDict, total=False):
 
 
 def digest_sources():
-    return {name.removeprefix("data/"): hashlib.sha256((ROOT / name).read_bytes()).hexdigest()
+    return {name.removeprefix("data/").removesuffix(".json"): hashlib.sha256((ROOT / name).read_bytes()).hexdigest()
             for name in SOURCE_FILES}
 
 
