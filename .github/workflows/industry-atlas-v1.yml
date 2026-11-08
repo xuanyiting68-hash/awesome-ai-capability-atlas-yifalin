@@ -88,4 +88,5 @@ jobs:
           python check_advisor_v179.py
           python check_advisor_v180.py
           python check_advisor_v181.py
+          python check_start_task_first.py
           python check_intelligence_ui.py
