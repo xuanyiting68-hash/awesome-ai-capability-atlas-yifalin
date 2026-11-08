@@ -1,0 +1,6 @@
+{
+  "task_id": "atlas-fin-01",
+  "action": "research_plan",
+  "scenario": "finance",
+  "goal": "研究公开金融时间序列与量化因子，完成严格样本外验证和成本敏感性评估"
+}
