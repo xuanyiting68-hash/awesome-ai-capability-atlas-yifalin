@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "case_id": "education_sample_v20",
+  "evidence_origin": {
+    "kind": "Actual GitHub Actions SDK model/graph execution, sanitized excerpt",
+    "run_id": 42428757390,
+    "source_pr": 36,
+    "source_head": "013595b57cab4453a88237cb3d0ba9eccb500b5a",
+    "artifact": "atlas-v20-actual-neural-task-runtime",
+    "published_excerpt_only": true
+  },
+  "task_id": "atlas-edu-01",
+  "scenario": "education",
+  "goal": "将公开的课程材料整理成有原文证据的课堂练习，并提供人工教师审核",
+  "model": "Xenova/multilingual-e5-small",
+  "model_dimensions": 384,
+  "real_neural_executed": true,
+  "real_langgraph_sqlite_interrupt": true,
+  "separate_process_approval_resumed": true,
+  "approval": "single-host one-time local capability (not authenticated Owner)",
+  "status": "LOCAL_APPROVED_RESEARCH_REPORT_NOT_DEPLOYED",
+  "selected": [
+    {
+      "rank": 1,
+      "repo": "docling-project/docling",
+      "source_url": "https://github.com/docling-project/docling",
+      "similarity_cosine": 0.874407,
+      "rule_fit": 87,
+      "evidence_coverage": 85,
+      "license_snapshot": "MIT",
+      "risk": "medium",
+      "use_case": "大规模课程文档解析与引用",
+      "blockers": [
+        "第三方安全与商业许可证尚未完成独立审查"
+      ]
+    },
+    {
+      "rank": 2,
+      "repo": "firecrawl/firecrawl",
+      "source_url": "https://github.com/firecrawl/firecrawl",
+      "similarity_cosine": 0.874262,
+      "rule_fit": 70,
+      "evidence_coverage": 30,
+      "license_snapshot": "AGPL-3.0",
+      "risk": "high",
+      "use_case": "公开资料研究与课程资料采集",
+      "blockers": [
+        "第三方安全与商业许可证尚未完成独立审查",
+        "原 Atlas 标注高风险"
+      ]
+    },
+    {
+      "rank": 3,
+      "repo": "deepset-ai/haystack",
+      "source_url": "https://github.com/deepset-ai/haystack",
+      "similarity_cosine": 0.872868,
+      "rule_fit": 76,
+      "evidence_coverage": 30,
+      "license_snapshot": "Apache-2.0",
+      "risk": "medium",
+      "use_case": "教育知识库与企业检索",
+      "blockers": [
+        "第三方安全与商业许可证尚未完成独立审查"
+      ]
+    },
+    {
+      "rank": 4,
+      "repo": "infiniflow/ragflow",
+      "source_url": "https://github.com/infiniflow/ragflow",
+      "similarity_cosine": 0.872135,
+      "rule_fit": 85,
+      "evidence_coverage": 60,
+      "license_snapshot": "Apache-2.0",
+      "risk": "high",
+      "use_case": "AI 教育资料问答与学习工具",
+      "blockers": [
+        "第三方安全与商业许可证尚未完成独立审查",
+        "原 Atlas 标注高风险"
+      ]
+    }
+  ],
+  "source_sha256": {
+    "curated": "17fb405494562df7c5d216d0649e6b2b09460e64a3f7167c9305f442fe3598a1",
+    "repo_metadata": "a5437ccdff7ee25591c089ef038d2c9ceda56f3f3daf96f4fdc7bb004af1fc22",
+    "research_briefs": "01339c2ef523422e7c8486c5f3e8e4e26eea15b9ff850bbca99bf96b232fa414"
+  },
+  "steps": [
+    {
+      "number": 1,
+      "name": "定义数据与权限边界",
+      "action": "冻结公开数据范围，不接入任何账号密钥或客户材料"
+    },
+    {
+      "number": 2,
+      "name": "审查项目证据",
+      "action": "逐一核查仓库来源、数据日期、许可证及风险限制"
+    },
+    {
+      "number": 3,
+      "name": "独立兼容性试点",
+      "action": "单独获得授权后，在隔离环境验证一个候选工具"
+    },
+    {
+      "number": 4,
+      "name": "独立验收与交接",
+      "action": "记录失败、回滚、审核签字和未通过项"
+    }
+  ],
+  "scope": {
+    "outbound_business_actions": 0,
+    "orders": 0,
+    "paid_api_calls": 0,
+    "third_party_candidate_repos_executed": 0,
+    "actual_llm_generated_plan": false,
+    "production_safe": false
+  },
+  "notes": "静态页面展示的是 CI 中真正运行过的公开合成任务报告节选；不是此刻实时执行，也不是经审计的生产 Agent。"
+}

@@ -14,6 +14,14 @@
 
 **务必区分：**“已被目录索引 / repository-exists / security-audited / battle-tested / licensed-for-commercial-use” 是不同的状态。本项目目前只对 133 个精选 GitHub 项目完成了存在性与未归档状态的核验。目录候选不经过人工实测。
 
+## V2.0 · 真实执行的受限 AI 研究任务 Runtime
+
+**[不用看 Actions，直接查看真实任务执行报告](runtime-evidence.html)** · [可复现的模型与 LangGraph 执行源码](scripts/agent_research_runtime.py) · [实验、审批与权限边界](docs/AGENT_RESEARCH_RUNTIME_V20_CN.md)
+
+沿用 V1.9 的真实多语言 E5 模型，在一次任务中读入**已有的真实精选仓库**，以真实 384 维嵌入向量选取有来源的候选，使用 LangGraph + SQLite checkpoint 真正暂停等待人工审批，另一个 Python 进程经一次性本地能力凭证恢复后，才执行真实**本地文件写入**。所有第三方开源候选仍需许可证、安全和实际兼容性审查，没有在该 Runtime 中运行候选仓库的代码。另有一项被拒绝的金融研究任务真实执行对照：拒绝后不会写文件。
+
+独立 Actions 检查实际模型输出、Checkpoint、审批恢复、拒绝、错误凭证、不可重放和报告来源。网站展示的是 CI 中经过真实执行的公开合成任务记录**节选**；用户仍可到 [V1.9 本地实时 AI 语义搜索](semantic-studio.html) 输入自己的目标，但不能从 Pages 网站远程触发 LangGraph Runtime。**没有真实 Owner 身份认证、生产后端、多租户 RBAC、真实业务外呼、订单或付费 API。**
+
 ## V1.9 · 真正的本地神经语义检索（用户主动选择）
 
 [直接打开真实 AI 语义检索页面](semantic-studio.html) · [安全与模型方法](docs/SEMANTIC_MODEL_V19_CN.md)

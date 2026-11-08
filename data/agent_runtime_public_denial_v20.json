@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "case_id": "finance_denied_v20",
+  "evidence_origin": {
+    "kind": "Actual GitHub Actions SDK model/graph execution, sanitized denial excerpt",
+    "run_id": 42428757390,
+    "source_pr": 36,
+    "source_head": "013595b57cab4453a88237cb3d0ba9eccb500b5a",
+    "artifact": "atlas-v20-actual-neural-task-runtime",
+    "published_excerpt_only": true
+  },
+  "task_id": "atlas-fin-01",
+  "scenario": "finance",
+  "model": "Xenova/multilingual-e5-small",
+  "real_neural_executed": true,
+  "real_langgraph_sqlite_interrupt": true,
+  "separate_process_review_denied": true,
+  "status": "BLOCK: declined",
+  "approval_capability_consumed": true,
+  "generated_reports": 0,
+  "external_business_actions": 0,
+  "real_orders": 0,
+  "notes": "真实模型与 LangGraph checkpoint 已运行，随后模拟研究负责人本地拒绝，未创建研究报告。非生产认证。"
+}

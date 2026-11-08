@@ -19,7 +19,7 @@ else:
     from verify_recipe_demos import verify_from_files as verify_recipe_demos
 
 ROOT = Path(__file__).resolve().parents[1]
-FILES = ('index.html', 'top30.html', 'project.html', 'blueprints.html', 'network.html', 'adoption.html', 'pilot-lab.html', 'recipes.html', 'demos.html', 'mission-studio.html', 'mission-engine.js', 'semantic-studio.html', 'semantic-core.js', 'semantic-worker.js', 'README.md', 'LICENSE')
+FILES = ('index.html', 'top30.html', 'project.html', 'blueprints.html', 'network.html', 'adoption.html', 'pilot-lab.html', 'recipes.html', 'demos.html', 'mission-studio.html', 'mission-engine.js', 'semantic-studio.html', 'semantic-core.js', 'semantic-worker.js', 'runtime-evidence.html', 'README.md', 'LICENSE')
 DIRECTORIES = ('data', 'docs')
 EXAMPLE_SUBDIRS = ('consent_lead_triage', 'recipe_demos')
 
@@ -69,6 +69,35 @@ def build(destination, source=ROOT, commit=None):
     adoption_summary = validate_adoption(source)
     recipe_summary = validate_recipes(source)
     demo_results = verify_recipe_demos(source)
+    # Public runtime exhibit is excerpted from an actual independent SDK/Graph CI.
+    # It is not a live task API, nor a claim of production agent execution.
+    case = json.loads((source / 'data/agent_runtime_public_case_v20.json').read_text())
+    deny = json.loads((source / 'data/agent_runtime_public_denial_v20.json').read_text())
+    if (case.get('schema_version') != 1 or case.get('scenario') != 'education'
+        or case.get('status') != 'LOCAL_APPROVED_RESEARCH_REPORT_NOT_DEPLOYED'
+        or case.get('real_neural_executed') is not True
+        or case.get('real_langgraph_sqlite_interrupt') is not True
+        or len(case.get('selected', [])) != 4
+        or case.get('scope', {}).get('outbound_business_actions') != 0
+        or case.get('scope', {}).get('orders') != 0
+        or deny.get('status') != 'BLOCK: declined'
+        or deny.get('generated_reports') != 0
+        or deny.get('real_orders') != 0
+        or case.get('evidence_origin', {}).get('run_id') != deny.get('evidence_origin', {}).get('run_id')):
+        raise ValueError('Actual agent runtime exhibit contract broken')
+    if case.get('source_sha256') != {
+        n.removeprefix('data/').removesuffix('.json'): __import__('hashlib').sha256((source / n).read_bytes()).hexdigest()
+        for n in ('data/curated.json', 'data/repo_metadata.json', 'data/research_briefs.json')
+    }:
+        raise ValueError('Actual neural runtime exhibit has stale or forged input hashes')
+    curated_by_repo = {x['repo']: x for x in curated}
+    if any(x.get('source_url') != 'https://github.com/' + x.get('repo', '')
+           or x.get('repo') not in curated_by_repo
+           or x['source_url'] != curated_by_repo[x['repo']]['url']
+           or not isinstance(x.get('similarity_cosine'), (float, int))
+           or not x.get('blockers')
+           for x in case['selected']):
+        raise ValueError('Runtime sample contains fabricated sources or unknown audit blockers')
     pilot_summary = run_pilot(source)
     if not pilot_summary['all_expected_met'] or pilot_summary['total_cases'] != 24:
         raise ValueError('Pilot contract baseline not reproducible; refuse deployment')
@@ -105,6 +134,11 @@ def build(destination, source=ROOT, commit=None):
         'semantic_studio_user_model_consent_required': True,
         'semantic_studio_remote_inference_calls': 0,
         'semantic_studio_verified_agent_integrations': 0,
+        'agent_runtime_local_actual_model_and_graph': True,
+        'agent_runtime_published_exhibit_not_live': True,
+        'agent_runtime_verified_external_business_actions': 0,
+        'agent_runtime_published_approved_sample_count': 1,
+        'agent_runtime_published_denied_sample_count': 1,
         'pilot_contract_cases': pilot_summary['total_cases'],
         'pilot_contract_passed': pilot_summary['passed_cases'],
         'pilot_upstream_packages_executed': pilot_summary['upstream_code_executed'],

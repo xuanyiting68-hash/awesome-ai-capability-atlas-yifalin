@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b1a32">
+<meta name="description" content="Atlas V2.0 真实 AI 研究任务执行证据：查看 E5 神经推理、LangGraph SQLite 审批恢复、已审查来源及拒绝路径。">
+<title>真实任务执行证据 · YIFALIN Atlas V2.0</title>
+<style>
+:root{font-family:Inter,"PingFang SC","Microsoft YaHei",system-ui,sans-serif;color:#253755;background:#f3f6fb;--navy:#091c33;--line:#dce6f3;--muted:#687c97}
+*{box-sizing:border-box}body{margin:0}a{color:#2457a3}button{font:inherit;cursor:pointer}
+a:focus-visible,button:focus-visible{outline:3px solid #23b8ad;outline-offset:2px}header{background:radial-gradient(circle at 93% 5%,#23577c,transparent 54%),var(--navy);color:#fff;padding:23px max(18px,calc((100vw - 1170px)/2)) 36px}
+nav{display:flex;gap:16px;align-items:center;flex-wrap:wrap}nav a{color:#b9dbf0;font-size:12px;text-decoration:none}nav .brand{font-size:13px;color:#fff;font-weight:850;margin-right:auto}
+header h1{font-size:clamp(27px,4.2vw,40px);margin:29px 0 11px;letter-spacing:-.7px}
+header p{color:#d0e2f4;font-size:13px;line-height:1.8;max-width:900px;margin:0}
+.kicker{color:#8af1d5;font-size:11px;letter-spacing:1.3px;font-weight:850}
+main{max-width:1210px;margin:auto;padding:20px 17px 75px}.notice{padding:14px 17px;border:1px solid #d4e4f2;background:#eaf3f9;color:#365a76;border-radius:12px;font-size:12px;line-height:1.75;margin-bottom:17px}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px;margin-bottom:18px}
+.metric{background:white;border:1px solid var(--line);border-radius:13px;padding:16px 18px}.metric strong{display:block;font-size:22px;color:#214a8b}.metric small{color:#657d99;font-size:11px}
+.panel{background:white;border:1px solid var(--line);border-radius:14px;padding:21px;margin-bottom:16px;box-shadow:0 4px 18px #14345709}.panel h2{font-size:20px;margin:1px 0 10px}.panel p{font-size:12px;line-height:1.75;color:#5c718d}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 16px}
+.tab{padding:12px 16px;border:1px solid #cad8e9;border-radius:10px;background:white;color:#38577b;font-size:12px;font-weight:800}.tab[aria-selected=true]{background:#244f82;color:white;border-color:#244f82}
+.page[hidden]{display:none!important}.two{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(290px,1fr);gap:16px}
+.timeline{display:grid;gap:11px;margin:17px 0}.step{position:relative;border:1px solid #e0eaf5;background:#f8fbff;border-radius:11px;padding:13px 13px 13px 16px}
+.step strong{font-size:13px}.step p{margin:6px 0 0!important;font-size:11px}
+.number{display:inline-block;background:#d5e6f7;color:#235789;padding:5px 9px;border-radius:7px;margin-right:8px;font-size:11px}
+.tools{display:grid;gap:10px}.tool{border:1px solid #e0e8f3;border-radius:10px;padding:13px}.tool h3{font-size:14px;margin:5px 0 6px}.tool p{font-size:12px;margin:5px 0}.tool-head{display:flex;gap:10px;justify-content:space-between;align-items:start;flex-wrap:wrap}
+.tag{display:inline-block;border-radius:6px;background:#eaf1fb;color:#436687;font-size:10px;padding:5px 7px}.tag.warn{background:#fff0e2;color:#90572e}.tag.good{background:#e3f4ea;color:#17775c}
+.details{display:grid;gap:7px;margin-top:12px}.detail{font-size:11px;color:#5d7491;line-height:1.6;overflow-wrap:anywhere}
+button.small{border:1px solid #d2e0ef;background:#edf4ff;color:#295c97;border-radius:7px;font-size:11px;padding:8px 12px}
+.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px}.button{display:inline-block;border-radius:9px;background:#295ba3;color:white;text-decoration:none;font-weight:750;font-size:12px;padding:12px 16px}.button.secondary{background:#e7effa;color:#265789}
+.blocked{font-weight:850;font-size:20px;color:#a34f38}.sub{font-size:11px;color:#6e829c;margin:5px 0 10px}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:11px;background:#0b213d;color:#cce5f7;border-radius:10px;padding:15px}
+@media(max-width:850px){.two{grid-template-columns:1fr}}
+@media(max-width:540px){header{padding:16px 13px 24px}header h1{margin-top:18px;font-size:27px}header p{font-size:12px}nav .brand{width:100%}nav a{font-size:11px}main{padding:11px 10px 50px}.cards{gap:6px}.metric{padding:11px 9px}.metric strong{font-size:17px}.metric small{font-size:10px}.panel{padding:15px}.tab{flex:1;padding:10px 7px;font-size:11px}}
+</style></head>
+<body><header><nav><a class="brand" href="./index.html">◈ YIFALIN / AI CAPABILITY ATLAS</a><a href="./semantic-studio.html">真实 AI 语义搜索</a><a href="./mission-studio.html">方案工作台</a><a href="./pilot-lab.html">Pilot Lab</a></nav>
+<div class="kicker" style="margin-top:25px">V2.0 · ACTUAL EXECUTION TRACE · NOT A LIVE CLOUD AGENT</div>
+<h1>看得见的 AI 任务执行，而不是预设演示</h1>
+<p>真实模型查找项目 → LangGraph 持久化运行 → 真实中断等待审批 → 新进程恢复 → 写入受限本地报告。下方展示的是独立 CI 中已经实际运行过的<strong>公开合成任务结果</strong>，你可以检查每一步的依据、风险及拒绝行为。</p>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:17px">
+ <a href="./semantic-studio.html" style="background:#b8f2de;color:#143c4a;border-radius:9px;padding:12px 16px;text-decoration:none;font-size:12px;font-weight:850">✦ 用我的目标实时匹配 AI 工具</a>
+ <a href="#case-study" style="border:1px solid #6c9eb1;color:#e3f8fa;border-radius:9px;padding:12px 16px;text-decoration:none;font-size:12px;font-weight:750">查看真实执行证据 ↓</a>
+</div></header>
+<main><div class="notice"><strong>请区分两种操作：</strong>本页面展示真实运行留下的静态证据，可点击查看报告和官方来源；它不会现场调用后台 Agent。若希望自己输入需求并由模型实时匹配，请进入 <a href="./semantic-studio.html">本地 AI 语义搜索</a>。完整自主执行、账号权限及云端持久运行尚未开放。</div>
+<div class="cards"><div class="metric"><strong>384D</strong><small>真实 E5 神经向量</small></div><div class="metric"><strong>4</strong><small>实际选出并审查的候选</small></div><div class="metric"><strong>0</strong><small>外部业务操作 / 交易订单</small></div></div>
+<div id="case-study" class="tabs" role="tablist" aria-label="真实执行记录">
+<button type="button" class="tab" id="tab-approved" role="tab" aria-controls="page-approved" aria-selected="true">教育研究：批准后产出</button>
+<button type="button" class="tab" id="tab-denied" role="tab" aria-controls="page-denied" aria-selected="false">金融研究：拒绝后零输出</button></div>
+<div id="loading" role="status" aria-live="polite">正在读取 CI 真实执行报告的公开节选…</div>
+<section class="page" id="page-approved" role="tabpanel" aria-labelledby="tab-approved">
+ <div class="panel"><h2>任务目标</h2><p id="goal"></p><div class="details" id="provenance"></div></div>
+ <div class="two"><div class="panel"><h2>模型筛选出的开源候选</h2><p>真实 E5 相似度由报告原始记录提取。它只是语义接近程度，不能证明任何组件适合直接集成或上线。</p><div id="tools" class="tools"></div></div>
+ <div><div class="panel"><h2>实际工作流和审批边界</h2><div class="timeline" id="timeline"></div><p>一次性本地凭证不等同于正式 Owner 认证。该合成任务审批后实际生成了一个本地 JSON 文件，但未操作任何真实第三方系统。</p></div>
+ <div class="panel"><h2>独立审核门禁</h2><p>高语义分数不代表安全。所有工具仍须完成许可证、隐私、接口兼容与真实负向测试。</p><div class="actions"><a class="button" id="source-ci" target="_blank" rel="noopener noreferrer">查看真实执行证据</a><a class="button secondary" href="./data/agent_runtime_public_case_v20.json">查看机器可读报告节选</a></div></div></div></div>
+</section>
+<section class="page" id="page-denied" role="tabpanel" aria-labelledby="tab-denied" hidden><div class="panel"><div class="blocked">审批拒绝 · 没有生成报告</div><p>这不是故意显示一个红色假按钮：独立 CI 在金融合成任务中也实际启动了 E5 与 LangGraph，然后从另一 Python 进程拒绝审批，检验不会写出报告。</p><div id="denial-details" class="details"></div>
+<div class="actions"><a class="button" id="denial-ci" target="_blank" rel="noopener noreferrer">查看拒绝路径的 CI 证据</a><a class="button secondary" href="./data/agent_runtime_public_denial_v20.json">查看拒绝审计 JSON</a></div></div></section>
+<div class="actions" style="margin-top:20px"><a href="./semantic-studio.html" class="button">用自己的业务目标体验真实 AI 匹配</a><a href="./mission-studio.html" class="button secondary">进入 AI 方案工作台</a></div>
+</main>
+<script>
+"use strict";
+const $=id=>document.getElementById(id);
+const text=(tag,value,cls)=>{const n=document.createElement(tag);n.textContent=String(value??"");if(cls)n.className=cls;return n};
+function appendLine(host,label,value){const div=text("div",label+"："+value,"detail");host.append(div);return div}
+function setTab(name){
+ for(const id of ["approved","denied"]){
+  const on=id===name,button=$("tab-"+id);button.setAttribute("aria-selected",String(on));button.tabIndex=on?0:-1;
+  $("page-"+id).hidden=!on;
+ }
+}
+for(const name of ["approved","denied"])$("tab-"+name).addEventListener("click",()=>setTab(name));
+async function start(){
+ try{
+  const roots=["./data/agent_runtime_public_case_v20.json","./data/agent_runtime_public_denial_v20.json"];
+  const req=await Promise.all(roots.map(x=>fetch(x,{cache:"no-cache"})));
+  if(req.some(r=>!r.ok))throw Error("真实执行公开节选暂不可用");
+  const [caseData,denied]=await Promise.all(req.map(r=>r.json()));
+  if(caseData.schema_version!==1||caseData.status!=="LOCAL_APPROVED_RESEARCH_REPORT_NOT_DEPLOYED"||
+   !caseData.real_neural_executed||!caseData.real_langgraph_sqlite_interrupt||
+   caseData.selected.length!==4||denied.status!=="BLOCK: declined"||denied.generated_reports!==0
+   ||denied.real_orders!==0||caseData.scope.orders!==0)throw Error("原始执行证据的安全合同不符合要求");
+  $("goal").textContent=caseData.goal;
+  appendLine($("provenance"),"模型",caseData.model+"（"+caseData.model_dimensions+" 维）");
+  appendLine($("provenance"),"状态","真实模型、持久图执行与本地文件写入；不是生产任务");
+  appendLine($("provenance"),"来源","GitHub Actions run #"+caseData.evidence_origin.run_id+"；只公布不含 token 的节选");
+  const ci="https://github.com/xuanyiting68-hash/awesome-ai-capability-atlas-yifalin/actions/runs/"+caseData.evidence_origin.run_id;
+  $("source-ci").href=ci;$("denial-ci").href=ci;
+  for(const item of caseData.selected){
+   const card=text("article","","tool");card.dataset.repo=item.repo;
+   const head=text("div","","tool-head");
+   const link=text("a",item.rank+". "+item.repo);link.href=item.source_url;link.target="_blank";link.rel="noopener noreferrer";head.append(link);
+   head.append(text("span","相似度 "+item.similarity_cosine.toFixed(4),"tag"));card.append(head);
+   card.append(text("h3",item.use_case));const tags=text("div","","tags");
+   tags.append(text("span",item.risk==="high"?"高风险·需人工核验":"中等风险·需人工核验",item.risk==="high"?"tag warn":"tag"));
+   tags.append(text("span","许可证快照："+item.license_snapshot,"tag"));
+   card.append(tags);
+   appendLine(card,"规则匹配 / 来源证据",item.rule_fit+"/100 · "+item.evidence_coverage+"/100（并非安全评分）");
+   appendLine(card,"阻断",item.blockers.join("；"));$("tools").append(card);
+  }
+  const timeline=$("timeline");
+  for(const s of caseData.steps){
+   const card=text("div","","step");card.append(text("span","0"+s.number,"number"),text("strong",s.name));
+   card.append(text("p",s.action));timeline.append(card);
+  }
+  const evidenceSteps=[
+    ["REAL","开源 E5 模型实际推理，匹配冻结源库"],
+    ["CHECKPOINT","真实 LangGraph SQLite 持久化中断"],
+    ["REVIEW","另一 Python 进程消费一次性本地批准凭证"],
+    ["WRITE","只生成一份本地研究报告，外部业务动作为 0"]
+  ];
+  for(const [code,label] of evidenceSteps){
+   const card=text("div","","step");card.append(text("span",code,"tag good"),text("p",label));timeline.append(card);
+  }
+  appendLine($("denial-details"),"任务",denied.task_id+" / "+denied.scenario);
+  appendLine($("denial-details"),"模型是否真实执行",denied.real_neural_executed?"是":"否");
+  appendLine($("denial-details"),"LangGraph 中断恢复",denied.real_langgraph_sqlite_interrupt?"是":"否");
+  appendLine($("denial-details"),"审批凭证",denied.approval_capability_consumed?"已消耗且无法重用":"不明");
+  appendLine($("denial-details"),"报告 / 订单",denied.generated_reports+" / "+denied.real_orders);
+  $("loading").hidden=true;
+  setTab("approved");
+ }catch(error){$("loading").textContent="未通过证据校验，暂停展示："+error.message;$("page-approved").hidden=true;$("page-denied").hidden=true;}
+}
+start();
+</script></body></html>
