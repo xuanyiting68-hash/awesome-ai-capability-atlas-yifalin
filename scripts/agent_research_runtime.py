@@ -318,13 +318,17 @@ def main():
         else:
             p.add_argument("--task-id", required=True)
         if action in ("approve", "deny"):
-            p.add_argument("--token", required=True)
+            p.add_argument("--token-stdin", action="store_true", required=True,
+                           help="Read single-use local capability from stdin; avoid shell history and process argv")
     args = parser.parse_args()
     if args.command == "prepare":
         task = json.loads(Path(args.task_file).read_text(encoding="utf-8"))
         answer = prepare(args.workspace, task)
     elif args.command in ("approve", "deny"):
-        answer = resume(args.workspace, args.task_id, args.token, args.command == "approve")
+        capability = sys.stdin.readline(250).strip()
+        if not 1 <= len(capability) <= 200:
+            raise ValueError("BLOCK: missing_local_capability_stdin")
+        answer = resume(args.workspace, args.task_id, capability, args.command == "approve")
     else:
         answer = inspect(args.workspace, args.task_id)
     print(json.dumps(answer, ensure_ascii=False, sort_keys=True))
