@@ -1,0 +1,183 @@
+{
+  "schema_version": "1.0",
+  "notice": "Synthetic keyword concept groups for OFFLINE metadata retrieval only; not semantic LLM matching, independent source verification or user outcome evidence.",
+  "concepts": [
+    {
+      "id": "quant",
+      "label": "量化与因子",
+      "terms": [
+        "量化",
+        "因子",
+        "quant",
+        "quantitative",
+        "factor"
+      ]
+    },
+    {
+      "id": "backtest",
+      "label": "回测与策略评测",
+      "terms": [
+        "回测",
+        "backtest",
+        "backtesting"
+      ]
+    },
+    {
+      "id": "documents",
+      "label": "文档与论文材料",
+      "terms": [
+        "文档",
+        "论文",
+        "研报",
+        "文件",
+        "pdf",
+        "office",
+        "markdown",
+        "document",
+        "paper",
+        "report"
+      ]
+    },
+    {
+      "id": "rag",
+      "label": "知识库与检索",
+      "terms": [
+        "rag",
+        "知识库",
+        "检索",
+        "retrieval"
+      ]
+    },
+    {
+      "id": "agents",
+      "label": "Agent 协作",
+      "terms": [
+        "agent",
+        "agents",
+        "智能体",
+        "多代理",
+        "多agent"
+      ]
+    },
+    {
+      "id": "models",
+      "label": "模型与 LLM",
+      "terms": [
+        "模型",
+        "llm",
+        "language model",
+        "model"
+      ]
+    },
+    {
+      "id": "evaluation",
+      "label": "模型评估",
+      "terms": [
+        "评测",
+        "评估",
+        "测评",
+        "evaluation",
+        "eval",
+        "benchmark"
+      ]
+    },
+    {
+      "id": "education",
+      "label": "课程与教学",
+      "terms": [
+        "教学",
+        "课程",
+        "备课",
+        "教育",
+        "学习",
+        "course",
+        "lesson",
+        "training",
+        "education"
+      ]
+    },
+    {
+      "id": "audio",
+      "label": "声音语音",
+      "terms": [
+        "语音",
+        "声音",
+        "speech",
+        "voice",
+        "audio"
+      ]
+    },
+    {
+      "id": "marketing",
+      "label": "营销与获客",
+      "terms": [
+        "营销",
+        "获客",
+        "广告",
+        "客户分群",
+        "marketing",
+        "campaign",
+        "lead generation"
+      ]
+    },
+    {
+      "id": "web",
+      "label": "网页采集",
+      "terms": [
+        "采集",
+        "爬虫",
+        "网站数据",
+        "scrape",
+        "scraping",
+        "crawler",
+        "crawl"
+      ]
+    },
+    {
+      "id": "coding",
+      "label": "软件开发",
+      "terms": [
+        "代码",
+        "开发",
+        "编程",
+        "编码",
+        "software",
+        "coding",
+        "code"
+      ]
+    },
+    {
+      "id": "workflow",
+      "label": "工作流自动化",
+      "terms": [
+        "自动化",
+        "工作流",
+        "编排",
+        "automation",
+        "workflow",
+        "automate"
+      ]
+    },
+    {
+      "id": "safety",
+      "label": "安全与沙箱",
+      "terms": [
+        "安全",
+        "沙箱",
+        "漏洞",
+        "security",
+        "sandbox"
+      ]
+    },
+    {
+      "id": "video",
+      "label": "视频创作",
+      "terms": [
+        "视频",
+        "渲染",
+        "video",
+        "render"
+      ]
+    }
+  ]
+}
